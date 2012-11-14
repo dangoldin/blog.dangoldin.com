@@ -1,0 +1,12 @@
+---
+layout: post
+title: !binary |-
+  QmxvZyBpcyBtb3Zpbmch
+wordpress_id: 17
+wordpress_url: !binary |-
+  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9Mw==
+date: 2008-05-21 14:51:51.000000000 -04:00
+---
+<p>So I am porting this blog over from wordpress.com to my own local hosting. Please bear with me and I'll hopefully have more things to read soon.</p>
+
+<p>Edit: I did a rough job changing the dates in the database so the posts should all have the actual post date now.</p>

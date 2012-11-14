@@ -102,10 +102,15 @@ span.date {
     padding-bottom: 15px;
 }
 
-.post ul {
+.post ul, .post ol {
     list-style: disc outside;
     margin-bottom: 5px;
     font-size: 18px;
+}
+
+.post li {
+    line-height:22px;
+    padding-top:6px;
 }
 
 .post blockquote {
