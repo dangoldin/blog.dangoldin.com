@@ -1,0 +1,107 @@
+body {
+    margin-top: 40px;
+    font-family: 'Open sans',sans-serif;
+    font-size: 20px;
+    color: #444;
+}
+
+#avatar {
+    background-image: url('/assets/static/images/photo.jpg');
+    background-size: cover;
+    height: 154px;
+    width: 154px;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px solid #999;
+    opacity: .8;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    margin-left: 22px;
+}
+
+ul {
+    list-style: none outside;
+    margin-bottom: 20px;
+}
+
+li {
+    line-height: 23px;
+}
+
+.gray {
+    color: #999;
+}
+
+
+#social li {
+    display: inline-block;
+    font-size: 22px;
+    overflow: hidden;
+}
+
+#social a, #social a:visited {
+    color: #999;
+    -webkit-transition: color 200ms ease-in;
+    -moz-transition: color 200ms ease-in;
+    -o-transition: color 200ms ease-in;
+}
+
+a.icon-envelope {
+    background: url('/assets/static/images/icons/webicon-mail.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+a.icon-glossi {
+    background: url('/assets/static/images/icons/webicon-glossi.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+a.icon-github {
+    background: url('/assets/static/images/icons/webicon-github.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+a.icon-twitter {
+    background: url('/assets/static/images/icons/webicon-twitter.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+a.icon-linkedin {
+    background: url('/assets/static/images/icons/webicon-linkedin.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+span.date {
+    text-align: right;
+    color: #999;
+    float: right;
+}
+
+#posts a {
+    padding-bottom: 15px;
+}
+
+a {
+    color:#06A;
+}
+
+a:visited {
+    color:#607890;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="span3 offset1">
+            <a id="avatar" href="/"></a>
+
+            <ul id="social">
+              <li>
+                <a href="mailto:dangoldin@gmail.com?subject=Hey" class="icon-envelope" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Email']);" title="Say hi"></a>
+              </li>
+
+              <li>
+                <a href="http://www.glos.si/dan" class="icon-glossi" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Glossi']);" title="My social media stuff here"></a>
+              </li>
+
+              <li>
+                <a href="http://github.com/dangoldin" class="icon-github" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here"></a>
+              </li>
+
+              <li>
+                <a href="http://twitter.com/dangoldin" class="icon-twitter" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me"></a>
+              </li>
+
+              <li>
+                <a href="http://www.linkedin.com/in/dangoldin" class="icon-linkedin" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar LinkedIn']);" title="My professional stuff here"></a>
+              </li>
+            </ul>
+
+            <ul id="me">
+              <li>Dan Goldin</li>
+              <li class="gray">Tech guy</li>
+            </ul>
+        </div>
+
+        <div class="span6 offset">
+          {{ content }}
+        </div>
+      </div>
+
+      <!--
+      <div class="row">
+        <div class="span8 offset2">
+          <footer>
+            <p>&copy; {{ site.author.name }} 2012
+              with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+              and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a> and <a href="http://sirupsen.com/">Sirupsen's site</a>
+            </p>
+          </footer>
+        </div>
+      </div>
+      -->
+
+    </div><!-- /container -->
+
+    {% include JB/analytics %}
+  </body>
+</html>
