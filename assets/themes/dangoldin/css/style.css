@@ -1,22 +1,40 @@
+/* General setup */
 body {
     margin-top: 40px;
-    font-family: 'Open sans',sans-serif;
     font-size: 20px;
     color: #444;
 }
 
-ul {
-    list-style: none outside;
-    margin-bottom: 20px;
-}
-
-li {
+p {
+    font-size: 20px;
     line-height: 23px;
 }
 
-p {
+li {
     font-size: 20px;
-    line-height: 22px;
+    line-height: 23px;
+}
+
+a {
+    color:#06A;
+}
+
+a:visited {
+    color:#607890;
+}
+
+.gray {
+    color: #999;
+}
+
+/* Avatar (left hand size) */
+.avatar-section li {
+    line-height: 23px;
+}
+
+.avatar-section ul {
+    list-style: none outside;
+    margin-bottom: 20px;
 }
 
 #avatar {
@@ -33,10 +51,6 @@ p {
     -moz-transition: all 500ms ease-in;
     -o-transition: all 500ms ease-in;
     margin-left: 22px;
-}
-
-.gray {
-    color: #999;
 }
 
 #social li {
@@ -92,25 +106,19 @@ a.icon-linkedin {
     margin-left: 5px;
 }
 
+/* Main content area */
 span.date {
     text-align: right;
     color: #999;
     float: right;
 }
 
-#posts a {
-    padding-bottom: 15px;
+.publish-footer {
+    margin-top:20px;
 }
 
-.post ul, .post ol {
-    list-style: disc outside;
-    margin-bottom: 5px;
-    font-size: 18px;
-}
-
-.post li {
-    line-height:22px;
-    padding-top:6px;
+ul {
+    list-style: none outside;
 }
 
 .post blockquote {
@@ -120,18 +128,6 @@ span.date {
 
 .post .zemanta-related-title {
     margin-top: 20px;
-}
-
-a {
-    color:#06A;
-}
-
-a:visited {
-    color:#607890;
-}
-
-.publish-footer {
-    margin-top:20px;
 }
 
 .post table {
