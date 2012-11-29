@@ -1,39 +1,50 @@
-<div class="page-header">
-  <h1>{{ page.title }} <small>{{ page.tagline }}</small></h1>
+<div class="row header">
+  <div class="span6">
+    <h1>{{ page.title }} <small>{{ page.tagline }}</small></h1>
+  </div>
+  <div class="span2">
+    <span class="date">{{ page.date | date_to_long_string }}</span>
+  </div>
 </div>
 
 <div class="row">
   <div class="span8">
     <div class="post">
       {{ content }}
-      <hr>
-
-      <div class="pagination">
-        <ul>
-        {% if page.previous %}
-          <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-        {% else %}
-          <li class="prev disabled"><a>&larr; Previous</a></li>
-        {% endif %}
-          <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-        {% if page.next %}
-          <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-        {% else %}
-          <li class="next disabled"><a>Next &rarr;</a>
-        {% endif %}
-        </ul>
-      </div>
-
-      <hr>
-      {% include JB/comments %}
     </div>
 
-    <div class="span4">
-      <div class="publish-footer">
-        <h4>Published</h4>
-        <div class="date"><span>{{ page.date | date_to_long_string }}</span>
+    <div class="row publish-footer">
+      <div class="span5">
+        <div class="pagination">
+          <ul>
+          {% if page.previous %}
+            <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev</a></li>
+          {% else %}
+            <li class="prev disabled"><a>&larr; Prev</a></li>
+          {% endif %}
+            <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+          {% if page.next %}
+            <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+          {% else %}
+            <li class="next disabled"><a>Next &rarr;</a></li>
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="span3">
+        <div class="sharing">
+          <span class='st_facebook_large' displayText='Facebook'></span>
+          <span class='st_twitter_large' displayText='Tweet'></span>
+          <span class='st_googleplus_large' displayText='Google +'></span>
+          <span class='st_linkedin_large' displayText='LinkedIn'></span>
+          <span class='st_email_large' displayText='Email'></span>
+        </div>
       </div>
     </div>
+
+    <hr/>
+    {% include JB/comments %}
 
     {% unless page.tags == empty %}
       <h4>Tags</h4>
@@ -45,3 +56,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "7c7be1c4-72eb-4bec-a064-7017b3a8bc53"});</script>

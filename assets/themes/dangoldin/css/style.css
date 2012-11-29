@@ -113,8 +113,32 @@ span.date {
     float: right;
 }
 
+/* Post area */
+.header span.date {
+    font-size:14px;
+    margin-top: 14px;
+}
+
+.header {
+    padding-bottom: 17px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #EEE;
+}
+
 .publish-footer {
     margin-top:20px;
+    margin-bottom:10px;
+}
+
+.pagination {
+    text-align: center;
+    height: inherit;
+    margin: inherit;
+}
+
+.sharing {
+    text-align: center;
 }
 
 ul {
