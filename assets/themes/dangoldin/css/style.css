@@ -8,11 +8,13 @@ body {
 p {
     font-size: 20px;
     line-height: 24px;
+    padding-bottom: 8px;
 }
 
 li {
     font-size: 20px;
     line-height: 24px;
+    padding-bottom: 8px;
 }
 
 a {
