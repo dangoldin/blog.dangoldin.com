@@ -12,4 +12,4 @@ Social media is great at raising awareness, it’s just not very useful until so
 
 I can’t help but think of the pen and sword metaphor. The pen is mightier than the sword because the pen is able to get many swords. Does social media just give everyone pens or does it lead to more swords?
 
-My way of dealing with this is to take a real action every time I share something on social media. If I share a Kickstarter project then I will donate to it. If I share opposition or support of a bill, I will call my representative. We’d be in a much better shape if everyone did the same.
+My way of dealing with this is to take a real action every time I share something on social media. If I share a Kickstarter project then I will donate to it. If I share opposition or support of a bill, I will call my representative. We’d be in much better shape if everyone did the same.
