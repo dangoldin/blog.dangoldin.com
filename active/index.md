@@ -7,12 +7,16 @@ description: ""
 
 The main stuff:
 
-- Cofounder of Makers Alley - <a href="http://www.makersalley.com">http://www.makersalley.com</a>
-- Cofounder of Glossi - <a href="http://www.glos.si">http://www.glos.si</a>
+<ul>
+<li><a href="http://makersalley.com">Makers Alley</a></li>
+<li><a href="http://www.glos.si">Glossi</a></li>
+</ul>
 
 
 When I have the time:
 
-- Gems of Craigslist - <a href="http://www.gemsofcl.com">http://www.gemsofcl.com</a>
-- Twirl - <a href="http://www.twirlapp.com">http://www.twirlapp.com</a>
-- Wordsio - <a href="http://www.wordsio.com">http://www.wordsio.com</a>
+<ul>
+<li><a href="http://www.gemsofcl.com">Gems of Craigslist</a></li>
+<li><a href="http://www.twirlapp.com">Twirl</a></li>
+<li><a href="http://www.wordsio.com">Wordsio</a></li>
+</ul>

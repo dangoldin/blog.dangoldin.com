@@ -7,10 +7,14 @@ description: ""
 
 Work:
 
-- Yodle - <a href="http://www.yodle.com">http://www.yodle.com</a>
-- Och Ziff - <a href="http://www.ozcap.com">http://www.ozcap.com</a>
-- ZS Associates - <a href="http://www.zsassociates.com">http://www.zsassociates.com</a>
+<ul>
+<li><a href="http://www.yodle.com">Yodle</a></li>
+<li><a href="http://www.ozcap.com">Och Ziff</a></li>
+<li><a href="http://www.zsassociates.com">ZS Associates</a></li>
+</ul>
 
 And play:
 
-- Cornell - <a href="http://www.cornell.edu">http://www.cornell.edu</a>
+<ul>
+<li><a href="http://www.cornell.edu">Cornell</a></li>
+</ul>
