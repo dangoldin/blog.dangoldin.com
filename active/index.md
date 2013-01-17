@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "What I'm working on"
-description: ""
+description: "List of what I'm currently working on. Combination of the startups as well as a few open source projects."
+keywords: "Active projects"
 ---
 {% include JB/setup %}
 

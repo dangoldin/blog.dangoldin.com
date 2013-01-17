@@ -2,6 +2,8 @@
 layout: default
 title: Dan Goldin
 tagline: Thoughts and musing
+description: "My thoughts and musings. Trying to write about tech, startups and my entrepreneurial journey."
+keywords: "Dan Goldin blog tech startups entrepreneurship"
 ---
 {% include JB/setup %}
 

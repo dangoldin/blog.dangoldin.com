@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "What I used to work on"
-description: ""
+description: "List of what I used to do, academically and professionally."
+keywords: "Old projects"
 ---
 {% include JB/setup %}
 
