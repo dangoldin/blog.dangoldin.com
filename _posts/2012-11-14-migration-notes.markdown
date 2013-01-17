@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Github Migration Notes"
-description: ""
-category: ""
+description:
+category:
 tags: []
 ---
 {% include JB/setup %}

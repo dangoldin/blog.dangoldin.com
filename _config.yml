@@ -10,7 +10,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Dan Goldin
-tagline: My attempt at blogging
+tagline: Me
 author :
   name : Dan Goldin
   email : dangoldin@gmail.com
@@ -85,12 +85,12 @@ JB :
     livefyre :
       site_id :
     intensedebate :
-      account : 123abc
+      account : 
     facebook :
       appid :
-      num_posts: 5
-      width: 580
-      colorscheme: light
+      num_posts: 
+      width: 
+      colorscheme: 
 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
@@ -103,7 +103,7 @@ JB :
     getclicky :
       site_id :
     mixpanel :
-        token : '_MIXPANEL_TOKEN_'
+        token : ''
 
   # Settings for sharing helper.
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.

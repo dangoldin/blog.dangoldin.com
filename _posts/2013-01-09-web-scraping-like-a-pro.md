@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Web scraping like a pro"
-description: ""
+description: "Tips to help you write better web scrapers"
+keywords: "Scraping web HTML BeautifulSoup"
 category: 
 tags: []
 ---

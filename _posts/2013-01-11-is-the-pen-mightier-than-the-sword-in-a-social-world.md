@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Is the pen mightier than the sword in a social world?"
-description: ""
+description: "Has social media made us less likely to cause real change in the world since we're liking and sharing instead?"
+keywords: "social media Instagram SOPA PIPA"
 category: 
 tags: []
 ---

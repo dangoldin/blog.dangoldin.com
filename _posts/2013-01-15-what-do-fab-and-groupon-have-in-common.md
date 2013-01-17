@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "What do Fab and Groupon have in common?"
-description: ""
+description: "Fab and Groupon favor the consumer over the business and focus on short term vs long term growth."
+keywords: "Fab Groupon ecommerce"
 category: 
 tags: []
 ---

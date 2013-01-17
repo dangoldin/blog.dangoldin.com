@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Self hosted Instagram export"
-description: ""
+description: "There are sites that let you export your Instagram photos but they're slow. I wrote my own version that you can install to download your phoots"
+keywords: "Download export Instagram photos"
 category: 
 tags: []
 ---
