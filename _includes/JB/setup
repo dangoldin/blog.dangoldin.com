@@ -19,4 +19,6 @@
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
     {% endif %}
   {% endif %}
+
+  {% assign IMG_PATH = "/assets/static/images/" %}
 {% endcapture %}{% assign jbcache = nil %}
