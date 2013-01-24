@@ -16,7 +16,7 @@
     {% endif %}
     {% if page.image_url %}
     <meta property="og:image"               content="{{ site.production_url }}{{ page.image_url }}">
-    {% endif %}    
+    {% endif %}
 
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -24,13 +24,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'> -->
+
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <div class="span3">
+        <div class="span3 offset1">
           <div class="avatar-section">
             <a id="avatar" href="/"></a>
 
@@ -69,7 +75,7 @@
           </div>
         </div>
 
-        <div class="span8">
+        <div class="span7">
           {{ content }}
         </div>
       </div>

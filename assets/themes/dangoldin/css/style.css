@@ -2,18 +2,44 @@
 body {
     margin: 40px 0;
     font-size: 20px;
-    color: #444;
+    color: #333;
+    /*font-family: 'PT Serif', serif;*/
+    /*font-family: 'Merriweather', serif;*/
+    /*font-family: 'Gentium Book Basic', serif;*/
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #222;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 45px;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 34px;
 }
 
 p {
     font-size: 20px;
-    line-height: 26px;
+    line-height: 32px;
     padding-bottom: 8px;
 }
 
 li {
     font-size: 20px;
-    line-height: 26px;
+    line-height: 32px;
     padding-bottom: 8px;
 }
 
@@ -32,6 +58,8 @@ a:visited {
 /* Avatar (left hand size) */
 .avatar-section li {
     line-height: 23px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 .avatar-section ul {
@@ -113,11 +141,12 @@ span.date {
     text-align: right;
     color: #999;
     float: right;
+    font-family: 'Gentium Book Basic', serif;
 }
 
 /* Post area */
 .header span.date {
-    font-size:14px;
+    font-size: 18px;
     margin-top: 14px;
 }
 
@@ -145,6 +174,13 @@ span.date {
 
 ul {
     list-style: none outside;
+}
+
+ul.posts li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21px;
+    line-height: 32px;
+    font-weight: 400;
 }
 
 .post blockquote {
