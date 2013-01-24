@@ -183,6 +183,10 @@ ul.posts li {
     font-weight: 400;
 }
 
+ul.bulleted {
+    list-style-type: disc;
+}
+
 .post blockquote {
     padding: 8px;
     font-size: 18px;
