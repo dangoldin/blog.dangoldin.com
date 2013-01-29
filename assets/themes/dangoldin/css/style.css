@@ -203,3 +203,7 @@ ul.bulleted {
 .post td {
     font-size: 16px;
 }
+
+.center {
+    text-align: center;
+}
