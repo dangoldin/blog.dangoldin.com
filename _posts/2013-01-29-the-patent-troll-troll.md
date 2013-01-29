@@ -16,7 +16,7 @@ tags: []
   </li>
 </ul>
 
-Two days ago, the big news was that <a href="http://arstechnica.com/tech-policy/2013/01/how-newegg-crushed-the-shopping-cart-patent-and-saved-online-retail/">Newegg successfully defended</a> itself against a patent troll that sued them over a shopping cart patent. As a result, the patent was invalidated and Soverain Software will lose $2.5M from this and the $18M they won in 2011 from Victoria’s Secret and Avon. Unfortunately, they’ll still keep the tens of millions of dollars they “earned” in earlier years. Since virtually every ecommerce site has a shopping cart feature you’d think that this patent would have been invalidated sooner.
+<p><a href="http://arstechnica.com/tech-policy/2013/01/how-newegg-crushed-the-shopping-cart-patent-and-saved-online-retail/">Newegg recently defended</a> itself against a patent troll that sued them over a shopping cart patent. As a result, the patent was invalidated and Soverain Software will lose $2.5M from this and the $18M they won in 2011 from Victoria’s Secret and Avon. Unfortunately, they’ll still keep the tens of millions of dollars they “earned” in earlier years. Since virtually every ecommerce site has a shopping cart feature you’d think that this patent would have been invalidated sooner.</p>
 
 The reason it takes this long is that most companies settle when faced with a lawsuit and only a few fight back. Over time, companies that have a reputation for fighting back are sued less frequently and companies that do settle just pass the cost onto the consumer. It’s no surprise that these patents end up sticking around. Unfortunately, it’s a shitty situation for smaller businesses: they can’t afford a lawsuit and can’t afford to raise their prices.
 
