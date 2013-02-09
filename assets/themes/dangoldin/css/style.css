@@ -207,3 +207,11 @@ ul.bulleted {
 .center {
     text-align: center;
 }
+
+.follow-footer {
+    font-size: 16px;
+}
+
+.follow-footer a {
+    text-decoration: underline;
+}
