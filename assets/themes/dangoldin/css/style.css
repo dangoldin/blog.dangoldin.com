@@ -37,6 +37,12 @@ p {
     padding-bottom: 8px;
 }
 
+p.small {
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 8px;
+}
+
 li {
     font-size: 20px;
     line-height: 32px;
@@ -203,6 +209,22 @@ ul.bulleted {
 .post td {
     font-size: 16px;
 }
+
+tr.highlight > td {
+    background-color: #ddeedd;
+}
+
+.table-striped tbody > tr.highlight:nth-child(odd) > td, .table-striped tbody > tr.highlight:nth-child(odd) > th {
+    background-color: #ddeedd;
+}
+
+/*table.small th {
+    font-size: 10px;
+}
+
+table.small td {
+    font-size: 8px;
+}*/
 
 .center {
     text-align: center;
