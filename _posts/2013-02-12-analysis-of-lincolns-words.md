@@ -1,16 +1,15 @@
 ---
 layout: lincoln
-title: "Analyzing Lincoln's speeches and letters"
-description: "Analyzing the text of Abraham Lincoln's speeches and writings"
+title: "An analysis of Lincoln's words"
+description: "Analyzing and visualizing the text of Abraham Lincoln's speeches and writings"
+image_url: "http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_Lincoln_November_1863.jpg"
 category:
 tags: []
 ---
 {% include JB/setup %}
-On Saturday, I finished <a href="http://www.amazon.com/Team-Rivals-Political-Abraham-Lincoln/dp/0743270754">Team of Rivals</a> and while looking at my calendar noticed that it was also <a href="http://en.wikipedia.org/wiki/Abraham_Lincoln">Lincoln's</a> birthday this week. What better way to celebrate his birthday than to analyze his speeches and letters? I downloaded the <a href="http://www.gutenberg.org/files/3253/3253-h/3253-h.htm">7 volume set</a> of his papers and writings from Project Gutenberg and spent a few hours on Sunday cleaning the text and writing a parser for it. On Monday, I started analyzing the text to see if I could make sense of it.
+On Saturday, I finished <a href="http://www.amazon.com/Team-Rivals-Political-Abraham-Lincoln/dp/0743270754">Team of Rivals</a> and while looking at my calendar noticed that it was also <a href="http://en.wikipedia.org/wiki/Abraham_Lincoln">Lincoln's</a> birthday this week. What better way to celebrate his birthday than to analyze his speeches and letters? I downloaded the <a href="http://www.gutenberg.org/files/3253/3253-h/3253-h.htm">7 volume set</a> containing his speeches, letters, and essays from Project Gutenberg and spent a few hours on Sunday cleaning the text and writing a parsing script. On Monday, I started analyzing the text to see if I could make sense of it.
 
-In total, I was able to get 1,458 documents containing almost 16,500 sentences and a little over 547,000 words. I tried getting the date each letter was written or speech was given but was only able to get it for 60% of the documents. That was enough to get some insights.
-
-As usual, the code's up on <a href="https://github.com/dangoldin/lincoln-text-analysis">Github</a>.
+I was able to get 1,458 documents containing almost 16,500 sentences and a little over 547,000 words. I tried getting the date each letter was written or speech was given but was only able to get it for 60% of the documents. That was enough to get some insights.
 
 <h3>Number of speeches/letters by year</h3>
 <p>I suspect a lot of his early writing and speeches and were lost since they just weren't preserved as well as his later speeches and letters</p>
@@ -137,3 +136,5 @@ As usual, the code's up on <a href="https://github.com/dangoldin/lincoln-text-an
 <p>I tried visualizing the table above as word clouds but in hindsight don't think it was the best way to display the data. It did give me an excuse to play around with <a href="http://d3js.org/">D3 library</a> though.</p>
 <div id="text-clouds">
 </div>
+
+As usual, the code's up on <a href="https://github.com/dangoldin/lincoln-text-analysis">Github</a>.
