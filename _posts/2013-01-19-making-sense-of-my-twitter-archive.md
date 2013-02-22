@@ -4,7 +4,7 @@ title: "Making sense of my Twitter archive"
 description: "Doing some data visualizations on my Twitter archive"
 keywords: "twitter data visualization matplotlib nltk quantified self"
 image_url: "/assets/static/images/by-month-dow.png"
-category: 
+category:
 tags:
 ---
 {% include JB/setup %}

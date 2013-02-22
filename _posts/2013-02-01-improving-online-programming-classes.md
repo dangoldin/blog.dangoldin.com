@@ -2,6 +2,7 @@
 layout: post
 title: "Improving online programming classes"
 description: "We need to start designing classes for the web from scratch rather than adapting classes from the classroom."
+keywords: "online education, online classes, coursera, udacity"
 category:
 tags: []
 ---

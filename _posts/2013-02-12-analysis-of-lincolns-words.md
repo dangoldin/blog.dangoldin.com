@@ -2,6 +2,7 @@
 layout: lincoln
 title: "An analysis of Lincoln's words"
 description: "Analyzing and visualizing the text of Abraham Lincoln's speeches and writings"
+keywords: "abraham lincoln, lincoln, speech, writing, essays, papers, natural language processing"
 image_url: "http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_Lincoln_November_1863.jpg"
 category:
 tags: []

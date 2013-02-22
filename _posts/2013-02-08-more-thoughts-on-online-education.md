@@ -2,6 +2,7 @@
 layout: post
 title: "More thoughts on online education"
 description: "Coursera can now offer classes for credit and I'm excited by the changes this will bring to education"
+keywords: "coursera, online education, udacity"
 category:
 tags: []
 ---

@@ -3,6 +3,7 @@ layout: post
 title: "Identifying duplicate bills across states"
 description: "We use the OpenStates API to download bills from various states and compare them against each other in order to find similar language that will indicate bills written under a 3rd party influence."
 category:
+keywords: "bicoastal datafest, hackathon, politics, laws, natural language processing"
 image_url: "/assets/static/images/gun1-in.png"
 tags: []
 ---

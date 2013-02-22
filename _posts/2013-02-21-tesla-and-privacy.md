@@ -2,6 +2,7 @@
 layout: post
 title: "Tesla and privacy"
 description: "No one is talking about the data Tesla is collecting and how valuable it will be in the future."
+keywords: "tesla, privacy, data"
 category:
 tags: []
 ---

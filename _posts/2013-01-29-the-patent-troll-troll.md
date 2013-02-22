@@ -2,6 +2,7 @@
 layout: post
 title: "The Patent troll troll"
 description: "To fight patent trolls we need to go on the offensive"
+keywords: "patent trolls, law, newegg"
 image_url: "/assets/static/images/patent-troll.jpg"
 category:
 tags: []
