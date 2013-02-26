@@ -49,6 +49,10 @@ li {
     padding-bottom: 8px;
 }
 
+img {
+    padding: 10px;
+}
+
 a {
     color:#06A;
 }
