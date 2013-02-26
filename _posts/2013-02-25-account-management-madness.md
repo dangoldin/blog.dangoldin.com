@@ -17,4 +17,4 @@ It gets worse. We ran into a trademark issue and had to change our company name 
 
 This led to me an epiphany that we’re using today. Only have unique email. Everything else can be managed through individual accounts until it’s necessary to create company accounts. And even then, only create accounts that are absolutely necessary, which will typically be the financially dependent ones (Freshbooks, Stripe, etc). This allows us to not worry about having a flood of Google tabs open and we get to avoid the adventure of figuring out whether a doc we’re looking for has been shared on a personal or company account. When something does need to be shared with someone outside the company, we share it with our corporate clone and manage it from there.
 
-By no means is this a perfect solution but it works for me and I only wish I stumbled unto it sooner. I'd love to hear how others make it work.
+By no means is this a perfect solution but it works for me and I only wish I stumbled unto it sooner. How do you make it work?
