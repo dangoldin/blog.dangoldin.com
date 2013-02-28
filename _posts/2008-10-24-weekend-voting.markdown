@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  V2Vla2VuZCBWb3Rpbmc=
+title: "On weekend voting"
 wordpress_id: 91
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9NzE=
 date: 2008-10-24 16:22:58.000000000 -04:00
 ---
 <p>I found an <a href="http://www.nytimes.com/2008/10/24/opinion/24ornstein.html?ref=opinion">op-ed</a> in the NY Times that claimed that the best way to increase voter turnout was by having election day fall on a weekend. They provide a few examples but nothing too detailed. I tried pulling in some data and seeing if I could come to the same conclusion. I used two data sets: <a href="http://en.wikipedia.org/wiki/Voter_turnout ">voter turn out by country</a> and <a href="http://www.electionguide.org/calendar.php ">election dates by country</a>.</p>

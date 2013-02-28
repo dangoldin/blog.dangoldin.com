@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  T24gTWljcm9zb2Z0IFdhbGtpbmcgQXdheSBmcm9tIFlhaG9v
+title: "On Microsoft walking away from Yahoo"
 wordpress_id: 10
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9Nw==
 date: 2008-05-04 14:54:29.000000000 -04:00
 ---
 A little unexpected but I think this was the right decision for Microsoft for a couple of reasons:

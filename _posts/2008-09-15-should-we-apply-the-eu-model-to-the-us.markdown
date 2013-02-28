@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  U2hvdWxkIHdlIGFwcGx5IHRoZSBFVSBNb2RlbCB0byB0aGUgVVM/
+title: "Should we apply the EU model to the US"
 wordpress_id: 57
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MzM=
 date: 2008-09-15 16:06:31.000000000 -04:00
 ---
 <p>I've recently been thinking about whether the US can move to a EU like model with each state having control over it's own policies but sharing a <a class="zem_slink" title="Single market" rel="wikipedia" href="http://en.wikipedia.org/wiki/Single_market">single market</a> and monetary union. In addition, competition is well regulated and a shared budget exists. In addition, it looks as if this shared budget is a little over 1% of the <a class="zem_slink" title="Gross National Income" rel="wikipedia" href="http://en.wikipedia.org/wiki/Gross_National_Income">Gross National Income</a> of the individual countries (1) - imagine a Federal tax rate of 1%.</p>

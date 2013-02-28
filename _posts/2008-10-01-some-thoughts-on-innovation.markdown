@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  U29tZSBUaG91Z2h0cyBvbiBJbm5vdmF0aW9u
+title: "Some thoughts on innovation"
 wordpress_id: 72
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9NDE=
 date: 2008-10-01 16:13:23.000000000 -04:00
 ---
 <p>I stumbled unto an <a href="http://blog.modernmechanix.com/2008/03/24/what-will-life-be-like-in-the-year-2008/">article</a> written in 1968 that tries to predict what the world of 2008 will be like. Usually, these types of predictions are completely off and tend to predict a future far more advanced than what it actually becomes.<div class="zemanta-img zemanta-action-dragged">

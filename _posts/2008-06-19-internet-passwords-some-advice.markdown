@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  SW50ZXJuZXQgUGFzc3dvcmRzOiBTb21lIEFkdmljZQ==
+title: "Advice on internet passwords"
 wordpress_id: 35
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTk=
 date: 2008-06-19 16:55:09.000000000 -04:00
 ---
 <p>After my previous post on the lack of privacy, I feel obligated to give some advice regarding internet passwords in order to maintain the privacy that we do have.</p>

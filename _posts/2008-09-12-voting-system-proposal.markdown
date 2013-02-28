@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  Vm90aW5nIFN5c3RlbSBQcm9wb3NhbA==
+title: "Voting system proposal"
 wordpress_id: 47
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MjQ=
 date: 2008-09-12 16:06:11.000000000 -04:00
 ---
 <p>It seems that there is a recent emphasis on "character" in the election. Unfortunately, character can be faked with some acting and campaign management. To understand how the candidates will perform in office we need to look at their past accomplishments and failures. Public records show the <a href="http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm">vote history</a> for the candidates and all it takes is a little bit of research to see how the candidates have voted.</p>

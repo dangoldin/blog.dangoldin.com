@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  UG93ZXIgb2YgVHdpdHRlcg==
+title: "Power of Twitter"
 wordpress_id: 154
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tLz9wPTE1NA==
 date: 2009-03-08 13:38:55.000000000 -04:00
 ---
 <div class="zemanta-img" style="margin: 1em; display: block;">

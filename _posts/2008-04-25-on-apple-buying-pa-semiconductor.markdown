@@ -1,13 +1,10 @@
 ---
 layout: post
-title: !binary |-
-  T24gQXBwbGUgQnV5aW5nIFBBIFNlbWljb25kdWN0b3I=
+title: "On Apple buying PA Semiconductor"
 wordpress_id: 7
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9NA==
 date: 2008-04-25 14:53:20.000000000 -04:00
 ---
-This post is a response to\: <a href="http://www.pbs.org/cringely/pulpit/2008/pulpit_20080425_004775.html">http://www.pbs.org/cringely/pulpit/2008/pulpit_20080425_004775.html</a>
+This post is a response to: <a href="http://www.pbs.org/cringely/pulpit/2008/pulpit_20080425_004775.html">http://www.pbs.org/cringely/pulpit/2008/pulpit_20080425_004775.html</a>
 
 The author is giving 2 reasons for the acquisition:
 

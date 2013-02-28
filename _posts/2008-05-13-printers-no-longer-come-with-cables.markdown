@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  UHJpbnRlcnMgbm8gbG9uZ2VyIGNvbWUgd2l0aCBjYWJsZXM/
+title: "Printers no longer come with cables?"
 wordpress_id: 14
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTE=
 date: 2008-05-13 15:03:02.000000000 -04:00
 ---
 Since when did printers stop coming with the cables? Does this have anything to do with printers being available in USB form and the manufacturers suddenly assuming that everyone already has USB cables? Or is it some agreement that they have with merchants that requires me to pay $20 for a 6' cable. Some quick price look ups do show that the standard printer cables cost around the same as USB cables so if they were able to afford to bundle printer cables before USB, they should be able to bundle USB cables now.

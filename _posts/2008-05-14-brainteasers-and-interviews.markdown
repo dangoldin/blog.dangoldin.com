@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  QnJhaW50ZWFzZXJzIGFuZCBJbnRlcnZpZXdz
+title: "Brainteasers and interviews"
 wordpress_id: 15
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTI=
 date: 2008-05-14 15:04:53.000000000 -04:00
 ---
 <p>I've recently been reading some articles opposing the use of brainteasers during interviews on the grounds that they are unfair and some people have difficulty thinking on the spot. You can make the same argument for any part of the interview process and I feel that brainteasers may even attract intelligent employees.</p>

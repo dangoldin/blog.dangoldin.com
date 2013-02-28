@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  VmlkZW8gR2FtZXMgYXMgQXJ0
+title: "Video games as art"
 wordpress_id: 9
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9Ng==
 date: 2008-04-29 14:55:29.000000000 -04:00
 ---
 It's about time video games are considered an art. They are creative endeavours that take as much and as long to make as some movies. There is also a huge distinction between the great and the poor games. Games these days can be considered movies and they should be treated in the same way.

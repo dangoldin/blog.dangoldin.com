@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  SW50ZXJlc3RpbmcgUGVybCBCZWhhdmlvcg==
+title: "Interesting Perl behavior"
 wordpress_id: 31
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTc=
 date: 2008-05-30 14:56:59.000000000 -04:00
 ---
 <p>I ran into this problem a while back and wanted to share it. It was a bit unintuitive but documentd so I guess I shouldn't be surprised by the results. Hopefully this will help someone else avoid this pitfall.</p>

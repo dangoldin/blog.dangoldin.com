@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  V2h5IHdlIG1heSBuZXZlciBjb2xvbml6ZSBzcGFjZQ==
+title: "Why we may never colonize space"
 wordpress_id: 13
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTA=
 date: 2008-05-13 15:03:02.000000000 -04:00
 ---
 Although it's wonderful to think that we will be able to colonize other worlds when we grow too numerous or run out of resources, it may not happen. It seems that given the level of current weapons and state of the world we will more likely try to conquer each other than try to conquer space.

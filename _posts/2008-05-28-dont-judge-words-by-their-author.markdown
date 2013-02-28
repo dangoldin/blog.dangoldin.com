@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  RG9uJ3QgSnVkZ2UgV29yZHMgYnkgdGhlaXIgQXV0aG9y
+title: "Don't judge words by their author"
 wordpress_id: 28
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTU=
 date: 2008-05-28 18:06:51.000000000 -04:00
 ---
 <p>A common idiom is "Don't judge a book by its cover" but I think that in this modern age this needs to rehashed into "Don't judge words by their author."</p>

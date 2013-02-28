@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  RW5hYmxpbmcgTW9kdWxlcyBpbiBBcGFjaGUgMiB1bmRlciBVYnVudHU=
+title: "Enabling modules in Apache2 under Ubuntu"
 wordpress_id: 136
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTM2
 date: 2009-01-23 14:17:46.000000000 -05:00
 ---
 <p>The Apache enabled modules are found in <span class="gray">"/etc/apache2/mods-enabled"</span> as a set of .load and .conf files. If the modules you want are in the <span class="gray">/etc/apache2/mods-available</span> folder but not in <span class="gray">"/etc/apache2/mods-enabled"</span> folder, just copy the .load and .conf files over (note that the .conf file may not exist).</p>

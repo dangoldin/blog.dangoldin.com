@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  SW1wcm92aW5nIFlvdXIgTHVjaw==
+title: "Improving your luck"
 wordpress_id: 5
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9Njk=
 date: 2009-09-28 21:03:28.000000000 -04:00
 ---
 <div class="zemanta-img zemanta-action-dragged" style="float: right; width: 310px; margin: 1em;">

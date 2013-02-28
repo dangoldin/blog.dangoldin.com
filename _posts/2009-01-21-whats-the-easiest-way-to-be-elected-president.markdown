@@ -1,14 +1,11 @@
 ---
 layout: post
-title: !binary |-
-  V2hhdCdzIHRoZSBlYXNpZXN0IHdheSB0byBiZSBlbGVjdGVkIFByZXNpZGVu
-  dD8=
+title: "What's the easiest way to be elected president?"
 wordpress_id: 6
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9ODU=
 date: 2009-01-21 20:12:51.000000000 -05:00
 ---
-Answer\: Be elected for a first term, the second term will follow.
+
+Answer: Be elected for a first term, the second term will follow.
 
 It turns out it's pretty likely that a president will be elected to a second term. If we examine all previous Presidential Elections, we will see 8 presidents who failed to get reelected:
 

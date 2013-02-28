@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  UHJpdmFjeSBpbiB0aGUgRGlnaXRhbCBBZ2U=
+title: "Privacy in the digital age"
 wordpress_id: 33
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9MTg=
 date: 2008-06-12 16:03:27.000000000 -04:00
 ---
 <p>With so many people joining social networks like Facebook, MySpace, and LinkedIn, it's becoming harder and harder to protect your personal information. If one of your friends happens to add a host of different facebook apps, those apps will have access to his friends' (your) information. There is nothing you can do to stop this unless you either remove all your friends or create very limited profiles.</p>

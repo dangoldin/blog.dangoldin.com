@@ -1,10 +1,7 @@
 ---
 layout: post
-title: !binary |-
-  UHJvbnVuY2lhdGlvbg==
+title: "Pronunciation"
 wordpress_id: 12
-wordpress_url: !binary |-
-  aHR0cDovL3d3dy5kYW5nb2xkaW4uY29tL2Jsb2cvP3A9OQ==
 date: 2008-05-08 14:54:29.000000000 -04:00
 ---
 Recently I've discovered a few words where I know the definition and spelling but I don't know the pronunciation. The problem is that I think I know how to pronounce them so when I use them for the first time in conversation, or hear someone using them, some confusion arises (as well as making me look like a fool).
