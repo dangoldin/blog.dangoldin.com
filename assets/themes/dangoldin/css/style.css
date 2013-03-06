@@ -222,6 +222,11 @@ tr.highlight > td {
     background-color: #ddeedd;
 }
 
+td.highlight {
+    font-weight: bold;
+    background-color: #ddeedd;
+}
+
 /*table.small th {
     font-size: 10px;
 }
