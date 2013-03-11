@@ -9,15 +9,15 @@ keywords: "Active projects"
 The main stuff:
 
 <ul>
-<li><a href="http://makersalley.com">Makers Alley</a></li>
-<li><a href="http://www.glos.si">Glossi</a></li>
+<li><a href="http://makersalley.com" target="_blank">Makers Alley</a></li>
+<li><a href="http://getpressi.com" target="_blank">Pressi</a></li>
 </ul>
 
 
 When I have the time:
 
 <ul>
-<li><a href="http://www.gemsofcl.com">Gems of Craigslist</a></li>
-<li><a href="http://www.twirlapp.com">Twirl</a></li>
-<li><a href="http://www.wordsio.com">Wordsio</a></li>
+<li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a></li>
+<li><a href="http://www.twirlapp.com" target="_blank">Twirl</a></li>
+<li><a href="http://www.wordsio.com" target="_blank">Wordsio</a></li>
 </ul>

@@ -9,13 +9,13 @@ keywords: "Old projects"
 Work:
 
 <ul>
-<li><a href="http://www.yodle.com">Yodle</a></li>
-<li><a href="http://www.ozcap.com">Och Ziff</a></li>
-<li><a href="http://www.zsassociates.com">ZS Associates</a></li>
+<li><a href="http://www.yodle.com" target="_blank">Yodle</a></li>
+<li><a href="http://www.ozcap.com" target="_blank">Och Ziff</a></li>
+<li><a href="http://www.zsassociates.com" target="_blank">ZS Associates</a></li>
 </ul>
 
 And play:
 
 <ul>
-<li><a href="http://www.cornell.edu">Cornell</a></li>
+<li><a href="http://www.cornell.edu" target="_blank">Cornell</a></li>
 </ul>
