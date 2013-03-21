@@ -246,3 +246,7 @@ table.small td {
 .follow-footer a {
     text-decoration: underline;
 }
+
+.thumbnail > img {
+    padding: 0;
+}
