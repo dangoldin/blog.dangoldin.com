@@ -9,7 +9,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-<img src="{{ IMG_PATH }}gmail_logo.png" alt="Mailbox" style="float:right;">
+<img src="{{ IMG_PATH }}gmail_logo.png" alt="Gmail Logo" style="float:right;">
 
 A few days ago, Google made the new compose default on Gmail. It went from a separate page to a popup that’s accessible from anywhere in Gmail. And for the vast majority of the time, it’s better: it’s quicker to get to and makes it easy to reference other emails while writing a new one. Unfortunately, for attaching an image (not embedding it inline) or doing some heavy formatting, it’s a huge step backwards and makes me want the old compose back.
 
