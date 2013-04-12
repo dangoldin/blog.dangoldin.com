@@ -15,3 +15,5 @@ While reading <a href="http://www.amazon.com/The-Idea-Factory-American-Innovatio
 It’s amazing that although this suggestion was made in 1971, we’re leveraging it more than 40 years later with text messaging. How many other technologies and businesses are built on top of SMS that wouldn’t have existed without this decision? I’m sure an SMS-like technology would have come along regardless of this decision but it still makes me wonder how significantly past technological decisions influence us in the present.
 
 An additional meta thought: this is an example of one of those things that gladly lives in the subconscious that has no reason to bubble up to consciousness. I’m sure if someone were to ask me point blank to compare dialtones between landlines and cell phones I’d immediately get it but but without a push I never would have thought of it. I wonder how many other connections there are stuck in our heads waiting for a spark to bring them into our consciousness.
+
+Follow the discussion on <a href="https://news.ycombinator.com/item?id=5540395" target="_blank">Hacker News</a>.
