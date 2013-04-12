@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Why don't cell phones have a dialtone?"
-description: ""
+description: "I never realized this until I read The Idea Factory but cell phones don't have dialtones and landlines do. Why is that?"
+keywords: "cell phones, dialtone, land lines, technology"
 category:
 tags: []
 ---
