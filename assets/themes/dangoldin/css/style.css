@@ -199,7 +199,8 @@ ul.bulleted {
 
 .post blockquote {
     padding: 8px;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 26px;
 }
 
 .post .zemanta-related-title {
