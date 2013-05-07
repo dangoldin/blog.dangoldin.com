@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Some Gaming Nostalgia"
+title: "Some gaming nostalgia"
 description: "I recently remembered the way older games used to deal with age verification and piracy protection and wanted to share them for posterity."
 keywords: "gaming, privacy, drm, leisure suit larry, "
 image_url: "/assets/static/images/lsl-bar.png"
