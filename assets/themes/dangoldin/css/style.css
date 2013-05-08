@@ -257,3 +257,9 @@ table.small td {
 .thumbnail > img {
     padding: 0;
 }
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
