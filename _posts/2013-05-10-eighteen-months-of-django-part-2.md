@@ -7,7 +7,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-On Tuesday, I shared some <a href="http://dangoldin.com/2013/05/07/eighteen-months-of-django/" target="_blank">best practices</a> I picked up while using Django. I wanted to do a follow up post to share some packages that I found useful as well as some hiccups I encountered when using them.
+On Tuesday, I shared some <a href="http://dangoldin.com/2013/05/07/eighteen-months-of-django/" target="_blank">best practices</a> I picked up while using Django. This is a follow up post to share the packages that I found useful as well as various hiccups I encountered when using them.
 
 <ul class="bulleted">
     <li>
