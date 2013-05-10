@@ -28,3 +28,5 @@ I’ve discovered that every new project lets me correct mistakes from my earlie
 </ul>
 
 After writing this, I realize I need do another post about the Django packages I’ve found to be useful. I'll put that together in a future post.
+
+Edit: Here's the <a href="http://dangoldin.com/2013/05/10/eighteen-months-of-django-part-2/">follow-up post</a> where I cover useful packages.
