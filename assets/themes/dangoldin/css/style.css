@@ -263,3 +263,7 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+
+div.highlight {
+    margin-top: 6px;
+}
