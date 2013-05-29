@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SEO: Authority vs Originality"
+title: "On SEO: Authority vs Originality"
 description: "Search engines have a conflict between sources that have authority and sources that have original content. I show an example of it going wrong."
 keywords: "seo, search engines, google"
 category:
