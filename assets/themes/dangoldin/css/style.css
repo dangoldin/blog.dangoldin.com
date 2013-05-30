@@ -152,6 +152,14 @@ a.icon-linkedin {
     margin-left: 5px;
 }
 
+a.icon-feedly {
+    background: url('/assets/static/images/icons/webicon-feedly.png');
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
 /* Main content area */
 span.date {
     text-align: right;
