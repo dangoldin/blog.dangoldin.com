@@ -266,6 +266,13 @@ table.small td {
     padding: 0;
 }
 
+.thumbnail > p {
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+}
+
 footer {
     margin-top: 10px;
     text-align: center;
