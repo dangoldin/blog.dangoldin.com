@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Fun with Prolog: Priceonomics Puzzle"
-description: ""
+description: "I attempt to solve the Priceonomics Puzzle using Prolog."
+keywords: "prolog, priceonomics puzzle, priceonomics"
 category:
 tags: []
 ---
@@ -44,7 +45,7 @@ exchange(btc,usd,115.65).
 exchange(btc,eur,88.8499).
 exchange(btc,jpy,12325.44).
 
-% Calculat profit for a usd->x->y->usd currency chain
+% Calculate profit for a usd->x->y->usd currency chain
 profit(First, Second, Profit) :-
     exchange(usd,First,P1),
     exchange(First,Second,P2),
@@ -77,7 +78,7 @@ parse(I) :-
     atom_number(S,R),
     assert(exchange(A,B,R)).
 
-% Calculat profit for a usd->x->y->usd currency chain
+% Calculate profit for a usd->x->y->usd currency chain
 profit(First, Second, Profit) :-
     exchange('USD',First,P1),
     exchange(First,Second,P2),
