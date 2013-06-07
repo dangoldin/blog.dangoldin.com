@@ -60,7 +60,12 @@ arb :-
     write(Second), write(' usd '),
     write(Profit), nl, fail.
 
-:- arb.{% endhighlight %}
+:- arb.
+
+% Results:
+usd eur jpy usd 1.0040882716200001
+usd eur btc usd 1.0120965187500002
+usd btc jpy usd 1.0025512896{% endhighlight %}
 
 The next step was to get it to retrieve and parse the JSON from the Priceonomics server. After doing a ton of searches and reading a ton of documentation I was able to get it to work. As a next step I'll try to see if I can get it to return currency chains of arbitrary length.
 
@@ -100,6 +105,10 @@ arb :-
     write(Second), write(' USD '),
     write(Profit), nl, fail.
 
-:- arb.{% endhighlight %}
+:- arb.
+
+% Results (Might change each run):
+USD JPY EUR USD 1.0071833283714342
+USD EUR JPY USD 1.007164983424893{% endhighlight %}
 
 I'm sure a Prolog pro would have been able to do this much quicker and better but I had a surprisingly fun time doing it. I got a bit frustrated trying to translate the JSON into Prolog relationships but actually getting it to work made it worth it. Trying a whole new programming category is a great way to get more creative and forces us to think about problems differently. Prolog may not be the most practical language but exposing us to new concepts and approaches makes it valuable.
