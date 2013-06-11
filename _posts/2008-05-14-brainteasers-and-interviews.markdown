@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Brainteasers and interviews"
-wordpress_id: 15
-date: 2008-05-14 15:04:53.000000000 -04:00
+description: "Some thoughts on using brainteasers in interviews."
+keywords: "brainteasers, interviews, project euler"
+category:
+tags: []
 ---
 <p>I've recently been reading some articles opposing the use of brainteasers during interviews on the grounds that they are unfair and some people have difficulty thinking on the spot. You can make the same argument for any part of the interview process and I feel that brainteasers may even attract intelligent employees.</p>
 
@@ -13,11 +15,9 @@ date: 2008-05-14 15:04:53.000000000 -04:00
 <ol>
 	<li>What was the last book you've read? What's your favorite book? (Not a brainteaser but I believe a good question nonetheless)</li>
 	<li>You have a lighter and 2 ropes that are non-uniform. It takes a rope 1 hour to burn from one end to the other end. How do you measure 45 minutes?</li>
-	<li>You have 3 pairs of (x,y) points that determine a triangle. How can you determine if this triangle contains the origin? (<a href="http://projecteuler.net/">http://projecteuler.net/</a>)</li>
-	<li>Which is larger, 48736^95934 or 44390^96771? (<a href="http://projecteuler.net/">http://projecteuler.net/</a>)</li>
+	<li>You have 3 pairs of (x,y) points that determine a triangle. How can you determine if this triangle contains the origin? (from Project Euler)</li>
+	<li>Which is larger, 48736^95934 or 44390^96771? (Also from Project Euler)</li>
 	<li>How do you split a cake of nonuniform size between 2 people? Can you expand this to any number of people?</li>
 </ol>
 
 <p>Feel free to comment or email me if you are unsure how to solve a particular problem.</p>
-
-<div class="zemanta-pixie" style="margin-top: 10px; height: 15px;"><a class="zemanta-pixie-a" title="Zemified by Zemanta" href="http://reblog.zemanta.com/zemified/8ce85f8b-939a-45ad-8a7e-c5301083f1ce/"><img class="zemanta-pixie-img" style="border: medium none; float: right;" src="http://img.zemanta.com/reblog_e.png?x-id=8ce85f8b-939a-45ad-8a7e-c5301083f1ce" alt="Reblog this post [with Zemanta]" /></a></div>

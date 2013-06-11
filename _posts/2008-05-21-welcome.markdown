@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Welcome"
-wordpress_id: 17
-date: 2008-05-21 14:51:51.000000000 -04:00
+description: "Welcome to the new blog."
+keywords: "welcome"
+category:
+tags: []
 ---
 <p>So I am porting this blog over from wordpress.com to my own local hosting. Please bear with me and I'll hopefully have more things to read soon.</p>
 

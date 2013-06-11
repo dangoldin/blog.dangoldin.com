@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Privacy in the digital age"
-wordpress_id: 33
-date: 2008-06-12 16:03:27.000000000 -04:00
+description: "Some thoughts on the changes in privacy given the rise of the social networks."
+keywords: "privacy, social networks, facebook, myspace, linkedin"
+category:
+tags: []
 ---
 <p>With so many people joining social networks like Facebook, MySpace, and LinkedIn, it's becoming harder and harder to protect your personal information. If one of your friends happens to add a host of different facebook apps, those apps will have access to his friends' (your) information. There is nothing you can do to stop this unless you either remove all your friends or create very limited profiles.</p>
 

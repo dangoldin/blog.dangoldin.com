@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Advice on internet passwords"
-wordpress_id: 35
-date: 2008-06-19 16:55:09.000000000 -04:00
+description: "Some advice on setting up internet passwords."
+keywords: "security, passwords, internet"
+category:
+tags: []
 ---
 <p>After my previous post on the lack of privacy, I feel obligated to give some advice regarding internet passwords in order to maintain the privacy that we do have.</p>
 
@@ -26,5 +28,3 @@ date: 2008-06-19 16:55:09.000000000 -04:00
     <p>The proper way to handle user passwords is to hash it (one way map) immediately to some obfuscated characters and store those in the database along with an additional field that ensures each row is hashed differently. Then when a user logs in, the site will do this one way map and compare the result against the value in the database; omly if they match is the user logged in.</p>
     </li>
 </ol>
-
-<div class="zemanta-pixie" style="margin-top: 10px; height: 15px;"><a class="zemanta-pixie-a" title="Zemified by Zemanta" href="http://reblog.zemanta.com/zemified/464baeac-6000-4496-acf6-0672356c59e9/"><img class="zemanta-pixie-img" style="border: medium none; float: right;" src="http://img.zemanta.com/reblog_e.png?x-id=464baeac-6000-4496-acf6-0672356c59e9" alt="Reblog this post [with Zemanta]" /></a></div>

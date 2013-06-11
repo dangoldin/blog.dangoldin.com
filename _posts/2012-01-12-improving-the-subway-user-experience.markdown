@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Improving the Subway User Experience
+title: "Improving the Subway User Experience"
+description: "Some thoughts on making subways in NY better"
+keywords: "subways, nyc"
+category:
+tags: []
 ---
 
-<p><img align="middle" src="http://inhabitat.com/wp-content/blogs.dir/1/files/2011/09/NYC-subway-e1314902946966.jpg" width="400"/></p>
+<img src="http://inhabitat.com/wp-content/blogs.dir/1/files/2011/09/NYC-subway-e1314902946966.jpg" />
 
 <p>The combination of taking the subway every day and reading design books had me thinking of ways to improve the subway user experience, other than the obvious one of making it cleaner.</p>
 

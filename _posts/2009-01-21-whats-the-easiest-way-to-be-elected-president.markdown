@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "What's the easiest way to be elected president?"
-wordpress_id: 6
-date: 2009-01-21 20:12:51.000000000 -05:00
+description: "The easiest way to become president is to run for a second term."
+keywords: "politics, elections, presidency"
+category:
+tags: []
 ---
 
 Answer: Be elected for a first term, the second term will follow.
@@ -130,6 +132,3 @@ It turns out it's pretty likely that a president will be elected to a second ter
 <p>Franklin Delano Roosevelt ran for, and won, a 3rd term in 1940 using the idea that one should "not change horses in midstream." He did not need to do that since it seems people stick with what they are comfortable with.</p>
 
 <p>Note: If I made a mistake anywhere let me know so I can correct it. The data was retrieved from Wikipedia.</p>
-
-
-<div style="margin-top: 10px; height: 15px;" class="zemanta-pixie"><a class="zemanta-pixie-a" href="http://reblog.zemanta.com/zemified/9eea9b69-1abd-4027-a811-6579d43e79d9/" title="Zemified by Zemanta"><img style="border: medium none ; float: right;" class="zemanta-pixie-img" src="http://img.zemanta.com/reblog_e.png?x-id=9eea9b69-1abd-4027-a811-6579d43e79d9" alt="Reblog this post [with Zemanta]"></a></div>

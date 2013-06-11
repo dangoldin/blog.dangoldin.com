@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Tech Interview Question"
-description: ""
+description: "I share some more thoughts on conducting tech interviews"
+keywords: "interviewing, puzzles, brainteasers"
 category:
 tags: []
-date: 2011-01-08 19:05:28.000000000 -05:00
 ---
 {% include JB/setup %}
 When conducting interviews, I've developed the following criteria for a good interview problem:
-<ul>
+<ul class="bulleted">
 	<li>Avoid brain teasers - they tend to be hit/miss and some people don't really do well under this type of problem</li>
 	<li>Challenging - the answer should not be immediately obvious and the should require some creativity</li>
 	<li>Rare - similar to above, the problem should not be a common question in order to get</li>
@@ -27,14 +27,9 @@ The creative solutions start appearing here and you can get a pretty good sense 
 And a final twist:
 <blockquote>Let's say you still do not have enough memory and but you find out that you don't need to be correct all the time. Can you think of any solutions that can achieve this?</blockquote>
 At this point, many people will try to come up with a heuristic or machine learning technique to try to identify words that resemble the words previously entered. We can then talk about both how to construct the algorithm as well as talk about the accuracy of the approach. It turns out that for these solutions it's difficult to quantify the trade off between error rate and space requirements.
-<div class="zemanta-img" style="margin: 1em; display: block;">
-<div><dl class="wp-caption alignright" style="width: 310px;"> <dt class="wp-caption-dt"><a href="http://commons.wikipedia.org/wiki/File:Bloom_filter.svg"><img title="Example of a Bloom filter" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bloom_filter.svg/300px-Bloom_filter.svg.png" alt="Example of a Bloom filter" width="300" height="108" /></a></dt> <dd class="wp-caption-dd zemanta-img-attribution" style="font-size: 0.8em;">Image via <a href="http://commons.wikipedia.org/wiki/File:Bloom_filter.svg">Wikipedia</a></dd> </dl></div>
-</div>
+
+<img title="Example of a Bloom filter" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bloom_filter.svg/300px-Bloom_filter.svg.png" alt="Example of a Bloom filter" width="300" height="108" />
+
 At this point the concept of a Bloom Filter is brought up, either by me or by the person I'm talking to. If it's by me I go through the basic concepts (bit array, hash functions, probabilistic data structures) and can get a good sense of whether this is understood or I need to dig deeper. It's great when you can see the moment that someone "gets" the value of this data structure and knows immediately how to use it. At this point we discuss the trade off between the size of the bit array and the number of hash functions. If there's time, we'll work on deriving the relationship between the two as well as talk about where they can be used in the real world.
 
 I wish I could remember how I came up with this problem - I think it stemmed from me encountering Bloom Filters for the first time as well as reading a few articles about spell checking and dictionaries.
-<h6 class="zemanta-related-title" style="font-size: 1em;">Related articles</h6>
-<ul class="zemanta-article-ul">
-	<li class="zemanta-article-ul-li"><a href="http://en.wikipedia.org/wiki/Bloom_filter">Wikipedia: Bloom Filter</a> (wikipedia.org)</li>
-	<li class="zemanta-article-ul-li"><a href="http://www.coolsnap.net/kevin/?p=13">Python Implementation</a> (www.coolsnap.net)</li>
-</ul>

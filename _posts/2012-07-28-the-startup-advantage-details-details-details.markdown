@@ -1,6 +1,10 @@
 ---
 layout: post
-title: The Startup Advantage - Details, Details, Details
+title: "The Startup Advantage - Details, Details, Details"
+description: "Startups can compete by focusing on the details and doing things quickly"
+keywords: "startups"
+category:
+tags: []
 ---
 
 <div><img src="http://media.tumblr.com/tumblr_m7vxx4vhKa1qz9esq.png"/></div>

@@ -1,11 +1,15 @@
 ---
 layout: post
-title: Screwed if you do, screwed if you don't
+title: "Screwed if you do, screwed if you don't"
+description: "Some thoughts on GoDaddy/SOPA situation"
+keywords: "godaddy, sopa"
+category:
+tags: []
 ---
 
-<p><img border="0" src="http://timenerdworld.files.wordpress.com/2011/12/godaddy-logo.jpg?w=600&amp;h=400&amp;crop=1" width="240"/></p>
+<img src="http://timenerdworld.files.wordpress.com/2011/12/godaddy-logo.jpg?w=300&amp;h=200&amp;crop=1"/>
 
-<p>I&#8217;m not entirely sure what to think about the GoDaddy/SOPA situation. On one hand, it&#8217;s great that the online community was able to get GoDaddy to completely reverse their position on SOPA. On the other, it&#8217;s disappointing that a web company would support it in the first place.</p>
+<p>I'm not entirely sure what to think about the GoDaddy/SOPA situation. On one hand, it's great that the online community was able to get GoDaddy to completely reverse their position on SOPA. On the other, it's disappointing that a web company would support it in the first place.</p>
 
 <p>Should we still be penalizing GoDaddy for their initial SOPA support or move on the same way they did? What type of example does this set for other companies? That they will be judged based on their original position and nothing after? Why even reverse your position if the community will behave as before?</p>
 

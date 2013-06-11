@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Hello, Github!"
-description:
+description: "I'm migrating my blog to Github"
+keywords: "blogging"
 category:
 tags: []
 ---

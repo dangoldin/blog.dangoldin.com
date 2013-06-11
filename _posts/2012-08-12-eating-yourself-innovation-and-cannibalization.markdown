@@ -1,9 +1,14 @@
 ---
 layout: post
-title: Eating Yourself - Innovation &amp; Cannibalization
+title: "Eating Yourself - Innovation &amp; Cannibalization"
+description: "Relationship between innovation and cannibalization."
+keywords: "innovation, cannibalization"
+category:
+tags: []
 ---
+{% include JB/setup %}
 
-<p><img src="http://www.wtfeck.com/wp-content/uploads/2011/10/snake-eating-itself.jpg"/></p>
+<img src="{{ IMG_PATH }}snakeself.jpg" />
 
 <p>I was rereading the HBR paper on <a href="http://hbr.org/2006/10/strategies-for-two-sided-markets/ar/1" target="_blank">Strategies for Two Sided Markets</a> and came across a passage describing Apple’s mistake of trying to monetize both sides of their market, the consumers and the developers, rather than focusing on one like Microsoft did by giving away the SDK for free.</p>
 

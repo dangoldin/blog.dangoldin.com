@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "Improving your luck"
-wordpress_id: 5
-date: 2009-09-28 21:03:28.000000000 -04:00
+description: "How to improve your luck."
+keywords: "luck"
+category:
+tags: []
 ---
-<div class="zemanta-img zemanta-action-dragged" style="float: right; width: 310px; margin: 1em;">
-<div><dl class="wp-caption alignright" style="width: 310px;"><dt class="wp-caption-dt"><a href="http://commons.wikipedia.org/wiki/Image:Seneca-berlinantikensammlung-1.jpg"><img title="Seneca, part of double-herm in Antikensammlung..." src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seneca-berlinantikensammlung-1.jpg/300px-Seneca-berlinantikensammlung-1.jpg" alt="Seneca, part of double-herm in Antikensammlung..." width="300" height="370" /></a></dt><dd class="wp-caption-dd zemanta-img-attribution" style="font-size: 0.8em;">Image via <a href="http://commons.wikipedia.org/wiki/Image:Seneca-berlinantikensammlung-1.jpg">Wikipedia</a></dd></dl></div>
-</div>
+<img title="Seneca, part of double-herm in Antikensammlung..." src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seneca-berlinantikensammlung-1.jpg/300px-Seneca-berlinantikensammlung-1.jpg" alt="Seneca, part of double-herm in Antikensammlung..." width="300" height="370" style="float:right;"/>
+
 <p>
 People often blame bad luck for their failures. This absolves them of responsibility and allows them to stop trying. What they should have done is admitted their failure, learned from the experience, and prepared themselves for the next opportunity. Exposing yourself to opportunities is the best way to overcome bad luck. Authors are a great example of this: <a title="J. K. Rowling" rel="homepage" href="http://www.jkrowling.com">J K Rowling</a> and <a title="John Grisham" rel="imdb" href="http://www.imdb.com/name/nm0001300/">John Grisham</a> had their novels rejected numerous times before they succeeded. Yet soon after publishing they became blockbusters. How many authors gave up when trying to have their work published? Imagine if they had the determination that J K Rowling and John Grisham had.</p>
 
