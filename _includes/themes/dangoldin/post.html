@@ -11,9 +11,6 @@
   <div class="span7">
     <div class="post">
       {{ content }}
-
-      <p class="follow-hn">
-      </p>
     </div>
 
     <div class="follow-footer">
@@ -67,21 +64,3 @@
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "7c7be1c4-72eb-4bec-a064-7017b3a8bc53"});</script>
-
-<script src='https://cdn.firebase.com/v0/firebase.js'></script>
-<script type="text/javascript" src="{{ STATIC_PATH }}js/hn.follow.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    var loc = window.location;
-    var curr_url = loc.protocol + '//' + loc.host + loc.pathname;
-
-    var hn = new $.followHN({
-      username: 'dangoldin',
-      firebase_url: 'https://follow-on-hn.firebaseio.com/urls',
-      callback: function(thread_url) {
-        $('.follow-hn').html('Follow the discussion on <a href="'+ thread_url + '" target="_blank">Hacker News</a>.');
-      }
-    });
-    hn.get_hn_url(curr_url);
-  });
-</script>
