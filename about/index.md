@@ -17,3 +17,5 @@ Here are some side projects I've been hacking around with:
     <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a></li>
     <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
 </ul>
+
+I also have a <a href="{{ DATA_PATH }}dg_res.pdf">resume</a>
