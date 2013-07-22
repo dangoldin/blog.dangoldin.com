@@ -46,7 +46,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
   <li class="span3">
     <div class="thumbnail">
       <p>
-        <a href="http://www.azleg.gov//FormatDocument.asp?inDoc=/legtext/51leg/1r/summary/s.1112ps.doc.htm&Session_ID=110">Arizona</a>
+        <a href="http://www.azleg.gov//FormatDocument.asp?inDoc=/legtext/51leg/1r/summary/s.1112ps.doc.htm&amp;Session_ID=110">Arizona</a>
       </p>
       <img src="{{ IMG_PATH }}gun2-az.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-az.png" />
     </div>
@@ -54,7 +54,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
   <li class="span3">
     <div class="thumbnail">
       <p>
-        <a href="http://wapp.capitol.tn.gov/apps/billinfo/BillSummaryArchive.aspx?BillNumber=HB0042&ga=108">Tennessee</a>
+        <a href="http://wapp.capitol.tn.gov/apps/billinfo/BillSummaryArchive.aspx?BillNumber=HB0042&amp;ga=108">Tennessee</a>
       </p>
       <img src="{{ IMG_PATH }}gun2-tn.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-tn.png" />
     </div>
