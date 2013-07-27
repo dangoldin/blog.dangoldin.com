@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Power Inbox"
+title: "The power inbox"
 description: "The inbox is becoming a critical piece of our workflows and we need to have better standards to add functionality rather than relying on 3rd party apps."
 keywords: "gmail, inbox, rapportive, yesware, toutapp, boomerang"
 category:
