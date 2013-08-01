@@ -1,1 +1,120 @@
-Sorry this page does not exist =(
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>404 | Page Not Found</title>
+
+    <link href="/assets/themes/dangoldin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/dangoldin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/assets/themes/dangoldin/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/dangoldin/css/syntax.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="span3 offset1">
+          <div class="avatar-section">
+            <a id="avatar" href="/"></a>
+
+            <ul id="social">
+              <li>
+                <a href="mailto:dangoldin@gmail.com?subject=Hey" class="icon-envelope" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Email']);" title="Say hi"></a>
+              </li>
+
+              <!-- <li>
+                <a href="http://www.glos.si/dan" class="icon-glossi" onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Glossi']);" title="My social media stuff here"></a>
+              </li> -->
+
+              <li>
+                <a href="http://github.com/dangoldin" class="icon-github" target='blank' onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);" title="I share and fork code here"></a>
+              </li>
+
+              <li>
+                <a href="http://twitter.com/dangoldin" class="icon-twitter" target='blank' onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);" title="You should follow me"></a>
+              </li>
+
+              <li>
+                <a href="http://www.linkedin.com/in/dangoldin" class="icon-linkedin" target='blank' onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar LinkedIn']);" title="My professional stuff here"></a>
+              </li>
+
+              <li>
+                <a href='http://www.feedly.com/home#subscription/feed%2Fhttp%3A%2F%2Fdangoldin.com%2Fatom.xml' class="icon-feedly" target='blank' onclick="_gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Feedly']);" title="Subscribe via Feedly"></a>
+              </li>
+            </ul>
+
+            <ul id="me">
+              <li>Dan Goldin</li>
+              <li class="gray">Cofounder of <a href="https://makersalley.com/" target="_blank">Makers Alley</a></li>
+            </ul>
+
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/social">I'm so social</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="span7">
+
+            <div class="row header">
+              <div class="span5">
+                <h1>404 | Page not found<small></small></h1>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="span7">
+                <div class="post">
+                    <ul id="suggestions">
+                    </ul>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <footer>
+      Hosted via <a href="https://github.com/dangoldin/dangoldin.github.com">GitHub</a> Pages. Theme inspired by <a href="http://sirupsen.com/" target="_blank">Simon Hørup Eskildsen</a>.
+    </footer>
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36313127-1']);
+  _gaq.push(['_trackPageview']);
+  setTimeout("_gaq.push(['_trackEvent', '15_seconds', 'read'])",15000);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script src="http://better404.com/static/js/better404-0.2.js"></script>
+<script type="text/javascript">
+  better404.init('7XX5YMX1EKYYFQJ29L8QIF40OHFO4J93');
+  $(document).ready(function(){
+    better404.request(function(data) {
+      var i, page;
+      for(i = 0; i < data.pages.length; i++) {
+        page = data.pages[i];
+        $('#suggestions').append('<li><a href="' + page.url + '">' + page.title + '</a></li>')
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>
+
