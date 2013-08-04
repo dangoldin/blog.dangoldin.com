@@ -10,6 +10,7 @@ I'm currently the cofounder of <a href="https://makersalley.com" target="_blank"
 
 Here are some side projects I've been hacking around with:
 <ul>
+	<li><a href="http://better404.com" target="_blank">Better 404</a></li>
     <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a></li>
     <li><a href="http://yahnr.com" target="_blank">Yet Another Hacker News Reader</a></li>
     <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a></li>
