@@ -6,16 +6,16 @@ keywords: "About"
 ---
 {% include JB/setup %}
 
-I'm currently the cofounder of <a href="https://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a> (formerly Glossi). Before that, I worked as a product manager and quantitative engineer at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a data driven consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I graduated <a href="http://www.cornell.edu" target="_blank">Cornell</a> in 2005 with two majors - Math and Econ and am pretty much using neither right now.
+I'm currently working on <a href="http://better404.com">Better 404</a>. Before that I cofounded <a href="https://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to my startups, I worked as a product manager and quantitative engineer at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.
 
-Here are some side projects I've been hacking around with:
+Here are some side projects I've been hacking on:
 <ul>
-	<li><a href="http://better404.com" target="_blank">Better 404</a></li>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a></li>
+    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
     <li><a href="http://yahnr.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a></li>
-    <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a></li>
-    <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a></li>
+    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
+    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
+    <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li>
+    <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li>
     <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
 </ul>
 
