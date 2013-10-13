@@ -14,6 +14,7 @@ I realize we’re still at the dawn of online education but it feels as if the c
 These online programming classes should take a lesson from <a href="http://projecteuler.net/">Project Euler</a>. Project Euler is a series of puzzles that require both a mathematical and programming insight to solve. The brilliance is that they have forums for each problem that you can only access after solving the problem. But once you gain access, you can see other solutions, learn from them, and pick up tricks and approaches that you’ll need to solve future problems.
 
 Pairing the structure provided by a class with this Project Euler community would create better online programming classes than we have now. My ideal online programming class would have the following structure:
+
 <ul>
 <li><b>No video lectures</b>. The content can be better presented through text and visuals and helps people work on it at their own pace.</li>
 <li><b>Each lesson would be focused on a particular problem</b>. Start by describing a problem and then spend time going over different ways of thinking about it as well as the different tools available. This should be as interactive as possible where students can follow along by running the code on their own computer.</li>

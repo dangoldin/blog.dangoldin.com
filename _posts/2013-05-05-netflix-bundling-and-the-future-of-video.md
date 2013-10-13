@@ -12,6 +12,7 @@ Something that’s been stuck in my head is the relationship between Netflix and
 I'm sure the major reason is that it’s just not worth worrying about since Netflix is only $7.99 a month; especially when cable TV bills can easily go past $100. Maybe we like the new shows that are exclusive to Netflix (House of Cards, Hemlock Grove, and Arrested Development) and are happy to pay for them; the rest of the content available on Netflix is just an added benefit. Maybe we just don’t view Netflix as being a bundled service at all: the reason I have Netflix is to be able to watch anything I want when I want.
 
 I wonder about the reasons because it helps me think about the future:
+
 <ul class="bulleted">
 <li>Does Netflix want to be the central repository of all video content that can be accessed at any time? What happens when the existing content producers keep raising licensing fees to extract as much as they can?</li>
 <li>Does Netflix want to focus on producing its own content? Is it just a TV channel with a unique distribution channel and monetization approach? Does this mean that we’ll start seeing competing TV show/movie producers creating their own Netflix like service? How easy will it be for consumers to find this content if it’s heavily fragmented?</li>

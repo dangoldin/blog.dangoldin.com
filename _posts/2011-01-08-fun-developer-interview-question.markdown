@@ -8,12 +8,14 @@ tags: []
 ---
 {% include JB/setup %}
 When conducting interviews, I've developed the following criteria for a good interview problem:
+
 <ul class="bulleted">
 	<li>Avoid brain teasers - they tend to be hit/miss and some people don't really do well under this type of problem</li>
 	<li>Challenging - the answer should not be immediately obvious and the should require some creativity</li>
 	<li>Rare - similar to above, the problem should not be a common question in order to get</li>
 	<li>Flexible - the problem has multiple solutions and can be modified on the fly for different skill levels</li>
 </ul>
+
 I've found that the following problem satisfies the criteria and gives a pretty good sense of a developer's skill level.
 
 The problem starts of as a simple scenario:

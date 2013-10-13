@@ -9,6 +9,7 @@ keywords: "About"
 I'm currently working on <a href="http://better404.com">Better 404</a>. Before that I cofounded <a href="https://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to my startups, I worked as a product manager and quantitative engineer at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.
 
 Here are some side projects I've been hacking on:
+
 <ul>
     <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
     <li><a href="http://yahnr.com" target="_blank">Yet Another Hacker News Reader</a></li>
