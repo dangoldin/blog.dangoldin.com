@@ -23,3 +23,5 @@ It’s terrible that honest business owners have to deal with these things. They
 I’d love to know what I should do next but my current thinking is that I should send a DMCA takedown notice for my mom’s site and report this entire list of rip-off sites to Google and hope that they stop AdSense from running on the sites and remove them from search results.
 
 I worry that as it becomes easier and easier to generate written content using software we’ll see more and more of these scenarios where it’s going to become increasingly difficult to find the source of the original content and real site owners are hurt.
+
+Update: So the way my mom discovered this other site is because she got a notice from Getty images that she was using one of their images without licensing it. When she asked which image they sent her a link to that other site that has her contact info on it. I guess that answers the question as to why that other site still uses the actual contact information.
