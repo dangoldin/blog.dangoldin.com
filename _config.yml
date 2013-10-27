@@ -3,7 +3,6 @@
 permalink: /:categories/:year/:month/:day/:title
 
 exclude: [ ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md" ]
-auto: false
 pygments: true
 
 # Themes are encouraged to use these universal variables
@@ -85,12 +84,12 @@ JB :
     livefyre :
       site_id :
     intensedebate :
-      account : 
+      account :
     facebook :
       appid :
-      num_posts: 
-      width: 
-      colorscheme: 
+      num_posts:
+      width:
+      colorscheme:
 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.

@@ -1,4 +1,4 @@
----
+t---
 layout: post
 title: "Some more design ranting"
 description: "I rant about a few more ui/ux issues I've run into. Login forms resetting emails, sign in vs register placement, new vs existing contact management."
@@ -19,7 +19,7 @@ I don’t know why, but I’ve become more aware of the UI/UX of various sites a
   </li>
 
   <li>
-    <img src="{{ IMG_PATH }}bad-ui-contact-management.png" alt="Bad UI: Register vs Sign In confusion" style="float:right; width:200px"/>
+    <img src="{{ IMG_PATH }}bad-ui-contact-management.png" alt="Bad UI: Contact management" style="float:right; width:200px"/>
     Create new versus add to existing contact. This is probably the most “first-world” one here but without knowing who is currently in your address book it’s impossible to know whether you want to create a new contact or update an existing and contact. My current approach is to choose add to existing, realize that I actually don’t have that contact in my address book, and then go back a few screens and choose create new. A common database operation is “insert or update” - insert if it doesn’t already exist and update if it does. I’d love to have something like that to manage my address book.
   </li>
 </ol>
