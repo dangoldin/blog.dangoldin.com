@@ -1,4 +1,4 @@
-t---
+---
 layout: post
 title: "Some more design ranting"
 description: "I rant about a few more ui/ux issues I've run into. Login forms resetting emails, sign in vs register placement, new vs existing contact management."
