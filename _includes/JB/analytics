@@ -1,14 +1,11 @@
-{% if site.safe and site.JB.analytics.provider and page.JB.analytics != false %}
-
-{% case site.JB.analytics.provider %}
-{% when "google" %}
+{% if site.JB.analytics.google.enabled != false %}
   {% include JB/analytics-providers/google %}
-{% when "getclicky" %}
-  {% include JB/analytics-providers/getclicky %}
-{% when "mixpanel" %}
-  {% include JB/analytics-providers/mixpanel %}
-{% when "custom" %}
-  {% include custom/analytics %}
-{% endcase %}
+{% endif %}
 
+{% if site.JB.analytics.mixpanel.enabled != false %}
+  {% include JB/analytics-providers/mixpanel %}
+{% endif %}
+
+{% if site.JB.analytics.provider ==  "custom" %}
+  {% include custom/analytics %}
 {% endif %}
