@@ -55,10 +55,6 @@ li {
     padding-bottom: 8px;
 }
 
-img {
-    padding: 10px;
-}
-
 a {
     color:#06A;
 }
@@ -209,6 +205,15 @@ ul.posts li {
 
 ul.bulleted {
     list-style-type: disc;
+}
+
+div.thumbnail ul {
+    list-style-type: disc;
+}
+
+div.thumbnail ul li {
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .post blockquote {
