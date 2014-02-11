@@ -9,7 +9,7 @@ tags: []
 {% include JB/setup %}
 One of my favorite things about Python is being able to use <a href="http://www.virtualenv.org/en/latest/index.html" target="_blank">virtualenv</a> to create isolated environments. It’s extremely simple to use and allows you to have different versions of Python libraries used by different projects.
 
-One thing that gets tricky is getting it set up on a production environment since each service requires a slightly different configuration. I’ve gone through my projects and collected the various ways I’ve gotten it running for different services. I’m sure I could have done it differently but the following worked for me and will hopefully come in handy to others. If you have any questions or I'm not being clear enough let me know and I'll updat the post with more information.
+The thing that's tricky is getting virtualenv set up on a production environment under different services since each one requires a slightly different configuration. I’ve gone through my projects and collected the various ways I’ve gotten it running for different services. I’m sure I could have done it differently but the following worked for me and will hopefully come in handy to others. If you have any questions or I'm not being clear enough let me know and I'll updat the post with more information.
 
 <ul>
   <li>Nginx and Gunicorn under Supervisor.
