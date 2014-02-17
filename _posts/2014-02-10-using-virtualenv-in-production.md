@@ -4,7 +4,7 @@ title: "Using virtualenv in production"
 description: "virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric."
 keywords: "virtualenv, python, nginx, gunicorn, supervisor, celery, fabric"
 category:
-tags: []
+tags: ["#python", "#code"]
 ---
 {% include JB/setup %}
 One of my favorite things about Python is being able to use <a href="http://www.virtualenv.org/en/latest/index.html" target="_blank">virtualenv</a> to create isolated environments. It’s extremely simple to use and allows you to have different versions of Python libraries used by different projects.

@@ -4,7 +4,7 @@ title: "Adding attachments to django-postman"
 description: "We built a small app that let us add attachments to django-postman by leveraging the the jquery-file-upload library."
 keywords: "Django, python, django-postman, attachments, jquery file upload"
 category:
-tags: []
+tags: ["#python", "#code"]
 ---
 {% include JB/setup %}
 After doing a round of customer development for <a href="https://makersalley.com/" target="_blank">Makers Alley</a>, we discovered that customers really wanted to communicate with makers about their pieces. In true MVP fashion, we got the first iteration out in a day by using <a href="https://bitbucket.org/psam/django-postman/overview" target="_blank">django-postman</a> to handle the user to user communication. Within a few days, we quickly discovered that text messages weren't enough and we needed to support file attachments, otherwise makers can’t easily show their designs and customers can’t share what they like. Unfortunately, django-postman does not support attachments and we didn’t want to have to incorporate another messaging library. Another constraint was that we were already using the awesome <a href="http://blueimp.github.io/jQuery-File-Upload/" target="_blank">jQuery File Upload</a> library (in truth, a modified <a href="https://github.com/sigurdga/django-jquery-file-upload" target="_blank">Django version by Sigurd Gartmann</a>) to allow makers to upload images when managing their storefronts.

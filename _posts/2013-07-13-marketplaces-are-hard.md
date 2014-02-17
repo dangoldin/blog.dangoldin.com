@@ -3,8 +3,8 @@ layout: post
 title: "Marketplaces are hard"
 description: "Building Makers Alley we ran into a wide set of features we needed to implement that make marketplaces pretty hard from a technology standpoint as well."
 keywords: "marketplaces, ecommerce, startups"
-category: 
-tags: []
+category:
+tags: ["#product"]
 ---
 {% include JB/setup %}
 There are countless posts discussing the business and marketing challenges when building a marketplace but I wanted to discuss the issues on the tech side. While we ran into technical challenges building <a href="http://getpressi.com/" target="_blank">Pressi</a> they were mostly issues with scaling and dealing with the various social network APIs. With <a href="https://makersalley.com/" target="_blank">Makers Alley</a>, we didn't run into scaling or API issues but had to deal with a ton of functionality in order to be seen as a credible marketplace. Individually, the features are simple for an intermediate developer to build but there are a lot of them with varying degrees of nuance and logic that need to be worked out.

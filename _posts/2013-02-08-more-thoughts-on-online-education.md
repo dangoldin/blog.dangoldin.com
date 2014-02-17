@@ -4,7 +4,7 @@ title: "More thoughts on online education"
 description: "Coursera can now offer classes for credit and I'm excited by the changes this will bring to education"
 keywords: "coursera, online education, udacity"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 I was excited to read that Coursera can now offer classes for college credit. I’m optimistic that this is a start of a trend that will change higher education. At first, this will be adopted by the motivated student - the one who took AP classes in high school and the price sensitive student - the one who took community college classes before transferring to a university. But over time, this will spread until it’s the dominant approach. It’s simply better. It may be more expensive to get a digital class together but it’s primarily an upfront cost that will be spent on getting the best lecturers, developing engaging lectures, and creating varied course content that’s optimized for different learning methods. This content can be accessed from anywhere and is always available.

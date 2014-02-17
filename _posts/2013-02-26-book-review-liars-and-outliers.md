@@ -5,7 +5,7 @@ description: "I recently finished Bruce Schneier's Liars and Outliers and wanted
 keywords: "bruce schneier, security, trust, liars and outliers"
 image_url: "/assets/static/images/liars-and-outliers-cover.jpg"
 category:
-tags: []
+tags: ["#books"]
 ---
 {% include JB/setup %}
 

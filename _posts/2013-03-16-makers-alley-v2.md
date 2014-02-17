@@ -5,7 +5,7 @@ description: "We just released an update to Makers Alley that lets you buy piece
 keywords: "furniture, makers alley, design"
 image_url: "/assets/static/images/ma-logo-square.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

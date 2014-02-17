@@ -4,7 +4,7 @@ title: "Google's \"Free\" Adwords Credits"
 description: "Google offering free Adwords credits to businesses might have some pretty large effects on the auction marketplace and drive bids up."
 keywords: "Google, Adwords, auction, bidding, PPC"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Since we’re using Google Apps for Business for our startup, we’ve been getting a bunch of emails trying to get us to sign up for Adwords. The latest promotion is offering a credit of $300 if we spend $100. It’s a pretty common marketing tactic and tons of companies have similar promotions. What’s special about Google is that they’re running an auction for every single click and by giving some businesses free money, they’re driving the prices up for the entire market.

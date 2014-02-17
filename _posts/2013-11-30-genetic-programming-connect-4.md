@@ -4,7 +4,7 @@ title: "Genetic programming Connect 4"
 description: "A few years ago I wrote a genetic program that generates a Connect 4 bot. This provides a quick overview of how it works."
 keywords: "genetic programming, ai, connect 4"
 category:
-tags: []
+tags: ["#code", "#python"]
 ---
 {% include JB/setup %}
 Over Thanksgiving break I was going through some old GitHub repos and found an interesting one I wanted to share. It’s a <a href="https://github.com/dangoldin/connect4bot" target="_blank">Connect 4 bot</a> that’s evolved through a genetic program. The goal of the strategy is to choose a column to move to that will give the highest probability of a win given a board position. To figure out the move column, the genetic program simulates play of strategy against strategy and gives the most successful ones a greater chance of reproducing into the next generation. The idea is that over time the resulting strategy will be the most fit.

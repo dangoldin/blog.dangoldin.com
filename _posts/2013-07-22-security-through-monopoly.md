@@ -4,7 +4,7 @@ title: "Security through monopoly"
 description: "A recent experience with locksmiths got me thinking about regulation, entrenchment and security."
 keywords: "locksmiths, security, business, startups, regulation"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 A month ago I needed to duplicate a set of keys. In the past, I’d just go to the cheapest looking hardware store and they’d easily replicate my keys for around $2 each. This time, I tried the same approach but was told that they weren’t authorized to handle the keys I had and directed me to another locksmith. That locksmith told me that they wouldn’t be able to duplicate it without approval from my management company and also charged $18 for a duplicate. Amazingly enough, they were only able to duplicate one of the keys and I had to go to yet another locksmith (and get another approval) to get the last key duplicated.

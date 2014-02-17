@@ -4,7 +4,7 @@ title: "Some thoughts on innovation"
 description: "I share some thoughts I have on innovation"
 keywords: "innovation, technology"
 category:
-tags: []
+tags: ["#product"]
 ---
 <p>I stumbled unto an <a href="http://blog.modernmechanix.com/2008/03/24/what-will-life-be-like-in-the-year-2008/" target="_blank">article</a> written in 1968 that tries to predict what the world of 2008 will be like. Usually, these types of predictions are completely off and tend to predict a future far more advanced than what it actually becomes.<div class="zemanta-img zemanta-action-dragged">
 <a href="http://commons.wikipedia.org/wiki/Image:Benz-velo.jpg"><img title="1895 Benz Velo. Along with its contemporary Duryea Motor Wagon, considered the earliest standardized cars. The decade marking further developments in the history of the automobile." src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Benz-velo.jpg/202px-Benz-velo.jpg" alt="1895 Benz Velo. Along with its contemporary Duryea Motor Wagon, considered the earliest standardized cars. The decade marking further developments in the history of the automobile." width="202" height="162" /></a>

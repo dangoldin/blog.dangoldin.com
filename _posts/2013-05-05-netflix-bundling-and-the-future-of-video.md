@@ -4,7 +4,7 @@ title: "Netflix, bundling, and the future of video"
 description: "Thinking about Netflix and bundling is giving some ideas about the future of video and what we'll start seeing."
 keywords: "netflix, video, kickstarter, media, entertainment"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 Something that’s been stuck in my head is the relationship between Netflix and bundling. On one hand, we’ve been wishing that cable came unbundled so we’d be able to just pay for the shows we want to watch. On the other hand, we have Netflix which is striving to let us stream every TV show and movie whenever and wherever we want. Why don’t we care that Netflix is actually a bundled product?

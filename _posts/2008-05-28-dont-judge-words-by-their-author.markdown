@@ -4,7 +4,7 @@ title: "Don't judge words by their author"
 description: "We shouldn't just writing by the author."
 keywords: "writing"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <p>A common idiom is "Don't judge a book by its cover" but I think that in this modern age this needs to rehashed into "Don't judge words by their author."</p>
 

@@ -5,7 +5,7 @@ description: "If you have a site that uses infinite scroll make sure you don't h
 keywords: "design, anti-pattern, footer, infinite scroll, linkedin"
 image_url: "/assets/static/images/damn-it-linkedin.png"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 

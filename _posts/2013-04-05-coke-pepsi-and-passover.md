@@ -5,7 +5,7 @@ description: "Coke and Pepsi make healthier soda over Passover. Why don't they d
 keywords: "passover, coke, pepsi, soda, breweries, local, craft"
 image_url: "/assets/static/images/pepsi-throwback.jpg"
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 {% include JB/setup %}
 <img src="{{ IMG_PATH }}pepsi-throwback.jpg" alt="Pepsi Throwback" style="float:right;">

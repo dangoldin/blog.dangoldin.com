@@ -5,7 +5,7 @@ description: "I wrote a simple web app that allows you to get cicycling directio
 keywords: "citibikenyc, bike sharing, google maps api"
 image_url: "/assets/static/images/citibikes-nyc.jpg"
 category:
-tags: []
+tags: ["#code"]
 ---
 {% include JB/setup %}
 <div class="thumbnail">

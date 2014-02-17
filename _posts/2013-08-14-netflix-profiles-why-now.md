@@ -5,7 +5,7 @@ description: "The cynic in me says that Netflix waited this long to bring profil
 keywords: "netflix, business"
 image_url: "/assets/static/images/netflix-logo.jpg"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

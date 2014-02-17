@@ -4,7 +4,7 @@ title: "Some JavaScript Tools"
 description: "While blogging I had to deal with copying an Excel table into HTML and generating a BCG style growth-share matrix. Here are some tools I came up with that make it easier."
 keywords: "JavaScript, growth-share matrix, bcg matrix, html table"
 category:
-tags: []
+tags: ["#javascript", "#code"]
 ---
 {% include JB/setup %}
 Over the course of this year, I’ve been writing two posts a week and been running into various formatting/design issues, two of which I finally dealt with earlier this week. One was embedding an Excel table into a blog post and the other was creating a BCG style “growth-share” matrix.

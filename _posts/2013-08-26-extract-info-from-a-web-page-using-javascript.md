@@ -5,7 +5,7 @@ description: "With a little bit of JavaScript knowledge you can cleanly extract 
 keywords: "html, css, javascript, crawling, scraping"
 image_url: "/assets/static/images/ff-roster-source.jpeg"
 category:
-tags: []
+tags: ["#python", "#javascript", "#code"]
 ---
 {% include JB/setup %}
 How many times have you tried copying something from a webpage into Excel and discovering that the formatting got completely messed up and forced you to clean the data up manually? With just a bit of knowledge about HTML and CSS you can use JavaScript to get the information you want without having to struggle with the formatting issues.

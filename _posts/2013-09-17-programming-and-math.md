@@ -4,7 +4,7 @@ title: "Programming and math"
 description: "I wanted to share an example from Pressi where we applied a quantitative approach to solve a problem."
 keywords: "math, programming, engineering, quantitative"
 category:
-tags: []
+tags: ["#meta", "#datascience"]
 ---
 {% include JB/setup %}
 The tech world is conflicted about how much math a developer needs. Engineers working on quantitative systems or data science clearly require advanced math and there are also countless engineering roles where math is unnecessary. My experience is that even if you don’t use math, having a mathematical mindset makes you significantly more productive. You’re able to quickly estimate the complexity of various tasks and hone your intuition. You’re also able to quickly recognize patterns when refactoring, especially when working in a functional language. A basic understanding of probability and statistics is a great way to analyze the performance of your code as well as help you model and understand your application behavior. I wanted to share a quick story of how a mathematical approach came in handy when working on Pressi.

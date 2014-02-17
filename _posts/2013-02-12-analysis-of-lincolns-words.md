@@ -5,7 +5,7 @@ description: "Analyzing and visualizing the text of Abraham Lincoln's speeches a
 keywords: "abraham lincoln, lincoln, speech, writing, essays, papers, natural language processing"
 image_url: "http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_Lincoln_November_1863.jpg"
 category:
-tags: []
+tags: ["#dataviz", "#datascience"]
 ---
 {% include JB/setup %}
 On Saturday, I finished <a href="http://www.amazon.com/Team-Rivals-Political-Abraham-Lincoln/dp/0743270754">Team of Rivals</a> and while looking at my calendar noticed that it was also <a href="http://en.wikipedia.org/wiki/Abraham_Lincoln">Lincoln's</a> birthday this week. What better way to celebrate his birthday than to analyze his speeches and letters? I downloaded the <a href="http://www.gutenberg.org/files/3253/3253-h/3253-h.htm">7 volume set</a> containing his speeches, letters, and essays from Project Gutenberg and spent a few hours on Sunday cleaning the text and writing a parsing script. On Monday, I started analyzing the text to see if I could make sense of it.

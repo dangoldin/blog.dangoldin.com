@@ -3,7 +3,7 @@ layout: post
 title: "Why are there so many cleaning startups?"
 description: "Marketplace startups are very popular these days and do provide value but I'm just not sure why there are so many home cleaning ones out there. That doesn't seem to be the best market for this type of model."
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 The recent rise of marketplace startups is great and benefits all except the incumbent. They provide much needed liquidity and transparency to markets that helpfully reduce costs to the consumer and increase volume to the provider.

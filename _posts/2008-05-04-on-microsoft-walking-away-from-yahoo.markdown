@@ -4,7 +4,7 @@ title: "On Microsoft walking away from Yahoo"
 description: "I just wanted to share my thoughts on the Microsoft walking away from acquiring Yahoo."
 keywords: "microsoft, yahoo, acquisition"
 category:
-tags: []
+tags: ["#product"]
 ---
 A little unexpected but I think this was the right decision for Microsoft for a couple of reasons:
 

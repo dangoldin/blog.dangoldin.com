@@ -4,7 +4,7 @@ title: "More posts coming up"
 description: "An excuse for not blogging"
 keywords: "blogging"
 category:
-tags: []
+tags: ["#blog", "#meta"]
 ---
 I've been busy recently but have a bunch of topics that I want to write about so keep on checking.
 

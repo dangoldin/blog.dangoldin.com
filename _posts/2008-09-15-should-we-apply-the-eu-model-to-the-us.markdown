@@ -4,7 +4,7 @@ title: "Should we apply the EU model to the US"
 description: "Does it make sense to apply the EU model of member countries to US states?"
 keywords: "politics, united states, european union"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <p>I've recently been thinking about whether the US can move to a EU like model with each state having control over it's own policies but sharing a <a title="Single market" rel="wikipedia" href="http://en.wikipedia.org/wiki/Single_market" target="_blank">single market</a> and monetary union. In addition, competition is well regulated and a shared budget exists. In addition, it looks as if this shared budget is a little over 1% of the <a title="Gross National Income" rel="wikipedia" href="http://en.wikipedia.org/wiki/Gross_National_Income" target="_blank">Gross National Income</a> of the individual countries (1) - imagine a Federal tax rate of 1%.</p>
 

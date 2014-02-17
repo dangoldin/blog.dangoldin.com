@@ -4,8 +4,8 @@ title: "Why Bank of America, why?"
 description: "Bank of America has a really crappy way of notifying them of travel plans. No idea why they decided to implement it in such an odd way."
 keywords: "bank of america, ux, design, ui"
 image_url: "/assets/static/images/boa-travel-2.png"
-category: 
-tags: []
+category:
+tags: ["#design"]
 ---
 {% include JB/setup %}
 Before leaving for a trip to India, I wanted to make sure that I’d be allowed to access the ATM so I decided to contact my bank. Surprisingly, Bank of America was modern enough to allow me to do this online. Unsurprisingly, the UX was lacking.

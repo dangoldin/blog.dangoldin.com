@@ -5,7 +5,7 @@ description: "Just a quick review of my visit to the Museum of Math in New York.
 keywords: "momath, museum of math, museum, math"
 image_url: "/assets/static/images/momath-logo.gif"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 

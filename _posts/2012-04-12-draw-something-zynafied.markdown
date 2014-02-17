@@ -4,7 +4,7 @@ title: "Draw Something Zyngafied"
 description: "Now that Zynga bought Draw Something, I wonder what Draw Something will turn into?"
 keywords: "draw something, zynga"
 category:
-tags: []
+tags: ["#product"]
 ---
 
 <p>We’re aware of Zynga’s purchase of Draw Something and Zynga’s emphasis on analytics and metrics to drive product features and decisions. I’m a bit late to the party but I tried brainstorming to put together  a Zyngafied version of Draw Something:<strong><br/></strong></p>

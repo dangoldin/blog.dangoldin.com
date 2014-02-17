@@ -4,7 +4,7 @@ title: "Future of Startups - Small Teams, Big Profit"
 description: "The Instagram acquisition shows what the future of startups is."
 keywords: "startups, instagram, facebook"
 category:
-tags: []
+tags: ["#product"]
 ---
 
 <p>The big news today was that Facebook acquired Instagram for $1B in cash and stock. I don’t want to debate whether that was a good price but I am amazed that Instagram was able to get to over 30 million users with 13 employees, of which 3 are engineers. I see a few factors combining to make this an ideal model for the future tech startup.</p>

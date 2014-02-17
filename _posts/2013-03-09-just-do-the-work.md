@@ -4,7 +4,7 @@ title: "Just do the work"
 description: "We need to stop looking for short cuts and do the necessary work. Focus on the means not the ends."
 keywords: "elevator pitch, politics, startups, business, success"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Entrepreneurs are familiar with the elevator pitch. The idea is to give a pitch in 30 seconds (the duration of an elevator ride) that is compelling enough to an investor that it leads to a follow up meeting where you can go through your pitch deck. An entrepreneur coming up with an elevator pitch is similar to a politician trying to come up with sound bites that are easily digestible, look good on the news, and stick in people’s minds.

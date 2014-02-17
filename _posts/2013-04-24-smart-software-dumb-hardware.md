@@ -4,7 +4,7 @@ title: "Smart software; dumb hardware"
 description: "Software can replace hardware if we let it. The smartphone can be that central point."
 keywords: "hardware, software, smartphones, technology"
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 {% include JB/setup %}
 Last week, three isolated events gave me a glimpse of how powerful mobile can be. Tech pundits have been saying that for a while now but experiencing it firsthand is definitely more convincing.

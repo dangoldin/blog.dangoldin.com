@@ -5,7 +5,7 @@ description: "Did the Mailbox app need to use a server or was it about marketing
 keywords: "Mailbox, marketing"
 image_url: "/assets/static/images/mailbox1.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

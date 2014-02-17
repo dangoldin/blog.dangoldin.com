@@ -5,7 +5,7 @@ description: "I used Foursquare to plan my trip to New Orleans and had a great t
 keywords: "foursquare, google glass, travel, augmented reality"
 image_url: "/assets/static/images/nola-trip-map.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

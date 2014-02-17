@@ -4,7 +4,7 @@ title: "Enabling modules in Apache2 under Ubuntu"
 description: "Enabled Apache2 modules in Ubuntu manually"
 keywords: "apache2, ubuntu"
 category:
-tags: []
+tags: ["#code"]
 ---
 <p>The Apache enabled modules are found in <span class="gray">"/etc/apache2/mods-enabled"</span> as a set of .load and .conf files. If the modules you want are in the <span class="gray">/etc/apache2/mods-available</span> folder but not in <span class="gray">"/etc/apache2/mods-enabled"</span> folder, just copy the .load and .conf files over (note that the .conf file may not exist).</p>
 

@@ -4,7 +4,7 @@ title: "Advice on internet passwords"
 description: "Some advice on setting up internet passwords."
 keywords: "security, passwords, internet"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <p>After my previous post on the lack of privacy, I feel obligated to give some advice regarding internet passwords in order to maintain the privacy that we do have.</p>
 

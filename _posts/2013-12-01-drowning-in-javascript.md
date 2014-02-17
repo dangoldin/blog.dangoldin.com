@@ -4,7 +4,7 @@ title: "Drowning in JavaScript"
 description: "The majority of the sites I visit use a slew of JavaScript libraries. I decided to do a quick analysis and see if there are any patterns of the libraries used based on the site type."
 keywords: "javascript, analytics, advertising, google analytics, doubleclick, publishers"
 category:
-tags: []
+tags: ["#code", "#javascript"]
 ---
 {% include JB/setup %}
 I recently installed Ghostery and am amazed by the number of JavaScript libraries being loaded on the sites I visit. Almost every site I visit has at least one analytics library, a few advertising libraries, and some social network sharing libraries.

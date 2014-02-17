@@ -4,7 +4,7 @@ title: "Brainteasers and interviews"
 description: "Some thoughts on using brainteasers in interviews."
 keywords: "brainteasers, interviews, project euler"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <p>I've recently been reading some articles opposing the use of brainteasers during interviews on the grounds that they are unfair and some people have difficulty thinking on the spot. You can make the same argument for any part of the interview process and I feel that brainteasers may even attract intelligent employees.</p>
 

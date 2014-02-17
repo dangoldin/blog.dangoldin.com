@@ -5,7 +5,7 @@ description: "Viewing a long article as a single page should preserve my spot on
 keywords: "usability, design, UX, long form content"
 image_url: "/assets/static/images/single-page.png"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 

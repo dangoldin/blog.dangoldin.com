@@ -4,7 +4,7 @@ title: "Startups aren't black and white"
 description: "We should learn from others but realize that almost all advice is black and white whereas startups are shades of gray."
 keywords: "startups, entrepreneurship"
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 {% include JB/setup %}
 When I was making the leap into the startup world I read every post I came across that talked about people’s experiences and guides in running a startup. The goal was to learn as much as I could form others and apply these hard-fought lessons my own startup. Now that I’ve been working on a startup for almost two years I realize how much startups differ from one another and how black and white these guides tend to be. You can read two posts that will promote contradictory approaches. Should you focus on revenue or growth? Should you raise money or bootstrap? Should you go with a freemium model or paid only? Should you go solo or get a cofounder? Should you focus on consumers or the enterprise?

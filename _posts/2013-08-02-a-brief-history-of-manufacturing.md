@@ -4,7 +4,7 @@ title: "A brief history of manufacturing"
 keywords: "manufacturing, history, 3d printing, factories, production, customization"
 description: "I wrote up an extremely short and simplified history of manufacturing and some quick predictions about the future."
 category:
-tags: []
+tags: ["#meta", "#history"]
 ---
 {% include JB/setup %}
 Working on <a href="https://makersalley.com/" target="_blank">Makers Alley</a>, I've spent a fair amount thinking about the evolution of manufacturing and wanted to share an extremely condensed history.

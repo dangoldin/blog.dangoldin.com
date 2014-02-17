@@ -4,7 +4,7 @@ title: "Email addresses are private?"
 description: "The weev verdict got me thinking about email addresses and how they are no longer private"
 keywords: "weev, privacy, email addresses, technology, society"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Last week, Andrew “weev” Aurenheimer, was sentenced to 41 months for going through publicly accessible AT&T URLs which exposed the email address of 114,000 iPad owners. I don’t want to talk get into the absurdity of the sentence or how AT&T should be the one held accountable for this “<a href="http://en.wikipedia.org/wiki/Security_through_obscurity" target="_blank">security</a>.”

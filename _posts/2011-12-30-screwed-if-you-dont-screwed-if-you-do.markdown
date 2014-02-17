@@ -4,7 +4,7 @@ title: "Screwed if you do, screwed if you don't"
 description: "Some thoughts on GoDaddy/SOPA situation"
 keywords: "godaddy, sopa"
 category:
-tags: []
+tags: ["#meta"]
 ---
 
 <img src="http://timenerdworld.files.wordpress.com/2011/12/godaddy-logo.jpg?w=300&amp;h=200&amp;crop=1"/>

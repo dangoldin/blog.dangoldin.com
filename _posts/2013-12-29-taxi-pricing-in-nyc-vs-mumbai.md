@@ -4,7 +4,7 @@ title: "Taxi pricing in NYC vs Mumbai"
 description: "The difference in taxi fares between New York City and Mumbai is huge and highlights the difference in the cost of labor."
 keywords: "taxi pricing, taxi fares, NYC, Mumbai"
 category:
-tags: []
+tags: ["#datascience"]
 ---
 {% include JB/setup %}
 Something else that struck me during my trip to India was the difference in taxi fare between <a href="http://www.nyc.gov/html/tlc/html/passenger/taxicab_rate.shtml" target="_blank">New York City</a> and <a href="http://www.taxiautofare.com/taxi-fare-card/Mumbai-Taxi-fare" target="_blank">Mumbai</a>. I expected them to be different but the magnitude of the difference was shocking. In NYC, the base fare is $2.50 and increases 50 cents for each additional 1/5th of a mile or 60 seconds of not moving. In Mumbai, the rate starts at 19 rupees (~32 cents) and includes the first 1.5 km. After that it’s 12.35 rupees (21 cents) for each additional km and 30 rupees (50 cents) for an hour of not moving.

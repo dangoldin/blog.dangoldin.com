@@ -4,7 +4,7 @@ title: "Improving online programming classes"
 description: "We need to start designing classes for the web from scratch rather than adapting classes from the classroom."
 keywords: "online education, online classes, coursera, udacity"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 I’m making an effort to freshen up and improve my data skills so when I found out that two of my friends were going to take an <a href="https://class.coursera.org/compdata-002/class/index">R class</a> on Coursera, I joined them. The class is pretty typical for an online programming class: each week there are a set of lectures to watch, a quiz to take, and a programming exercise to do. In addition to this, we also have a weekly Google Hangout to discuss the lectures, go over our programs, and share our R questions.

@@ -4,7 +4,7 @@ title: "Blog updates since November"
 description: "Sharing the design and backend changes I've made to this blog since November, 2012"
 keywords: "design, backend, seo, blog"
 category:
-tags: []
+tags: ["#blog"]
 ---
 {% include JB/setup %}
 In November, I migrated my Tumblr and Wordpress blogs over to GitHub pages and have been making a few tweaks here and there. I started with the awesome <a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap library</a> but wanted to share the changes I’ve made. It’s all hosted on GitHub so feel free to fork it.

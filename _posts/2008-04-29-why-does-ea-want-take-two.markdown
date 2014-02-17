@@ -4,7 +4,7 @@ title: "Why does EA want Take Two?"
 description: "Just my 2 cents on the EA/Take Two acquisition"
 keywords: "electronic arts, ea, take two"
 category:
-tags: []
+tags: ["#product"]
 ---
 I'm not sure why no one is pointing this out but it seems that as soon as EA acquires T2, the T2 folks would just leave to create a new studio. They seem independent and I doubt that they'd want to work for EA. And although EA would get the rights to all of the T2 games and may try to develop the series, they might not have the imagination or the guys to do it. In addition, I don't know whether EA would even want to develop such products as GTA and Bully given the violence and public relations ordeal that T2 has been going through the past few years.
 

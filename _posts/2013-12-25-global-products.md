@@ -4,7 +4,7 @@ title: "Global products"
 description: "There are very few global tech products - those that work wherever you are in the world. A big reason is due to infrastructure differences and I don't see this changing soon."
 keywords: "global products, infrastructure, technology"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 The trip to India got me thinking about “global products” that work the same wherever they are. It’s surprisingly difficult to find tech products that fit this description. Cell phones will almost always work internationally but roaming charges make it impractical. Having an unlocked phone helps but you still need to get a SIM card which is a <a href="http://dangoldin.com/2013/12/23/getting-a-sim-card-in-india/">hassle</a> in many countries.

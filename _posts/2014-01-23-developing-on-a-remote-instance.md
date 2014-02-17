@@ -3,8 +3,8 @@ layout: post
 title: "Developing on a remote instance"
 description: "Something I've started doing since joining TripleLift is doing the bulk of my developing on a remote EC2 instance and think it offers a ton of benefits."
 keywords: "developing, coding, EC2, AWS, Amazon"
-category: 
-tags: []
+category:
+tags: ["#code", "#aws"]
 ---
 {% include JB/setup %}
 One of the first things I was given when joining <a href="http://triplelift.com" target="_blank">TripleLift</a> was a Macbook Air and an Amazon EC2 instance to do my development work on. Before that, every company I worked at would give me a pretty powerful computer so that I’d be able to do my development work locally. At first, coding on a remote instance took some getting used to but now I'm a fan of this approach.

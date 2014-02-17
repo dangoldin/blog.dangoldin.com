@@ -4,7 +4,7 @@ title: "Welcome"
 description: "Welcome to the new blog."
 keywords: "welcome"
 category:
-tags: []
+tags: ["#meta", "#blog"]
 ---
 <p>So I am porting this blog over from wordpress.com to my own local hosting. Please bear with me and I'll hopefully have more things to read soon.</p>
 

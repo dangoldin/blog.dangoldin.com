@@ -3,8 +3,8 @@ layout: post
 title: "Scraping Yahoo fantasy football stats with Scrapy"
 description: "Over the weekend I updated my old Yahoo fantasy football stats scraper to use Scrapy and wanted to share some thoughts."
 keywords: "scrapy, scraping, yahoo fantasy football stats, fantasy football"
-category: 
-tags: []
+category:
+tags: ["#python", "#code", "#datascience"]
 ---
 {% include JB/setup %}
 Last week, someone reminded me of an old project I had on GitHub that scraped fantasy football stats from Yahoo. Unfortunately, it was antiquated and failed to retrieve the data for the current season. I’ve also been interested in trying out the <a href="http://scrapy.org/" target="_blank">Scrapy</a> framework and decided this would be a good opportunity to give it a shot. I tried finding a sample project that dealt with authentication as a starting point but wasn’t able to find one so hopefully my attempt can serve as an example to others.
@@ -60,7 +60,7 @@ def parse_stats(self, response):
                 stats_item[col_name] = stat_row.select(xpath).extract()
             yield stats_item
 
-    # Jump to next week if we go past the threshold of players        
+    # Jump to next week if we go past the threshold of players
         if count > self.settings['MAX_STATS_PER_WEEK']:
             yield Request(self.base_url.format(self.settings['YAHOO_LEAGUEID'], current_week + 1), callback=self.parse_stats)
         else:

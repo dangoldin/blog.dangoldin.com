@@ -13,6 +13,15 @@
       {{ content }}
     </div>
 
+    {% unless page.tags == empty %}
+    <div>
+      <ul class="tags">
+      {% assign tags_list = page.tags %}
+      {% include JB/tags_list %}
+      </ul>
+    </div><br/>
+    {% endunless %}
+
     <div class="follow-footer">
       Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
     </div>
@@ -44,14 +53,6 @@
 
     <hr/>
     {% include JB/comments %}
-
-    {% unless page.tags == empty %}
-      <h4>Tags</h4>
-      <ul class="tag_box">
-      {% assign tags_list = page.tags %}
-      {% include JB/tags_list %}
-      </ul>
-    {% endunless %}
     </div>
   </div>
 </div>

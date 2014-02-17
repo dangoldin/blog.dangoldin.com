@@ -3,8 +3,8 @@ layout: post
 title: "Is Excel on a Mac intentionally hobbled?"
 description: "Excel on a Mac has a completely different set of shortcuts that it makes me wonder if it was intentionablly hobbled to keep people on Windows."
 keywords: "excel, office, mac, os x, windows"
-category: 
-tags: []
+category:
+tags: ["#datascience", "#product"]
 ---
 {% include JB/setup %}
 The longer I’ve been involved in tech the fewer Windows laptops I’ve been seeing. It seems that to even be considered a startup you need to be giving your employees MacBooks. My conversion came years ago when I made the move from Linux in order to be able to run Excel since neither OpenOffice nor Google Spreadsheet were cutting it. Unfortunately, even after years of effort, I still can’t get to the same level of productivity as I had when using Windows during my consulting days. It’s entirely due to the shortcuts. Some of the shortcuts just changed while others simply disappeared.

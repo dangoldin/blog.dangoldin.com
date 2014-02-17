@@ -4,7 +4,7 @@ title: "On SEO: Authority vs Originality"
 description: "Search engines have a conflict between sources that have authority and sources that have original content. I show an example of it going wrong."
 keywords: "seo, search engines, google"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 A while ago I read Bruce Schneier’s Liars and Outliers and came across a neat passage:

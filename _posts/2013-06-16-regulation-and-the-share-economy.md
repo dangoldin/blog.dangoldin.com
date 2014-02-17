@@ -4,7 +4,7 @@ title: "Regulation and the share economy"
 description: "Technology is causing us to move away from central regulatory agencies to crowdsourced, self-regulated communities."
 keywords: "regulation, share economy, airbnb, sidecar, lyft, taskrabbit"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 The past few years have seen the rise of the share economy with companies such as AirBnB, Sidecar, Lyft, and TaskRabbit seeing massive growth. Unfortunately, they’re getting significant opposition from government and the entrenched special interest groups. Most of the pushback is under the guise of consumer safety and that regulations exist to protect the consumer.

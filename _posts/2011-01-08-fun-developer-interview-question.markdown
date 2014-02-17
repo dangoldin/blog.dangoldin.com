@@ -4,7 +4,7 @@ title: "Tech Interview Question"
 description: "I share some more thoughts on conducting tech interviews"
 keywords: "interviewing, puzzles, brainteasers"
 category:
-tags: []
+tags: ["#code"]
 ---
 {% include JB/setup %}
 When conducting interviews, I've developed the following criteria for a good interview problem:

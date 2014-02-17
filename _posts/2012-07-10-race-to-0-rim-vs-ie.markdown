@@ -4,7 +4,7 @@ title: "Race to 0 - RIM vs IE"
 description: "Which will hit zero first? RIM or IE?"
 keywords: "research in motion, internet explorer"
 category:
-tags: []
+tags: ["#product"]
 ---
 
 <p>I read an <a href="http://www.bloomberg.com/news/2012-07-09/rim-s-customers-working-on-contingency-plans-corporate-canada.html" target="_blank">article</a> earlier today about how companies are preparing for a possible demise of RIM and couldn’t help but compare RIM’s decline over only a few years compared to how long it’s taking IE to disappear.</p>

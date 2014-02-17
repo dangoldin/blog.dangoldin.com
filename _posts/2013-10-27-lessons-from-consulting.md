@@ -4,7 +4,7 @@ title: "Lessons from consulting"
 description: "I did a few months of consulting work and wanted to share some of the lessons learned."
 keywords: "consulting, contracting, engineering"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 To supplement my income while working on a startup, I took on a few consulting projects and wanted to share some lessons learned. It seems that everyone’s consulting experience is different so consider mine experience as just another data point.

@@ -4,7 +4,7 @@ title: "What's the easiest way to be elected president?"
 description: "The easiest way to become president is to run for a second term."
 keywords: "politics, elections, presidency"
 category:
-tags: []
+tags: ["#datascience"]
 ---
 
 Answer: Be elected for a first term, the second term will follow.

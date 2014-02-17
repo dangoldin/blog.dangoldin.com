@@ -4,7 +4,7 @@ title: "Eating Yourself - Innovation &amp; Cannibalization"
 description: "Relationship between innovation and cannibalization."
 keywords: "innovation, cannibalization"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

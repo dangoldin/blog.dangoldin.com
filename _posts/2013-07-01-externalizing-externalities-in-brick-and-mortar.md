@@ -5,7 +5,7 @@ description: "While flying out of Lagaurdia Airport, I decided to observe the wa
 keywords: "laguardia, brick and mortar, ipad, self-serve"
 image_url: "/assets/static/images/biergarten-ipad.jpg"
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 {% include JB/setup %}
 

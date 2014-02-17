@@ -4,7 +4,7 @@ title: "Selling to the enterprise? Target the consumer"
 description: "Target the consumer in order to sell to the enterprise"
 keywords: "selling, startups, enterprise, marketing"
 category:
-tags: []
+tags: ["#product", "#sales"]
 ---
 
 <p>A trend I’ve been noticing more and more is enterprise sales being done bottoms up. The typical approach is to offer a free trials or have some sort of freemium product. Each sign up is then treated as an inbound lead that is assigned an account manager. Within two weeks of signing up for New Relic I was contacted by an account manager who helped answer my questions and helped me get New Relic set up for Glossi. Working with him, we were able to get a longer trial period and a discounted price for when we’re ready to upgrade. <a href="http://blog.hubspot.com/blog/tabid/6307/bid/31555/Inbound-Leads-Cost-61-Less-Than-Outbound-New-Data.aspx" target="_blank">HubSpot found</a> that inbound leads cost 61% less than outbound leads. If having a strong SEO and Social Media presence drops acquisition costs that much imagine the drop caused by having a usable product. Although we’re a small, scrappy startup that’s quick to try new products and services, I believe this approach will become the standard way of selling SAAS in the enterprise. It’s much easier to get a person to try something new and if you can turn him into a fan, you’re one step closer to getting the company signed up.</p>

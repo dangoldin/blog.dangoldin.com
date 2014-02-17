@@ -4,8 +4,8 @@ title: "A Twitter flashback"
 description: "I came across an old post that I was going to write after reading Twitter's API changes last August. Amazing what becomes obvious in hindsight."
 keywords: "Twitter, business model, IPO"
 image_url: "/assets/static/images/twitter-ecosystem.png"
-category: 
-tags: []
+category:
+tags: ["#product"]
 ---
 {% include JB/setup %}
 

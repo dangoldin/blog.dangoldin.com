@@ -4,7 +4,7 @@ title: "When is it time to leave the full time job?"
 description: "My thoughts on when to leave a full time job to do a startup."
 keywords: "startups, entrepreneurship"
 category:
-tags: []
+tags: ["#meta"]
 ---
 
 <p>A common question I get when telling my friends that I’m leaving my full time job to work on Glossi is “Why now? Why not continue working on it nights and weekends?” It’s a fair question - we’ve been working on Glossi for 6 months of nights and weekends and made significant progress. Why not keep doing that and have the best of both worlds?</p>

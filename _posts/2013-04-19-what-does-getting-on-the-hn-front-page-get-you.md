@@ -5,7 +5,7 @@ description: "I got featured on the HN home page and wanted to share the results
 keywords: "hacker news, writing, blogging"
 image_url: "/assets/static/images/ga-blog-post-spike.png"
 category:
-tags: []
+tags: ["#dataviz"]
 ---
 {% include JB/setup %}
 A week ago, I wrote a blog post and submitted to Hacker News. Within a few hours it made it to the front page and I wanted to share the aftermath.

@@ -3,8 +3,8 @@ layout: post
 title: "Emotional products"
 description: "We still view our products as being software but in the future we'll start seeing our products and technology as our equals"
 keywords: "emotional products, technology, society"
-category: 
-tags: []
+category:
+tags: ["#product"]
 ---
 {% include JB/setup %}
 In 2013, I gave myself a goal of running 1000 miles. I used RunKeeper to record my runs and used its goal feature to track my progress and quickly see how much I had left. Two days before the new year, I was able to hit my goal and got a little notification from RunKeeper congratulating me on achieving my goal. This small notification got me thinking about how emotion is built into our products. RunKeeper doesn’t care whether it was a 1 mile or 1000 mile goal - the reaction I get would be the same. Yet if I shared these two achievements with my friends, the reactions I get would be completely different. Sure, an algorithm could be designed to treat accomplishments of various difficulties differently and can even be adapted to take into account that to some people, running one mile is equivalent to others running 1000 miles.

@@ -3,8 +3,8 @@ layout: post
 title: "Getting a SIM card in India"
 description: "During my trip to India I bought an unlocked phone and spent an absurdly long time trying to get a SIM card. This is a guide on what you need to do in order to get a SIM card in India and the challenges I ran into."
 keywords: "SIM card, travel, unlocked phone, 3G"
-category: 
-tags: []
+category:
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 I’ve heard about the wonders of an unlocked phone and decided to try it out during my recent trip to India. The idea was to get a cheap unlocked Android phone that I’d be able to use on this and future trips. I was able to get a relatively cheap Samsung phone but it took me a surprisingly long time to get a working SIM card. This post is a description of the steps I took as well as some advice for others trying to do the same.

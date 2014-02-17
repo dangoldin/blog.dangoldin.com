@@ -4,7 +4,7 @@ title: "Power of Twitter"
 description: "I finally realized a use case for Twitter - getting real time info"
 keywords: "twitter"
 category:
-tags: []
+tags: ["#product"]
 ---
 
 <img title="Image representing Twitter as depicted in Crun..." src="http://www.crunchbase.com/assets/images/resized/0000/2755/2755v2-max-450x450.png" alt="Image representing Twitter as depicted in Crun..." width="210" height="49">

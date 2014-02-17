@@ -4,7 +4,7 @@ title: "Voting system proposal"
 description: "Some crazy ideas on a new voting system."
 keywords: "voting, politics"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <p>It seems that there is a recent emphasis on "character" in the election. Unfortunately, character can be faked with some acting and campaign management. To understand how the candidates will perform in office we need to look at their past accomplishments and failures. Public records show the <a href="http://www.senate.gov/pagelayout/legislative/a_three_sections_with_teasers/votes.htm" target="_blank">vote history</a> for the candidates and all it takes is a little bit of research to see how the candidates have voted.</p>
 

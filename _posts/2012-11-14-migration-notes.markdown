@@ -3,7 +3,7 @@ layout: post
 title: "Github Migration Notes"
 description:
 category:
-tags: []
+tags: ["#blog"]
 ---
 {% include JB/setup %}
 After a few hours of solid work I was able to get my new site up and running on Github pages. I got frustrated with

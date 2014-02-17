@@ -5,7 +5,7 @@ description: "It's possible for a design to be too good that leads to a boost in
 keywords: "design, startups, growth, pressi"
 image_url: "/assets/static/images/glossi-landing-page.jpg"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 This is a bit of a first-world problem but it’s possible for a design to be too good. A great design may lead to an increase in your vanity metrics but that won’t necessarily translate into a successful business. In fact, it’s likely that these low-value users will increase your costs.

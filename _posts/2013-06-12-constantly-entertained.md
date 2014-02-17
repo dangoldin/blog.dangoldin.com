@@ -4,7 +4,7 @@ title: "Constantly entertained"
 description: "I fear that the trend to be constantly entertained is dangerous and going to cause problems, especially for newer generations."
 keywords: "constantly entertained, twitter, creativity"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 The real time news cycle bothers me. Every time theres some news there are countless reactions on Twitter and quick, shoddy write ups on various "news" sites. Unfortunately, by the time someone does the research and writes a thoughtful response, we've moved on to the next piece of news. We're reaching the point where writing something stupid quickly is becoming more valuable than writing something thoughtful but late.

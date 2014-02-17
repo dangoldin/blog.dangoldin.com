@@ -3,7 +3,7 @@ layout: post
 title: "Why aren't there more engineers in politics?"
 description: "I think engineers are too impatient to participate in politics and give up too easily. Society even encourages this."
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 At Aaron Swartz’s memorial service in New York, Doc Searle said something that struck a chord: Aaron was one of the few tech people who would get involved in legal and political issues. It’s true - we hackers aren’t into it. We claim we’d be better off if there were more engineers in charge and yet we’re not making an effort to be those engineers. I’ve heard a variety of unconvincing reasons: it’s just not interesting; there’s too much bullshit; it’s more about selling than creating. I think the real reason is that we’re just too impatient.

@@ -4,7 +4,7 @@ title: "On weekend voting"
 description: "A simple analysis to see whether having weekend vs weekday election days matter"
 keywords: "voting, elections, politics"
 category:
-tags: []
+tags: ["#datascience"]
 ---
 <p>I found an <a href="http://www.nytimes.com/2008/10/24/opinion/24ornstein.html?ref=opinion">op-ed</a> in the NY Times that claimed that the best way to increase voter turnout was by having election day fall on a weekend. They provide a few examples but nothing too detailed. I tried pulling in some data and seeing if I could come to the same conclusion. I used two data sets: <a href="http://en.wikipedia.org/wiki/Voter_turnout ">voter turn out by country</a> and <a href="http://www.electionguide.org/calendar.php ">election dates by country</a>.</p>
 

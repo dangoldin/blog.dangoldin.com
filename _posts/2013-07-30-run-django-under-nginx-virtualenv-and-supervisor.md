@@ -4,7 +4,7 @@ title: "Run Django under Nginx, Virtualenv and Supervisor"
 description: "Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor"
 keywords: "django, nginx, virtualenv, supervisor"
 category:
-tags: []
+tags: ["#python", "#code"]
 ---
 {% include JB/setup %}
 After yet another attempt to deploy a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application I decided to document the steps required to get everything up and running. The tutorials I’ve seen tend to focus on individual pieces rather than on the way all these packages work together which always led to me a lot of dead ends and StackOverflow so this will hopefully address some of those issues.

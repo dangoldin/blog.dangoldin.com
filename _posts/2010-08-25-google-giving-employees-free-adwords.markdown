@@ -5,6 +5,7 @@ description: "It seems it's a conflict of interest to be giving your employees f
 keywords: "google, adwords, employees"
 wordpress_id: 183
 date: 2010-08-25
+tags: ["#product"]
 ---
 According to this <a href="http://agtb.wordpress.com/2010/01/06/my-1day-adwords-account/">blog post</a> <a class="zem_slink" title="Google" rel="homepage" href="http://google.com">Google</a> gives their emplo﻿yees $1 a day to advertise on Google. The intent is to give employees the perspective of an Adwords user in order to improve the product. In addition to giving employees exposure to Adwords, this also has potential to increase the competition in <a class="zem_slink" title="AdWords" rel="wikipedia" href="http://en.wikipedia.org/wiki/AdWords">Adword</a> auctions by causing bids to increase and leading to more revenue  for Google. Given that Google has more than 10,000 employees worldwide this can have an effect on smaller advertisers.
 

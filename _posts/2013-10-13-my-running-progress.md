@@ -4,8 +4,8 @@ title: "My running progress"
 description: "Just a review of where I am with my goal of running 1000 miles during 2013"
 keywords: "running"
 image_url: "/assets/static/images/runkeeper-goal-2013.png"
-category: 
-tags: []
+category:
+tags: ["#running"]
 ---
 {% include JB/setup %}
 

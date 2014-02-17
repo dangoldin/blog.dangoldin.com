@@ -5,7 +5,7 @@ description: "I've been noticing various ecommerce sites offering discounts via 
 keywords: "ecommerce, marketing, discount, rebates, coupons"
 image_url: "/assets/static/images/discount-bonobos.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 <div class="row">

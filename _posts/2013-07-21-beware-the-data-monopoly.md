@@ -3,8 +3,8 @@ layout: post
 title: "Beware the data monopoly"
 description: "As data becomes more important in software, it will pose a challenge for startups that do not have access to this data."
 keywords: "data monopoly, startups, business, entrepreneurship"
-category: 
-tags: []
+category:
+tags: ["#data", "#meta"]
 ---
 {% include JB/setup %}
 <p>I’m convinced that the future of software lies in data. Data has always been important but now we actually have cheap ways of analyzing it with constant improvements in data extraction and machine learning algorithms. We’re also tethered to our digital devices which are collecting tons of data that’s waiting to be analyzed.</p>

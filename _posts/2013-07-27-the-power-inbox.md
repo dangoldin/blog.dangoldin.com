@@ -4,7 +4,7 @@ title: "The power inbox"
 description: "The inbox is becoming a critical piece of our workflows and we need to have better standards to add functionality rather than relying on 3rd party apps."
 keywords: "gmail, inbox, rapportive, yesware, toutapp, boomerang"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 There are only a few tabs I consistently keep open all day on my computer - Gmail, Google Calendar, Hacker News, and New Relic. Out of these, Gmail is the most important with my entire day running through it. The value of having a presence in the inbox hasn't been lost on companies and there are a ton of third party apps that make Gmail more useful - <a href="http://rapportive.com/" target="_blank">Rapportive</a>, <a href="http://www.yesware.com/" target="_blank">YesWare</a>, <a href="http://www1.toutapp.com/" target="_blank">ToutApp</a>, and <a href="http://www.baydin.com/" target="_blank">Boomerang</a>. Even Google itself has been providing "Lab features" to augment the default inbox behavior.

@@ -4,7 +4,7 @@ title: "Shakespeare and Startups"
 description: "What does Shakespeare have to do with startups?"
 keywords: "shakespeare, startups"
 category:
-tags: []
+tags: ["#meta"]
 ---
 
 <p>I was reading Ben Yagoda&#8217;s book, <a href="http://www.amazon.com/When-You-Catch-Adjective-Kill/dp/0767920775" target="_blank">When You Catch An Adjective; Kill It</a>, when I came across the following passage: &#8220;In Shakespeare&#8217;s day, there were no fancy props, so the text had to do the work of stage settings.&#8221; Although it was referring to starting sentences with conjunctions, it got me thinking about constraints and the way they foster innovation. Startups operate the same way: you don&#8217;t always have the resources to do what you want and are forced to innovate a way out.</p>

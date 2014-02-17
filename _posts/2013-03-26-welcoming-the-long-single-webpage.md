@@ -4,7 +4,7 @@ title: "Welcoming the long, single webpage"
 description: "I'm a big fan of the new trend that puts a ton of content on one page. Especially on news sites."
 keywords: "website design, karma, single webpage, news, single page sites"
 category:
-tags: []
+tags: ["#product", "#design"]
 ---
 {% include JB/setup %}
 A recent trend in website design I’ve been seeing is the long single page. My first distinct memory of seeing it is from <a href="https://yourkarma.com/" target="_blank">Karma</a> but I’ve started noticing it everywhere. It runs the gamut from non-profit <a href="http://www.weheartwifi.com/" target="_blank">causes</a> to video game <a href="http://www.sandboxstrat.com/" target="_blank">PR firms</a>. In fact, we’re even using this approach for the Makers Alley <a href="https://makersalley.com/" target="_blank">homepage</a>.

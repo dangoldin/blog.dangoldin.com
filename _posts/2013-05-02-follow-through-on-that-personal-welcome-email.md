@@ -4,7 +4,7 @@ title: "Follow through on that personal welcome email"
 description: "If you send out the personal welcome emails from the CEO to every user that signs up, make sure you're responding to the replies."
 keywords: "Drip marketing, personal email"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 Recently, I’ve been receiving many startups sending out “personal emails” from the CEO or cofounder around 30 minutes after signing up. The idea is to engage the new user by showing them that there’s a real person behind the service that cares and to offer any help that they may need. There’s a great <a href="https://segment.io/academy/email-is-the-easiest-way-to-improve-retention" target="_blank">article</a> on Segment.io about this tactic as well as a few other emails that can be sent to improve retention. This technique is called “drip marketing” and there are a bunch of companies offering it as a service - the ones I can immediately think of are <a href="http://www.getvero.com/" target="_blank">Vero</a> and <a href="http://intercom.io" target="_blank">Intercom</a>; and Mixpanel is moving into this space as well with their <a href="https://mixpanel.com/notifications/" target="_blank">Notifications</a> product. There are also a variety of open source packages available, I’m familiar with <a href="https://django-drip.readthedocs.org/en/latest/" target="_blank">django-drip</a> for Django and Dan Shipper’s <a href="https://github.com/dshipper/Faucet" target="_blank">Faucet</a> for RoR.

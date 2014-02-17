@@ -4,7 +4,7 @@ title: "Meetings: to take or not to take?"
 description: "Meetings are both valuable and a time sink. I share my thoughts and approach to taking meetings."
 keywords: "business, meetings, entrepreneurship"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 I struggle with this one. Some days I feel as if I should take every meeting since it’s impossible to know where it can lead. One meeting can completely change a business, generate some consulting work, or lead to new friendships. At the same time, taking every meeting would eat up a chunk of time and most meetings end up fading from memory.

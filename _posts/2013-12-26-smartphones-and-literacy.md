@@ -5,7 +5,7 @@ description: "Smartphones have the potential of increasing global literacy in ad
 keywords: "smartphones, literacy, education"
 image_url: "/assets/static/images/global-smartphone-per-capita.png"
 category:
-tags: []
+tags: ["#society"]
 ---
 {% include JB/setup %}
 

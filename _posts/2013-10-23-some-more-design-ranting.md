@@ -5,7 +5,7 @@ description: "I rant about a few more ui/ux issues I've run into. Login forms re
 keywords: "design, ios, ui, ux"
 image_url: "/assets/static/images/bad-ui-contact-management.png"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 I don’t know why, but I’ve become more aware of the UI/UX of various sites and apps that I encounter. Whereas before I might have gotten frustrated about some behavior, I’m now starting to get annoyed whenever I encounter something that’s obviously crummy. Here’s a few of the more recent design anti-patterns I’ve been noticing.

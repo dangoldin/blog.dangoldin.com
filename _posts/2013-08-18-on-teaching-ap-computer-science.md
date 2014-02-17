@@ -4,7 +4,7 @@ title: "On Teaching AP Computer Science"
 description: "I've been volunteering teaching AP Computer Science and wanted to share some thoughts and experiences."
 keywords: "TEALS, AP Computer Science, teaching, high school"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 This year, I started volunteering at a program called <a href="http://tealsk12.org/" target="_blank">TEALS</a>. The long term goal is to improve computer science education in the United States by having tech professionals volunteer their time to teach computer science classes in schools that want to offer computer science classes but don’t have the necessary teachers. Over time, the goal is to have the in-service teachers in each class learn the material so that they will be able to teach it in the future. Currently, the program exists in 65 high schools across 12 states and offers both Intro to Computer Science and AP Computer Science but I’m looking forward to seeing it expand nationwide and into middle and elementary schools.

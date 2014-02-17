@@ -2,9 +2,9 @@
 layout: post
 title: "Interesting Perl behavior"
 description: "I found an odd, unexpected behavior in Perl that drove me crazy."
-keywords: "perk, coding"
+keywords: "perl, coding"
 category:
-tags: []
+tags: ["#code", "#perl"]
 ---
 <p>I ran into this problem a while back and wanted to share it. It was a bit unintuitive but documentd so I guess I shouldn't be surprised by the results. Hopefully this will help someone else avoid this pitfall.</p>
 

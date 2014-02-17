@@ -4,7 +4,7 @@ title: "Want more sales? Start teaching"
 description: "In order to get more sales and increase market size, companies need to focus on educating their customers. They'll be able to decrease acquisition costs and increase retention."
 keywords: "product, marketing, sales, startups"
 category:
-tags: []
+tags: ["#sales"]
 ---
 {% include JB/setup %}
 A trend I’ve been seeing lately is companies boosting their sales by focusing on customer education. The successful companies don’t just focus on the results their product will deliver but also spend time explaining why those results are important and how the product works and how it can be used.

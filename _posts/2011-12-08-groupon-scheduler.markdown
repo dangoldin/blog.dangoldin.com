@@ -4,7 +4,7 @@ title: "GroupOn Scheduler"
 description: "Some thoughts on GroupOn launching their scheduler"
 keywords: "groupon, small business tools"
 category:
-tags: []
+tags: ["#product"]
 ---
 
 <img src="http://cdn.ientry.com/sites/webpronews/pictures/groupon-scheduler_616.jpg" />

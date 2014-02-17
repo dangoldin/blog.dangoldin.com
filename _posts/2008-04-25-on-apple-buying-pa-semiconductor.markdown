@@ -4,7 +4,7 @@ title: "On Apple buying PA Semiconductor"
 description: "I respond to Robert Cringely's PBS post about Apple's acquisition of PA Semiconductor."
 keywords: "apple, business, PA semiconductor"
 category:
-tags: []
+tags: ["#product"]
 ---
 This post is a response to <a href="http://www.pbs.org/cringely/pulpit/2008/pulpit_20080425_004775.html" target="_blank">Robert Cringely's PBS Post</a>. He's giving 2 reasons for the acquisition and I wanted to add to two of his points.
 

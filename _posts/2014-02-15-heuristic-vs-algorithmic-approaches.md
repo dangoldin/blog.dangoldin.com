@@ -4,7 +4,7 @@ title: "Heuristic vs algorithmic approaches"
 description: "Sometimes it's tough deciding whether you should use a heuristic or algorithmic approach. I tend to favor heuristic ones for quick and dirty projects but will opt for an algorithmic one for more complicated work."
 keywords: "data science, algorithms, heuristic, algorithms"
 category:
-tags: []
+tags: ["#datascience"]
 ---
 {% include JB/setup %}
 Something that’s come up frequently in my quantitative work is balancing heuristic and algorithmic approaches. It’s surprisingly difficult to get the first attempt at an algorithmic approach working properly - it’s not an academic exercise and real world issues will always appear. Over time I’ve found myself writing heuristic checks and tweaks to deal with the various edge cases the algorithmic approach encounters. For example, setting the min and max bounds on the results of a function or adjusting the slope of a curve if it ends up being set in the wrong direction.

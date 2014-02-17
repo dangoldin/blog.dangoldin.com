@@ -4,7 +4,7 @@ title: "Offering suggestions"
 description: "It's so much easier to offer advice to others than to take it yourself. This is just a post of how I'm trying to overcome it."
 keywords: "suggestions, advice, startups"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Since becoming active in the startup scene, I've been meeting a ton of founders and am annoyed by how much easier it is to offer suggestions than to apply them to myself. My most common suggestion, in true lean startup fashion, is to advocate a quicker or cheaper way to validate the market before building a product and yet it’s extremely difficult to take my own advice. I’ve been working on <a href="http://better404.com" target="_blank">Better404</a> on and off for two months now and know I should get it in front of potential customers and yet I keep on making minor tweaks and updates to the product.

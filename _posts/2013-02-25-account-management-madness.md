@@ -5,7 +5,7 @@ description: "Dealing with the madness of having multiple accounts for each of m
 keywords: "startups, multiple accounts, time management, productivity"
 image_url: "/assets/static/images/google-accounts.png"
 category:
-tags: []
+tags: ["#meta", "#product"]
 ---
 {% include JB/setup %}
 

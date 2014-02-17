@@ -4,7 +4,7 @@ title: "Why we may never colonize space"
 description: "Based on the competitiveness of human nature I believe we'll kill each other before we end up colonizing space."
 keywords: "space, colonizing space"
 category:
-tags: []
+tags: ["#meta"]
 ---
 Although it's wonderful to think that we will be able to colonize other worlds when we grow too numerous or run out of resources, it may not happen. It seems that given the level of current weapons and state of the world we will more likely try to conquer each other than try to conquer space.
 

@@ -5,7 +5,7 @@ description: "This is a comparison of taxi prices across various cities. I've in
 keywords: "taxi prices, visualization, analysis"
 image_url: "/assets/static/images/taxi-mile-vs-distance.png"
 category:
-tags: []
+tags: ["#dataviz", "#code", "#R"]
 ---
 {% include JB/setup %}
 I initially set out to add some visualizations to an earlier post comparing taxi fares between NYC and Mumbai based on some reader suggestions. After a few visualizations, I wasn’t discovering anything new and decided add taxi fare data from other cities to make it more interesting. I ended up simulating rides in different cities on <a href="http://www.worldtaximeter.com" target="_blank" rel="nofollow">worldtaximeter.com</a> and combining that with the data from <a href="http://www.taxiautofare.com" target="_blank" rel="nofollow">taxiautofare.com</a> and <a href="http://www.numbeo.com/taxi-fare/" targt="_blank">www.numbeo.com</a> in order to break down each city’s fare into a base fare, the included distance, the rate per local distance unit, and the rate per minute. Since each city’s fare came in local units I also had to convert to miles (sorry world) and US dollars (sorry again). Using R we generate the fares for the various combinations of distances and stoppage times and start diving into the data. As usual, the data and code are up on <a href="https://github.com/dangoldin/taxi-pricing" target="_blank">GitHub</a> with contributions, corrections, and suggestions welcome. I’d also love to get the real rates for the cities so either do a pull request or let me know what they are in the comments and I’ll update the post.

@@ -4,8 +4,8 @@ title: "Visualizing RunKeeper data in R"
 description: "Some visualizations done using R on top of my RunKeeper data from 2013."
 keywords: "runkeeper, stats, R, running, visualization"
 image_url: "/assets/static/images/rk-distance-cumulative.png"
-category: 
-tags: []
+category:
+tags: ["#dataviz", "#code", "#R"]
 ---
 {% include JB/setup %}
 What better way to celebrate running 1000 miles in 2013 than dumping the data into R and generating some visualizations? It’s also a step in my quest to replace Excel with R. I’ve included the code below with some comments as well as added it to <a href="https://github.com/dangoldin/runkeeper-stats" target="_blank">my GitHub</a>. If you have any ideas on what else I should do with it definitely let me know and I’ll give it a go.
@@ -14,7 +14,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
 <ul class="thumbnails">
 	<li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-distance-cumulative.png" alt="Cumulative distance">
       <p>
       	Cumulative distance. You can see a few flat areas in February and November when I took a break due to some minor injuries.
@@ -23,7 +23,7 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-distance-month.png" alt="Distance run by month">
       <p>
       	Distance run by month. Unexpected drop in November due to a break but pretty solid otherwise.
@@ -32,16 +32,16 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-distance-week.png" alt="Distance run by week">
       <p>
       	Distance run by week. Not much new information here that's not covered in the monthly graph.
       </p>
     </div>
-  </li>  
+  </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-time-cumulative.png" alt="Cumulative time (hours)">
       <p>
       	Cumulative time. Very similar shape to that of cumulative distance.
@@ -50,16 +50,16 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-time-vs-distance-cumulative.png" alt="Cumulative time vs distance (normalized)">
       <p>
       	Cumulative time vs distance. Superimpose one on top of the other to compare the shapes. Started off slowly but started getting faster in October.
       </p>
     </div>
-  </li>  
-  
+  </li>
+
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-speed-daily.png" alt="Speed by run">
       <p>
       	Speed by run. I got significantly faster in October but slowed down again in December.
@@ -68,16 +68,16 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-speed-month-qs.png" alt="Speed by month by distance quantile">
       <p>
       	Speed by month by distance quantile. The idea here was to look at my improvement in speed but controlling for distance. Echoes the previous chart showing my speed improvement in Oct for the longer distances.
       </p>
     </div>
   </li>
-  
+
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-speed-distribution-qs.png" alt="Speed distribution by distance quantile">
       <p>
       	Speed distribution by distance quantile. Another view that looks at the distribution of my speeds for all runs in a given distance quantile. Not much here but I was expecting to see that I'd have a faster pace for shorter runs.
@@ -86,7 +86,7 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-speed-vs-distance.png" alt="Speed vs Distance">
       <p>
       	Speed vs Distance scatter plot. Another way to look at the relationship between speed and distance but not many new insights here. Slight correlation between speed and distance. This is pretty much because as I got faster I started doing longer runs. It'll be interesting to see how this changes in 2014.
@@ -95,14 +95,14 @@ PS. It's great when web services allow users to export their data and wish more 
   </li>
 
   <li class="span7">
-    <div class="thumbnail">      
+    <div class="thumbnail">
       <img src="{{ IMG_PATH }}rk-speed-vs-distance-clusters.png" alt="Speed vs Distance clustered">
       <p>
       	Speed vs Distance scatter plot clustered. An attempt at clustering the runs by speed and distance. In this case they were basically clustered by distance since the speed didn't vary significantly.
       </p>
     </div>
   </li>
- </ul> 
+ </ul>
 
 {% highlight r %}
 library(ggplot2)
@@ -150,7 +150,7 @@ data.normalized <- melt(data, id.vars="ymd", measure.vars=c("distance_total_norm
 data.normalized$variable <- revalue(data.normalized$variable, c("distance_total_norm"="Distance", "time_hours_total_norm"="Time"))
 
 png('rk-speed-vs-distance.png', width=800, height=800)
-ggplot(data=data, aes(x=speed, y=distance)) + 
+ggplot(data=data, aes(x=speed, y=distance)) +
   geom_point() +
   theme_economist() +
   scale_color_economist() +
@@ -162,10 +162,10 @@ ggplot(data=data, aes(x=speed, y=distance)) +
 dev.off()
 
 png('rk-speed-vs-distance-clusters.png', width=800, height=800)
-ggplot(data=data, aes(x=speed, y=distance, color=cluster)) + 
+ggplot(data=data, aes(x=speed, y=distance, color=cluster)) +
   theme_economist() +
   scale_color_economist() +
-  geom_point(legend=FALSE) +  
+  geom_point(legend=FALSE) +
   geom_point(data=centers, aes(x=V1,y=V2, color='Center'), size=52, alpha=.3, legend=FALSE) +
   theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +
   xlab('Speed') +
@@ -177,7 +177,7 @@ png('rk-speed-month-qs.png',width = 800, height = 600)
 ggplot(data = data.qs_monthly,
   aes(month, speed)) +
   geom_line() +
-  facet_grid(qs ~ .) +  
+  facet_grid(qs ~ .) +
   scale_x_date(
     labels = date_format("%Y-%m"),
     breaks = "1 month") +
@@ -239,7 +239,7 @@ ggplot(data=data, aes(ymd, distance_total)) +
     labels = date_format("%Y-%m"),
     breaks = "1 month") +
   theme_economist() +
-  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +  
+  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +
   xlab('Month') +
   ylab('Distance') +
   ggtitle("Cumulative distance")
@@ -252,7 +252,7 @@ ggplot(data=data, aes(ymd, speed)) +
     labels = date_format("%Y-%m"),
     breaks = "1 month") +
   theme_economist() +
-  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +  
+  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +
   xlab('Month') +
   ylab('Speed') +
   ggtitle("Speed by Run")
@@ -265,7 +265,7 @@ ggplot(data=data, aes(ymd, time_hours_total)) +
     labels = date_format("%Y-%m"),
     breaks = "1 month") +
   theme_economist() +
-  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +  
+  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +
   xlab('Month') +
   ylab('Time (hours)') +
   ggtitle("Cumulative Time")
@@ -273,11 +273,11 @@ dev.off()
 
 png('rk-time-vs-distance-cumulative.png', width=800, height=800)
 ggplot(data.normalized,
-  aes(x=ymd, y=value, colour = variable, group=variable)) + 
+  aes(x=ymd, y=value, colour = variable, group=variable)) +
   geom_line() +
   theme_economist() +
   scale_color_economist() +
-  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +  
+  theme(axis.text.x = element_text(angle = 80, hjust = 1), plot.title=element_text(hjust=0.5)) +
   theme(legend.title=element_blank()) +
   xlab('YMD') +
   ylab('') +

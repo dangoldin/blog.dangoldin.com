@@ -4,7 +4,7 @@ title: "Achieving Browser Autocomplete"
 description: "Companies should strive to get into address bar autocomplete"
 keywords: "startups, marketing"
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 
 <p><img align="middle" src="http://media.tumblr.com/tumblr_m59sd3tyHs1qz9esq.png"/></p>

@@ -4,7 +4,7 @@ title: "On Business Models - To collect or to fine?"
 description: "I compare the collecting every ticket vs fining trespasser model on trains"
 keywords: "business models, trains"
 category:
-tags: []
+tags: ["#finance"]
 ---
 
 <p>A few years ago, I was on vacation in Italy and spent a good amount of time on trains. Being from the US, I noticed that my ticket was not checked every single ride. At the same time, not having a ticket and being caught carried a large fine. Having the luxury of time, some assumptions, and some algebra, it’s straightforward to work out how to set the fine to make the two systems have the same expected revenue.</p>

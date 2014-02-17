@@ -3,8 +3,8 @@ layout: post
 title: "Blog analytics (blogolytics?)"
 description: "I'm currently using Google Analytics for my blog but am going to also start using MixPanel and a bunch of meta data to track additional info."
 keywords: "blog, analytics, google analytics, mixpanel"
-category: 
-tags: []
+category:
+tags: ["#blog"]
 ---
 {% include JB/setup %}
 Every time I launch a new website one of the first things I do is add <a href="http://www.google.com/analytics/" target="_blank">Google Analytics</a> to start gathering data. This blog was no different but I’ve recently been wondering whether Google Analytics is the right way to measure a blog. It’s great for tracking the total number of visitors, where they’re coming from, and how long they’re staying but I wish there was something that was optimized for blogs rather than something that was designed as a general solution.

@@ -4,7 +4,7 @@ title: "Why I manage my own blog"
 description: "As great as the various blog platforms, such as Medium and Svbtle, are, I manage my own blog. Managing my own blog gives me the control I want and prevents me from having to rely on the provided marketing that I have no control over."
 keywords: "medium, svbtle, blogging, github pages, content, creation"
 category:
-tags: []
+tags: ["#blog", "#meta", "#product"]
 ---
 {% include JB/setup %}
 Given the recent news of Medium <a href="http://recode.net/2014/01/28/medium-evan-williams-post-twitter-media-startup-raises-25-million-round/" target="_blank">raising $25M</a> and Svbtle <a href="http://blog.svbtle.com/open-for-everyone" target="_blank">opening up</a> to the public I thought it would be an appropriate time to explain why I’m not using either of them. They’re both simple, clean products that allow writers to concentrate on their writing rather than configuring the dozens of options available in other blogging platforms. They’ve also done a great job with the typography that makes the content enjoyable to read. Compared to the other content websites out there, they’re incredible fast - they have a minimal structure and don’t load a ton of external content - especially when compared to the major publishers out there now such as the news sites and the social networks.

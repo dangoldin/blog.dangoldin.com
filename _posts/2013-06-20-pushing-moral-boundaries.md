@@ -4,7 +4,7 @@ title: "Pushing moral boundaries"
 description: "Startups need to push boundaries to grow and I share an experience we had pushing a boundary at Makers Alley."
 keywords: "startups, morals, boundaries"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Startups need to use everything in their arsenal to grow. A big part of it is playing in the grey area between moral and immoral. Do you create fake users and comments to portray an active community? Do you reply to posts on Craigslist trying to get visitors to your site? It’s also much easier to play in this area when you’re a startup - you’re most likely too small to be noticed and even if you are the press won’t spend much time on it. Google already gets a ton of flak every time someone complains about losing business due to a search engine update, imagine what would happen if a Google employee was caught spamming Craigslist.

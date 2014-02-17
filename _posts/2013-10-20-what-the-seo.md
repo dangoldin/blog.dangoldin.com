@@ -5,7 +5,7 @@ description: "There's some weird stuff going on in SEO land. Someone is ripping 
 keywords: "seo, adsense, blackhat, blackmail"
 image_url: "/assets/static/images/hbuse-sample-sites.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 My mom owns a small local business in suburban NJ, <a href="http://www.doremi-nj.com/" target="_blank">The Do Re Mi School</a>, that’s akin to an after-school program where music, dance, art, language and math is taught. Being surrounded by a family of engineers, we’ve been helping her on the tech side and my brother created the web site she’s been using it for the past couple of years. It’s based on Drupal and allows her to make changes without having to dive into the tech details. This approach has been working well she’s recently started using YouTube, Facebook, and Twitter to help with her marketing and social efforts.

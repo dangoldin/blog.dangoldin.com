@@ -4,7 +4,7 @@ title: "But I don't have time"
 description: "Instead of talking about a lack of time we should realize it's about our priorities and actually think through our choices."
 keywords: "life, time, time management, philosophy"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 I'm frustrated by the expression "I don't have time". As my friends and I have gotten older, I’ve been hearing it more and more frequently. I’ve even caught myself using when trying to come up with an excuse when coordinating evening or weekend plans.

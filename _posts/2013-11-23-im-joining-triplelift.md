@@ -4,7 +4,7 @@ title: "I'm joining TripleLift"
 description: "I joined TripleLift's engineering team as a data wrangler and am excited about the space and opportunity."
 keywords: "triplelift, advertising, native advertising, display advertising"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 Just a quick update on my professional life. I recently joined <a href="http://triplelift.com/" target="_blank">TripleLift</a>’s engineering team. I met the founders while at <a href="http://eranyc.com/" target="_blank">ERA</a> and liked the problem they were solving. It was also time for me to move on from my other projects so when I found out they were growing it was a pretty easy decision. Being a startup, it’s hard to pinpoint exactly what everyone’s responsibilities are since everyone becomes a generalist but I’ve been focused on the data side. This entails developing our various data pipelines, leveraging the data we have to improve performance and unlock new opportunities, and doing some light data science to help model and understand the native advertising space.

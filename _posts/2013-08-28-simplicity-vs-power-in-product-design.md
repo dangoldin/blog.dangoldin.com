@@ -4,7 +4,7 @@ title: "Simplicity vs power in product design"
 description: "Something I've been wondering about is the tradeoff between simplicity and power in product design. Is it possible to achieve both? What are some examples where it's been achieved?"
 keywords: "design, ux, startups, product management"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 Although I come from a backend background, I’ve been spending more and more time on the UX side of things and have been picking up quite a bit - a combination of using Twitter Bootstrap on my projects, subscribing to the Hack Design lectures, and following a ton of designers on Twitter.

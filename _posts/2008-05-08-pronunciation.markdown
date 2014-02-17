@@ -4,7 +4,7 @@ title: "Pronunciation"
 description: "Just some observations I have about pronunciation."
 keywords: "pronunciation"
 category:
-tags: []
+tags: ["#meta"]
 ---
 Recently I've discovered a few words where I know the definition and spelling but I don't know the pronunciation. The problem is that I think I know how to pronounce them so when I use them for the first time in conversation, or hear someone using them, some confusion arises (as well as making me look like a fool).
 

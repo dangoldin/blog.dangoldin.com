@@ -4,7 +4,7 @@ title: "Video games as art"
 description: "Video games should be treated as art the same way other forms of entertainment are."
 keywords: "video games, entertainment, art"
 category:
-tags: []
+tags: ["#meta"]
 ---
 It's about time video games are considered an art. They are creative endeavors that take as much and as long to make as some movies. There is also a huge distinction between the great and the poor games. Games these days can be considered movies and they should be treated in the same way.
 

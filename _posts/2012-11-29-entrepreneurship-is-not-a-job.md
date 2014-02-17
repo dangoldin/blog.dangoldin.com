@@ -3,7 +3,7 @@ layout: post
 title: "Entrepreneurship is not a job"
 description: ""
 category:
-tags: []
+tags: ["#product", "#meta"]
 ---
 {% include JB/setup %}
 <p>

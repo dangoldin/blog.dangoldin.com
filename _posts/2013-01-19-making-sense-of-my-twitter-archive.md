@@ -5,7 +5,7 @@ description: "Doing some data visualizations on my Twitter archive"
 keywords: "twitter data visualization matplotlib nltk quantified self"
 image_url: "/assets/static/images/by-month-dow.png"
 category:
-tags:
+tags: ["#dataviz", "#datascience", "#code"]
 ---
 {% include JB/setup %}
 I finally got access to my Twitter archive and decided to have some fun with it and also give me an excluse to play around with <a href="http://matplotlib.org/">matplotlib</a>. The first step was just seeing what the data looked like and what information was available. Turns out that Twitter included a simple HTML page to let you browse your tweets but also provided CSV files for each month. The fields were pretty self explanatory but one "gotcha" was needing to convert the timestamp to my local time. I wanted to do a few data visualizations to see what my tweeting behavior was like and also see if anything insightful came out. As I started looking at the visualizations I noticed that I'm more active than I used to be and that I have a pretty stable relationship betweet my tweets, my RTs, and my replies. In the future, I'd like to explore how my usage of Twitter has evolved and also get to play around with the <a href="http://nltk.org/">NLTK library</a>.

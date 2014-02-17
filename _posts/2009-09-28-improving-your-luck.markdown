@@ -4,7 +4,7 @@ title: "Improving your luck"
 description: "How to improve your luck."
 keywords: "luck"
 category:
-tags: []
+tags: ["#meta"]
 ---
 <img title="Seneca, part of double-herm in Antikensammlung..." src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Seneca-berlinantikensammlung-1.jpg/300px-Seneca-berlinantikensammlung-1.jpg" alt="Seneca, part of double-herm in Antikensammlung..." width="300" height="370" style="float:right;"/>
 

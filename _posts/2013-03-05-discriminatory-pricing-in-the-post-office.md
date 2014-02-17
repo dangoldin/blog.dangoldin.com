@@ -4,7 +4,7 @@ title: "Discriminatory Pricing in the Post Office"
 description: "The post office should introduce price discrimination to make up for the $5B loss in 2012"
 keywords: "post office, usps, postal service, price discrimination"
 category:
-tags: []
+tags: ["#pricing"]
 ---
 {% include JB/setup %}
 I recently came across Jeff Jordan’s <a href="http://jeff.a16z.com/2012/10/30/avoiding-financial-armageddon-at-the-post-office/" target="_blank">post</a> about revamping the post office so it’s no longer losing more than $5 billion a year. Jeff suggests the obvious solution of raising prices but I think a more clever approach would be to start price discriminating. Everyone who needs to mail a letter has to pay 46 cents for a stamp but why not come up with tiered pricing. People who need to send something urgently can pay more than a dollar while others who only care that the letter arrives can pay 20 cents. The postal service would need to ensure their systems are able to track how full or empty each shipment is but this would allow them to ship the cheaper, less urgent mail with the more urgent mail to maximize the shipping space. Another way to price discriminate would be to give a discount for mail that’s picked up at the post office within a few days rather than being delivered to the home.

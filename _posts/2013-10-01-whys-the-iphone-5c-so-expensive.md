@@ -5,7 +5,7 @@ description: "The iPhone 5C is more expensive than people expected to avoid cann
 keywords: "apple, iphone, 5S, 5C, pricing, marketing"
 image_url: "/assets/static/images/iphone-5s-5c-shares.png"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 <p>Many people <a href="http://ben-evans.com/benedictevans/2013/9/5/the-price-of-the-5c" target="_blank">expected</a> the iPhone 5C to be priced low in order to compete with the cheaper Android phones in countries without carrier subsidies. The news that the 5C’s starting price was $549 left many in the tech community <a href="http://www.avc.com/a_vc/2013/09/reactions.html" target="_blank">surprised and concerned</a> with many believing that the price needed to be lower than $400 in order to compete worldwide.</p>

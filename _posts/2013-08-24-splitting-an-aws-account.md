@@ -4,7 +4,7 @@ title: "Splitting an AWS account"
 description: ""
 keywords: "AWS, EC2, ELB, Cloudfront, S3, splitting AWS, migrating AWS"
 category:
-tags: []
+tags: ["#aws"]
 ---
 {% include JB/setup %}
 When we launched <a href="http://getpressi.com" target="_blank">Pressi</a>, I had it set up under my personal AWS account. Recently, we needed to move it into a separate AWS account and I wanted to share the steps to help others running into the same issue. Unsurprisingly, most of the effort went into planning and figuring out the migration steps and order in which they should be done. We weren’t able to eliminate downtime entirely but we reduced it as much as we could.

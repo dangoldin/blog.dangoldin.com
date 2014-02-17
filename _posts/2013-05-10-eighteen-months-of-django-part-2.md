@@ -4,7 +4,7 @@ title: "Eighteen Months of Django: Part 2"
 description: "Here are the Django and Python packages I've found to be useful after working with Django over the past 18 months."
 keywords: "Django, python, hacking, coding, web development, startups"
 category:
-tags: []
+tags: ["#python", "#code"]
 ---
 {% include JB/setup %}
 On Tuesday, I shared some <a href="http://dangoldin.com/2013/05/07/eighteen-months-of-django/" target="_blank">best practices</a> I picked up while using Django. This is a follow up post to share the packages that I found useful as well as various hiccups I encountered when using them.

@@ -4,7 +4,7 @@ title: "Tesla and privacy"
 description: "No one is talking about the data Tesla is collecting and how valuable it will be in the future."
 keywords: "tesla, privacy, data"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 What’s lost in the <a href="http://www.teslamotors.com/blog/most-peculiar-test-drive">Tesla/NY Times discussion</a> is how much information Tesla is collecting. Tesla collected the location, the speed, and the battery charge throughout the journey and referenced it during the rebuttal. Is Tesla collecting this data for every car sold? Do the drivers know this data is being collected? If John Broder knew Tesla had this data from his drive <a href="http://www.nytimes.com/2013/02/10/automobiles/stalled-on-the-ev-highway.html">his review</a> would have turned out differently. We’re all in favor of truth and honesty in reporting but should it be this easy to share data? What prevents Elon Musk from digging into the driving data of a politician who proposes some legislation that will adversely impact Tesla and finds likely unethical behavior?

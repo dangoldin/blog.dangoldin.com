@@ -3,8 +3,8 @@ layout: post
 title: "Surge pricing ideas"
 description: ""
 keywords: "surge pricing, product, uber, marketing"
-category: 
-tags: []
+category:
+tags: ["#product", "#pricing"]
 ---
 {% include JB/setup %}
 Every time there’s a big event or terrible weather, there’s a slew of complaints about Uber’s surge pricing. By now, you’d think that Uber customers would expect this to happen and yet they’re surprised when a $10 cab ride turns into a $100 Uber ride. I suspect Uber’s already done as much as it can on the messaging side; psychologically it’s just tough for someone to take a $10 ride one day and then a day later pay an order of magnitude more.

@@ -5,7 +5,7 @@ description: "Sales approaches can be seen as varying by inbound vs outbound and
 keywords: "sales, innovator's dilemma, lean startups, mvp, saas, startups, business"
 image_url: "/assets/static/images/sales-matrix.png"
 category:
-tags: []
+tags: ["#sales"]
 ---
 {% include JB/setup %}
 Something I’ve been thinking about is the variety of sales approaches. On one extreme, you have pharmaceutical companies sending sales reps to visit doctors offices to try to get them to prescribe their drugs. On the other you have companies such as MixPanel and Dropbox which rely on a self serve approach. And in between you have companies such as NewRelic which offer a self-serve trial and try to upsell you with emails from a sales rep.

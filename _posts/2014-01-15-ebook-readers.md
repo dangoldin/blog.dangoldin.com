@@ -4,7 +4,7 @@ title: "Ebook readers"
 description: "I read a ton but can't find an ebook reader that I like. The problem is that the creation, distribution, and consumption of content are coupled into closed ecosystems."
 keywords: "ebooks, reading, DRM"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 I'm an avid reader and have embraced the move to digital. An internet connection gives me access to thousands of books with a device that’s thinner than a single book. What I grapple with are the reading apps - I can’t find one that does everything I want.

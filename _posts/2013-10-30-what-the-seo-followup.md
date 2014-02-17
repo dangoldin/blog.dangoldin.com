@@ -3,8 +3,8 @@ layout: post
 title: "What the SEO? Followup"
 description: "Follow up to my previous post around a website stealing content from my mom's site and claiming it as their own. A happy outcome!"
 keywords: "seo, website"
-category: 
-tags: []
+category:
+tags: ["#product"]
 ---
 {% include JB/setup %}
 Last week I <a href="http://dangoldin.com/2013/10/20/what-the-seo/">posted</a> about a site my mom discovered that had copied the content from her site and has been positioning as their business. I had no clue what the motivation behind it was other than thinking it was just a sketchy way to either blackmail the real business owner or use black hat SEO tactics to increase traffic and monetize using AdSense.

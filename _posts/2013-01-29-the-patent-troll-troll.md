@@ -5,7 +5,7 @@ description: "To fight patent trolls we need to go on the offensive"
 keywords: "patent trolls, law, newegg"
 image_url: "/assets/static/images/patent-troll.jpg"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 <ul class="thumbnails">

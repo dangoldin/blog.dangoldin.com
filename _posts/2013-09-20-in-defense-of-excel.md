@@ -5,7 +5,7 @@ description: "Excel has a bad reputation but it's great at doing quick analysis 
 keywords: "excel, data science, quantitative engineering, tableau"
 image_url: "/assets/static/images/excel-logo-2013.png"
 category:
-tags: []
+tags: ["#datascience"]
 ---
 {% include JB/setup %}
 

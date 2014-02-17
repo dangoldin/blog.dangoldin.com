@@ -5,7 +5,7 @@ description: "The new Gmail compose is a step backwards in usability. We need to
 keywords: "gmail, ux, analytics, metrics"
 image_url: "/assets/static/images/gmail_logo.png"
 category:
-tags: []
+tags: ["#design"]
 ---
 {% include JB/setup %}
 

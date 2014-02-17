@@ -4,7 +4,7 @@ title: "Is the pen mightier than the sword in a social world?"
 description: "Has social media made us less likely to cause real change in the world since we're liking and sharing instead?"
 keywords: "social media Instagram SOPA PIPA"
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include JB/setup %}
 The recent revolt around Instagram’s TOS changes got me thinking about the revolt against SOPA/PIPA and the impact social media is having on cultural participation. We’re wired to want to improve things and when we come across what we feel is an injustice we want to change it. Unfortunately, social media has made us lazy. Sharing something on Twitter or Facebook gives us the nice, warm feeling that we’re actively contributing to a cause. Instead of going out and demonstrating in public, snail mailing our representatives, or providing financial support, we’re clicking a link and think we’re making a difference. PIPA/SOPA wasn’t stopped due to internet outrage but from people calling their representatives and doing more than just mentioning their opposition. Wikipedia and Reddit didn’t just put a message up saying they oppose PIPA/SOPA but blacked out their site. Would the result be the same if they just had a message stating they opposed it?
