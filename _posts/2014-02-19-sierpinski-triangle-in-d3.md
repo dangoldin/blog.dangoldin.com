@@ -4,7 +4,8 @@ title: "Sierpinski triangle in D3"
 description: "There's a neat iterative algorithm to generate a Sierpinski triangle that I implemented in D3/JavaScript."
 keywords: "sierpinski triangle, D3, visualization, JavaScript"
 category:
-tags: []
+image_url: "/assets/static/images/sierpinski-triangle.png"
+tags: ["#dataviz", "#javascript", "#code"]
 custom_js: ["d3.sierpinski.js"]
 ---
 {% include JB/setup %}
