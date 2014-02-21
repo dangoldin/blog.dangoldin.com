@@ -1,0 +1,2 @@
+<script type="text/javascript" src="{{ STATIC_PATH }}js/d3.v3.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_PATH }}js/d3.layout.cloud.js"></script>

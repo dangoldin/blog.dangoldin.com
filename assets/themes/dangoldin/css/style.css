@@ -306,3 +306,7 @@ ul.tags li {
     line-height: 20px;
     /*font-weight: 300;*/
 }
+
+div.spacer {
+    margin-top: 10px;
+}
