@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  $('#id-sierpinski-generate').click(function() {
+    drawShape();
+    return false;
+  });
+
   function drawPoint(svg, p) {
     svg.append("circle")
       .attr("cx", p[0])
@@ -6,41 +11,61 @@ $(document).ready(function() {
       .attr("r", 1);
   }
 
-  function randomRectanglePoint(w,h) {
+  function randomPoint(w,h) {
     var x = Math.random() * w,
         y = Math.random() * h;
 
     return [x,y];
   }
 
-  function nextRectanglePoint(p, p1, p2, p3, p4) {
-    var i = Math.floor(Math.random() * 4),
-        cp = [p1, p2, p3, p4][i];
+  function nextPoint(p, points, ratio) {
+    var i = Math.floor(Math.random() * points.length),
+        cp = points[i];
 
-    return [(p[0] + cp[0])/3, (p[1] + cp[1])/3];
+    return [(p[0] + cp[0]) * ratio, (p[1] + cp[1]) * ratio];
   }
 
-  // Square
-  var svg = d3.select("#canvas-carpet")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+  function generateVertices(w,h,n) {
+    var cx = w/2,
+        cy = h/2,
+        theta = 2 * Math.PI/n,
+        r =  Math.min(w, h)/2,
+        points = [];
 
-  var s1 = [0, 0],
-      s2 = [width, 0],
-      s3 = [width, height],
-      s4 = [0, height],
-      s = randomRectanglePoint(width, height);
-
-  drawPoint(svg, s1);
-  drawPoint(svg, s2);
-  drawPoint(svg, s3);
-  drawPoint(svg, s4);
-  drawPoint(svg, s);
-
-  for (var i = 0; i < 10000; i++) {
-    var s = nextRectanglePoint(s, s1, s2, s3, s4);
-    console.log(s);
-    drawPoint(svg, s);
+    for (var i = 0; i < n; i++) {
+      var px = cx + r * Math.cos(theta * i),
+          py = cy + r * Math.sin(theta * i);
+      points.push([px, py]);
+    }
+    console.log(points);
+    return points;
   }
-}
+
+  function drawShape() {
+    $('svg').remove();
+
+    var width = 600,
+        height = 600;
+
+    var svg = d3.select("#canvas")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height),
+      num_sides = parseFloat($('#id-sierpinski-sides').val()),
+      ratio = parseFloat($('#id-sierpinski-ratio').val()),
+      vertices = generateVertices(width, height, num_sides),
+      s = randomPoint(width, height);
+
+    console.log(vertices);
+
+    for (var i = 0; i < num_sides; i++) {
+      drawPoint(svg, vertices[i]);
+    }
+
+    for (var i = 0; i < 10000; i++) {
+      var s = nextPoint(s, vertices, ratio);
+      console.log(s);
+      drawPoint(svg, s);
+    }
+  }
+});
