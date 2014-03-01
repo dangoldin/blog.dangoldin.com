@@ -12,7 +12,7 @@ Here are some side projects I've been hacking on:
 
 <ul>
     <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.com" target="_blank">Yet Another Hacker News Reader</a></li>
+    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
     <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
     <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
     <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li>
