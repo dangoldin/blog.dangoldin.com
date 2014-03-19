@@ -15,9 +15,9 @@ Here are some side projects I've been hacking on:
     <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
     <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
     <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li>
-    <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li>
+    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
+    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
     <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
 </ul>
 
-I also have a <a href="{{ DATA_PATH }}dg_res.pdf">resume</a>
+<!-- I also have a <a href="{{ DATA_PATH }}dg_res.pdf">resume</a> -->
