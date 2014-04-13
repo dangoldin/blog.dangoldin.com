@@ -198,7 +198,7 @@ span.date {
 }
 
 ul {
-    list-style: none outside;
+    list-style: disc outside;
 }
 
 ul.posts li {
