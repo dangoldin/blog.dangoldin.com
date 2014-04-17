@@ -201,11 +201,19 @@ ul {
     list-style: disc outside;
 }
 
+ul.posts {
+    list-style: none outside;
+}
+
 ul.posts li {
     font-family: 'Open Sans', sans-serif;
     font-size: 21px;
     line-height: 32px;
     font-weight: 400;
+}
+
+ul.unbulleted {
+    list-style: none outside;
 }
 
 ul.bulleted {
