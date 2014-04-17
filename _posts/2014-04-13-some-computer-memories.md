@@ -24,7 +24,7 @@ Inspired by yesterday’s post I decided to compile a list the memories I’ve h
 - Upgrading to a 56k modem
 - Using NetZero as an ISP
 - Hosting my first website at Geocities (wish I knew where it was and could dig it up)
-- Lycos and Altavisa
+- Lycos and AltaVista
 - Finally getting a cable modem
 - Learning Pascal and C++ in high school
 - Warcraft 2, Starcraft, Diablo, Total Annihilation, Shattered Galaxy and LAN parties
