@@ -3,7 +3,7 @@ layout: post
 title: "Gap fills and cross joins in Excel"
 description: "Two common problems in Excel is filling in missing values and doing a cross join. Here are two ways to do it."
 keywords: "excel, cross join, gap fill"
-image_url:
+image_url: "/assets/static/images/excel-gap-fill.png"
 category:
 tags: ["#code"]
 ---
