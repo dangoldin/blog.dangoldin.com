@@ -5,7 +5,7 @@ description: "Data science doesn't need to be complicated. Anyone who can write 
 keywords: "data science, analysis"
 image_url:
 category:
-tags: ["#devops"]
+tags: ["#datascience", "#meta"]
 ---
 {% include JB/setup %}
 Data science has earned the reputation of being complicated and inaccessible to those without an advanced degree but it doesn't have to be this way. The goal of data science is simply to unlock insights and value from data. There's no need to make it more complicated than that. Of course, there are times where the data requires some domain knowledge or is just too big for someone without the necessary experience to work with but I believe that most places have enough low hanging fruit that anyone who can write a quick script can contribute and do data science.
