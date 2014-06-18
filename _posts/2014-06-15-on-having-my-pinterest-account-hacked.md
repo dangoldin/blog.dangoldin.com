@@ -14,4 +14,4 @@ The fix was simple - block the Pinterest app from within Twitter, disconnect Twi
 
 This is a frustrating design pattern. Sites and apps should default to a mobile optimized experience but if any functionality is missing they should allow users to fall back to the web view. Arguably, that option should always be available since a user may have a specific flow in mind and shouldn't be forced to learn a new approach - especially if something's urgent. In my case, this wasn't that huge of a deal but I can see how it could have been.
 
-The other lesson is that in this world of interconnected apps you're only as the weakest app. Twitter followers don't care why they're seeing spam and having TFA enabled on Twitter won't help you if another account is compromised.
+The other lesson is that in this world of interconnected apps you're only as strong as the weakest app. Twitter followers don't care why they're seeing spam and having TFA enabled on Twitter won't help you if another account is compromised.
