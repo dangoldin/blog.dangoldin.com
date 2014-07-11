@@ -14,6 +14,6 @@ A common refrain mentioned is that ecosystems drive smartphone adoption. This is
 
 It's also interesting to contrast this with Microsoft's approach of paying developers a flat sum to create a Windows phone version of their app. On one hand, this approach allows Microsoft to be selective since they can pay to get the apps they want. On the other hand they run the risk of paying for an app without any users. The interests between Microsoft and it's app developers are not as aligned as those between Amazon and it's app developers.
 
-One thing that may have influenced this decision is that Amazon's OS is Android based so it's significantly less work to port an app to work on Amazon's phone compared to a Windows Phone. The pitcher to developers is akin to saying make a few changes to your app and potentially earn a bunch of money while Microsoft's would be write a new app in a new language and we'll pay you for your efforts.
+One thing that may have influenced this decision is that Amazon's OS is Android based so it's significantly less work to port an app to work on Amazon's phone compared to a Windows Phone. The pitch to developers is akin to saying make a few changes to your app and potentially earn a bunch of money while Microsoft's would be write a new app in a new language and we'll pay you for your efforts.
 
 Almost all Amazon phone coverage has been bearish and I wonder whether this move will have an impact. Apps to drive smartphone adoption but with so many good options already available replicating an ecosystem won't be enough.
