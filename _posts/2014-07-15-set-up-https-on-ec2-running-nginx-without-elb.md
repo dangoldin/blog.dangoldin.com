@@ -8,7 +8,7 @@ category:
 tags: ["#code", "#devops"]
 ---
 {% include JB/setup %}
-I recently needed to set up HTTPS for my side project, better404.com. Amazon makes it easy to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html" target="_blank">set up</a> by uploading it directly to an ELB but in my case it’s hosted on a single AWS instance so I didn’t want to pay for an ELB that would be more expensive than my one instance. I’ve heard horror stories and expected the worst but it turned out surprisingly easy. Hopefully these steps can help someone else out.
+I recently needed to set up HTTPS for my side project, <a href="https://better404.com/" target="_blank">better404.com</a>. Amazon makes it easy to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html" target="_blank">set up</a> by uploading it directly to an ELB but in my case it’s hosted on a single AWS instance so I didn’t want to pay for an ELB that would be more expensive than my one instance. I’ve heard horror stories and expected the worst but it turned out surprisingly easy. Hopefully these steps can help someone else out.
 
 <ul>
   <li>Get an HTTPS certificate. I bought three certificates from Namecheap a couple of months ago when they were running a  promotion.</li>
