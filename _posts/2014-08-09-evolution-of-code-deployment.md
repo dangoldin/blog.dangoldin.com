@@ -10,11 +10,11 @@ tags: ["#devops"]
 {% include JB/setup %}
 I’ve been working on various tech related projects for over a decade now and have gone through a variety of approaches to deploying code. I’m far from an expert but though it would be helpful to jot down what I’ve seen and where I'm hoping to get.
 
-- FTP upload, no version control: My first few websites were developed locally and were then simply copied over to the host server via FTP. Worked well for simple projects where I was the only contributor.
+- FTP upload, no version control: I developed my first few sites locally and then just copied them over to the host server via FTP. This worked well for simple projects where I was the only contributor.
 
-- Version control, single branch: Once I discovered version control I immediately found it helpful. Version control made it easy to work with others but our deployment was still manual. When we were ready to deploy we would log in to our server, run the necessary commands to modify the database schema, and then do pull/update to get a new version of our code base.
+- Version control, single branch: Once I discovered version control I immediately found it helpful. Version control made it easy to work with others but our deployment was still manual. When we were ready to deploy we would log in to our server, run the necessary commands to update the database schema, and then do pull/update to get a new version of our code base.
 
-- Version control, single branch, more automated deployment: Logging in every time to do a deployment was a pain so we found <a href="http://www.fabfile.org/" target="_blank">Fabric</a> that helped us automate deployments. Fabric allowed us to execute scripts on multiple machines without having to manually log in to each one. Since each box had a set of roles we were able to set up Fabric to deploy by role (ie deploy this change to the DB server, deploy this change to all webservers).
+- Version control, single branch, more automated deployment: Logging in every time to do a deployment was a pain so we started using <a href="http://www.fabfile.org/" target="_blank">Fabric</a> to automate deployments. Fabric allowed us to execute scripts on multiple machines without having to manually log in to each one. Since each box had a set of roles we were able to set up Fabric to deploy by role (ie deploy this change to the DB server, deploy this change to all webservers).
 
 - Version control, multiple branches, more automated deployment: Another improvement was following git best practices and setting up a production branch with everyone working on development branches that would then be merged into master. When the deployment was ready to go out it would be merged into production. The value here was that when we ran into a bug on production, we were able to fix it without having to merge in a bunch of new features.
 
