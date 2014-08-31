@@ -5,7 +5,7 @@ description: ""
 keywords: "Django, python, settings files"
 image_url:
 category:
-tags: ["#pyton", "#code", "#devops"]
+tags: ["#python", "#code", "#devops"]
 ---
 {% include JB/setup %}
 I was helping a friend deploy a Django project over the weekend and we chatted about the best way to manage multiple settings files in a Django project. The primary reason is that you will typically have different settings between a production and development environment and but at the same time will have a lot of options shared between them. A production environment will typically be more restrictive and optimized for performance whereas a development environment will be setup to provide as much debug information as possible.
