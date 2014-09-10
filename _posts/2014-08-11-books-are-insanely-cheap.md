@@ -8,7 +8,7 @@ category:
 tags: ["#pricing"]
 ---
 {% include JB/setup %}
-While the pricing battle between Amazon and Hatchette rages on, I’ve been thinking about the relationship between price and value. A typical ebook on Amazon costs $9.99 while a movie in a theater, especially one in New York, can cost more than $10. And yet the book takes longer to experience - a movie is over within 2 hours while a book can be enjoyed for hours. Or how about a beer or coffee, they’re two to three times cheaper than an ebook but are consumed an order of magnitude faster book and only provide immediate gratification.
+While the pricing battle between Amazon and Hachette rages on, I’ve been thinking about the relationship between price and value. A typical ebook on Amazon costs $9.99 while a movie in a theater, especially one in New York, can cost more than $10. And yet the book takes longer to experience - a movie is over within 2 hours while a book can be enjoyed for hours. Or how about a beer or coffee, they’re two to three times cheaper than an ebook but are consumed an order of magnitude faster book and only provide immediate gratification.
 
 Amazon released data indicating that dropping the price of an ebook from $14.99 to $9.99 (33%) leads to a 74% increase in number of books sold. I understand that a lower price increases demand but it’s still ridiculous that we’re that concerned about a $5 price difference for a book when we’re spending that much on a coffee.
 
