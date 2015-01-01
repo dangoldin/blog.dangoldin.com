@@ -58,4 +58,4 @@ The only cases I can think of where it’s even remotely useful is if your serve
 
 The other use case I can think of is purely educational - it forces you to write your recursive code in a tail recursive style and forces you to think about the state you need to share between redirect requests. And if you’re ever told to solve a problem without using for loops or recursion you can violate the spirit of the request by using a series of HTTP redirects.
 
-I’d genuinely curious if there’s an actual use case for this and whether anyone’s had to do this.
+I’m genuinely curious if there’s an actual use case for this and whether anyone’s had to do this.
