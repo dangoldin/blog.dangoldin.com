@@ -243,6 +243,10 @@ div.thumbnail ul li {
     margin: 10px 0;
 }
 
+.post table.small {
+    font-size: 14px;
+}
+
 .post td {
     font-size: 16px;
 }
