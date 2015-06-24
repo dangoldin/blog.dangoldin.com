@@ -43,6 +43,3 @@ Yesterday, Amazon <a href="https://aws.amazon.com/blogs/aws/now-available-aws-sd
 This domain specific approach is great when working with APIs and I’m surprised more libraries don’t adopt it. The benefits include being able to keep the actual code the same and only updating the definitions as well as having definitions shared across various language implementations. An additional benefit that can be gotten is actually downloading the latest definitions at runtime. This way you’re always running against the latest version of the API and don’t have to worry about upgrading versions.
 
 I’d love to see more companies adopt this approach and even come up with a standard API declaration language. Then a single set of scripts can be used to wrap any API. Imagine how much simpler it would be to integrate with third party APIs when all you need to do is read the docs and have everything else wired. In fact the docs themselves can be generated from the base definitions.
-
-https://github.com/boto/boto3/blob/develop/boto3/data/ec2/2015-04-15/resources-1.json
-
