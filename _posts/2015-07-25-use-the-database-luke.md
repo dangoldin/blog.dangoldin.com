@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use the DB Luke"
+title: "Use the database Luke"
 description: "One of the best ways to onboard as an engineer is to understand the database and how various tables and fields relate to one another."
 keywords: "engineering, management, onboarding"
 image_url:
