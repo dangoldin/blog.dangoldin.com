@@ -8,7 +8,7 @@ category:
 tags: ["#meta"]
 ---
 {% include JB/setup %}
-While playing around with Scala I rediscovered streams - a list-like structure that's lazily evaluated - meaning that only when you access a particulare value is it evaluated. This makes it possible to create infinite streams since all you need is a function that's able to compute the next value. In such a way we can create a stream of all numbers, just the positive even numbers, or just the prime numbers. Calculating each successive prime number will become more difficult but it is possible.
+While playing around with Scala I rediscovered streams - a list-like structure that's lazily evaluated - meaning that only when you access a particular value is it evaluated. This makes it possible to create infinite streams since all you need is a function that's able to compute the next value. In such a way we can create a stream of all numbers, just the positive even numbers, or just the prime numbers. Calculating each successive prime number will become more difficult but it is possible.
 
 In the case of the positive even numbers it's possible to generate the stream in two simple ways - one is to take each positive integer and double it while the other is to take every positive integer and filter them down to those that are divisible by two. Both of these will generate the exact same numbers in the same order but do it in opposite ways. One generates the numbers from a base list and the other filters a larger list down.
 
