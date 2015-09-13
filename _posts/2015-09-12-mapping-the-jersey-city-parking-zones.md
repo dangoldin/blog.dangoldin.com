@@ -8,7 +8,7 @@ category:
 tags: ["#code", "#dataviz", "#python", "#javascript"]
 ---
 {% include JB/setup %}
-A big part of owning a car in Jersey City is dealing with the street parking. Unfortunately, Jersey City does not make it easy to see what the zones are - instead there's a PDF that lists the streets and address ranges that are part of each zone. After getting frustrated with this annoyance for too long I decided to just take matters into my own hands and visualize the zones through some scripting. This is a relatively simple project that still involved some false steps so I wanted to document the process and provide a peek into my development approach.
+A big part of owning a car in Jersey City is dealing with the street parking. Unfortunately, Jersey City does not make it easy to see what the zones are - instead there's a <a href="http://jcparking.org/PDF/ZONE%20PERMITS%20ALL%20ZONES.pdf" target="_blank">PDF</a> that lists the streets and address ranges that are part of each zone. After getting frustrated with this annoyance for too long I decided to just take matters into my own hands and visualize the zones through some scripting. This is a relatively simple project that still involved some false steps so I wanted to document the process and provide a peek into my development approach.
 
 The first step was extracting the address ranges from the PDF into something more digestible by a program. I tried using a PDF converter but that ended up mashing up the addresses together so I took a step back and came up with a very simple script that took copy and pasted text from the PDF and cleaned it up into a list of addresses.
 
