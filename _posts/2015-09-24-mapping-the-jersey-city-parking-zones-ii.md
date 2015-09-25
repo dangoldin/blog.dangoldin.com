@@ -24,3 +24,4 @@ As expected, most of the work was going from the PDF to a set of valid geocoded 
 The two things I want to change are to modify the visualization to also include a street level visualization rather than relying on a polygon since it’ll make the information bit more useful as well as incorporate the street cleaning hours. If anyone has that data I’d love to get it.
 
 As usual, the code is up on <a href="https://github.com/dangoldin/jersy-city-parking-mapper" target="_blank">GitHub</a> and pull requests are welcome.
+
