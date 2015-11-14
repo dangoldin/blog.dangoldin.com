@@ -6,6 +6,7 @@ keywords: "code, projects, analysis, open source, github"
 image_url:
 category:
 tags: ["#code"]
+redirect_from: "/2015/11/12/projects-ive-worked-on/"
 ---
 {% include JB/setup %}
 Writing up my old projects got me browsing through my GitHub account to see what else I've worked on. Some I'll update when I get a good idea while others I completely forgot until going through the list. I noticed two big themes when going through the list. The first is how much nicer it is to have projects that are in static HTML/CSS/JavaScript since they can be hosted publicly on GitHub and don't require any setup or configuration to start using. The other is how many third party libraries or APIs I've used and how much more difficult everything would have been had I had to build everything from scratch. If anyone is interested in forking and ressurecting some of these I'll be glad to polish it up.
