@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Projects I've worked on"
+title: "My old projects"
 description: "I went through each repo on my GitHub account which was a nice walk down memory lane and wanted to go over each of the projects briefly talk about each one."
 keywords: "code, projects, analysis, open source, github"
 image_url:
