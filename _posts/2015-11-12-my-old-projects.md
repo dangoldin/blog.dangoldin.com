@@ -35,7 +35,7 @@ Writing up my old projects got me browsing through my GitHub account to see what
 
 - [Python tools](https://github.com/dangoldin/python-tools): A series of Python scripts that I've writtent to deal with various minor issues. I have a ton more that I'll add to this repo when I find them.
 
-- [MySQL class](https://github.com/dangoldin/mysql-class): I taught a MySQL class at Coalition for Queens and this is the series of slides used.
+- [MySQL class](https://github.com/dangoldin/mysql-class): I taught a MySQL class at [Coalition for Queens](http://www.c4q.nyc/) and this is the series of slides used.
 
 - [Redirector](https://github.com/dangoldin/redirector): A tiny Node.js app that acts similar to the "Switcheroo" Chrome browser extension but able to work across other browsers. It requires a bit of manual set up but then uses the hosts file to intercept web requests and redirect them to another host. A quick write up [here](/2015/02/07/url-redirection-app/).
 
