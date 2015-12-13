@@ -23,7 +23,7 @@ Writing up my old projects got me browsing through my GitHub account to see what
 
 - [Relay Rides analysis](https://github.com/dangoldin/relay-rides-analysis): This script analyzes the JSON search results of Relay Rides (now Turo) and combines it with data retrieved using the Edmunds API to identify the cars that have the best financial return. The return is calculated by looking at the estimated price of the car and dividing it by average money earned per day. The obligatory blog post is [here](/2015/06/07/finding-the-optimal-car-to-list-on-relayrides/).
 
-- [Jersey City parking zone mapper](https://github.com/dangoldin/jersy-city-parking-mapper): Jersey City has a ridiculous PDF that lists the streets and addresses that belong to each zone. I painstakingly extracted, cleaned, and geomapped the data in order to visualize the zones on a map.
+- [Jersey City parking zone mapper](https://github.com/dangoldin/jersey-city-open-data): Jersey City has a ridiculous PDF that lists the streets and addresses that belong to each zone. I painstakingly extracted, cleaned, and geomapped the data in order to visualize the zones on a map.
 
 - [JS tools](https://github.com/dangoldin/js-tools): Probably my most commonly used code. This is a series of tools hosted on ... that provide some basic utilities that help me throughout the day. The most useful lately has been a way of comparing SQL table schemas but it has a bunch of others.
 
