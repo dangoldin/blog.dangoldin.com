@@ -2,7 +2,7 @@
 layout: post
 title: "Mapping the Jersey City parking zones"
 description: "There was no easy way to see the parking zones of Jersey City on a map so I decided to use the PDF they provided to generate a map."
-keywords: "jersey city, parking zone s, 07302"
+keywords: "jersey city, parking zones, 07302"
 image_url:
 category:
 tags: ["#code", "#dataviz", "#python", "#javascript"]

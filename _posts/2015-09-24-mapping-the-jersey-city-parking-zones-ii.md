@@ -2,7 +2,7 @@
 layout: post
 title: "Mapping the Jersey City parking zones II"
 description: "Finally finished the first pass at visualizing the Jersey City parking zones."
-keywords: "jersey city, parking zone s, 07302"
+keywords: "jersey city, parking zones, 07302, open data"
 image_url: "/assets/static/images/jersey-city-parking-zones.png"
 category:
 tags: ["#code", "#dataviz", "#python", "#javascript"]
