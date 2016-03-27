@@ -242,6 +242,12 @@ div.thumbnail ul li {
     line-height: 28px;
 }
 
+.post blockquote li {
+    padding: 4px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
 .post .zemanta-related-title {
     margin-top: 20px;
 }
