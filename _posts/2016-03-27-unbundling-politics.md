@@ -10,7 +10,7 @@ tags: ["#meta"]
 {% include JB/setup %}
 Yesterday I made the case that the current political system consists of a [series of product bundles](/2016/03/26/political-parties-are-product-bundles/) and I’ve been thinking of ways unbundling would work. And what better way than to look at existing products and industries that have been unbundled.
 
-As numerous people have pointed out, the music industry is a clear example. Initially music was sold on CDs and there was no idea of a buying solo sings. But with the launch of the iPod, iTunes, and internet proliferation it became possible to buy individual songs. Lately we’ve been back in the bundling phase with the various monthly music subscription services, such as Spotify and Apple Music.
+As numerous people have pointed out, the music industry is a clear example. Initially music was sold on CDs and there was no idea of buying solo songs. But with the launch of the iPod, iTunes, and internet proliferation it became possible to buy individual songs. Lately we’ve been back in the bundling phase with the various monthly music subscription services, such as Spotify and Apple Music.
 
 Music debundling was driven by technological changes. It made no sense to package individual songs for sale when they required physical packaging. But as soon as the majority of households got reasonably fast internet it became possible to start selling individual songs.
 
