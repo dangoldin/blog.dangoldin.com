@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "More MySQL fun"
-description: ""
-keywords: "Doing a group by on a derived column can be dangerous if it has the same name as one of the originals. It's much better to be explicit with the columns and group by you're using."
+description: "Doing a group by on a derived column can be dangerous if it has the same name as one of the originals. It's much better to be explicit with the columns and group by you're using."
+keywords: "mysql, query issues"
 image_url:
 category:
 tags: ["#sql", "#code"]

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The best code is no code"
-description: ""
+description: "The more I code the more I believe that code should be minimized and ideally never even written. Good engineers are able to do a ton with well thought out and abstracted code which is easier to manage and improve."
 keywords: "code, productivity, management"
 image_url:
 category:

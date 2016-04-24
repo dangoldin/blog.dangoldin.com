@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Decline of cynicism"
-description: ""
+description: "I used to have a ton of cynicism when I was younger but am now feeling a lot more idealistic."
 category:
 tags: ["#meta"]
 ---

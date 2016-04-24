@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Entrepreneurship is not a job"
-description: ""
+description: "If you're doing a startup you need to pick an area that you're so passionate about that you can work through the trials and tribulations since it's like no other job you'll have."
 category:
 tags: ["#product", "#meta"]
 ---

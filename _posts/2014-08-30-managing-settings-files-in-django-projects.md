@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Managing settings files in Django projects"
-description: ""
+description: "Just a quick write up of how settings files can be handled in a Django project. Things are constnatly improving so this will be outdated soon."
 keywords: "Django, python, settings files"
 image_url:
 category:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Migrating a simple HTTP application on AWS"
-description: ""
+description: "We wrote a simple application from Node to Netty and this describes our migration on AWS."
 keywords: "devops, migrating, Node.js, netty"
 image_url: "/assets/static/images/load-balancer-swap.png"
 category:

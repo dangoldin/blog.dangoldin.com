@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Don't build a Homer"
-description: ""
-keywords:
+description: "In a Simpsons Homer's brother decides to build a car for the average man and comes to Homer for ideas. The end is that he builds a ridiculous car that no one wants. Don't do that."
+keywords: "homer, product management, software"
 image_url: /assets/static/images/homer-car.png
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include JB/setup %}
 Years ago, one of my projects at Yodle involved building out an automated reporting system that would consolidate all the existing reports being run via SQL queries and consolidate them into a unified application that would take care of the execution and the delivery. During the design process I spoke with existing users to see what else they’d like and it quickly morphed from a cron-job like application that just emailed CSV files based on SQL queries into a full fledged business intelligence tool that users could use to pull arbitrary data formatted in a multitude of ways. While thinking through the design of this application I spoke with the CTO and he gave me a phrase I keep going back to: “To get the expressiveness of SQL you have to write SQL.”

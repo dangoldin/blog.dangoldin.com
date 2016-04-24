@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The joy of upgrading an HD in a Macbook"
-description: ""
+description: "I had to upgrade an HD in a Macbook and I wanted to share my approach."
 category:
 tags: ["#meta"]
 ---

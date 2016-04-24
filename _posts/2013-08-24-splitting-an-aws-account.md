@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Splitting an AWS account"
-description: ""
+description: "One of the more annoying things to do is split an AWS account into multiple ones as your needs change. This is a quick description of what I had to go through."
 keywords: "AWS, EC2, ELB, Cloudfront, S3, splitting AWS, migrating AWS"
 category:
 tags: ["#aws"]

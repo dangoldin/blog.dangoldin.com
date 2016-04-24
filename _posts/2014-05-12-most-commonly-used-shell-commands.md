@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Most commonly used shell commands"
-description: ""
-keywords:
+description: "I was curious to see my most commonly used shell commands so wrote a quick awk/shell script to figure that out. Let me know what you find."
+keywords: "shell, bash, scripting, command line"
 image_url:
 category:
-tags: []
+tags: ["#code"]
 ---
 {% include JB/setup %}
 I spend a large chunk of time working in the terminal and was curious to see what my most commonly used shell commands were. This also gave me an opportunity to practice writing one liners and learn a bit of awk.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Surge pricing ideas"
-description: ""
+description: "Surge pricing is a huge deal with the on demand economy and I wanted to share some of my thoughts."
 keywords: "surge pricing, product, uber, marketing"
 category:
 tags: ["#product", "#pricing"]

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "More Sierpinski fun"
-description: ""
+description: "A quick JavaScript that allows you to specify your own Sierpinksi generation strategy."
+keywords: "Sierpinksi, gasket, triangle"
 category:
 image_url: "/assets/static/images/sierpinski-fun-4-0.4.png"
 tags: ["#dataviz", "#javascript", "#code"]

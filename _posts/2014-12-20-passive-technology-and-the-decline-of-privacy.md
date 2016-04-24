@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Passive technology and the decline of privacy"
-description: ""
-keywords: "As technology improves and we rely on it more and more passively it's going to cause huge problems for privacy."
+description: "As technology improves and we rely on it more and more passively it's going to cause huge problems for privacy."
+keywords: "technology, privacy, society"
 image_url:
 category:
 tags: ["#meta"]
