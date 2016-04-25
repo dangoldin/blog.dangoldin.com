@@ -2,7 +2,7 @@
 layout: post
 title: "Hiring people on Odesk"
 description: "At Pressi, we decided to hire someone from Odesk to help us come up with a list of prospects. We ended up finding someone on Odesk using a 'screening' approach."
-keywords:
+keywords: "odesk, remote working, on demand economy"
 image_url:
 category:
 tags: ["#meta"]

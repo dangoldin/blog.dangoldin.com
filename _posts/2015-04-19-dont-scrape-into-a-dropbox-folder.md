@@ -2,7 +2,7 @@
 layout: post
 title: "Don't scrape into a Dropbox folder"
 description: "I ran a data scraping script over two days that ended up clobbering my Dropbox folder. Exciting times."
-keywords:
+keywords: "scraping, dropbox, lesson learned"
 image_url: "/assets/static/images/scraping-tons-of-files.png"
 category:
 tags: ["#data"]

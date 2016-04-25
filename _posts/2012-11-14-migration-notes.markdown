@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Github Migration Notes"
-description:
+description: "I migrated by blog to Github pages and wanted to share some notes of the process."
 category:
 tags: ["#blog"]
 ---

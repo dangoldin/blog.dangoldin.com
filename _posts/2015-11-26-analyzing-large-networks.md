@@ -2,7 +2,7 @@
 layout: post
 title: "Analyzing large networks"
 description: "I started a project with the hope of analyzing a bunch of Meerkat data but ran into issues dealing with the size and scope of the network."
-keywords:
+keywords: "big data, network visualization, data analysis"
 image_url:
 category:
 tags: ["#data"]
