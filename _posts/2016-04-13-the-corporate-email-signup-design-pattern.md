@@ -5,7 +5,7 @@ description: "There's a new design pattern I've seen in B2B startups that allow 
 keywords: "b2b, company signups, corporate email address, company email address, slack, greenhouse, tallie"
 image_url:
 category:
-tags: ["#product"]
+tags: ["#product", "#design"]
 ---
 {% include JB/setup %}
 One of the latest trends I’ve noticed is B2B companies is allowing you to sign up with a company email address and automatically linking you with the rest of the organization. This is a definite no-brainer and a really simple way of getting new users setup without having to be bottlenecked by a burdensome administrative process. No one on the HR team has to enter employees into the system nor send anyone their username or account info. Instead they just provide a link to the service and have people sign up with their company email address. Once this is done they immediately have access to whatever the base employee account should have. Only later one does an admin need to grant additional permissions and privileges.
