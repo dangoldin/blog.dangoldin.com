@@ -104,4 +104,4 @@ I had no experience with MonetDB and didn’t know what to expect with this enti
 
 Dealing with these was an iterative process. I ended up settling on removing all non actors and actresses from the queries as well as limiting my dataset to movies produced between 1920 and 2015 while also eliminating all combinations where a movie was produced before a birth. These edge cases are infrequent enough that they most likely wouldn’t have had any impact on the results but going through this process gives us confidence in what we’re doing. The next step is actually going through the analysis which I hope to finish up tomorrow.
 
-If you’re interested in the code, it’s up on GitHub; and if you’re interested in the data contact me and I can share a snapshot of the DigitalOcean instance that contains the data in both MySQL and MonetDB.
+If you’re interested in the code, it’s up on [GitHub](https://github.com/dangoldin/imdb); and if you’re interested in the data contact me and I can share a snapshot of the DigitalOcean instance that contains the data in both MySQL and MonetDB.
