@@ -89,6 +89,13 @@ Finally it was time to dive into the data. The first query I decided to write wa
 
 Somewhat remarkably, installing and setting up MonetDB was a breeze but I had a two hiccups migrating the data. One was creating the equivalent tables in MonetDB which had a slightly different syntax from MySQL and required a bit of trial and error to work through. The other was the actual export of data from MySQL in a way that was also easy to load into MonetDB. I ended up settling on a CSV export that also took into account the various ways to delimit, escape, and enclose the different fields. After getting the migration to work on one table it was just a series of copy and pastes to get the other tables over.
 
+{% highlight sql %}-- MySQL export
+select * from title into outfile '/tmp/title.csv' fields terminated by ',' enclosed by '"' escaped by "\\" lines terminated by '\n';
+
+-- MonetDB import
+COPY INTO title from '/tmp/title.csv' USING DELIMITERS ',','\n','"' NULL AS '\\N';
+{% endhighlight %}
+
 I had no experience with MonetDB and didn’t know what to expect with this entire series of steps being a waste of time. I expected some improvement and it turns out the query that took over 20 minutes to run in MySQL was able to run in just over 30 seconds in MonetDB. I was off to the races. I spent the next bit of time QAing the data and dealing with outliers and edge cases. Some were due to mistakes I made - for example not filtering cast members to only include actors and actresses which manifested itself in an actor that lived to be over 2000 years old. This turned out to be a movie about [Socrates](http://www.imdb.com/title/tt1560702/) with one of the writers being Plato. Some simply uncovered weird data - there's a movie, [100 Years](http://www.imdb.com/title/tt5174640/), which is scheduled to be released in 2115 and led to some old actors and actresses. While others were clearly data mistakes - actors who were born after they died, for example [Walter Beck](http://www.imdb.com/name/nm2917761/) who was born in 1988 but passed away in 1964.
 
 <img src="{{ IMG_PATH }}100-years.png" alt="100 Years" />
