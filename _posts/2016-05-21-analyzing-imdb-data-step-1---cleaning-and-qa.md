@@ -12,7 +12,7 @@ In 2012 I did a [simple analysis of IMDB](http://dangoldin.com/2012/05/23/trend-
 
 <img src="{{ IMG_PATH }}imdb-tables.png" alt="IMDB tables" style="float: right; margin-left: 10px; width:200px"/>
 
-Lucky for me I already had the data loaded and queryable in MySQL. Most of the time the data is scattered all over the place in a variety of different formats that require a slew of scripts to wrange and manipulate the data into a useful format.
+Lucky for me I already had the data loaded and queryable in MySQL. Most of the time the data is scattered all over the place in a variety of different formats that require a slew of scripts to wrangle and manipulate the data into a useful format.
 
 The first task was to get familiar with the data and I started by looking at sample rows from each of the tables. The table names were descriptive but it turned out that some of them were empty. Running a query that calculated the size of each provided a good idea of where the valuable data was - for my analysis the useful data lived in the title, name, cast_info, and person_info tables.
 
