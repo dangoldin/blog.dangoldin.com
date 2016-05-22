@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Analyzing IMDB data: Step 1   Cleaning and QA"
+title: "Analyzing IMDB data: Step 1 - Cleaning and QA"
 description: ""
 keywords:
 image_url:
