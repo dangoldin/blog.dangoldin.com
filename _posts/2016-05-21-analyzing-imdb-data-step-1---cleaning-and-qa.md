@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Analyzing IMDB data: Step 1 - Cleaning and QA"
-description: ""
-keywords:
-image_url:
+description: "I got my hands on a dump of IMDB data and wrote up the process required to get it into a state that's useful for analysis."
+keywords: "sql, data analysis, imdb, movies, actors, actresses"
+image_url: "/assets/static/images/imdb-data.png"
 category:
-tags: []
+tags: ["#sql", "#code", "#data"]
 ---
 {% include JB/setup %}
 In 2012 I did a [simple analysis of IMDB](http://dangoldin.com/2012/05/23/trend-of-actor-vs-actress-age-differences/) to analyze the change in actor and actresses’s ages over time. At that point I limited the analysis to the top 50 movies each decade and hacked together a quick script to crawl and scrape the IMDB analysis. A couple of weeks ago I came across a great [post by CuriousGnu](https://www.curiousgnu.com/imdb-age-distribution) that did a similar analysis across a larger set of movies but limited to movies since 2000. I reached out and they were kind enough to give me a DigitalOcean instance containing the data already loaded into MySQL. The analysis should be finished up tomorrow but I wanted to write this post up to share the mundane parts of the process. The janitorial part is critically important to an analysis and it’s important to get it right or the results will may be meaningless or even completely wrong. The [NY Times interviewed](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0) a variety of data scientists and came away with the conclusion that 50 to 80 percent of a data scientist’s time is spent cleaning the data. This is no exception and I wanted to provide a sense of the effort and thought that goes into getting data into a state that’s actually useful.
