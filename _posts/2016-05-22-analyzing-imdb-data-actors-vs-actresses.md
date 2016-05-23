@@ -21,14 +21,14 @@ After getting the [IMDB data loaded](http://dangoldin.com/2016/05/21/analyzing-i
   <li class="span8">
     <div class="thumbnail">
       <img src="{{ IMG_PATH }}year-age.png" alt="Average age over time" />
-      <p>The previous chart examined the distribution across the entire date range but we can see how this shift occured over time. Before the 1940's actors and actresses were much closer in age. Another interesting point is that both actors and actresses have been getting older on average. One theory is that this is a function of the movie industry being new at the beginning of the 20th century with very few actors and actresses at the start that have aged along with the industry. Another reason may be lack of accurate data prior to the 1940s in the IMDB dataset which skews the results toward more recently-born actors and actresses.</p>
+      <p>The previous chart examined the distribution across the entire date range but we can see how this shift occurred over time. Before the 1940's actors and actresses were much closer in age. Another interesting point is that both actors and actresses have been getting older on average. One theory is that this is a function of the movie industry being new at the beginning of the 20th century with very few actors and actresses at the start that have aged along with the industry. Another reason may be lack of accurate data prior to the 1940s in the IMDB dataset which skews the results toward more recently-born actors and actresses.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
       <img src="{{ IMG_PATH }}year-age-min-100.png" alt="Average age over time (at least 100 movies)" />
-      <p>Similar to the above but focused on actors and actresses that have appeared in at least 100 movies. The goal here was eliminate some of the noise and focus on the high volume actors and actresss. This tells a similar story to the previous chart.</p>
+      <p>Similar to the above but focused on actors and actresses that have appeared in at least 100 movies. The goal here was eliminate some of the noise and focus on the high volume actors and actress. This tells a similar story to the previous chart.</p>
     </div>
   </li>
 
@@ -65,8 +65,7 @@ After getting the [IMDB data loaded](http://dangoldin.com/2016/05/21/analyzing-i
   <li class="span8">
     <div class="thumbnail">
       <img src="{{ IMG_PATH }}gender-num-movies.png " alt="Number of movies by gender" />
-      <p>For the last one I wanted to get a sense of whether actors are more likely to be in more movies than actresses. The chart here is a bit tough to read but it looks at the distibution of actors and actresses by the number of movies made. in this case the scale was massive since there were tons of people who've only been in a few movies so I had to normalize by taking the log. The effect is subtle but the fact that the tail for actors goes wider than the tail for actresses indicates that an average actor is more likely to appear in multiple movies than the average actress.
+      <p>For the last one I wanted to get a sense of whether actors are more likely to be in more movies than actresses. The chart here is a bit tough to read but it looks at the distribution of actors and actresses by the number of movies made. in this case the scale was massive since there were tons of people who've only been in a few movies so I had to normalize by taking the log. The effect is subtle but the fact that the tail for actors goes wider than the tail for actresses indicates that an average actor is more likely to appear in multiple movies than the average actress.
     </div>
   </li>
 </ul>
-
