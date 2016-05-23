@@ -14,7 +14,7 @@ After getting the [IMDB data loaded](http://dangoldin.com/2016/05/21/analyzing-i
   <li class="span8">
     <div class="thumbnail">
       <img src="{{ IMG_PATH }}age-gender.png" alt="Age distribution by gender" />
-      <p>A replication of CuriousGnu's chart as a sanity check to make sure the data was loaded correctly. As one can guess, actresses skew younger compared to actors with an average of 34.6 compared with 41 for actors.</p>
+      <p>A replication of <a href="https://www.curiousgnu.com/imdb-age-distribution">CuriousGnu's chart</a> as a sanity check to make sure the data was loaded correctly. As one can guess, actresses skew younger compared to actors with an average of 34.6 compared with 41 for actors.</p>
     </div>
   </li>
 
