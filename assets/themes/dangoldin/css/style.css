@@ -301,6 +301,10 @@ table.small td {
     padding: 0;
 }
 
+.thumbnail > video {
+    max-width: 100%;
+}
+
 .thumbnail > p {
     font-size: 16px;
     line-height: 20px;
