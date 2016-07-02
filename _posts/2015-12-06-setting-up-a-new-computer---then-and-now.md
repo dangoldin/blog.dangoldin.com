@@ -3,9 +3,10 @@ layout: post
 title: "Setting up a new computer - then and now"
 description: "It's amazing how far we've come. I remember allocating a better part of a day to setting up a new computer but now it can be easily done in less than an hour."
 keywords: "computers, cloud, technology"
-image_url: 
-category: 
+image_url:
+category:
 tags: ["#meta"]
+redirect_from: "/2015/12/06/setting-up-a-new-computer---then-and-now/"
 ---
 {% include JB/setup %}
 In the past I’d be wary of setting up a new computer knowing that every time I’d need at least a couple of hours to get everything into a workable state. These days I actually look forward to setting up a new computer. Nearly every file I care about is hosted online and a large chunk of my productivity apps are online as well. The only tools I need to run locally are the various IDEs as well as a variety of open source tools and libraries that my code depends on. Even then I’d bet it takes less than an hour to get things to an 80% state at which point I’ll only discover what’s missing by just going through my day.
