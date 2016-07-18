@@ -25,7 +25,7 @@ def load_dictionary(path = '/usr/share/dict/words'):
   return dictionary
 {% endhighlight python %}
 
-While thinking about the adjacent word function I thought back to Peter Norvig’s spell checker and remembered how simple yet powerful it was (if you haven’t seen it yet you should take a look - one of the most elegant code examples I’ve seen). All his code needed was a tiny tweak to filter the list of generated words to those in the dictionary.
+While thinking about the adjacent word function I thought back to [Peter Norvig’s spell checker](http://norvig.com/spell-correct.html) and remembered how simple yet powerful it was (if you haven’t seen it yet you should take a look - one of the most elegant code examples I’ve seen). All his code needed was a tiny tweak to filter the list of generated words to those in the dictionary.
 
 {% highlight python %}
 def adjacent_words(word, alphabet):
