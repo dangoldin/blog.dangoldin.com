@@ -7,3 +7,9 @@ For information on troubleshooting Jekyll see:
   https://help.github.com/articles/troubleshooting-jekyll-builds
 
 If you have any questions you can contact us by replying to this email.
+
+-- AMP plan
+
+- Get brand new install working using https://github.com/ageitgey/amplify
+- Create a few new posts and see how it works behind the scenes
+- See whether it makes sense to migrate from there into here or here into there
