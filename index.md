@@ -2,7 +2,7 @@
 layout: default
 title: Dan Goldin
 tagline: Thoughts and musing
-description: "My thoughts and musings. Trying to write about tech, startups and my entrepreneurial journey."
+description: "My thoughts and musings. Trying to write about tech, startups and the entrepreneurial journey."
 keywords: "Dan Goldin blog tech startups entrepreneurship"
 image_url: "/assets/static/images/photo.jpg"
 ---
