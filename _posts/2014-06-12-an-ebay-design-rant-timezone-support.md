@@ -7,7 +7,7 @@ image_url: "/assets/static/images/ebay-start-time.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}ebay-start-time.png" alt="eBay start time" />
 

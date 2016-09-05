@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A <a href="http://techcrunch.com/2014/09/05/monetization-automation-enforcement/" target="_blank">recent article</a> on our attachment to social media got me thinking about my most commonly used services and their relative importance. The goal is to answer the question of how I’d feel if various services suddenly disappeared. After going through this process it feels as if these services moved from being necessities to feeling like luxuries. They either have a substitute that will do what they do or only have value due to the network - clearly these are important but I just have no attachment to the product itself.
 
 - Facebook: I don’t care much for it and at a certain level I want it to disappear. The best reason I use it is the only reason I use it - everyone I know is on it.

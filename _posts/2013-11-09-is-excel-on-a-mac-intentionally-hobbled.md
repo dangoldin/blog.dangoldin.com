@@ -6,7 +6,7 @@ keywords: "excel, office, mac, os x, windows"
 category:
 tags: ["#datascience", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The longer I’ve been involved in tech the fewer Windows laptops I’ve been seeing. It seems that to even be considered a startup you need to be giving your employees MacBooks. My conversion came years ago when I made the move from Linux in order to be able to run Excel since neither OpenOffice nor Google Spreadsheet were cutting it. Unfortunately, even after years of effort, I still can’t get to the same level of productivity as I had when using Windows during my consulting days. It’s entirely due to the shortcuts. Some of the shortcuts just changed while others simply disappeared.
 
 The difference is most likely due to a different keyboard layout on a Mac but the cynic in me can’t help but think that it’s also a way to keep the Excel power users on Windows. No one in the finance or consulting industry will switch to Macs until the actual workflow of using applications is the same between Mac and Windows. The more power user focused an app is the more difficult it is to convince its users to switch from one OS to another. People already get annoyed when a minor change is introduced by a new version; I can’t imagine the reaction a new workflow would produce.

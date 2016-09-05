@@ -5,7 +5,7 @@ description: "If you're doing a startup you need to pick an area that you're so 
 category:
 tags: ["#product", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <p>
 Let’s start with a joke:
 </p>

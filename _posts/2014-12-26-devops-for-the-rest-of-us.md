@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’m becoming increasingly convinced that DevOps is a necessary skill for any software engineer to have. It gets you closer to the hardware and helps you understand the way your code will actually run and where it fits within the tech stack. It also provides independence when working on new projects since it gives you both the knowledge to understand the needs as well as empowers you to make them happen. This is especially important when working at a small company where there’s immense value in having general skills that can be used to make progress independently without need to disrupt others. My first job writing code I only had to worry about my small patch of software but over time I’ve slowly picked up a variety of DevOps skills that help me write better code. Below are the skills that every software engineer should know - they may not all fall under traditional DevOps but I believe they’re essential for anyone writing code. If you have any others let me know and I’ll add them to the list.
 
 - **Shell commands**. Almost any task can be done efficiently using a series of shell commands. Being aware of the various commands and their options makes it simple to find specific files, summarize data, or just monitor a server. The most important ones are ls, cd, pwd, rm, wc, find, grep, head, tail, less, sort, cut, sed, and curl.

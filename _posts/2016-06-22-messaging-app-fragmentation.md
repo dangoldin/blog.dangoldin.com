@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The messaging space is fascinating. There are probably hundreds of apps available with pretty massive fragmentation. Onavo collected the following data to indicate the reach of the various messaging apps by country and while WhatsApp (owned by Facebook) is clearly dominant there are some countries that WhatsApp is a fringe player, especially among Asian countries.
 
 <ul class="thumbnails">

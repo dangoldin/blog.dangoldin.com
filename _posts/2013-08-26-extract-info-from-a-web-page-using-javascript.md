@@ -7,7 +7,7 @@ image_url: "/assets/static/images/ff-roster-source.jpeg"
 category:
 tags: ["#python", "#javascript", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 How many times have you tried copying something from a webpage into Excel and discovering that the formatting got completely messed up and forced you to clean the data up manually? With just a bit of knowledge about HTML and CSS you can use JavaScript to get the information you want without having to struggle with the formatting issues.
 
 In my case, I participated in a fantasy football draft and wanted to share the list of players I drafted with a friend. Unfortunately, copying and pasting didn’t work so I decided to jump into JavaScript. Hope these steps give a sense of how to approach a simple scraping problem. The idea is to use the browser’s inspect element feature to find the pattern that the element we’re interested in have in common. Then, we use JavaScript to find the elements matching that pattern and extract the information we want.

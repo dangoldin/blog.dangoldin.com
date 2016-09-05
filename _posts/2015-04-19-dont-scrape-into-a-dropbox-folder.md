@@ -7,7 +7,7 @@ image_url: "/assets/static/images/scraping-tons-of-files.png"
 category:
 tags: ["#data"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Thursday night I kicked off a data scraping project for a friend. Since I was going to be out of town until Saturday night I decided it would be a good idea to run the job on my beefy home computer and write the results into a Dropbox folder so I’d have it accessible on my other computer while traveling.
 
 Unfortunately, when I finally looked at my Dropbox Friday night it was completely busted. In addition to being over my 6 GB limit, the syncing was completely stopped and Dropbox was using up my entire CPU. I had to figure out a way to deal with this while holding on to the scraped data.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The news that Adele was not going to put her new album on the streaming services got me thinking about the differences between the way music and video are consumed. Just last week Rdio announced that it’s selling its assets to Pandora which is a reminder of how hard it is to start a music company - music labels wield all the control and are able to dictate the terms they want. Even Spotify is not yet profitable despite having millions of subscribers.
 
 On the flip side we have Netflix which on the surface provides a very similar product - streaming video rather than streaming audio. Yet they’re profitable and are quickly expanding internationally and even developing critically acclaimed shows such as Narcos and Master of None.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql", "#data"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A couple of weeks ago I attended a talk by <a href="https://en.wikipedia.org/wiki/Michael_Stonebraker" target="_blank">Professor Michael Stonebraker</a>. For those unfamiliar with him, he’s a database researcher responsible for PostgreSQL, Vertica, VoltDB and a dozen others. During his talk he shared his thoughts about the future of databases and what we can expect to see in the coming years. His main point is that databases are becoming more and more specialized and it will be very common for companies to run multiple types of databases that are optimized for different uses cases.
 
 This is already happening at the larger tech companies and it’s spreading downwards. Data is becoming increasingly important and having the tools available to leverage it is a critical advantage. It’s impossible to find a single database that can be used to run a transactional site, support complex yet quick analytics queries, scale to terabytes of data, and still maintain synchronization between its various nodes. Each of these use cases requires a database that’s optimized for that need and an application that knows how to leverage that database.

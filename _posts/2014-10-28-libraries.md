@@ -7,7 +7,7 @@ image_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/ADWhiteRead
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail" style="border:none;">

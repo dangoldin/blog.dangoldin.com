@@ -6,7 +6,7 @@ keywords: "math, programming, engineering, quantitative"
 category:
 tags: ["#meta", "#datascience"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The tech world is conflicted about how much math a developer needs. Engineers working on quantitative systems or data science clearly require advanced math and there are also countless engineering roles where math is unnecessary. My experience is that even if you don’t use math, having a mathematical mindset makes you significantly more productive. You’re able to quickly estimate the complexity of various tasks and hone your intuition. You’re also able to quickly recognize patterns when refactoring, especially when working in a functional language. A basic understanding of probability and statistics is a great way to analyze the performance of your code as well as help you model and understand your application behavior. I wanted to share a quick story of how a mathematical approach came in handy when working on Pressi.
 
 First, a little bit of background. <a href="http://getpressi.com" target="_blank">Pressi</a> is a social media mashup page that takes the content a user posted across a variety of social media networks and creates a “Flipboard” style web page to showcase it. At launch, we had a simple cron job that would run every hour and pull new data for each of our users. Over time, we migrated to a task system that let us run these retrieval tasks in parallel and split across multiple machines. Using this approach, we were able to scale well and handle the increased volume but our hosting costs saw a big jump so we went looking for a solution.

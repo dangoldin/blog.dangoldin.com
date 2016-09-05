@@ -7,7 +7,7 @@ image_url: "/assets/static/images/why-is-gmail.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}why-is-gmail.png" alt="Why is gmail so slow?" /> <br/>
 

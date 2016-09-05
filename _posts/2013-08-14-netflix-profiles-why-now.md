@@ -7,7 +7,7 @@ image_url: "/assets/static/images/netflix-logo.jpg"
 category:
 tags: ["#product", "#pricing"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}netflix-logo.jpg" alt="Netflix Logo" style="float:right;" />
 

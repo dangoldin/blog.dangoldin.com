@@ -7,7 +7,7 @@ image_url: "/assets/static/images/slow-font-load.png"
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’m not sure whether this is a recent issue but earlier this week I started noticing that many HTTP requests to <a href="https://developers.google.com/speed/libraries/" target="_blank">Google's CDN</a> were taking close to a minute to complete. In particular, this blog would take almost a minute to render since it uses two fonts and an old version of jQuery both hosted by Google.
 
 <div class="thumbnail">

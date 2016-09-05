@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I spend a large chunk of time working in the terminal and was curious to see what my most commonly used shell commands were. This also gave me an opportunity to practice writing one liners and learn a bit of awk.
 
 {% highlight bash %}history | cut -d' ' -f4 | awk '{a[$0]++}END{for(i in a)print i,a[i]}' | sort -k 2 -n -r{% endhighlight %}

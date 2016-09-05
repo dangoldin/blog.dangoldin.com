@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <blockquote>
 <p>
   <strong>Potential energy</strong>: the energy of a body or a system with respect to the position of the body or the arrangement of the particles of the system.<br/>

@@ -6,7 +6,7 @@ keywords: "Google, Adwords, auction, bidding, PPC"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Since we’re using Google Apps for Business for our startup, we’ve been getting a bunch of emails trying to get us to sign up for Adwords. The latest promotion is offering a credit of $300 if we spend $100. It’s a pretty common marketing tactic and tons of companies have similar promotions. What’s special about Google is that they’re running an auction for every single click and by giving some businesses free money, they’re driving the prices up for the entire market.
 
 Without being at Google, it’s impossible to know what effect this has but I tried to do some estimates. According to the <a href="http://www.nytimes.com/2012/12/26/technology/google-apps-moving-onto-microsofts-business-turf.html?_r=0" target="_blank">NY Times</a>, Google had 4M businesses on Google Apps at the end of 2011 and by June of 2012 it was up to 5M. So over the first 6 months of 2012, Google Apps gained 1M businesses. If each of those businesses was offered $300 a credit and took Google up on it, there would be an extra $300M in the Adwords market provided by Google, in addition to that business’s Adwords contribution. If we compare this against Google’s advertising revenue during the first <a href="http://investor.google.com/financial/2012/tables.html" target="_blank">two quarters</a> of 2012, $20,750M, we get 1.4%. That may not seem that big but think of every bid on Google Adwords increasing by 1%. Of course, not every business took Google up on the offer so the true number is going to be lower but I’d bet even then it’s still enough to affect the market.

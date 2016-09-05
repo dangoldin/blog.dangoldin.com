@@ -5,7 +5,7 @@ description: "I migrated by blog to Github pages and wanted to share some notes 
 category:
 tags: ["#blog"]
 ---
-{% include JB/setup %}
+{% include setup %}
 After a few hours of solid work I was able to get my new site up and running on Github pages. I got frustrated with
 having too many blogs and decided that I should finally get it together and consolidate everything. Within a few hours
 I was able to get it up and running on Github pages up and migrated my old Tumblr and Wordpress posts. Hopefully this

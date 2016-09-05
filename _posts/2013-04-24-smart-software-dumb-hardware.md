@@ -6,7 +6,7 @@ keywords: "hardware, software, smartphones, technology"
 category:
 tags: ["#product", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Last week, three isolated events gave me a glimpse of how powerful mobile can be. Tech pundits have been saying that for a while now but experiencing it firsthand is definitely more convincing.
 
 <ul class="bulleted">

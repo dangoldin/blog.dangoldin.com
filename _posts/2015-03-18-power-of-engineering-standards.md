@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 When it comes to productive coding, one of the most important things to do is to impose a set of standards and conventions. As long as you stick with them your code becomes significantly easier to write and maintain. Conventions range from having a standard way of declaring variables to the way files are organized within a project to the field names in database tables. The obvious benefit is that your code becomes significantly easier to navigate, both to you as well as to others on the team, since you don’t have to run through a series of searches trying to figure out whether a variable is called myVariable, MyVariable, or my_variable. The bigger impact is how much simpler your code becomes. By using a standard structure it’s possible to write code that’s further up in the abstraction hierarchy. This is a huge win for productivity and quality since <a href="http://www.coverity.com/press-releases/annual-coverity-scan-report-finds-open-source-and-proprietary-software-quality-better-than-industry-average-for-second-consecutive-year/" target="_blank">more code leads to more errors</a> and the best code is code that’s not written in the first place.
 
 Two examples of how we’ve adopted conventions include:

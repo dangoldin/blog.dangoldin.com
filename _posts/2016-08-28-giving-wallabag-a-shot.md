@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been a happy Instapaper user for years but the news that it was being acquired by Pinterest got me thinking about some alternatives. Not because I have anything against Pinterest; in fact I think this is a great fit and they’ll be able to complement each other but because it’s a reminder that no third party product is guaranteed to last and I wanted to see what open source alternatives are out there.
 
 I discovered [wallabag](https://www.wallabag.org/) and got it setup earlier today. The documentation to install and get it running was incredibly straightforward and I was able to get it operational within an hour. Unfortunately it took a bit of wrestling to understand the various configuration options and I’m still unable to get it working across both the web and an iPhone. There’s a series of steps you need to do - from generating a unique RSS token to setting up an oAuth application that make it difficult to just get up and running. I understand that it’s designed for developers and offers a ton of customization but it should be simpler to get get the base installation - every user would want an extension to easily add articles and a way to access them offline on a phone and automatically generating the necessary settings would make it much easier to get started.

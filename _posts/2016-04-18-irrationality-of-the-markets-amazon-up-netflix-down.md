@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}amazon-prime-monthly.png" alt="Amazon monthly pricing" />
 

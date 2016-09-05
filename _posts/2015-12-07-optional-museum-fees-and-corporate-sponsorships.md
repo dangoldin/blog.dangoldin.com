@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Yesterday I attended a concert at the Newark Museum and ran into a fairly common situation when lining up to get in. They had a suggested donation amount, which is entirely optional, while at the same time they provided free admission to anyone with a Bank of America card due to Bank of America’s sponsorship. I’ve seen the same sort of setup at museums in New York and I suspect it’s common elsewhere in the United States as well as abroad but the entire concept strikes me as odd.
 
 I understand that it’s a way for Bank of America to reward its customers but because the admission was a suggested amount it made me feel as as I’m neither contributing towards the museum nor as getting any value from Bank of America. Without my debit card I would have felt noble contributing when I didn’t have to but with the card it feels as if Bank of America is giving me a way to avoid feeling guilty.

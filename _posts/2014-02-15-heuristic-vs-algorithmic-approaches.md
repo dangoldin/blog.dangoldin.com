@@ -6,7 +6,7 @@ keywords: "data science, algorithms, heuristic, algorithms"
 category:
 tags: ["#datascience"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something that’s come up frequently in my quantitative work is balancing heuristic and algorithmic approaches. It’s surprisingly difficult to get the first attempt at an algorithmic approach working properly - it’s not an academic exercise and real world issues will always appear. Over time I’ve found myself writing heuristic checks and tweaks to deal with the various edge cases the algorithmic approach encounters. For example, setting the min and max bounds on the results of a function or adjusting the slope of a curve if it ends up being set in the wrong direction.
 
 It makes me wonder why I didn’t just start with a heuristic approach and worked on an algorithmic approach later after I’ve collected enough data and had a better understanding of the environment. The challenge is that a heuristic approach is only a temporary solution. It will be be difficult to maintain and improving it will require additional hacks and tweaks. A heuristic approach is great at setting a quick baseline but long term improvement will only come from a more rigorous approach.

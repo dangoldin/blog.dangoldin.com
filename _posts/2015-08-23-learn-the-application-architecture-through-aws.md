@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Last month I <a href="http://dangoldin.com/2015/07/25/use-the-database-luke/">wrote</a> that one of the best ways to ramp us a new engineer is to start going through the database schema and understand how the various tables fit together and what the various values mean. That provides a great view around the engineering product - the various fields indicate the options and functionality available and the tables indicate how the components work together as well as what and how data is collected.
 
 The flip side is that this doesn’t actually provide any view into the application architecture - what’s the hardware used? What are the applications and how do they fit together? How do the applications work? What’s the load on the various components and what’s done to address it?

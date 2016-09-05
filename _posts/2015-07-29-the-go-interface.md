@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve only been playing around with Go for a couple of weeks but one of the language design decisions I’ve really enjoyed is how interfaces are handled. Coming from a traditional object oriented background it’s typical to define an interface that defines a few method signatures and then explicitly implement that interface in a new class. Below’s a trivial example of this approach in Java:
 
 {% highlight java %}

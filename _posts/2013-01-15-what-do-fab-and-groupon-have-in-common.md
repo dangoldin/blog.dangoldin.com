@@ -6,7 +6,7 @@ keywords: "Fab Groupon ecommerce"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <p>
 <a href="http://www.groupon.com/">Groupon</a> has fascinated me since they’ve launched. It popularized an entirely new business model, encouraged the launch of hundreds of competitors, and was able to IPO three years after being founded. This sounds great until you look at the performance after the IPO: the stock is down 80% and it’s consistently missing the quarterly goals.
 </p>

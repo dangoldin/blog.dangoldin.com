@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I had a bit of fun with MySQL earlier this week when trying to explain a non obvious “group by” behavior. It’s fairly common to want to manipulate a field in order to transform it into something more useful. The difficulty arises when you want to keep the original name. Below is some SQL code that highlights the odd behavior.
 
 {% highlight sql %}

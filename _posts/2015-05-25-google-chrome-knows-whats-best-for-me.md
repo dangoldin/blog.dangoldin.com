@@ -7,7 +7,7 @@ image_url: "/assets/static/images/chrome-pseg-security.png"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today I wanted to check up on my electricity bill but ran into an issue trying to login to my PSEG account. Turns out that my nightly version of Google Chrome is preventing me from logging into their site since it has a poor HTTPS configuration. Instead of seeing the login page I get the following message: “Server has a weak ephemeral Diffie-Hellman public key”. Luckily for me this only happened in the nightly build and I was able to login using both the nightly version of Firefox and the standard version of Chrome.
 
 <div class="thumbnail">

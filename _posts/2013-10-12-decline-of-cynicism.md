@@ -5,7 +5,7 @@ description: "I used to have a ton of cynicism when I was younger but am now fee
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As I've gotten older and most likely more mature, I've become far less cynical. I used to be dismissive of people trying to improve things and believed that they were just wasting their time and nothing would change. Yet as a I've gotten older I've come to appreciate this effort even if it doesn't lead to noticeable progress.
 
 The fact that someone is working for their beliefs should be applauded. The waste is dismissing others’ work while sitting in front of a computer or a TV. We all want to see progress and yet we exert effort belittling others that are actually committed to making things better. If we applied this effort into our own passions we’d be all be much better off.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code", "#javascript"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve stumbled onto what seems to be a solution without a problem but something that’s been fun to experiment with and might have an actual application. The idea is to replace a recursion step with a URL redirection. In this situation the base case will return a 200 response while the recursive step will do a redirection with a slightly updated URL. The sample node server below uses this idea to handle a three tasks - sum up to n, compute a factorial, and test whether an integer is prime.
 
 {% highlight javascript %}

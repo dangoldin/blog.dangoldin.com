@@ -6,7 +6,7 @@ keywords: "Django, python, hacking, coding, web development, startups"
 category:
 tags: ["#python", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 On Tuesday, I shared some <a href="http://dangoldin.com/2013/05/07/eighteen-months-of-django/" target="_blank">best practices</a> I picked up while using Django. This is a follow up post to share the packages that I found useful as well as various hiccups I encountered when using them.
 
 <ul class="bulleted">

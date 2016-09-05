@@ -7,7 +7,7 @@ image_url: "/assets/static/images/biergarten-ipad.jpg"
 category:
 tags: ["#product", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}biergarten-ipad.jpg" style="float:right; width:300px;" alt="The iPad at the Laguardia Biergarten" />
 

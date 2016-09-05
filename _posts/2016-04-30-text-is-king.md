@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As many people know despite being bullish on tech I’m spartan and utilitarian with my technology usage. This expresses itself as a strong bias for text above nearly another format. There are tons of apps that try to help me organize my tasks and todos but I prefer simple text files and an intelligent folder structure. This is true when it comes to blogging as well - rather than using a fancy CMS or hosted application I rely on Jekyll which exposes my content in Markdown.
 
 On the surface this seems inefficient - why build your own tools when perfectly good apps exist that will be maintained and improved over time? Unless I spend a ton of time there’s no way I’m going to be able to build a blogging platform that competes with Medium or Wordpress nor will I ever make a to do application that is better than Todoist, Wunderlist, or Google Calendar.

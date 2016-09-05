@@ -6,7 +6,7 @@ keywords: "consulting, contracting, engineering"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 To supplement my income while working on a startup, I took on a few consulting projects and wanted to share some lessons learned. It seems that everyone’s consulting experience is different so consider mine experience as just another data point.
 
 <ul class="bulleted">

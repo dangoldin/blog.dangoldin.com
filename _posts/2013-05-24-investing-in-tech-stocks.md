@@ -6,7 +6,7 @@ keywords: "stocks, stock market, investing, IPO, venture capital"
 category:
 tags: ["#finance"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I initially set out to write a post to complain about how difficult it is for an average investor to “hit it big” these days by investing in a tech company at its IPO but ended up changing my thesis after digging into the data. It’s still possible to get the same returns as it was in the 1980s but it’s not possible by a long-term investment in a single company.
 
 To start, I came up with a sample of large tech companies and looked at their performance since their IPO as well as their annualized return.

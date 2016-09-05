@@ -6,7 +6,7 @@ keywords: "netflix, video, kickstarter, media, entertainment"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something that’s been stuck in my head is the relationship between Netflix and bundling. On one hand, we’ve been wishing that cable came unbundled so we’d be able to just pay for the shows we want to watch. On the other hand, we have Netflix which is striving to let us stream every TV show and movie whenever and wherever we want. Why don’t we care that Netflix is actually a bundled product?
 
 I'm sure the major reason is that it’s just not worth worrying about since Netflix is only $7.99 a month; especially when cable TV bills can easily go past $100. Maybe we like the new shows that are exclusive to Netflix (House of Cards, Hemlock Grove, and Arrested Development) and are happy to pay for them; the rest of the content available on Netflix is just an added benefit. Maybe we just don’t view Netflix as being a bundled service at all: the reason I have Netflix is to be able to watch anything I want when I want.

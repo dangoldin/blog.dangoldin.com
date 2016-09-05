@@ -5,7 +5,7 @@ description: "I had to upgrade an HD in a Macbook and I wanted to share my appro
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As a gift to myself I decided to upgrade the RAM and HD in my MacBook. The plan was to replace the old HD with the new one and then use the install disc to install Snow Leopard on the new HD before upgrading to Mountain Lion. Unfortunately, it turned out that I had a bad install disc and had to come up with another approach. The general idea was to upgrade to Mountain Lion first in order to create another boot disc.
 
 1. Upgrade OS to Mountain Lion and make sure to have a copy of the installation file around

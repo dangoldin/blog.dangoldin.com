@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As many at TripleLift will tell you I have a fondness for <a href="https://en.wikipedia.org/wiki/Bloom_filter" target="_blank">Bloom filters</a> but only recently did I realize that our brains work in a similar way. We don’t always know every particular detail or have perfect recall but what we do have is the ability to realize that something is familiar and that we might have encountered it before. This triggers enough additional thoughts that we’re able to dig up the actual thought or reference. For example I can’t always recall the exact Java library I need to use for a particular problem but I know that I’ve solved similar problems before and can quickly rediscover my previous solution, whether through an online search with the appropriate keywords or even by going through some old code.
 
 I’d even argue that it’s more important to have awareness of everything you’ve done and seen in the past than to have a perfect recollection of a smaller subset of items. Knowing that you’ve seen something before takes care of the fear of the unknown - very similar to how <a href="https://en.wikipedia.org/wiki/George_Dantzig" target="_blank">George Dantzig</a> was able to solve an “unsolvable problem” as a student since he didn’t know it was considered unsolvable.

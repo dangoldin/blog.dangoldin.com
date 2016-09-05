@@ -6,7 +6,7 @@ keywords: "foursquare, product design, product management"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A few days ago I discovered a new use case for Foursquare when I was meeting up with a friend. We were catching up and during the course of the conversation I realized I needed to introduce him to someone I had met earlier. Unfortunately, I completely blanked on his name and company. All I recalled was that he frequently checked into his company on Foursquare. Sure enough, when I opened up Foursquare I saw that he had checked in there that morning.
 
 Clearly Foursquare isn’t a contact book app but it provided enough adjacent information and triggered enough thoughts to come in handy. It’s not surprising that we use apps and products in unintended ways but it’s always great being able to catch ourselves in the act.

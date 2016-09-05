@@ -6,7 +6,7 @@ keywords: "MongoHQ, security, hack, infrastructure"
 category:
 tags: ["#meta", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Over the past few days my inbox has been filled with security alert emails caused by the <a href="https://www.mongohq.com/home" target="_blank">MongoHQ</a> database hack. I’m impressed by the number of customers MongoHQ was able to sign up - they spanned the gamut from sites that I don’t even recall signing up for to startups that have been getting significant buzz.
 
 If a database as a service company is able to get hacked it doesn’t leave me optimistic about the way other companies are securing our data. As much as these “as a service” products make our lives easier they bring an increased risk to our business and more importantly our customers. Sure their security will be better than someone who’s setting up a MongoDB instance for the first time but that has to be balanced against the fact that a hosting site offers a much higher reward for a hacking attempt. Access to the infrastructure provides a lot more information than hacking an individual site.

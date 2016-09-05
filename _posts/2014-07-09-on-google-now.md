@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As much as it pains me to admit it I’m really enjoying Google Now. I’m aware of how much information I'm sharing with Google to make it helpful but at the moment I find the tradeoff worth it.
 
 It came in especially useful as I've been traveling over the past couple of weeks:

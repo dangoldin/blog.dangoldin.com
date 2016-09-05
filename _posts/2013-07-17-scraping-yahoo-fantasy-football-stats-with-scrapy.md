@@ -6,7 +6,7 @@ keywords: "scrapy, scraping, yahoo fantasy football stats, fantasy football"
 category:
 tags: ["#python", "#code", "#datascience"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Last week, someone reminded me of an old project I had on GitHub that scraped fantasy football stats from Yahoo. Unfortunately, it was antiquated and failed to retrieve the data for the current season. I’ve also been interested in trying out the <a href="http://scrapy.org/" target="_blank">Scrapy</a> framework and decided this would be a good opportunity to give it a shot. I tried finding a sample project that dealt with authentication as a starting point but wasn’t able to find one so hopefully my attempt can serve as an example to others.
 
 The full project is <a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">available on GitHub</a> but I wanted to highlight a few of the components:

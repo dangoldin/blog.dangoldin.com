@@ -7,7 +7,7 @@ image_url: "/assets/static/images/runkeeper-goal-2013.png"
 category:
 tags: ["#running"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}runkeeper-goal-2013.png" alt="My Running Goal" />
 

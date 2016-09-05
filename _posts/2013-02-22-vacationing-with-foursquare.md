@@ -7,7 +7,7 @@ image_url: "/assets/static/images/nola-trip-map.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <ul class="thumbnails">
   <li class="span6">

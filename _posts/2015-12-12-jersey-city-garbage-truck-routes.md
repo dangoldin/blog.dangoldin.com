@@ -7,7 +7,7 @@ image_url: "/assets/static/images/jersey-city-garbage-trucks.png"
 category:
 tags: ["#code", "#dataviz", "#javascript"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <ul class="thumbnails">
   <li class="span8">

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today a I got a message on Twitter letting know that my Twitter account was hacked. Sure enough when I looked at my tweet history I saw a slew of weight loss tweets linking to a Pinterest pin. Turns out that my Pinterest account was compromised and since it was connected to Twitter every time someone pinned a weight loss link it got shared on Twitter.
 
 The fix was simple - block the Pinterest app from within Twitter, disconnect Twitter from within Pinterest, and reset my Pinterest password. Unfortunately, none of these can be done via the apps nor the mobile sites. Instead, both provide a minimal settings page with no clear way of accessing the complete settings. Since I wasn't near a computer, I had to use the Twitter app to delete the spam tweets that were being posted a few times each hour.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The MySQL enum field provides a nice compromise - the space efficiency of using an integer, the human readability of text, and basic type safety. Yet I had this vague recollection of reading something that made it seem enums carried a ton of risks when changing the column definition so wanted to see if I could “break” it. Turns out it’s a lot more resilient than I thought. I went through a series of combinations - ranging from changing the order of the enums in the definition to trying to insert values that didn’t exist but in every case it handled it as expected. Doing a bit of research I discovered how MySQL represents the enum type. Rather than storing the values in a specific order MySQL supposedly creates a map-like structure to relate the integer values with their enum counterparts. This allows you to change the order of the enum definition without changing the underlying map or any of the stored values. I still wouldn’t use enums for anything that would require a join but for storing small and simple sets of data it works great.
 
 {% highlight sql %}

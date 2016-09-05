@@ -6,7 +6,7 @@ keywords: "startups, morals, boundaries"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Startups need to use everything in their arsenal to grow. A big part of it is playing in the grey area between moral and immoral. Do you create fake users and comments to portray an active community? Do you reply to posts on Craigslist trying to get visitors to your site? It’s also much easier to play in this area when you’re a startup - you’re most likely too small to be noticed and even if you are the press won’t spend much time on it. Google already gets a ton of flak every time someone complains about losing business due to a search engine update, imagine what would happen if a Google employee was caught spamming Craigslist.
 
 It’s important for all companies, and especially startups, to test these moral boundaries but there’s no clear answer of what the boundaries actually are, just shades of gray which will vary from company to company and from team to team. I believe that until you get some resistance you need to keep on pushing otherwise you never know that you’re doing enough.

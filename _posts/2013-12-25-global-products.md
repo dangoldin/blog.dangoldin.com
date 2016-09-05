@@ -6,7 +6,7 @@ keywords: "global products, infrastructure, technology"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The trip to India got me thinking about “global products” that work the same wherever they are. It’s surprisingly difficult to find tech products that fit this description. Cell phones will almost always work internationally but roaming charges make it impractical. Having an unlocked phone helps but you still need to get a SIM card which is a <a href="http://dangoldin.com/2013/12/23/getting-a-sim-card-in-india/">hassle</a> in many countries.
 
 Even something as standard as a laptop isn’t as easy to use as it should be. Wifi connectivity varies depending where you are with most cities being great fickle elsewhere. Dealing with voltage conversion and plug adapters is something that always comes up. I’ve learned to travel with an adapter kit that includes enough combinations to be able to charge my laptop wherever I go.

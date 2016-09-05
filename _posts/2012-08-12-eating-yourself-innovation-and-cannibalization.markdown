@@ -6,7 +6,7 @@ keywords: "innovation, cannibalization"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}snakeself.jpg" />
 

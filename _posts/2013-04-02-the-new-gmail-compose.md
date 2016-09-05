@@ -7,7 +7,7 @@ image_url: "/assets/static/images/gmail_logo.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}gmail_logo.png" alt="Gmail Logo" style="float:right;">
 

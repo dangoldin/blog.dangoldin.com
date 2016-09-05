@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I discovered a nuance with MySQL's GROUP BY statement earlier today that I’ll share with the hope that others can learn from it. It’s fairly common to use a coalesce statement to handle null values while keeping the resulting field the same name. For example:
 
 {% highlight sql %}

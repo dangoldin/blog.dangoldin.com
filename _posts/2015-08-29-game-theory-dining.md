@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This past Wednesday I had dinner at Blu - a restaurant that’s <a href="http://well.blogs.nytimes.com/2015/08/17/what-would-you-pay-for-this-meal/
 " target="_blank">adopted</a> a “pay what you want” pricing model. Customers have an incentive to underpay the final check so I was curious to see how Blu handled it throughout dinner. I noticed three tactics they used to get people to pay fairly and am sure they utilized a bunch more that I didn’t even notice:
 

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/github-youtube-dl-search.png"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today I came across another reason why basic computer literacy is a necessary skill. It’s not just about knowing to code or understanding how computers work but getting access to a slew of tools that are orders of magnitude better than what you’d find on a sketchy site.
 
 <div class="thumbnail">

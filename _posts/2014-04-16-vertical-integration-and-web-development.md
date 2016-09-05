@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Lately, I’ve been thinking about tightly coupled systems and how prevalent JavaScript has become on the web.
 
 Tightly coupled systems scare me. They will undoubtedly break and bring down big chunks of your infrastructure. The solution is to think about your system in terms of various independent services that are responsible for only doing a few things well that won’t bring down the rest of the system if they fail. This approach makes it easier to maintain your code as it grows and also reduces the risk of massive failure. The challenge is figuring out how to break your project down into these services and being sure to revisit that decision as you grow.

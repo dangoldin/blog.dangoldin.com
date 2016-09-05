@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Given the <a href="http://www.itworld.com/article/2875112/ibm-is-about-to-get-hit-with-a-massive-reorg-and-layoffs.html" target="_blank">rumor</a> of the massive IBM layoffs I decided to pull some others and see how it compared. Surprisingly, the next highest was also at IBM - but in 1993. On one hand, it's odd to see this pattern as if they've learned nothing. On the other, it's a sign that they acknowledge the problem and are willing to adapt. Since the 1993 layoff IBM's stock price increased over 950% and this round may provide another burst.
 
 On a side note, the largest layoffs are available online but I wasn't able to find a non ad-ridden, non-paginated table so hopefully others find these useful.

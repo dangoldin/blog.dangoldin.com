@@ -7,7 +7,7 @@ image_url: "/assets/static/images/mailbox1.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}mailbox1.png" alt="Mailbox" style="float:right;">
 

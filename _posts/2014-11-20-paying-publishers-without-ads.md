@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Google recently launched a program, <a href="https://www.google.com/contributor/welcome/" target="_blank">Contributor</a>, that offers an ad-free monetization model to publishers. The idea is that a user pays Google up to $3 a month and in return Google will not show that user any display ads on a website that’s a participant in the program. The monthly payment will then be distributed across the participating sites - most likely based on how many times you’ve visited that site.
 
 I like the idea - not because most ads are terrible but because it shows that both publishers and Google are willing to experiment with another approach. Ads, as much as we dislike them, are the primary way content producers make money since web users expect free content everywhere.

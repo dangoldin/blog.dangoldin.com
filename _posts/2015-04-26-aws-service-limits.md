@@ -7,7 +7,7 @@ image_url: "/assets/static/imags/aws-ec2-launch-failure.png"
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <div class="thumbnail">
   <img src="{{ IMG_PATH }}aws-ec2-launch-failure.png" alt="AWS EC2 launch failure due to service limits" />

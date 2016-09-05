@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve discussed the pros and cons of having a codebase out of a few languages versus having the choice made per project or application with a bunch of people and opinions differ. On one hand, having many languages provides flexibility in choosing the right language for the job and allows engineers to learn and explore new tools. Better habits are encouraged since the interface between components requires a well structured and tested structure rather than relying on code similarity. On the other, it prevents code and component reuse and makes it difficult for teams to standardize around a style and codebase. Also, engineers can’t switch projects as easily as they’d be able to under a common language and prevents the depth of knowledge one gets from working on a shared codebase with others.
 
 I used to think the flexibility of being able to choose the right language for the job was the only thing that mattered but now prefer a limited language codebase. With modern languages, libraries, and tools it’s easy to write good code in any language and there are only a few applications that warrant a specific language, and even then only at scale.

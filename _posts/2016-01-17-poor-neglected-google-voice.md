@@ -7,7 +7,7 @@ image_url: /assets/static/images/google-voice.png
 category:
 tags: []
 ---
-{% include JB/setup %}
+{% include setup %}
 Nearly all the conversations with my family is in Russian and phone calls are no different. The fun happens when I miss a call and it goes to voicemail. Turns out that despite the amazing job Google does in transcribing English calls it fails terribly at Russian. Instead of realizing that it’s not English it ends up with transcriptions such as “douche nozzle booster.”
 
 <img src="{{ IMG_PATH }}google-voice.png" alt="Google Voice Russian transcription" />

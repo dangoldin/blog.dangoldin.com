@@ -6,7 +6,7 @@ keywords: "design, ux, startups, product management"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Although I come from a backend background, I’ve been spending more and more time on the UX side of things and have been picking up quite a bit - a combination of using Twitter Bootstrap on my projects, subscribing to the Hack Design lectures, and following a ton of designers on Twitter.
 
 Something that’s been bothering me is this obsession with trying to make every product as intuitive and approachable as possible. That’s the right approach when focusing on mass market consumer products but if you’re building internal tools or targeting power users a simple, approachable product might be antithetical to what you actually need.

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/liars-and-outliers-cover.jpg"
 category:
 tags: ["#books"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}liars-and-outliers-cover.jpg" alt="Liars and Outliers Book Cover" style="float:right;" width="200">
 

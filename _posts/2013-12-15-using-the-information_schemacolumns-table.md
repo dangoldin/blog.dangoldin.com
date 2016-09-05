@@ -6,7 +6,7 @@ keywords: "mysql, inforamtion_schema, information_schema.columns"
 category:
 tags: ["#code", "#sql"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something that’s been really helpful to me in understanding a MySQL database is the built in <a href="http://dev.mysql.com/doc/refman/5.0/en/columns-table.html" target="_blank">information_schema.columns</a> table. It provides information on every column in the database and is queryable just like any other table. This makes it easy to quickly find all tables that have a particular column name or all columns that are the same data type. There have been countless times where I knew the data existed somewhere but couldn’t recall which table it was in. Querying the information_schema.columns table for the foreign key helped me quickly figure it out. Below are some sample queries that retrieve data from the information_schema.columns table:
 
 {% highlight sql %}select table_schema, table_name from information_schema.columns where column_name like '%user_id%’;

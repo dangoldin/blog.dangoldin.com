@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta", "#data"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I read Thomas Piketty’s Capital in the Twenty-First Century a couple of months ago but have only organized my notes and thoughts now. It’s a simple, enjoyable read that provides an overview of the modern western economies and offers a compelling explanation of how wealth and income equality occur. I took a variety of economics classes in college but none of them felt as concrete as the book: Piketty does a great job introducing simple mathematical relationships and then simulating the results under different conditions. This allows the reader to get a feel for the data and makes the ideas much more tangible than an abstract formula. Piketty couples this with the economic data from the past two centuries to craft a persuasive argument for the causes of wealth accumulation.
 
 Countless others have looked through the data, identified issues, and provided counterarguments so I don't want to get into that but I do want to highlight how important having data is for all types of research. If we're serious about these topics we should strive to collect as much data as possible while making it as accessible as possible. Piketty spent numerous hours collecting and transcribing the data from various paper sources and it's amazing what came out; I can only imagine how much other valuable research would come out if there was more publicly available data.

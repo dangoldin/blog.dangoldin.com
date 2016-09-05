@@ -6,7 +6,7 @@ keywords: "surge pricing, product, uber, marketing"
 category:
 tags: ["#product", "#pricing"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Every time there’s a big event or terrible weather, there’s a slew of complaints about Uber’s surge pricing. By now, you’d think that Uber customers would expect this to happen and yet they’re surprised when a $10 cab ride turns into a $100 Uber ride. I suspect Uber’s already done as much as it can on the messaging side; psychologically it’s just tough for someone to take a $10 ride one day and then a day later pay an order of magnitude more.
 
 Every Uber transaction involves three parties - the customer, the driver, and Uber. In every case it’s up to Uber to set the prices in order to get the supply (drivers) equal to the demand (customers). In most cases, these are in alignment since people are willing to pay more for an Uber than a cab for the convenience. the problem occurs when the demand side gets too large and Uber needs to drastically increase prices in order to encourage more supply. Uber should have enough data by now to be able to determine the prices that will lead to supply being equal to demand for every demand level but that doesn’t solve the perception problem.

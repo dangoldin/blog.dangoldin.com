@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier this week XKCD featured a <a href="https://xkcd.com/1427/" target="_blank">comic</a> where oft-quoted movie quotes are autocompleted by iOS keyboard predictions. I decided to do replicate the exercise using Android and Swype. Some are similar while others are completely different. I suspect a big part of the difference is that Swype uses my history when offering the suggestions and since I’ve been travelling recently many of them tend to be airport related.
 
 <blockquote>

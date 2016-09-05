@@ -7,7 +7,7 @@ image_url: "/assets/static/images/dodge-ram-canada.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Targeting is one of the best ways to improve the return on an advertising campaign. By identifying potential customers you're able to focus your advertising on them rather than someone random. And one of the best simplest ways is to set up your advertising campaigns to focus on a specific geography. Maybe your product is only sold in the United States and advertising it elsewhere is a waste. Or maybe your product is sold everywhere but the messaging and copy needs to vary by region. Or maybe it's sold everywhere with the same exact copy but the price varies by region. Being able to change your campaigns by geography is a simple way to improve the performance of any campaign.
 
 <div style="float:right; width:240px; padding-left: 10px;">

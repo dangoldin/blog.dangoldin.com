@@ -6,7 +6,7 @@ keywords: "constantly entertained, twitter, creativity"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The real time news cycle bothers me. Every time theres some news there are countless reactions on Twitter and quick, shoddy write ups on various "news" sites. Unfortunately, by the time someone does the research and writes a thoughtful response, we've moved on to the next piece of news. We're reaching the point where writing something stupid quickly is becoming more valuable than writing something thoughtful but late.
 
 Twitter’s strength is its weakness. The 140 character limit makes it very easy for anyone to share an opinion but that also leads to everyone sharing an opinion. Of course, its ability to break and spread news is invaluable. I just wish that the more thoughtful, well-researched pieces could get past the noise. This week, I would have preferred to see a few insightful pieces about WWDC rather than the same exact WWDC coverage from dozens of sites.

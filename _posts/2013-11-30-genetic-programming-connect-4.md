@@ -6,7 +6,7 @@ keywords: "genetic programming, ai, connect 4"
 category:
 tags: ["#code", "#python"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Over Thanksgiving break I was going through some old GitHub repos and found an interesting one I wanted to share. It’s a <a href="https://github.com/dangoldin/connect4bot" target="_blank">Connect 4 bot</a> that’s evolved through a genetic program. The goal of the strategy is to choose a column to move to that will give the highest probability of a win given a board position. To figure out the move column, the genetic program simulates play of strategy against strategy and gives the most successful ones a greater chance of reproducing into the next generation. The idea is that over time the resulting strategy will be the most fit.
 
 The way a typical genetic program works is represented is through a tree structure with the leaf nodes (terminals) containing the various features of the input and the non-leaf nodes containing functions to evaluate the values in the leaf nodes. This way, the program can evaluate any input and we can create new functions by taking subbranches from one tree and combining them with another.

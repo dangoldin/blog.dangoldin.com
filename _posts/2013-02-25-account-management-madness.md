@@ -7,7 +7,7 @@ image_url: "/assets/static/images/google-accounts.png"
 category:
 tags: ["#meta", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}google-accounts.png" alt="My Google Accounts" style="float:right;">
 

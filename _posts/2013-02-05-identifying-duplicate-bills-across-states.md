@@ -7,7 +7,7 @@ keywords: "bicoastal datafest, hackathon, politics, laws, natural language proce
 image_url: "/assets/static/images/gun1-in.png"
 tags: ["#datascience", "#dataviz", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This past weekend I participated in the <a href="http://www.bdatafest.computationalreporting.com/">Bicoastal Datafest</a> hackathon that brought together journalists and hackers with the goal of analyzing money’s influence in politics. I came in with the idea of analyzing the evolution of a bill in order to see which politician made the various changes and relate that to campaign contributions. I quickly discovered that that wouldn't be very easy, especially in two days, but I did meet <a href="https://twitter.com/llewellynhinkes">Llewellyn</a>, a journalist/hacker, who had a more practical idea of programmatically identifying bills across states that used the same language. The intuition behind this being that it would identify bills that were unlikely to have been written independently of one another and likely to have been influenced by a 3rd party.
 
 We ended up with the following approach that we were able to code up during the weekend:

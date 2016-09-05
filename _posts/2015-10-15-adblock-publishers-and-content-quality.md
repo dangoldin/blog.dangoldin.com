@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Ever since the release of iOS 9 and it’s support for adblocking apps I can’t go a day without seeing some article about adblock. Some condemn it and claim it’s stealing from publishers while others make the case that ads are so intrusive that they deserve to be blocked. I don’t want to dwell into either of these but something that’s been on my mind is that publishers aren’t doing enough to differentiate themselves based on the quality of their audience.
 
 Top tier publishers that have unique and high quality content should focus on building a community. This passionate group of users will engage with the content on the site as well as provide valuable information to the publisher. By signing up for an account users provide valuable demographic information as well as interests based on what they see and what they do. This is also something that adblock won’t be able to easily block since it will be such a core part of the experience and hosted on the publisher’s own domain.

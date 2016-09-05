@@ -6,7 +6,7 @@ keywords: "suggestions, advice, startups"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Since becoming active in the startup scene, I've been meeting a ton of founders and am annoyed by how much easier it is to offer suggestions than to apply them to myself. My most common suggestion, in true lean startup fashion, is to advocate a quicker or cheaper way to validate the market before building a product and yet it’s extremely difficult to take my own advice. I’ve been working on <a href="http://better404.com" target="_blank">Better404</a> on and off for two months now and know I should get it in front of potential customers and yet I keep on making minor tweaks and updates to the product.
 
 I'm not sure if this is due to how much easier it is to say something versus executing it or just a fear of failure but it’s something I’m becoming more and more aware of. At least now I’m aware of this bias and and can work on correcting it. What’s been working well so far is coming up with a framework that can be used to evaluate a startup in a similar space and then using it to evaluate my own. The challenge is coming up with the framework without biasing it knowing that you will be using it to evaluate your own project. Nonetheless, this additional indirect step does help.

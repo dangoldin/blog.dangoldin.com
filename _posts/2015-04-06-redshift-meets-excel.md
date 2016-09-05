@@ -7,7 +7,7 @@ image_url: "/assets/static/images/redshift-to-excel.png"
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 As part of our data pipeline, we have a Redshift agg job that takes low level data and rolls it up to an hourly aggregate. A latter job takes the hourly data and rolls it up to a daily level which is used for high level reporting and summary statistics. Earlier this week we ran into a hiccup that caused some of these aggregate jobs to fail. After fixing the issue we had to figure out what data was affected and rerun it. We wrote a simple query to count the numbers of rows per day per hour in order to spot any gaps.
 
 {% highlight sql %}select ymd, hour, count(1) as cnt

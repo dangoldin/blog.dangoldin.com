@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A critical component in communicating between various teams is knowing who has what responsibility. Especially with driven people it’s easy to have overlap between various functions - product and design; design and frontend engineering; and frontend engineering and backend engineering. This is both good - because it’s able to focus more eyes on a particular problem and provides a new perspective - and bad  - because people may feel that they can’t move quickly enough and don’t want to cede decision making power. Great teams thrive in this environment while poor teams degenerate into a Dilbert cartoon.
 
 One approach that I’ve been preaching is to standardize on the edge points that can act as a form of “contract” between the teams. At those edges it’s great to have the debates and argue the merits of various implementations but beyond that the ownership should lie with the respective team.

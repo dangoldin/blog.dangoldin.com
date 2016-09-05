@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This past weekend I was going through some old projects and got a bit nostalgic. Some were my first foray into web programming and startups while others were just me messing around and trying to learn a new framework or language. Each of them have taught me valuable lesson and I thought it would be fun to go through each one and jot down a quick background as well as the lessons learned. I’m doing a high level pass so if any of these are interesting definitely let me know and I’ll do a deeper dive.
 
 - scenepeek.com: I started this with a close friend back during my finance days when I really didn’t know what I was doing. The goal was scrape the web and identify various events that could then be easily surfaced and discovered. This was right before smartphones became popular so it does make one think of what could have been. This was my first real time doing “devops” and working with various instances and configuring Apache. The other big lesson learned was that we probably should have started with some framework to get our project out sooner. Instead we ended up writing raw PHP and building everything from the ground up.

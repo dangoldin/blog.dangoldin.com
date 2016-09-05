@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The Oculus acquisition got me thinking about the impact it would have on software development. We currently have a slew of editors and IDEs that are making us more productive and I wonder whether there's a place for VR. I don't think it's going to be as extreme as <a href="https://en.wikipedia.org/wiki/Minority_Report_(film)" target="_blank">Minority Report</a> (at least at first) but I do expect some things to get much easier.
 
 Typing is currently much quicker than any other form of data entry and I don't imagine VR making this any better. While writing this I took a break and tried looking at the letters making up this sentence on my keyboard and it was slower - not to mention the mistakes that will likely occur during transcription. The only thing that would make data entry faster would be a direct neural connection which isn't going to be happening any time soon.

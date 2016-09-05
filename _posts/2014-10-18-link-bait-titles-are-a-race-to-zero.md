@@ -7,7 +7,7 @@ image_url: "/assets/static/images/mic-link-bait.png"
 category:
 tags: ["#meta", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A couple of days ago I saw a mic.com article with the title “A European country is now offering free college education to Americans” but the only way to find out which country this was (Germany) was by clicking through to the actual page.
 
 <img src="{{ IMG_PATH }}mic-link-bait.png" alt="Mic link bait title"/>

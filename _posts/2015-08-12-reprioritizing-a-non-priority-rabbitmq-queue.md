@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today we had a hiccup where we had a bunch of messages piled up on a RabbitMQ queue that were not being consumed. Some of these tasks were very quick data loads while others were more involved jobs that could take multiple minutes to run. Normally these are distributed relatively evenly across the day so it’s not a problem but in this case we had hundreds of tasks in a random order and we wanted to shuffle them around such that the data load tasks executed first so that the data would be quickly accessible to other higher priority jobs.
 
 Luckily, we remembered we had some old shell commands that helped us backup and restore a RabbitMQ queue so it only required a bit of scripting to come up with a sequence of commands to do exactly what we wanted. The script works by dumping the contents of the queue into a file, extracting the message field, filtering the messages into the desired buckets, turning them into queue addition commands, and executing the resulting files.

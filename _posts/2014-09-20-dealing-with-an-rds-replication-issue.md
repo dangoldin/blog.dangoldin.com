@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier this week we encountered an odd RDS issue that I’ve never seen before. An AWS hiccup caused a database replication query to fail which stopped the replication process. We discovered this the following day when we saw weird results during after running an analysis query. The nice thing was that this wasn't a huge deal since our production system relies on the master database but we did have to spend time dealing with this.
 
 When we discovered this issue we did a few online searches to see how to resolve the issue and resume the replication. Turns out there's a command, "CALL mysql.rds_skip_repl_error", that will skip the current replication error and move on. In our case, the errors occurred when creating temporary table for a legacy job so we were able to skip it. Otherwise, we'd run the risk of breaking the sync between our master and replica databases.

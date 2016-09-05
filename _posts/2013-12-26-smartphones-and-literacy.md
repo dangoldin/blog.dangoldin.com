@@ -7,7 +7,7 @@ image_url: "/assets/static/images/global-smartphone-per-capita.png"
 category:
 tags: ["#society"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <ul class="thumbnails">
   <li class="span7">

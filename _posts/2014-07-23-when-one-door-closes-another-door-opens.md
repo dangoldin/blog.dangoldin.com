@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail">

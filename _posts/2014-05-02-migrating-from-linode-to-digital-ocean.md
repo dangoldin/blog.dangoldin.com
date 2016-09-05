@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Ever since I saw that Digital Ocean charged $5/mo, I’ve been meaning to migrate my sites and projects over from Linode but have been wary of dealing with the various issues that would ensue. I finally bit the bullet earlier this week and it went surprisingly smoothly.
 
 My biggest concern was forgetting to copy some files that specified some esoteric settings I came up with when I first set up the projects. Luckily I didn’t run into this issue and most of the effort was spent in trying out my sites and looking at the log files to see which libraries were missing.

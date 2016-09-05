@@ -7,7 +7,7 @@ image_url: "/assets/static/images/4-art.jpg"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 At the beginning of 2013, I set a <a href="http://dangoldin.com/2013/01/02/2013-goals/" target="_blank">goal</a> to do something with my hands to contrast with the constant life in front of the screen. I finally finished my first “art” project this past weekend and documented the result. I had a stash of old, torn jeans that were just taking up space and instead of throwing them out I decided to have some fun. Here’s the process and end result.
 
 <ul class="thumbnails">

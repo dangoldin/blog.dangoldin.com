@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#society"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I haven’t seen much written about how consumer protection relates to a product’s user experience but it’s a topic that’s worth exploring. I was reminded of this when my mortgage loan was sold to a new servicer. I came home to find a letter in the mail notifying me that my loan has been sold and that going forward I’d have to use a different payment portal and system. It was simple enough to register but the payment process became less efficient and there was no support for a Mint integration.
 
 This is clearly a first world problem and there are a lot of benefits that come with being able to buy and sell loans. It’s the foundation of our financial system and allows companies to specialize across the entire loan business - some are designed for loan origination while others focus on servicing. This also encourages companies to improve their loan valuation models since if they’re able to identify an arbitrage opportunity they can trade on it and profit.

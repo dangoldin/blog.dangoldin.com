@@ -6,7 +6,7 @@ keywords: "Scraping web HTML BeautifulSoup"
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve done my fair share of scraping ever since I started coding and just wanted to share some tips I’ve picked up along the way. I think scraping is a great, practical way to get into coding that is also immediately useful. It also forces you to understand the HTML of a page which gives you a great foundation when you’re ready to create your own site.
 
 Hope they’re useful!

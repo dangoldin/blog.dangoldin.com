@@ -7,7 +7,7 @@ image_url: "http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_Lincoln_N
 category:
 tags: ["#dataviz", "#datascience"]
 ---
-{% include JB/setup %}
+{% include setup %}
 On Saturday, I finished <a href="http://www.amazon.com/Team-Rivals-Political-Abraham-Lincoln/dp/0743270754">Team of Rivals</a> and while looking at my calendar noticed that it was also <a href="http://en.wikipedia.org/wiki/Abraham_Lincoln">Lincoln's</a> birthday this week. What better way to celebrate his birthday than to analyze his speeches and letters? I downloaded the <a href="http://www.gutenberg.org/files/3253/3253-h/3253-h.htm">7 volume set</a> containing his speeches, letters, and essays from Project Gutenberg and spent a few hours on Sunday cleaning the text and writing a parsing script. On Monday, I started analyzing the text to see if I could make sense of it.
 
 I was able to get 1,458 documents containing almost 16,500 sentences and a little over 547,000 words. I tried getting the date each letter was written or speech was given but was only able to get it for 60% of the documents. That was enough to get some insights.

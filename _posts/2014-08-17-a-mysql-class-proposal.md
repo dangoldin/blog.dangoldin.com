@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#data", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’m clearly biased but I believe technology is critically important and we should be spending more effort teaching it than we are now. To that end, I’ve been volunteering with <a href="http://www.tealsk12.org/" target="_blank">TEALS</a>, a national program that allows professionals to teach Computer Science classes in a local high school. Something else I’ve been working on is developing a MySQL class to give as part of the <a href="http://www.c4q.nyc/" target="_blank">Coalition 4 Queens</a> program. As part of the process I wanted to share what I’m thinking of doing and would love to get some feedback to hopefully improve it. The general idea is that it will consist of 3 or 4 sessions with each session lasting a couple of hours. The class will be opt-in and the students should have some technology background.
 
 Session I

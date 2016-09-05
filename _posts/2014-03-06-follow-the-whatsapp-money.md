@@ -7,7 +7,7 @@ image_url: "/assets/static/images/imo-announcement.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 Earlier this week I received the following email from imo.im:
 

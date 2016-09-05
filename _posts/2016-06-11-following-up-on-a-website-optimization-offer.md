@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been getting a stream of offers to help “optimize” my site and decided to follow through with one and see where it went. The general pitch is to call out existing errors and problems and offer a service to help fix the variety of errors and improve my search ranking. Here’s the text of the most recent email:
 
 <blockquote>

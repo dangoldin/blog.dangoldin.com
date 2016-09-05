@@ -7,7 +7,7 @@ image_url: "/assets/static/images/crawl-stats-comparison-time-diff-bar.png"
 category:
 tags: ["#datascience", "#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Over the weekend I wrote a quick script to crawl the top 100 Alexa sites and <a href="http://dangoldin.com/2014/03/09/examining-the-requests-made-by-the-top-100-sites/">compare them</a> against one another in terms of load times and resources being loaded. I shared my code on GitHub and earlier today I got a great pull request from <a href="https://github.com/rahimnathwani" target="_blank">rahimnathwani</a> who ran the script in Beijing, using home ADSL, and wanted to share his dataset.
 
 I suspected that that many sites were loading slowly for me due to my geographical distance from them and with this dataset we’re able to compare the load times between NYC and Beijing for these sites. Unsurprisingly, most sites in Asia do load faster in Beijing but the average load time is much longer, 3.4 seconds in NYC vs 11 seconds in Beijing. A surprise was how slowly rakuten.co.jp loaded in Beijing - over 50 seconds on average and I suspect this is due to the huge number of images being loaded. I suspect internet speeds also played a part in the differences here so this isn’t a perfect comparison.

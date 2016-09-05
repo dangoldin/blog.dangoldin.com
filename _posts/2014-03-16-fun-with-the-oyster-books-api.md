@@ -7,7 +7,7 @@ image_url: "/assets/static/images/oyster-rating-vs-pages.png"
 category:
 tags: ["#datascience", "#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’m an avid reader and signed up for <a href="http://oysterbooks.com/" target="_blank">Oyster</a> as soon as I discovered them. Since then, every time I wanted to read a new book my first step has been to check Oyster. If the book wasn’t available I’d get it the old fashioned way and read it via Readmill, another great app.
 
 One feature I wish Oyster had was the ability to see the overlap between their available collection and what I had in my “to read” list. The only way to do this now is to go through my list one book at a time and then search for it using the Oyster iOS app since the search functionality isn’t available via the web. Being lazy, I really didn’t want to do this and started searching for a quicker way. By browsing their website and looking at the network requests in Chrome I noticed two interesting API calls being made - one to get the book “sets” and another to get the books with a set.

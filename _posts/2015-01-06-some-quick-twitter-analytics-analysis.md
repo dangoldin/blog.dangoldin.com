@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#data"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I finally got around to exploring the Twitter analytics data and wanted to see whether I could find anything useful. My dataset contained 831 tweets, every single one since October 2013, as well as the text, the number of impressions, and the number of engagements. Just by loading the data into Excel, calculating a few values, and generating a pivot table it’s easy to investigate a few ideas. I’ve included some of the pivot tables below along with the various items that stood out.
 
 <table class="table small">

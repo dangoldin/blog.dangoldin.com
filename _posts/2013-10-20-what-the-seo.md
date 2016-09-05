@@ -7,7 +7,7 @@ image_url: "/assets/static/images/hbuse-sample-sites.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 My mom owns a small local business in suburban NJ, <a href="http://www.doremi-nj.com/" target="_blank">The Do Re Mi School</a>, that’s akin to an after-school program where music, dance, art, language and math is taught. Being surrounded by a family of engineers, we’ve been helping her on the tech side and my brother created the web site she’s been using it for the past couple of years. It’s based on Drupal and allows her to make changes without having to dive into the tech details. This approach has been working well she’s recently started using YouTube, Facebook, and Twitter to help with her marketing and social efforts.
 
 Earlier this week, she sent an email saying there was a new website, bestnewjerseyartsschool.com, that was completely ripping off her site. They claim to be Do Re Mi and have copied various parts of the content, including paragraphs of text and various images. They’ve even created a YouTube video, www.youtube.com/watch?v=lvE6tBl8xU4 that's embedded on the site’s home page.

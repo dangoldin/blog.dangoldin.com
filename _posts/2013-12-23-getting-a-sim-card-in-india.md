@@ -6,7 +6,7 @@ keywords: "SIM card, travel, unlocked phone, 3G"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve heard about the wonders of an unlocked phone and decided to try it out during my recent trip to India. The idea was to get a cheap unlocked Android phone that I’d be able to use on this and future trips. I was able to get a relatively cheap Samsung phone but it took me a surprisingly long time to get a working SIM card. This post is a description of the steps I took as well as some advice for others trying to do the same.
 
 First off, to get a SIM card as a foreigner in India, you need to have a copy of your passport and visa, a passport sized photo, and a local to act as a reference. After giving this information to vendor they will do the necessary paperwork, call the reference, and if everything goes well they will activate your SIM card within 24 hours after which you will need to call them to verify and start using the service.

@@ -6,7 +6,7 @@ keywords: "online education, online classes, coursera, udacity"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’m making an effort to freshen up and improve my data skills so when I found out that two of my friends were going to take an <a href="https://class.coursera.org/compdata-002/class/index">R class</a> on Coursera, I joined them. The class is pretty typical for an online programming class: each week there are a set of lectures to watch, a quiz to take, and a programming exercise to do. In addition to this, we also have a weekly Google Hangout to discuss the lectures, go over our programs, and share our R questions.
 
 I realize we’re still at the dawn of online education but it feels as if the class has simply been moved from the classroom to the web, without any thought as to how the class can be structured to make the best use of the web. So far, the Google Hangout paired with the programming exercises is the most valuable. The programming exercises provide the structure and the Google Hangouts help us absorb the material better. We are able to share our solutions, analyze the pros and cons of the different approaches, and by explaining why we solved them a certain way we end up understanding the material better ourselves. Why can’t online classes be designed to take advantage of this? I understand that not everyone has someone to take a class with and yet having a partner provides a big benefit.

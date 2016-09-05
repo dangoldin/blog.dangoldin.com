@@ -7,7 +7,7 @@ image_url: "/assets/static/images/crawl-stats-requests-vs-time.png"
 category:
 tags: ["#datascience", "#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Since writing the <a href="http://dangoldin.com/2013/12/01/drowning-in-javascript/">Drowning in JavaScript</a> post I’ve been meaning to take a stab at automating that analysis and seeing if I could generate some other insights. This weekend I finally got around to writing a quick PhantomJS script to load the top 100 Alexa sites and capture each of the linked resources as well as their type. The resulting data set contains the time it took the entire page to load as well as the content type for each of the linked files. After loading these two datasets into R and doing a few simple transformations we can get some interesting results.
 
 <ul class="thumbnails">

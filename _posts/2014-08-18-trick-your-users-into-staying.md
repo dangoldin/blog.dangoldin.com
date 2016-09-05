@@ -7,7 +7,7 @@ image_url: "/assets/static/images/linkedin-downgrade.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 It’s just too easy to rant against LinkedIn but I can’t help it. They recently offered me a free month of business plus so I took them up on it. Little did I know (although I should have expected it) that canceling would be a maze that I still may not have escaped.
 
 <img src="{{ IMG_PATH }}linkedin-downgrade.png" alt="LinkedIn Downgrade"/>

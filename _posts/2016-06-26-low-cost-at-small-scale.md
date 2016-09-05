@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The Wall Street Journal had a [great piece](http://www.wsj.com/amp/articles/why-fruits-and-veggies-are-so-crazy-cheap-in-chinatown-1466762400) on why produce is so cheap in Chinatown. The conclusion:
 
 <blockquote>

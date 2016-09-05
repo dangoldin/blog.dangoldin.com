@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Inspired by yesterday’s post I decided to compile a list the memories I’ve had growing up with computers - hopefully they spark others. I tried to keep these in chronological order but I made some mistakes.
 
 - The increase in the number of colors on a monitor and the various *GAs (CGA, EGA, VGA, XVGA)

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/rk-world-map.png"
 category:
 tags: ["#dataviz", "#code", "#R"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today I read Nathan Yau’s <a href="http://flowingdata.com/2014/02/05/where-people-run/" target="_blank">post</a> that had a quick <a href="http://projects.flowingdata.com/tut/map-routes.R" target="_blank">R script</a> to plot GPX file data onto a map. I was able to quickly load up my RunKeeper data from 2013 and came up with a pretty cool visualization of each of my outdoor runs. Since my runs occurred across multiple cities and continents the visualization turned out to be very sparse without a great sense of where the runs were. I made a two quick changes to the script to make it more useful for my data: a map overlay to see where in the world I ran and an ability to view a zoomed in area of the map. I’ve included the updated script and the resulting plots below.
 
 {% highlight r %}

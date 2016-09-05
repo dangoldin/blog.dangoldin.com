@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This weekend I felt discouraged after getting cold but dragged myself outside to go for a walk and clear my head. I ended up getting a cup of coffee and just sat on a bench for 30 minutes and letting random thoughts go in and out of my head. It turned into a form of personal meditation where some ideas crystallized and stuck around while others quickly disappeared. It felt great (so great that I ended up going back to my apartment and doing a bunch of chores I’ve been putting of!), especially considering that I had to drag myself away from the couch to even go for the walk and would have much preferred to just sit on the couch and watch football.
 
 While sitting on the bench I made three resolutions that are making me feel more inspired and productive. They’re all simple and only require commitment but I’m definitely benefiting from them.

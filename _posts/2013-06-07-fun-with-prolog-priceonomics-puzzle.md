@@ -6,7 +6,7 @@ keywords: "prolog, priceonomics puzzle, priceonomics"
 category:
 tags: ["#prolog", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The <a href="http://blog.priceonomics.com/" target="_blank">Priceonomics blog</a> is one of my favorites so when I saw that they had a <a href="http://priceonomics.com/jobs/puzzle/" target="_blank">programming puzzle</a> up I decided to have some fun with it. And what’s more fun than hacking around with a quirky, esoteric programming language? I remember having fond memories of playing around with Prolog in middle school so decided to dig it up again in an attempt to solve this puzzle.
 
 Prolog is pretty different than the mainstream programming languages, it belongs to the logic programming language category and relies on defining a variety of relations and then querying these relationships to get results. A simplified way to think about it is you define a set of equations and tell Prolog to "solve for X".

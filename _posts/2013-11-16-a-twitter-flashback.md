@@ -7,7 +7,7 @@ image_url: "/assets/static/images/twitter-ecosystem.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}twitter-ecosystem.png" alt="The Twitter ecosystem" />
 

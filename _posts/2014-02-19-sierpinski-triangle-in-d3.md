@@ -8,7 +8,7 @@ image_url: "/assets/static/images/sierpinski-triangle.png"
 tags: ["#dataviz", "#javascript", "#code"]
 custom_js: ["d3.sierpinski.js"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 There's a little known algorithm for constructing a <a href="https://en.wikipedia.org/wiki/Sierpinski_triangle" target="_blank">Sierpinski triangle</a> that is surprisingly easy to implement.
 

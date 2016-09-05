@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Over the past week I've been learning Scala. The initial motivation was that our API code is in PHP and in dire need of a rewrite. And since we've been rewriting our other critical applications in Java we want to leverage the JVM as much as possible. At the same time, we want to keep the code simple, expressive, and maintable while being fun and easy to write. I've heard great things about Scala so decided to give it a shot.
 
 My first step was to install the <a href="https://www.playframework.com/" target="_blank">Play framework</a> and play around with the examples but I quickly discovered that while I could understand and tweak it, I needed a better Scala foundation to actually work on a real project. One of my favorite ways to learn a new language is to go through the Project Euler problems in a new language. The problems are a fun balance between mathematics and computer science and gradually build up in complexity which aligns itself well with the build up in my coding skills. The other big benefit is that solving the problems gives you access to other peoples' solutions which you can use to improve your code and knowledge. Normally looking at other people's code isn't the most impactful but in this case since you've already solved the problem you have the background to actually absorb the new patterns and styles.

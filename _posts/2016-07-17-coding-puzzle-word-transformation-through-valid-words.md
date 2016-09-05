@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A fun engineering puzzle I heard this week was to write an algorithm that finds the shortest path between two words of the same length where you’re only allowed to change a single letter each step and every word needs to be valid. This morning I decided to have some fun with it and wanted to jot down my thought process going through the exercise in the hope that it provides a bit of perspective on how I approach code.
 
 The first step was to just do an example in my head to visualize the problem. I started with two short words, dog and cat, and went through the manual transition. The optimal solution is where each letter changed is the final letter - in the case of dog to cat it was simply dog -> dot -> cot -> cat. Now that I had a baseline (and a test), I decided to dive into the actual code.
