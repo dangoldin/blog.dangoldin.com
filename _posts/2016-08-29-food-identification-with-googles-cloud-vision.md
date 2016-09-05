@@ -16,7 +16,7 @@ Luckily for me Google released a Cloud Vision API and I decided to give it a sho
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}fridge-1.jpg" alt="Fridge 1" width="600" height="800"></amp-img>
+      <amp-img src="{{ IMG_PATH }}fridge-1.jpg" alt="Fridge 1" width="600" height="800" layout="responsive"></amp-img>
       {% highlight json %}[
         {
           "score": 0.90114909,
@@ -74,7 +74,7 @@ Luckily for me Google released a Cloud Vision API and I decided to give it a sho
 
   <li class="span8">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}fridge-2.jpg" alt="Fridge 2" width="600" height="800"></amp-img>
+      <amp-img src="{{ IMG_PATH }}fridge-2.jpg" alt="Fridge 2" width="600" height="800" layout="responsive"></amp-img>
       {% highlight json %}[
         {
           "score": 0.87785435,
@@ -128,7 +128,7 @@ Luckily for me Google released a Cloud Vision API and I decided to give it a sho
 
   <li class="span8">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}fridge-3.jpg" alt="Fridge 3" width="600" height="800"></amp-img>
+      <amp-img src="{{ IMG_PATH }}fridge-3.jpg" alt="Fridge 3" width="600" height="800" layout="responsive"></amp-img>
       {% highlight json %}[
         {
           "score": 0.78413528,
