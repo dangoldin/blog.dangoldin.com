@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql"]
 ---
-{% include JB/setup %}
+{% include setup %}
 At <a href="http://triplelift.com" target="_blank">TripleLift</a>, we have a migrations job that copies aggregate data from Redshift to MySQL so it can be accessed along the rest of the transactional data. As part of a test, I tried comparing that the data matched exactly but ran into an issue when exporting the data to select. Namely, to make the comparison as simple as possible I wanted to run the same select query in both tables and compare the results. Unfortunately, the sort order between MySQL and PostgreSQL (what Redshift is based on) acts differently for text fields. PostgreSQL takes case into account while MySQL does not. This has an especially weird results when you have values that contain characters with an ASCII code between the lower and upper case letters: [\]^-`. It took some research but I discovered that MySQL provides an option to do a case sensitive sort - just add a “BINARY” option before the field name.
 
 The following   queries demonstrate this behavior - all but the BINARY one can run on both MySQL and PostgreSQL.

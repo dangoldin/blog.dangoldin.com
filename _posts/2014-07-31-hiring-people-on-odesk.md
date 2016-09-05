@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 While working on <a href="http://getpressi.com/" target="_blank">Pressi</a>, we found a niche selling "social media mashup pages" to colleges and small universities. Once we discovered it we needed a quick way to find these colleges and identify the contact details of their marketing or social media directors. Searching for this information was not the most efficient use of time for our small team so we went looking for other options.
 
 Two options that stood out were <a href="https://www.mturk.com" target="_blank">Mechanical Turk</a> and <a href="https://www.odesk.com/" target="_blank">Odesk</a> but they were designed for quick and simple tasks. Using them for complex tasks would result in poor quality results. One advantage that Odesk had was that it allowed us to work with the same person for many tasks - something we couldn't figure out how to do using Mechanical Turk. This allowed us to come up with a set of potential candidates based on their project interest and skillset. We gave each of them the same set of problems to do and compared the results. Using this approach we discovered someone who was the right balance of cost and quality and we ended up working with her over the next few months to compile this list.

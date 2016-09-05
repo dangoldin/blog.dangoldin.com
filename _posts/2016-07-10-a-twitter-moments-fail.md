@@ -7,7 +7,7 @@ image_url: "/assets/static/images/twitter-moments-fail.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <div style="float:right; width:240px;">
   <img src="{{ IMG_PATH }}twitter-moments-fail.png" alt="Content not available in your country"/>
 </div>

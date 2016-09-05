@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The best code isn’t code that’s elegant or code that’s brilliant it’s code that doesn’t need to be written. One of the best feelings is when you can take a new problem and turn it into an existing problem that already has a solution. Sometimes that requires making a few tweaks and compromises to the problem or the code but the time and effort saved can be massive. This requires a deep understanding of the problem being solved as well as the existing code. Someone knowing the code but not the problem won’t be able to transform the problem into something applicable. And someone having a deep knowledge of the problem but not the code won’t be able to see how the code can be adapted to solve this scenario. The optimal result comes from someone who can strip away the cruft from both of them while still maintaining the spirit of both in order to combine them.
 
 To make this work you need code that’s clean, well architected, and accessible. Such code is a pleasure to work with and is transparent enough that a decent programmer can see how it can be tweaked to solve new problems that arise. This requires massive amounts of discipline to go back and refactor your code when necessary to keep it in a pristine state so it can be easily transformed when needed. And that transformation with introduce wrinkles that will need to be ironed out to set it up for the next wave of changes.

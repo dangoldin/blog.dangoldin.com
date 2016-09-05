@@ -8,7 +8,7 @@ category:
 tags: ["#meta"]
 redirect_from: "/2015/12/06/setting-up-a-new-computer---then-and-now/"
 ---
-{% include JB/setup %}
+{% include setup %}
 In the past I’d be wary of setting up a new computer knowing that every time I’d need at least a couple of hours to get everything into a workable state. These days I actually look forward to setting up a new computer. Nearly every file I care about is hosted online and a large chunk of my productivity apps are online as well. The only tools I need to run locally are the various IDEs as well as a variety of open source tools and libraries that my code depends on. Even then I’d bet it takes less than an hour to get things to an 80% state at which point I’ll only discover what’s missing by just going through my day.
 
 And this is as a developer who needs to build various applications from source and deal with potential library conflicts. For someone who doesn’t have to deal with these issues it must be incredibly quick to get a workable setup these days.

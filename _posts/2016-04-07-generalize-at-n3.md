@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Engineers strive to write code that’s general and flexible enough to adapt to support a variety of cases with minimal changes. Unfortunately, writing general code isn’t easy and requires significant thought, effort, and experimentation. The challenge is figuring out the appropriate time to generalize your code.
 
 If you do it too early you may spend unnecessary time writing generalized code that will never be used again. Even worse you may write code that you think is generalizable but ends up collapsing under its own weight under future scenarios. In this case writing minimal code would have served you better since it would have been much easier to adapt or throw away to support the new case.

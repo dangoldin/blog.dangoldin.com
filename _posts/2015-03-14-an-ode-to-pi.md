@@ -7,7 +7,7 @@ image_url: "/assets/static/images/ramanujan-pi.png"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Since it’s Pi Day (at least in the US)I decided to jump on the bandwagon and contribute my own thoughts. Pi is fascinating. It’s such a simple definition - the ratio of a circle’s circumference to it’s diameter - yet it’s both irrational and transcendental and impossible to actually express as a simple number. People have been trying to get more accurate estimates for multiple millennia with multiple great mathematicians trying to derive their own approximation.
 
 <div class="thumbnail" style="border:none;">

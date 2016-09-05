@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Lately, I’ve noticed an interesting trend with my smartphone usage. When I’m on wifi I’m much more likely to use the mobile web, click links, and read various articles whereas if I’m on LTE I’ll stick to dedicated apps. I noticed this at my apartment which has a narrow layout with my living room having wifi and my bedroom stuck on LTE. Despite me being in the same mindset regardless of which room I’m in my behavior changes dramatically.
 
 I don’t recall making a conscious decision to change my behavior so I suspect this behavior evolved to deal with the increase in my data usage. I’m still not sure that apps are more data efficient than the mobile web but it definitely feels that way due to the improved speed and responsiveness. If you’re concerned about data usage it’s obvious that you’ll want to do as much as you can on wifi rather than go through your data plan but what’s interesting is that in my mind I’ve concluded that apps and mobile web are differentiated by my data plan. I’d love to know if others do something similar or I’m the anomaly.

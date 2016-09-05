@@ -6,7 +6,7 @@ keywords: "Django, hacking, coding, web development, startups"
 category:
 tags: ["#python", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve discovered that every new project lets me correct mistakes from my earlier attempts by allowing me to start from scratch. This is especially true with a web framework such as Django that has a ton of little nooks and crannies that take a while to explore and understand. It’s usually not worth it to go back and fix something that’s not broken on a functional product but starting a new project lets me do it right from the beginning. Now that I’ve developed and launched (with <a href="http://www.sandylin.com/" target="_blank">Sandy</a> and <a href="http://marcschaffnergurney.com/" target="_blank">Marc</a>) two serious Django-based products as well as bunch of smaller ones, I wanted to document some personal best practices I’ve picked up. Obviously, I'm still learning and I may be completely wrong with them so let me know if you disagree. If you’re interested in a deeper look at some of the topics let me know and I can write up another post going into detail about a particular topic.
 
 <ul class="bulleted">

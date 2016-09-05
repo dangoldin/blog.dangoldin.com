@@ -6,7 +6,7 @@ keywords: "404 pages, better 404, improved 404"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I don’t understand why websites try to compete on having the cleverest 404 page. The fact that someone ended up on a 404 page is a sign that something is broken but instead of trying to fix the problem they try to distract their visitors by making them laugh. It’s equivalent to getting to a restaurant and seeing an amazing menu only to discover that it’s closed.
 
 We can’t always control which URLs our visitors will type in or click on but we can control what they see when they get there. Instead of trying to distract them with humor why not offer suggestions for what they may have wanted to see? The majority of 404 visits are the result of typos which could be fixed with a simple spell check and the remainder are due to moved pages which can be solved by notifying the linker or providing a redirect.

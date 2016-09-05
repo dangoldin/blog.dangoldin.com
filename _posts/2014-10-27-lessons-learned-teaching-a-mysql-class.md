@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Last Thursday was the last lesson of the four part Introduction to MySQL class I’ve been teaching at <a href="http://www.c4q.nyc/" target="_blank">Coalition for Queens</a> and I wanted to summarize my thoughts while they’re still fresh.
 
 The diversity of the class was amazing and shows how useful affordable technology programs are. You get a mix of people from different backgrounds and different ages that all want to improve themselves and can all contribute in their own ways. Everyone has a unique experience and introducing technology into it may open up new opportunities.

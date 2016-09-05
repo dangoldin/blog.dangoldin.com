@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 It never bothered me when apps were acquired and shut down but the <a href="https://readmill.com/epilogue" target="_blank">Readmill news</a> hit me hard. It was one of the truly “free” ebook readers and never got in my way. It fit my behavior perfectly - I would download my books from wherever, drag them into the Readmill web app, and have them permanently accessible on my iPad after a quick sync.
 
 My first reaction was wishing that it would be open sourced but that got me thinking about third party services. Numerous people have been saying how dangerous it is to rely on third party services but until Readmill it never really mattered to me. Sure, in the abstract it’s better to have everything hosted on your own but in reality it’s impossible to get to the same level of quality and experience for everything we use. We’re constantly balancing tradeoffs and we’re biased to favor the short term factors, such as ease of use and simplicity of set up, rather than long term ones, such as privacy, control, and data ownership.

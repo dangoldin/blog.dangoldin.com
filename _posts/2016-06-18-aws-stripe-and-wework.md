@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I have been subscribed to [Stratechery](https://stratechery.com/) for almost a year now but have recently started listening to the [Exponent podcasts](http://exponent.fm/). One of them, titled [Pickaxe Retailers](http://exponent.fm/episode-071-pickaxe-retailers-2/), makes the case that WeWork has an appropriate valuation due to their ability to leverage their strong brand and become the utility layer for real estate as well as provide a slew of products to their tenants. Similar to the way AWS has eliminated the need to run your own data center and Stripe has eliminated the need to acquire merchant accounts and negotiate with vendors, WeWork may do the same for physical space - both commercial and [residential](http://www.fastcompany.com/3055325/from-wework-to-welive-company-moves-members-into-its-first-residential-building).
 
 While the explanation is reasonable it’s tough for me to buy into it. The decision to use any product boils down to how easy is it to switch and what’s the cost/revenue potential. In the case of AWS it’s incredibly costly to switch. You have to incur the cost of updating your code and deployment to make sure it will run on a new platform, retraining your team, and if you plan on switching to your own datacenter then hiring for roles you’ve never had to deal with. Added to this you have Amazon constantly cutting costs while innovating on new products. The value in switching only comes at massive scale - even Dropbox is getting beaten up over their move away from Amazon instead of focusing on building a more compelling product.

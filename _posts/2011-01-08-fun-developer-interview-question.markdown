@@ -6,7 +6,7 @@ keywords: "interviewing, puzzles, brainteasers"
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 When conducting interviews, I've developed the following criteria for a good interview problem:
 
 <ul class="bulleted">

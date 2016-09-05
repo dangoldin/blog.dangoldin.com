@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 At the beginning of the year I wanted to learn a bit of Node.js and decided the best way was to code up a simple project. The idea was <a href="http://jsonify.me/" target="_blank">jsonify.me</a>, a simple API only app that provided people a simple way to generate their own JSON profiles that they would then be able to map to any domain name, for example <a href="http://json.dangoldin.com" target="_blank">http://json.dangoldin.com</a>. The primary goal was to get some real experience with Node.js rather than rely on some walkthroughs and tutorials. Since then I’ve used it as the starter project to learn new languages. I’ve coded it up in Scala and have just finished up the Go version.
 
 The project has a few nice properties that force me to gain a pretty good understanding of the language and how a typical project plays out. Despite being a pretty simple program it touches a bunch of modern web components. The code needs to be able to parse and modify HTTP requests and headers in order to support redirection and authentication. In addition, the code comes with a working LinkedIn OAuth example and gives an opportunity to incorporate an OAuth library. The other big thing is integrating the AWS S3 client library which provides a simple way to get exposure to the AWS ecosystem.

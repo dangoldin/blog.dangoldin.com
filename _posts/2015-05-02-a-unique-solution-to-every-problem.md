@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A thought experiment I’ve had on my mind is this idea of a programming language that only has a single way of solving every programming problem. Regardless of the problem, multiple people writing code independently would end up with the same exact code. No such language actually exists (yet) but it’s fun to think about extreme cases in order to understand where we stand now. With this programming language the only differentiation between developers would be time since the end result would be the same. Beyond that, if there was always a unique solution to every problem this language would be able to write the code itself.
 
 On the other extreme you have current languages which provide a ton of flexibility with dozens of ways to solve a simple problem. In this world developer skills are paramount. You want to make sure you find the approach that solves the current problem but is also written in a way that’s flexible enough to be easily modified for whatever the future brings. Enforcing a structure that’s based on best practices makes it easy to write code that grows with the team.

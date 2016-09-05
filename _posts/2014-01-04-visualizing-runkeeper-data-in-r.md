@@ -7,7 +7,7 @@ image_url: "/assets/static/images/rk-distance-cumulative.png"
 category:
 tags: ["#dataviz", "#code", "#R"]
 ---
-{% include JB/setup %}
+{% include setup %}
 What better way to celebrate running 1000 miles in 2013 than dumping the data into R and generating some visualizations? It’s also a step in my quest to replace Excel with R. I’ve included the code below with some comments as well as added it to <a href="https://github.com/dangoldin/runkeeper-stats" target="_blank">my GitHub</a>. If you have any ideas on what else I should do with it definitely let me know and I’ll give it a go.
 
 PS. It's great when web services allow users to export their data and wish more would start doing the same.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A frequent event when working with a SQL database is adding a column. Ideally, you’d want to add this column before or after another one that makes sense rather than all the way at the end. MySQL makes this straightforward since you can use the AFTER keyword when adding a column to specify exactly where it should be added. PostgreSQL and Redshift make this difficult since all new columns are automatically added at the end.
 
 Normally, this isn’t a problem in most cases since you just write a query to specify the desired column order but it makes doing a simple “SELECT *” more annoying and will break naive jobs that rely on a particular column order.

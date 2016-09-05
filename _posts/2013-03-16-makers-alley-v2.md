@@ -7,7 +7,7 @@ image_url: "/assets/static/images/ma-logo-square.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}ma-logo-square.png" alt="Makers Alley" style="float:right;">
 

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The longer I code the more I appreciate the power of the shell. Getting familiar with common commands is a great way to improve your productivity and over time you amass a massive collection of scripts that allow you to do nearly everything. The most recent utility I discovered was “date”. As expected, it displays the current date and time but it can easily be adapted to display the current datetime in nearly any date format but also allows you to offset the current date in a variety of ways.
 
 {% highlight sh %}

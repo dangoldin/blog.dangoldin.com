@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I'm a strong believer that one needs to keep learning and to not get content with the knowledge they have. This can come in the form of new experiences or challenges but should be seen as a learning opportunity. Throughout school we have a structure in place to help us learn but after we graduate we have to take the responsibility ourselves. Unfortunately, many people don't and even take pride that they haven't read a book since college.
 
 As more and more of the rote work becomes automated it's important to develop the creative mind set that can take topics from a variety of fields and blend them together to create something new. The irony is that our education and professional systems are becoming more and more specialized. As our knowledge of an area becomes deeper it's harder to be a generalist and we end up focused on only a few areas and skills.

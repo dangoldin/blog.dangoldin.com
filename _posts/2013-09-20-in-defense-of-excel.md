@@ -7,7 +7,7 @@ image_url: "/assets/static/images/excel-logo-2013.png"
 category:
 tags: ["#datascience"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}excel-logo-2013.png" alt="Excel 2013 logo" style="float:right; width: 200px;" />
 

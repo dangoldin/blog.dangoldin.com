@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 While my phone was being repaired I ran into a predicament. The only way I could log in to my Google accounts was by authenticating via an SMS code which I wasn’t to get without an SMS code. Additionally, I never bothered to actually write down the backup codes thinking I’d never need them so I was stuck in the envious position of being Google account free for 4 days.
 
 Luckily, I had two things going on that made the loss easily manageable. One was that I shared my personal calendar with my work account so was able to see (and create) everything I needed through my work account. And two - I’ve been forwarding all of my email from Gmail to Fastmail <a href="http://dangoldin.com/2014/03/18/goodbye-gmail/

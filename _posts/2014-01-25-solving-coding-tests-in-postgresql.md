@@ -6,7 +6,7 @@ keywords: "coding tests, postgresql, fizzbuzz"
 category:
 tags: ["#sql", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Most developers are familiar with the FizzBuzz code test which is a quick way to filter out developers who can’t code. At Yodle, we had our own, slightly more challenging problem. The challenge was read in a text file and then print out the frequency each word appears in descending order. It’s more complicated than FizzBuzz but it assesses a variety of skills. The solution needs to do the following:
 
 <ol>

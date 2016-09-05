@@ -7,7 +7,7 @@ image_url: "/assets/static/images/old-spice-uncanny-valley.gif"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <div class="thumbnail">
   <img src="{{ IMG_PATH }}old-spice-uncanny-valley.gif" alt="Uncanny valley Old Spice ad" />

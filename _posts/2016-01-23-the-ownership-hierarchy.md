@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Great engineers assume end to end ownership of their products. Rather than focusing on one feature at a time they understand how it fits in with the rest of the product and think about the impact it will have on users and the business. This leads to code that scales with the product while being able to be maintained and developed by a small team. But you can only have this with everyone embracing full ownership over a product.
 
 This idea can be expressed via an ownership hierarchy. The idea is that all engineers are responsible for writing code but the best ones want their code in products that’s loved by the end users. By moving up this hierarchy you develop a larger sense of ownership than someone who just wants to knock out some tasks.

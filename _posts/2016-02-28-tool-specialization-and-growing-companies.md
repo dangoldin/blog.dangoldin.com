@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 It’s obvious in hindsight but incredible when you experience it but every successful company has to iterate through a variety of tools as it, and its problems, grow. A typical modern tech startup starts by identifying a problem and using a common web framework to quickly come up with the first pass. But as this company grows new problems and situations arise that the initial solution no longer supports. They may end up having a series of asynchronous tasks and need to start using RabbitMQ with that use case. MySQL may no longer be enough and they start offloading their data to Redshift. That off the shelf web framework is no longer performant enough so they have to split it into multiple components and start embracing strong, statically typed languages.
 
 This tool specialization also goes hand in hand with team specialization. A single engineer doesn’t have the time to do everything so startups need to make the short term decisions and focus on the next couple of months in order to grow. Only when they grow does t make sense to find the critical problems and dedicate time to fixing them. And hopefully by that point you have a larger team that can focus on the deeper problems.

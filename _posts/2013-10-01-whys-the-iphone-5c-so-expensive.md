@@ -7,7 +7,7 @@ image_url: "/assets/static/images/iphone-5s-5c-shares.png"
 category:
 tags: ["#product", "#pricing"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <p>Many people <a href="http://ben-evans.com/benedictevans/2013/9/5/the-price-of-the-5c" target="_blank">expected</a> the iPhone 5C to be priced low in order to compete with the cheaper Android phones in countries without carrier subsidies. The news that the 5C’s starting price was $549 left many in the tech community <a href="http://www.avc.com/a_vc/2013/09/reactions.html" target="_blank">surprised and concerned</a> with many believing that the price needed to be lower than $400 in order to compete worldwide.</p>
 
 <p>I'm definitely speculating but I believe the reason for such a high price for the 5C was to avoid cannibalizing the sales of the 5S while also framing the comparison to be iPhone vs iPhone instead of iPhone vs Android. When people go smartphone shopping they see that the 5S is “only” $100 more than the 5C and pay the difference for the more premium product. If the 5C were significantly cheaper people would be comparing it to a similarly priced Android phone which may encourage them to go with the Android or they'd compare it against the 5S which would get many to purchase the much cheaper 5C instead.</p>

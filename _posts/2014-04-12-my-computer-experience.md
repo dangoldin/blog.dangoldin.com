@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been thinking about my history with computers and the impact they’ve had on me. I grew up just as computers were becoming mainstream, the spread of the internet coincided with my teens, saw the rise of “Web 2.0” during college, and got my first smart phone a few years after college. It’s fascinating to think about how much has happened to the world since the rise of computers and the varying experiences everyone’s had.
 
 Nearly everyone has experienced the internet but at completely different points. Some experienced it when it was just text and had to use Archie, Gopher, and telnet to discover and consume content. Others joined through the AOL floppy discs and had to get multiple land lines in order to connect over dial up. Others avoided it for as long as possible but got dragged in when joining an office. And others are only getting seeing it now due to the spread of smartphones. Age is a huge part of the experience too. First using the internet as a child is different than using it as an adult. We have our own experiences that affect our interaction and dictate the experience we’ll have.

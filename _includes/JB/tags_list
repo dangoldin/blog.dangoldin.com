@@ -20,7 +20,7 @@ Usage:
 {% if site.JB.tags_list.provider == "custom" %}
   {% include custom/tags_list %}
 {% else %}
-  <li>Tagged under:</li>
+  <!-- <li>Tagged under:</li> -->
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %}
     	<!-- <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li> -->

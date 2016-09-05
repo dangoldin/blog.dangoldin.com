@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql"]
 ---
-{% include JB/setup %}
+{% include setup %}
 One of the best habits to develop when working with SQL is to always refer to fields through an alias. Numerous times I decided to just take a shortcut and ended up regretting it later. Even if you’ve tested your query to make sure it works there’s no guarantee that a future change to a table schema won’t break it.
 
 Let’s say you have the following two tables - with items.category_id corresponding to categories.id

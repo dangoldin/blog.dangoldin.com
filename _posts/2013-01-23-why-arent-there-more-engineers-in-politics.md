@@ -5,7 +5,7 @@ description: "I think engineers are too impatient to participate in politics and
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 At Aaron Swartz’s memorial service in New York, Doc Searle said something that struck a chord: Aaron was one of the few tech people who would get involved in legal and political issues. It’s true - we hackers aren’t into it. We claim we’d be better off if there were more engineers in charge and yet we’re not making an effort to be those engineers. I’ve heard a variety of unconvincing reasons: it’s just not interesting; there’s too much bullshit; it’s more about selling than creating. I think the real reason is that we’re just too impatient.
 
 Our roles and jobs have made us this way. Our work tends to have well structured problems that are solved through individual effort. Only when we have to rely on someone else do we become aware of how slow things move and how long things take. Even the agile methodology, for all its wonders, focuses on the short term and encourages small, easy achievable tasks. It’s no surprise that when we encounter something that takes longer than we’re used to that we dismiss it as not for us.

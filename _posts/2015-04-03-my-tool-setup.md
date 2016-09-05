@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Great tools have the potential to make us significantly more productive and I wanted to share my existing setup. A huge part of that productivity is our comfort with our tools since over time we learn the shortcuts, understand the capabilities better, and develop processes to solve common problems. The challenge is that there is always a tool that might be better but the learning curve is too steep to warrant a time investment. Here's what I have so far.
 
 - Google Chrome Canary + FirefoxDeveloperEdition: I like being on the bleeding edge so use the nightly builds of both browsers. My preference would be to use Firefox for everything but I'm more familiar and comfortable with the Chrome dev tools.

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/momath-logo.gif"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}momath-logo.gif" alt="MoMath logo" style="float:right; width: 300px;" />
 

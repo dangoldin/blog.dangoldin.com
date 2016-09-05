@@ -7,7 +7,7 @@ image_url: "/assets/static/images/damn-it-linkedin.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <ul class="thumbnails">
   <li class="span7">

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/patent-troll.jpg"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <ul class="thumbnails">
   <li class="span6 offset1">
     <div class="thumbnail" style="border:none;">

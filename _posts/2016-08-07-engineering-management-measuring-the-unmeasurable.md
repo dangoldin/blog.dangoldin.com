@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A key part of management is getting out of the way and building out processes that help your team be as productive as possible. At the same time, you can’t change what you can’t measure. Combining these two makes it clear that to improve, whether people or process, you need to start measuring and tracking the appropriate metrics.
 
 In software engineering, some things are easy to track: how many bugs there are, how quickly they’re resolved, how much code are written - but rarely tell the whole story and may lead to perverse incentives. The common example is measuring developer productivity through number of lines of code written: a smart developer would purposefully write verbose and long winded code to get their metric up.

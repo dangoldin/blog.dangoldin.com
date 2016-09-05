@@ -7,7 +7,7 @@ image_url: "/assets/static/images/javelin_screenie.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something that’s bothered me ever since I started using a smartphone is the link opening behavior. Whenever I’m in an app and click on a web link it would immediately open up that page in a browser window. And when I’m already in a mobile browser and click on a link it would open that page up in a new tab. Compare this with the desktop environment. Clicking on a link within an app does open up a new browser window immediately but since there are shortcuts to quickly switch between programs it’s not a huge deal. And when I’m already looking at a webpage and want to open a new link it’s possible to open it in the background using command+click.
 
 The most common reason I click on a link is as a bookmark so that I can go through it after I’m done with what I’m currently doing. The default behavior is the opposite of that - it turns something that I want to consume asynchronously into a synchronous process. Sure there are times where I do want to switch gears but the vast majority of the time opening a new window is a distraction. That’s why it’s so surprising that mobile web browsers have adopted this behavior. Smartphones are both slower than desktops and make it more difficult to switch between programs. Why couldn’t the default behavior be to open all new links in the background?

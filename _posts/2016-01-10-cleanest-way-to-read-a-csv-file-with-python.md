@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Python’s my goto language for doing quick tasks and analyses with the majority of them being quick scripts to analyze a file or pull some data. I’m constantly looking to improve my code and lately have developed the following approach. The goal isn’t to make it as short as possible but to make it as expressive and clean as possible. They're related but not synonymous.
 
 {% highlight python %}#!/usr/bin/python

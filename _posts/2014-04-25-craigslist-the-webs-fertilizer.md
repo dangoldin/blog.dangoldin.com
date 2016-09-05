@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Craigslist has become the fertilizer of the web. This realization came to me last week when I needed to get a replacement phone and decided to search for one on Craigslist.Filtering past the obvious scams I thought I find a legitimate offer and reached out. Within a few minutes I received the following response from "Kyle":
 
 <blockquote>Hi a guy bought this from me, but I can tell you where I got it from.

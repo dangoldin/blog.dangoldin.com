@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been meaning to share some thoughts on regulating Airbnb for a couple of months now but kept putting it off. The <a href="http://www.engadget.com/2015/10/21/Airbnb-ads/" target="_blank">recent news</a> was motivating enough for me to finish it off.
 
 I’m a huge fan of Airbnb and it’s my first step whenever I’m traveling. Nearly all my experiences have been great and I’m contemplating getting rid of my Starwood card since it’s just not as useful anymore given that I gravitate towards Airbnb first. At the same time I understand the impact renting a place Airbnb has on the neighbors and can imagine myself hating it if my neighbors were listing their places.

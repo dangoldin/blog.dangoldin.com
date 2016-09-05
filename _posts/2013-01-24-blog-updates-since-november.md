@@ -6,7 +6,7 @@ keywords: "design, backend, seo, blog"
 category:
 tags: ["#blog"]
 ---
-{% include JB/setup %}
+{% include setup %}
 In November, I migrated my Tumblr and Wordpress blogs over to GitHub pages and have been making a few tweaks here and there. I started with the awesome <a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap library</a> but wanted to share the changes I’ve made. It’s all hosted on GitHub so feel free to fork it.
 
 <ul>

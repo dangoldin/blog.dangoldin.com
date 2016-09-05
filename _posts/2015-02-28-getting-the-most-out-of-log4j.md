@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code", "#java"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something that’s incredibly helpful when writing Java code is customizing <a href="http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html" target="_blank">log4j</a>. There are a variety of configuration options and learning just a little bit about them can make you notably more productive. I’ve found two features that have sped up my development cycles.
 
 One was updating my PatternLayout to include the filename and line of each message. With Eclipse, this allows me to quickly jump to the relevant code block whenever anything looks odd rather than having to first open the file and then search for that particular message.

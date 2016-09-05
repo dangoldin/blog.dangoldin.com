@@ -7,7 +7,7 @@ image_url: "/assets/static/images/citibikes-nyc.jpg"
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <div class="thumbnail">
     <img src="{{ IMG_PATH }}citibikes-nyc.jpg" />
     <p>Photo by <a href="https://twitter.com/rafat/status/339046904979660800" target="_blank">@rafat</a></p>

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 If you’re constantly watching something grow it’s hard to notice the magnitude while those further away see it immediately. This is well known for parents not seeing how quickly their children are growing but obvious for distant relatives and friends who get a glimpse once every few months.
 
 I have the same relationship with technology. I’m surrounded by it each day that it’s hard to tell how much it’s changed but a way to combat this bias is by traveling, especially to developing countries.

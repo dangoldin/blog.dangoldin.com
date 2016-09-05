@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been meaning to mess around with [Let’s Encrypt](https://letsencrypt.org/) since they launched their public beta but haven’t had the chance until earlier today. As an proof of concept I had a bunch of old projects running on a Digital Ocean instance and decided to try converting them to HTTPS using the Let’s Encrypt project.
 
 Despite the usual complexity of getting and integrating an SSL certificate Let’s Encrypt made it extremely easy. It was smart enough to go through each of my Apache configuration files and prompted me to see which domains I wanted to switch over to HTTPS. After selecting a few and continuing to the next step it generated new configuration files with the appropriate setting to enable SSL support.

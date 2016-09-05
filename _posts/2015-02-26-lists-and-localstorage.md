@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code", "#javascript"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I recently discovered the localStorage functionality in HTML5 and used it on a quick internal tool at TripleLift. One hiccup I ran into was that while it provides the ability to set and get key/value pairs it stores everything as a string so I needed to write a few utility methods to get it to work with lists. They’re pretty straightforward but hopefully they inspire someone to improve on them.
 
 {% highlight javascript %}

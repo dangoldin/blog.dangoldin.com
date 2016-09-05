@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 In honor of their NYC launch, <a href="https://www.lyft.com/" target="_blank">Lyft</a> came up with an awesome promotion - 50 free rides, up to $25 each, over the next couple of weeks. This had the desired effect - a bunch of my friends are giving it a shot but since everyone else is doing the same it's difficult to find an available car. And when you do get a car you end up paying the peak demand rate rate.
 
 One way to get around this is to break down a long trip into a series of shorter trips. The driver will have to agree to this but they have an incentive to do so since they will not need to find another passenger and will earn a base fare every trip. A minor inefficiency is that the driver will need to stop to mark the trip as completed and confirm the next trip. It's also easy to go over $25, especially in prime time, so you need to stop more frequently than you think you need to. If only Lyft or Uber showed the real time cost of a trip you'd be able to stop at the optimal times.

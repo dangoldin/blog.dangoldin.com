@@ -6,7 +6,7 @@ keywords: "seo, search engines, google"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A while ago I read Bruce Schneier’s Liars and Outliers and came across a neat passage:
 
 <blockquote>There was this kid who came from a poor family. He had no good options in life so he signed up for the military. After a few years he was deployed to a conflict infested, god-forsaken desert outpost. It was the worst tour of duty he could have been assigned. It was going to be hot and dangerous. Everyday he had to live with a hostile populace who hated his presence and the very sight of his uniform. Plus, the place was swarming with insurgents and terrorists.</blockquote>

@@ -6,7 +6,7 @@ keywords: "javascript, analytics, advertising, google analytics, doubleclick, pu
 category:
 tags: ["#code", "#javascript"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I recently installed Ghostery and am amazed by the number of JavaScript libraries being loaded on the sites I visit. Almost every site I visit has at least one analytics library, a few advertising libraries, and some social network sharing libraries.
 
 To be a bit more quantitative, I pulled the libraries used by 20 of top sites to see if anything stood out. The biggest surprise was how differently the various types of sites used these libraries. Every single publisher used DoubleClick and yet only a quarter of them used Google Analytics while 80% of the social networks I looked at used Google Analytics and only 40% used DoubleClick. The other interesting piece was how many more libraries an average publisher uses compared to a social network or ecommerce site. Five of the 13 publishers I looked at included at least 20 JavaScript libraries while the most libraries included by a social network was 4, which was Pinterest. The bulk of these additional libraries tend to be advertising specific so it’s not that surprising that publishers have more of them but the difference in volume was shocking. I’ve included the data at the bottom of this post in case someone wants to take a stab at it but something on my todo list is to automate the process of gathering this info rather than relying on Ghostery and copy and paste. Once I get get it done I’ll follow up with another post analyzing the larger set of data.

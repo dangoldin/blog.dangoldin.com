@@ -7,7 +7,7 @@ image_url: "/assets/static/images/flier-9.jpg"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 While doing some spring cleaning I discovered a bunch of fliers from various computer shows I attended in the mid 90s. Bsed on the Windows 95 and Windows NT promotions I suspect this must have been in 1995 or 1996. What’s striking is how much better our computers are. It’s one thing to be abstractly aware of Moore’s Law but shocking to actually see it. The top of the line model in 1995 was $2,500 and came with a 4 GB hard drive, 64 MB of RAM, a 200 MHz processor, and a 33.6 kbps modem. Adjusting for inflation, this is equivalent to $3,700 in 2015 dollars. With that budget you can a top of the line computer with an order of magnitude more of everything and still have enough leftover for a smartphone which is also an order of magnitude more powerful than a computer from the mid 1990s.
 
 <ul class="thumbnails">

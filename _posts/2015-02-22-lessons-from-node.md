@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#javascript"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I've decided to move on from <a href="http://nodejs.org/" target="_blank">Node</a> after messing around with it for the past couple of months. And while the experience is still fresh I wanted to share my thoughts. I’m far from an expert so take all these with a grain of salt.
 
 - Node’s powerful and in the right hands can make a developer extremely productive. I was able to write a few simple applications surprisingly quickly given my limited knowledge and I can see why so many opt to use it. At the same time it requires a commitment to the Node-centric way which can be tough depending on your background. JavaScript has functional scope and the benefit of Node depends on an asynchronous approach which can be difficult to write.

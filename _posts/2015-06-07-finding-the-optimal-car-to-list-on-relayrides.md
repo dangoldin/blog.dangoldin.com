@@ -7,7 +7,7 @@ image_url: /assets/static/images/car-price-vs-daily-rate.png
 category:
 tags: ["#data", "#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 After discovering and browsing <a href="https://relayrides.com/" target="_blank">RelayRides</a> I noticed that there were some users that had multiple cars available for rent. Clearly they weren’t using each of their cars and were using RelayRides exclusively as a revenue generating business rather than renting a car out when it wasn’t being used. This got me thinking about what the best car would be to rent on RelayRides if my goal was solely to maximize my return.
 
 There were only a couple of factors at play here: the initial cost of the car, the price the car will rent at, and how often the car is rented. By combining these values we can come up with a ratio of car price to expected revenue per day. The challenge was in getting this data but it turned out to be surprisingly easy.

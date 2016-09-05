@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Fab recently <a href="http://techcrunch.com/2014/05/21/fab-lays-off-one-third-of-staff-from-new-york-city-office/" target="_blank">laid off</a> a third of their staff as they transition from designer flash sales into customized goods and their own private label. The business is tough and reminded me of our experiences building <a href="http://makersalley.com" target="_blank">Makers Alley</a>. We initially set out to build a place where people can buy customized, personal furniture from local designers. The idea was was consumers would benefit from being able to get items that are custom made and can be customized to fit individual styles while supporting a local business and makers would have a new avenue to sell their products and build their brand.
 
 Unfortunately, we faced huge obstacles on the consumer side. We thought that with such a feel good story and compelling vision we’d have no trouble attracting people to buy furniture but it was extremely tough. We launched during the flash sales era where everyone was on a hunt for deals and discounts. We considered showing discounted prices by inflating the original price but that just didn’t feel right and we didn’t want to diminish the work of our makers and designers.

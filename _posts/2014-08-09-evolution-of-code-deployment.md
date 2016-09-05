@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve been working on various tech related projects for over a decade now and have gone through a variety of approaches to deploying code. I’m far from an expert but though it would be helpful to jot down what I’ve seen and where I'm hoping to get.
 
 - FTP upload, no version control: I developed my first few sites locally and then just copied them over to the host server via FTP. This worked well for simple projects where I was the only contributor.

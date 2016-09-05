@@ -7,7 +7,7 @@ image_url: /assets/static/images/homer-car.png
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Years ago, one of my projects at Yodle involved building out an automated reporting system that would consolidate all the existing reports being run via SQL queries and consolidate them into a unified application that would take care of the execution and the delivery. During the design process I spoke with existing users to see what else they’d like and it quickly morphed from a cron-job like application that just emailed CSV files based on SQL queries into a full fledged business intelligence tool that users could use to pull arbitrary data formatted in a multitude of ways. While thinking through the design of this application I spoke with the CTO and he gave me a phrase I keep going back to: “To get the expressiveness of SQL you have to write SQL.”
 
 <a href="http://simpsons.wikia.com/wiki/The_Homer">

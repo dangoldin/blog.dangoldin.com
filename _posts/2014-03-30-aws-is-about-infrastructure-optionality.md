@@ -7,7 +7,7 @@ image_url: "/assets/static/images/aws-services.png"
 category:
 tags: ["#aws"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}aws-services.png" alt="AWS services" />
 

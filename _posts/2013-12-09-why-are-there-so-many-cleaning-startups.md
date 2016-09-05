@@ -5,7 +5,7 @@ description: "Marketplace startups are very popular these days and do provide va
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The recent rise of marketplace startups is great and benefits all except the incumbent. They provide much needed liquidity and transparency to markets that helpfully reduce costs to the consumer and increase volume to the provider.
 
 Yet I’m surprised by the number of home cleaning service startups out there. I’m aware of <a href="https://www.homejoy.com/" target="_blank">HomeJoy</a>, <a href="https://iamexec.com/" target="_blank">Exec</a>, <a href="http://getmaid.com/" target="_blank">GetMaid</a>, <a href="https://www.myclean.com/" target="_blank">MyClean</a>, and <a href="http://www.handybook.com/" target="_blank">HandyBook</a>, but am sure there are countless other copycats. The Uber approach works because it’s for an immediate service with a one time transaction where the value provided is somewhat of a commodity. This is not the case with home cleaning services. The range of quality among cleaners varies significantly more than the quality among drivers and I’d be willing to have a good cleaner come in at a slightly inconvenient time rather than a poor cleaner at the perfect time. And once I find a cleaner I like I’d want to book them directly rather than go through the company again. This way I can get a lower rate while also giving a cleaner more than they’d otherwise make from using the service. This would violate the company’s terms but I don’t see how they can be enforced.

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/lsl-bar.png"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 In the early 90s, being a kid new to the US and new to computers I developed an addiction to computer games. I’d play everything that I got my hands on and remember sharing floppy disks with school friends. Unfortunately, I was plagued by two issues that had pretty clever approaches: age verification and piracy protection.
 
 <img src="{{ IMG_PATH }}lsl-bar.png" alt="Leisure Suit Larry" style="float:right; margin-left:5px;">

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Pokemon Go is huge right now. People across all age ranges, demographics, and geographies are getting involved and it’s hard to imagine this sort of adoption for any other game. What I find fascinating is that Pokemon Go was based on the same augmented reality mechanics as Ingress, another game developed by Niantic Labs. Ingress has a loyal following but pales in comparison against Pokemon Go when looking at the user numbers, despite Pokemon Go being less than 2 weeks old while Ingress has been around for almost 4 years.
 
 The Pokemon brand has a huge following and it’s incredible what a strong brand can do in the modern world. With zero distribution costs and instant global reach an existing brand can grow faster than at any previous point. Now more than ever do brands matters. Modern technology has made it easier than ever to enter new markets and quickly launch apps but in this world of commoditization and heavy competition a strong brand can do wonders.

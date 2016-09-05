@@ -7,7 +7,7 @@ image_url: "/assets/static/images/firestick.jpg"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <div class="thumbnail" style="border:none;">
   <img src="{{ IMG_PATH }}firestick.jpg" alt="Fire stick" />
   <p class="caption">Photo by <a href="http://www.ranchodelaluna.com/views/pages/09_firestick_dancing.htm">Rancho de la Luna</a></p>

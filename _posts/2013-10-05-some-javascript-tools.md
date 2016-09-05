@@ -6,7 +6,7 @@ keywords: "JavaScript, growth-share matrix, bcg matrix, html table"
 category:
 tags: ["#javascript", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Over the course of this year, I’ve been writing two posts a week and been running into various formatting/design issues, two of which I finally dealt with earlier this week. One was embedding an Excel table into a blog post and the other was creating a BCG style “growth-share” matrix.
 
 To convert a table from Excel to HTML I would write Excel formulae that would wrap each cell in a &lt;td&gt; tag and then wrap each row in a &lt;tr&gt;tag. I’d then copy and paste the result into the text editor to add the header row and finish up the styling. To generate a growth-share matrix, I’d just use Google Drawing or Keynote to draw the axes and labels before taking a screenshot and cropping it into a square.

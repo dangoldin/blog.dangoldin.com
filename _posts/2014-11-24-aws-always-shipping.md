@@ -7,7 +7,7 @@ image_url: "/assets/static/images/aws-services-new.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail" style="border:none;">

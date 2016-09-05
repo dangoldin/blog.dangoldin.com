@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#society"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Nearly every major tech company is pursuing a self driving car future and it’s inevitable that at some point most cars on the road will be completely autonomous. Cheap and easy transportation is the immediate change but there will be massive secondary effects to the shapes of cities and society.
 
 A [college professor](https://www.johnson.cornell.edu/Faculty-And-Research/Profile?id=lvo2

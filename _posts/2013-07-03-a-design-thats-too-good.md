@@ -7,7 +7,7 @@ image_url: "/assets/static/images/glossi-landing-page.jpg"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This is a bit of a first-world problem but it’s possible for a design to be too good. A great design may lead to an increase in your vanity metrics but that won’t necessarily translate into a successful business. In fact, it’s likely that these low-value users will increase your costs.
 
 When we redesigned the landing page for Pressi (formerly Glossi) we saw the signup rate from our landing page shoot up to to close to 34% from below 5%. Unfortunately, our retention rates were abysmal and we were stuck supporting thousands of Pressi pages that were not seeing any engagement. This led to a massive increase in our AWS costs that we had to scramble to contain. The solution was to be smarter about the frequency of our data pulling as well as minimizing the amount of data we were storing for our users. In hindsight, we should have solved our retention problem before trying to grow our users but we were too obsessed with our user growth numbers to do the right thing.

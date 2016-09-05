@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta", "#code", "#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Analyzing my blog is taking longer than expected but my goal is to have something meaningful over the weekend. In the meantime I wanted to share a [quick script](http://www.r-bloggers.com/building-wordclouds-in-r/) I discovered to generate a word cloud in R. I remember doing this years back in D3 and having to spend a bunch of time figuring it out. Compared to that doing it in R is a breeze. In this case I have a CSV dump of my blog in /tmp/out.csv and am generating two word clouds - one for keywords and the other for tags of my blog posts.
 
 {% highlight R %}

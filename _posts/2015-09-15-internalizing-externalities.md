@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Recently I've adopted the practice of having the engineering team support other team when the core technology can support it - even if hasn't been fully built in to the product. This may require manually adding entries to a series of database tables that or manually pulling reports that aren't yet availabe via the UI. Despite being an inefficiency for the engineering team it provides a variety of benefits that outweigh this minor inconvenience.
 
 - Engineers understand the business better. By being closer to the actual use cases engineers understand how the product is used and the problems that other teams are solving. This can have huge wins in the future when there are multiple implementation options available and the developer needs to pick one. Being able to pick the right one can significnatly change the cost of doing future development work.

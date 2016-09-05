@@ -6,7 +6,7 @@ keywords: "cell phones, dialtone, land lines, technology"
 category:
 tags: ["#meta", "#history"]
 ---
-{% include JB/setup %}
+{% include setup %}
 While reading <a href="http://www.amazon.com/The-Idea-Factory-American-Innovation/dp/1594203288" target="_blank">The Idea Factory</a>, I came across an interesting passage that explained why cell phones don’t have dialtones:
 
 <blockquote>Meanwhile, Phil Porter, who had worked with [Richard] Frenkiel on the original system, came up with a permanent answer to an interesting question. Should a cellular phone have a dial tone? Porter made a radical suggestion that it shouldn’t. A caller should dial a number and then push “send.” That way, the mobile caller would be less rushed; also, the call would be connected for a shorter time, thus putting less strain on the network. That this idea—dial, then send—would later prove crucial to texting technology was not even considered.

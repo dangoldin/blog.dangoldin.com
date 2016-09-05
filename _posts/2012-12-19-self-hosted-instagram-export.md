@@ -6,7 +6,7 @@ keywords: "Download export Instagram photos"
 category:
 tags: ["#code", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 I just hacked together a quick app to help download Instagram photos. At first, I tried using <a href="http://instaport.me">Instaport</a> and <a href="https://openphoto.me/">OpenPhoto</a> but both of them were backed up with others trying to do the same so I decided to create my own. It's basically a really simple python web app that allows you do a quick authentication with Instagram and then lets you downloads all your images to your hard drive.
 

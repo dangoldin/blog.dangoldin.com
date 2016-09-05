@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The most common way of making sure code works is by going through the “develop-run-test” loop. We write some code that we expect to have a certain behavior, we run the code and trigger that behavior, and then we confirm that the results are what we expected. And we keep iterating, hopefully making more progress with each new iteration.
 
 One thing I’ve noticed is that this pattern varies drastically for me depending on the language I’m working with. I’ll cycle through iterations much quicker in Python than I will with Java. Part of it is that my Java projects are larger and take a longer amount of time to start but I suspect the bigger benefit is that Java’s strong and static type system makes it easier to take larger coding steps than I’d be able to with Python. For example, if I need to write a method to extract data from a JSON object I’ll approach it very different if I’m doing it in Python than I would if I were doing it in Java. With Python I’d jump into the REPL and walk through a few examples and make sure I handle the the various edge cases whereas with Java I’d place a lot more faith in the IDE and it’s litany of warnings.

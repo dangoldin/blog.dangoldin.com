@@ -7,7 +7,7 @@ image_url: "/assets/static/images/load-balancer-swap.png"
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A fun little exercise I had to do was rewrite a simple application from Node.js to Netty to fit into the rest of our stack. The rewrite took a couple of days but the deployment and testing was critical to get right so I wanted to share our approach. To provide some context, the application was an HTTP server that handled ~1,000 requests a minute with each request spawning at most three more to pull in more data.
 
 Make it work. Make it right. Make it fast.

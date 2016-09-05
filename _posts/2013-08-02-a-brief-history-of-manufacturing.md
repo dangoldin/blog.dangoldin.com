@@ -6,7 +6,7 @@ description: "I wrote up an extremely short and simplified history of manufactur
 category:
 tags: ["#meta", "#history"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Working on <a href="https://makersalley.com/" target="_blank">Makers Alley</a>, I've spent a fair amount thinking about the evolution of manufacturing and wanted to share an extremely condensed history.
 
 For most of human history, people either made what they needed on their own or traded with a local craftsman. Over time, this led to a specialization in skills and also the rise of the apprenticeship model. Since trade was mostly local, it was difficult to build a large business and most businesses were family run with parents passing down skills to their children.

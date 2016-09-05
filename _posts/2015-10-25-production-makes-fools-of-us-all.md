@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops", "#management"]
 ---
-{% include JB/setup %}
+{% include setup %}
 The biggest development lesson I learned over the years is that production is a completely different beast from development. Code that works perfectly in a development environment can fail catastrophically in production and cause a severe impact on the business. Issues can stem from bits of inefficient codes to database schemas that just don't scale on production. Ideally your development environment  mirrors production and has the same load and hardware but that's rarely the case. For the other cases cases I’d go through the following items to make sure your code is ready for production:
 
 - General code efficiency: Your code may pass unit tests and work fine when you’re running it on development data but you should make sure the code itself can scale to production data. Inefficient code may be fine to push to production if it’s not being hit often or you have the hardware to back it up but you need to make sure this is the case. This also extends to UI applications: if your development environment has a few rows for a customer while in production a customer will have hundreds, you need to make sure that the UI is responsive and that the design actually fits the production use case.

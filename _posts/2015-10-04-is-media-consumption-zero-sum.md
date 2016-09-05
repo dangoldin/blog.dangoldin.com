@@ -7,7 +7,7 @@ image_url: "/assets/static/images/global-media-consumption-per-week-by-medium.jp
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I’ve seen the point made across a variety of articles that media companies see media consumption as being zero sum - there’s only a fixed amount of consumption that people have and they’re allocating it between a variety of options. The typical example is people abandoning legacy television for YouTube. Thus, the rationale goes, the time people would have spent watching television has been replaced by them watching YouTube.
 
 I understand the concern. People are watching less and less standard television with only time sensitive and restricted content (ie sports) being viewed on television but there’s a world of nuance. People may be watching less and less broadcast television but the content that’s being consumed is growing. Cordcutters pride themselves on not paying for cable television yet they’re still subscribing to Netflix and Hulu. The same shows are being watched - just not on the usual devices. In addition, there’s the rise of multi-screen consumption - we’ll be on our phones or laptops while watching TV. Whether it’s a distraction from a commercial, a way to follow an event on Twitter, or just browsing Wikipedia to get a bit more information, we’re parallelizing our media consumption and increasing the size of the media pie rather than solely switching between platforms.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product", "#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Last weekend I finished the [The Everything Store](http://www.amazon.com/The-Everything-Store-Bezos-Amazon-ebook/dp/B00BWQW73E), which details the rise of Amazon from a fledgling online book retailer to its current form. One pattern that stood out for me was how Amazon was able to continuously push into new business areas due to the infrastructure that they had in place based on previous decisions and commitments.
 
 They started with books but were able to grow into other smaller products once they figured out the logistics behind shipping smaller items. Once Amazon had that in place they kept tweaking their distribution system to expand the variety of products offered while improving the speed of delivery. This allowed them to keep amassing a list of products which they used to open up their platform to third party sellers. And as Amazon improved their infrastructure they were able to open that up to these third party sellers as well. In parallel, they built AWS to provide computer services to internal Amazon teams but were able to turn it into a brand new line of business that powers the majority of new startups. And now their are rumors of Amazon building out a shipping service to bypass FedEx and UPS.

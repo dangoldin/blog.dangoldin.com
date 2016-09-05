@@ -6,7 +6,7 @@ keywords: "product, marketing, sales, startups"
 category:
 tags: ["#sales"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A trend I’ve been seeing lately is companies boosting their sales by focusing on customer education. The successful companies don’t just focus on the results their product will deliver but also spend time explaining why those results are important and how the product works and how it can be used.
 
 This approach seems obvious to me. Borrowing some terminology from <a href="http://en.wikipedia.org/wiki/Crossing_the_Chasm" target="_blank">Crossing the Chasm</a>, the early adopters will use your product as long as it solves an existing problem but education will help the remaining, slower adopting customer segments discover that they even have a problem and look to you for a solution. In my opinion, the major benefits of customer education are to reduce acquisition costs and improve retention. Acquisition costs will drop as you start relying more on inbound interest rather than on outbound sales. Retention will increase since customers that sign up willingly will stick around longer than customers who needed to be coaxed into it by a sales rep. These “self serve” customers will also be more likely to blame themselves when encountering problems rather than whoever got them to sign up. In addition, by developing original and useful content you’ll help your SEO score which will drive more potential customers to look at your products. Your trustworthiness will also improve since you’ll be offering free and useful knowledge.

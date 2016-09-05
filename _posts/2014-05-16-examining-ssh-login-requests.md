@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I recently migrated to Digital Ocean and spent some time beefing up its security. One of the things I looked into was the various SSH attempts being made and to see if there was a pattern. Luckily, I’m running Ubuntu and every SSH attempt is logged by default to /var/log/auth.log and all it required was a quick one liner to see the failed attempts by username.
 
 {% highlight bash %}grep "Invalid user " /var/log/auth.log | cut -d' ' -f8 | awk '{a[$0]++}END{for(i in a)print i,a[i]}' | sort -k 2 -n -r | head -n 100{% endhighlight %}

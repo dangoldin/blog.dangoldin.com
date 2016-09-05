@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Countless people have written about cofounder conflicts in a startup but I rarely see anyone talk about how important a similar situation is - financial and personal. There are no problems when things are going well and it's only when things start going poorly, which they inevitably will, that these issues surface.
 
 A founder that doesn't have a lot of savings will have a different relationship to fundraising than the founder who has enough savings to keep going. The former will push to fundraise early while the latter will want to wait and search for the best opportunity.

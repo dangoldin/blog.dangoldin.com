@@ -7,7 +7,7 @@ image_url: "/assets/static/images/single-page.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 
 <img src="{{ IMG_PATH }}single-page.png" alt="A typical view as single page option" style="float:right;">
 

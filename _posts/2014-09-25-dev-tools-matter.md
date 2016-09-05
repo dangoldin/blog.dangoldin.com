@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops", "#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 It’s amazing the impact tools have on productivity and enjoyment. I remember my first foray into Java using a combination of text editors and Ant. Setting up and configuring a simple project was a nightmare and without the internet I don’t know how I would have figured it out. This initial experience made me associate Java with an unnecessarily complicated approach that I wanted to avoid.
 
 After Java, Python felt like a breath of fresh air. The code was simpler, more compact, and I was able to just dive in. Discovering pip and virtualenv made me enjoy it even more. But no language is perfect and with enough you uncover the imperfections. Performance became a bottleneck when I started working on serious code and I missed the benefits of static typing - especially when refactoring a large projects.

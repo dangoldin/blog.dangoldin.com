@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#devops"]
 ---
-{% include JB/setup %}
+{% include setup %}
 One of the biggest lessons I’ve learned is to spend extra effort thinking about the database when setting out to build something new. Compared to changing a database schema, changing code is trivial. The database structure defines how you think about your business and either provides the flexibility as you grow or impedes you when forced to support something it wasn’t designed to handle.
 
 With code you can do a deploy which can replace all behavior at once while with data you’re forced to acknowledge and handle the data you have. If this is a large table you have to figure out how to migrate the data to a new schema. The simple way is to deal with the downtime and hope the migration works. The more complex way is to support two database schemas at once with your code while the migration occurs. Neither of these would be necessary if you think through the database design choices you’re making. It’s going to be impossible to address every future need but there’s incredible value in at least thinking through potential changes and how they’d be supported.

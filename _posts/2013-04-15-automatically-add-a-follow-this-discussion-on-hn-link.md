@@ -6,7 +6,7 @@ keywords: "coding, hacking, jQuery, javascript, hacker news"
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 This past weekend I wrote a <a href="https://github.com/dangoldin/follow-discussion-hn" target="_blank">small jQuery plugin</a> that automatically inserts a “Follow this discussion on Hacker News” link on a recently submitted web page. The motivation was to automate the current workflow that consists of first submitting a post to Hacker News, getting the URL of the comment thread, and then updating the original post to link to the thread. I also wanted to see if it could be done entirely in Javascript so that the code could be included on static HTML pages and not require a backend server.
 
 After some research, I settled on the following approach:

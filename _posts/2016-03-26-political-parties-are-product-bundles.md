@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I rarely write about politics but it’s an election year and I had an interesting realization. Political parties are just like product bundles. We each have our own issues and policies we’re passionate about but it’s impossible to find a politician, less a party, that has the same views we do. Instead we have political parties that take a few issues and policies and try to wrap them up in a bundle hoping to appeal to enough people to win an election.
 
 Reading the Wikipedia [article for product bundling](https://en.wikipedia.org/wiki/Product_bundling) makes it obvious how closely it fits political parties. From Wikipedia:

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I recently read a FiveThirtyEight article on the <a href="http://fivethirtyeight.com/features/you-see-sneakers-these-guys-see-hundreds-of-millions-in-resale-profit/" target="_blank">sneaker resale market</a>. The concept is extremely foreign to me since I tend to not collect anything other than old notes and have a tendency of grossly mistreating my shoes and clothes. Nonetheless, I found it fascinating as it discusses the incentives of the various parties involved and comparing them against standard economic theory. One passage in particular was so insightful that I had to save it:
 
 <blockquote>

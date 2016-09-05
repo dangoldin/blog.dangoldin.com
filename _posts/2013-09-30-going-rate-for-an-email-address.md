@@ -7,7 +7,7 @@ image_url: "/assets/static/images/discount-bonobos.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <div class="row">
 	<div class="span5">
 		<p>

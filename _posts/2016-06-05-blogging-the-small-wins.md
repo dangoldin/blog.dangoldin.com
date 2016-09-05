@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 I started working on a project to investigate my blog posts and see how my writing has evolved over time. I’m still working on it and will definitely write up the results but the entire process got me thinking about my blog and some of the highlights. I started blogging to improve my writing, improve my thinking, and grow my personal brand. Despite being a large time commitment I enjoy doing it and there have been a variety of small episodes that have made it even better:
 
 - In 2013 I wrote a [short post](http://dangoldin.com/2013/04/12/why-dont-cellphones-have-a-dialtone/) with an excerpt from a book I was reading about the lack of a dial tone in cell phones. This took off on Hacker News and ended up being covered in [Gizmodo](http://gizmodo.com/5994589/why-your-cell-phone-doesnt-have-a-dial-tone), [Mental Floss](http://mentalfloss.com/article/50185/why-don%E2%80%99t-cell-phones-have-dial-tones), and even made an appearance in the NY Times tech ticker.

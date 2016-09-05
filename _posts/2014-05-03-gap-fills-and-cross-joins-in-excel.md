@@ -7,7 +7,7 @@ image_url: "/assets/static/images/excel-gap-fill.png"
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 During my consulting years I’ve done a ton of Excel and noticed people getting frustrated by two seemingly simple operations. The first is getting a worksheet with gaps in a column and needing to fill it with values from the cells above and the second is doing a cross join between two sets of values.
 
 The solution to the gap filling can be done by explaining the solution in such a way that it can be implemented via an Excel formula. The best I could come up with is “If a gap is a value, take the value of the closest non empty cell above it, otherwise keep its value.” We can create a formula in another column that takes this approach and after coming up with the new cell values and pasting them over the originals. In the image below, the formula in cell D2 is <strong>=A1</strong> and the formula in D3 is <strong>=IF(A3="",D2,A3)</strong> with D4 down being relative copies of D3.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#sql", "#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 When writing code it’s very easy to accumulate deprecated database tables that end up as zombies - they’re still around and may even be populated and used by a variety of side scripts but if they disappeared and the dependent code was removed nothing would be different. In fact you’d have a smaller code base, a smaller database, and would hopefully improve everyone’s productivity a tiny bit.
 
 Dealing with the tables are are still being populated and read requires a bit of investigative work and knowledge of the product since there’s no simple way of identifying them. But there are a simple ways to identify tables that are no longer updated.

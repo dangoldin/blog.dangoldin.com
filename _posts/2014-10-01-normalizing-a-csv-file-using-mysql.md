@@ -8,7 +8,7 @@ category:
 tags: ["#data", "#sql"]
 redirect_from: "/2014/10/01/cleaning-a-dataset-with-mysql/"
 ---
-{% include JB/setup %}
+{% include setup %}
 As part of my preparation for the Intro to MySQL class I decided to put together a dataset we’d be able to explore over the course of the class. While trying to think of an interesting dataset to use I remembered I had a script that scraped Yahoo’s fantasy football projections for the 2014 seasons that I used to prepare for my draft. The only issue was that the script generated a CSV file so I had to go through a series of steps to turn it into a clean, relational database. I thought it would be useful to share the commands below and provide some context for those interested in learning more about MySQL and the data import/cleanup process.
 
 The first step is to create the table that we'll be loading the CSV file into

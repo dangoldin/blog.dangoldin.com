@@ -7,7 +7,7 @@ image_url: "/assets/static/images/sales-matrix.png"
 category:
 tags: ["#sales"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Something I’ve been thinking about is the variety of sales approaches. On one extreme, you have pharmaceutical companies sending sales reps to visit doctors offices to try to get them to prescribe their drugs. On the other you have companies such as MixPanel and Dropbox which rely on a self serve approach. And in between you have companies such as NewRelic which offer a self-serve trial and try to upsell you with emails from a sales rep.
 
 Depending on a product’s complexity and its cost structure your sales approach may be limited but it’s always worth seeing the other approaches available and if any of them may fit. It’s likely that an approach that didn’t work a year ago may work right now. A simple way to check is to look at newly launched competitors in your space and see how they’re acquiring customers.

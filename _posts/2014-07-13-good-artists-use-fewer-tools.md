@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#meta"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <blockquote>Actually, as the artist gets more into his thing, and as he gets more successful, his number of tools tends to go down. He knows what works for him. Expending mental energy on stuff wastes time.<br/>
 &nbsp;&nbsp;- Hugh MacLeod, <a href="http://gapingvoid.com/ie/" target="_blank">Ignore Everybody</a>
 </blockquote>

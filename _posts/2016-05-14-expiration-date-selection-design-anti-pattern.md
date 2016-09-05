@@ -7,7 +7,7 @@ image_url: "/assets/static/images/chipotle-app-cc-expiration.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 <img src="{{ IMG_PATH }}chipotle-app-cc-expiration.png" alt="Chipotle app credit card expiration" style="float:right; width: 240px; pading-left: 10px" />
 
 Wanting to avoid a busy lunch rush but hankering for Chipotle I decided to download their app to order ahead. It’s a straightforward app and everything went as expected until I had to enter the expiration date for my credit card. The way the app is set up is that you’re expected to choose the month first followed by the year. Unfortunately it prevents you from picking a month in the past. One can probably guess what problem this leads to: if the expiration date is in the future but the expiration month is before today’s month the app rejects the month change until you change the year. The screenshot illustrates the design.

@@ -7,7 +7,7 @@ image_url: "/assets/static/images/greenhouse-tallie-trackers.png"
 category:
 tags: ["#product"]
 ---
-{% include JB/setup %}
+{% include setup %}
 When I started building sites one of the accepted principles was to give customers what they want as soon as you can. This manifested itself by taking users to the logged in view whenever they navigated to the site’s homepage. This makes sense - if you know a user’s logged in why waste their time by showing them a homepage that’s designed to sell the product?
 
 Yet recently I encountered two sites, [Greenhouse](https://www.greenhouse.io/) and [Tallie](https://tallie.com/), that will default to the homepage and only load the logged in view when I click the sign in link. One argument is that they both have separate domains for the logged in experience - app.greenhouse.io rather than www.greenhouse.io and usetallie.com rather than tallie.com - but there’s nothing stopping them from redirecting to those as soon as they recognize that a user is logged in.

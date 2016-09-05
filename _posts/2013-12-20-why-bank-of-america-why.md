@@ -7,7 +7,7 @@ image_url: "/assets/static/images/boa-travel-2.png"
 category:
 tags: ["#design"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Before leaving for a trip to India, I wanted to make sure that I’d be allowed to access the ATM so I decided to contact my bank. Surprisingly, Bank of America was modern enough to allow me to do this online. Unsurprisingly, the UX was lacking.
 
 Instead of just asking which country I was traveling to using a simple autocomplete or dropdown they have a three step process. First, I get to choose whether I’m traveling domestic or international. If internationally, I get presented with four options that are just the first letter of each country name. After choosing a country range bucket, I can finally pick the actual country.

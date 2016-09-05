@@ -7,7 +7,7 @@ image_url: "/assets/static/images/ga-blog-post-spike.png"
 category:
 tags: ["#dataviz"]
 ---
-{% include JB/setup %}
+{% include setup %}
 A week ago, I wrote a blog post and submitted to Hacker News. Within a few hours it made it to the front page and I wanted to share the aftermath.
 
 

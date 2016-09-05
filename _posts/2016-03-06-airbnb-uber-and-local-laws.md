@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#product", "#society"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Yesterday I read an [interesting piece](http://www.nytimes.com/2016/03/06/business/airbnb-pits-neighbor-against-neighbor-in-tourist-friendly-new-orleans.html) on Airbnb in New Orleans. The content itself isn't new - it highlights the typical conflict between those that view Airbnb as violating local ordinances and ruining the city and others who believe that Airbnb brings value and is helping New Orleans rebuild after Katrina.
 
 But what was interesting was the repeated claims of Airbnb and the other rental marketplaces that it’s just not scalable to follow local policies for every city and it’s up to the users to know their local regulations and follow them. I understand it’s difficult to localize complex products but these responses just feel like an excuse.

@@ -7,7 +7,7 @@ image_url:
 category:
 tags: ["#code"]
 ---
-{% include JB/setup %}
+{% include setup %}
 Earlier today I was researching whether it was possible to generate Fibonacci numbers using a SQL query. A Google search turned up a <a href="http://pgsql.inb4.se/2009/march/fibonacci-sequence-using-with-recursive.html" target="_blank">short PostgreSQL</a> query that uses a recursive approach. Since this is recursion, the query starts by defining a base case and then goes on to define a generation step with a stopping limit.
 
 {% highlight sql %}with recursive f as (
