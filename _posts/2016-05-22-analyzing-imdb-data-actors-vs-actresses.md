@@ -50,21 +50,21 @@ After getting the [IMDB data loaded](http://dangoldin.com/2016/05/21/analyzing-i
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}gender-production-year-height.png " alt="Height by gender by production year" />
+      <img src="{{ IMG_PATH }}gender-production-year-height.png" alt="Height by gender by production year" />
       <p>In addition to birth date the data also contained the height so I decided to have some fun and see how that looked. This is just a plot of actor and actress height by year of production. My takeaway is that actor heights stayed roughly flat while actress heights have been increasing. Note that since I only had a single height for each person this wouldn't be able to accurately represent children growing up but I imagine those are a small fraction and wouldn't influence the results.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}gender-birth-year-height.png " alt="Height by gender by birth year" />
+      <img src="{{ IMG_PATH }}gender-birth-year-height.png" alt="Height by gender by birth year" />
       <p>This is an interesting one. Instead of looking at the heights by movie production year this examines heights by birth date of the actor and actresses. In this case we see that actors have stayed roughly the same height while actresses have increased in height over time. There's also a huge looking drop at the end - going from a bit over 70 inches to less than 65 for actors and from 65 inches to less than 63 for actresses. This drop off is in the late 90s which also indicates these are teenagers just growing up.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}gender-num-movies.png " alt="Number of movies by gender" />
+      <img src="{{ IMG_PATH }}gender-num-movies.png" alt="Number of movies by gender" />
       <p>For the last one I wanted to get a sense of whether actors are more likely to be in more movies than actresses. The chart here is a bit tough to read but it looks at the distribution of actors and actresses by the number of movies made. in this case the scale was massive since there were tons of people who've only been in a few movies so I had to normalize by taking the log. The effect is subtle but the fact that the tail for actors goes wider than the tail for actresses indicates that an average actor is more likely to appear in multiple movies than the average actress.
     </div>
   </li>
