@@ -2,11 +2,11 @@
 The tags_list include is a listing helper for tags.
 Usage:
   1) assign the 'tags_list' variable to a valid array of tags.
-  2) include JB/tags_list
+  2) include tags_list
   example:
     <ul>
   	  {% assign tags_list = site.tags %}
-  	  {% include JB/tags_list %}
+  	  {% include tags_list %}
   	</ul>
 
   Notes:
