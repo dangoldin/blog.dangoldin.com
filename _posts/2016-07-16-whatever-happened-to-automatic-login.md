@@ -21,7 +21,7 @@ The last explanation I can think of is that there’s something on the homepage 
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}greenhouse-tallie-trackers.png" alt="Ghostery trackers: Tallie home + app, Greenhouse home + app">
+      <amp-img src="{{ IMG_PATH }}greenhouse-tallie-trackers.png" alt="Ghostery trackers: Tallie home + app, Greenhouse home + app" width="1017" height="343" layout="responsive">
       <p>Ghostery trackers: Tallie home + in app, Greenhouse home + in app</p>
     </div>
   </li>

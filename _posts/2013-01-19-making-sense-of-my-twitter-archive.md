@@ -15,49 +15,49 @@ I've committed by ugly code to github if anyone wants to play around with it: <a
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-hour.png" alt="Tweets sent by hour">
+      <amp-img src="{{ IMG_PATH }}by-hour.png" alt="Tweets sent by hour" width="800" height="600" layout="responsive">
       <p>Apparently, I like to tweet evenings and nights.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-dow.png" alt="Tweets sent by day of week">
+      <amp-img src="{{ IMG_PATH }}by-dow.png" alt="Tweets sent by day of week" width="800" height="600" layout="responsive">
       <p>You can see I like to take my Fridays and Saturdays easy. Since I also tend to tweet more frequently at night this indicates I'll go out Friday and Saturday nights.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-month.png" alt="Tweets sent by month">
+      <amp-img src="{{ IMG_PATH }}by-month.png" alt="Tweets sent by month" width="800" height="600" layout="responsive">
       <p>I was pretty much quiet since I got on Twitter in 2008 but have been more consistent since 2012.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-month-dow.png" alt="Tweets sent by month and day of week">
+      <amp-img src="{{ IMG_PATH }}by-month-dow.png" alt="Tweets sent by month and day of week" width="800" height="600" layout="responsive">
       <p>I must admit this one's here mostly because I wanted to do a heatmap but this does reinforce that I've been a more active on Twitter since 2012 and that I'm less active on Friday and Saturday.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-month-length.png" alt="Average length of a tweet by month">
+      <amp-img src="{{ IMG_PATH }}by-month-length.png" alt="Average length of a tweet by month" width="800" height="600" layout="responsive">
       <p>I started off barely saying anything but it looks as if I'm consistently around ~90 characters per tweet.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-month-type.png" alt="Type of tweet sent by month">
+      <amp-img src="{{ IMG_PATH }}by-month-type.png" alt="Type of tweet sent by month" width="1200" height="600" layout="responsive">
       <p>I wanted to see whether my behavior around tweeting, retweeting, or replying has changed over time but this doesn't make it very clear due to the number of lines going on so I decided to normalize it - see next chart.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}by-month-type-stacked.png" alt="Type of tweet sent by month - normalized">
+      <amp-img src="{{ IMG_PATH }}by-month-type-stacked.png" alt="Type of tweet sent by month - normalized" width="800" height="600" layout="responsive">
       <p>Now we're on to something. In the beginning I was basically posting short tweets about my life but more recently I have been more involved in the community aspects.</p>
     </div>
   </li>

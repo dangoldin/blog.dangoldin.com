@@ -18,7 +18,7 @@ Below are some visualizations highlighting the differences in a few different wa
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}crawl-stats-comparison-parallel.png">
-        <img src="{{ IMG_PATH }}crawl-stats-comparison-parallel.png" alt="Load times parallel plot">
+        <amp-img src="{{ IMG_PATH }}crawl-stats-comparison-parallel.png" alt="Load times parallel plot" width="600" height="800" layout="responsive">
       </a>
       <p>
         <strong>Parallel plot.</strong> The idea here is to see whether the lines are mostly horizontal or if they're steep. Horizontal lines would indicate that sites are universally slow (and fast) while steep lines indicate that some sites load much faster in one city compared to the other.
@@ -29,7 +29,7 @@ Below are some visualizations highlighting the differences in a few different wa
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}crawl-stats-comparison-time-diff-bar.png">
-        <img src="{{ IMG_PATH }}crawl-stats-comparison-time-diff-bar.png" alt="Load time differeneces parallel plot">
+        <amp-img src="{{ IMG_PATH }}crawl-stats-comparison-time-diff-bar.png" alt="Load time differeneces parallel plot" width="600" height="1200" layout="responsive">
       </a>
       <p>
         <strong>Load time differences.</strong> Here we sort the sites by the difference in average load time, NYC minus Beijing. Most of the sites loaded faster in NYC but I suspect the biggest reason was due to internet speed differences. The sites that loaded faster in Beijing are for the most part in China.
@@ -40,7 +40,7 @@ Below are some visualizations highlighting the differences in a few different wa
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}crawl-stats-comparison-scatter.png">
-        <img src="{{ IMG_PATH }}crawl-stats-comparison-scatter.png" alt="Load times scatter">
+        <amp-img src="{{ IMG_PATH }}crawl-stats-comparison-scatter.png" alt="Load times scatter" width="600" height="600" layout="responsive">
       </a>
       <p>
         <strong>Scatter plot.</strong> A different perspective than the parallel plot but trying to answer the same question. We do notice a few outliers here which we can investigate by adding text labels.
@@ -51,7 +51,7 @@ Below are some visualizations highlighting the differences in a few different wa
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}crawl-stats-comparison-scatter-text.png">
-        <img src="{{ IMG_PATH }}crawl-stats-comparison-scatter-text.png" alt="Load times scatter with text">
+        <amp-img src="{{ IMG_PATH }}crawl-stats-comparison-scatter-text.png" alt="Load times scatter with text" width="600" height="600" layout="responsive">
       </a>
       <p>
         <strong>Labeled scatter plot.</strong> This provides a nice look at the outliers but makes it impossible to look at the sites that loaded quickly in both NYC and Beijing.

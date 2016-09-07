@@ -9,7 +9,7 @@ tags: ["#product"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}ma-logo-square.png" alt="Makers Alley" style="float:right;">
+<amp-img src="{{ IMG_PATH }}ma-logo-square.png" alt="Makers Alley" style="float:right;" width="200" height="200" layout="responsive">
 
 A brief one today.
 

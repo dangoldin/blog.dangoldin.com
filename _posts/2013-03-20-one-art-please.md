@@ -13,25 +13,25 @@ At the beginning of 2013, I set a <a href="http://dangoldin.com/2013/01/02/2013-
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}1-art.jpg" alt="Silhouette of the NYC skyline">
+      <amp-img src="{{ IMG_PATH }}1-art.jpg" alt="Silhouette of the NYC skyline" width="800" height="600" layout="responsive">
       <p>1. Find a silhouette of the NYC skyline</p>
     </div>
   </li>
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}2-art.jpg" alt="Arrangement of jean pieces">
+      <amp-img src="{{ IMG_PATH }}2-art.jpg" alt="Arrangement of jean pieces" width="800" height="600" layout="responsive">
       <p>2. Replicate the silhouette by cutting pieces out of old jeans and arranging them on a piece of cardboard wrapped in another shade of jeans.</p>
     </div>
   </li>
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}3-art.jpg" alt="Fabric glue">
+      <amp-img src="{{ IMG_PATH }}3-art.jpg" alt="Fabric glue" width="800" height="1067" layout="responsive">
       <p>3. Use some fabric glue to attach the pieces to the canvas</p>
     </div>
   </li>
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}4-art.jpg" alt="Resulting art">
+      <amp-img src="{{ IMG_PATH }}4-art.jpg" alt="Resulting art" width="800" height="600" layout="responsive">
       <p>4. The result - now all it needs is a frame</p>
     </div>
   </li>

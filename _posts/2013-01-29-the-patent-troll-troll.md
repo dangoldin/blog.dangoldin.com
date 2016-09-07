@@ -11,7 +11,7 @@ tags: ["#meta"]
 <ul class="thumbnails">
   <li class="span6 offset1">
     <div class="thumbnail" style="border:none;">
-      <img src="{{ IMG_PATH }}patent-troll.jpg" alt="Patent troll">
+      <amp-img src="{{ IMG_PATH }}patent-troll.jpg" alt="Patent troll" width="400" height="400" layout="responsive">
       <p class="center"><a href="http://www.article-3.com/fending-off-trolls-and-avoiding-elephants-99273">A Patent Troll</a></p>
     </div>
   </li>

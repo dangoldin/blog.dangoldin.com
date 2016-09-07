@@ -15,13 +15,13 @@ In particular, developers need to be careful when doing text message based authe
 <div class="row">
 	<div class="span3">
 		<div class="thumbnail">
-			<img src="{{ IMG_PATH }}tfa-boa.png">
+			<amp-img src="{{ IMG_PATH }}tfa-boa.png" width="540" height="960" layout="responsive">
 			<p>Bank of America obfuscating the code</p>
 		</div>
 	</div>
 	<div class="span3 offset1">
 		<div class="thumbnail">
-			<img src="{{ IMG_PATH }}tfa-twitter.png">
+			<amp-img src="{{ IMG_PATH }}tfa-twitter.png" width="540" height="960" layout="responsive">
 			<p>Twitter including the code on the lock screen</p>
 		</div>
 	</div>
