@@ -15,7 +15,7 @@ As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinsk
 <ul class='thumbnails'>
   <li class="span3">
     <div class='thumbnail no-border'>
-      <img alt='N=4, ratio=0.4' src='{{ IMG_PATH }}sierpinski-fun-4-0.4.png' style="width:100%" />
+      <amp-img alt='N=4, ratio=0.4' src='{{ IMG_PATH }}sierpinski-fun-4-0.4.png' style="width:100%"  width="459" height="453" layout="responsive"></amp-img>
       <p class="center">
         N = 4, ratio = 0.4
       </p>
@@ -23,7 +23,7 @@ As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinsk
   </li>
   <li class="span3">
     <div class='thumbnail no-border'>
-      <img alt='N=10, ratio=0.2' src='{{ IMG_PATH }}sierpinski-fun-10-0.2.png' style="width:100%" />
+      <amp-img alt='N=10, ratio=0.2' src='{{ IMG_PATH }}sierpinski-fun-10-0.2.png' style="width:100%"  width="181" height="180" layout="responsive"></amp-img>
       <p class="center">
         N = 10, ratio = 0.2
       </p>

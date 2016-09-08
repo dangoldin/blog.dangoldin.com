@@ -20,21 +20,21 @@ For those interested, here’s the signup flow that had the ~34% signup rate. Th
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail">
-        <img src="{{ IMG_PATH }}glossi-landing-page.jpg" alt="Pressi landing page" />
+        <amp-img src="{{ IMG_PATH }}glossi-landing-page.jpg" alt="Pressi landing page"  width="1440" height="960" layout="responsive"></amp-img>
         <p>The Pressi landing page</p>
     </div>
   </li>
 
   <li class="span7">
     <div class="thumbnail">
-        <img src="{{ IMG_PATH }}glossi-onboarding-step-2.jpg" alt="Pressi signup step 2" />
+        <amp-img src="{{ IMG_PATH }}glossi-onboarding-step-2.jpg" alt="Pressi signup step 2"  width="1440" height="900" layout="responsive"></amp-img>
         <p>Pressi signup step two</p>
     </div>
   </li>
 
   <li class="span7">
     <div class="thumbnail">
-        <img src="{{ IMG_PATH }}glossi-onboarding-step-2.jpg" alt="Pressi signup step 3" />
+        <amp-img src="{{ IMG_PATH }}glossi-onboarding-step-2.jpg" alt="Pressi signup step 3"  width="1440" height="900" layout="responsive"></amp-img>
         <p>Pressi signup step three</p>
     </div>
   </li>

@@ -14,97 +14,97 @@ While doing some spring cleaning I discovered a bunch of fliers from various com
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-1.jpg" alt="Flier 1" />
+      <amp-img src="{{ IMG_PATH }}flier-1.jpg" alt="Flier 1"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-2.jpg" alt="Flier 2" />
+      <amp-img src="{{ IMG_PATH }}flier-2.jpg" alt="Flier 2"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-3.jpg" alt="Flier 3" />
+      <amp-img src="{{ IMG_PATH }}flier-3.jpg" alt="Flier 3"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-4.jpg" alt="Flier 4" />
+      <amp-img src="{{ IMG_PATH }}flier-4.jpg" alt="Flier 4"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-5.jpg" alt="Flier 5" />
+      <amp-img src="{{ IMG_PATH }}flier-5.jpg" alt="Flier 5"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-6.jpg" alt="Flier 6" />
+      <amp-img src="{{ IMG_PATH }}flier-6.jpg" alt="Flier 6"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-7.jpg" alt="Flier 7" />
+      <amp-img src="{{ IMG_PATH }}flier-7.jpg" alt="Flier 7"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-8.jpg" alt="Flier 8" />
+      <amp-img src="{{ IMG_PATH }}flier-8.jpg" alt="Flier 8"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-9.jpg" alt="Flier 9" />
+      <amp-img src="{{ IMG_PATH }}flier-9.jpg" alt="Flier 9"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-10.jpg" alt="Flier 10" />
+      <amp-img src="{{ IMG_PATH }}flier-10.jpg" alt="Flier 10"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-11.jpg" alt="Flier 11" />
+      <amp-img src="{{ IMG_PATH }}flier-11.jpg" alt="Flier 11"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-12.jpg" alt="Flier 12" />
+      <amp-img src="{{ IMG_PATH }}flier-12.jpg" alt="Flier 12"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-13.jpg" alt="Flier 13" />
+      <amp-img src="{{ IMG_PATH }}flier-13.jpg" alt="Flier 13"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-14.jpg" alt="Flier 14" />
+      <amp-img src="{{ IMG_PATH }}flier-14.jpg" alt="Flier 14"  width="1632" height="1224" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-15.jpg" alt="Flier 15" />
+      <amp-img src="{{ IMG_PATH }}flier-15.jpg" alt="Flier 15"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}flier-16.jpg" alt="Flier 16" />
+      <amp-img src="{{ IMG_PATH }}flier-16.jpg" alt="Flier 16"  width="1224" height="1632" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

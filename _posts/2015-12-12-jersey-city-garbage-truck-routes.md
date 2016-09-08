@@ -12,7 +12,7 @@ tags: ["#code", "#dataviz", "#javascript"]
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}jersey-city-garbage-trucks.png" alt="Jersey City garbage trucks" />
+      <amp-img src="{{ IMG_PATH }}jersey-city-garbage-trucks.png" alt="Jersey City garbage trucks"  width="718" height="811" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

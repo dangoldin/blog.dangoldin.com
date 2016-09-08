@@ -9,7 +9,7 @@ tags: ["#product"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}twitter-ecosystem.png" alt="The Twitter ecosystem" />
+<amp-img src="{{ IMG_PATH }}twitter-ecosystem.png" alt="The Twitter ecosystem"  width="624" height="379" layout="responsive"></amp-img>
 
 I was going through my drafts and stumbled onto one that was going to criticize Twitter’s API changes that they <a href="https://dev.twitter.com/blog/changes-coming-to-twitter-api" target="_blank">announced last August</a>. In light of last week’s IPO I thought I’d finally finish it up.
 

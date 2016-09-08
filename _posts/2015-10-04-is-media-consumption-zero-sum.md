@@ -17,7 +17,7 @@ I found the following graphic which highlights the shift in media consumption ov
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}global-media-consumption-per-week-by-medium.jpg" alt="Global media consumption per week by medium" />
+      <amp-img src="{{ IMG_PATH }}global-media-consumption-per-week-by-medium.jpg" alt="Global media consumption per week by medium"  width="585" height="329" layout="responsive"></amp-img>
       <p class="center"><a href="https://thebrandbuilder.wordpress.com/2012/03/12/strategy-reminder-shifts-in-global-media-consumption/">The BrandBuilder Blog</a></p>
     </div>
   </li>

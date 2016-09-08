@@ -12,7 +12,7 @@ tags: ["#code", "#dataviz", "#python", "#javascript"]
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}jersey-city-parking-zones.png" alt="Jersey City parking zones" />
+      <amp-img src="{{ IMG_PATH }}jersey-city-parking-zones.png" alt="Jersey City parking zones"  width="442" height="640" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

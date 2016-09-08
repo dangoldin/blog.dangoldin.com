@@ -10,7 +10,7 @@ tags: ["#product"]
 {% include setup %}
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}old-spice-uncanny-valley.gif" alt="Uncanny valley Old Spice ad" />
+  <amp-img src="{{ IMG_PATH }}old-spice-uncanny-valley.gif" alt="Uncanny valley Old Spice ad"  width="636" height="357" layout="responsive"></amp-img>
   <p>Old Spice ad mocking the uncanny valley (Credit: <a href="http://gizmodo.com/new-old-spice-mandroid-ads-hilariously-embrace-the-unca-1604622781">Gizmodo</a>)</p>
 </div>
 

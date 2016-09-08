@@ -13,7 +13,7 @@ The messaging space is fascinating. There are probably hundreds of apps availabl
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}onavo-insights-global-messaging-reach.png" alt="Onavo Insights global messaging app reach" />
+      <amp-img src="{{ IMG_PATH }}onavo-insights-global-messaging-reach.png" alt="Onavo Insights global messaging app reach"  width="593" height="863" layout="responsive"></amp-img>
       <p style="text-align:center;"><a href="https://techcrunch.com/2013/06/13/messaging-apps/">via TechCrunch</a></p>
     </div>
   </li>

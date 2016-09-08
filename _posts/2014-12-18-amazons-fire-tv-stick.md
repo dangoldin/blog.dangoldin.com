@@ -9,7 +9,7 @@ tags: ["#product"]
 ---
 {% include setup %}
 <div class="thumbnail" style="border:none;">
-  <img src="{{ IMG_PATH }}firestick.jpg" alt="Fire stick" />
+  <amp-img src="{{ IMG_PATH }}firestick.jpg" alt="Fire stick"  width="475" height="370" layout="responsive"></amp-img>
   <p class="caption">Photo by <a href="http://www.ranchodelaluna.com/views/pages/09_firestick_dancing.htm">Rancho de la Luna</a></p>
 </div>
 

@@ -11,7 +11,7 @@ tags: ["#meta"]
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}cinnamonsnail.jpg" alt="Cinnamon snail food truck"/>
+      <amp-img src="{{ IMG_PATH }}cinnamonsnail.jpg" alt="Cinnamon snail food truck" width="1024" height="683" layout="responsive"></amp-img>
       <p>Source: <a href="http://ecovegangal.com/eat/restaurant-reviews/item/923-video-review-the-cinnamon-snail-organic-vegan-food-truck-in-nj" target="_blank">
         EcoVeganGal.com
       </a></p>

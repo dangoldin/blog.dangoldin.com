@@ -9,7 +9,7 @@ tags: ["#aws"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}aws-services.png" alt="AWS services" />
+<amp-img src="{{ IMG_PATH }}aws-services.png" alt="AWS services"  width="1107" height="383" layout="responsive"></amp-img>
 
 Every time Amazon announces a price drop there are always people pointing out that it’s still more expensive than other cloud computing services such as Linode or Digital Ocean. The Amazon fans then respond by saying sure AWS is more expensive but the value is the ability to scale quickly when needed.
 

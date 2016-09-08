@@ -20,7 +20,7 @@ order by ymd, hour;
 This gave us a dataset with three columns that we wanted to then “pivot” in order to quickly spot the gaps. Using the pivot table functionality in Excel, it was simple to put date along one dimension and hour along the other to quickly spot the missing agg periods. All that was left was rerunning the job for those hours.
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}redshift-to-excel.png" alt="Redshift to Excel pivot table" />
+  <amp-img src="{{ IMG_PATH }}redshift-to-excel.png" alt="Redshift to Excel pivot table"  width="470" height="425" layout="responsive"></amp-img>
 </div>
 
 This investigation reminded me how important it is to be familiar with your tools and choose the right one for the job. Redshift and Excel are antithetical - Redshift is massively parallelizable and built for terabytes of data while Excel slows to a crawl when dealing with tens of thousands of rows. But by mixing them together we’re able to use each for what it’s best for: Redshift for very quick, large scale queries and Excel for the quick and dirty investigative work. This approach is useful in all sorts of problems - from mixing command line scripts with fleshed out programs to using a script or Excel to generate commands that you can then paste into the terminal or an editor. The key point is understanding your workflow and tools well enough to come up with an optimized process.

@@ -10,7 +10,7 @@ tags: ["#sql", "#code", "#data"]
 {% include setup %}
 In 2012 I did a [simple analysis of IMDB](http://dangoldin.com/2012/05/23/trend-of-actor-vs-actress-age-differences/) to analyze the change in actor and actresses’s ages over time. At that point I limited the analysis to the top 50 movies each decade and hacked together a quick script to crawl and scrape the IMDB analysis. A couple of weeks ago I came across a great [post by CuriousGnu](https://www.curiousgnu.com/imdb-age-distribution) that did a similar analysis across a larger set of movies but limited to movies since 2000. I reached out and they were kind enough to give me a DigitalOcean instance containing the data already loaded into MySQL. The analysis should be finished up tomorrow but I wanted to write this post up to share the mundane parts of the process. The janitorial part is critically important to an analysis and it’s important to get it right or the results will may be meaningless or even completely wrong. The [NY Times interviewed](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0) a variety of data scientists and came away with the conclusion that 50 to 80 percent of a data scientist’s time is spent cleaning the data. This is no exception and I wanted to provide a sense of the effort and thought that goes into getting data into a state that’s actually useful.
 
-<img src="{{ IMG_PATH }}imdb-tables.png" alt="IMDB tables" style="float: right; margin-left: 10px; width:200px"/>
+<amp-img src="{{ IMG_PATH }}imdb-tables.png" alt="IMDB tables" style="float: right; margin-left: 10px; width:200px" width="203" height="459" layout="responsive"></amp-img>
 
 Lucky for me I already had the data loaded and queryable in MySQL. Most of the time the data is scattered all over the place in a variety of different formats that require a slew of scripts to wrangle and manipulate the data into a useful format.
 
@@ -20,7 +20,7 @@ The first task was to get familiar with the data and I started by looking at sam
 round(((data_length + index_length) / 1024 / 1024),2) "Size in MB"
 FROM information_schema.TABLES WHERE table_schema = "imdb";{% endhighlight %}
 
-<img src="{{ IMG_PATH }}imdb-data.png" alt="IMDB data" style="float: right; margin-left: 10px; width:300px"/>
+<amp-img src="{{ IMG_PATH }}imdb-data.png" alt="IMDB data" style="float: right; margin-left: 10px; width:300px" width="485" height="439" layout="responsive"></amp-img>
 
 The next step was figuring out the way the tables related to one another. Since the field names were obvious this was extremely straightforward. The only nuances came due to an unconventional naming scheme - for example the title table contains the list of movies but the other tables map to it via a movie_id column. Similarly, the name table contains people but it’s referenced via person_id in other tables. They key part here was starting with a movie I know and confirming that the results made sense. In my case I chose my favorite movie, The Rock, and made sure that the results of my query made sense.
 
@@ -98,9 +98,9 @@ COPY INTO title from '/tmp/title.csv' USING DELIMITERS ',','\n','"' NULL AS '\\N
 
 I had no experience with MonetDB and didn’t know what to expect with this entire series of steps being a waste of time. I expected some improvement and it turns out the query that took over 20 minutes to run in MySQL was able to run in just over 30 seconds in MonetDB. I was off to the races. I spent the next bit of time QAing the data and dealing with outliers and edge cases. Some were due to mistakes I made - for example not filtering cast members to only include actors and actresses which manifested itself in an actor that lived to be over 2000 years old. This turned out to be a movie about [Socrates](http://www.imdb.com/title/tt1560702/) with one of the writers being Plato. Some simply uncovered weird data - there's a movie, [100 Years](http://www.imdb.com/title/tt5174640/), which is scheduled to be released in 2115 and led to some old actors and actresses. While others were clearly data mistakes - actors who were born after they died, for example [Walter Beck](http://www.imdb.com/name/nm2917761/) who was born in 1988 but passed away in 1964.
 
-<img src="{{ IMG_PATH }}100-years.png" alt="100 Years" />
+<amp-img src="{{ IMG_PATH }}100-years.png" alt="100 Years"  width="644" height="360" layout="responsive"></amp-img>
 
-<img src="{{ IMG_PATH }}walter-beck.png" alt="Walter Beck" />
+<amp-img src="{{ IMG_PATH }}walter-beck.png" alt="Walter Beck"  width="661" height="243" layout="responsive"></amp-img>
 
 Dealing with these was an iterative process. I ended up settling on removing all non actors and actresses from the queries as well as limiting my dataset to movies produced between 1920 and 2015 while also eliminating all combinations where a movie was produced before a birth. These edge cases are infrequent enough that they most likely wouldn’t have had any impact on the results but going through this process gives us confidence in what we’re doing. The next step is actually going through the analysis which I hope to finish up tomorrow.
 

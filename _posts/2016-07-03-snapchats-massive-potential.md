@@ -11,7 +11,7 @@ tags: ["#product"]
 The more I use Snapchat the more obvious the potential. The way the product has evolved reminds me of Facebook’s history. Facebook started simply as a profile page for Ivy League college students but due to strong execution and brilliant product decisions has grown into the current behemoth. Snapchat is on a similar path - the initial version was a simple ephemeral photo sharing app but the recent updates seem frequent and massively impactful.
 
 <div style="float:right; width:240px;">
-  <img src="{{ IMG_PATH }}snapchat-trailer-ad.png" />
+  <amp-img src="{{ IMG_PATH }}snapchat-trailer-ad.png"  width="750" height="1334" layout="responsive"></amp-img>
   <p style="text-align:center; font-size: 18px;">Movie tickets within Snapchat</p>
 </div>
 

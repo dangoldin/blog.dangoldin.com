@@ -9,7 +9,7 @@ tags: ["#meta"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}momath-logo.gif" alt="MoMath logo" style="float:right; width: 300px;" />
+<amp-img src="{{ IMG_PATH }}momath-logo.gif" alt="MoMath logo" style="float:right; width: 300px;"  width="600" height="607" layout="responsive"></amp-img>
 
 Although I’ve been meaning to visit the <a href="http://momath.org/" target="_blank">Museum of Math</a> ever since it opened in December, I only got the chance to do it this Labor Day. I wanted to share my thoughts and encourage everyone who can to visit.
 

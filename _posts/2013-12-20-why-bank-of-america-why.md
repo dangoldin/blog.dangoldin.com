@@ -12,11 +12,11 @@ Before leaving for a trip to India, I wanted to make sure that I’d be allowed 
 
 Instead of just asking which country I was traveling to using a simple autocomplete or dropdown they have a three step process. First, I get to choose whether I’m traveling domestic or international. If internationally, I get presented with four options that are just the first letter of each country name. After choosing a country range bucket, I can finally pick the actual country.
 
-<img src="{{ IMG_PATH }}boa-travel-1.png" alt="BoA Travel 1" />
+<amp-img src="{{ IMG_PATH }}boa-travel-1.png" alt="BoA Travel 1"  width="595" height="169" layout="responsive"></amp-img>
 
-<img src="{{ IMG_PATH }}boa-travel-2.png" alt="BoA Travel 2" />
+<amp-img src="{{ IMG_PATH }}boa-travel-2.png" alt="BoA Travel 2"  width="616" height="223" layout="responsive"></amp-img>
 
-<img src="{{ IMG_PATH }}boa-travel-3.png" alt="BoA Travel 3" />
+<amp-img src="{{ IMG_PATH }}boa-travel-3.png" alt="BoA Travel 3"  width="636" height="226" layout="responsive"></amp-img>
 
 I understand when an inferior UX decision is made because it’s cheaper to implement but in this case it must have actually been more difficult. Instead of having a single dropdown or autocomplete they have three different input elements. Even if the first selection is necessary, there’s no need to split 206 countries into 4 separate lists.
 

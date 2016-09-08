@@ -13,7 +13,7 @@ tags: ["#design"]
   <li class="span7">
   	<div class="thumbnail">
   		<a href="{{ IMG_PATH }}damn-it-linkedin.png">
-      		<img src="{{ IMG_PATH }}damn-it-linkedin.png" alt="LinkedIn infinite scroll and footer" />
+      		<amp-img src="{{ IMG_PATH }}damn-it-linkedin.png" alt="LinkedIn infinite scroll and footer"  width="1482" height="801" layout="responsive"></amp-img>
       	</a>
     </div>
   </li>

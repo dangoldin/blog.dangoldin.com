@@ -11,7 +11,7 @@ tags: ["#meta"]
 Earlier today I came across another reason why basic computer literacy is a necessary skill. It’s not just about knowing to code or understanding how computers work but getting access to a slew of tools that are orders of magnitude better than what you’d find on a sketchy site.
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}github-youtube-dl-search.png" alt="Github search for youtube download" />
+  <amp-img src="{{ IMG_PATH }}github-youtube-dl-search.png" alt="Github search for youtube download"  width="1038" height="650" layout="responsive"></amp-img>
 </div>
 
 My realization came when I was trying to download some YouTube videos that could be watched without internet access. Doing a quick Google search I found dozens of sites with each one trying to force me to download some additional software to “speed up” my experience. I’m positive most, if not all, of these would fall into the malware category so I decided instead to do a simple search on GitHub for “youtube download.” Lo and behold the first result was the wonderful <a href="https://github.com/rg3/youtube-dl" target="_blank">youtube-dl</a> library. Within two minutes I kicked off a script that proceeded to download a dozen videos.

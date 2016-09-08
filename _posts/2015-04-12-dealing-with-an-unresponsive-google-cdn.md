@@ -11,7 +11,7 @@ tags: ["#devops"]
 I’m not sure whether this is a recent issue but earlier this week I started noticing that many HTTP requests to <a href="https://developers.google.com/speed/libraries/" target="_blank">Google's CDN</a> were taking close to a minute to complete. In particular, this blog would take almost a minute to render since it uses two fonts and an old version of jQuery both hosted by Google.
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}slow-font-load.png" alt="Fonts taking 45 seconds to load" />
+  <amp-img src="{{ IMG_PATH }}slow-font-load.png" alt="Fonts taking 45 seconds to load"  width="896" height="125" layout="responsive"></amp-img>
 </div>
 
 After some investigation it turned out that the issue seemed to only happen on Chrome Canary (43.0.2351.3 canary (64-bit)) and even occured when visiting the URL directly. Neither standard Chrome, Firefox, Firefox nightly, nor a simple curl requested had this issue - it seemed to be a purely Chrome Canary issue.

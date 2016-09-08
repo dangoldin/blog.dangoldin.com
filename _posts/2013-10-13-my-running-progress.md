@@ -9,7 +9,7 @@ tags: ["#running"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}runkeeper-goal-2013.png" alt="My Running Goal" />
+<amp-img src="{{ IMG_PATH }}runkeeper-goal-2013.png" alt="My Running Goal"  width="669" height="316" layout="responsive"></amp-img>
 
 I'm not entirely sure why, but I started off 2013 with the goal of running 1000 miles which breaks down into a little more than 19 miles a week. Remarkably, I stuck with it and am somehow at 822 miles for the year and need to average 16/week for the remainder of 2013 to hit the goal. Yet it took me a surprisingly long time to work up to a weekly distance of 19 miles and even longer to consistently run more than 19 miles a week. My first run was less than 1.5 miles and I only started consistently eat into my deficit in June. It took me until the end of August to actually reach the 19 mile cumulative weekly average I need to maintain until the end of the year. It’s been an awesome adventure and I’ve even managed to run three half marathons and improved my time from 1:58:11 on an easy course to 1:56:11 on a challenging one. Here’s a table I put together showcasing my running progress over the course of the year. I’ll update it at the end of the year after hopefully achieving the 1000 mile goal.
 

@@ -8,7 +8,7 @@ tags: ["#product"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}snakeself.jpg" />
+<amp-img src="{{ IMG_PATH }}snakeself.jpg"  width="550" height="370" layout="responsive"></amp-img>
 
 <p>I was rereading the HBR paper on <a href="http://hbr.org/2006/10/strategies-for-two-sided-markets/ar/1" target="_blank">Strategies for Two Sided Markets</a> and came across a passage describing Apple’s mistake of trying to monetize both sides of their market, the consumers and the developers, rather than focusing on one like Microsoft did by giving away the SDK for free.</p>
 

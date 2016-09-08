@@ -9,7 +9,7 @@ tags: ["#design"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}ebay-start-time.png" alt="eBay start time" />
+<amp-img src="{{ IMG_PATH }}ebay-start-time.png" alt="eBay start time"  width="556" height="93" layout="responsive"></amp-img>
 
 I recently needed to sell something on eBay and encountered an issue I thought they would have taken care of by now. Apparently you can pick the start time for an auction but it has to be in PDT - there’s no way to choose another time zone. The change is trivial and one would think that a $60B company would be able to support multiple time zones in their core product. Someone brought this up in <a href="http://community.ebay.com/t5/My-eBay/HOW-DO-I-CHANGE-THE-TIMEZONE/td-p/2675835" target="_blank">the forums</a> in 2012 and it turns out that time zone support is only present in the forum to allow users to see posts with a local time.
 

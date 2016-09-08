@@ -12,7 +12,7 @@ tags: ["#society"]
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail">
-      <img src="{{ IMG_PATH }}global-smartphone-per-capita.png" alt="Global smartphone ownership per capita" />
+      <amp-img src="{{ IMG_PATH }}global-smartphone-per-capita.png" alt="Global smartphone ownership per capita"  width="1200" height="900" layout="responsive"></amp-img>
       <p>Source: <a href="http://www.businessinsider.com/smartphone-and-tablet-penetration-2013-10" target="_blank">Business Insider</a></p>
     </div>
   </li>

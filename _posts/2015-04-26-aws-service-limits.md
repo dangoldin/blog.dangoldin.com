@@ -10,7 +10,7 @@ tags: ["#devops"]
 {% include setup %}
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}aws-ec2-launch-failure.png" alt="AWS EC2 launch failure due to service limits" />
+  <amp-img src="{{ IMG_PATH }}aws-ec2-launch-failure.png" alt="AWS EC2 launch failure due to service limits"  width="960" height="182" layout="responsive"></amp-img>
 </div>
 
 Something I haven’t seen mentioned much is that AWS has <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" target="_blank">service limits</a>. The only way to find out that you’re hitting one is when an instance fails to launch with the error message “Your quota allows for 0 more running instance(s)” with a link to open a support ticket and request a higher limit.

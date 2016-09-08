@@ -13,12 +13,12 @@ I don’t know whether it’s due to the upcoming version of iOS or Windows 8 bu
 <ul class="thumbnails">
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}flat-optimum.png" alt="Optimum.net screenshot" />
+      <amp-img src="{{ IMG_PATH }}flat-optimum.png" alt="Optimum.net screenshot"  width="1396" height="833" layout="responsive"></amp-img>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}flat-dictionary.png" alt="Thesaurus.com screenshot" />
+      <amp-img src="{{ IMG_PATH }}flat-dictionary.png" alt="Thesaurus.com screenshot"  width="1354" height="832" layout="responsive"></amp-img>
     </div>
   </li>
  </ul>

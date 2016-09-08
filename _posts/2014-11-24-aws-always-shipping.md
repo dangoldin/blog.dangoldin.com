@@ -11,7 +11,7 @@ tags: ["#product"]
 <ul class="thumbnails">
   <li class="span7">
     <div class="thumbnail" style="border:none;">
-      <img src="{{ IMG_PATH }}aws-services-new.png" alt="AWS services" />
+      <amp-img src="{{ IMG_PATH }}aws-services-new.png" alt="AWS services"  width="1027" height="694" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

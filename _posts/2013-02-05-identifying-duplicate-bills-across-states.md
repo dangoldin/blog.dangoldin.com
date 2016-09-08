@@ -27,7 +27,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://www.in.gov/legislative/bills/2013/PDF/FISCAL/SB0130.001.pdf">Indiana</a>
       </p>
-      <img src="{{ IMG_PATH }}gun1-in.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun1-in.png" />
+      <amp-img src="{{ IMG_PATH }}gun1-in.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun1-in.png"  width="977" height="718" layout="responsive"></amp-img>
     </div>
   </li>
   <li class="span3">
@@ -35,7 +35,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://www.legislature.mi.gov/documents/2013-2014/billanalysis/Senate/htm/2013-SFA-0063-S.htm">Michigan</a>
       </p>
-      <img src="{{ IMG_PATH }}gun1-mi.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun1-mi.png" />
+      <amp-img src="{{ IMG_PATH }}gun1-mi.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun1-mi.png"  width="792" height="625" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>
@@ -48,7 +48,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://www.azleg.gov//FormatDocument.asp?inDoc=/legtext/51leg/1r/summary/s.1112ps.doc.htm&amp;Session_ID=110">Arizona</a>
       </p>
-      <img src="{{ IMG_PATH }}gun2-az.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-az.png" />
+      <amp-img src="{{ IMG_PATH }}gun2-az.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-az.png"  width="789" height="402" layout="responsive"></amp-img>
     </div>
   </li>
   <li class="span3">
@@ -56,7 +56,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://wapp.capitol.tn.gov/apps/billinfo/BillSummaryArchive.aspx?BillNumber=HB0042&amp;ga=108">Tennessee</a>
       </p>
-      <img src="{{ IMG_PATH }}gun2-tn.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-tn.png" />
+      <amp-img src="{{ IMG_PATH }}gun2-tn.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}gun2-tn.png"  width="872" height="505" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>
@@ -69,7 +69,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://open.nysenate.gov/legislation/bill/S1753-2013">New York</a>
       </p>
-      <img src="{{ IMG_PATH }}drug-ny.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}drug-ny.png" />
+      <amp-img src="{{ IMG_PATH }}drug-ny.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}drug-ny.png"  width="924" height="563" layout="responsive"></amp-img>
     </div>
   </li>
   <li class="span3">
@@ -77,7 +77,7 @@ Somewhat surprisingly, this approach led us to discover the following duplicate 
       <p>
         <a href="http://www.njleg.state.nj.us/2012/Bills/A3000/2590_S1.HTM">New Jersey</a>
       </p>
-      <img src="{{ IMG_PATH }}drug-nj.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}drug-nj.png" />
+      <amp-img src="{{ IMG_PATH }}drug-nj.png" alt="Tweets sent by hour" data-src="{{ IMG_PATH }}drug-nj.png"  width="953" height="666" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

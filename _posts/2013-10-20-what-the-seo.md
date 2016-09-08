@@ -14,7 +14,7 @@ Earlier this week, she sent an email saying there was a new website, bestnewjers
 
 Looking at the whois and dns info doesn’t reveal much since they’re using a privacy protection service. All I know is that the domain was registered in April using WildWestDomains, is protected by DomainsByProxy, and that the name servers are under <a href="http://hbuse.com/" target="_blank" rel="nofollow">hbuse.com</a> which claims to be "Hosting by unbelievably sweet elepehants" and yet doesn’t contain any real content and is not in Google's index. The interesting thing is that looking at the whois info for hbuse.com indicates it was registered by someone with a PO Box in Nevada with an email address that also seems to be anonymyzed. I found a site, <a href="http://www.yougetsignal.com/tools/web-sites-on-web-server/" target="_blank">yougetsignal</a>, that allowed me to search for other sites that were all hosted on “hbuse.com” and came up with a list of ~270 sites that all look to be site rip offs. They all seem to follow a pattern of having the location, the service, and possibly an adjective (best being the most common). Below's a screenshot of some of the sites that I found sharing the host.
 
-<img src="{{ IMG_PATH }}hbuse-sample-sites.png" alt="hbuse.com Hosted Sites Sample" />
+<amp-img src="{{ IMG_PATH }}hbuse-sample-sites.png" alt="hbuse.com Hosted Sites Sample"  width="749" height="755" layout="responsive"></amp-img>
 
 I don’t know what the motivation behind these. They are all running adsense so I suspect part of it just a way to generate easy ad revenue but the more cynical part of me thinks it’s a way to blackmail the existing sites into buying these fake domains to avoid SEO penalties.
 

@@ -4,7 +4,7 @@ from PIL import Image
 import sys, os, re
 
 # For the full HTML element - <img src="image.jpg">
-RE_IMG = re.compile('(<img.+?src=["\'].+?["\']>)')
+RE_IMG = re.compile('(<img.+?src=["\'].+?["\'].+?>)')
 
 # For the image url itself - "image.jpg"
 RE_IMG_SRC = re.compile('src=["\'](.+?)["\']')
@@ -12,7 +12,7 @@ RE_IMG_SRC = re.compile('src=["\'](.+?)["\']')
 def get_files(d):
     return [os.path.join(d,f) for f in os.listdir(d) if os.path.isfile(os.path.join(d,f)) and f.endswith('.md') or f.endswith('.markdown')]
 
-def process_file(fn):
+def process_file(fn, do_write = False):
     with open(fn, 'r') as f:
         t = f.read()
         img_elements = RE_IMG.findall(t)
@@ -23,11 +23,12 @@ def process_file(fn):
                 dims = get_dims(img_path)
                 if dims is not None:
                     width, height = dims
-                    replace_str = img_el.replace('>', ' width="{0}" height="{1}" layout="responsive">'.format(width, height)).replace('<img', '<amp-img')
+                    replace_str = img_el.replace('/>','>').replace('>', ' width="{0}" height="{1}" layout="responsive"></amp-img>'.format(width, height)).replace('<img', '<amp-img')
                     print img_el, '=>', replace_str
                     t = t.replace(img_el, replace_str)
-                    with open(fn, 'w') as fo:
-                        fo.write(t)
+                    if do_write:
+                        with open(fn, 'w') as fo:
+                            fo.write(t)
         if len(img_elements):
             print t
 
@@ -38,8 +39,13 @@ def get_dims(img_path):
 
 if __name__ == '__main__':
     d = sys.argv[1]
+    do_write = False
+    if len(sys.argv) == 3:
+        do_write = sys.argv[2].lower() == 'write'
+
+    print 'Do Write:', do_write
 
     files = get_files(d)
 
     for f in files:
-        process_file(f)
+        process_file(f, do_write)

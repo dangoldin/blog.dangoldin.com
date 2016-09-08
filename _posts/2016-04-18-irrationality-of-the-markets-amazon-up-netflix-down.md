@@ -9,7 +9,7 @@ tags: ["#product", "#meta"]
 ---
 {% include setup %}
 
-<img src="{{ IMG_PATH }}amazon-prime-monthly.png" alt="Amazon monthly pricing" />
+<amp-img src="{{ IMG_PATH }}amazon-prime-monthly.png" alt="Amazon monthly pricing"  width="938" height="481" layout="responsive"></amp-img>
 
 Last night, Amazon [announced](http://www.nytimes.com/2016/04/18/business/amazon-challenges-netflix-by-opening-prime-to-monthly-subscribers.html) that in addition to the annual plan they’re going to start offering Prime as a monthly service. Sure enough, investors interpreted this as good move by Amazon (up 1.51% at end of day) while hurting Netflix (down 2.79% at end of day and even more post earnings). These percentages translate into a $1.34B decrease to the Netflix valuation and a $4.49B increase in valuation for Amazon. As a shareholder of both I find this behavior interesting for its irrationality.
 

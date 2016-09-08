@@ -9,7 +9,7 @@ tags: ["#code"]
 ---
 {% include setup %}
 <div class="thumbnail">
-    <img src="{{ IMG_PATH }}citibikes-nyc.jpg" />
+    <amp-img src="{{ IMG_PATH }}citibikes-nyc.jpg"  width="1024" height="768" layout="responsive"></amp-img>
     <p>Photo by <a href="https://twitter.com/rafat/status/339046904979660800" target="_blank">@rafat</a></p>
 </div>
 

@@ -18,5 +18,5 @@ The next step was making sure it could handle the same load as the old applicati
 The deployment turned out to be the easy part. All we had to do was launch a new server behind a new ELB and swap the DNS record to point to it. We did this for a few short periods before swapping it back so we could do a few final checks before leaving the DNS record pointing to the new ELB. After a couple of days we eliminated the old ELB and instances completely. The chart below shows the transition between the two load balancers.
 
 <div class="thumbnail">
-  <img src="{{ IMG_PATH }}load-balancer-swap.png" alt="Load balancer swap" />
+  <amp-img src="{{ IMG_PATH }}load-balancer-swap.png" alt="Load balancer swap"  width="880" height="426" layout="responsive"></amp-img>
 </div>

@@ -22,43 +22,43 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 <ul class="thumbnails">
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-anntaylor.png" alt="Ann Taylor" />
+      <amp-img src="{{ IMG_PATH }}discount-anntaylor.png" alt="Ann Taylor"  width="800" height="484" layout="responsive"></amp-img>
       <p>Ann Taylor offers the chance to win a vacation</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-bluenile.png" alt="Blue Nile" />
+      <amp-img src="{{ IMG_PATH }}discount-bluenile.png" alt="Blue Nile"  width="800" height="484" layout="responsive"></amp-img>
       <p>Blue Nile offers the chance to win a diamond</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-bonobos.png" alt="Bonobos" />
+      <amp-img src="{{ IMG_PATH }}discount-bonobos.png" alt="Bonobos"  width="800" height="456" layout="responsive"></amp-img>
       <p>Bonobos offers 20% off your first purchase</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-gap.png" alt="Gap" />
+      <amp-img src="{{ IMG_PATH }}discount-gap.png" alt="Gap"  width="800" height="484" layout="responsive"></amp-img>
       <p>Gap offers 25% off your first purchase</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-wayfair.png" alt="Wayfair" />
+      <amp-img src="{{ IMG_PATH }}discount-wayfair.png" alt="Wayfair"  width="800" height="480" layout="responsive"></amp-img>
       <p>Wayfair offers 10% off your first purchase</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-west-elm.png" alt="West Elm" />
+      <amp-img src="{{ IMG_PATH }}discount-west-elm.png" alt="West Elm"  width="800" height="513" layout="responsive"></amp-img>
       <p>West Elm offers 10% off your first purchase</p>
     </div>
   </li>
   <li class="span8">
   	<div class="thumbnail">
-      <img src="{{ IMG_PATH }}discount-williams-sonoma.png" alt="Williams-Sonoma" />
+      <amp-img src="{{ IMG_PATH }}discount-williams-sonoma.png" alt="Williams-Sonoma"  width="800" height="454" layout="responsive"></amp-img>
       <p>Williams-Sonoma offers 10% off your first purchase</p>
     </div>
   </li>
