@@ -9,7 +9,7 @@ tags: ["#product"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}mailbox1.png" alt="Mailbox" style="float:right;" width="280" height="420" layout="responsive">
+<amp-img src="{{ IMG_PATH }}mailbox1.png" alt="Mailbox" style="float:right;" width="280" height="420" layout="responsive"></amp-img>
 
 After a couple of weeks on the waiting list I finally got access to the Mailbox App. It’s a huge improvement over the standard mail app and my mobile email consumption habits have improved significantly. I’m still not at “inbox zero” but am making my way there.
 

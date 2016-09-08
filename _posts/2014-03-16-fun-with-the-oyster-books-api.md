@@ -20,7 +20,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-by-num-books.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-by-num-books.png" alt="# of authors by # of books written" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-by-num-books.png" alt="# of authors by # of books written" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Num of authors by num of books written.</strong> Very few others appear more than once in the data set. This may be due to the limited data set or Oyster's job in editing the publicly accessible collections, maybe both.
@@ -31,7 +31,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-author-ratings.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-author-ratings.png" alt="Distribution of ratings" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-author-ratings.png" alt="Distribution of ratings" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Distribution of ratings.</strong> Ratings are clustered around 4 with very few ratings under 3. This is most likely a biased set since the Oyster editors would have chosen the highest rated books to be featured in their sets.
@@ -42,7 +42,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-num-books-by-author.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-num-books-by-author.png" alt="Distribution of ratings" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-num-books-by-author.png" alt="Distribution of ratings" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Num of books by author.</strong> Kurt Vonnegut has over 20 books available on Oyster with Shakespeare in the number 2 spot.
@@ -53,7 +53,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-box-plot-rating-by-author.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-box-plot-rating-by-author.png" alt="Ratings by author" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-box-plot-rating-by-author.png" alt="Ratings by author" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Ratings by author box plot.</strong> Just a quick box plot to see the rating distribution by author.
@@ -64,7 +64,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-num-books-vs-rating.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-num-books-vs-rating.png" alt="# of books vs rating" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-num-books-vs-rating.png" alt="# of books vs rating" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Rating vs # of books.</strong> Doesn't look as if the # of books an author has written on Oyster has any relationship with their rating. I thought maybe authors with higher average ratings would appear more frequently.
@@ -75,7 +75,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-authors-author-ratings-over-time.png">
-        <amp-img src="{{ IMG_PATH }}oyster-authors-author-ratings-over-time.png" alt="Rating over time by author" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-authors-author-ratings-over-time.png" alt="Rating over time by author" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Rating over time by author.</strong> This was a reach but I wanted to see whether an author was most likely to have better ratings earlier or later in his or her career. In this case it looks as if the publish date isn't the original authorship date so not a very useful analysis.
@@ -86,7 +86,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-pub-ratings.png">
-        <amp-img src="{{ IMG_PATH }}oyster-pub-ratings.png" alt="Publisher ratings" width="600" height="1200" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-pub-ratings.png" alt="Publisher ratings" width="600" height="1200" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Publisher ratings.</strong> Similar to authors, we can take a look to see whether some publishers have significantl higher ratings than others. This is a bit more useful since there's a lot more data per publisher than there is per author. I couldn't make much sense of the results here.
@@ -97,7 +97,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-num-pages-by-decade.png">
-        <amp-img src="{{ IMG_PATH }}oyster-num-pages-by-decade.png" alt="# of pages by decade" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-num-pages-by-decade.png" alt="# of pages by decade" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Avg number of pages by decade.</strong> I wanted to see whether books were getting longer or shorter so did a quick plot of the average number of published pages by decade since the year was too fine. The publish dates aren't entirely accurate so I wouldn't read too much into this.
@@ -108,7 +108,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-rating-by-decade.png">
-        <amp-img src="{{ IMG_PATH }}oyster-rating-by-decade.png" alt="Avg rating by decade" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-rating-by-decade.png" alt="Avg rating by decade" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Avg rating by decade.</strong> Similar to the previous plot but looking at the average rating rather than the number of pages. Seems to be pretty steady to me although this may be due to the dataset being a curated list of top books.
@@ -119,7 +119,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-rating-vs-date.png">
-        <amp-img src="{{ IMG_PATH }}oyster-rating-vs-date.png" alt="Rating vs date" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-rating-vs-date.png" alt="Rating vs date" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Rating vs date.</strong> Another way to look at the previous plot but plotting each book rather than the average by decade. Not much going on here although this may be due to the biased dataset and flawed publish dates.
@@ -130,7 +130,7 @@ I did manage to get a set of over 4,000 books and decided to have fun with it.
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}oyster-rating-vs-pages.png">
-        <amp-img src="{{ IMG_PATH }}oyster-rating-vs-pages.png" alt="Rating vs # pages" width="600" height="600" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}oyster-rating-vs-pages.png" alt="Rating vs # pages" width="600" height="600" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Rating vs number of pages.</strong> This is an interesting one - are longer books more popular? Most of the books are clustered around a couple of hundred pages but longer books do tend to have a higher average rating. I'm not sure why this would be the case but would guess that only someone who's already interested in a long book would read it or stick with it enough to leave a review.

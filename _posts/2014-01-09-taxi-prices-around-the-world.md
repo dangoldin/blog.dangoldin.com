@@ -18,7 +18,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-mile-vs-distance.png">
-        <amp-img src="{{ IMG_PATH }}taxi-mile-vs-distance.png" alt="USD per minute vs USD per mile" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-mile-vs-distance.png" alt="USD per minute vs USD per mile" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>USD per minute vs USD per mile.</strong> The most obvious check is to see the most and least expensive cities by the two dimensions we have - distance and time. The results are expected - Asian and African cities tend to be the least expensive and European cities being the most expensive. Within Asia there's pretty significant variance with South and Southeast Asia being the cheapest but Seoul and Tokyo being more expensive. A city that stood out was Lagos - it has the one of the lowest per minute fares but one of the largest per mile fares. I don't know why this is the case but I suspect it has something to do with t sure why this is the case other than the roads being in poor condition and the price needing to take that into account.
@@ -29,7 +29,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-fixed-time-10.png">
-        <amp-img src="{{ IMG_PATH }}taxi-fixed-time-10.png" alt="Keep time fixed at 10 minutes but vary distance" width="800" height="1200" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-fixed-time-10.png" alt="Keep time fixed at 10 minutes but vary distance" width="800" height="1200" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Keep time fixed at 10 minutes but vary distance.</strong> The idea here is to look at how quickly the prices increase by distance for different cities. This echoes the previous chart of Europe and Lagos having the highest per mile fares.
@@ -40,7 +40,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-fixed-distance-4.png">
-        <amp-img src="{{ IMG_PATH }}taxi-fixed-distance-4.png" alt="Keep distance fixed at 4 miles but vary time" width="800" height="1200" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-fixed-distance-4.png" alt="Keep distance fixed at 4 miles but vary time" width="800" height="1200" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Keep distance fixed at 4 miles but vary time.</strong> Similar to the previous plot but look at the way price will increase as a function of time. Not much new data here.
@@ -51,7 +51,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-max-miles-max-minutes.png">
-        <amp-img src="{{ IMG_PATH }}taxi-max-miles-max-minutes.png" alt="What does $10 get you?" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-max-miles-max-minutes.png" alt="What does $10 get you?" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>What does $10 get you?</strong> Another way to look at expenses is to see the maximum time and distance $10 will get you in different cities. This is similar to looking at the inverse of the per minute and per mile prices.
@@ -62,7 +62,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-max-miles-max-minutes-zoom.png">
-        <amp-img src="{{ IMG_PATH }}taxi-max-miles-max-minutes-zoom.png" alt="What does $10 get you (zoomed)?" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-max-miles-max-minutes-zoom.png" alt="What does $10 get you (zoomed)?" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>What does $10 get you (zoomed)?</strong> This zooms in the bottom left corner of the previous plot. Turns out that having $10 in an expensive city doesn't go very far.
@@ -73,7 +73,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-mile-min-ratios.png">
-        <amp-img src="{{ IMG_PATH }}taxi-mile-min-ratios.png" alt="Distribution of $ per mile vs $ per min ratios" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-mile-min-ratios.png" alt="Distribution of $ per mile vs $ per min ratios" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Ratio of $ per mile vs $ per minute.</strong> The goal was to see how many times a mile was more expensive than a minute for the different cities. The reason we see such high ratios is that the price of gas has a lower variance from city to city than the cost of labor - this leads to cities with low labor casts having significantly higher ratios.
@@ -84,7 +84,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-heatmap-fares.png">
-        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares.png" alt="Heatmap of the fares as a function of time and distance by city" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares.png" alt="Heatmap of the fares as a function of time and distance by city" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Heatmap of fares as a function of time and distance.</strong> I wanted this to be a bit more insightful in order to be able to compare all cities against each other across both dimensions but the extreme differences make it difficult to visualize. This highlights once more how expensive Zurich is compared to the other cities. The heatmaps below cluster the cities by the sum of price per mile and price per minute in order to visualize them along similar price scales.
@@ -95,7 +95,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-heatmap-fares-0.png">
-        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-0.png" alt="Heatmap of the fares as a function of time and distance by city 1st" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-0.png" alt="Heatmap of the fares as a function of time and distance by city 1st" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Heatmap of the fares as a function of time and distance by city (1st quartile).</strong>
@@ -106,7 +106,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-heatmap-fares-1.png">
-        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-1.png" alt="Heatmap of the fares as a function of time and distance by city 2nd" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-1.png" alt="Heatmap of the fares as a function of time and distance by city 2nd" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Heatmap of the fares as a function of time and distance by city (2ng quartile).</strong>
@@ -117,7 +117,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-heatmap-fares-2.png">
-        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-2.png" alt="Heatmap of the fares as a function of time and distance by city 3rd" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-2.png" alt="Heatmap of the fares as a function of time and distance by city 3rd" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Heatmap of the fares as a function of time and distance by city (3rd quartile).</strong>
@@ -128,7 +128,7 @@ Using this information we can run a few interesting analyses:
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}taxi-heatmap-fares-3.png">
-        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-3.png" alt="Heatmap of the fares as a function of time and distance by city 4th" width="800" height="800" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}taxi-heatmap-fares-3.png" alt="Heatmap of the fares as a function of time and distance by city 4th" width="800" height="800" layout="responsive"></amp-img>
       </a>
       <p>
         <strong>Heatmap of the fares as a function of time and distance by city (4th quartile).</strong>

@@ -85,7 +85,7 @@ zoom(routes, hoboken_lat, hoboken_long, radius)
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}rk-world-map.png">
-        <amp-img src="{{ IMG_PATH }}rk-world-map.png" alt="World Map visualization" width="1288" height="664" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}rk-world-map.png" alt="World Map visualization" width="1288" height="664" layout="responsive"></amp-img>
       </a>
       <p>
         A few specks here and there - clearly visible runs in the NY/NJ area as well as some in Virginia, New Orleans, and San Francisco. Can also see a few runs in India.
@@ -96,7 +96,7 @@ zoom(routes, hoboken_lat, hoboken_long, radius)
   <li>
     <div class="thumbnail">
       <a href="{{ IMG_PATH }}rk-hoboken-nyc.png">
-        <amp-img src="{{ IMG_PATH }}rk-hoboken-nyc.png" alt="Zoom in on Hoboken/NYC runs" width="681" height="687" layout="responsive">
+        <amp-img src="{{ IMG_PATH }}rk-hoboken-nyc.png" alt="Zoom in on Hoboken/NYC runs" width="681" height="687" layout="responsive"></amp-img>
       </a>
       <p>
         Zoom in on my runs in the Hoboken/NYC area. I don't have the lat/long coordinates here but if I had them it would be pretty easy to generate a map overlay.

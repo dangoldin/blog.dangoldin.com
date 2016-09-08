@@ -16,14 +16,14 @@ In my case, I participated in a fantasy football draft and wanted to share the l
   <li class="span8">
     <div class="thumbnail">
     <p>1. The page we want to parse - please ignore the quality of my fantasy team.</p>
-      <amp-img src="{{ IMG_PATH }}ff-roster.jpeg" alt="My fantasy roster" width="1038" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}ff-roster.jpeg" alt="My fantasy roster" width="1038" height="800" layout="responsive"></amp-img>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
     	<p>2. Use the Chrome "Inspect Element" feature to figure out the HTML/CSS of the element we're interested in. In this case, the element containing player name has the class value “name playernote”.</p>
-      <amp-img src="{{ IMG_PATH }}ff-roster-source.jpeg" alt="Using inspect element to identify the HTML/CSS for the elements" width="1370" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}ff-roster-source.jpeg" alt="Using inspect element to identify the HTML/CSS for the elements" width="1370" height="800" layout="responsive"></amp-img>
     </div>
   </li>
 
@@ -32,7 +32,7 @@ In my case, I participated in a fantasy football draft and wanted to share the l
     	<p>3. Run a JavaScript command to get all the HTML elements that have those classes.
       	{% highlight javascript %}document.getElementsByClassName('name playernote'){% endhighlight %}
       </p>
-      <amp-img src="{{ IMG_PATH }}ff-roster-get-players.jpeg" alt="JavaScript to get the elements matching our CSS query" width="4166" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}ff-roster-get-players.jpeg" alt="JavaScript to get the elements matching our CSS query" width="4166" height="800" layout="responsive"></amp-img>
     </div>
   </li>
 
@@ -41,7 +41,7 @@ In my case, I participated in a fantasy football draft and wanted to share the l
     	<p>4. Store those HTML elements in a variable so we can quickly iterate through the list.
 		{% highlight javascript %}players = document.getElementsByClassName('name playernote'){% endhighlight %}
       </p>
-      <amp-img src="{{ IMG_PATH }}ff-roster-get-players-2.jpeg" alt="Store the elements in a variable" width="4592" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}ff-roster-get-players-2.jpeg" alt="Store the elements in a variable" width="4592" height="800" layout="responsive"></amp-img>
     </div>
   </li>
 
@@ -50,7 +50,7 @@ In my case, I participated in a fantasy football draft and wanted to share the l
     	<p>5. Use JavaScript to go through the previous list and extract the player name. Then we can just copy and paste the list of names without having to deal with the formatting issues.
       	{% highlight javascript %}for (var i = 0; i < players.length; i++) { console.log( players[i].textContent ); }{% endhighlight %}
       </p>
-      <amp-img src="{{ IMG_PATH }}ff-roster-get-player-names.jpeg" alt="Iterate through the list to extract the player name" width="3838" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}ff-roster-get-player-names.jpeg" alt="Iterate through the list to extract the player name" width="3838" height="800" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

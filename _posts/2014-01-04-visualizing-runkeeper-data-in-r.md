@@ -15,7 +15,7 @@ PS. It's great when web services allow users to export their data and wish more 
 <ul class="thumbnails">
 	<li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-distance-cumulative.png" alt="Cumulative distance" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-distance-cumulative.png" alt="Cumulative distance" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Cumulative distance. You can see a few flat areas in February and November when I took a break due to some minor injuries.
       </p>
@@ -24,7 +24,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-distance-month.png" alt="Distance run by month" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-distance-month.png" alt="Distance run by month" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Distance run by month. Unexpected drop in November due to a break but pretty solid otherwise.
       </p>
@@ -33,7 +33,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-distance-week.png" alt="Distance run by week" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-distance-week.png" alt="Distance run by week" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Distance run by week. Not much new information here that's not covered in the monthly graph.
       </p>
@@ -42,7 +42,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-time-cumulative.png" alt="Cumulative time (hours)" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-time-cumulative.png" alt="Cumulative time (hours)" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Cumulative time. Very similar shape to that of cumulative distance.
       </p>
@@ -51,7 +51,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-time-vs-distance-cumulative.png" alt="Cumulative time vs distance (normalized)" width="800" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-time-vs-distance-cumulative.png" alt="Cumulative time vs distance (normalized)" width="800" height="800" layout="responsive"></amp-img>
       <p>
       	Cumulative time vs distance. Superimpose one on top of the other to compare the shapes. Started off slowly but started getting faster in October.
       </p>
@@ -60,7 +60,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-speed-daily.png" alt="Speed by run" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-speed-daily.png" alt="Speed by run" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Speed by run. I got significantly faster in October but slowed down again in December.
       </p>
@@ -69,7 +69,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-speed-month-qs.png" alt="Speed by month by distance quantile" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-speed-month-qs.png" alt="Speed by month by distance quantile" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Speed by month by distance quantile. The idea here was to look at my improvement in speed but controlling for distance. Echoes the previous chart showing my speed improvement in Oct for the longer distances.
       </p>
@@ -78,7 +78,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-speed-distribution-qs.png" alt="Speed distribution by distance quantile" width="800" height="600" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-speed-distribution-qs.png" alt="Speed distribution by distance quantile" width="800" height="600" layout="responsive"></amp-img>
       <p>
       	Speed distribution by distance quantile. Another view that looks at the distribution of my speeds for all runs in a given distance quantile. Not much here but I was expecting to see that I'd have a faster pace for shorter runs.
       </p>
@@ -87,7 +87,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-speed-vs-distance.png" alt="Speed vs Distance" width="800" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-speed-vs-distance.png" alt="Speed vs Distance" width="800" height="800" layout="responsive"></amp-img>
       <p>
       	Speed vs Distance scatter plot. Another way to look at the relationship between speed and distance but not many new insights here. Slight correlation between speed and distance. This is pretty much because as I got faster I started doing longer runs. It'll be interesting to see how this changes in 2014.
       </p>
@@ -96,7 +96,7 @@ PS. It's great when web services allow users to export their data and wish more 
 
   <li class="span7">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}rk-speed-vs-distance-clusters.png" alt="Speed vs Distance clustered" width="800" height="800" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}rk-speed-vs-distance-clusters.png" alt="Speed vs Distance clustered" width="800" height="800" layout="responsive"></amp-img>
       <p>
       	Speed vs Distance scatter plot clustered. An attempt at clustering the runs by speed and distance. In this case they were basically clustered by distance since the speed didn't vary significantly.
       </p>

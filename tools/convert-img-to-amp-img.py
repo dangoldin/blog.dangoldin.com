@@ -27,6 +27,7 @@ def process_file(fn, do_write = False):
                     print img_el, '=>', replace_str
                     t = t.replace(img_el, replace_str)
                     if do_write:
+                        # Weird to do this while this file is already open
                         with open(fn, 'w') as fo:
                             fo.write(t)
         if len(img_elements):

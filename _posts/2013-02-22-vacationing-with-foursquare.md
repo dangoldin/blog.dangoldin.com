@@ -12,7 +12,7 @@ tags: ["#product"]
 <ul class="thumbnails">
   <li class="span6">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}nola-trip-map.png" alt="My NOLA trip map" width="640" height="383" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}nola-trip-map.png" alt="My NOLA trip map" width="640" height="383" layout="responsive"></amp-img>
     </div>
   </li>
 </ul>

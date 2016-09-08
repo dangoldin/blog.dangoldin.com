@@ -51,14 +51,14 @@ wordcloud(corpus, max.words = 100, random.order = FALSE, scale=c(1.5,0.5))
 <ul class="thumbnails">
   <li class="span8">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}wordcloud-tags.png" alt="Word cloud of tags" width="392" height="441" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}wordcloud-tags.png" alt="Word cloud of tags" width="392" height="441" layout="responsive"></amp-img>
       <p style="text-align:center;">Word cloud of the tags I use.</p>
     </div>
   </li>
 
   <li class="span8">
     <div class="thumbnail">
-      <amp-img src="{{ IMG_PATH }}wordcloud-keywords.png" alt="Wordcloud of keywords" width="462" height="461" layout="responsive">
+      <amp-img src="{{ IMG_PATH }}wordcloud-keywords.png" alt="Wordcloud of keywords" width="462" height="461" layout="responsive"></amp-img>
       <p style="text-align:center;">Word cloud of the keywords I use.</p>
     </div>
   </li>
