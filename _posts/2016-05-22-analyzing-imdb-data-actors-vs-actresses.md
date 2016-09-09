@@ -65,7 +65,7 @@ After getting the [IMDB data loaded](http://dangoldin.com/2016/05/21/analyzing-i
   <li class="span8">
     <div class="thumbnail">
       <amp-img src="{{ IMG_PATH }}gender-num-movies.png" alt="Number of movies by gender"  width="800" height="800" layout="responsive"></amp-img>
-      <p>For the last one I wanted to get a sense of whether actors are more likely to be in more movies than actresses. The chart here is a bit tough to read but it looks at the distribution of actors and actresses by the number of movies made. in this case the scale was massive since there were tons of people who've only been in a few movies so I had to normalize by taking the log. The effect is subtle but the fact that the tail for actors goes wider than the tail for actresses indicates that an average actor is more likely to appear in multiple movies than the average actress.
+      <p>For the last one I wanted to get a sense of whether actors are more likely to be in more movies than actresses. The chart here is a bit tough to read but it looks at the distribution of actors and actresses by the number of movies made. in this case the scale was massive since there were tons of people who've only been in a few movies so I had to normalize by taking the log. The effect is subtle but the fact that the tail for actors goes wider than the tail for actresses indicates that an average actor is more likely to appear in multiple movies than the average actress.</p>
     </div>
   </li>
 </ul>
