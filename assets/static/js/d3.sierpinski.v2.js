@@ -1,5 +1,7 @@
-$(document).ready(function() {
-  $('#id-sierpinski-generate').click(function() {
+document.addEventListener('DOMContentLoaded',
+  function() {
+  document.getElementById('id-sierpinski-generate').addEventListener('click', function(e) {
+    e.preventDefault();
     drawShape();
     return false;
   });
@@ -37,26 +39,30 @@ $(document).ready(function() {
           py = cy + r * Math.sin(theta * i);
       points.push([px, py]);
     }
-    console.log(points);
+    // console.log(points);
     return points;
   }
 
   function drawShape() {
-    $('svg').remove();
+    var toRemove = document.getElementsByTagName('SVG');
+    if (toRemove.length) {
+      toRemove[0].remove();
+    }
 
     var width = 600,
         height = 600;
+
+    var form = document.forms['sierpinski-options-form'];
+    var formData = new FormData(form);
 
     var svg = d3.select("#canvas")
       .append("svg")
       .attr("width", width)
       .attr("height", height),
-      num_sides = parseFloat($('#id-sierpinski-sides').val()),
-      ratio = parseFloat($('#id-sierpinski-ratio').val()),
+      num_sides = parseFloat(formData.get('sides')),
+      ratio = parseFloat(formData.get('ratio')),
       vertices = generateVertices(width, height, num_sides),
       s = randomPoint(width, height);
-
-    console.log(vertices);
 
     for (var i = 0; i < num_sides; i++) {
       drawPoint(svg, vertices[i]);
@@ -64,8 +70,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < 10000; i++) {
       var s = nextPoint(s, vertices, ratio);
-      console.log(s);
       drawPoint(svg, s);
     }
   }
-});
+}(), false);

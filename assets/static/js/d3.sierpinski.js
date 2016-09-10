@@ -1,4 +1,5 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',
+  function(){
   function drawPoint(svg, p) {
     svg.append("circle")
       .attr("cx", p[0])
@@ -89,7 +90,7 @@ $(document).ready(function() {
 
   for (var i = 0; i < 10000; i++) {
     var p = nextTrianglePoint(p, p1, p2, p3);
-    console.log(p);
+    // console.log(p);
     drawPoint(svg, p);
   }
-});
+}(), false);

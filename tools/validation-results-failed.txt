@@ -1,17 +1,16 @@
-http://localhost:4000/2015/01/18/fun-with-githubs-map-tools/:941:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2015/01/18/fun-with-githubs-map-tools/:943:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/09/21/software-is-good-enough-why-improve-the-hardware/:940:2 The tag 'iframe' is disallowed.
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:947:6 The attribute 'style' may not appear in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:955:6 The attribute 'style' may not appear in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:963:0 The mandatory attribute 'action' is missing in tag 'form'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:963:0 The mandatory attribute 'target' is missing in tag 'form'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:988:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:990:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:992:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:1117:7 The tag 'amp-form extension .js script' is missing or incorrect, but required by 'label'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
-http://localhost:4000/2014/02/21/more-sierpinski-fun/:1117:7 The tag 'amp-form extension .js script' is missing or incorrect, but required by 'input'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
-http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:957:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:959:0 The tag 'script' is disallowed except in specific forms.
-http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:961:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2015/01/18/fun-with-githubs-map-tools/:952:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2015/01/18/fun-with-githubs-map-tools/:954:0 The tag 'script' is disallowed except in specific forms.
 
-http://localhost:4000/2014/01/09/taxi-prices-around-the-world/:942:564 The attribute 'targt' may not appear in tag 'a'. (see https://www.ampproject.org/docs/reference/spec.html#links)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:958:6 The attribute 'style' may not appear in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:966:6 The attribute 'style' may not appear in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/amp-img.html)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:974:0 The mandatory attribute 'action' is missing in tag 'form'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:974:0 The mandatory attribute 'target' is missing in tag 'form'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:999:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:1001:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:1003:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:1128:7 The tag 'amp-form extension .js script' is missing or incorrect, but required by 'label'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
+http://localhost:4000/2014/02/21/more-sierpinski-fun/:1128:7 The tag 'amp-form extension .js script' is missing or incorrect, but required by 'input'. (see https://www.ampproject.org/docs/reference/extended/amp-form.html)
+
+http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:968:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:970:0 The tag 'script' is disallowed except in specific forms.
+http://localhost:4000/2014/02/19/sierpinski-triangle-in-d3/:972:0 The tag 'script' is disallowed except in specific forms.

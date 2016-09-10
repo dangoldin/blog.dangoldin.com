@@ -8,9 +8,10 @@ category:
 tags: ["#meta"]
 ---
 {% include setup %}
-<p>
-  <iframe width="640" height="480" src="//www.youtube.com/embed/0lvMgMrNDlg?rel=0" frameborder="0" allowfullscreen></iframe>
-</p>
+<amp-youtube
+    data-videoid="0lvMgMrNDlg"
+    layout="responsive"
+    width="640" height="480"></amp-youtube>
 
 Earlier this morning I watched a Steve Jobs talk from 1980 where he discusses Apple and the relationship between hardware and software. An interesting piece comes at the 12:30 mark where he addresses the question “Right now software is powerful enough, what impact will improvements in hardware have on software?” His answer is great: “[We will] start chewing up power specifically to help that one on one interaction go smoothly and specifically not to help the calculation...  start applying that power to remove that barrier”
 

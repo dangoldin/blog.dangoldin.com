@@ -12,6 +12,8 @@ After discovering <a href="https://github.com/blog/1772-diffable-more-customizab
 
 <script src="https://embed.github.com/view/geojson/dangoldin/map-fun/master/runs.2013.topo.json"></script>
 
-<script src="https://embed.github.com/view/geojson/dangoldin/map-fun/master/runs.2014.topo.json"></script>
+<script src="https://embed.github.com/view/geojson/dangoldin/map-fun/master/runs.2013.topo.json"></script>
+
+<!-- <script src="https://embed.github.com/view/geojson/dangoldin/map-fun/master/runs.2014.topo.json"></script> -->
 
 The entire process was painless and quick. The geojson format was straightforward to generate and GitHub does a great job rendering it. The entire process took an hour and I had to read the <a href="https://github.com/mbostock/topojson/wiki/Command-Line-Reference" target="_blank">topojson utility docs</a> to figure out how simplification worked. One thing I didn't get to do was explore GitHub's map diffs but will try to in the next couple of weeks.
