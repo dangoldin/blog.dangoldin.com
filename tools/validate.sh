@@ -1,4 +1,4 @@
-amphtml-validator http://dangoldin.com/about
+amphtml-validator http://dangoldin.com/about/
 amphtml-validator http://dangoldin.com/tags/
 amphtml-validator http://dangoldin.com/2016/09/08/amp-migration-scripts/
 amphtml-validator http://dangoldin.com/2016/09/05/visualizing-fantasy-football-stats/

@@ -9,7 +9,9 @@ tags: ["#product", "#pricing"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}netflix-logo.jpg" alt="Netflix Logo" style="float:right;"  width="200" height="200" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}netflix-logo.jpg" alt="Netflix Logo" width="200" height="200" layout="responsive"></amp-img>
+</div>
 
 <p>
 <a href="http://netflix.com/" target="_blank">Netflix</a> recently reintroduced <a href="http://blog.netflix.com/2013/08/make-netflix-your-own-with-profiles.html" target="_blank">profiles</a> so now each household member can get their own recommendations, recently watched items, and instant queue rather than being forced to share the same polluted profile. This is an awesome win for Netflix customers but it’s been bugging me that they didn’t do this sooner; it’s such an obvious feature that it should have been built as soon as Netflix realized that multiple family members would be sharing their account.

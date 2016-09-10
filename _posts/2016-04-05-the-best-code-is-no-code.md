@@ -14,11 +14,11 @@ To make this work you need code that’s clean, well architected, and accessible
 
 While writing this post I was reminded of a joke that emphasises this idea of minimizing work by focusing on what you’ve already done:
 
-<blockquote cite="https://www.reddit.com/r/Jokes/comments/36lys2/a_mathematician_was_interviewing_for_a_job/">A mathematician was interviewing for a job. The interviewer asks him - "You are walking towards your office and running late for a very important meeting and you glimpse a building on fire with people screaming for help. What will you do?". The mathematician thinks for a while and replies : "People's lives are more important than an office meeting. I would immediately call for a fire brigade and help the trapped to the best of my abilities". The interviewer seems to be impressed with the mathematician's answer and moves on to the last question. Just to check his sanity, she asks: "And what if the building is not on fire?"
+<blockquote cite="https://www.reddit.com/r/Jokes/comments/36lys2/a_mathematician_was_interviewing_for_a_job/">
+<p>A mathematician was interviewing for a job. The interviewer asks him - "You are walking towards your office and running late for a very important meeting and you glimpse a building on fire with people screaming for help. What will you do?". The mathematician thinks for a while and replies : "People's lives are more important than an office meeting. I would immediately call for a fire brigade and help the trapped to the best of my abilities". The interviewer seems to be impressed with the mathematician's answer and moves on to the last question. Just to check his sanity, she asks: "And what if the building is not on fire?"
 
-After a moment of thought, the mathematician replies with confidence: "I will set the building on fire. Now, I have reduced it to a problem that I have already solved before!"
+After a moment of thought, the mathematician replies with confidence: "I will set the building on fire. Now, I have reduced it to a problem that I have already solved before!"</p>
 
-<br/><br/>
 <cite>- <a href="https://www.reddit.com/user/ScottElliot">ScottElliot</a> on <a href="https://www.reddit.com/r/Jokes/comments/36lys2/a_mathematician_was_interviewing_for_a_job/">reddit</a>
 </cite>
 

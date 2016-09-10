@@ -8,14 +8,8 @@ category:
 tags: ["#meta"]
 ---
 {% include setup %}
-<ul class="thumbnails">
-  <li class="span7">
-    <div class="thumbnail" style="border:none;">
-      <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/ADWhiteReadingRoom%2C_CornellUniversity.jpg/1280px-ADWhiteReadingRoom%2C_CornellUniversity.jpg" alt="A.D. White Reading Room @ Cornell University"/>
-      <p class="center"><a href="http://www.flickr.com/photos/eflon/2874341070/in/set-72157607982619613">A.D White Library @ Cornell University by eflon</a></p>
-    </div>
-  </li>
-</ul>
+<amp-img src="{{ IMG_PATH }}cornell-ad-white.jpg" alt="A.D. White Reading Room @ Cornell University" width="700" height="466"></amp-img>
+<p class="caption"><a href="http://www.flickr.com/photos/eflon/2874341070/in/set-72157607982619613">A.D White Library @ Cornell University by eflon</a></p>
 
 For the first time in almost a decade I checked out a book from a library. I don’t know why I ever stopped - the experience is extremely simple and you’re able to read a book for free. I had a book on my Amazon wishlist for a couple of weeks that I held off on buying but was able to read it over the past week after a quick visit to the library.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automatically add a \"Follow on HN\" link"
+title: "Automatically add a “Follow on HN” link"
 description: "I wrote a simple plugin to automatically insert a Follow this discussion on HN link using client side Javascript"
 keywords: "coding, hacking, jQuery, javascript, hacker news"
 category:

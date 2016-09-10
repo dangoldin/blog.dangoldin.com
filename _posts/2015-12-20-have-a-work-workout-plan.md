@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Have a work \"workout\" plan"
+title: "Have a work “workout” plan"
 description: "Going to the gym every day will get you stronger and stronger but having a workout plan will make it even better. Now apply that philosophy to work where we spend more than 8 hours a day."
 keywords: "progress, self improvement, self awareness, working out"
 image_url:

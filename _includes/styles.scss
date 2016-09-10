@@ -502,6 +502,13 @@ ul.thumbnails {
       -webkit-hyphens: auto;
       -moz-hyphens: auto;
       hyphens: auto;
+
+      &.caption {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-top: 2px;
+        text-align: center;
+      }
     }
     /*a {
       color: #333333;
@@ -512,7 +519,7 @@ ul.thumbnails {
     }
     figure {
       margin: 0;
-      padding: 0 0 30px;
+      padding: 0;
     }
     figcaption {
       font-weight: 400;
@@ -534,7 +541,7 @@ ul.thumbnails {
       border-top: 1px solid #dddddd;
     }
     blockquote {
-      margin: 0 0 30px;
+      margin: 20px 0 20px;
       margin-left: -26px;
       border-left: 3px solid #57ad68;
       padding-left: 20px;
@@ -545,6 +552,9 @@ ul.thumbnails {
         mpadding-left: 20px;
         mmargin-left: -26px;
         padding-bottom: 3px;
+        font-size: 20px;
+        line-height: 1.3;
+        padding-bottom: 10px;
       }
     }
     ul, ol {
@@ -560,6 +570,32 @@ ul.thumbnails {
           padding-right: 5px;
           padding-left: 5px;
           margin: 0;
+
+          &.dense {
+            padding-top: 0;
+            margin-bottom: 2px;
+          }
+        }
+      }
+
+      li {
+        padding: 0;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 22px;
+        line-height: 1.59;
+        letter-spacing: -.002em;
+        margin-left: 30px;
+        margin-bottom: 2px;
+        padding-top: 2px;
+        p {
+          /*padding: 0 0 golden-ratio(1rem, 1);*/
+          padding: 0 10px 0 10px;
+        }
+
+        &.dense {
+          padding-top: 0;
+          margin-bottom: 2px;
         }
       }
 
@@ -567,21 +603,7 @@ ul.thumbnails {
         padding-top: 10px;
       }
     }
-    li {
-      padding: 0;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 22px;
-      line-height: 1.59;
-      letter-spacing: -.002em;
-      margin-left: 30px;
-      margin-bottom: 12px;
-      padding-top: 2px;
-      p {
-        /*padding: 0 0 golden-ratio(1rem, 1);*/
-        padding: 0 10px 0 10px;
-      }
-    }
+
     ol li {
       list-style-type: decimal;
     }
@@ -705,6 +727,16 @@ ul.thumbnails {
       color: #333333;
     }
   }
+}
+
+.right10 {
+  float:right;
+  padding-left: 10px;
+  min-width: 250px;
+}
+
+.video-holder {
+  padding: 5px 0 5px 0;
 }
 
 pre,code {

@@ -10,7 +10,9 @@ tags: ["#sql", "#code", "#data"]
 {% include setup %}
 In 2012 I did a [simple analysis of IMDB](http://dangoldin.com/2012/05/23/trend-of-actor-vs-actress-age-differences/) to analyze the change in actor and actresses’s ages over time. At that point I limited the analysis to the top 50 movies each decade and hacked together a quick script to crawl and scrape the IMDB analysis. A couple of weeks ago I came across a great [post by CuriousGnu](https://www.curiousgnu.com/imdb-age-distribution) that did a similar analysis across a larger set of movies but limited to movies since 2000. I reached out and they were kind enough to give me a DigitalOcean instance containing the data already loaded into MySQL. The analysis should be finished up tomorrow but I wanted to write this post up to share the mundane parts of the process. The janitorial part is critically important to an analysis and it’s important to get it right or the results will may be meaningless or even completely wrong. The [NY Times interviewed](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0) a variety of data scientists and came away with the conclusion that 50 to 80 percent of a data scientist’s time is spent cleaning the data. This is no exception and I wanted to provide a sense of the effort and thought that goes into getting data into a state that’s actually useful.
 
-<amp-img src="{{ IMG_PATH }}imdb-tables.png" alt="IMDB tables" style="float: right; margin-left: 10px; width:200px" width="203" height="459" layout="responsive"></amp-img>
+<div class="right10">
+    <amp-img src="{{ IMG_PATH }}imdb-tables.png" alt="IMDB tables" width="203" height="459"></amp-img>
+</div>
 
 Lucky for me I already had the data loaded and queryable in MySQL. Most of the time the data is scattered all over the place in a variety of different formats that require a slew of scripts to wrangle and manipulate the data into a useful format.
 
@@ -20,7 +22,9 @@ The first task was to get familiar with the data and I started by looking at sam
 round(((data_length + index_length) / 1024 / 1024),2) "Size in MB"
 FROM information_schema.TABLES WHERE table_schema = "imdb";{% endhighlight %}
 
-<amp-img src="{{ IMG_PATH }}imdb-data.png" alt="IMDB data" style="float: right; margin-left: 10px; width:300px" width="485" height="439" layout="responsive"></amp-img>
+<div class="right10">
+    <amp-img src="{{ IMG_PATH }}imdb-data.png" alt="IMDB data" width="485" height="439" layout="responsive"></amp-img>
+</div>
 
 The next step was figuring out the way the tables related to one another. Since the field names were obvious this was extremely straightforward. The only nuances came due to an unconventional naming scheme - for example the title table contains the list of movies but the other tables map to it via a movie_id column. Similarly, the name table contains people but it’s referenced via person_id in other tables. They key part here was starting with a movie I know and confirming that the results made sense. In my case I chose my favorite movie, The Rock, and made sure that the results of my query made sense.
 

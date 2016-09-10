@@ -8,7 +8,7 @@ category:
 tags: ["#product"]
 ---
 {% include setup %}
-<div style="float:right; width:240px;">
+<div class="right10">
   <amp-img src="{{ IMG_PATH }}twitter-moments-fail.png" alt="Content not available in your country" width="750" height="1334" layout="responsive"></amp-img>
 </div>
 

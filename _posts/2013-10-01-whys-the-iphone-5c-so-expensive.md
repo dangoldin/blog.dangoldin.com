@@ -22,6 +22,8 @@ tags: ["#product", "#pricing"]
 
 <p>Pricing products that are sold worldwide is a tough problem since every country has its own economic environment with unique shopping behaviors. This challenge is magnified for products that can easily be bought in one country and resold in another. The opportunities also vary significantly: the US is a mature smartphone market where carrier subsidies exist and make the buyer less price sensitive while in China many people are getting smartphones for the first time and lack carrier subsidies that will help reduce the initial sale price. We’ll just have to wait to see whether this was the right pricing decision.</p>
 
-<amp-img src="{{ IMG_PATH }}economist-pricing.jpg" alt="Economist decoy effect pricing" style="float:right; width: 350px;" width="432" height="337" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}economist-pricing.jpg" alt="Economist decoy effect pricing" width="432" height="337" layout="responsive"></amp-img>
+</div>
 
 <p>Note: This reminded me a pricing table the Economist had a while back that looked like an error. There were three options: 1) a web-only subscription for $59, 2) a print subscription for $125, and 3) a print and web subscription for $125. In this case, the last two options were the same price but option 3 offered more value so it was clearly better than option 2. Yet by having option 2, the Economist got people to compare option 3 against option 2 rather than option 3 against option 1. This phenomenon is called the “<a href="http://en.wikipedia.org/wiki/Decoy_effect" target="_blank">Decoy effect</a>” and worth understanding, especially if you’re a marketer.</p>

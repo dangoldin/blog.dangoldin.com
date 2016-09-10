@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A MySQL \"GROUP BY\" nuance"
+title: "A MySQL “GROUP BY” nuance"
 description: "Be careful when using the GROUP BY in MySQL on a derived field with the same name as a column. Instead of the derived field MySQL will use the column name."
 keywords: "mysql, group by, querying"
 image_url:

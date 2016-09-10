@@ -10,9 +10,9 @@ tags: ["#product"]
 {% include setup %}
 The more I use Snapchat the more obvious the potential. The way the product has evolved reminds me of Facebook’s history. Facebook started simply as a profile page for Ivy League college students but due to strong execution and brilliant product decisions has grown into the current behemoth. Snapchat is on a similar path - the initial version was a simple ephemeral photo sharing app but the recent updates seem frequent and massively impactful.
 
-<div style="float:right; width:240px;">
+<div class="right10">
   <amp-img src="{{ IMG_PATH }}snapchat-trailer-ad.png"  width="750" height="1334" layout="responsive"></amp-img>
-  <p style="text-align:center; font-size: 18px;">Movie tickets within Snapchat</p>
+  <p class="caption">Movie tickets within Snapchat</p>
 </div>
 
 Earlier today I was messing around and spotted a movie trailer ad for Swiss Army Man that was followed by an option to swipe up to buy the movie tickets that felt native to Snapchat. I didn’t have to click to go to another app and it felt natural to just swipe to get to the next step. And this was a simple case of buying movie tickets. I can imagine this flow expanding to other scenarios that follow a powerful ad with an immediate transaction. This echoes WeChat - the powerhouse app in China that’s an unholy mix of a [social network, a payments platform, and an app ecosystem](http://a16z.com/2015/08/06/wechat-china-mobile-first/). There’s no equivalent of WeChat outside of China and I suspect most think the replacement will look like a WeChat clone. Snapchat feels completely different yet has the potential to be more. WeChat’s foundation is a third party app ecosystem that’s built on top of text while Snapchat is almost entirely visual and asserts a high bar for third party experiences.

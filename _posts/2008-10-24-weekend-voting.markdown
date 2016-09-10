@@ -129,4 +129,3 @@ tags: ["#datascience"]
 </tbody></table>
 
 <p>It does seem as if they are on to something - the average turnout for weekday election days was 76% while the average turnout for weekend election days was 84%. This wasn't a very rigorous examination and I am sure there are many more issues that factor in to the voting process but it does make intuitive sense.</p>
-<div class="zemanta-pixie" style="margin-top: 10px; height: 15px;"><a class="zemanta-pixie-a" title="Zemified by Zemanta" href="http://reblog.zemanta.com/zemified/7424159e-d737-4013-ab34-f0ed3fd5720c/"><img class="zemanta-pixie-img" style="border: medium none; float: right;" src="http://img.zemanta.com/reblog_e.png?x-id=7424159e-d737-4013-ab34-f0ed3fd5720c" alt="Reblog this post [with Zemanta]" /></a></div>

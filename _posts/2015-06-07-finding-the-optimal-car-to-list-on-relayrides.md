@@ -8,7 +8,7 @@ category:
 tags: ["#data", "#dataviz"]
 ---
 {% include setup %}
-After discovering and browsing <a href="https://relayrides.com/" target="_blank">RelayRides</a> I noticed that there were some users that had multiple cars available for rent. Clearly they weren’t using each of their cars and were using RelayRides exclusively as a revenue generating business rather than renting a car out when it wasn’t being used. This got me thinking about what the best car would be to rent on RelayRides if my goal was solely to maximize my return.
+After discovering and browsing [RelayRides](https://relayrides.com/) I noticed that there were some users that had multiple cars available for rent. Clearly they weren’t using each of their cars and were using RelayRides exclusively as a revenue generating business rather than renting a car out when it wasn’t being used. This got me thinking about what the best car would be to rent on RelayRides if my goal was solely to maximize my return.
 
 There were only a couple of factors at play here: the initial cost of the car, the price the car will rent at, and how often the car is rented. By combining these values we can come up with a ratio of car price to expected revenue per day. The challenge was in getting this data but it turned out to be surprisingly easy.
 
@@ -30,4 +30,4 @@ Combining the RelayRides data with the Edmunds API and doing some simple math ga
   <amp-img src="{{ IMG_PATH }}car-price-vs-daily-rate.png" alt="Car prive vs daily rental rate"  width="828" height="617" layout="responsive"></amp-img>
 </div>
 
-As usual, the code’s up on <a href="https://github.com/dangoldin/relay-rides-analysis" target="_blank">GitHub</a> and I’d love to hear ideas or thoughts on how to improve the code or the analysis.
+As usual, the code’s up on [GitHub](https://github.com/dangoldin/relay-rides-analysis) and I’d love to hear ideas or thoughts on how to improve the code or the analysis.

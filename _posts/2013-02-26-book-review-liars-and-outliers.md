@@ -9,7 +9,9 @@ tags: ["#books"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}liars-and-outliers-cover.jpg" alt="Liars and Outliers Book Cover" style="float:right;" width="200" width="600" height="900" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}liars-and-outliers-cover.jpg" alt="Liars and Outliers Book Cover" width="200" width="600" height="900"></amp-img>
+</div>
 
 I’ve been a fan of Bruce Schneier ever since I read his <a href="http://www.schneier.com/blog/archives/2009/11/beyond_security.html" target="_blank">post about security theater</a> in the post 9/11 world. As soon as I discovered that he wrote a book, <a href="http://www.amazon.com/Liars-Outliers-Enabling-Society-Thrive/dp/1118143302">Liars and Outliers</a>, I added it to my to-read list and just finished reading it over the weekend. It’s one of those books that is obvious as you read it but spawns a ton of thoughts. He develops a framework that he uses to analyze security and trust in individuals, organizations, and differently-sized societies.
 

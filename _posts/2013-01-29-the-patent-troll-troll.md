@@ -8,14 +8,10 @@ category:
 tags: ["#meta"]
 ---
 {% include setup %}
-<ul class="thumbnails">
-  <li class="span6 offset1">
-    <div class="thumbnail" style="border:none;">
-      <amp-img src="{{ IMG_PATH }}patent-troll.jpg" alt="Patent troll" width="400" height="400" layout="responsive"></amp-img>
-      <p class="center"><a href="http://www.article-3.com/fending-off-trolls-and-avoiding-elephants-99273">A Patent Troll</a></p>
-    </div>
-  </li>
-</ul>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}patent-troll.jpg" alt="Patent troll" width="400" height="400"></amp-img>
+  <p class="caption"><a href="http://www.article-3.com/fending-off-trolls-and-avoiding-elephants-99273">A Patent Troll</a></p>
+</div>
 
 <p><a href="http://arstechnica.com/tech-policy/2013/01/how-newegg-crushed-the-shopping-cart-patent-and-saved-online-retail/">Newegg recently defended</a> itself against a patent troll that sued them over a shopping cart patent. As a result, the patent was invalidated and Soverain Software will lose $2.5M from this and the $18M they won in 2011 from Victoria’s Secret and Avon. Unfortunately, they’ll still keep the tens of millions of dollars they “earned” in earlier years. Since virtually every ecommerce site has a shopping cart feature you’d think that this patent would have been invalidated sooner.</p>
 

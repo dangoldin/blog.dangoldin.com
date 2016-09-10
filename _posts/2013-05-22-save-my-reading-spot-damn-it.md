@@ -9,7 +9,9 @@ tags: ["#design"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}single-page.png" alt="A typical view as single page option" style="float:right;" width="400" height="128" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}single-page.png" alt="A typical view as single page option" width="400" height="128"></amp-img>
+</div>
 
 When reading a long form piece, I favor the single-page view. Unfortunately, I usually don’t find out that it’s longer than a page until I’ve finished the first page. At that point, I switch to the single page view which causes the entire page to reload and I have to skim the page to find the spot where I stopped reading.
 

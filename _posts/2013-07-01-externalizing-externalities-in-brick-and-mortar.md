@@ -9,7 +9,9 @@ tags: ["#product", "#meta"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}biergarten-ipad.jpg" style="float:right; width:300px;" alt="The iPad at the Laguardia Biergarten"  width="600" height="800" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}biergarten-ipad.jpg" alt="The iPad at the Laguardia Biergarten"  width="600" height="800" layout="responsive"></amp-img>
+</div>
 
 Last week, I had a morning flight out of Laguardia Airport and being into all things tech decided to grab a coffee at a place called Biergarten since they had iPads at every seat. Turned out that the only way to order and pay was by using the provided iPad with the attached credit card reader. I had 30 minutes to kill before my flight and decided to spend it observing the interactions others had with this ordering system.
 
@@ -19,4 +21,4 @@ I suspect no one actually benefits from this sort of setup. The supposed benefit
 
 Essentially, the company is trying to externalize the cost of serving customers to the customers without taking into account their experience and frustration. You want to make it as easy as possible for people to give you their money and forcing technology down your customers’ throats isn’t always the answer. As optimistic as I am about technology making things easier, it’s going to be difficult for brick and mortar places to move to a self serve model. It’s simply easier to give someone cash or a credit card and have them do the work than doing it yourself.
 
-<amp-img src="{{ IMG_PATH }}biergarten.jpg" alt="The scene at the Laguardia Biergarten"  width="600" height="800" layout="responsive"></amp-img>
+<amp-img src="{{ IMG_PATH }}biergarten.jpg" alt="The scene at the Laguardia Biergarten" width="600" height="800" layout="responsive"></amp-img>

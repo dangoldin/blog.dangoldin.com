@@ -9,7 +9,9 @@ tags: ["#meta"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}momath-logo.gif" alt="MoMath logo" style="float:right; width: 300px;"  width="600" height="607" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}momath-logo.gif" alt="MoMath logo" width="600" height="607" layout="responsive"></amp-img>
+</div>
 
 Although I’ve been meaning to visit the <a href="http://momath.org/" target="_blank">Museum of Math</a> ever since it opened in December, I only got the chance to do it this Labor Day. I wanted to share my thoughts and encourage everyone who can to visit.
 
@@ -20,4 +22,4 @@ There were also a bunch of activities that were primarily software based. Two ex
 A museum should not be able to replaced with iPad apps and MoMath places too much emphasis on the software. They should move away from these apps and focus on the physical exploratory activities that cannot be recreated at home. I found that there was very little continuity between the exhibits and wish they did a better job curating so that lessons from one could be applied to another. This would limit the breadth but would make the experience more valuable. Similar to an art museum, they could have a base collection that never changes as well as exhibits that rotate every couple of months.
 
 The museum has been open for less than a year and I’m optimistic it will only improve. I only wish there were more math museums opening up.
-http://momath.org/
+

@@ -9,7 +9,9 @@ tags: ["#meta", "#product"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}google-accounts.png" alt="My Google Accounts" style="float:right;" width="332" height="460" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}google-accounts.png" alt="My Google Accounts" width="332" height="460"></amp-img>
+</div>
 
 Over the past year, I cofounded two startups and launched a bunch of side projects. Since they all had potential, I wanted to make each as standalone as possible and ended up with dedicated accounts for each. This meant that I had a flood of accounts for each, ranging from the various Google products to Sendgrid and AWS to Freshbooks and Quickbooks. Unsurprisingly, this turned out to be an unmanageable pain in the ass.
 

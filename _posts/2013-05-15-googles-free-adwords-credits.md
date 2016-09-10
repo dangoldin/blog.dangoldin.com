@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google's \"Free\" Adwords Credits"
+title: "Google's “free” Adwords credits"
 description: "Google offering free Adwords credits to businesses might have some pretty large effects on the auction marketplace and drive bids up."
 keywords: "Google, Adwords, auction, bidding, PPC"
 category:

@@ -9,7 +9,9 @@ tags: ["#datascience"]
 ---
 {% include setup %}
 
-<amp-img src="{{ IMG_PATH }}excel-logo-2013.png" alt="Excel 2013 logo" style="float:right; width: 200px;"  width="256" height="256" layout="responsive"></amp-img>
+<div class="right10">
+  <amp-img src="{{ IMG_PATH }}excel-logo-2013.png" alt="Excel 2013 logo" width="256" height="256" layout="responsive"></amp-img>
+</div>
 
 Excel has developed a reputation of being bloated, slow, error prone and used primarily by "business people" who don't have real quantitative skills. Just like anything else, Excel is a tool that can be misused but is significantly more useful than people give it credit for.
 
