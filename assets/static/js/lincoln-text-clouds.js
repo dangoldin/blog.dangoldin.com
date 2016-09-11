@@ -1,4 +1,5 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',
+(function() {
   var fill = d3.scale.category20();
 
   d3.csv("/assets/static/data/year-phrase-data.csv", function(error, data) {
@@ -11,12 +12,11 @@ $(document).ready(function() {
       word_data[d.year].push({ text: d.phrase, year: d.year, cnt: parseInt(d.cnt,10)});
     });
 
-    var keys = [];
-    $.each(word_data, function(key,val){ keys.push(key); });
+    var keys = ['1832-1845', '1846-1853', '1854-1859', '1861', '1865'];
 
-    keys = ['1832-1845', '1846-1853', '1854-1859', '1861', '1865'];
+    for (var i = 0; i < keys.length; i++) {
+      var year = keys[i];
 
-    $.map( keys, function(year){
       console.log(year);
       var words = word_data[year];
 
@@ -32,10 +32,8 @@ $(document).ready(function() {
         .fontSize(function(d) { return fontSize(d.cnt); })
         .on("end", draw)
         .start();
-    });
+    };
   });
-
-  // .fontSize(function(d) { return d.size; })
 
   function draw(words) {
     d3.select("#text-clouds")
@@ -64,4 +62,4 @@ $(document).ready(function() {
         })
         .text(function(d) { return d.text; });
   }
-});
+})(), false);

@@ -1,4 +1,5 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',
+(function() {
   var margin = {top: 20, right: 20, bottom: 60, left: 40},
       width = 600 - margin.left - margin.right,
       height = 400 - margin.top - margin.bottom;
@@ -62,4 +63,4 @@ $(document).ready(function() {
         .attr("y", function(d) { return y(d.cnt); })
         .attr("height", function(d) { return height - y(d.cnt); });
   });
-});
+})(), false);
