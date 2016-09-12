@@ -39,6 +39,17 @@
       </ul>
     </div>
 
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url={{ page.url | prepend: site.production_url | cgi_escape }}">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
     <!-- src="https://dangoldin-githubblog.disqus.com/embed.js"> -->
 
 <!--     <amp-iframe width="300" height="300"
