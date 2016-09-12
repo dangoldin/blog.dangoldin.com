@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
-
+    <!-- Virtuall everything from https://labs.tomasino.org/disqus-in-amp -->
     <head>
-
         <meta charset="utf-8">
         <title>Disqus AMP</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1">
@@ -12,13 +11,9 @@
                 padding: 0;
             }
         </style>
-
     </head>
-
     <body>
-
         <div id="disqus_thread"></div>
-
         <script>
             // From http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
             var QueryString = function () {
@@ -104,7 +99,5 @@
                 setInterval(checkSizeChange, mutationObserverAvailable ? 5000 : 500);
             })();
         </script>
-
     </body>
-
 </html>
