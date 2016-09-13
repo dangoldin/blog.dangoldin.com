@@ -41,6 +41,7 @@
 
             var url = QueryString.url;
             var identifier = QueryString.identifier;
+            var disqus_name = QueryString.disqus_name;
 
             var disqus_config = function () {
                 this.page.url = url;
@@ -50,7 +51,7 @@
             (function () {  // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
 
-                s.src = '//dangoldin-githubblog.disqus.com/embed.js';
+                s.src = disqus_name || '//dangoldin-githubblog.disqus.com/embed.js';
 
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
@@ -60,7 +61,7 @@
                 function checkSizeChange() {
                     var viewportHeight = window.innerHeight;
                     var contentHeight = document.getElementById('disqus_thread').clientHeight;
-          if (viewportHeight !== contentHeight && contentHeight > 100) {
+                    if (viewportHeight !== contentHeight && contentHeight > 100) {
                         window.parent.postMessage({
                             sentinel: 'amp',
                             type: 'embed-size',
