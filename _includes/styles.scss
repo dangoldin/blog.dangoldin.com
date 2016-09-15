@@ -135,7 +135,7 @@ ul.tags {
     padding: 0 $rs * 1;
   }
 
-  .page-links {
+/*  .page-links {
       display: block;
       position: absolute;
       top: 10px;
@@ -152,10 +152,10 @@ ul.tags {
           color: #333333;
         }
       }
-  }
+  }*/
 }
 
-.blog-header {
+/*.blog-header {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
@@ -181,7 +181,7 @@ ul.tags {
     color: #666666;
     font-weight: 300;
   }
-}
+}*/
 
 /* Added manually */
 a {
@@ -202,17 +202,17 @@ a {
 .avatar-section {
   display: flex;
   flex-direction: row;
-}
 
-.avatar-section li {
-    line-height: 23px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-}
-
-.avatar-section ul {
+  ul {
     list-style: none outside;
     margin-bottom: 20px;
+
+    li {
+      line-height: 23px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+    }
+  }
 }
 
 #avatar {
@@ -373,7 +373,7 @@ ul.thumbnails {
   }
 }
 
-.index-headline {
+/*.index-headline {
   border-top: 1px solid #dededc;
   margin: 0;
   padding: 16px 0;
@@ -383,7 +383,7 @@ ul.thumbnails {
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-}
+}*/
 
 .pagination {
   text-align: center;
@@ -436,7 +436,7 @@ ul.thumbnails {
     color: #333332;
     margin-bottom: 50px;
   }
-  .author-image {
+/*  .author-image {
     background-image: url({{ site.baseurl }}/{{site.author_image}});
     display: inline-block;
     width: 30px;
@@ -448,7 +448,7 @@ ul.thumbnails {
     background-size: cover;
     border-radius: 100%;
     text-indent: -9999px;
-  }
+  }*/
   .post-meta-text, .page-meta-text {
     color: #b3b3b1;
     letter-spacing: -0.02em;
@@ -637,9 +637,9 @@ ul.thumbnails {
         margin-right: 18px;
         margin-bottom: 18px;
       }
-      .index-headline {
+      /*.index-headline {
         padding-bottom: 32px;
-      }
+      }*/
       a {
         color: black;
         text-decoration: none;
@@ -676,7 +676,7 @@ ul.thumbnails {
         }
       }
     }
-    .isRight {
+/*    .isRight {
       float: right;
       width: 47%;
       @include box-sizing(border-box);
@@ -709,7 +709,7 @@ ul.thumbnails {
           color: #333333;
         }
       }
-    }
+    }*/
   }
 }
 
