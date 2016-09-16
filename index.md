@@ -16,15 +16,6 @@ image_url: "/assets/static/images/photo.jpg"
           </li>
       {% endfor %}
   </ul>
-
-  <!--
-  Do these later once I figure out analytics
-  _gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Email']);
-  _gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Github']);
-  _gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Twitter']);
-  _gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar LinkedIn']);
-  _gaq.push(['_trackEvent', 'Link', 'Click', 'Sidebar Feedly']);
-  -->
 </div>
 
 {% include footer.html %}
