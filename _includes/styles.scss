@@ -153,19 +153,7 @@ a {
   display: flex;
   flex-direction: row;
 
-  ul {
-    list-style: none outside;
-    margin-bottom: 20px;
-
-    li {
-      line-height: 23px;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 300;
-    }
-  }
-}
-
-#avatar {
+  #avatar {
     background-image: url('/assets/static/images/photo.jpg');
     background-size: cover;
     height: 154px;
@@ -179,19 +167,33 @@ a {
     -moz-transition: all 500ms ease-in;
     -o-transition: all 500ms ease-in;
     margin-left: 22px;
+  }
+
+  ul {
+    list-style: none outside;
+    margin-bottom: 20px;
+
+    li {
+      line-height: 23px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+    }
+  }
 }
 
-#social li {
+#social {
+  li {
     display: inline-block;
     font-size: 22px;
     overflow: hidden;
-}
+  }
 
-#social a, #social a:visited {
+  a, a:visited {
     color: #999;
     -webkit-transition: color 200ms ease-in;
     -moz-transition: color 200ms ease-in;
     -o-transition: color 200ms ease-in;
+  }
 }
 
 a.icon-envelope {
@@ -300,13 +302,6 @@ ul.thumbnails {
         }
       }
     }
-    .post-excerpt, .page-excerpt {
-      letter-spacing: -0.02em;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 1.59;
-      color: #666665;
-    }
     .post-meta, .page-meta {
       font-size: 14px;
       color: #b3b3b1;
@@ -383,7 +378,6 @@ ul.thumbnails {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-
   .post-content, .page-content {
     width: 100%;
     font-family: $font-serif;
@@ -400,12 +394,7 @@ ul.thumbnails {
       margin-bottom: 0px;
       font-family: $font-sans;
     }
-    h3 {
-      font-size: 30px;
-      line-height: 34px;
-      font-weight: 300;
-    }
-    h2, h1 {
+    h1, h2 {
       letter-spacing: -0.02em;
       font-weight: 300;
       font-style: normal;
@@ -413,6 +402,11 @@ ul.thumbnails {
       line-height: 1.2;
       margin-top: 50px;
       margin-bottom: 0px;
+    }
+    h3 {
+      font-size: 30px;
+      line-height: 34px;
+      font-weight: 300;
     }
     p {
       font-weight: 400;
