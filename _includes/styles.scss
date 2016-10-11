@@ -113,6 +113,7 @@ ul.tags {
 
 .follow-footer {
   font-size: 16px;
+  margin-top: 20px;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -422,10 +423,11 @@ ul.thumbnails {
       hyphens: auto;
 
       &.caption {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2;
         margin-top: 2px;
         text-align: center;
+        padding: 16px 40px 0 40px;
       }
     }
     amp-img, amp-youtube {
