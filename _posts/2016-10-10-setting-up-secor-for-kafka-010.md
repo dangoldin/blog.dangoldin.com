@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Setting up secor for Kafka 0.10"
-description: ""
-keywords:
+description: "While upgrading our Kafka to 0.10 we ran into issues getting secor to scale. We did a ton of optimization but the final culprit was the version of our Kafka consumer."
+keywords: "secor, kafka, 0.10, big data, streaming"
 image_url:
 category:
-tags: []
+tags: ["#devops", "#data"]
 ---
 {% include setup %}
 Over the past few weeks we rolled out a new data pipeline built around around Kafka 0.10. I plan on writing more about the full project but for this post I wanted to highlight how critical reading the documentation is. One of the first issues we ran into was that [secor](https://github.com/pinterest/secor), a neat application open sourced by Pinterest to allow simple saving of Kafka messages to S3, was consuming extremely slowly. I fastidiously tweaked the Kafka configuration to get as much out of it as I could to no avail. I spent hours experiment with the various secor options to see whether there was a simple solution I was missing. No matter what I tried I was unable to consume more than 50mb/min - despite the fact that both the Kafka cluster and the instance running secor could support an order of magnitude more than that. I confirmed that there was something fishy by running the same exact code on a massive c3.8xlarge instance to see how much better it would fare. And sure enough I still couldn’t get past 50mb/min.
