@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Avoiding future DDOS attacks"
+title: "Preventing future DDOS attacks"
 description: "There's no way to avoid unsecure devices, especially as we move to the internet of things, and we need to figure a way to make our infrastructure more resilient. One way is to make our routes to the internet - routers and ISPs - more intelligent."
 keywords: "DDOS, ISPs, router, interent of things, connected home"
 image_url:
 category:
 tags: ["#society"]
+redirect_from: "/2016/10/23/avoiding-future-ddos-attacks/"
 ---
 {% include setup %}
 After Friday’s DNS DDOS attack I’ve been thinking of approaches that could prevent this from happening in the future. In a perfect world every device would be up to date with the latest updates and it would be difficult to compromise anything that’s connected to the internet. Unfortunately, this is not the case and there’s an ever growing number of devices that are quickly hacked together and sold without any focus placed on security. Akamai did a [study that shows](https://www.wired.com/2016/10/akamai-finds-longtime-security-flaw-2-million-devices/) over 2 million internet connected devices have been compromised which allows them to be used to run DDOS attacks, very similar to the one that took down a big chunk of the internet on Friday. The challenge is that most owners both don’t know and don’t bother to do any security audits when setting up these devices and very likely never upgrade the firmware nor the software to make them more secure.
