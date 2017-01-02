@@ -44,6 +44,14 @@ module Jekyll
       doc.to_s
     end
   end
+
+  module AMPToImgFilter
+    # Very naive for now
+    def amp_to_img(html)
+      html.gsub! 'amp-img', 'img'
+    end
+  end
 end
 
 Liquid::Template.register_filter(Jekyll::AmpFilter)
+Liquid::Template.register_filter(Jekyll::AMPToImgFilter)

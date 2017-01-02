@@ -31,6 +31,7 @@ production_url : http://dangoldin.com
 
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
