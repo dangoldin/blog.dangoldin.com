@@ -42,10 +42,12 @@
             var url = QueryString.url;
             var identifier = QueryString.identifier;
             var disqus_name = QueryString.disqus_name;
+            var title = QueryString.title;
 
             var disqus_config = function () {
                 this.page.url = url;
                 this.page.identifier = identifier || url;
+                this.page.title = title || '';
             };
 
             (function () {  // DON'T EDIT BELOW THIS LINE
