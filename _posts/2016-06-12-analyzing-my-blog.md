@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Analyzing my blog"
-description: ""
-keywords:
+description: "I've been blogging for a few years now and have enough blog posts to actually analyze the content and see if there are any paterns."
+keywords: "data visualization, blog statistics"
 image_url:
 category:
-tags: []
+tags: ["#dataviz", "#code"]
 ---
 {% include setup %}
 I started actively blogging in 2013 and have been consistently writing 2 posts a week. There’s a ton of information here and I spent some time learning R all over again in order to analyze and visualize my blogging history. I started with a simple [Python script](https://github.com/dangoldin/blog-analytics/blob/master/analyze.py) that went through each post and dumped it into a CSV file with a series of columns that would be easy to [analyze via R](https://github.com/dangoldin/blog-analytics/blob/master/analyze.R). The columns ranged from numeric stats - such as how many words, tags, images, and links - to the actual text of the post itself. The goal was to put in a structured enough shape that the rest of the analysis could be handled in R. I started by collecting some summary statistics and looking at them over time but got carried away and ended up digging deeper into my evolution as a blogger.

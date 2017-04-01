@@ -17,7 +17,7 @@ I spent some time looking at our AWS infrastructure last week and it turns out A
 <ul class="thumbnails">
   <li>
     <div class="thumbnail">
-      <a href="{{ IMG_PATH }}">
+      <a href="{{ IMG_PATH }}by_product_name.png">
         <amp-img src="{{ IMG_PATH }}by_product_name.png" alt="By product name" width="1445" height="467" layout="responsive"></amp-img>
       </a>
       <p>
@@ -28,7 +28,7 @@ I spent some time looking at our AWS infrastructure last week and it turns out A
 
   <li>
     <div class="thumbnail">
-      <a href="{{ IMG_PATH }}">
+      <a href="{{ IMG_PATH }}by_usage_type.png">
         <amp-img src="{{ IMG_PATH }}by_usage_type.png" alt="By usage type" width="1433" height="479" layout="responsive"></amp-img>
       </a>
       <p>
@@ -39,7 +39,7 @@ I spent some time looking at our AWS infrastructure last week and it turns out A
 
   <li>
     <div class="thumbnail">
-      <a href="{{ IMG_PATH }}">
+      <a href="{{ IMG_PATH }}by_layer_usage_type_top_heatmap.png">
         <amp-img src="{{ IMG_PATH }}by_layer_usage_type_top_heatmap.png" alt="By layer and usage type heatmap" width="928" height="566" layout="responsive"></amp-img>
       </a>
       <p>

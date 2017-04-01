@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Revisiting my Twitter activity"
-description: ""
-keywords:
+description: "I had an old GitHub repo that visualized Twitter activity so I thought it would be fun to dig it up and run it again to see how it compared."
+keywords: "twitter, data visualization"
 image_url:
 category:
-tags: []
+tags: ["#dataviz", "#code"]
 ---
 {% include setup %}
 While going through my old GitHub repos I discovered that the most starred repo was [twitter-archive-analysis](https://github.com/dangoldin/twitter-archive-analysis), a Python script that would generate a view visualizations of a Twitter archive. I haven’t touched the code in over 3 years and decided to see how it was holding up and whether any of it still worked. After a few false starts getting the necessary packages playing nicely together and updating the code to support Twitter’s new archive format, I was able to get the old code working. Compared to three years ago, the results are surprisingly not that different - I definitely tweet less frequently than I used to and my activity has shifted into being more about replies rather than general tweets.

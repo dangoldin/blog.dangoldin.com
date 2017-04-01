@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Expiration date selection design anti pattern"
-description: ""
+description: "I ran into a pretty frustrating design choice when using the Chipotle app earlier today."
 keywords: "design, usability, date selection, user experience, chipotle app"
 image_url: "/assets/static/images/chipotle-app-cc-expiration.png"
 category:
