@@ -48,18 +48,18 @@ module Jekyll
   module AMPToImgFilter
     # Very naive for now
     def amp_to_img(html)
-      html.gsub! 'amp-img', 'img'
+      html.gsub 'amp-img', 'img'
     end
   end
 
-  module RelativeToAbsolutePathFilter
+  module RelativeToAbsolutePathsFilter
     # Hacky for now
     def relative_to_absolute_paths(html)
-      html.gsub! '/assets/static/', 'http://dangoldin.com/assets/static/'
+      html.gsub '/assets/static/', 'http://dangoldin.com/assets/static/'
     end
   end
 end
 
 Liquid::Template.register_filter(Jekyll::AmpFilter)
 Liquid::Template.register_filter(Jekyll::AMPToImgFilter)
-Liquid::Template.register_filter(Jekyll::RelativeToAbsolutePathFilter)
+Liquid::Template.register_filter(Jekyll::RelativeToAbsolutePathsFilter)
