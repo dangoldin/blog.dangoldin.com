@@ -1,0 +1,954 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <!-- TODO: Make this optional -->
+  <script async custom-element="amp-vimeo" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>My old projects</title>
+  <meta name="description" content="I went through each repo on my GitHub account which was a nice walk down memory lane and wanted to go over each of the projects briefly talk about each one.">
+  <meta name="keywords" content="code, projects, analysis, open source, github" />
+  <meta name="author" content="Dan Goldin">
+
+  <link rel="canonical" href="/2015/11/12/my-old-projects/">
+  <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="/feed.xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@dangoldin" />
+  <meta name="twitter:title" content="My old projects" />
+
+  <meta property="og:type"                content="website" />
+  <meta property="og:site_name"           content="Dan Goldin" />
+  <meta property="og:url"                 content="http://dangoldin.com/2015/11/12/my-old-projects/" />
+  <meta property="og:title"               content="My old projects" />
+
+  
+  <meta property="og:description"         content="I went through each repo on my GitHub account which was a nice walk down memory lane and wanted to go over each of the projects briefly talk about each one." />
+  <meta name="twitter:description"        content="I went through each repo on my GitHub account which was a nice walk down memory lane and wanted to go over each of the projects briefly talk about each one." />
+  
+
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  <script type="application/ld+json">
+  
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "/2015/11/12/my-old-projects/",
+  "headline": "My old projects",
+  "datePublished": "2015-11-12T00:00:00-05:00",
+  "dateModified": "2015-11-12T00:00:00-05:00",
+  "description": "Writing up my old projects got me browsing through my GitHub account to see what else I’ve worked on. Some I’ll update when I get a good idea while others I ...",
+  "author": {
+    "@type": "Person",
+    "name": ""
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dan Goldin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+
+  <style amp-custom>
+  
+  /**
+ * Syntax highlighting styles
+ */
+.highlight {
+  background: #fff; }
+  .highlighter-rouge .highlight {
+    background: #eef; }
+  .highlight .c {
+    color: #998;
+    font-style: italic; }
+  .highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2; }
+  .highlight .k {
+    font-weight: bold; }
+  .highlight .o {
+    font-weight: bold; }
+  .highlight .cm {
+    color: #998;
+    font-style: italic; }
+  .highlight .cp {
+    color: #999;
+    font-weight: bold; }
+  .highlight .c1 {
+    color: #998;
+    font-style: italic; }
+  .highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic; }
+  .highlight .gd {
+    color: #000;
+    background-color: #fdd; }
+  .highlight .gd .x {
+    color: #000;
+    background-color: #faa; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .gr {
+    color: #a00; }
+  .highlight .gh {
+    color: #999; }
+  .highlight .gi {
+    color: #000;
+    background-color: #dfd; }
+  .highlight .gi .x {
+    color: #000;
+    background-color: #afa; }
+  .highlight .go {
+    color: #888; }
+  .highlight .gp {
+    color: #555; }
+  .highlight .gs {
+    font-weight: bold; }
+  .highlight .gu {
+    color: #aaa; }
+  .highlight .gt {
+    color: #a00; }
+  .highlight .kc {
+    font-weight: bold; }
+  .highlight .kd {
+    font-weight: bold; }
+  .highlight .kp {
+    font-weight: bold; }
+  .highlight .kr {
+    font-weight: bold; }
+  .highlight .kt {
+    color: #458;
+    font-weight: bold; }
+  .highlight .m {
+    color: #099; }
+  .highlight .s {
+    color: #d14; }
+  .highlight .na {
+    color: #008080; }
+  .highlight .nb {
+    color: #0086B3; }
+  .highlight .nc {
+    color: #458;
+    font-weight: bold; }
+  .highlight .no {
+    color: #008080; }
+  .highlight .ni {
+    color: #800080; }
+  .highlight .ne {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nf {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nn {
+    color: #555; }
+  .highlight .nt {
+    color: #000080; }
+  .highlight .nv {
+    color: #008080; }
+  .highlight .ow {
+    font-weight: bold; }
+  .highlight .w {
+    color: #bbb; }
+  .highlight .mf {
+    color: #099; }
+  .highlight .mh {
+    color: #099; }
+  .highlight .mi {
+    color: #099; }
+  .highlight .mo {
+    color: #099; }
+  .highlight .sb {
+    color: #d14; }
+  .highlight .sc {
+    color: #d14; }
+  .highlight .sd {
+    color: #d14; }
+  .highlight .s2 {
+    color: #d14; }
+  .highlight .se {
+    color: #d14; }
+  .highlight .sh {
+    color: #d14; }
+  .highlight .si {
+    color: #d14; }
+  .highlight .sx {
+    color: #d14; }
+  .highlight .sr {
+    color: #009926; }
+  .highlight .s1 {
+    color: #d14; }
+  .highlight .ss {
+    color: #990073; }
+  .highlight .bp {
+    color: #999; }
+  .highlight .vc {
+    color: #008080; }
+  .highlight .vg {
+    color: #008080; }
+  .highlight .vi {
+    color: #008080; }
+  .highlight .il {
+    color: #099; }
+
+.icon > svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle; }
+  .icon > svg path {
+    fill: #828282; }
+
+amp-img {
+  background-color: grey; }
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+main {
+  display: block; }
+
+body {
+  font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+h1, h2, h3, h4, h5 {
+  color: #222;
+  font-weight: 300; }
+
+h1 {
+  font-size: 40px;
+  line-height: 45px; }
+
+h2 {
+  font-size: 36px;
+  line-height: 40px; }
+
+h3 {
+  font-size: 30px;
+  line-height: 34px; }
+
+h4 {
+  font-size: 18px;
+  line-height: 20px; }
+
+h1 small {
+  font-size: 20px;
+  color: #666;
+  font-weight: 300; }
+
+li {
+  font-size: 20px;
+  line-height: 32px;
+  padding-bottom: 8px; }
+
+ul.tags {
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px; }
+  ul.tags li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 10px;
+    font-size: 16px;
+    line-height: 20px; }
+
+.follow-footer {
+  font-size: 16px;
+  margin-top: 20px; }
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block; }
+
+.main-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 840px; }
+
+.site-header {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 16px auto 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 700px) {
+    .site-header {
+      padding: 0 16px; } }
+
+a {
+  text-decoration: none;
+  color: #06A; }
+  a :visited {
+    color: #607890; }
+  a :hover {
+    color: #005580; }
+
+.avatar-section {
+  display: flex;
+  flex-direction: row; }
+  .avatar-section #avatar {
+    background-image: url("/assets/static/images/photo.jpg");
+    background-size: cover;
+    height: 154px;
+    width: 154px;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px solid #999;
+    opacity: .8;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    margin-left: 22px; }
+  .avatar-section ul {
+    list-style: none outside;
+    margin-bottom: 20px; }
+    .avatar-section ul li {
+      line-height: 23px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300; }
+
+#social li {
+  display: inline-block;
+  font-size: 22px;
+  overflow: hidden; }
+#social a, #social a:visited {
+  color: #999;
+  -webkit-transition: color 200ms ease-in;
+  -moz-transition: color 200ms ease-in;
+  -o-transition: color 200ms ease-in; }
+
+a.icon-envelope {
+  background: url("/assets/static/images/icons/webicon-mail.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+a.icon-glossi {
+  background: url("/assets/static/images/icons/webicon-glossi.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+a.icon-github {
+  background: url("/assets/static/images/icons/webicon-github.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+a.icon-twitter {
+  background: url("/assets/static/images/icons/webicon-twitter.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+a.icon-linkedin {
+  background: url("/assets/static/images/icons/webicon-linkedin.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+a.icon-feedly {
+  background: url("/assets/static/images/icons/webicon-feedly.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px; }
+
+ul.posts, ol.posts {
+  list-style: none outside;
+  padding: 0;
+  margin: 40px 25px 10px 25px; }
+  ul.posts span.date, ol.posts span.date {
+    text-align: right;
+    color: #999;
+    float: right;
+    font-family: 'Gentium Book Basic', serif; }
+  ul.posts li, ol.posts li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21px;
+    line-height: 32px;
+    font-weight: 400; }
+
+ul.thumbnails {
+  list-style: none outside; }
+  ul.thumbnails div.thumbnail {
+    max-width: 700px; }
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  margin: 25px auto 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media only screen and (max-width: 700px) {
+    .content {
+      padding: 0 16px; } }
+  .content article {
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f0; }
+    .content article:last-child {
+      border-bottom: 0px; }
+    .content article .post-title, .content article .page-title {
+      letter-spacing: -0.02em;
+      font-style: normal;
+      display: block;
+      font-size: 36px;
+      line-height: 1.15;
+      margin: 0 0; }
+      .content article .post-title a, .content article .page-title a {
+        text-decoration: none;
+        color: #333332; }
+        .content article .post-title a:hover, .content article .page-title a:hover {
+          text-decoration: none; }
+    .content article .post-meta, .content article .page-meta {
+      font-size: 14px;
+      color: #b3b3b1;
+      line-height: 30px; }
+      .content article .post-meta a, .content article .page-meta a {
+        color: #b3b3b1;
+        text-decoration: none; }
+        .content article .post-meta a:hover, .content article .page-meta a:hover {
+          text-decoration: underline; }
+
+.pagination {
+  text-align: center;
+  padding: 16px 0 0;
+  font-size: 12px; }
+  .pagination a {
+    color: #999999;
+    text-decoration: none; }
+    .pagination a:hover {
+      color: #333333; }
+  .pagination ul {
+    display: inline-block;
+    margin: 0; }
+    .pagination ul li {
+      display: inline; }
+
+.site-footer {
+  margin: 0 auto;
+  padding: 48px 0;
+  width: 100%;
+  max-width: 700px;
+  font-size: 12px;
+  text-align: center;
+  color: #999999;
+  line-height: 17.6px; }
+  .site-footer a {
+    color: #666666;
+    text-decoration: none; }
+    .site-footer a:hover {
+      color: #333333; }
+
+.post .post-meta, .post .page-meta, .page .post-meta, .page .page-meta {
+  font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif; }
+.post .post-title, .post .page-title, .page .post-title, .page .page-title {
+  font-style: normal;
+  letter-spacing: -0.04em;
+  font-size: 50px;
+  line-height: 1.1;
+  color: #333332;
+  margin-bottom: 50px; }
+.post .post-meta-text, .post .page-meta-text, .page .post-meta-text, .page .page-meta-text {
+  color: #b3b3b1;
+  letter-spacing: -0.02em;
+  font-style: normal;
+  font-size: 14px;
+  overflow: hidden;
+  font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+.post .post-content, .post .page-content, .page .post-content, .page .page-content {
+  width: 100%;
+  font-family: Georgia, Cambria, "Times New Roman", Times, "Lora", serif;
+  color: #333333; }
+  .post .post-content h1, .post .post-content h2, .post .post-content h3, .post .page-content h1, .post .page-content h2, .post .page-content h3, .page .post-content h1, .page .post-content h2, .page .post-content h3, .page .page-content h1, .page .page-content h2, .page .page-content h3 {
+    font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif; }
+  .post .post-content h3, .post .post-content h4, .post .post-content h5, .post .post-content h6, .post .page-content h3, .post .page-content h4, .post .page-content h5, .post .page-content h6, .page .post-content h3, .page .post-content h4, .page .post-content h5, .page .post-content h6, .page .page-content h3, .page .page-content h4, .page .page-content h5, .page .page-content h6 {
+    letter-spacing: -0.02em;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif; }
+  .post .post-content h1, .post .post-content h2, .post .page-content h1, .post .page-content h2, .page .post-content h1, .page .post-content h2, .page .page-content h1, .page .page-content h2 {
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-top: 50px;
+    margin-bottom: 0px; }
+  .post .post-content h3, .post .page-content h3, .page .post-content h3, .page .page-content h3 {
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: 300; }
+  .post .post-content p, .post .page-content p, .page .post-content p, .page .page-content p {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.59;
+    letter-spacing: -.002em;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #333333;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; }
+    .post .post-content p.caption, .post .page-content p.caption, .page .post-content p.caption, .page .page-content p.caption {
+      font-size: 18px;
+      line-height: 1.2;
+      margin-top: 2px;
+      text-align: center;
+      padding: 16px 40px 0 40px; }
+  .post .post-content amp-img, .post .post-content amp-youtube, .post .page-content amp-img, .post .page-content amp-youtube, .page .post-content amp-img, .page .post-content amp-youtube, .page .page-content amp-img, .page .page-content amp-youtube {
+    margin-top: 30px; }
+  .post .post-content figure, .post .page-content figure, .page .post-content figure, .page .page-content figure {
+    margin: 0;
+    padding: 0; }
+  .post .post-content figcaption, .post .page-content figcaption, .page .post-content figcaption, .page .page-content figcaption {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #666665;
+    outline: 0;
+    z-index: 300;
+    text-align: center; }
+  .post .post-content hr, .post .page-content hr, .page .post-content hr, .page .page-content hr {
+    border: 0;
+    padding: 0;
+    display: block;
+    width: 15%;
+    margin: 30px auto;
+    border: 0px solid #dddddd;
+    border-top: 1px solid #dddddd; }
+  .post .post-content blockquote, .post .page-content blockquote, .page .post-content blockquote, .page .page-content blockquote {
+    margin: 20px 0 20px;
+    margin-left: -26px;
+    border-left: 3px solid #57ad68;
+    padding-left: 20px; }
+    .post .post-content blockquote p, .post .page-content blockquote p, .page .post-content blockquote p, .page .page-content blockquote p {
+      letter-spacing: 0.01rem;
+      font-weight: 400;
+      mborder-left: 3px solid #57ad68;
+      mpadding-left: 20px;
+      mmargin-left: -26px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      line-height: 1.3;
+      padding-bottom: 10px; }
+  .post .post-content ul, .post .post-content ol, .post .page-content ul, .post .page-content ol, .page .post-content ul, .page .post-content ol, .page .page-content ul, .page .page-content ol {
+    padding: 0;
+    margin: 10px 0 10px 25px; }
+    .post .post-content ul.inline, .post .post-content ol.inline, .post .page-content ul.inline, .post .page-content ol.inline, .page .post-content ul.inline, .page .post-content ol.inline, .page .page-content ul.inline, .page .page-content ol.inline {
+      margin-left: 0;
+      list-style: none; }
+      .post .post-content ul.inline li, .post .post-content ol.inline li, .post .page-content ul.inline li, .post .page-content ol.inline li, .page .post-content ul.inline li, .page .post-content ol.inline li, .page .page-content ul.inline li, .page .page-content ol.inline li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+        margin: 0; }
+        .post .post-content ul.inline li.dense, .post .post-content ol.inline li.dense, .post .page-content ul.inline li.dense, .post .page-content ol.inline li.dense, .page .post-content ul.inline li.dense, .page .post-content ol.inline li.dense, .page .page-content ul.inline li.dense, .page .page-content ol.inline li.dense {
+          padding-top: 0;
+          margin-bottom: 2px; }
+    .post .post-content ul li, .post .post-content ol li, .post .page-content ul li, .post .page-content ol li, .page .post-content ul li, .page .post-content ol li, .page .page-content ul li, .page .page-content ol li {
+      padding: 0;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.59;
+      letter-spacing: -.002em;
+      margin-left: 30px;
+      margin-bottom: 2px;
+      padding-top: 2px; }
+      .post .post-content ul li p, .post .post-content ol li p, .post .page-content ul li p, .post .page-content ol li p, .page .post-content ul li p, .page .post-content ol li p, .page .page-content ul li p, .page .page-content ol li p {
+        padding: 0 10px 0 10px; }
+      .post .post-content ul li.dense, .post .post-content ol li.dense, .post .page-content ul li.dense, .post .page-content ol li.dense, .page .post-content ul li.dense, .page .post-content ol li.dense, .page .page-content ul li.dense, .page .page-content ol li.dense {
+        padding-top: 0;
+        margin-bottom: 2px; }
+    .post .post-content ul.tag_box, .post .post-content ol.tag_box, .post .page-content ul.tag_box, .post .page-content ol.tag_box, .page .post-content ul.tag_box, .page .post-content ol.tag_box, .page .page-content ul.tag_box, .page .page-content ol.tag_box {
+      padding-top: 10px; }
+  .post .post-content ol li, .post .page-content ol li, .page .post-content ol li, .page .page-content ol li {
+    list-style-type: decimal; }
+
+.share {
+  text-align: right;
+  padding: 20px 0 0; }
+  .share a {
+    text-decoration: none;
+    color: #bbbbbb;
+    padding-left: 12px; }
+    .share a .hidden {
+      display: none; }
+    .share a:hover {
+      color: #333333; }
+
+.right10 {
+  float: right;
+  padding-left: 10px;
+  min-width: 250px; }
+
+.video-holder {
+  padding: 10px 0 10px 0; }
+
+pre, code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eeeeff; }
+
+code {
+  padding: 1px 5px; }
+
+pre {
+  padding: 8px 12px;
+  overflow-x: scroll; }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0; }
+
+table {
+  margin: 10px 0 10px 0;
+  border-collapse: collapse; }
+  table td {
+    border-bottom: 1pt solid #eee;
+    padding: 6px 2px 6px 2px;
+    border-spacing: 6px; }
+
+.pagination .disabled {
+  opacity: 0; }
+
+.comments {
+  margin-top: 10px; }
+
+  </style>
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+
+  <body>
+    <header class="site-header">
+  <div class="avatar-section">
+    <a id="avatar" href="/"></a>
+    <div>
+      <ul id="me">
+        <li>Dan Goldin</li>
+        <li class="gray">Engineering @ <a href="http://triplelift.com/">TripleLift</a></li>
+      </ul>
+      <ul id="social">
+          <li>
+            <a href="mailto:dangoldin@gmail.com?subject=Hey" class="icon-envelope" title="Say hi" id="link-email"></a>
+          </li>
+          <li>
+            <a href="http://github.com/dangoldin" class="icon-github" title="I share and fork code here" id="link-github"></a>
+          </li>
+          <li>
+            <a href="http://twitter.com/dangoldin" class="icon-twitter" title="You should follow me" id="link-twitter"></a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/in/dangoldin" class="icon-linkedin" title="My professional stuff here" id="link-linkedin"></a>
+          </li>
+          <li>
+            <a href="http://www.feedly.com/home#subscription/feed%2Fhttp%3A%2F%2Fdangoldin.com%2Fatom.xml" class="icon-feedly" title="Subscribe via Feedly" id="link-feedly"></a>
+          </li>
+        </ul>
+    </div>
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/tags/">Tagged Posts</a></li>
+    </ul>
+  </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+<main class="content" role="main">
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">My old projects</h1>
+      <span class="date">12 November 2015</span>
+    </div>
+
+    <section class="post-content">
+      
+<p>Writing up my old projects got me browsing through my GitHub account to see what else I’ve worked on. Some I’ll update when I get a good idea while others I completely forgot until going through the list. I noticed two big themes when going through the list. The first is how much nicer it is to have projects that are in static HTML/CSS/JavaScript since they can be hosted publicly on GitHub and don’t require any setup or configuration to start using. The other is how many third party libraries or APIs I’ve used and how much more difficult everything would have been had I had to build everything from scratch. If anyone is interested in forking and ressurecting some of these I’ll be glad to polish it up.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/dangoldin/twitter-archive-analysis">Twitter archive analysis</a>: At some point Twitter announced that they would allow you to export your entire Tweet history and this was a quick pass at a toolkit to analyze the data and do a few simple visualizations. I wrote a blog post about it <a href="/2013/01/19/making-sense-of-my-twitter-archive/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/instagram-download">Instagram download</a>: A couple of years ago Instagram changed their policies so I decided to close my account. Before that I needed a way to export my photos. This was a simple app/script that spawns a very basic OAuth web application in order to authenticate you with the Instagram API which allows you to export all your photos.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/yahoo-ffl">Yahoo fantasy football download</a>: I’ve been in a fantasy football league for almost a decade now and every year I update this script to scrape the data from the Yahoo fantasy football site. The goal was to use this data to develop a statistical model to help me manage my team but I haven’t gotten around to starting that yet. Maybe next year!</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/runkeeper-stats">Runkeeper stats</a>: A pretty simple R script to analyze and map the data that can be exported from RunKeeper. I wrote a blog post about it <a href="/2014/01/04/visualizing-runkeeper-data-in-r/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/site-analysis">Site analysis</a>: I was frustrated by the slowness of various sites and decided to write a script to see what was taking sites so long to load. This analyzes the top Alexa sites and figures out how much data they’re loading and of what types - CSS, JavaScript, images, etc. I wrote a blog post about it <a href="/2014/03/09/examining-the-requests-made-by-the-top-100-sites/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/relay-rides-analysis">Relay Rides analysis</a>: This script analyzes the JSON search results of Relay Rides (now Turo) and combines it with data retrieved using the Edmunds API to identify the cars that have the best financial return. The return is calculated by looking at the estimated price of the car and dividing it by average money earned per day. The obligatory blog post is <a href="/2015/06/07/finding-the-optimal-car-to-list-on-relayrides/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/jersey-city-open-data">Jersey City parking zone mapper</a>: Jersey City has a ridiculous PDF that lists the streets and addresses that belong to each zone. I painstakingly extracted, cleaned, and geomapped the data in order to visualize the zones on a map.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/js-tools">JS tools</a>: Probably my most commonly used code. This is a series of tools hosted on … that provide some basic utilities that help me throughout the day. The most useful lately has been a way of comparing SQL table schemas but it has a bunch of others.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/citibike-station-directions">Citibike station directions</a>: A web app that breaks every trip down into a walk to a Citibike station, biking from Citibike station to Citibike station, and another walk to the final destination.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/meerkat-crawl">Meerkat crawl</a>: To help a buddy out I started mapping out the network relationships between users on Meerkat but quickly ran into a scaling issue. I got to around 5 million connections and wasn’t able to figure out how to actually visaulize it in a clean and timely way.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/yahnr">Yet another Hacker News reader</a>: My attempt at modifying the Hacker News experience to show the top stories over a rolling 24 hour period. This was a good exercise in messing around with pseudo static sites where the content is solely hosted on S3 with a script to push new files every few minutes.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/python-tools">Python tools</a>: A series of Python scripts that I’ve writtent to deal with various minor issues. I have a ton more that I’ll add to this repo when I find them.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/mysql-class">MySQL class</a>: I taught a MySQL class at <a href="http://www.c4q.nyc/">Coalition for Queens</a> and this is the series of slides used.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/redirector">Redirector</a>: A tiny Node.js app that acts similar to the “Switcheroo” Chrome browser extension but able to work across other browsers. It requires a bit of manual set up but then uses the hosts file to intercept web requests and redirect them to another host. A quick write up <a href="/2015/02/07/url-redirection-app/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/oyster-books-crawl">Oyster books crawl</a>: This was a series of scripts that crawled the Oyster API to pull the available books and then analyzed them to find patterns. A bit sad that this script outlived Oyster itself. I wrote a blog post about it <a href="/2014/03/16/fun-with-the-oyster-books-api/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/taxi-pricing">Taxi pricing</a>: The goal here was to compare the pricing of taxis across various cities. The two primary dimenisons used were cost per a minute waiting and cost per a mile of driving. Using this information one can then see how different cities and countries value labor costs. The analysis is written up <a href="/2013/12/29/taxi-pricing-in-nyc-vs-mumbai/">here</a> and <a href="/2014/01/09/taxi-prices-around-the-world/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/meeting-place-finder">Meeting place finder</a>: A simple script that uses the Google Maps API to come up with an ideal meeting place for a group of people that ensures everyone has the same commute time.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/lincoln-text-analysis">Lincoln text analysis</a>: An old project that read in the text of Abraham Lincoln’s speeches and did a few visualizations of the text. I wrote a blog post about it <a href="/2013/02/12/analysis-of-lincolns-words/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/lawdiff">Lawdiff</a>: I participated in a journalism meets tech hackathon and this was my team’s entry. We looked at proposed state laws and compared them against other states to identify laws that were most likely written by a special interest group. We had a number of false positives but were able to find a bunch of laws that were nearly identical despite being introduced in multiple states.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/imdb">IMDB</a>: Another early analysis project where I scraped some IMDB data in order to analyze the average age of actors and actresses over time. This came after I watched Misrepresentation and wanted to show that actors and actresses are treated differently in the movie industry. I wrote a blog post about it <a href="/2012/05/23/trend-of-actor-vs-actress-age-differences/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/jeopardy-parser">Jeopardy parser</a>: I found an open source crawler of Jeopardy clues and made a few updates to make the code multi threaded and able to crawl significantly faster. I then worked with my wife to turn this data into a simple web app that displayed random Jeopardy clues for us to test our knowledge.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/map-fun">Map fun</a>: Similar to the RunKeeper analysis above this was another pass at summarizing my running data over multiple years but this time leveraging GitHub’s map tools. I wrote a blog post about it <a href="/2015/01/18/fun-with-githubs-map-tools/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/node-toys">Node toys</a>: This was the start of me messing around with Node.js and getting a feel for the framework. One of the fun projects I used it for was evaluating recursive functions using HTTP redirects. I did a quick write up of it <a href="/2014/12/31/redirect-recursion/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/aws-tools">AWS tools</a>: A super simple script that downloads a list of EC2 instances and then prints the IP, name, and address. The end goal was to make it simple to connect to an instance without going through a manual process of figuring out the appropriate address to use. I ended up not using this that much since it was easier for me to maintain a list of aliases and hosts in a text file. A very basic write up <a href="/2014/11/09/some-simple-aws-tools/">here</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/wikilearn">Wikilearn</a>: This was one of my favorite projects. The goal was to analyze a Wikipedia article and come up with a visual timeline of all the dates and events that occured. I used an open source library for the visualization piece but ended up running into all sorts of issues analyzing the Wikipedia text. This is where I got a bunch of exposure to NLP but still wasn’t able to make it work.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/mixergy_mp3_download">Mixergy mp3 download</a>: I subscribe to the Mixergy feed and this was my attempt at a script that would just download the available mp3 files and store them for future listening. I’m sure the HTML code of the page has changed since then so the code is most likely broken.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/dangoldin/geo_data">Geo data</a>: A one of script I wrote to crawl a site and generate a mapping of ZIP codes to counties. I’m not sure why I needed this but I suspect it was for some sort of data analysis project.</p>
+  </li>
+</ul>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+    	<!-- <li><a href="/tags/##code-ref">#code <span>105</span></a></li> -->
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2015/11/09/apps-on-lte-mobile-web-on-wifi/" title="Apps on LTE, mobile web on wifi">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2015/11/19/adhoc-task-management/" title="Adhoc task management">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2015%2F11%2F12%2Fmy-old-projects%2F&title=My+old+projects">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <section class="copyright">All content copyright <a href="mailto:"></a> &copy; 2017 &bull; All rights reserved.</section>
+    <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a> and <a href="https://github.com/ageitgey/amplify">Amplify</a>. Theme inspired by <a href="http://sirupsen.com/">Simon Hørup Eskildsen</a>.</section>
+  </div>
+</footer>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+  "vars": {
+    "account": "UA-36313127-1"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    },
+    "trackClickOnEmail" : {
+      "on": "click",
+      "selector": "#link-email",
+      "request": "event",
+      "vars": {
+        "socialNetwork": "email",
+        "socialAction": "email",
+        "socialTarget": "mailto:dangoldin@gmail.com?subject=Hey"
+      }
+    },
+    "trackClickOnEmail" : {
+      "on": "click",
+      "selector": "#link-github",
+      "request": "event",
+      "vars": {
+        "socialNetwork": "github",
+        "socialAction": "github",
+        "socialTarget": "https://github.com/dangoldin"
+      }
+    },
+    "trackClickOnEmail" : {
+      "on": "click",
+      "selector": "#link-twitter",
+      "request": "event",
+      "vars": {
+        "socialNetwork": "twitter",
+        "socialAction": "twitter",
+        "socialTarget": "https://twitter.com/dangoldin"
+      }
+    },
+    "trackClickOnEmail" : {
+      "on": "click",
+      "selector": "#link-linkedin",
+      "request": "event",
+      "vars": {
+        "socialNetwork": "linkedin",
+        "socialAction": "linkedin",
+        "socialTarget": "http://www.linkedin.com/in/dangoldin"
+      }
+    },
+    "trackClickOnEmail" : {
+      "on": "click",
+      "selector": "#link-feedly",
+      "request": "event",
+      "vars": {
+        "socialNetwork": "feedly",
+        "socialAction": "feedly",
+        "socialTarget": "http://www.feedly.com/home#subscription/feed%2Fhttp%3A%2F%2Fdangoldin.com%2Fatom.xml"
+      }
+    }
+  }
+}
+</script>
+</amp-analytics>
+
+
+  </body>
+</html>
+
