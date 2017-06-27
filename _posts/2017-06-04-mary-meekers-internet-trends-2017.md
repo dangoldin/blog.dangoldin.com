@@ -42,7 +42,7 @@ In what has become annual tradition, Mary Meeker has just published the [2017 In
   <li>
     <div class="thumbnail">
       <amp-img src="{{ IMG_PATH }}mm-landlord-storage.png" alt="Landlords need more storage space" width="1914" height="1434" layout="responsive"></amp-img>
-      <p class="caption">Another intersting slide that just highlights ths secondary effects the internet is having. I can imagine building lobbies being completely swamped and needing to adapt to much higher shipping volumes.</p>
+      <p class="caption">Another interesting slide that just highlights the secondary effects the internet is having. I can imagine building lobbies being completely swamped and needing to adapt to much higher shipping volumes.</p>
     </div>
   </li>
 
