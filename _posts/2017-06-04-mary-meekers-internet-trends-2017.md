@@ -14,7 +14,7 @@ In what has become annual tradition, Mary Meeker has just published the [2017 In
   <li>
     <div class="thumbnail">
       <amp-img src="{{ IMG_PATH }}mm-advertising-tv.png" alt="Digital vs tv advertising" width="1910" height="1432" layout="responsive"></amp-img>
-      <p class="caption">Digital advertising has finally surpased TV with a much higher slope. This also indicates total ad spend is growing. I'm surprised that TV advertising hasn't started dropping.</p>
+      <p class="caption">Digital advertising has finally surpassed TV with a much higher slope. This also indicates total ad spend is growing. I'm surprised that TV advertising hasn't started dropping.</p>
     </div>
   </li>
 
