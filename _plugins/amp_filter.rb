@@ -48,7 +48,7 @@ module Jekyll
   module AMPToImgFilter
     # Very naive for now
     def amp_to_img(html)
-      html.gsub 'amp-img', 'img'
+      html.gsub 'amp-img>', 'img>'
     end
   end
 
