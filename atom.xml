@@ -3,8 +3,7 @@ layout: null
 title : Atom Feed
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
+<feed xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" >
  <title>{{ site.title }}</title>
  <link href="{{ site.production_url }}/atom.xml" rel="self"/>
  <link href="{{ site.production_url }}"/>
@@ -21,7 +20,7 @@ title : Atom Feed
    <link href="{{ site.production_url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.production_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | amp_to_img | relative_to_absolute_paths | xml_escape }}</content>
+   <content:encoded><![CDATA[{{ post.content | amp_to_img | relative_to_absolute_paths }}]]></content:encoded>
  </entry>
  {% endfor %}
 
