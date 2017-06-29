@@ -8,8 +8,8 @@ category:
 tags: ["#code", "#devops"]
 ---
 {% include setup %}
-A problem I occasionally run into is needing to generate a bunch of fake data and insert it into a database table. My usual approach has been to generate this data in Excel and then use a series of string concatenations to generate the necessary insert statements which I’d then execute in the SQL client. After doing this one too many times I decided it was time for a better, more automated approach and <a href="http://dangoldin.com/js-tools/#tab-sql-data">hacked one together</a> in JavaScript. It’s currently a part of my js-tools <a href="https://github.com/dangoldin/js-tools" target="_blank">GitHub repo</a> and suggestions are welcome. One thing I definitely need to add is the ability to specify the range of possible values for each field rather than using a hardcoded distribution.
+A problem I occasionally run into is needing to generate a bunch of fake data and insert it into a database table. My usual approach has been to generate this data in Excel and then use a series of string concatenations to generate the necessary insert statements which I’d then execute in the SQL client. After doing this one too many times I decided it was time for a better, more automated approach and <a href="https://dangoldin.github.io/js-tools/#tab-sql-data">hacked one together</a> in JavaScript. It’s currently a part of my js-tools <a href="https://github.com/dangoldin/js-tools" target="_blank">GitHub repo</a> and suggestions are welcome. One thing I definitely need to add is the ability to specify the range of possible values for each field rather than using a hardcoded distribution.
 
-<a href="http://dangoldin.com/js-tools/#tab-sql-data">
+<a href="https://dangoldin.github.io/js-tools/#tab-sql-data">
   <amp-img src="{{ IMG_PATH }}js-tools-generate-sql-data.png" alt="JS Tool to generate SQL insert statements"  width="1144" height="368" layout="responsive"></amp-img>
 </a>
