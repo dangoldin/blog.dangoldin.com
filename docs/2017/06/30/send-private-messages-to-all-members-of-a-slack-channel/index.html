@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>The Go interface</title>
-  <meta name="description" content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages.">
-  <meta name="keywords" content="golang, java, duck typing, intefaces" />
+  <title>Send private messages to all members of a Slack channel</title>
+  <meta name="description" content="I wrote a simple script to get all members of a Slack channel and then send them each a privat message.">
+  <meta name="keywords" content="slack" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="/2015/07/29/the-go-interface/">
+  <link rel="canonical" href="/2017/06/30/send-private-messages-to-all-members-of-a-slack-channel/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="/feed.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="The Go interface" />
+  <meta name="twitter:title" content="Send private messages to all members of a Slack channel" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2015/07/29/the-go-interface/" />
-  <meta property="og:title"               content="The Go interface" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/06/30/send-private-messages-to-all-members-of-a-slack-channel/" />
+  <meta property="og:title"               content="Send private messages to all members of a Slack channel" />
 
   
-  <meta property="og:description"         content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages." />
-  <meta name="twitter:description"        content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages." />
+  <meta property="og:description"         content="I wrote a simple script to get all members of a Slack channel and then send them each a privat message." />
+  <meta name="twitter:description"        content="I wrote a simple script to get all members of a Slack channel and then send them each a privat message." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "/2015/07/29/the-go-interface/",
-  "headline": "The Go interface",
-  "datePublished": "2015-07-29T00:00:00-04:00",
-  "dateModified": "2015-07-29T00:00:00-04:00",
-  "description": "I’ve only been playing around with Go for a couple of weeks but one of the language design decisions I’ve really enjoyed is how interfaces are handled. Comin...",
+  "mainEntityOfPage": "/2017/06/30/send-private-messages-to-all-members-of-a-slack-channel/",
+  "headline": "Send private messages to all members of a Slack channel",
+  "datePublished": "2017-06-30T00:00:00-04:00",
+  "dateModified": "2017-06-30T00:00:00-04:00",
+  "description": "One of my more recent “management automation” tricks was to write a simple script that gets all active members of a Slack channel and then sends them a direc...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,57 +729,13 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">The Go interface</h1>
-      <span class="date">29 July 2015</span>
+      <h1 class="post-title">Send private messages to all members of a Slack channel</h1>
+      <span class="date">30 June 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>I’ve only been playing around with Go for a couple of weeks but one of the language design decisions I’ve really enjoyed is how interfaces are handled. Coming from a traditional object oriented background it’s typical to define an interface that defines a few method signatures and then explicitly implement that interface in a new class. Below’s a trivial example of this approach in Java:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">();</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="s">"Woof"</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">aRandomFunction</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">..</span>  <span class="o">}</span> <span class="c1">// Can take anything that implements Animal</span></code></pre></figure>
-
-<p>With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.</p>
-
-<p>Go’s approach is different. In go you would define the interface as usual with the expected methods and you would write functions that accept the interface as the argument. But instead of explicitly specifying that a particular object implements an interface you just do it. Then if it turns out you’ve successfully implemented the methods you can use that object wherever the interface is expected. The compiler is still able to point out signature issues since it can tell when you’re trying to use an object with a required method but it’s done in an implicit way. Below’s the equivalent Go code:</p>
-
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span><span class="x"> </span><span class="n">Animal</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
-  </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x">
-  </span><span class="n">speak</span><span class="x"> </span><span class="kt">string</span><span class="x">
-</span><span class="p">}</span><span class="x">
-
-</span><span class="k">type</span><span class="x"> </span><span class="n">Dog</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
-</span><span class="p">}</span><span class="x">
-
-</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x"> </span><span class="p">{</span><span class="x">
-  </span><span class="k">return</span><span class="x"> </span><span class="no">true</span><span class="x">
-</span><span class="p">}</span><span class="x">
-
-</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">speak</span><span class="p">()</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="p">{</span><span class="x">
-  </span><span class="k">return</span><span class="x"> </span><span class="s">"Woof"</span><span class="x">
-</span><span class="p">}</span><span class="x">
-
-</span><span class="k">func</span><span class="x"> </span><span class="n">aRandomFunction</span><span class="p">(</span><span class="n">a</span><span class="x"> </span><span class="n">Animal</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x"> </span><span class="o">..</span><span class="x"> </span><span class="p">}</span></code></pre></figure>
-
-<p>Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.</p>
-
-<p>https://en.wikipedia.org/wiki/Duck_typing</p>
-
+<p>One of my more recent “management automation” tricks was to write a simple script that gets all active members of a Slack channel and then sends them a direct message. I’ll often want to poll the entire team and ask them to fill out a survey or submit a questionnaire but the response rates tend to be poor. But if I send a message to people directly I end up with a much better response rate. It turns out that in my case I was able to get a greater than 100% improvement in response rate by using this approach. In a group channel there’s a lot going on so it’s likely that some people don’t see the message or decide they’ll do it later but inevitably forget. But by messaging them directly it sends a pretty strong signal that I care about the response and prompts people to just get it done. Despite the success I am hesitant to overuse it since it may lead to people ignoring these direct messages as well. As they say, with great power comes great responsibility. As usual, the code is up on <a href="https://github.com/dangoldin/automating-management/blob/master/spam-channel-members.py">GitHub</a> and suggestions and pull requests are welcome.</p>
 
     </section>
 
@@ -812,11 +768,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2015/07/25/use-the-database-luke/" title="Use the database Luke">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/06/26/rss-finally-fixed/" title="RSS finally fixed">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2015/08/01/its-not-done-until-its-deployed/" title="It's not done until it's deployed">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -827,7 +783,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2015%2F07%2F29%2Fthe-go-interface%2F&title=The+Go+interface">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F06%2F30%2Fsend-private-messages-to-all-members-of-a-slack-channel%2F&title=Send+private+messages+to+all+members+of+a+Slack+channel">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
