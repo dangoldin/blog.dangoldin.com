@@ -16,8 +16,8 @@
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}" />{% endif %}
   <meta name="author" content="{{ site.author.name }}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.production_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/atom.xml" | prepend: site.production_url }}">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />

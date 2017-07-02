@@ -11,7 +11,7 @@ markdown: kramdown
 # so be sure to set them if your theme uses them.
 #
 title : Dan Goldin
-tagline: Me
+tagline : Me
 author :
   name : Dan Goldin
   email : dangoldin@gmail.com

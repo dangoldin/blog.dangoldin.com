@@ -2,7 +2,7 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
+  "mainEntityOfPage": "{{ page.url | replace:'index.html','' | prepend: site.production_url }}",
   "headline": "{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}",
   "datePublished": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
   "dateModified": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
@@ -16,14 +16,14 @@
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
+      "url": "{{ site.logo | prepend: site.production_url }}",
       "width": 60,
       "height": 60
     }
   },
   "image": {
     "@type": "ImageObject",
-    "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
+    "url": "{{ site.logo | prepend: site.production_url }}",
     "height": 60,
     "width": 60
   }
