@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/07/04/thoughtful-code/
 http://dangoldin.com/2017/06/30/send-private-messages-to-all-members-of-a-slack-channel/
 http://dangoldin.com/2017/06/26/rss-finally-fixed/
 http://dangoldin.com/2017/06/24/unsubscribe-and-wait-10-days/
