@@ -1,4 +1,4 @@
-# My personal site that's based off of Jekyll-Bootstrap and hosted on GitHub
+# My blog that's gone through a few iterations and is hosted on GitHub
 
 ## License
 
@@ -6,6 +6,6 @@
 
 Feel free to fork it and use it in whichever way you want.
 
-Theme was inspired by Simon Hørup Eskildsen (http://sirupsen.com/).
+This blog went through a bunch of iterations starting with Jekyll-Bootstrap, to a theme that was inspired by [Simon Hørup Eskildsen](http://sirupsen.com/), to the current setup where it's entirely written in [AMP](https://www.ampproject.org/).
 
-Just making a change here to trigger a rebuild.
+I'm sure within a year it'll be something else.
