@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Fun with Prolog: Priceonomics Puzzle</title>
-  <meta name="description" content="I attempt to solve the Priceonomics Puzzle using Prolog.">
-  <meta name="keywords" content="prolog, priceonomics puzzle, priceonomics" />
+  <title>Yahoo fantasy football stats: 2017-2018 edition</title>
+  <meta name="description" content="In what has become an annual tradition I updated my Yahoo Fantasy Football scraping bot for the 2017-2018 season.">
+  <meta name="keywords" content="yahoo fantasy football stats, scraping" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/06/07/fun-with-prolog-priceonomics-puzzle/">
+  <link rel="canonical" href="http://dangoldin.com/2017/07/08/yahoo-fantasy-football-stats-2017-2018-edition/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Fun with Prolog: Priceonomics Puzzle" />
+  <meta name="twitter:title" content="Yahoo fantasy football stats: 2017-2018 edition" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/06/07/fun-with-prolog-priceonomics-puzzle/" />
-  <meta property="og:title"               content="Fun with Prolog: Priceonomics Puzzle" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/07/08/yahoo-fantasy-football-stats-2017-2018-edition/" />
+  <meta property="og:title"               content="Yahoo fantasy football stats: 2017-2018 edition" />
 
   
-  <meta property="og:description"         content="I attempt to solve the Priceonomics Puzzle using Prolog." />
-  <meta name="twitter:description"        content="I attempt to solve the Priceonomics Puzzle using Prolog." />
+  <meta property="og:description"         content="In what has become an annual tradition I updated my Yahoo Fantasy Football scraping bot for the 2017-2018 season." />
+  <meta name="twitter:description"        content="In what has become an annual tradition I updated my Yahoo Fantasy Football scraping bot for the 2017-2018 season." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/06/07/fun-with-prolog-priceonomics-puzzle/",
-  "headline": "Fun with Prolog: Priceonomics Puzzle",
-  "datePublished": "2013-06-07T00:00:00-04:00",
-  "dateModified": "2013-06-07T00:00:00-04:00",
-  "description": "The Priceonomics blog is one of my favorites so when I saw that they had a programming puzzle up I decided to have some fun with it. And what’s more fun than...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/07/08/yahoo-fantasy-football-stats-2017-2018-edition/",
+  "headline": "Yahoo fantasy football stats: 2017-2018 edition",
+  "datePublished": "2017-07-08T00:00:00-04:00",
+  "dateModified": "2017-07-08T00:00:00-04:00",
+  "description": "In what has become an annual tradition I updated my Yahoo Fantasy Football scraping bot for the 2017-2018 season. Every year Yahoo makes a few changes to the...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,114 +729,13 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Fun with Prolog: Priceonomics Puzzle</h1>
-      <span class="date">07 June 2013</span>
+      <h1 class="post-title">Yahoo fantasy football stats: 2017-2018 edition</h1>
+      <span class="date">08 July 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>The <a href="http://blog.priceonomics.com/" target="_blank">Priceonomics blog</a> is one of my favorites so when I saw that they had a <a href="http://priceonomics.com/jobs/puzzle/" target="_blank">programming puzzle</a> up I decided to have some fun with it. And what’s more fun than hacking around with a quirky, esoteric programming language? I remember having fond memories of playing around with Prolog in middle school so decided to dig it up again in an attempt to solve this puzzle.</p>
-
-<p>Prolog is pretty different than the mainstream programming languages, it belongs to the logic programming language category and relies on defining a variety of relations and then querying these relationships to get results. A simplified way to think about it is you define a set of equations and tell Prolog to “solve for X”.</p>
-
-<p>This leads to some interesting behavior. Many functions end up being bidrectional with the Prolog version of a “concat” function being a good example. The first argument is a list, the second is the separator, and the last is the resulting string. Passing in all 3 will return true if the concatenation statement is true. Passing in the list and the separator will tell us what the concatenated string is. Passing in the separator and a concatenated string is equivalent to a “split” function. The only piece it’s not able to figure out is the separator given the list and the concatenated string. Unfortunately, I’m not familiar enough with Prolog to explain why.</p>
-
-<figure class="highlight"><pre><code class="language-prolog" data-lang="prolog"><span class="o">?-</span> <span class="ss">atomic_list_concat</span><span class="p">([</span><span class="ss">'Prolog'</span><span class="p">,</span> <span class="ss">'is'</span><span class="p">,</span> <span class="ss">'sweet'</span><span class="p">],</span> <span class="ss">' '</span><span class="p">,</span> <span class="ss">'Prolog is sweet'</span><span class="p">).</span>
-<span class="ss">true</span><span class="p">.</span>
-
-<span class="o">?-</span> <span class="ss">atomic_list_concat</span><span class="p">([</span><span class="ss">'Prolog'</span><span class="p">,</span> <span class="ss">'is'</span><span class="p">,</span> <span class="ss">'sweet'</span><span class="p">],</span> <span class="ss">' '</span><span class="p">,</span> <span class="ss">'Prolog is not sweet'</span><span class="p">).</span>
-<span class="ss">false</span><span class="p">.</span>
-
-<span class="o">?-</span> <span class="ss">atomic_list_concat</span><span class="p">([</span><span class="ss">'Prolog'</span><span class="p">,</span> <span class="ss">'is'</span><span class="p">,</span> <span class="ss">'sweet'</span><span class="p">],</span> <span class="ss">' '</span><span class="p">,</span> <span class="nv">X</span><span class="p">).</span>
-<span class="nv">X</span> <span class="o">=</span> <span class="ss">'Prolog is sweet'</span><span class="p">.</span>
-
-<span class="o">?-</span> <span class="ss">atomic_list_concat</span><span class="p">(</span><span class="nv">L</span><span class="p">,</span> <span class="ss">' '</span><span class="p">,</span> <span class="ss">'Prolog is sweet'</span><span class="p">).</span>
-<span class="nv">L</span> <span class="o">=</span> <span class="p">[</span><span class="ss">'Prolog'</span><span class="p">,</span> <span class="ss">is</span><span class="p">,</span> <span class="ss">sweet</span><span class="p">].</span>
-
-<span class="o">?-</span> <span class="ss">atomic_list_concat</span><span class="p">([</span><span class="ss">'Prolog'</span><span class="p">,</span> <span class="ss">is</span><span class="p">,</span> <span class="ss">sweet</span><span class="p">],</span> <span class="nv">X</span><span class="p">,</span> <span class="ss">'Prolog is sweet'</span><span class="p">).</span>
-<span class="nv">ERROR</span><span class="o">:</span> <span class="ss">atomic_list_concat</span><span class="o">/</span><span class="m">3</span><span class="o">:</span> <span class="nv">Arguments</span> <span class="ss">are</span> <span class="ss">not</span> <span class="ss">sufficiently</span> <span class="ss">instantiated</span></code></pre></figure>
-
-<p>For the first pass, I decided to ignore the web side and just focus on defining the exchange rate relationships and have Prolog tell me which exchanges would work. The way it works is that we define a profit to be defined in terms of two intermediate currencies. We can then ask Prolog to give us the currency chain that will result in a profit.</p>
-
-<figure class="highlight"><pre><code class="language-prolog" data-lang="prolog"><span class="ss">exchange</span><span class="p">(</span><span class="ss">usd</span><span class="p">,</span><span class="ss">eur</span><span class="p">,</span><span class="mf">0.7779</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">usd</span><span class="p">,</span><span class="ss">jpy</span><span class="p">,</span><span class="mf">102.459</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">usd</span><span class="p">,</span><span class="ss">btc</span><span class="p">,</span><span class="mf">0.0083</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">eur</span><span class="p">,</span><span class="ss">usd</span><span class="p">,</span><span class="mf">1.2851</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">eur</span><span class="p">,</span><span class="ss">jpy</span><span class="p">,</span><span class="mf">131.711</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">eur</span><span class="p">,</span><span class="ss">btc</span><span class="p">,</span><span class="mf">0.01125</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">jpy</span><span class="p">,</span><span class="ss">usd</span><span class="p">,</span><span class="mf">0.0098</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">jpy</span><span class="p">,</span><span class="ss">eur</span><span class="p">,</span><span class="mf">0.0075</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">jpy</span><span class="p">,</span><span class="ss">btc</span><span class="p">,</span><span class="mf">0.0000811</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">btc</span><span class="p">,</span><span class="ss">usd</span><span class="p">,</span><span class="mf">115.65</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">btc</span><span class="p">,</span><span class="ss">eur</span><span class="p">,</span><span class="mf">88.8499</span><span class="p">).</span>
-<span class="ss">exchange</span><span class="p">(</span><span class="ss">btc</span><span class="p">,</span><span class="ss">jpy</span><span class="p">,</span><span class="mf">12325.44</span><span class="p">).</span>
-
-<span class="err">%</span> <span class="nv">Calculate</span> <span class="ss">profit</span> <span class="ss">for</span> <span class="ss">a</span> <span class="ss">usd</span><span class="o">-&gt;</span><span class="ss">x</span><span class="o">-&gt;</span><span class="ss">y</span><span class="o">-&gt;</span><span class="ss">usd</span> <span class="ss">currency</span> <span class="ss">chain</span>
-<span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">)</span> <span class="p">:-</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="ss">usd</span><span class="p">,</span><span class="nv">First</span><span class="p">,</span><span class="nv">P1</span><span class="p">),</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span><span class="nv">Second</span><span class="p">,</span><span class="nv">P2</span><span class="p">),</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="nv">Second</span><span class="p">,</span><span class="ss">usd</span><span class="p">,</span><span class="nv">P3</span><span class="p">),</span>
-    <span class="nv">Profit</span> <span class="ss">is</span> <span class="nv">P1</span> <span class="o">*</span> <span class="nv">P2</span> <span class="o">*</span> <span class="nv">P3</span><span class="p">.</span>
-
-<span class="ss">arb</span> <span class="p">:-</span>
-    <span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">),</span>
-    <span class="nv">Profit</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">,</span>
-    <span class="ss">write</span><span class="p">(</span><span class="ss">'usd '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">First</span><span class="p">),</span> <span class="ss">write</span><span class="p">(</span><span class="ss">' '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">Second</span><span class="p">),</span> <span class="ss">write</span><span class="p">(</span><span class="ss">' usd '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">Profit</span><span class="p">),</span> <span class="ss">nl</span><span class="p">,</span> <span class="ss">fail</span><span class="p">.</span>
-
-<span class="p">:-</span> <span class="ss">arb</span><span class="p">.</span>
-
-<span class="err">%</span> <span class="nv">Results</span><span class="o">:</span>
-<span class="ss">usd</span> <span class="ss">eur</span> <span class="ss">jpy</span> <span class="ss">usd</span> <span class="mf">1.0040882716200001</span>
-<span class="ss">usd</span> <span class="ss">eur</span> <span class="ss">btc</span> <span class="ss">usd</span> <span class="mf">1.0120965187500002</span>
-<span class="ss">usd</span> <span class="ss">btc</span> <span class="ss">jpy</span> <span class="ss">usd</span> <span class="mf">1.0025512896</span></code></pre></figure>
-
-<p>The next step was to get it to retrieve and parse the JSON from the Priceonomics server. After doing a ton of searches and reading a ton of documentation I was able to get it to work. As a next step I’ll try to see if I can get it to return currency chains of arbitrary length.</p>
-
-<figure class="highlight"><pre><code class="language-prolog" data-lang="prolog"><span class="p">:-</span> <span class="ss">use_module</span><span class="p">(</span><span class="ss">library</span><span class="p">(</span><span class="ss">'http/json'</span><span class="p">)).</span>
-<span class="p">:-</span> <span class="ss">use_module</span><span class="p">(</span><span class="ss">library</span><span class="p">(</span><span class="ss">'http/json_convert'</span><span class="p">)).</span>
-<span class="p">:-</span> <span class="ss">use_module</span><span class="p">(</span><span class="ss">library</span><span class="p">(</span><span class="ss">'http/http_json'</span><span class="p">)).</span>
-<span class="p">:-</span> <span class="ss">use_module</span><span class="p">(</span><span class="ss">library</span><span class="p">(</span><span class="ss">'http/http_client'</span><span class="p">)).</span>
-<span class="p">:-</span> <span class="ss">use_module</span><span class="p">(</span><span class="ss">library</span><span class="p">(</span><span class="ss">'http/http_open'</span><span class="p">)).</span>
-
-<span class="ss">parse</span><span class="p">(</span><span class="nv">I</span><span class="p">)</span> <span class="p">:-</span>
-    <span class="ss">test</span><span class="p">(</span><span class="nv">CP</span><span class="o">=</span><span class="nv">S</span><span class="p">)</span> <span class="o">=</span> <span class="ss">test</span><span class="p">(</span><span class="nv">I</span><span class="p">),</span>
-    <span class="ss">atomic_list_concat</span><span class="p">(</span><span class="nv">L</span><span class="p">,</span><span class="ss">'_'</span><span class="p">,</span> <span class="nv">CP</span><span class="p">),</span>
-    <span class="p">[</span><span class="nv">A</span><span class="p">,</span> <span class="nv">B</span><span class="p">]</span> <span class="o">=</span> <span class="nv">L</span><span class="p">,</span>
-    <span class="ss">atom_number</span><span class="p">(</span><span class="nv">S</span><span class="p">,</span><span class="nv">R</span><span class="p">),</span>
-    <span class="ss">assert</span><span class="p">(</span><span class="ss">exchange</span><span class="p">(</span><span class="nv">A</span><span class="p">,</span><span class="nv">B</span><span class="p">,</span><span class="nv">R</span><span class="p">)).</span>
-
-<span class="err">%</span> <span class="nv">Calculate</span> <span class="ss">profit</span> <span class="ss">for</span> <span class="ss">a</span> <span class="ss">usd</span><span class="o">-&gt;</span><span class="ss">x</span><span class="o">-&gt;</span><span class="ss">y</span><span class="o">-&gt;</span><span class="ss">usd</span> <span class="ss">currency</span> <span class="ss">chain</span>
-<span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">)</span> <span class="p">:-</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="ss">'USD'</span><span class="p">,</span><span class="nv">First</span><span class="p">,</span><span class="nv">P1</span><span class="p">),</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span><span class="nv">Second</span><span class="p">,</span><span class="nv">P2</span><span class="p">),</span>
-    <span class="ss">exchange</span><span class="p">(</span><span class="nv">Second</span><span class="p">,</span><span class="ss">'USD'</span><span class="p">,</span><span class="nv">P3</span><span class="p">),</span>
-    <span class="nv">Profit</span> <span class="ss">is</span> <span class="nv">P1</span> <span class="o">*</span> <span class="nv">P2</span> <span class="o">*</span> <span class="nv">P3</span><span class="p">.</span>
-
-<span class="ss">arb</span> <span class="p">:-</span>
-    <span class="ss">http_get</span><span class="p">(</span><span class="ss">'http://fx.priceonomics.com/v1/rates/'</span><span class="p">,</span> <span class="nv">JsonIn</span><span class="p">,</span> <span class="p">[]),</span>
-    <span class="ss">json_to_prolog</span><span class="p">(</span><span class="nv">JsonIn</span><span class="p">,</span><span class="nv">PrologIn</span><span class="p">),</span>
-    <span class="nv">PrologIn</span> <span class="o">=</span> <span class="ss">json</span><span class="p">(</span><span class="nv">L</span><span class="p">),</span>
-    <span class="ss">maplist</span><span class="p">(</span><span class="ss">parse</span><span class="p">,</span> <span class="nv">L</span><span class="p">),</span>
-    <span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">),</span>
-    <span class="nv">Profit</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">,</span>
-    <span class="ss">not</span><span class="p">(</span><span class="nv">First</span> <span class="o">=</span> <span class="nv">Second</span><span class="p">),</span>
-    <span class="ss">not</span><span class="p">(</span><span class="nv">First</span> <span class="o">=</span> <span class="ss">'USD'</span><span class="p">),</span>
-    <span class="ss">not</span><span class="p">(</span><span class="nv">Second</span> <span class="o">=</span> <span class="ss">'USD'</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="ss">'USD '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">First</span><span class="p">),</span> <span class="ss">write</span><span class="p">(</span><span class="ss">' '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">Second</span><span class="p">),</span> <span class="ss">write</span><span class="p">(</span><span class="ss">' USD '</span><span class="p">),</span>
-    <span class="ss">write</span><span class="p">(</span><span class="nv">Profit</span><span class="p">),</span> <span class="ss">nl</span><span class="p">,</span> <span class="ss">fail</span><span class="p">.</span>
-
-<span class="p">:-</span> <span class="ss">arb</span><span class="p">.</span>
-
-<span class="err">%</span> <span class="nv">Results</span> <span class="p">(</span><span class="nv">Might</span> <span class="ss">change</span> <span class="ss">each</span> <span class="ss">run</span><span class="p">)</span><span class="o">:</span>
-<span class="nv">USD</span> <span class="nv">JPY</span> <span class="nv">EUR</span> <span class="nv">USD</span> <span class="mf">1.0071833283714342</span>
-<span class="nv">USD</span> <span class="nv">EUR</span> <span class="nv">JPY</span> <span class="nv">USD</span> <span class="mf">1.007164983424893</span></code></pre></figure>
-
-<p>I’m sure a Prolog pro would have been able to do this much quicker and better but I had a surprisingly fun time doing it. I got a bit frustrated trying to translate the JSON into Prolog relationships but actually getting it to work made it worth it. Trying a whole new programming category is a great way to get more creative and forces us to think about problems differently. Prolog may not be the most practical language but exposing us to new concepts and approaches makes it valuable.</p>
+<p>In what has become an annual tradition I updated my Yahoo Fantasy Football scraping bot for the 2017-2018 season. Every year Yahoo makes a few changes to their page and this year was no different. It’s always fun to cross my fingers, run the script, and see what breaks. This year the changes were surprisingly minor. For some reason Yahoo changed the name attribute of the password field from “passwd” to “password” and made a few tweaks to the table structure which required updating the XPath selectors. Other than that everything worked as expected and the 2017-2018 data is available <a href="/assets/static/data/stats-2018.csv">here</a> with the code up on <a href="https://github.com/dangoldin/yahoo-ffl">GitHub</a>.</p>
 
     </section>
 
@@ -850,9 +749,6 @@ table {
 
   <!-- <li>Tagged under:</li> -->
   
-    
-    	<!-- <li><a href="/tags/##prolog-ref">#prolog <span>1</span></a></li> -->
-      <li><a href="/tags/##prolog-ref">#prolog </a></li>
     
     	<!-- <li><a href="/tags/##code-ref">#code <span>108</span></a></li> -->
       <li><a href="/tags/##code-ref">#code </a></li>
@@ -872,11 +768,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/06/04/citibike-directions-second-attempt/" title="Citibike Directions: Second Attempt">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/07/04/thoughtful-code/" title="Thoughtful code">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/06/12/constantly-entertained/" title="Constantly entertained">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -887,7 +783,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F06%2F07%2Ffun-with-prolog-priceonomics-puzzle%2F&title=Fun+with+Prolog%3A+Priceonomics+Puzzle">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F07%2F08%2Fyahoo-fantasy-football-stats-2017-2018-edition%2F&title=Yahoo+fantasy+football+stats%3A+2017-2018+edition">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
