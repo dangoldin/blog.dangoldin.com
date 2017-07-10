@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-07-08T17:12:44-04:00</updated>
+ <updated>2017-07-09T22:16:02-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Increasing software engineer specialization</title>
+   <link href="http://dangoldin.com/2017/07/09/increasing-software-engineer-specialization/"/>
+   <updated>2017-07-09T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/07/09/increasing-software-engineer-specialization</id>
+   <content:encoded><![CDATA[
+<p>I’m not sure if it’s always been this way and I just never realized it but it seems there’s a lot of specialization happening within the software engineering industry. For a long time it felt that the majority of the software industry field was shallow enough that being a strong developer was enough to get into anything of interest. Now it does feel as if the industry is turning a corner and there’s significantly more specialization. There have always been exceptions in the past but it does feel specialization was along the edges - now there’s enough depth in the industry that it’s difficult to be a general software engineer, especially further in a career.</p>
+
+<p>Just by looking at various job postings I see the following roles: frontend developer (and within here there are various splits by technology), data engineer, machine learning and AI engineer, mobile developer (which is further divided by iOS and Android), devops engineer, security engineer, sales engineer, and database engineer. And this just scratches the surface - there’s also a ton of software engineering work happening on the hardware side which comes with its own principles.</p>
+
+<p>On one hand it’s possible to make a solid living as a software engineer that ties various third party libraries together in order to deliver new features. This is by no means easy and requires a solid understanding of software architecture and the ability to quickly process spartan documentation combined with the ability to write code in a futureproof way. At the same time this is very different than pushing the boundaries of a discipline.</p>
+
+<p>It’s definitely possible to specialize in more than one area or switch among them but it requires significant effort and will only get more difficult over time. I don’t know what this means other than to be thoughtful about the roles you’re taking and whether they’re something you want to keep specializing in.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Yahoo fantasy football stats: 2017-2018 edition</title>
