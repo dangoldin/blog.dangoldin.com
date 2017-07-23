@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/07/23/the-wild-world-of-online-trackers/
 http://dangoldin.com/2017/07/13/cities-and-outsourced-infrastructure/
 http://dangoldin.com/2017/07/09/increasing-software-engineer-specialization/
 http://dangoldin.com/2017/07/08/yahoo-fantasy-football-stats-2017-2018-edition/
