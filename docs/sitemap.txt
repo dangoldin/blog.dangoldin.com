@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/08/07/ephemeral-data/
 http://dangoldin.com/2017/07/28/visualizing-my-meetings-over-time/
 http://dangoldin.com/2017/07/24/a-google-docs-efficiency-win/
 http://dangoldin.com/2017/07/23/the-wild-world-of-online-trackers/

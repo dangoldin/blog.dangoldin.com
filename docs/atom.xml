@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-07-29T15:56:31-04:00</updated>
+ <updated>2017-08-07T21:56:26-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Ephemeral data</title>
+   <link href="http://dangoldin.com/2017/08/07/ephemeral-data/"/>
+   <updated>2017-08-07T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/08/07/ephemeral-data</id>
+   <content:encoded><![CDATA[
+<p>A thought experiment that’s been on my mind lately is this idea of ephemeral data. Imagine a computer sending a message to another computer and then immediately deleting it. This message then gets sent from computer to computer without actually getting saved down anywhere. It doesn’t have a permanent home and just hops from machine to machine. If that computer shuts down before the message is passed on then it’s lost forever. Only by being on a machine when it receives a message do you get to see it - otherwise it keeps going along on its infinite journey. I like to think of this as information that only exists in wires and is constantly crossing the world at the speed of light.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Visualizing my meetings over time</title>
