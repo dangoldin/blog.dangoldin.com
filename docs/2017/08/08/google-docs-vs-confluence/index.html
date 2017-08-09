@@ -21,31 +21,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Mailbox: Is the server required?</title>
-  <meta name="description" content="Did the Mailbox app need to use a server or was it about marketing?">
-  <meta name="keywords" content="Mailbox, marketing" />
+  <title>Google Docs vs Confluence</title>
+  <meta name="description" content="For a very long time I've been using Google Docs instead of learning Confluence but I'm glad I finally made the transition.">
+  <meta name="keywords" content="google docs, confluence, jira, wiki, collaboration, tools" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/">
+  <link rel="canonical" href="http://dangoldin.com/2017/08/08/google-docs-vs-confluence/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Mailbox: Is the server required?" />
+  <meta name="twitter:title" content="Google Docs vs Confluence" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/" />
-  <meta property="og:title"               content="Mailbox: Is the server required?" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/08/08/google-docs-vs-confluence/" />
+  <meta property="og:title"               content="Google Docs vs Confluence" />
 
   
-  <meta property="og:description"         content="Did the Mailbox app need to use a server or was it about marketing?" />
-  <meta name="twitter:description"        content="Did the Mailbox app need to use a server or was it about marketing?" />
+  <meta property="og:description"         content="For a very long time I've been using Google Docs instead of learning Confluence but I'm glad I finally made the transition." />
+  <meta name="twitter:description"        content="For a very long time I've been using Google Docs instead of learning Confluence but I'm glad I finally made the transition." />
   
 
-  
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/mailbox1.png" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/mailbox1.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -55,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/",
-  "headline": "Mailbox: Is the server required?",
-  "datePublished": "2013-03-29T00:00:00-04:00",
-  "dateModified": "2013-03-29T00:00:00-04:00",
-  "description": "  ",
+  "mainEntityOfPage": "http://dangoldin.com/2017/08/08/google-docs-vs-confluence/",
+  "headline": "Google Docs vs Confluence",
+  "datePublished": "2017-08-08T00:00:00-04:00",
+  "dateModified": "2017-08-08T00:00:00-04:00",
+  "description": "I’ve been a happy user of Google Docs for years now and have yet to find another product that makes collaboration that easy or simple. It’s a well designed p...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -732,23 +729,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Mailbox: Is the server required?</h1>
-      <span class="date">29 March 2013</span>
+      <h1 class="post-title">Google Docs vs Confluence</h1>
+      <span class="date">08 August 2017</span>
     </div>
 
     <section class="post-content">
       
-<div class="right10">
-  <amp-img src="/assets/static/images/mailbox1.png" alt="Mailbox" width="280" height="420"></amp-img>
-</div>
+<p>I’ve been a happy user of Google Docs for years now and have yet to find another product that makes collaboration that easy or simple. It’s a well designed product with a ton of shortcuts that make it incredibly easy to be exceptionally productive. I can dive in and quickly leave a few comments as well as assign some todos knowing that the relevant folk will be notified. And for a very long time I’ve been using it for the bulk of my writing - including specs, design documents, and general note taking.</p>
 
-<p>After a couple of weeks on the waiting list I finally got access to the Mailbox App. It’s a huge improvement over the standard mail app and my mobile email consumption habits have improved significantly. I’m still not at “inbox zero” but am making my way there.</p>
+<p>Yet as much as I enjoy using Google Docs I’ve started using Confluence more and more. We use JIRA and since they’re both part of the Atlassian suite of products they’re both nicely integrated. Confluence is a wiki platform so it provides a whole world of functionality that Google Docs just doesn’t offer - and rightfully so. Confluence comes with a bit more structure that makes it easy to create page templates with structured metadata that can then be organized and displayed based on that metadata. Somewhat remarkably, the Confluence search seems to be better than Google Docs - despite Google being the king of search; I really have no idea why the Google Docs search isn’t better. But the one thing that causes Confluence to win is the ability to have much more structured and better organized tasks. One can assign tasks in Google Docs but they’re treated as second class citizens - they don’t have due dates and are only visible when viewing a document. Confluence, on the other hand, makes it simple to add a todo with a due date on any page and then have all tasks aggregated into a single page. Of course I can have a separate tool tracking all my todos but it’s incredibly powerful to have tasks live next to their context.</p>
 
-<p>I don’t know much about iOS development but one thing I’ve been wondering about is whether they could have written it to not use a remote server. Regarding scaling Mailbox, they <a href="http://www.mailboxapp.com/reservations/?p=1#were-ramping-up" target="_blank">wrote</a>:</p>
-
-<blockquote><p>A critical part of Mailbox scaling is its brand new infrastructure. Mailbox relies on servers in the cloud to do things like send push notifications, download email as fast as possible, and handle “snoozed” messages.</p></blockquote>
-
-<p>From reading developer docs, it does seem you need a server to do push notifications but I wonder if there’s a way to schedule notifications on the client side. Conceptually, there’s nothing the server needs to do that can’t be done client side via simple polling. This way, the server load becomes non existent and scaling issues are avoided. Even a hybrid approach could have worked: use the server approach when possible but fall back to polling if the servers are overwhelmed. I just can’t help but think that there must have been a way to have the same functionality client-side. The cynic in me wants to say that it was done to build up hype but it’s equally likely that I just don’t know iOS development. It seems odd that crippling an app would help with marketing. I hope that’s not what it takes to sell for $100M.</p>
+<p>I know I shouldn’t be comparing Google Docs with Confluence since they were designed for completely different purposes and yet I’ve resisted moving to Confluence due to how much more usable and friendly Google Docs felt. The lesson here is that we’re always going to favor what we’re comfortable with but it’s important to think about why some tools feel heavier and clunkier than others. There’s likely a reason they’re built and designed that way and are likely to solve our problems better than the tools we love but have to wrestle into submission.</p>
 
     </section>
 
@@ -781,11 +772,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/03/26/welcoming-the-long-single-webpage/" title="Welcoming the long, single webpage">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/08/07/ephemeral-data/" title="Ephemeral data">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/04/02/the-new-gmail-compose/" title="The new Gmail compose">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -796,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F03%2F29%2Fmailbox-is-the-server-required%2F&title=Mailbox%3A+Is+the+server+required%3F">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F08%2F08%2Fgoogle-docs-vs-confluence%2F&title=Google+Docs+vs+Confluence">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
