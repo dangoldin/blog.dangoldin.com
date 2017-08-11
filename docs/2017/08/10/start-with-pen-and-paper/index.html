@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Domain specific API definitions</title>
-  <meta name="description" content="Amazon rewrote the boto library to take advantage of their domain specific models that represents the AWS API. It's wonderfully clever and I'd love to see st...">
-  <meta name="keywords" content="apis, amazon, aws, boto3, domain specific languages" />
+  <title>Start with pen and paper</title>
+  <meta name="description" content="It's natural to gravitate to a computer when working on a new problem but it's often more useful to just go to pen and paper. Especially for creatively chall...">
+  <meta name="keywords" content="thinking, pen, paper, whiteboards, productivity" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2015/06/23/domain-specific-api-definitions/">
+  <link rel="canonical" href="http://dangoldin.com/2017/08/10/start-with-pen-and-paper/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Domain specific API definitions" />
+  <meta name="twitter:title" content="Start with pen and paper" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2015/06/23/domain-specific-api-definitions/" />
-  <meta property="og:title"               content="Domain specific API definitions" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/08/10/start-with-pen-and-paper/" />
+  <meta property="og:title"               content="Start with pen and paper" />
 
   
-  <meta property="og:description"         content="Amazon rewrote the boto library to take advantage of their domain specific models that represents the AWS API. It's wonderfully clever and I'd love to see standardization around API definition." />
-  <meta name="twitter:description"        content="Amazon rewrote the boto library to take advantage of their domain specific models that represents the AWS API. It's wonderfully clever and I'd love to see standardization around API definition." />
+  <meta property="og:description"         content="It's natural to gravitate to a computer when working on a new problem but it's often more useful to just go to pen and paper. Especially for creatively challenging problems." />
+  <meta name="twitter:description"        content="It's natural to gravitate to a computer when working on a new problem but it's often more useful to just go to pen and paper. Especially for creatively challenging problems." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2015/06/23/domain-specific-api-definitions/",
-  "headline": "Domain specific API definitions",
-  "datePublished": "2015-06-23T00:00:00-04:00",
-  "dateModified": "2015-06-23T00:00:00-04:00",
-  "description": "Yesterday, Amazon announced a major update to their Python client, boto3. The core functionality is unchanged but they used a clever solution to make it easi...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/08/10/start-with-pen-and-paper/",
+  "headline": "Start with pen and paper",
+  "datePublished": "2017-08-10T00:00:00-04:00",
+  "dateModified": "2017-08-10T00:00:00-04:00",
+  "description": "Oftentimes when starting a new project I have a tendency to just dive in. It makes me feel immediately productive and I know I can just go back and tweak wha...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,45 +729,19 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Domain specific API definitions</h1>
-      <span class="date">23 June 2015</span>
+      <h1 class="post-title">Start with pen and paper</h1>
+      <span class="date">10 August 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>Yesterday, Amazon <a href="https://aws.amazon.com/blogs/aws/now-available-aws-sdk-for-python-3-boto3/" target="_blank">announced</a> a major update to their Python client, boto3. The core functionality is unchanged but they used a clever solution to make it easier to add, modify, and remove endpoints. By coming up with a <a href="https://github.com/boto/boto3/tree/develop/boto3/data" target="_blank">standardized representation</a> for each of the endpoints they’re able to write wrappers in different languages that generate the API calls programmatically. For example, I’ve included a subset of the <a href="https://github.com/boto/boto3/blob/develop/boto3/data/ec2/2015-04-15/resources-1.json" target="_blank">EC2 definition</a> below. It contains the information necessary to programatically generate the API wrapper to hit the appropriate EC2 endpoints.</p>
+<p>Oftentimes when starting a new project I have a tendency to just dive in. It makes me feel immediately productive and I know I can just go back and tweak whatever needs tweaking. Yet almost always I suspect I would have been better of if I took the time to take a step back, get a sheet of paper and a pen, and think through the various steps and flows, even it was just a series of doodles.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"CreateDhcpOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreateDhcpOptions"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions.DhcpOptionsId"</span><span class="w"> </span><span class="p">}</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"CreateInstances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RunInstances"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instance"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[].InstanceId"</span><span class="w"> </span><span class="p">}</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[]"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="err">...</span><span class="w">
-    </span><span class="err">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<p>In addition to taking a step back and slowing down it’s the changing of the medium that has strongest impact. Software tends to force us into a given structure but using a pen and paper gives us the ability to think differently. We don’t have to start typing or dragging elements onto a screen but are able to whatever we want. This opens a new possibility and especially for a problem requiring a creative solution provides a healthy boost.</p>
 
-<p>This domain specific approach is great when working with APIs and I’m surprised more libraries don’t adopt it. The benefits include being able to keep the actual code the same and only updating the definitions as well as having definitions shared across various language implementations. An additional benefit that can be gotten is actually downloading the latest definitions at runtime. This way you’re always running against the latest version of the API and don’t have to worry about upgrading versions.</p>
+<p>Whiteboards have the same effect. It’s amazing how much more valuable whiteboard discussions are rather than conversations around a computer screen. It’s useful to start with a well structured document or presentation but the creative juices really start flowing when the whiteboard gets involved. A whiteboard removes the need for perfection and encourages ideas to keep growing on top of one another. Many will be crappy but even a crappy idea may engender a great one.</p>
 
-<p>I’d love to see more companies adopt this approach and even come up with a standard API declaration language. Then a single set of scripts can be used to wrap any API. Imagine how much simpler it would be to integrate with third party APIs when all you need to do is read the docs and have everything else wired. In fact the docs themselves can be generated from the base definitions.</p>
+<p>If you find yourself stuck with a problem staring at a computer I suggest changing the medium and going to pen and paper. It’s surprising what that simple act will do.</p>
 
     </section>
 
@@ -785,9 +759,6 @@ table {
     	<!-- <li><a href="/tags/##meta-ref">#meta <span>220</span></a></li> -->
       <li><a href="/tags/##meta-ref">#meta </a></li>
     
-    	<!-- <li><a href="/tags/##code-ref">#code <span>109</span></a></li> -->
-      <li><a href="/tags/##code-ref">#code </a></li>
-    
   
 
 
@@ -803,11 +774,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2015/06/20/properly-handling-text-based-two-factor-authentication/" title="Properly handling text based two factor authentication">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/08/08/google-docs-vs-confluence/" title="Google Docs vs Confluence">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2015/06/27/ambiguous-sql-queries/" title="Ambiguous SQL queries">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -818,7 +789,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2015%2F06%2F23%2Fdomain-specific-api-definitions%2F&title=Domain+specific+API+definitions">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F08%2F10%2Fstart-with-pen-and-paper%2F&title=Start+with+pen+and+paper">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
