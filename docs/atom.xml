@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-08-10T21:40:35-04:00</updated>
+ <updated>2017-08-12T22:21:18-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>A Snapcode in the mail</title>
+   <link href="http://dangoldin.com/2017/08/12/a-snapcode-in-the-mail/"/>
+   <updated>2017-08-12T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/08/12/a-snapcode-in-the-mail</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/snapcode-jet.jpg" alt="Snapcode for Jet.com" width="1512" height="2016" layout="responsive"/>
+
+<p>Earlier today I received one of those typical promotions in the mail from Jet.com - $20 off for a $100 purchase. Nothing special about the offer itself but something I found fascinating was that there was a Snapcode that when scanned via Snapchat took you to a mobile optimized Jet.com page within Snapchat. Most mail I’ve seen has the callouts to encourage people to follow the brand on Facebook and Twitter but this promotion didn’t have either of those - just the Snapcode.</p>
+
+<p>I haven’t seen this before and find it odd. Is it really the case that people are using Snapchat that frequently that they would open it up to scan a QR code that takes them to an ecommerce site? Maybe this was Jet.com categorizing me into the young and hip heavy Snapchat using audience segment. Maybe the fact that I noticed it and am writing this blog post is proof enough that replacing the social follows with a Snapcode was well worth it.</p>
+
+<p>QR codes are extremely popular in Asia but have never taken off in the United States so it’s interesting to see them starting to appear, and potentially even take off, through Snapchat.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Start with pen and paper</title>
