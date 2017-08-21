@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Genetic programming Connect 4</title>
-  <meta name="description" content="A few years ago I wrote a genetic program that generates a Connect 4 bot. This provides a quick overview of how it works.">
-  <meta name="keywords" content="genetic programming, ai, connect 4" />
+  <title>JSON to CSV</title>
+  <meta name="description" content="I needed to convert JSON data to a CSV which is a surprisingly challenging problem.">
+  <meta name="keywords" content="json, csv, ec2 instance list csv" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/11/30/genetic-programming-connect-4/">
+  <link rel="canonical" href="http://dangoldin.com/2017/08/20/json-to-csv/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Genetic programming Connect 4" />
+  <meta name="twitter:title" content="JSON to CSV" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/11/30/genetic-programming-connect-4/" />
-  <meta property="og:title"               content="Genetic programming Connect 4" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/08/20/json-to-csv/" />
+  <meta property="og:title"               content="JSON to CSV" />
 
   
-  <meta property="og:description"         content="A few years ago I wrote a genetic program that generates a Connect 4 bot. This provides a quick overview of how it works." />
-  <meta name="twitter:description"        content="A few years ago I wrote a genetic program that generates a Connect 4 bot. This provides a quick overview of how it works." />
+  <meta property="og:description"         content="I needed to convert JSON data to a CSV which is a surprisingly challenging problem." />
+  <meta name="twitter:description"        content="I needed to convert JSON data to a CSV which is a surprisingly challenging problem." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/11/30/genetic-programming-connect-4/",
-  "headline": "Genetic programming Connect 4",
-  "datePublished": "2013-11-30T00:00:00-05:00",
-  "dateModified": "2013-11-30T00:00:00-05:00",
-  "description": "Over Thanksgiving break I was going through some old GitHub repos and found an interesting one I wanted to share. It’s a Connect 4 bot that’s evolved through...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/08/20/json-to-csv/",
+  "headline": "JSON to CSV",
+  "datePublished": "2017-08-20T00:00:00-04:00",
+  "dateModified": "2017-08-20T00:00:00-04:00",
+  "description": "A while back I needed to dump some some EC2 instance information into a CSV file for a quick analysis. Just to get it done I took the immediate approach of u...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,19 +729,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Genetic programming Connect 4</h1>
-      <span class="date">30 November 2013</span>
+      <h1 class="post-title">JSON to CSV</h1>
+      <span class="date">20 August 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>Over Thanksgiving break I was going through some old GitHub repos and found an interesting one I wanted to share. It’s a <a href="https://github.com/dangoldin/connect4bot" target="_blank">Connect 4 bot</a> that’s evolved through a genetic program. The goal of the strategy is to choose a column to move to that will give the highest probability of a win given a board position. To figure out the move column, the genetic program simulates play of strategy against strategy and gives the most successful ones a greater chance of reproducing into the next generation. The idea is that over time the resulting strategy will be the most fit.</p>
+<p>A while back I needed to dump some some EC2 instance information into a CSV file for a quick analysis. Just to get it done I took the immediate approach of using the AWS API to pull the details and then just navigating the massively deep structure. This approach required code designed for that exact structure so it got me thinking of a more generic approach that would be able to extract CSV data from an arbitrary JSON structure. It’s a surprisingly tricky problem since JSON consists of both lists and dictionaries and can have a pretty hairy nesting structure. Just to get the EC2 instances one has to go through a list of reservations each containing a list of instances with the various fields at different hierarchy levels - and some depending on another value within the same structure.</p>
 
-<p>The way a typical genetic program works is represented is through a tree structure with the leaf nodes (terminals) containing the various features of the input and the non-leaf nodes containing functions to evaluate the values in the leaf nodes. This way, the program can evaluate any input and we can create new functions by taking subbranches from one tree and combining them with another.</p>
+<p>The problem is similar to extracting various elements in HTML and one of my favorite solutions there is to use XPath. It’s straightforward to implement an XPath-like selector for JSON but the challenge is extract a set of fields at once while maintaining some sort of internal consistency - in the EC2 example an example is getting the public ip, the private ip, as well a tag name based on its key. To get this to work we need to take a list of XPath-like expressions that need to be evaluated concurrently in order to extract what’s needed.</p>
 
-<p>I used the <a href="http://pyevolve.sourceforge.net/" target="_blank">PyEvolve framework</a> which took care of all the simulation code so the bulk of my work was spent in figuring out which features and functions to use as well as a way of tracking the intermediate strategies so I could store the resulting strategy for later use. The features I ended up using where the number of own and opponent’s pieces adjacent to the move, the number of own and opponent’s 3 piece segments that would be created with the move, and the height of the column. I experimented with a few functions but ended up keeping a simple set of four - add, subtract, multiply, and an “is greater than” function.</p>
-
-<p>In the end, the best I could get was a genetic program that was able to beat a random move strategy a little over 70% of the time. Unfortunately, this “optimal” strategy failed to win against a real strategy, such as <a href="http://en.wikipedia.org/wiki/Minimax#Minimax_algorithm_with_alternate_moves" target="_blank">minimax</a>. I suspect the strategy would have done a bit better had I trained it against a smarter set of strategies but I doubt it would have ever been able to compete with the minimax approach. I’m mostly amazed that by starting with a few features and some simple functions it’s possible to evolve a strategy that’s actually better than random. I doubt I can use this approach in a professional project but it’s still great being exposed to it.</p>
+<p>The <a href="https://github.com/dangoldin/python-tools/blob/master/json_csv.py">first pass is up on GitHub</a> but there’s definitely a bit of work that still needs to be done. It’s been tested on a few simple files and examples but definitely doesn’t work for complex hierarchies or extractions.</p>
 
     </section>
 
@@ -759,9 +757,6 @@ table {
     	<!-- <li><a href="/tags/##code-ref">#code <span>110</span></a></li> -->
       <li><a href="/tags/##code-ref">#code </a></li>
     
-    	<!-- <li><a href="/tags/##python-ref">#python <span>12</span></a></li> -->
-      <li><a href="/tags/##python-ref">#python </a></li>
-    
   
 
 
@@ -777,11 +772,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/11/26/blog-analytics-blogolytics/" title="Blog analytics (blogolytics?)">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/08/12/a-snapcode-in-the-mail/" title="A Snapcode in the mail">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/12/01/drowning-in-javascript/" title="Drowning in JavaScript">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -792,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F11%2F30%2Fgenetic-programming-connect-4%2F&title=Genetic+programming+Connect+4">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F08%2F20%2Fjson-to-csv%2F&title=JSON+to+CSV">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

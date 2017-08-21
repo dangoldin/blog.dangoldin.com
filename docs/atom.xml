@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-08-12T22:21:18-04:00</updated>
+ <updated>2017-08-20T21:28:20-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>JSON to CSV</title>
+   <link href="http://dangoldin.com/2017/08/20/json-to-csv/"/>
+   <updated>2017-08-20T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/08/20/json-to-csv</id>
+   <content:encoded><![CDATA[
+<p>A while back I needed to dump some some EC2 instance information into a CSV file for a quick analysis. Just to get it done I took the immediate approach of using the AWS API to pull the details and then just navigating the massively deep structure. This approach required code designed for that exact structure so it got me thinking of a more generic approach that would be able to extract CSV data from an arbitrary JSON structure. It’s a surprisingly tricky problem since JSON consists of both lists and dictionaries and can have a pretty hairy nesting structure. Just to get the EC2 instances one has to go through a list of reservations each containing a list of instances with the various fields at different hierarchy levels - and some depending on another value within the same structure.</p>
+
+<p>The problem is similar to extracting various elements in HTML and one of my favorite solutions there is to use XPath. It’s straightforward to implement an XPath-like selector for JSON but the challenge is extract a set of fields at once while maintaining some sort of internal consistency - in the EC2 example an example is getting the public ip, the private ip, as well a tag name based on its key. To get this to work we need to take a list of XPath-like expressions that need to be evaluated concurrently in order to extract what’s needed.</p>
+
+<p>The <a href="https://github.com/dangoldin/python-tools/blob/master/json_csv.py">first pass is up on GitHub</a> but there’s definitely a bit of work that still needs to be done. It’s been tested on a few simple files and examples but definitely doesn’t work for complex hierarchies or extractions.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>A Snapcode in the mail</title>
