@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-08-20T21:28:20-04:00</updated>
+ <updated>2017-08-22T22:20:23-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Death of retail</title>
+   <link href="http://dangoldin.com/2017/08/22/death-of-retail/"/>
+   <updated>2017-08-22T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/08/22/death-of-retail</id>
+   <content:encoded><![CDATA[
+<p>I keep hearing that retail is dying and while I do believe that to be true it’s been difficult to see that from  living in the NYC area. The city streets are always bustling and while there are always some empty commercial spaces they seem to always get rented within a month or two. Yet this morning on my way to the office I came across a legitimate sign, literal and figurative, that brick and mortar retail is on its way out.</p>
+
+<img src="http://dangoldin.com/assets/static/images/death-of-retail.jpg" alt="Death of retail" width="1512" height="2016" layout="responsive"/>
+
+<p>This was a small store that primarily sold t-shirts and they posted a sign that the physical location is closing and the only storefront that’s left is online. Beyond that, they made a point to note that they have both a store on Amazon as well as on their own domain. Remarkably, they list the Amazon url first. If this isn’t a sign that Amazon is taking over I don’t know what is.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>JSON to CSV</title>
