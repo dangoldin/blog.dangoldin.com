@@ -21,31 +21,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Making sense of my Twitter archive</title>
-  <meta name="description" content="Doing some data visualizations on my Twitter archive">
-  <meta name="keywords" content="twitter data visualization matplotlib nltk quantified self" />
+  <title>A unified Lambda architecture</title>
+  <meta name="description" content="A Lambda architecture consists of both a batch and real time component yet they're implemented differently. The logic is the same and it should be moved furt...">
+  <meta name="keywords" content="lambda architecture, adtech, real time data, batch data, streaming data" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/01/19/making-sense-of-my-twitter-archive/">
+  <link rel="canonical" href="http://dangoldin.com/2017/08/25/a-unified-lambda-architecture/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Making sense of my Twitter archive" />
+  <meta name="twitter:title" content="A unified Lambda architecture" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/01/19/making-sense-of-my-twitter-archive/" />
-  <meta property="og:title"               content="Making sense of my Twitter archive" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/08/25/a-unified-lambda-architecture/" />
+  <meta property="og:title"               content="A unified Lambda architecture" />
 
   
-  <meta property="og:description"         content="Doing some data visualizations on my Twitter archive" />
-  <meta name="twitter:description"        content="Doing some data visualizations on my Twitter archive" />
+  <meta property="og:description"         content="A Lambda architecture consists of both a batch and real time component yet they're implemented differently. The logic is the same and it should be moved further upstream in order to be kept in a single place." />
+  <meta name="twitter:description"        content="A Lambda architecture consists of both a batch and real time component yet they're implemented differently. The logic is the same and it should be moved further upstream in order to be kept in a single place." />
   
 
-  
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/by-month-dow.png" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/by-month-dow.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -55,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/01/19/making-sense-of-my-twitter-archive/",
-  "headline": "Making sense of my Twitter archive",
-  "datePublished": "2013-01-19T00:00:00-05:00",
-  "dateModified": "2013-01-19T00:00:00-05:00",
-  "description": "I finally got access to my Twitter archive and decided to have some fun with it and also give me an excluse to play around with matplotlib. The first step wa...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/08/25/a-unified-lambda-architecture/",
+  "headline": "A unified Lambda architecture",
+  "datePublished": "2017-08-25T00:00:00-04:00",
+  "dateModified": "2017-08-25T00:00:00-04:00",
+  "description": "Lately I’ve been thinking about the Lambda architecture used in modern data pipelines. Lambda architectures are designed for systems that contain massive amo...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -732,66 +729,21 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Making sense of my Twitter archive</h1>
-      <span class="date">19 January 2013</span>
+      <h1 class="post-title">A unified Lambda architecture</h1>
+      <span class="date">25 August 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>I finally got access to my Twitter archive and decided to have some fun with it and also give me an excluse to play around with <a href="http://matplotlib.org/">matplotlib</a>. The first step was just seeing what the data looked like and what information was available. Turns out that Twitter included a simple HTML page to let you browse your tweets but also provided CSV files for each month. The fields were pretty self explanatory but one “gotcha” was needing to convert the timestamp to my local time. I wanted to do a few data visualizations to see what my tweeting behavior was like and also see if anything insightful came out. As I started looking at the visualizations I noticed that I’m more active than I used to be and that I have a pretty stable relationship betweet my tweets, my RTs, and my replies. In the future, I’d like to explore how my usage of Twitter has evolved and also get to play around with the <a href="http://nltk.org/">NLTK library</a>.</p>
+<p>Lately I’ve been thinking about the <a href="https://en.wikipedia.org/wiki/Lambda_architecture">Lambda architecture</a> used in modern data pipelines. Lambda architectures are designed for systems that contain massive amounts of streaming data that needs to be processed and exposed quickly. The architecture consists of two different systems. One is  a real time pipeline that’s not perfectly accurate but is able to handle large volumes while providing a solid estimate quickly. The other is a batch process that is accurate but runs on a delay. By combining the two you get the best of both worlds - accurate historical data and reasonably correct recent data that will be corrected by the batch job when it runs.</p>
 
-<p>I’ve committed by ugly code to github if anyone wants to play around with it: <a href="https://github.com/dangoldin/twitter-archive-analysis">https://github.com/dangoldin/twitter-archive-analysis</a>. I know the code is ugly. I’ll clean it up one of these days.</p>
+<p>A simple adtech example is to think of the events that are generated during a real time bidding auction. We start with an ad request which consists of everything an ad buyer would need to know before buying an ad - including the time, user agent, and location of the user. The buyer then submits a bid containing the ad they want to display along with the price they are willing to pay. If they win, the ad is rendered and there may be some follow up engagement events by the user - a mouseover and maybe even a click.</p>
 
-<ul class="thumbnails">
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-hour.png" alt="Tweets sent by hour" width="800" height="600" layout="responsive"></amp-img>
-      <p>Apparently, I like to tweet evenings and nights.</p>
-    </div>
-  </li>
+<p>We can think of these 4 events as a sort of funnel - we have an ad request which may have a win event which may then have a mouse and then finally a click. The challenge is that there may be hundreds of these events being generated each second and it’s extremely rare that we would have all four events to join together. The likely case is that there was either a single ad request or an ad request followed by a win event. How do you build a system that’s able to handle non matched events that may arrive in random order?</p>
 
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-dow.png" alt="Tweets sent by day of week" width="800" height="600" layout="responsive"></amp-img>
-      <p>You can see I like to take my Fridays and Saturdays easy. Since I also tend to tweet more frequently at night this indicates I'll go out Friday and Saturday nights.</p>
-    </div>
-  </li>
+<p>In a batch system it’s straightforward - conceptually you’re doing a series of left joins while increasing the time window to make sure you capture events that may have trickled in after a cutoff. So in the case of us processing an hour’s worth of data we may want to pull in more than an hours worth of wins, mouseovers, and clicks to make sure we capture everything. The real time approach is similar but subtly different. First, we need to use a much smaller window since we can’t keep hundreds of millions of event in memory. Second, we need to build in logic to take into account the fact that the events may arrive in different order.</p>
 
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-month.png" alt="Tweets sent by month" width="800" height="600" layout="responsive"></amp-img>
-      <p>I was pretty much quiet since I got on Twitter in 2008 but have been more consistent since 2012.</p>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-month-dow.png" alt="Tweets sent by month and day of week" width="800" height="600" layout="responsive"></amp-img>
-      <p>I must admit this one's here mostly because I wanted to do a heatmap but this does reinforce that I've been a more active on Twitter since 2012 and that I'm less active on Friday and Saturday.</p>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-month-length.png" alt="Average length of a tweet by month" width="800" height="600" layout="responsive"></amp-img>
-      <p>I started off barely saying anything but it looks as if I'm consistently around ~90 characters per tweet.</p>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-month-type.png" alt="Type of tweet sent by month" width="1200" height="600" layout="responsive"></amp-img>
-      <p>I wanted to see whether my behavior around tweeting, retweeting, or replying has changed over time but this doesn't make it very clear due to the number of lines going on so I decided to normalize it - see next chart.</p>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-      <amp-img src="/assets/static/images/by-month-type-stacked.png" alt="Type of tweet sent by month - normalized" width="800" height="600" layout="responsive"></amp-img>
-      <p>Now we're on to something. In the beginning I was basically posting short tweets about my life but more recently I have been more involved in the community aspects.</p>
-    </div>
-  </li>
-</ul>
+<p>As engineers it’s our jobs to write code and logic that’s as reusable as possible and the Lambda architecture provides an interesting example of how difficult this can be. The batch and real time systems are doing very similar things yet the code to do each ends up being different. Something I’d love to see is some way to move the logic itself further upstream that defines the way these events should fit together and then the relevant code is generated for each subsystem. This would allow the actual join logic to be kept in a single place which would make it incredibly easy to add new events and fields as necessary.</p>
 
     </section>
 
@@ -805,12 +757,6 @@ table {
 
   <!-- <li>Tagged under:</li> -->
   
-    
-    	<!-- <li><a href="/tags/##dataviz-ref">#dataviz <span>30</span></a></li> -->
-      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
-    
-    	<!-- <li><a href="/tags/##datascience-ref">#datascience <span>17</span></a></li> -->
-      <li><a href="/tags/##datascience-ref">#datascience </a></li>
     
     	<!-- <li><a href="/tags/##code-ref">#code <span>111</span></a></li> -->
       <li><a href="/tags/##code-ref">#code </a></li>
@@ -830,11 +776,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/01/15/what-do-fab-and-groupon-have-in-common/" title="What do Fab and Groupon have in common?">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/08/22/death-of-retail/" title="Death of retail">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/01/23/why-arent-there-more-engineers-in-politics/" title="Why aren't there more engineers in politics?">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -845,7 +791,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F01%2F19%2Fmaking-sense-of-my-twitter-archive%2F&title=Making+sense+of+my+Twitter+archive">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F08%2F25%2Fa-unified-lambda-architecture%2F&title=A+unified+Lambda+architecture">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
