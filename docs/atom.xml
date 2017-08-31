@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-08-28T22:40:07-04:00</updated>
+ <updated>2017-08-30T22:35:16-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -795,6 +795,8 @@
 <p>It’s amazing that a single query can run across a variety of databases (or distributed files) and it’s up to you to pick the engine you want to power your use case. If you’re doing a massive volume of selects and updates pick an OLTP database such as MySQL or PostgreSQL. If you’re analyzing large datasets use an OLAP such as Vertica or Redshift. If you have even more data that’s on a distributed file system use Hive or SparkSQL. And if those aren’t good enough there’s an ever-growing list of SQL-based database products optimized for different use cases - the two that immediately come to mind are <a href="https://www.voltdb.com/">VoltDB</a> for super quick and accurate transactions and <a href="http://www.timescale.com/">TimescaleDB</a>, a recently launched database built on top of PostgreSQL that’s optimized for time series data.</p>
 
 <p>Every experienced developer has some familiarity with SQL which makes new relational databases feel approachable. In addition, we have so many tools and libraries built for relational databases that it becomes straightforward to extend them to the new entrants. It actually feels as if the pace of new SQL-based databases is growing and it’s because of this creativity granted due to constraints. By committing to a fixed SQL standard database developers are able to focus on designing the perfect engine for a specific use case knowing that if they’re able to hit their performance goals developers will feel comfortable integrating it into their code.</p>
+
+<p>Edit: Remarkably, <a href="http://softdroid.net">Softdroid</a> found this interesting enough to translate into Russian which can be found at <a href="http://softdroid.net/sql-idealnyy-interfeys">http://softdroid.net/sql-idealnyy-interfeys</a>.</p>
 ]]></content:encoded>
  </entry>
  
