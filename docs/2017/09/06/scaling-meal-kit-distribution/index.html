@@ -21,31 +21,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Mailbox: Is the server required?</title>
-  <meta name="description" content="Did the Mailbox app need to use a server or was it about marketing?">
-  <meta name="keywords" content="Mailbox, marketing" />
+  <title>Scaling meal kit distribution</title>
+  <meta name="description" content="Blue Apron's IPO highlights the difficulty of meal-kit delivery and I'm a big fan of them trying to get as much reach as possible by parnering with complemen...">
+  <meta name="keywords" content="meal-kit delivery, blue apron, amazon, whole foods" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/">
+  <link rel="canonical" href="http://dangoldin.com/2017/09/06/scaling-meal-kit-distribution/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Mailbox: Is the server required?" />
+  <meta name="twitter:title" content="Scaling meal kit distribution" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/" />
-  <meta property="og:title"               content="Mailbox: Is the server required?" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/09/06/scaling-meal-kit-distribution/" />
+  <meta property="og:title"               content="Scaling meal kit distribution" />
 
   
-  <meta property="og:description"         content="Did the Mailbox app need to use a server or was it about marketing?" />
-  <meta name="twitter:description"        content="Did the Mailbox app need to use a server or was it about marketing?" />
+  <meta property="og:description"         content="Blue Apron's IPO highlights the difficulty of meal-kit delivery and I'm a big fan of them trying to get as much reach as possible by parnering with complementary companies." />
+  <meta name="twitter:description"        content="Blue Apron's IPO highlights the difficulty of meal-kit delivery and I'm a big fan of them trying to get as much reach as possible by parnering with complementary companies." />
   
 
-  
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/mailbox1.png" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/mailbox1.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -55,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/03/29/mailbox-is-the-server-required/",
-  "headline": "Mailbox: Is the server required?",
-  "datePublished": "2013-03-29T00:00:00-04:00",
-  "dateModified": "2013-03-29T00:00:00-04:00",
-  "description": "  ",
+  "mainEntityOfPage": "http://dangoldin.com/2017/09/06/scaling-meal-kit-distribution/",
+  "headline": "Scaling meal kit distribution",
+  "datePublished": "2017-09-06T00:00:00-04:00",
+  "dateModified": "2017-09-06T00:00:00-04:00",
+  "description": "Earlier today I read a neat article covering the meal-kit delivery space and how give Blue Apron’s lackluster performance on the public market the still-priv...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -732,23 +729,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Mailbox: Is the server required?</h1>
-      <span class="date">29 March 2013</span>
+      <h1 class="post-title">Scaling meal kit distribution</h1>
+      <span class="date">06 September 2017</span>
     </div>
 
     <section class="post-content">
       
-<div class="right10">
-  <amp-img src="/assets/static/images/mailbox1.png" alt="Mailbox" width="280" height="420"></amp-img>
-</div>
+<p>Earlier today I read a neat <a href="https://www.theinformation.com/blue-apron-competitors-explore-sales-to-grocers-food-manufacturers">article</a> covering the meal-kit delivery space and how give Blue Apron’s lackluster performance on the public market the still-private competitors are exploring alternative options, including partnering with grocery stores and general CPG companies. I hadn’t thought much about the space but it’s a great idea.</p>
 
-<p>After a couple of weeks on the waiting list I finally got access to the Mailbox App. It’s a huge improvement over the standard mail app and my mobile email consumption habits have improved significantly. I’m still not at “inbox zero” but am making my way there.</p>
+<p>Fresh food is a difficult business that benefits heavily from scale. Buying in bulk gives you significant price discounts and being able to have high throughput reduces the amount of food that spoils. One of the simplest ways to increase your scale is to increase the amount of distribution channels you have. These meal-kit delivery companies started by doing delivery to the home but there’s nothing stopping them from offering the same meal kits at grocery stores. In fact, maybe it makes sense to not even have an exclusive partnership with any single chain but try to get them into as many stores as possible. They’d have to do an accurate job modeling the demand but they’d likely be able to drop the price enough to make it attractive to customers. The biggest price reduction would come from not having to ship individual orders but instead deliver them in bulk to a single store. A more interesting version of this would be to actually allow the grocery store to contribute some of the ingredients - benefiting both.</p>
 
-<p>I don’t know much about iOS development but one thing I’ve been wondering about is whether they could have written it to not use a remote server. Regarding scaling Mailbox, they <a href="http://www.mailboxapp.com/reservations/?p=1#were-ramping-up" target="_blank">wrote</a>:</p>
-
-<blockquote><p>A critical part of Mailbox scaling is its brand new infrastructure. Mailbox relies on servers in the cloud to do things like send push notifications, download email as fast as possible, and handle “snoozed” messages.</p></blockquote>
-
-<p>From reading developer docs, it does seem you need a server to do push notifications but I wonder if there’s a way to schedule notifications on the client side. Conceptually, there’s nothing the server needs to do that can’t be done client side via simple polling. This way, the server load becomes non existent and scaling issues are avoided. Even a hybrid approach could have worked: use the server approach when possible but fall back to polling if the servers are overwhelmed. I just can’t help but think that there must have been a way to have the same functionality client-side. The cynic in me wants to say that it was done to build up hype but it’s equally likely that I just don’t know iOS development. It seems odd that crippling an app would help with marketing. I hope that’s not what it takes to sell for $100M.</p>
+<p>This train of thought reminds me of Ben Thompson’s <a href="https://stratechery.com/2017/amazons-new-customer/">analysis</a> of why Amazon acquired Whole Foods: Amazon was buying itself a customer that could give it the scale it needed to run the Amazon playbook. It’s getting tougher and tougher to compete against Amazon and partnering up with complementary companies is a strong move by smaller competitors.</p>
 
     </section>
 
@@ -781,11 +772,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/03/26/welcoming-the-long-single-webpage/" title="Welcoming the long, single webpage">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/09/04/cross-app-ai/" title="Cross app AI">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/04/02/the-new-gmail-compose/" title="The new Gmail compose">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -796,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F03%2F29%2Fmailbox-is-the-server-required%2F&title=Mailbox%3A+Is+the+server+required%3F">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F09%2F06%2Fscaling-meal-kit-distribution%2F&title=Scaling+meal+kit+distribution">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

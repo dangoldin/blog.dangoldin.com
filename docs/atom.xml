@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-09-04T22:27:15-04:00</updated>
+ <updated>2017-09-06T22:40:13-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Scaling meal kit distribution</title>
+   <link href="http://dangoldin.com/2017/09/06/scaling-meal-kit-distribution/"/>
+   <updated>2017-09-06T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/09/06/scaling-meal-kit-distribution</id>
+   <content:encoded><![CDATA[
+<p>Earlier today I read a neat <a href="https://www.theinformation.com/blue-apron-competitors-explore-sales-to-grocers-food-manufacturers">article</a> covering the meal-kit delivery space and how give Blue Apron’s lackluster performance on the public market the still-private competitors are exploring alternative options, including partnering with grocery stores and general CPG companies. I hadn’t thought much about the space but it’s a great idea.</p>
+
+<p>Fresh food is a difficult business that benefits heavily from scale. Buying in bulk gives you significant price discounts and being able to have high throughput reduces the amount of food that spoils. One of the simplest ways to increase your scale is to increase the amount of distribution channels you have. These meal-kit delivery companies started by doing delivery to the home but there’s nothing stopping them from offering the same meal kits at grocery stores. In fact, maybe it makes sense to not even have an exclusive partnership with any single chain but try to get them into as many stores as possible. They’d have to do an accurate job modeling the demand but they’d likely be able to drop the price enough to make it attractive to customers. The biggest price reduction would come from not having to ship individual orders but instead deliver them in bulk to a single store. A more interesting version of this would be to actually allow the grocery store to contribute some of the ingredients - benefiting both.</p>
+
+<p>This train of thought reminds me of Ben Thompson’s <a href="https://stratechery.com/2017/amazons-new-customer/">analysis</a> of why Amazon acquired Whole Foods: Amazon was buying itself a customer that could give it the scale it needed to run the Amazon playbook. It’s getting tougher and tougher to compete against Amazon and partnering up with complementary companies is a strong move by smaller competitors.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Cross app AI</title>
