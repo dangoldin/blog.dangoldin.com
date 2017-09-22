@@ -23,7 +23,6 @@ Usage:
   <!-- <li>Tagged under:</li> -->
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %}
-    	<!-- <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li> -->
       <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} </a></li>
     {% endfor %}
   {% else %}
