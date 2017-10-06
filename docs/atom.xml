@@ -3,13 +3,45 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-10-02T22:03:13-04:00</updated>
+ <updated>2017-10-05T22:49:08-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Generating a series of commands covering a date range</title>
+   <link href="http://dangoldin.com/2017/10/05/generating-a-series-of-commands-covering-a-date-range/"/>
+   <updated>2017-10-05T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/10/05/generating-a-series-of-commands-covering-a-date-range</id>
+   <content:encoded><![CDATA[
+<p>I know the title of the post is terrible but I found it difficult to describe the content in another way.</p>
+
+<p>Lately I’ve been spending a decent amount of my time in SQL-land and running some pretty repetitive queries where only some of the arguments are changed. These run the gamut from exporting some data for a date range by day to adding a series of date partitions while messing around with <a href="http://docs.aws.amazon.com/redshift/latest/dg/c-spectrum-external-tables.html">Spectrum</a>. Depending on the amount of these queries I needed to write I’d either just do it manually with a bunch of copy and pastes or use Excel to generate the queries I needed.</p>
+
+<p>Neither of these were that efficient so I wrote a simple <a href="https://github.com/dangoldin/python-tools/blob/master/date_replace.py">script</a> to simplify the entire process. It accepts the format string, the start date, and the end date and replaces the macro in the format string with each date of the date range. Then it’s as simple as either piping the results into pbcopy or copying and pasting it into the SQL client. This gets even better by aliasing the command so it can be run in any terminal window.</p>
+
+<p>I often find that I get into the habit of repeating a manual process over and over instead of just taking the time to automate it. This was no exception: the script took me a few minutes to write and I suspect if I had it I would have saved myself hours given how often I had to do some form of this. Hopefully I can catch myself going down the manual path and build a tool to solve the problem instead.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#! /usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">string_template</span><span class="p">,</span> <span class="n">start_str</span><span class="p">,</span> <span class="n">end_str</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_str</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d'</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_str</span><span class="p">,</span> <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d'</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">string_template</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">start</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d'</span><span class="p">))</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code></pre></figure>
+
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Writer's block and code</title>
