@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-10-05T22:49:08-04:00</updated>
+ <updated>2017-10-07T23:52:37-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Farewell, AIM</title>
+   <link href="http://dangoldin.com/2017/10/07/farewell-aim/"/>
+   <updated>2017-10-07T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/10/07/farewell-aim</id>
+   <content:encoded><![CDATA[
+<p>Yesterday’s <a href="https://www.theverge.com/2017/10/6/16435690/aim-shutting-down-after-20-years-aol-instant-messenger">big news</a> was that AIM will be shutting down in December after 20 years of service. This is not surprising - we’ve all moved on from AIM, first to Google Chat and now to the variety of smartphone messaging apps. Yet it’s incredible to think about what AIM was at its peak. I first got an account in middle school and remember it becoming the defacto way to communicate with friends throughout high school and college.</p>
+
+<p>Sure, it’s easy for us to criticize AOL for not being able to capitalize on what they had and losing the messaging market but smartphones disrupted everything. At this point I find it more enjoyable to reminisce about its peak and glory instead of speculating what could have been. It  introduced tens of millions of people to a digital social network and paved the way for every social network since.</p>
+
+<p>I logged in earlier today to see how it’s changed and it was a ghost town. The only others online were people reacting to the shutdown news and feeling nostalgic. I didn’t remember the vast majority of the screen names on the list and it was a fun exercise trying to figure out who was who. It’s actually surprising that AIM is still around given that no one I know has been using it for the past half decade.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Generating a series of commands covering a date range</title>
