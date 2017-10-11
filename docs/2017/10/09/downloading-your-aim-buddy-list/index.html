@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Farewell, AIM</title>
-  <meta name="description" content="AIM is shutting down and rather than think about what could have been we should remember how it was in its prime.">
-  <meta name="keywords" content="aim, aol, instant messenger, chatting, messaging" />
+  <title>Downloading your AIM buddy list</title>
+  <meta name="description" content="AIM will be shut down in December but there's a lot of sentimental value in the buddy list so use the following code to download it before it's lost forever.">
+  <meta name="keywords" content="AIM, buddy list, screen names" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2017/10/07/farewell-aim/">
+  <link rel="canonical" href="http://dangoldin.com/2017/10/09/downloading-your-aim-buddy-list/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Farewell, AIM" />
+  <meta name="twitter:title" content="Downloading your AIM buddy list" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2017/10/07/farewell-aim/" />
-  <meta property="og:title"               content="Farewell, AIM" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/10/09/downloading-your-aim-buddy-list/" />
+  <meta property="og:title"               content="Downloading your AIM buddy list" />
 
   
-  <meta property="og:description"         content="AIM is shutting down and rather than think about what could have been we should remember how it was in its prime." />
-  <meta name="twitter:description"        content="AIM is shutting down and rather than think about what could have been we should remember how it was in its prime." />
+  <meta property="og:description"         content="AIM will be shut down in December but there's a lot of sentimental value in the buddy list so use the following code to download it before it's lost forever." />
+  <meta name="twitter:description"        content="AIM will be shut down in December but there's a lot of sentimental value in the buddy list so use the following code to download it before it's lost forever." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2017/10/07/farewell-aim/",
-  "headline": "Farewell, AIM",
-  "datePublished": "2017-10-07T00:00:00-04:00",
-  "dateModified": "2017-10-07T00:00:00-04:00",
-  "description": "Yesterday’s big news was that AIM will be shutting down in December after 20 years of service. This is not surprising - we’ve all moved on from AIM, first to...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/10/09/downloading-your-aim-buddy-list/",
+  "headline": "Downloading your AIM buddy list",
+  "datePublished": "2017-10-09T00:00:00-04:00",
+  "dateModified": "2017-10-09T00:00:00-04:00",
+  "description": "While writing the most recent post about the impending AIM shut down I became curious and logged in to see what what I’ve been missing. The application felt ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,17 +729,35 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Farewell, AIM</h1>
-      <span class="date">07 October 2017</span>
+      <h1 class="post-title">Downloading your AIM buddy list</h1>
+      <span class="date">09 October 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>Yesterday’s <a href="https://www.theverge.com/2017/10/6/16435690/aim-shutting-down-after-20-years-aol-instant-messenger">big news</a> was that AIM will be shutting down in December after 20 years of service. This is not surprising - we’ve all moved on from AIM, first to Google Chat and now to the variety of smartphone messaging apps. Yet it’s incredible to think about what AIM was at its peak. I first got an account in middle school and remember it becoming the defacto way to communicate with friends throughout high school and college.</p>
+<p>While writing the <a href="/2017/10/07/farewell-aim/">most recent post</a> about the impending AIM shut down I became curious and logged in to see what what I’ve been missing. The application felt worse but seeing my buddy list made me nostalgic and going through the usernames brought back some fond memories as I tried to remember who each screen name belonged to.</p>
 
-<p>Sure, it’s easy for us to criticize AOL for not being able to capitalize on what they had and losing the messaging market but smartphones disrupted everything. At this point I find it more enjoyable to reminisce about its peak and glory instead of speculating what could have been. It  introduced tens of millions of people to a digital social network and paved the way for every social network since.</p>
+<p>I’m a bit of a hoarded, across both the physical and digital worlds, so didn’t want to lose my buddy list after the shut down. Unfortunately, AIM doesn’t make it very easy to download a copy of your buddy list so I came up with a crude but effective approach. Normally I’d look at the source code, identify the HTML elements containing what I wanted, and write a little bit of code in the JavaScript console to extract what I needed. I tried this approach in the AIM web client but it turns out that they update the HTML code to only show the screen names that are actually in view and it wasn’t obvious where the full list of screen names was being stored.</p>
 
-<p>I logged in earlier today to see how it’s changed and it was a ghost town. The only others online were people reacting to the shutdown news who were feeling similarly nostalgic. I haven’t logged in in so long that it was a fun game to see if I can identify who the different screen names belonged to - I like to think I got the majority correct but there were definitely a few that I couldn’t remember at all. Despite not having logged in to AIM for the better part of the last decade it’s definitely sad to see it go. At the same time I’m actually surprised that AIM is still around given that no I know has used it in years. It’s just one of those things that is past its prime but has significant nostalgic value. I wonder if anyone would have noticed if it was just quietly shut down.</p>
+<p>My extremely simple approach was to open the console and write some code to capture the screen names visible on the screen, add them to a running list, and then scroll further down the page and repeat the process. The efficiency here is limited by the number of screen names visible at any one time so probably the cleverest part of the entire script was just zooming way out to get the list to be as long as possible. Then it only took a few scrolls to get the list of screen names which could then be printed and copied over from the JavaScript console. I didn’t even bother with the deduplication step since I could easily remove duplicates by piping the results into the uniq shell command and then piping it back to my clipboard.</p>
+
+<p>Make sure to download your buddy list before the scheduled shutdown on December 15.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Start by logging in to www.aim.com and zoom way out</span>
+
+<span class="c1">// Create the initial array that we will</span>
+<span class="nx">usernames</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">// Run this a bunch of times after scrolling a bit to get the next set of screen names</span>
+<span class="nx">els</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'user-item'</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">els</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">els</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">);</span>
+    <span class="nx">usernames</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">els</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Just write to the screen but there will likely be duplicates unless you did your scrolls perfectly.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">usernames</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">)</span> <span class="p">);</span></code></pre></figure>
+
 
     </section>
 
@@ -754,7 +772,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##meta-ref">#meta </a></li>
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
@@ -771,11 +789,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2017/10/05/generating-a-series-of-commands-covering-a-date-range/" title="Generating a series of commands covering a date range">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/10/07/farewell-aim/" title="Farewell, AIM">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2017/10/09/downloading-your-aim-buddy-list/" title="Downloading your AIM buddy list">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -786,7 +804,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F07%2Ffarewell-aim%2F&title=Farewell%2C+AIM">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F09%2Fdownloading-your-aim-buddy-list%2F&title=Downloading+your+AIM+buddy+list">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
