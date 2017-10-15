@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Scale challenges with AWS Athena</title>
+  <meta name="description" content="I really like the idea behind AWS Athena but just couldn't get it to handle our workload.">
+  <meta name="keywords" content="aws athena, redshift, spectrum, big data" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2017/10/14/scale-challenges-with-aws-athena/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Scale challenges with AWS Athena" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/10/14/scale-challenges-with-aws-athena/" />
+  <meta property="og:title"               content="Scale challenges with AWS Athena" />
 
+  
+  <meta property="og:description"         content="I really like the idea behind AWS Athena but just couldn't get it to handle our workload." />
+  <meta name="twitter:description"        content="I really like the idea behind AWS Athena but just couldn't get it to handle our workload." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2017-10-14T23:31:20-04:00",
-  "dateModified": "2017-10-14T23:31:20-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2017/10/14/scale-challenges-with-aws-athena/",
+  "headline": "Scale challenges with AWS Athena",
+  "datePublished": "2017-10-14T00:00:00-04:00",
+  "dateModified": "2017-10-14T00:00:00-04:00",
+  "description": "Almost a year ago, AWS launched Athena which allowed you to query data directly off of S3. I loved the idea since it would allow us to simplify our workflow ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,119 +727,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Scale challenges with AWS Athena</h1>
+      <span class="date">14 October 2017</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>Almost a year ago, AWS <a href="https://aws.amazon.com/blogs/aws/amazon-athena-interactive-sql-queries-for-data-in-amazon-s3/">launched Athena</a> which allowed you to query data directly off of S3. I loved the idea since it would allow us to simplify our workflow by reducing the need for Spark and Redshift while also cutting our costs. In theory queries that were being run via Spark or Redshift could just be run on top of data stored in S3 without having to load it into any system.</p>
 
+<p>I messed around with a few toy examples and was able to get up and running pretty quickly. Yet I was left disappointed when I threw a real problem at it. We have a variety of jobs that require us scanning a month’s worth of filtered impression data and I wasn’t able to get Athena to successfully complete the query no matter how many different permutations I tried. Every time I thought I had a clever workaround I ended up being disappointed when Athena failed to execute the query.</p>
 
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>I’m optimistic that Athena will work through its kinks but at the moment we’re still sticking with our tried and true solutions in Spark and Redshift. Over the next few weeks I’m going to give <a href="https://aws.amazon.com/redshift/spectrum/">Redshift Spectrum</a> a shot which seems to be the best of both worlds.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2017/10/09/downloading-your-aim-buddy-list/" title="Downloading your AIM buddy list">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F14%2Fscale-challenges-with-aws-athena%2F&title=Scale+challenges+with+AWS+Athena">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -912,7 +866,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
