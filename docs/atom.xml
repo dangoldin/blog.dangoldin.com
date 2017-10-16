@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-10-14T23:31:20-04:00</updated>
+ <updated>2017-10-15T22:15:52-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Carrier specific iPhone ads</title>
+   <link href="http://dangoldin.com/2017/10/15/carrier-specific-iphone-ads/"/>
+   <updated>2017-10-15T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/10/15/carrier-specific-iphone-ads</id>
+   <content:encoded><![CDATA[
+<p>I had a bit of a lazy Sunday and spent some time watching some football games. During the commercial breaks I saw iPhone 8 ads sponsored by nearly every carrier with the format being nearly identical: a highlight of the features followed by a mention of the carrier. There was nothing there nudging me towards one carrier or another and they all felt like iPhone ads. I’m not sure if Apple is even contributing anything to these but even if they are I suspect the branding outweighs the investment - especially since an ad viewer may decide to get the new iPhone regardless of their existing carrier.</p>
+
+<p>The only explanation I can think of is that the carriers know full well that this won’t have any impact on people switching carriers and is purely a way to accelerate the upgrade cycle and renew the customer contract. This way they can guarantee a 2 year revenue stream and prevent their customer from switching. This feels like an expensive proposition: people are going to stick with an existing carrier if they upgrade a phone and there’s enough iPhone marketing that there’s no need to run yet another ad campaign.</p>
+
+<p>The real winner here is Apple. They built a phone that works across all carriers yet is compelling enough for these carriers to market it. I wonder if this is a holdover from the original iPhone launch that was only available on AT&amp;T. That actually led to a significant number of people switching to AT&amp;T in order to get the iPhone but today’s world is so different I just can’t see this as the reason.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Scale challenges with AWS Athena</title>
