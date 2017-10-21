@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Schedule automation using Google spreadsheets and Slack</title>
+  <meta name="description" content="I modified an old script that used a schedule in a Google spreadsheet to message users to work across multiple tabs and schedules by introducing a meta tab.">
+  <meta name="keywords" content="google spreadsheet, slack, schedule, calendar, automation, management" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2017/10/20/schedule-automation-using-google-spreadsheets-and-slack/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Schedule automation using Google spreadsheets and Slack" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/10/20/schedule-automation-using-google-spreadsheets-and-slack/" />
+  <meta property="og:title"               content="Schedule automation using Google spreadsheets and Slack" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="I modified an old script that used a schedule in a Google spreadsheet to message users to work across multiple tabs and schedules by introducing a meta tab." />
+  <meta name="twitter:description"        content="I modified an old script that used a schedule in a Google spreadsheet to message users to work across multiple tabs and schedules by introducing a meta tab." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2017-10-20T22:46:05-04:00",
-  "dateModified": "2017-10-20T22:46:05-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2017/10/20/schedule-automation-using-google-spreadsheets-and-slack/",
+  "headline": "Schedule automation using Google spreadsheets and Slack",
+  "datePublished": "2017-10-20T00:00:00-04:00",
+  "dateModified": "2017-10-20T00:00:00-04:00",
+  "description": "Back in March I wrote a script that would go through an on-call calendar kept in a Google spreadsheet and then post the current week’s schedule to a Slack ch...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -727,29 +727,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Schedule automation using Google spreadsheets and Slack</h1>
+      <span class="date">20 October 2017</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>Back in March I <a href="http://dangoldin.com/2017/03/04/automating-admin-work-spreadsheets-to-slack/">wrote a script</a> that would go through an on-call calendar kept in a Google spreadsheet and then post the current week’s schedule to a Slack channel. This worked surprisingly well and I thought of doing something similar for the other engineering team calendars. In addition to the on call rotation, we have a dedicated time for internal tech talks as well as a session to cover the news in the industry. To make them easier to manage we keep them all in that same spreadsheet.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>It would have been trivial to write a few more scripts for each type of calendar but I wanted something that could keep scaling to whatever new calendars we introduced. By looking at what’s consistent across each of the calendars - dates and people - we can come up with an approach that can scale to new calendars. My simple solution to this was to introduce a “meta” tab that contains guidance on how to interpret each of the calendar tabs. This includes specifying the date column, the column that will contain the names, and an optional message column. With this information it was straightforward to modify my existing script to accept this information as variables rather than being hardcoded to the structure of a specific spreadsheet.</p>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
-
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>Basically, <a href="https://github.com/dangoldin/automating-management/blob/master/post_schedule.py">this version of the script</a> treats the Google spreadsheet as a simplified database. It’s able to read and understand what it needs to do yet the spreadsheet itself can be maintained and modified directly by people through the spreadsheet UI. I’m a fan of this hybrid approach and think there’s some really powerful things one can do with this. Spreadsheets are underrated in the tech world and can be leveraged for a variety of power-user cases. Rather than create super specific applications and UIs it might be worth exploring whether you can just build on top of a spreadsheet.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2017/10/15/carrier-specific-iphone-ads/" title="Carrier specific iPhone ads">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F20%2Fschedule-automation-using-google-spreadsheets-and-slack%2F&title=Schedule+automation+using+Google+spreadsheets+and+Slack">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -825,7 +866,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

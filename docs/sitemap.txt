@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/10/20/schedule-automation-using-google-spreadsheets-and-slack/
 http://dangoldin.com/2017/10/15/carrier-specific-iphone-ads/
 http://dangoldin.com/2017/10/14/scale-challenges-with-aws-athena/
 http://dangoldin.com/2017/10/09/downloading-your-aim-buddy-list/
