@@ -3,13 +3,43 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-10-28T23:37:52-04:00</updated>
+ <updated>2017-10-30T22:51:11-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Slides from my talk at DataEngConf</title>
+   <link href="http://dangoldin.com/2017/10/30/slides-from-my-talk-at-dataengconf/"/>
+   <updated>2017-10-30T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/10/30/slides-from-my-talk-at-dataengconf</id>
+   <content:encoded><![CDATA[
+<p>I had the privilege of giving a talk today at DataEngConf. Unfortunately the talk was not recorded but you can grab the slides <a href="http://dangoldin.com/assets/static/data//DataEngCof_NYC_Data_Startups_Dan_Goldin-Scaling-a-Data-Pipeline-Mystery-to-Mastery.pdf">here</a>. The theme was going over the evolution of the TripleLift data pipeline from the early days where we were sampling events on the client side to the current iteration of a fully flshed out Lambda architecture. Take a look at the slides and if you have any questions I’d be glad to answer them in the comments.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Philosophy of code</title>
+   <link href="http://dangoldin.com/2017/10/29/philosophy-of-code/"/>
+   <updated>2017-10-29T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2017/10/29/philosophy-of-code</id>
+   <content:encoded><![CDATA[
+<p>After writing my post on the code review pyramid I realized that I had many more thoughts on the highest level and wanted to dedicate a post digging into it.</p>
+
+<p>The idea is that a well functioning team shares the same philosophy and all members have a good feel for where and how new code should be written.</p>
+
+<p>For a data project: What happens upstream? In the API? In the UI?</p>
+
+<p>Class hierarchy? How to handle null types/exceptions. Everything a language makes unclear a strong team can have a strong and shared agreement on.</p>
+
+<p>The point isn’t to find the one right approach but to realize that it’s more about agreeing on an approach. The fact that engineers still debate the pros and cons of various implementations should indicate there’s no right answer and we’re better off finding something that’s right for the team.</p>
+
+<p>In many ways frameworks make this decision on behalf of teams but imagine if it was thoughtfully done by the team itself.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>The code review pyramid</title>
