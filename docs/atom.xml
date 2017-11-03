@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-10-30T22:51:11-04:00</updated>
+ <updated>2017-11-02T23:35:46-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -17,7 +17,7 @@
    <updated>2017-10-30T00:00:00-04:00</updated>
    <id>http://dangoldin.com/2017/10/30/slides-from-my-talk-at-dataengconf</id>
    <content:encoded><![CDATA[
-<p>I had the privilege of giving a talk today at DataEngConf. Unfortunately the talk was not recorded but you can grab the slides <a href="http://dangoldin.com/assets/static/data//DataEngCof_NYC_Data_Startups_Dan_Goldin-Scaling-a-Data-Pipeline-Mystery-to-Mastery.pdf">here</a>. The theme was going over the evolution of the TripleLift data pipeline from the early days where we were sampling events on the client side to the current iteration of a fully flshed out Lambda architecture. Take a look at the slides and if you have any questions I’d be glad to answer them in the comments.</p>
+<p>I had the privilege of giving a talk today at DataEngConf. Unfortunately the talk was not recorded but you can grab the slides <a href="http://dangoldin.com/assets/static/data//DataEngCof_NYC_Data_Startups_Dan_Goldin-Scaling-a-Data-Pipeline-Mystery-to-Mastery.pdf">here</a>. The theme was going over the evolution of the TripleLift data pipeline from the early days where we were sampling events on the client side to the current iteration of a fully fleshed out Lambda architecture. Take a look at the slides and if you have any questions I’d be glad to answer them in the comments.</p>
 ]]></content:encoded>
  </entry>
  
@@ -27,17 +27,15 @@
    <updated>2017-10-29T00:00:00-04:00</updated>
    <id>http://dangoldin.com/2017/10/29/philosophy-of-code</id>
    <content:encoded><![CDATA[
-<p>After writing my post on the code review pyramid I realized that I had many more thoughts on the highest level and wanted to dedicate a post digging into it.</p>
+<p>After writing my post on the code review pyramid I realized that I had many more thoughts about the highest level, code philosophy, and wanted to dedicate a full post to dig into it. The general idea is that a highly functional engineering team is way past the point of arguing over style and syntax and has reached the point where they share the same code philosophy. At this point all members of the team have an instinctive sense of how and where new code should be written - even if they can’t necessarily explain it.</p>
 
-<p>The idea is that a well functioning team shares the same philosophy and all members have a good feel for where and how new code should be written.</p>
+<p>A concrete example is to think about a data pipeline project. We have a ton of events coming in that need to be aggregated, stored in a database, and then exposed via an API in a UI dashboard. Now imagine having to add some additional fields. Depending on the field you may be able to add it explicitly at the ingestion level, or potentially derive it during the agg, or maybe even calculate it at the API or UI level. Each of these may be entirely reasonable but a good team will have a strong option on how it should be done. This means that every new feature and functionality is implemented similarly and keeps the code base clean and consistent.</p>
 
-<p>For a data project: What happens upstream? In the API? In the UI?</p>
+<p>This also extends into the way teams approach their class hierarchies and inheritance. Do they go all in and have a ton of factories with complex class hierarchies or do they prefer flatter hierarchies with classes that are able to do more? It also ties into design patterns and which ones are preferred in the code base as well as how to treat nulls and exceptions.</p>
 
-<p>Class hierarchy? How to handle null types/exceptions. Everything a language makes unclear a strong team can have a strong and shared agreement on.</p>
+<p>A programming language can’t prescribe every single approach to every type of problem so there’s always some freedom by design. Unfortunately, this can get dangerous on larger projects but strong teams are able to identify the components they want to embrace and the components they want to ban. Frameworks exist because they make these decisions for us. They are purposefully opinionated in order to encourage a particular approach. By having this sort of imposed shared knowledge, every developer using that framework becomes more productive despite the fact that the framework itself limits the flexibility of the language.</p>
 
-<p>The point isn’t to find the one right approach but to realize that it’s more about agreeing on an approach. The fact that engineers still debate the pros and cons of various implementations should indicate there’s no right answer and we’re better off finding something that’s right for the team.</p>
-
-<p>In many ways frameworks make this decision on behalf of teams but imagine if it was thoughtfully done by the team itself.</p>
+<p>The point isn’t to find the one right approach but to realize that it’s more about agreeing on an approach. The fact that engineers still debate the pros and cons of nearly everything to do with software engineering indicates that there’s likely no single answer and we’re better off finding something that’s consistent and right for the team.</p>
 ]]></content:encoded>
  </entry>
  

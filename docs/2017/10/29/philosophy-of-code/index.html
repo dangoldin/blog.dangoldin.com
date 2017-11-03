@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Philosophy of code</title>
+  <meta name="description" content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive.">
+  <meta name="keywords" content="code, software engineering, software development" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2017/10/29/philosophy-of-code/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Philosophy of code" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/10/29/philosophy-of-code/" />
+  <meta property="og:title"               content="Philosophy of code" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive." />
+  <meta name="twitter:description"        content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2017-11-02T23:35:46-04:00",
-  "dateModified": "2017-11-02T23:35:46-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2017/10/29/philosophy-of-code/",
+  "headline": "Philosophy of code",
+  "datePublished": "2017-10-29T00:00:00-04:00",
+  "dateModified": "2017-10-29T00:00:00-04:00",
+  "description": "After writing my post on the code review pyramid I realized that I had many more thoughts about the highest level, code philosophy, and wanted to dedicate a ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -727,29 +727,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Philosophy of code</h1>
+      <span class="date">29 October 2017</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>After writing my post on the code review pyramid I realized that I had many more thoughts about the highest level, code philosophy, and wanted to dedicate a full post to dig into it. The general idea is that a highly functional engineering team is way past the point of arguing over style and syntax and has reached the point where they share the same code philosophy. At this point all members of the team have an instinctive sense of how and where new code should be written - even if they can’t necessarily explain it.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>A concrete example is to think about a data pipeline project. We have a ton of events coming in that need to be aggregated, stored in a database, and then exposed via an API in a UI dashboard. Now imagine having to add some additional fields. Depending on the field you may be able to add it explicitly at the ingestion level, or potentially derive it during the agg, or maybe even calculate it at the API or UI level. Each of these may be entirely reasonable but a good team will have a strong option on how it should be done. This means that every new feature and functionality is implemented similarly and keeps the code base clean and consistent.</p>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>This also extends into the way teams approach their class hierarchies and inheritance. Do they go all in and have a ton of factories with complex class hierarchies or do they prefer flatter hierarchies with classes that are able to do more? It also ties into design patterns and which ones are preferred in the code base as well as how to treat nulls and exceptions.</p>
 
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>A programming language can’t prescribe every single approach to every type of problem so there’s always some freedom by design. Unfortunately, this can get dangerous on larger projects but strong teams are able to identify the components they want to embrace and the components they want to ban. Frameworks exist because they make these decisions for us. They are purposefully opinionated in order to encourage a particular approach. By having this sort of imposed shared knowledge, every developer using that framework becomes more productive despite the fact that the framework itself limits the flexibility of the language.</p>
+
+<p>The point isn’t to find the one right approach but to realize that it’s more about agreeing on an approach. The fact that engineers still debate the pros and cons of nearly everything to do with software engineering indicates that there’s likely no single answer and we’re better off finding something that’s consistent and right for the team.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2017/10/27/the-code-review-pyramid/" title="The code review pyramid">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2017/10/30/slides-from-my-talk-at-dataengconf/" title="Slides from my talk at DataEngConf">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F29%2Fphilosophy-of-code%2F&title=Philosophy+of+code">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -825,7 +870,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
