@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Philosophy of code</title>
-  <meta name="description" content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive.">
-  <meta name="keywords" content="code, software engineering, software development" />
+  <title>Spark&#39;s read.jdbc</title>
+  <meta name="description" content="We ran into an issue where our Spark jobs suddenly started taking hours to run. Digging into it we discovered it was due to the way we were accessing tables ...">
+  <meta name="keywords" content="Spark, read.jdbc, sql, code optimization" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2017/10/29/philosophy-of-code/">
+  <link rel="canonical" href="http://dangoldin.com/2017/11/07/spark-s-read-jdbc/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Philosophy of code" />
+  <meta name="twitter:title" content="Spark's read.jdbc" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2017/10/29/philosophy-of-code/" />
-  <meta property="og:title"               content="Philosophy of code" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/11/07/spark-s-read-jdbc/" />
+  <meta property="og:title"               content="Spark's read.jdbc" />
 
   
-  <meta property="og:description"         content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive." />
-  <meta name="twitter:description"        content="More important than style and syntax is the philosophy of code. Strong teams have a shared understanding and it makes them more productive." />
+  <meta property="og:description"         content="We ran into an issue where our Spark jobs suddenly started taking hours to run. Digging into it we discovered it was due to the way we were accessing tables from MySQL." />
+  <meta name="twitter:description"        content="We ran into an issue where our Spark jobs suddenly started taking hours to run. Digging into it we discovered it was due to the way we were accessing tables from MySQL." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2017/10/29/philosophy-of-code/",
-  "headline": "Philosophy of code",
-  "datePublished": "2017-10-29T00:00:00-04:00",
-  "dateModified": "2017-10-29T00:00:00-04:00",
-  "description": "After writing my post on the code review pyramid I realized that I had many more thoughts about the highest level, code philosophy, and wanted to dedicate a ...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/11/07/spark-s-read-jdbc/",
+  "headline": "Spark&#39;s read.jdbc",
+  "datePublished": "2017-11-07T00:00:00-05:00",
+  "dateModified": "2017-11-07T00:00:00-05:00",
+  "description": "Yesterday I spent a bit of time investigating one of our Spark jobs that had suddenly shot up in run time. The purpose of our job is to collect all the event...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,21 +729,19 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Philosophy of code</h1>
-      <span class="date">29 October 2017</span>
+      <h1 class="post-title">Spark's read.jdbc</h1>
+      <span class="date">07 November 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>After writing my post on the code review pyramid I realized that I had many more thoughts about the highest level, code philosophy, and wanted to dedicate a full post to dig into it. The general idea is that a highly functional engineering team is way past the point of arguing over style and syntax and has reached the point where they share the same code philosophy. At this point all members of the team have an instinctive sense of how and where new code should be written - even if they can’t necessarily explain it.</p>
+<p>Yesterday I spent a bit of time investigating one of our Spark jobs that had suddenly shot up in run time. The purpose of our job is to collect all the events we see in an hour and generate a variety of aggregate tables and files that can then be loaded into various systems. When we first wrote the job it took about 45 minutes to run but as we’ve started seeing much higher data volume the job time has crept up to to 90 minutes. And for some reason yesterday the jobs were not completing even after 2 hours. There was clearly something odd happening.</p>
 
-<p>A concrete example is to think about a data pipeline project. We have a ton of events coming in that need to be aggregated, stored in a database, and then exposed via an API in a UI dashboard. Now imagine having to add some additional fields. Depending on the field you may be able to add it explicitly at the ingestion level, or potentially derive it during the agg, or maybe even calculate it at the API or UI level. Each of these may be entirely reasonable but a good team will have a strong option on how it should be done. This means that every new feature and functionality is implemented similarly and keeps the code base clean and consistent.</p>
+<p>After digging into it I discovered it was actually a problem with the way we were fetching data from MySQL. In order for us to process our data we load a variety of fact tables from MySQL that are then joined to the raw log level data in Spark. We ingest about a dozen tables this way and it turned out that Spark was just hanging waiting for MySQL. Examining the slow query log it became immediately obvious what the issue was: we were seeing a ton of queries that were “SELECT * FROM (SELECT * FROM table) table WHERE 1=0” quickly followed by “SELECT a, b, c FROM (SELECT * FROM table ) table.” It turns out we were using the <a href="https://spark.apache.org/docs/2.0.0/api/R/read.jdbc.html">read.jdbc</a> function that under the surface Spark does two queries - the first to get the schema and the second to get the data. It’s designed to work on a table but what we were doing was passing in a subery.</p>
 
-<p>This also extends into the way teams approach their class hierarchies and inheritance. Do they go all in and have a ton of factories with complex class hierarchies or do they prefer flatter hierarchies with classes that are able to do more? It also ties into design patterns and which ones are preferred in the code base as well as how to treat nulls and exceptions.</p>
+<p>I suspect the origin of this creativity was to give us a way to do more advanced querying but it came at a pretty big cost when trying to fetch a table. For one of our simple tables there was a multiple order of magnitude improvement by doing “SELECT * FROM table WHERE 1=0” instead of “SELECT * FROM (SELECT * FROM table) table WHERE 1=0” despite them fetching the exact same data. The reason for this is that MySQL isn’t smart enough to realize what we were doing and has to actually evaluate the inner query before the where clause. This adds up when the underlying table keeps growing.</p>
 
-<p>A programming language can’t prescribe every single approach to every type of problem so there’s always some freedom by design. Unfortunately, this can get dangerous on larger projects but strong teams are able to identify the components they want to embrace and the components they want to ban. Frameworks exist because they make these decisions for us. They are purposefully opinionated in order to encourage a particular approach. By having this sort of imposed shared knowledge, every developer using that framework becomes more productive despite the fact that the framework itself limits the flexibility of the language.</p>
-
-<p>The point isn’t to find the one right approach but to realize that it’s more about agreeing on an approach. The fact that engineers still debate the pros and cons of nearly everything to do with software engineering indicates that there’s likely no single answer and we’re better off finding something that’s consistent and right for the team.</p>
+<p>Making a one line change to fetch the tables rather than rely on the subqueries had an immediate performance improvement. Our jobs that were still going strong after 4 hours started completing in less than an hour and this was all due to improving a bit of SQL. It’s remarkable how trivial, yet impactful some optimizations are and it’s important to keep profiling and understand the slowest parts of the system. Only by fixing those do you improve the whole system. This is obvious and has existed since the 1960’s by virtue of <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl’s law</a> but it’s still relevant today as we embrace more and more big data and parallel processing tools.</p>
 
     </section>
 
@@ -775,11 +773,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2017/10/27/the-code-review-pyramid/" title="The code review pyramid">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/10/30/slides-from-my-talk-at-dataengconf/" title="Slides from my talk at DataEngConf">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2017/10/30/slides-from-my-talk-at-dataengconf/" title="Slides from my talk at DataEngConf">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -790,7 +788,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F10%2F29%2Fphilosophy-of-code%2F&title=Philosophy+of+code">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F11%2F07%2Fspark-s-read-jdbc%2F&title=Spark%27s+read.jdbc">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
