@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-11-08T22:11:29-05:00</updated>
+ <updated>2017-11-11T22:20:44-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Modern world of massive competiting corporations</title>
+   <link href="http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/"/>
+   <updated>2017-11-11T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations</id>
+   <content:encoded><![CDATA[
+<p>I’m both fascinated and extremely unqualified to discuss China. Every time I read an article about technology and business in China I discover it’s a completely different world than the one I’m used to. Just today I read an <a href="https://www.theinformation.com/chinas-jd-com-fights-alibaba-with-robots-drone">article</a> about two competing e-commerce companies - JD and Alibaba - and how they’re tackling ecommerce in China via antithetical approaches. And the market is so big and so nascent that it feels as if every company is trying to be involved in every industry. In the US we have Amazon which seemingly is getting involved in every industry but in China it feels as if every major technology company is doing the same. In this case JD is allying itself with Tencent - a competitor to Alibaba. Maybe it’s the natural order to have massive corporations competing with each other in every industry via partnerships with hundreds of competing startups.</p>
+
+<p>This is very similar with what’s happening in the US now. Amazon’s acquisition of Whole Foods was seen as such a threat by other grocers that they’re all <a href="https://www.forbes.com/sites/bizcarson/2017/11/08/amazon-whole-foods-deal-future-of-instacart-grocery-delivery/#1e451e7e6d5a">rushing to partner</a> with Instacart - a company many thought would be hurt by the acquisition. The same thing is <a href="https://www.theinformation.com/amazons-growth-speeds-demand-for-deliv">happening with Deliv</a>, a same-day delivery startup that’s quickly increasing the number of partnerships it has with brick and mortar retailers. How does this play out? It seems that the largest companies are getting larger and larger and whatever functionality they lack they will either acquire or partner. And if any one of these major corporations achieves some sort of breakthrough there will always be a startup willing to provide that same service to competitors.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Spark's read.jdbc</title>
@@ -161,7 +173,7 @@
 <span class="p">}</span>
 
 <span class="c1">// Just write to the screen but there will likely be duplicates unless you did your scrolls perfectly.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">usernames</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">)</span> <span class="p">);</span></code></pre></figure>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">usernames</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"</span><span class="err">\</span><span class="s2">n"</span><span class="p">)</span> <span class="p">);</span></code></pre></figure>
 
 ]]></content:encoded>
  </entry>
@@ -2570,7 +2582,7 @@
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-    <span class="kr">const</span> <span class="nx">done</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">done</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
         <span class="na">statusCode</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="s1">'400'</span> <span class="p">:</span> <span class="s1">'200'</span><span class="p">,</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">),</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
@@ -2599,7 +2611,7 @@
             <span class="p">}</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="nl">default</span><span class="p">:</span>
-            <span class="nx">done</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="err">`</span><span class="nx">Unsupported</span> <span class="nx">method</span> <span class="s2">"${event.httpMethod}"</span><span class="err">`</span><span class="p">));</span>
+            <span class="nx">done</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">`Unsupported method "</span><span class="p">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">httpMethod</span><span class="p">}</span><span class="s2">"`</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">};</span></code></pre></figure>
 
@@ -3031,54 +3043,54 @@
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90114909</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02wbm"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90114909</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02wbm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.88251483</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.88251483</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81870794</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cxn2"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice cream"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81870794</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cxn2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice cream"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.76996088</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0270h"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dessert"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.76996088</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0270h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dessert"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75129372</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02fz11"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gelato"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75129372</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02fz11"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gelato"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69974077</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69974077</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57035172</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02q08p0"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dish"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57035172</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02q08p0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dish"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54961139</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54961139</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53331912</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/031bff"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window covering"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53331912</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/031bff"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window covering"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.51523668</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01_bhs"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fast food"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.51523668</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01_bhs"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fast food"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -3091,49 +3103,49 @@
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87785435</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/07yv9"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87785435</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/07yv9"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78110605</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0k5j"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aircraft"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78110605</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0k5j"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aircraft"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77443254</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cmf2"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"airplane"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77443254</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cmf2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"airplane"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7131173</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02pkr5"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plumbing fixture"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7131173</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02pkr5"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plumbing fixture"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.71218145</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/015y8h"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jet aircraft"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.71218145</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/015y8h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jet aircraft"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66169083</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/06ht1"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"room"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66169083</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/06ht1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"room"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5944497</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01lgkm"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recreational vehicle"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5944497</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01lgkm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recreational vehicle"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54411179</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/041x_j"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public toilet"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54411179</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/041x_j"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public toilet"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53394085</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/017_cz"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"major appliance"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53394085</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/017_cz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"major appliance"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -3147,29 +3159,29 @@
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78413528</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78413528</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.647836</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.647836</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59498113</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0c_jw"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"furniture"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59498113</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0c_jw"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"furniture"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57692927</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57692927</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54954523</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/08790l"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boutique"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54954523</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/08790l"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boutique"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -3791,7 +3803,7 @@
    <content:encoded><![CDATA[
 <p>Analyzing my blog is taking longer than expected but my goal is to have something meaningful over the weekend. In the meantime I wanted to share a <a href="http://www.r-bloggers.com/building-wordclouds-in-r/">quick script</a> I discovered to generate a word cloud in R. I remember doing this years back in D3 and having to spend a bunch of time figuring it out. Compared to that doing it in R is a breeze. In this case I have a CSV dump of my blog in /tmp/out.csv and am generating two word clouds - one for keywords and the other for tags of my blog posts.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Install and the libraries
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Install and the libraries</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"tm"</span><span class="p">)</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"SnowballC"</span><span class="p">)</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"wordcloud"</span><span class="p">)</span><span class="w">
@@ -3800,19 +3812,19 @@
 </span><span class="n">library</span><span class="p">(</span><span class="n">SnowballC</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Read the file
+</span><span class="c1"># Read the file</span><span class="w">
 </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"/tmp/out.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Now generate the two word clouds.
-# Most of the work here is removing the unncessary and common words
-# as well as optionally stemming each of the words. In my case since
-# I'm plotting the keywords and tags I ignore this step.
-</span><span class="w">
+</span><span class="c1"># Now generate the two word clouds.</span><span class="w">
+</span><span class="c1"># Most of the work here is removing the unncessary and common words</span><span class="w">
+</span><span class="c1"># as well as optionally stemming each of the words. In my case since</span><span class="w">
+</span><span class="c1"># I'm plotting the keywords and tags I ignore this step.</span><span class="w">
+
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Corpus</span><span class="p">(</span><span class="n">VectorSource</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">keywords</span><span class="p">))</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">PlainTextDocument</span><span class="p">)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removePunctuation</span><span class="p">)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">))</span><span class="w">
-</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)
+</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'the'</span><span class="p">,</span><span class="w"> </span><span class="s1">'this'</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">)))</span><span class="w">
 
 </span><span class="n">wordcloud</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">.5</span><span class="p">))</span><span class="w">
@@ -3821,7 +3833,7 @@
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">PlainTextDocument</span><span class="p">)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removePunctuation</span><span class="p">)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">))</span><span class="w">
-</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)
+</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)</span><span class="w">
 </span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'the'</span><span class="p">,</span><span class="w"> </span><span class="s1">'this'</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">)))</span><span class="w">
 
 </span><span class="n">wordcloud</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">))</span></code></pre></figure>
@@ -5194,17 +5206,17 @@ Mon Oct 19 22:35:37 EDT 2015
 2015-10-19
 ➜  ~  date +<span class="s2">"'%Y-%m-%d'"</span>
 <span class="s1">'2015-10-19'</span>
-➜  ~  date -v+3d +%Y-%m-%d
+➜  ~  date <span class="nt">-v</span>+3d +%Y-%m-%d
 2015-10-22
-➜  ~  date -v-3d +%Y-%m-%d
+➜  ~  date <span class="nt">-v-3d</span> +%Y-%m-%d
 2015-10-16
-➜  ~  date -v-3y +%Y-%m-%d
+➜  ~  date <span class="nt">-v-3y</span> +%Y-%m-%d
 2012-10-19
-➜  ~  date -v+3y +%Y-%m-%d
+➜  ~  date <span class="nt">-v</span>+3y +%Y-%m-%d
 2018-10-19
-➜  ~  date -v+3y +<span class="s2">"%Y-%m-%dT%H:%M:%S"</span>
+➜  ~  date <span class="nt">-v</span>+3y +<span class="s2">"%Y-%m-%dT%H:%M:%S"</span>
 2018-10-19T22:39:18
-➜  ~  date -v+3m +<span class="s2">"%Y-%m-%dT%H:%M:%S"</span>
+➜  ~  date <span class="nt">-v</span>+3m +<span class="s2">"%Y-%m-%dT%H:%M:%S"</span>
 2016-01-19T22:39:24</code></pre></figure>
 
 <p>In the past I’d resort to a JavaScript utility or a quick Python script when I needed a simple date calculation but lately I’ve been able to do nearly everything solely by using the built in date utility. It’s still a bit cumbersome for generating date ranges or when requiring complicated logic but for the basic stuff it’s surprisingly powerful and expressive. It’s amazing how full featured the shell is and how often we avoid it and use more fleshed out languages. Instead of trying to find new languages it’s worth taking the time to actually explore and understand the shell - it’s one of the better investments an engineer can make.</p>
@@ -5545,17 +5557,17 @@ Mon Oct 19 22:35:37 EDT 2015
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c"># Dump the contents of the queue to a file.</span>
 <span class="c"># To be safe requeue the messages and do a manual purge when</span>
 <span class="c"># we confirm the data looks right.</span>
-./rabbitmqadmin get <span class="nv">queue</span><span class="o">=</span>data_queue <span class="nv">requeue</span><span class="o">=</span><span class="nb">true </span><span class="nv">count</span><span class="o">=</span>2000 &gt; tasks.log
+./rabbitmqadmin get <span class="nv">queue</span><span class="o">=</span>data_queue <span class="nv">requeue</span><span class="o">=</span><span class="nb">true </span><span class="nv">count</span><span class="o">=</span>2000 <span class="o">&gt;</span> tasks.log
 
 <span class="c"># 1 - Get the appropriate field (in our case the fifth one)</span>
 <span class="c"># 2 - Remove the header rows</span>
 <span class="c"># 3 - Trim the line</span>
 <span class="c"># 4 - Prepend the publish command and turn the task message string into an argument</span>
-cut -d<span class="s1">'|'</span> -f5 tasks.log | sed <span class="s1">'$d'</span> | sed <span class="s1">'1,3d'</span> | sed <span class="s1">'s/^ *//;s/*$//'</span> | sed -e <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | sed -e <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> &gt; tasks.clean
+cut <span class="nt">-d</span><span class="s1">'|'</span> <span class="nt">-f5</span> tasks.log | sed <span class="s1">'$d'</span> | sed <span class="s1">'1,3d'</span> | sed <span class="s1">'s/^ *//;s/*$//'</span> | sed <span class="nt">-e</span> <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | sed <span class="nt">-e</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> <span class="o">&gt;</span> tasks.clean
 
 <span class="c"># Split the tasks into two pieces</span>
-cat tasks.clean | grep log &gt; tasks.clean1
-cat tasks.clean | grep -v log &gt; tasks.clean2
+<span class="nb">cat </span>tasks.clean | <span class="nb">grep </span>log <span class="o">&gt;</span> tasks.clean1
+<span class="nb">cat </span>tasks.clean | <span class="nb">grep</span> <span class="nt">-v</span> log <span class="o">&gt;</span> tasks.clean2
 
 <span class="c"># Queue the tasks in the appropriate order</span>
 sh tasks.clean1
@@ -5796,30 +5808,30 @@ sh tasks.clean2</code></pre></figure>
 <p>Yesterday, Amazon <a href="https://aws.amazon.com/blogs/aws/now-available-aws-sdk-for-python-3-boto3/" target="_blank">announced</a> a major update to their Python client, boto3. The core functionality is unchanged but they used a clever solution to make it easier to add, modify, and remove endpoints. By coming up with a <a href="https://github.com/boto/boto3/tree/develop/boto3/data" target="_blank">standardized representation</a> for each of the endpoints they’re able to write wrappers in different languages that generate the API calls programmatically. For example, I’ve included a subset of the <a href="https://github.com/boto/boto3/blob/develop/boto3/data/ec2/2015-04-15/resources-1.json" target="_blank">EC2 definition</a> below. It contains the information necessary to programatically generate the API wrapper to hit the appropriate EC2 endpoints.</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"CreateDhcpOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreateDhcpOptions"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions.DhcpOptionsId"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CreateDhcpOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreateDhcpOptions"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions.DhcpOptionsId"</span><span class="w"> </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
-          </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nt">"CreateInstances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RunInstances"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instance"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[].InstanceId"</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"CreateInstances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RunInstances"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instance"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[].InstanceId"</span><span class="w"> </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
-          </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[]"</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[]"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="err">...</span><span class="w">
-    </span><span class="err">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
@@ -7101,7 +7113,7 @@ The statement is attributed to Kent Beck but I’ve become a huge fan and try to
 
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/sum'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/sum'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">,</span>
       <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'a'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -7112,7 +7124,7 @@ The statement is attributed to Kent Beck but I’ve become a huge fan and try to
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/fact'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/fact'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">,</span>
           <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'a'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -7123,7 +7135,7 @@ The statement is attributed to Kent Beck but I’ve become a huge fan and try to
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/isPrime'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/isPrime'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">),</span>
       <span class="nx">f</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'f'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">f</span> <span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span> <span class="p">{</span>
@@ -7376,11 +7388,11 @@ The statement is attributed to Kent Beck but I’ve become a huge fan and try to
 
 <p>The new code leverages the Python AWS library to pull down the list of instances for a given region and then filters it down based on the name, IP address, or public DNS. If it turns out there’s a match then it will only return the public IP address which makes it easy to connect using ssh. For example, to list all servers containing the name “web server” you would run the following:</p>
 
-<figure class="highlight"><pre><code class="language-sh" data-lang="sh">python list_hosts.py --region<span class="o">=</span>us-east-1 --filter<span class="o">=</span><span class="s2">"web server"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">python list_hosts.py <span class="nt">--region</span><span class="o">=</span>us-east-1 <span class="nt">--filter</span><span class="o">=</span><span class="s2">"web server"</span></code></pre></figure>
 
 <p>And if you know there will only be one you can connect to it directly by using ssh and running the script inside two backticks:</p>
 
-<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ssh <span class="sb">`</span>python list_hosts.py --region<span class="o">=</span>us-east-1 --filter<span class="o">=</span><span class="s2">"web server"</span><span class="sb">`</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ssh <span class="sb">`</span>python list_hosts.py <span class="nt">--region</span><span class="o">=</span>us-east-1 <span class="nt">--filter</span><span class="o">=</span><span class="s2">"web server"</span><span class="sb">`</span></code></pre></figure>
 
 <p>The code’s up on <a href="https://github.com/dangoldin/aws-tools" target="_blank">GitHub</a> but at the moment there’s just this single script. I’ll keep adding more as I run into various issues working with AWS.</p>
 ]]></content:encoded>
@@ -7897,7 +7909,7 @@ That differential allows people to buy something on the cheap but feel like they
 
 
 
-<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ln -s settings_prod.py settings.py</code></pre></figure>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ln <span class="nt">-s</span> settings_prod.py settings.py</code></pre></figure>
 
 </li>
 
@@ -8406,7 +8418,7 @@ That differential allows people to buy something on the cheap but feel like they
    <content:encoded><![CDATA[
 <p>I recently migrated to Digital Ocean and spent some time beefing up its security. One of the things I looked into was the various SSH attempts being made and to see if there was a pattern. Luckily, I’m running Ubuntu and every SSH attempt is logged by default to /var/log/auth.log and all it required was a quick one liner to see the failed attempts by username.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grep <span class="s2">"Invalid user "</span> /var/log/auth.log | cut -d<span class="s1">' '</span> -f8 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r | head -n 100</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="s2">"Invalid user "</span> /var/log/auth.log | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f8</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span> | head <span class="nt">-n</span> 100</code></pre></figure>
 
 <table class="table"><thead><tr><th>Username</th><th>Count</th></tr></thead><tbody><tr><td>test</td><td>141</td></tr><tr><td>postgres</td><td>116</td></tr><tr><td>oracle</td><td>88</td></tr><tr><td>web</td><td>75</td></tr><tr><td>test2</td><td>74</td></tr><tr><td>admin</td><td>59</td></tr><tr><td>jboss</td><td>49</td></tr><tr><td>ubuntu</td><td>45</td></tr><tr><td>webmaster</td><td>43</td></tr><tr><td>user</td><td>42</td></tr><tr><td>tech</td><td>40</td></tr><tr><td>debian</td><td>40</td></tr><tr><td>testuser</td><td>39</td></tr><tr><td>server</td><td>38</td></tr><tr><td>penguin</td><td>38</td></tr><tr><td>shoutcast</td><td>36</td></tr><tr><td>rdp</td><td>36</td></tr><tr><td>www</td><td>35</td></tr><tr><td>radio</td><td>35</td></tr><tr><td>ftp</td><td>33</td></tr><tr><td>test3</td><td>30</td></tr><tr><td>student</td><td>29</td></tr><tr><td>guest</td><td>29</td></tr><tr><td>toor</td><td>21</td></tr><tr><td>public</td><td>19</td></tr><tr><td>testing</td><td>15</td></tr><tr><td>tester</td><td>15</td></tr><tr><td>students</td><td>15</td></tr><tr><td>var</td><td>13</td></tr><tr><td>gov</td><td>9</td></tr><tr><td>adm</td><td>9</td></tr><tr><td>x</td><td>8</td></tr><tr><td>nagios</td><td>8</td></tr><tr><td>zabbix</td><td>7</td></tr><tr><td>z</td><td>7</td></tr><tr><td>y</td><td>7</td></tr><tr><td>w</td><td>7</td></tr><tr><td>vyatta</td><td>7</td></tr><tr><td>u</td><td>7</td></tr><tr><td>t</td><td>7</td></tr><tr><td>shell</td><td>7</td></tr><tr><td>s</td><td>7</td></tr><tr><td>r</td><td>7</td></tr><tr><td>q</td><td>7</td></tr><tr><td>p</td><td>7</td></tr><tr><td>o</td><td>7</td></tr><tr><td>n</td><td>7</td></tr><tr><td>michael</td><td>7</td></tr><tr><td>m</td><td>7</td></tr><tr><td>l</td><td>7</td></tr><tr><td>k</td><td>7</td></tr><tr><td>j</td><td>7</td></tr><tr><td>i</td><td>7</td></tr><tr><td>h</td><td>7</td></tr><tr><td>g</td><td>7</td></tr><tr><td>f</td><td>7</td></tr><tr><td>e</td><td>7</td></tr><tr><td>dup</td><td>7</td></tr><tr><td>d</td><td>7</td></tr><tr><td>ch</td><td>7</td></tr><tr><td>c</td><td>7</td></tr><tr><td>b</td><td>7</td></tr><tr><td>a</td><td>7</td></tr><tr><td>sales</td><td>6</td></tr><tr><td>office</td><td>6</td></tr><tr><td>home</td><td>6</td></tr><tr><td>data</td><td>6</td></tr><tr><td>bash</td><td>6</td></tr><tr><td>apache</td><td>6</td></tr><tr><td>administrator</td><td>6</td></tr><tr><td>v</td><td>5</td></tr><tr><td>test1</td><td>5</td></tr><tr><td>teamspeak</td><td>5</td></tr><tr><td>ssh</td><td>5</td></tr><tr><td>plesk</td><td>5</td></tr><tr><td>master</td><td>5</td></tr><tr><td>linux</td><td>5</td></tr><tr><td>ircd</td><td>5</td></tr><tr><td>http</td><td>5</td></tr><tr><td>walid</td><td>4</td></tr><tr><td>vnc</td><td>4</td></tr><tr><td>ust</td><td>4</td></tr><tr><td>ts</td><td>4</td></tr><tr><td>temp</td><td>4</td></tr><tr><td>telnet</td><td>4</td></tr><tr><td>smmsp</td><td>4</td></tr><tr><td>smart</td><td>4</td></tr><tr><td>samba</td><td>4</td></tr><tr><td>org</td><td>4</td></tr><tr><td>operator</td><td>4</td></tr><tr><td>net</td><td>4</td></tr><tr><td>named</td><td>4</td></tr><tr><td>mike</td><td>4</td></tr><tr><td>library</td><td>4</td></tr><tr><td>info</td><td>4</td></tr><tr><td>hacker</td><td>4</td></tr><tr><td>git</td><td>4</td></tr><tr><td>ftpuser</td><td>4</td></tr><tr><td>dan</td><td>4</td></tr><tr><td>cc</td><td>4</td></tr></tbody></table>
 
@@ -8414,7 +8426,7 @@ That differential allows people to buy something on the cheap but feel like they
 
 <p>The auth.log file also contains the IP address of each attempt and we can easily summarize by that.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grep <span class="s2">"Invalid user "</span> /var/log/auth.log | cut -d<span class="s1">' '</span> -f10 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r | head -n 100</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="s2">"Invalid user "</span> /var/log/auth.log | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f10</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span> | head <span class="nt">-n</span> 100</code></pre></figure>
 
 <table class="table"><thead><tr><th>IP</th><th>Count</th></tr></thead><tbody><tr><td>162.13.41.12</td><td>874</td></tr><tr><td>176.31.244.7</td><td>733</td></tr><tr><td>216.127.160.146</td><td>572</td></tr><tr><td>195.50.80.169</td><td>382</td></tr><tr><td>66.219.106.164</td><td>359</td></tr><tr><td>199.33.127.35</td><td>220</td></tr><tr><td>112.167.161.194</td><td>98</td></tr><tr><td>128.199.226.160</td><td>66</td></tr><tr><td>198.50.120.178</td><td>60</td></tr><tr><td>189.85.66.234</td><td>37</td></tr><tr><td>14.18.145.82</td><td>29</td></tr><tr><td>166.78.243.86</td><td>23</td></tr><tr><td>222.190.114.98</td><td>22</td></tr><tr><td>130.126.141.74</td><td>18</td></tr><tr><td>178.208.77.133</td><td>17</td></tr><tr><td>61.160.213.171</td><td>8</td></tr><tr><td>49.213.20.249</td><td>8</td></tr><tr><td>23.253.51.76</td><td>7</td></tr><tr><td>178.254.8.177</td><td>7</td></tr><tr><td>193.107.128.10</td><td>5</td></tr><tr><td>121.167.232.196</td><td>2</td></tr><tr><td>107.182.134.51</td><td>2</td></tr><tr><td>82.221.106.233</td><td>1</td></tr><tr><td>74.3.121.10</td><td>1</td></tr><tr><td>72.225.239.90</td><td>1</td></tr><tr><td>111.74.134.216</td><td>1</td></tr></tbody></table>
 
@@ -8450,7 +8462,7 @@ That differential allows people to buy something on the cheap but feel like they
    <content:encoded><![CDATA[
 <p>I spend a large chunk of time working in the terminal and was curious to see what my most commonly used shell commands were. This also gave me an opportunity to practice writing one liners and learn a bit of awk.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">history</span> | cut -d<span class="s1">' '</span> -f4 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">history</span> | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f4</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span></code></pre></figure>
 
 <p>The script is simple - look through my command history, extract the first word, and count the number of times that word appears. I was surprised to see git at the top but it makes sense - I tend to run it as a sequence (git status, git commit, git push) so it leads to an inflated count. The rest make sense - they’re a mix of the standard navigation commands as well as command related to my current projects. Next step is to set up a cron job to track this usage over time and see how it changes.</p>
 
@@ -9280,7 +9292,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
   <p><a href="http://gunicorn.org/" target="_blank">Gunicorn</a> - I have a shell script here that's used to set the various paths and options that configure Gunicorn</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> -e
+<span class="nb">set</span> <span class="nt">-e</span>
 <span class="nv">DJANGODIR</span><span class="o">=</span>/home/ubuntu/app
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>app.settings.prod
 
@@ -9296,10 +9308,10 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 <span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
 <span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
 
-<span class="nb">test</span> -d <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir -p <span class="nv">$LOGDIR</span>
-<span class="nb">exec</span> /home/ubuntu/app/venv/bin/gunicorn_django -w <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
-  --user<span class="o">=</span><span class="nv">$USER</span> --group<span class="o">=</span><span class="nv">$GROUP</span> --log-level<span class="o">=</span>debug <span class="se">\</span>
-  --log-file<span class="o">=</span><span class="nv">$LOGFILE</span> -b 0.0.0.0:8000 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
+<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
+<span class="nb">exec</span> /home/ubuntu/app/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
+  <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
+  <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8000 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
 
 
   <p><a href="http://supervisord.org/" target="_blank">Supevisor</a> - Here we just point our configuration file to the shell script for Gunicorn</p>
@@ -9382,15 +9394,15 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
    <content:encoded><![CDATA[
 <p>Earlier today I read Nathan Yau’s <a href="http://flowingdata.com/2014/02/05/where-people-run/" target="_blank">post</a> that had a quick <a href="http://projects.flowingdata.com/tut/map-routes.R" target="_blank">R script</a> to plot GPX file data onto a map. I was able to quickly load up my RunKeeper data from 2013 and came up with a pretty cool visualization of each of my outdoor runs. Since my runs occurred across multiple cities and continents the visualization turned out to be very sparse without a great sense of where the runs were. I made a two quick changes to the script to make it more useful for my data: a map overlay to see where in the world I ran and an ability to view a zoomed in area of the map. I’ve included the updated script and the resulting plots below.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># From Nathan's script
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># From Nathan's script</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">plotKML</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">maps</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># GPX files downloaded from Runkeeper
+</span><span class="c1"># GPX files downloaded from Runkeeper</span><span class="w">
 </span><span class="n">files</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dir</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\\.gpx"</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Consolidate routes in one drata frame
+</span><span class="c1"># Consolidate routes in one drata frame</span><span class="w">
 </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
 </span><span class="n">lat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
 </span><span class="n">long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
@@ -9405,7 +9417,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 </span><span class="p">}</span><span class="w">
 </span><span class="n">routes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">cbind</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">))</span><span class="w">
 
-</span><span class="c1"># Map the routes
+</span><span class="c1"># Map the routes</span><span class="w">
 </span><span class="n">ids</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w">
 </span><span class="n">plot</span><span class="p">(</span><span class="n">routes</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">routes</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="n">axes</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
 </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -9413,7 +9425,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
   </span><span class="n">lines</span><span class="p">(</span><span class="n">currRoute</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">currRoute</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s2">"#FF000020"</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span><span class="c1"># Add the world map overlay
+</span><span class="c1"># Add the world map overlay</span><span class="w">
 </span><span class="n">world</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">map_data</span><span class="p">(</span><span class="s1">'world'</span><span class="p">)</span><span class="w">
 </span><span class="n">plot</span><span class="p">(</span><span class="n">world</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="n">axes</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
 
@@ -9429,7 +9441,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
   </span><span class="n">lines</span><span class="p">(</span><span class="n">currRoute</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">currRoute</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s2">"#FF000020"</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span><span class="c1"># Zoom into a particular area of routes
+</span><span class="c1"># Zoom into a particular area of routes</span><span class="w">
 </span><span class="n">zoom</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">lat_north</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">radius</span><span class="w">
   </span><span class="n">long_west</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">radius</span><span class="w">
@@ -9870,7 +9882,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 
 </span><span class="n">summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w">
 
-</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Date</span><span class="p">),]</span><span class="w"> </span><span class="c1"># Sort ascending by date
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">order</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Date</span><span class="p">),]</span><span class="w"> </span><span class="c1"># Sort ascending by date</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">ymd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.Date</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Date</span><span class="p">)</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">month</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.Date</span><span class="p">(</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">ymd</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"month"</span><span class="p">))</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">week</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.Date</span><span class="p">(</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">ymd</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"week"</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">
@@ -9883,22 +9895,22 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 </span><span class="n">data</span><span class="o">$</span><span class="n">time_mins_total</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">time_mins</span><span class="p">)</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">distance_total_norm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">distance_total</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">)</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">time_hours_total_norm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">time_hours_total</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">time_hours</span><span class="p">)</span><span class="w">
-</span><span class="n">data</span><span class="o">$</span><span class="n">qs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quantile</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">),</span><span class="w"> </span><span class="n">include.lowest</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="c1"># Quantile data by distance run
-</span><span class="w">
-</span><span class="c1"># Generate a new data frame by qs and month to make plotting easier
+</span><span class="n">data</span><span class="o">$</span><span class="n">qs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quantile</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">),</span><span class="w"> </span><span class="n">include.lowest</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="c1"># Quantile data by distance run</span><span class="w">
+
+</span><span class="c1"># Generate a new data frame by qs and month to make plotting easier</span><span class="w">
 </span><span class="n">data.qs_monthly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ddply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">.</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span><span class="w"> </span><span class="n">month</span><span class="p">),</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">distance</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">distance</span><span class="p">),</span><span class="w"> </span><span class="n">time_mins</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">$</span><span class="n">time_mins</span><span class="p">)))</span><span class="w">
 </span><span class="n">data.qs_monthly</span><span class="o">$</span><span class="n">speed</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.qs_monthly</span><span class="o">$</span><span class="n">distance</span><span class="o">/</span><span class="p">(</span><span class="n">data.qs_monthly</span><span class="o">$</span><span class="n">time_mins</span><span class="o">/</span><span class="m">60</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Summarize the data by qs to make plotting easier
+</span><span class="c1"># Summarize the data by qs to make plotting easier</span><span class="w">
 </span><span class="n">data.summary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ddply</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="o">~</span><span class="n">qs</span><span class="p">,</span><span class="n">summarise</span><span class="p">,</span><span class="n">mean_speed</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">speed</span><span class="p">),</span><span class="n">sd_speed</span><span class="o">=</span><span class="n">sd</span><span class="p">(</span><span class="n">speed</span><span class="p">),</span><span class="n">mean_distance</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">distance</span><span class="p">),</span><span class="n">sd_distance</span><span class="o">=</span><span class="n">sd</span><span class="p">(</span><span class="n">distance</span><span class="p">))</span><span class="w">
 
-</span><span class="c1"># Cluster each of the runs by speed and data
+</span><span class="c1"># Cluster each of the runs by speed and data</span><span class="w">
 </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.matrix</span><span class="p">(</span><span class="n">cbind</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">distance</span><span class="p">),</span><span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
 </span><span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kmeans</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="w">
 </span><span class="n">data</span><span class="o">$</span><span class="n">cluster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">cl</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span><span class="w">
 </span><span class="n">centers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">cl</span><span class="o">$</span><span class="n">centers</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Normalize cumulative distance and time
+</span><span class="c1"># Normalize cumulative distance and time</span><span class="w">
 </span><span class="n">data.normalized</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">melt</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">id.vars</span><span class="o">=</span><span class="s2">"ymd"</span><span class="p">,</span><span class="w"> </span><span class="n">measure.vars</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"distance_total_norm"</span><span class="p">,</span><span class="s2">"time_hours_total_norm"</span><span class="p">))</span><span class="w">
 </span><span class="n">data.normalized</span><span class="o">$</span><span class="n">variable</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">revalue</span><span class="p">(</span><span class="n">data.normalized</span><span class="o">$</span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"distance_total_norm"</span><span class="o">=</span><span class="s2">"Distance"</span><span class="p">,</span><span class="w"> </span><span class="s2">"time_hours_total_norm"</span><span class="o">=</span><span class="s2">"Time"</span><span class="p">))</span><span class="w">
 
@@ -10401,17 +10413,17 @@ You can also grab the entire set of data <a href="http://dangoldin.com/assets/st
 
 <p>In your shell, run the following command to set up the SSH tunnel:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh -L &lt;<span class="nb">local </span>port&gt;:&lt;rds host&gt;:&lt;rds port&gt;&lt;ec2 user&gt;@&lt;ec2 instance&gt;</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ssh <span class="nt">-L</span> &lt;<span class="nb">local </span>port&gt;:&lt;rds host&gt;:&lt;rds port&gt;&lt;ec2 user&gt;@&lt;ec2 instance&gt;</code></pre></figure>
 
 <p>Now in R:</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="err">‘</span><span class="n">RMySQL</span><span class="err">’</span><span class="p">)</span><span class="w"> </span><span class="c1"># Install the R MySQL library
-</span><span class="n">library</span><span class="p">(</span><span class="n">RMySQL</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the library
-</span><span class="n">m</span><span class="o">&lt;-</span><span class="n">dbDriver</span><span class="p">(</span><span class="s2">"MySQL"</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the driver
-</span><span class="n">con</span><span class="o">&lt;-</span><span class="n">dbConnect</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s1">'username'</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">'pass'</span><span class="p">,</span><span class="n">host</span><span class="o">=</span><span class="s1">'127.0.0.1'</span><span class="p">,</span><span class="n">dbname</span><span class="o">=</span><span class="s1">'db'</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="m">3307</span><span class="p">)</span><span class="w"> </span><span class="c1"># Connect to the local instance
-</span><span class="n">res</span><span class="o">&lt;-</span><span class="n">dbSendQuery</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="w"> </span><span class="s1">'select * from table'</span><span class="p">)</span><span class="w"> </span><span class="c1"># Execute the query
-</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fetch</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the retrieved data into a data frame
-</span><span class="n">dbClearResult</span><span class="p">(</span><span class="n">dbListResults</span><span class="p">(</span><span class="n">con</span><span class="p">)[[</span><span class="m">1</span><span class="p">]])</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">free</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">connection</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="err">‘</span><span class="n">RMySQL</span><span class="err">’</span><span class="p">)</span><span class="w"> </span><span class="c1"># Install the R MySQL library</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">RMySQL</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the library</span><span class="w">
+</span><span class="n">m</span><span class="o">&lt;-</span><span class="n">dbDriver</span><span class="p">(</span><span class="s2">"MySQL"</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the driver</span><span class="w">
+</span><span class="n">con</span><span class="o">&lt;-</span><span class="n">dbConnect</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="s1">'username'</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">'pass'</span><span class="p">,</span><span class="n">host</span><span class="o">=</span><span class="s1">'127.0.0.1'</span><span class="p">,</span><span class="n">dbname</span><span class="o">=</span><span class="s1">'db'</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="m">3307</span><span class="p">)</span><span class="w"> </span><span class="c1"># Connect to the local instance</span><span class="w">
+</span><span class="n">res</span><span class="o">&lt;-</span><span class="n">dbSendQuery</span><span class="p">(</span><span class="n">con</span><span class="p">,</span><span class="w"> </span><span class="s1">'select * from table'</span><span class="p">)</span><span class="w"> </span><span class="c1"># Execute the query</span><span class="w">
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fetch</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-1</span><span class="p">)</span><span class="w"> </span><span class="c1"># Load the retrieved data into a data frame</span><span class="w">
+</span><span class="n">dbClearResult</span><span class="p">(</span><span class="n">dbListResults</span><span class="p">(</span><span class="n">con</span><span class="p">)[[</span><span class="m">1</span><span class="p">]])</span><span class="w"> </span><span class="c1"># Use this to free the connection</span></code></pre></figure>
 ]]></content:encoded>
  </entry>
  
@@ -11087,7 +11099,7 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 		</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> -e
+<span class="nb">set</span> <span class="nt">-e</span>
 <span class="nv">DJANGODIR</span><span class="o">=</span>/home/ubuntu/project
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
 
@@ -11103,10 +11115,10 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 <span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
 <span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
 
-<span class="nb">test</span> -d <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir -p <span class="nv">$LOGDIR</span>
-<span class="nb">exec</span> /home/ubuntu/project/venv/bin/gunicorn_django -w <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
-  --user<span class="o">=</span><span class="nv">$USER</span> --group<span class="o">=</span><span class="nv">$GROUP</span> --log-level<span class="o">=</span>debug <span class="se">\</span>
-  --log-file<span class="o">=</span><span class="nv">$LOGFILE</span> -b 0.0.0.0:8001 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
+<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
+<span class="nb">exec</span> /home/ubuntu/project/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
+  <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
+  <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8001 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
 
 </li>
 
@@ -11861,10 +11873,10 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 <ul>
     <li>urls.py
         
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[</span><span class="err">\</span><span class="s">d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_reply'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[</span><span class="err">\</span><span class="s">d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
+<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_view_conversation'</span><span class="p">),</span>
 <span class="n">url</span><span class="p">(</span><span class="s">r'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>

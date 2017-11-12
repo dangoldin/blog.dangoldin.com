@@ -737,7 +737,7 @@ table {
       
 <p>I spend a large chunk of time working in the terminal and was curious to see what my most commonly used shell commands were. This also gave me an opportunity to practice writing one liners and learn a bit of awk.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">history</span> | cut -d<span class="s1">' '</span> -f4 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">history</span> | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f4</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span></code></pre></figure>
 
 <p>The script is simple - look through my command history, extract the first word, and count the number of times that word appears. I was surprised to see git at the top but it makes sense - I tend to run it as a sequence (git status, git commit, git push) so it leads to an inflated count. The rest make sense - they’re a mix of the standard navigation commands as well as command related to my current projects. Next step is to set up a cron job to track this usage over time and see how it changes.</p>
 

@@ -1,9 +1,9 @@
 http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
+http://dangoldin.com/
 http://dangoldin.com/about/
 http://dangoldin.com/lore/
-http://dangoldin.com/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
 http://dangoldin.com/tags/
@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/
 http://dangoldin.com/2017/11/07/spark-s-read-jdbc/
 http://dangoldin.com/2017/10/30/slides-from-my-talk-at-dataengconf/
 http://dangoldin.com/2017/10/29/philosophy-of-code/

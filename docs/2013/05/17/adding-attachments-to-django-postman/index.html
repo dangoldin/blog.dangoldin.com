@@ -851,10 +851,10 @@ table {
 <ul>
     <li>urls.py
         
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[</span><span class="err">\</span><span class="s">d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_reply'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[</span><span class="err">\</span><span class="s">d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
+<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_view_conversation'</span><span class="p">),</span>
 <span class="n">url</span><span class="p">(</span><span class="s">r'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>

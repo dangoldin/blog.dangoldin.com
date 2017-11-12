@@ -737,7 +737,7 @@ table {
       
 <p>I recently migrated to Digital Ocean and spent some time beefing up its security. One of the things I looked into was the various SSH attempts being made and to see if there was a pattern. Luckily, I’m running Ubuntu and every SSH attempt is logged by default to /var/log/auth.log and all it required was a quick one liner to see the failed attempts by username.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grep <span class="s2">"Invalid user "</span> /var/log/auth.log | cut -d<span class="s1">' '</span> -f8 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r | head -n 100</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="s2">"Invalid user "</span> /var/log/auth.log | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f8</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span> | head <span class="nt">-n</span> 100</code></pre></figure>
 
 <table class="table">
 <thead><tr>
@@ -1152,7 +1152,7 @@ table {
 
 <p>The auth.log file also contains the IP address of each attempt and we can easily summarize by that.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">grep <span class="s2">"Invalid user "</span> /var/log/auth.log | cut -d<span class="s1">' '</span> -f10 | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort -k 2 -n -r | head -n 100</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">grep</span> <span class="s2">"Invalid user "</span> /var/log/auth.log | cut <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f10</span> | awk <span class="s1">'{a[$0]++}END{for(i in a)print i,a[i]}'</span> | sort <span class="nt">-k</span> 2 <span class="nt">-n</span> <span class="nt">-r</span> | head <span class="nt">-n</span> 100</code></pre></figure>
 
 <table class="table">
 <thead><tr>

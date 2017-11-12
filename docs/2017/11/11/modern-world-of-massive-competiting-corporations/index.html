@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Word clouds in R</title>
-  <meta name="description" content="My blog analysis is taking a while but I discovered a simple way of generating word clouds in R.">
-  <meta name="keywords" content="word clouds, R, data visualization" />
+  <title>Modern world of massive competiting corporations</title>
+  <meta name="description" content="Corporations are getting larger and larger and entering more and more industries. Whatever they lack they're able to buy from a startup.">
+  <meta name="keywords" content="ecommerce, jd, alibaba, tencent, amazon, business" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2016/06/06/word-clouds-in-r/">
+  <link rel="canonical" href="http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Word clouds in R" />
+  <meta name="twitter:title" content="Modern world of massive competiting corporations" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2016/06/06/word-clouds-in-r/" />
-  <meta property="og:title"               content="Word clouds in R" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/" />
+  <meta property="og:title"               content="Modern world of massive competiting corporations" />
 
   
-  <meta property="og:description"         content="My blog analysis is taking a while but I discovered a simple way of generating word clouds in R." />
-  <meta name="twitter:description"        content="My blog analysis is taking a while but I discovered a simple way of generating word clouds in R." />
+  <meta property="og:description"         content="Corporations are getting larger and larger and entering more and more industries. Whatever they lack they're able to buy from a startup." />
+  <meta name="twitter:description"        content="Corporations are getting larger and larger and entering more and more industries. Whatever they lack they're able to buy from a startup." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2016/06/06/word-clouds-in-r/",
-  "headline": "Word clouds in R",
-  "datePublished": "2016-06-06T00:00:00-04:00",
-  "dateModified": "2016-06-06T00:00:00-04:00",
-  "description": "Analyzing my blog is taking longer than expected but my goal is to have something meaningful over the weekend. In the meantime I wanted to share a quick scri...",
+  "mainEntityOfPage": "http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/",
+  "headline": "Modern world of massive competiting corporations",
+  "datePublished": "2017-11-11T00:00:00-05:00",
+  "dateModified": "2017-11-11T00:00:00-05:00",
+  "description": "I’m both fascinated and extremely unqualified to discuss China. Every time I read an article about technology and business in China I discover it’s a complet...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -729,54 +729,15 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Word clouds in R</h1>
-      <span class="date">06 June 2016</span>
+      <h1 class="post-title">Modern world of massive competiting corporations</h1>
+      <span class="date">11 November 2017</span>
     </div>
 
     <section class="post-content">
       
-<p>Analyzing my blog is taking longer than expected but my goal is to have something meaningful over the weekend. In the meantime I wanted to share a <a href="http://www.r-bloggers.com/building-wordclouds-in-r/">quick script</a> I discovered to generate a word cloud in R. I remember doing this years back in D3 and having to spend a bunch of time figuring it out. Compared to that doing it in R is a breeze. In this case I have a CSV dump of my blog in /tmp/out.csv and am generating two word clouds - one for keywords and the other for tags of my blog posts.</p>
+<p>I’m both fascinated and extremely unqualified to discuss China. Every time I read an article about technology and business in China I discover it’s a completely different world than the one I’m used to. Just today I read an <a href="https://www.theinformation.com/chinas-jd-com-fights-alibaba-with-robots-drone">article</a> about two competing e-commerce companies - JD and Alibaba - and how they’re tackling ecommerce in China via antithetical approaches. And the market is so big and so nascent that it feels as if every company is trying to be involved in every industry. In the US we have Amazon which seemingly is getting involved in every industry but in China it feels as if every major technology company is doing the same. In this case JD is allying itself with Tencent - a competitor to Alibaba. Maybe it’s the natural order to have massive corporations competing with each other in every industry via partnerships with hundreds of competing startups.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Install and the libraries</span><span class="w">
-</span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"tm"</span><span class="p">)</span><span class="w">
-</span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"SnowballC"</span><span class="p">)</span><span class="w">
-</span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"wordcloud"</span><span class="p">)</span><span class="w">
-
-</span><span class="n">library</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span><span class="w">
-</span><span class="n">library</span><span class="p">(</span><span class="n">SnowballC</span><span class="p">)</span><span class="w">
-</span><span class="n">library</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span><span class="w">
-
-</span><span class="c1"># Read the file</span><span class="w">
-</span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"/tmp/out.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
-
-</span><span class="c1"># Now generate the two word clouds.</span><span class="w">
-</span><span class="c1"># Most of the work here is removing the unncessary and common words</span><span class="w">
-</span><span class="c1"># as well as optionally stemming each of the words. In my case since</span><span class="w">
-</span><span class="c1"># I'm plotting the keywords and tags I ignore this step.</span><span class="w">
-
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Corpus</span><span class="p">(</span><span class="n">VectorSource</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">keywords</span><span class="p">))</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">PlainTextDocument</span><span class="p">)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removePunctuation</span><span class="p">)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">))</span><span class="w">
-</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'the'</span><span class="p">,</span><span class="w"> </span><span class="s1">'this'</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">)))</span><span class="w">
-
-</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">.5</span><span class="p">))</span><span class="w">
-
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Corpus</span><span class="p">(</span><span class="n">VectorSource</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">tags</span><span class="p">))</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">PlainTextDocument</span><span class="p">)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removePunctuation</span><span class="p">)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">))</span><span class="w">
-</span><span class="c1"># corpus &lt;- tm_map(corpus, stemDocument)</span><span class="w">
-</span><span class="n">corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tm_map</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">removeWords</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'the'</span><span class="p">,</span><span class="w"> </span><span class="s1">'this'</span><span class="p">,</span><span class="w"> </span><span class="n">stopwords</span><span class="p">(</span><span class="s1">'english'</span><span class="p">)))</span><span class="w">
-
-</span><span class="n">wordcloud</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span><span class="w"> </span><span class="n">max.words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">random.order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">))</span></code></pre></figure>
-
-<amp-img src="/assets/static/images/wordcloud-tags.png" alt="Word cloud of tags" width="392" height="441" layout="responsive"></amp-img>
-<p class="caption">Word cloud of the tags I use.</p>
-
-<amp-img src="/assets/static/images/wordcloud-keywords.png" alt="Wordcloud of keywords" width="462" height="461" layout="responsive"></amp-img>
-<p class="caption">Word cloud of the keywords I use.</p>
+<p>This is very similar with what’s happening in the US now. Amazon’s acquisition of Whole Foods was seen as such a threat by other grocers that they’re all <a href="https://www.forbes.com/sites/bizcarson/2017/11/08/amazon-whole-foods-deal-future-of-instacart-grocery-delivery/#1e451e7e6d5a">rushing to partner</a> with Instacart - a company many thought would be hurt by the acquisition. The same thing is <a href="https://www.theinformation.com/amazons-growth-speeds-demand-for-deliv">happening with Deliv</a>, a same-day delivery startup that’s quickly increasing the number of partnerships it has with brick and mortar retailers. How does this play out? It seems that the largest companies are getting larger and larger and whatever functionality they lack they will either acquire or partner. And if any one of these major corporations achieves some sort of breakthrough there will always be a startup willing to provide that same service to competitors.</p>
 
     </section>
 
@@ -793,10 +754,6 @@ table {
     
       <li><a href="/tags/##meta-ref">#meta </a></li>
     
-      <li><a href="/tags/##code-ref">#code </a></li>
-    
-      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
-    
   
 
 
@@ -812,11 +769,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2016/06/05/blogging-the-small-wins/" title="Blogging: The small wins">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2017/11/07/spark-s-read-jdbc/" title="Spark's read.jdbc">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2016/06/11/following-up-on-a-website-optimization-offer/" title="Following up on a website optimization offer">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -827,7 +784,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2016%2F06%2F06%2Fword-clouds-in-r%2F&title=Word+clouds+in+R">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F11%2F11%2Fmodern-world-of-massive-competiting-corporations%2F&title=Modern+world+of+massive+competiting+corporations">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

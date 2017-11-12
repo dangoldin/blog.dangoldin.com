@@ -740,15 +740,15 @@ table {
       
 <p>Earlier today I read Nathan Yau’s <a href="http://flowingdata.com/2014/02/05/where-people-run/" target="_blank">post</a> that had a quick <a href="http://projects.flowingdata.com/tut/map-routes.R" target="_blank">R script</a> to plot GPX file data onto a map. I was able to quickly load up my RunKeeper data from 2013 and came up with a pretty cool visualization of each of my outdoor runs. Since my runs occurred across multiple cities and continents the visualization turned out to be very sparse without a great sense of where the runs were. I made a two quick changes to the script to make it more useful for my data: a map overlay to see where in the world I ran and an ability to view a zoomed in area of the map. I’ve included the updated script and the resulting plots below.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># From Nathan's script
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># From Nathan's script</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">plotKML</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">maps</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># GPX files downloaded from Runkeeper
+</span><span class="c1"># GPX files downloaded from Runkeeper</span><span class="w">
 </span><span class="n">files</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dir</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\\.gpx"</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Consolidate routes in one drata frame
+</span><span class="c1"># Consolidate routes in one drata frame</span><span class="w">
 </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
 </span><span class="n">lat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
 </span><span class="n">long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span><span class="w">
@@ -763,7 +763,7 @@ table {
 </span><span class="p">}</span><span class="w">
 </span><span class="n">routes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">cbind</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">))</span><span class="w">
 
-</span><span class="c1"># Map the routes
+</span><span class="c1"># Map the routes</span><span class="w">
 </span><span class="n">ids</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w">
 </span><span class="n">plot</span><span class="p">(</span><span class="n">routes</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">routes</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="n">axes</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
 </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">ids</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -771,7 +771,7 @@ table {
   </span><span class="n">lines</span><span class="p">(</span><span class="n">currRoute</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">currRoute</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s2">"#FF000020"</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span><span class="c1"># Add the world map overlay
+</span><span class="c1"># Add the world map overlay</span><span class="w">
 </span><span class="n">world</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">map_data</span><span class="p">(</span><span class="s1">'world'</span><span class="p">)</span><span class="w">
 </span><span class="n">plot</span><span class="p">(</span><span class="n">world</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">"n"</span><span class="p">,</span><span class="w"> </span><span class="n">axes</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">asp</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
 
@@ -787,7 +787,7 @@ table {
   </span><span class="n">lines</span><span class="p">(</span><span class="n">currRoute</span><span class="o">$</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">currRoute</span><span class="o">$</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s2">"#FF000020"</span><span class="p">)</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span><span class="c1"># Zoom into a particular area of routes
+</span><span class="c1"># Zoom into a particular area of routes</span><span class="w">
 </span><span class="n">zoom</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="n">lat_north</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">radius</span><span class="w">
   </span><span class="n">long_west</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">radius</span><span class="w">

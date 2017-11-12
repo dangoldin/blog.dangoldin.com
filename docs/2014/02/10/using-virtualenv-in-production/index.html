@@ -754,7 +754,7 @@ table {
   <p><a href="http://gunicorn.org/" target="_blank">Gunicorn</a> - I have a shell script here that's used to set the various paths and options that configure Gunicorn</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> -e
+<span class="nb">set</span> <span class="nt">-e</span>
 <span class="nv">DJANGODIR</span><span class="o">=</span>/home/ubuntu/app
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>app.settings.prod
 
@@ -770,10 +770,10 @@ table {
 <span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
 <span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
 
-<span class="nb">test</span> -d <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir -p <span class="nv">$LOGDIR</span>
-<span class="nb">exec</span> /home/ubuntu/app/venv/bin/gunicorn_django -w <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
-  --user<span class="o">=</span><span class="nv">$USER</span> --group<span class="o">=</span><span class="nv">$GROUP</span> --log-level<span class="o">=</span>debug <span class="se">\</span>
-  --log-file<span class="o">=</span><span class="nv">$LOGFILE</span> -b 0.0.0.0:8000 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
+<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
+<span class="nb">exec</span> /home/ubuntu/app/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
+  <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
+  <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8000 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
 
 
   <p><a href="http://supervisord.org/" target="_blank">Supevisor</a> - Here we just point our configuration file to the shell script for Gunicorn</p>

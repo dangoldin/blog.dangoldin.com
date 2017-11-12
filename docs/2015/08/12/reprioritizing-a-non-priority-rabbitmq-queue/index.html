@@ -742,17 +742,17 @@ table {
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c"># Dump the contents of the queue to a file.</span>
 <span class="c"># To be safe requeue the messages and do a manual purge when</span>
 <span class="c"># we confirm the data looks right.</span>
-./rabbitmqadmin get <span class="nv">queue</span><span class="o">=</span>data_queue <span class="nv">requeue</span><span class="o">=</span><span class="nb">true </span><span class="nv">count</span><span class="o">=</span>2000 &gt; tasks.log
+./rabbitmqadmin get <span class="nv">queue</span><span class="o">=</span>data_queue <span class="nv">requeue</span><span class="o">=</span><span class="nb">true </span><span class="nv">count</span><span class="o">=</span>2000 <span class="o">&gt;</span> tasks.log
 
 <span class="c"># 1 - Get the appropriate field (in our case the fifth one)</span>
 <span class="c"># 2 - Remove the header rows</span>
 <span class="c"># 3 - Trim the line</span>
 <span class="c"># 4 - Prepend the publish command and turn the task message string into an argument</span>
-cut -d<span class="s1">'|'</span> -f5 tasks.log | sed <span class="s1">'$d'</span> | sed <span class="s1">'1,3d'</span> | sed <span class="s1">'s/^ *//;s/*$//'</span> | sed -e <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | sed -e <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> &gt; tasks.clean
+cut <span class="nt">-d</span><span class="s1">'|'</span> <span class="nt">-f5</span> tasks.log | sed <span class="s1">'$d'</span> | sed <span class="s1">'1,3d'</span> | sed <span class="s1">'s/^ *//;s/*$//'</span> | sed <span class="nt">-e</span> <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | sed <span class="nt">-e</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> <span class="o">&gt;</span> tasks.clean
 
 <span class="c"># Split the tasks into two pieces</span>
-cat tasks.clean | grep log &gt; tasks.clean1
-cat tasks.clean | grep -v log &gt; tasks.clean2
+<span class="nb">cat </span>tasks.clean | <span class="nb">grep </span>log <span class="o">&gt;</span> tasks.clean1
+<span class="nb">cat </span>tasks.clean | <span class="nb">grep</span> <span class="nt">-v</span> log <span class="o">&gt;</span> tasks.clean2
 
 <span class="c"># Queue the tasks in the appropriate order</span>
 sh tasks.clean1
