@@ -6,8 +6,9 @@ keywords: "groupon, small business tools"
 category:
 tags: ["#product"]
 ---
+{% include setup %}
 
-<img src="http://cdn.ientry.com/sites/webpronews/pictures/groupon-scheduler_616.jpg" />
+<amp-img src="{{ IMG_PATH }}groupon-scheduler.png" layout="responsive" width="616" height="358"></amp-img>
 
 <p>I'm not surprised that someone came out with an <a href="http://www.groupon.com/scheduler" title="GroupOn Scheduler">online scheduling tool</a> for SMBs. I am a bit surprised that it was GroupOn though. I suspect many smaller companies have tried doing it but found selling to the SMB much more difficult than they expected. Since GroupOn already has penetration in the SMB space they may find it a lot easier, especially if, as it looks, they will be offering it free to any business that runs a GroupOn promotion.</p>
 

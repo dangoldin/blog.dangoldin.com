@@ -29,7 +29,7 @@ author :
 #
 production_url : http://dangoldin.com
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   # - jekyll-feed (Doesn't handle AMP well)
