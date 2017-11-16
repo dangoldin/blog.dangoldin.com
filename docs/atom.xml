@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-11-15T21:52:33-05:00</updated>
+ <updated>2017-11-15T22:45:55-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>DevOps and Core Engineering application gap</title>
+   <link href="http://dangoldin.com/2017/11/15/devops-and-core-engineering-application-gap/"/>
+   <updated>2017-11-15T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2017/11/15/devops-and-core-engineering-application-gap</id>
+   <content:encoded><![CDATA[
+<p>Lately I’ve been pondering about applications that exist between core engineering and devops. Applications that have existed for years and have widespread adoption have best practices that many devops engineers have mastered - think of Apache or nginx. On the other extreme you have single page apps that exist solely in the browser and don’t need any support from the devops team after they’re deployed. Yet there’s a whole range of applications in the middle that don’t fall neatly into either of the camps. They have a gamut of configuration options that are heavily dependent on the workload which makes it difficult for either side to manage individually. In my limited experience these tend to be common in the big data ecosystem - Spark, Druid, and Kafka are great examples. Go through any of the documentation and you discover how complex the configuration can get and how tough it is to get it right. Without having any prior experience it’s difficult to see how one can get it immediately right. It requires understanding the use case, the expected volume, and a fair amount of experimentation to get right. This is not something that can be determined by devops or core engineering alone and is ideally a group effort.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Modern world of massive competiting corporations</title>
