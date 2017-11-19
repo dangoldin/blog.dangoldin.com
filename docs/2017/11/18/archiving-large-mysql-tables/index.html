@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Archiving large MySQL tables</title>
+  <meta name="description" content="To dump a large agg table we wrote a simple script to slice into small date based chunks and handle each one individually.">
+  <meta name="keywords" content="mysql, archive, data, mysqldump" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2017/11/18/archiving-large-mysql-tables/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Archiving large MySQL tables" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/11/18/archiving-large-mysql-tables/" />
+  <meta property="og:title"               content="Archiving large MySQL tables" />
 
+  
+  <meta property="og:description"         content="To dump a large agg table we wrote a simple script to slice into small date based chunks and handle each one individually." />
+  <meta name="twitter:description"        content="To dump a large agg table we wrote a simple script to slice into small date based chunks and handle each one individually." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2017-11-18T23:07:04-05:00",
-  "dateModified": "2017-11-18T23:07:04-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2017/11/18/archiving-large-mysql-tables/",
+  "headline": "Archiving large MySQL tables",
+  "datePublished": "2017-11-18T00:00:00-05:00",
+  "dateModified": "2017-11-18T00:00:00-05:00",
+  "description": "One of the major changes we made when building the latest iteration of our data pipeline was moving our key agg tables over from MySQL to Redshift. Despite t...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,119 +727,66 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Archiving large MySQL tables</h1>
+      <span class="date">18 November 2017</span>
     </div>
-    <section class="page-content">
-      
 
-
-
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
+    <section class="post-content">
       
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>One of the major changes we made when building the latest iteration of our data pipeline was moving our key agg tables over from MySQL to Redshift. Despite the migration we thought it would be prudent to archive these tables. The challenge was that some of these tables were hundreds of gigabytes so doing a simple mysqldump wouldn’t work. The reason these tables were so large is because they included a date dimension which led to our <a href="https://github.com/dangoldin/python-tools/blob/master/archive_tables.py">archive script</a>. The script works by generating a sequence of shell commands that slice the table into chunks by date, gzip each chunk, and upload it to an S3 bucket. This keeps each individual chunk small enough to archive while making sure all the data is captured. It’s not the most elegant solution but it’s obvious and it’s quick. The one piece that’s missing is the table schema which can be fetched separately.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2017/11/15/devops-and-core-engineering-application-gap/" title="DevOps and Core Engineering application gap">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F11%2F18%2Farchiving-large-mysql-tables%2F&title=Archiving+large+MySQL+tables">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -912,7 +862,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

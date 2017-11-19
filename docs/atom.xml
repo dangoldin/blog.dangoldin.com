@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-11-15T22:45:55-05:00</updated>
+ <updated>2017-11-18T23:07:04-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Archiving large MySQL tables</title>
+   <link href="http://dangoldin.com/2017/11/18/archiving-large-mysql-tables/"/>
+   <updated>2017-11-18T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2017/11/18/archiving-large-mysql-tables</id>
+   <content:encoded><![CDATA[
+<p>One of the major changes we made when building the latest iteration of our data pipeline was moving our key agg tables over from MySQL to Redshift. Despite the migration we thought it would be prudent to archive these tables. The challenge was that some of these tables were hundreds of gigabytes so doing a simple mysqldump wouldn’t work. The reason these tables were so large is because they included a date dimension which led to our <a href="https://github.com/dangoldin/python-tools/blob/master/archive_tables.py">archive script</a>. The script works by generating a sequence of shell commands that slice the table into chunks by date, gzip each chunk, and upload it to an S3 bucket. This keeps each individual chunk small enough to archive while making sure all the data is captured. It’s not the most elegant solution but it’s obvious and it’s quick. The one piece that’s missing is the table schema which can be fetched separately.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>DevOps and Core Engineering application gap</title>
