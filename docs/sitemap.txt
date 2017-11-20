@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/11/20/ride-sharing-ride-bailing/
 http://dangoldin.com/2017/11/18/archiving-large-mysql-tables/
 http://dangoldin.com/2017/11/15/devops-and-core-engineering-application-gap/
 http://dangoldin.com/2017/11/11/modern-world-of-massive-competiting-corporations/
