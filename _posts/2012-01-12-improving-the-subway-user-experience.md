@@ -6,8 +6,8 @@ keywords: "subways, nyc"
 category:
 tags: ["#design"]
 ---
-
-<img src="http://inhabitat.com/wp-content/blogs.dir/1/files/2011/09/NYC-subway-e1314902946966.jpg" />
+<amp-img src="{{ IMG_PATH }}nyc-subway.jpg" width="537" height="357" layout="responsive"></amp-img>
+<p class="caption">Source: <a href="https://inhabitat.com/">inhabitat.com</a></p>
 
 <p>The combination of taking the subway every day and reading design books had me thinking of ways to improve the subway user experience, other than the obvious one of making it cleaner.</p>
 

@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-11-20T15:40:33-05:00</updated>
+ <updated>2017-11-22T22:59:41-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -13499,7 +13499,8 @@ Solving for F, we get that F = p/c.</code></pre></figure>
    <link href="http://dangoldin.com/2012/01/12/improving-the-subway-user-experience/"/>
    <updated>2012-01-12T00:00:00-05:00</updated>
    <id>http://dangoldin.com/2012/01/12/improving-the-subway-user-experience</id>
-   <content:encoded><![CDATA[<p><img src="http://inhabitat.com/wp-content/blogs.dir/1/files/2011/09/NYC-subway-e1314902946966.jpg" /></p>
+   <content:encoded><![CDATA[<img src="nyc-subway.jpg" width="537" height="357" layout="responsive"/>
+<p class="caption">Source: <a href="https://inhabitat.com/">inhabitat.com</a></p>
 
 <p>The combination of taking the subway every day and reading design books had me thinking of ways to improve the subway user experience, other than the obvious one of making it cleaner.</p>
 
