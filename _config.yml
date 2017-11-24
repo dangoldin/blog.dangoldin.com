@@ -32,6 +32,7 @@ production_url : http://dangoldin.com
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-include-cache
   # - jekyll-feed (Doesn't handle AMP well)
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash

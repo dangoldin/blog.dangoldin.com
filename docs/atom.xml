@@ -3,13 +3,291 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-11-22T22:59:41-05:00</updated>
+ <updated>2017-11-23T22:29:31-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Improving Jekyll generation speed for AMP pages</title>
+   <link href="http://dangoldin.com/2017/11/23/improving-jekyll-generation-speed-for-amp-pages/"/>
+   <updated>2017-11-23T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2017/11/23/improving-jekyll-generation-speed-for-amp-pages</id>
+   <content:encoded><![CDATA[
+<p>Last September I migrated my blog over to AMP which entailed a variety of challenges ranging from converting every img tag to an amp-img tag with some additional metadata to figuring out how to support Disqus. I tackled the critical ones but the one I never got to was speeding up the build time since it had no impact on the actual reader experience and just slowed down my build and commit process. During this Thanksgiving break I finally decided to do something about it after discovering that jekyll has a profiling feature. It’s expected that the bulk of the time is spent generating the post pages but running the profiler highlighted that the majority of the work wasn’t in the actual content block but in generating the head element - something that shold similar from page to page.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Count</th>
+      <th>Bytes</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_layouts/default.html</td>
+      <td>570</td>
+      <td>16663.07K</td>
+      <td>230.544</td>
+    </tr>
+    <tr>
+      <td>_includes/themes/amp/default.html</td>
+      <td>570</td>
+      <td>16658.06K</td>
+      <td>229.425</td>
+    </tr>
+    <tr>
+      <td>_includes/head.html</td>
+      <td>570</td>
+      <td>11934.62K</td>
+      <td>228.908</td>
+    </tr>
+    <tr>
+      <td>_layouts/post.html</td>
+      <td>562</td>
+      <td>3595.71K</td>
+      <td>5.542</td>
+    </tr>
+    <tr>
+      <td>_includes/themes/amp/post.html</td>
+      <td>562</td>
+      <td>3590.77K</td>
+      <td>4.640</td>
+    </tr>
+    <tr>
+      <td>_includes/metadata.json</td>
+      <td>570</td>
+      <td>461.90K</td>
+      <td>3.392</td>
+    </tr>
+    <tr>
+      <td>_includes/setup</td>
+      <td>2181</td>
+      <td>14.91K</td>
+      <td>2.345</td>
+    </tr>
+    <tr>
+      <td>_includes/tags_list</td>
+      <td>559</td>
+      <td>73.99K</td>
+      <td>0.874</td>
+    </tr>
+    <tr>
+      <td>_includes/footer.html</td>
+      <td>570</td>
+      <td>1167.83K</td>
+      <td>0.256</td>
+    </tr>
+    <tr>
+      <td>sitemap.xml</td>
+      <td>1</td>
+      <td>62.20K</td>
+      <td>0.245</td>
+    </tr>
+    <tr>
+      <td>_includes/styles.scss</td>
+      <td>570</td>
+      <td>5736.18K</td>
+      <td>0.115</td>
+    </tr>
+    <tr>
+      <td>archive.html</td>
+      <td>1</td>
+      <td>120.81K</td>
+      <td>0.114</td>
+    </tr>
+    <tr>
+      <td>_includes/posts_collate</td>
+      <td>1</td>
+      <td>120.80K</td>
+      <td>0.105</td>
+    </tr>
+    <tr>
+      <td>atom.xml</td>
+      <td>1</td>
+      <td>1739.08K</td>
+      <td>0.063</td>
+    </tr>
+    <tr>
+      <td>tags.html</td>
+      <td>1</td>
+      <td>108.78K</td>
+      <td>0.056</td>
+    </tr>
+    <tr>
+      <td>_includes/header.html</td>
+      <td>570</td>
+      <td>709.16K</td>
+      <td>0.056</td>
+    </tr>
+    <tr>
+      <td>_includes/pages_list</td>
+      <td>2</td>
+      <td>103.64K</td>
+      <td>0.047</td>
+    </tr>
+    <tr>
+      <td>index.md</td>
+      <td>1</td>
+      <td>106.79K</td>
+      <td>0.020</td>
+    </tr>
+    <tr>
+      <td>_layouts/page.html</td>
+      <td>6</td>
+      <td>246.62K</td>
+      <td>0.010</td>
+    </tr>
+    <tr>
+      <td>sitemap.txt</td>
+      <td>1</td>
+      <td>34.99K</td>
+      <td>0.010</td>
+    </tr>
+    <tr>
+      <td>done in 245.117 seconds.</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>After taking a quick look at the head.html file it became clear what the problem was: AMP requires the CSS to be inline which combined with my usage of SCSS which needed to be transpiled to CSS on every page. Unsurprisingly, this was an expensive operation and the solution was to somehow get rid of it. While we can’t avoid inlining the CSS what we can do is transpile the SCSS to CSS once and include the contents in every post. Even better is to read the contents of the resulting CSS file once and then just inject it whenever necessary via the <a href="https://github.com/benbalter/jekyll-include-cache">jekyll-include-cache</a> extension. Applying these tactics gets the blog generation time down to 15 seconds from over 4 minutes. It does require the CSS file to be regenerated every time the SCSS file changes but given the infrequency it’s not a huge issue. This doesn’t make it any quicker to write posts but it does feel good to get such a big improvement in blog generation speed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Count</th>
+      <th>Bytes</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>_layouts/default.html</td>
+      <td>570</td>
+      <td>16663.10K</td>
+      <td>4.277</td>
+    </tr>
+    <tr>
+      <td>_layouts/post.html</td>
+      <td>562</td>
+      <td>3595.71K</td>
+      <td>4.104</td>
+    </tr>
+    <tr>
+      <td>_includes/themes/amp/default.html</td>
+      <td>570</td>
+      <td>16658.09K</td>
+      <td>3.984</td>
+    </tr>
+    <tr>
+      <td>_includes/head.html</td>
+      <td>570</td>
+      <td>11934.64K</td>
+      <td>3.607</td>
+    </tr>
+    <tr>
+      <td>_includes/themes/amp/post.html</td>
+      <td>562</td>
+      <td>3590.78K</td>
+      <td>3.306</td>
+    </tr>
+    <tr>
+      <td>_includes/metadata.json</td>
+      <td>570</td>
+      <td>461.92K</td>
+      <td>2.420</td>
+    </tr>
+    <tr>
+      <td>_includes/setup</td>
+      <td>1612</td>
+      <td>11.02K</td>
+      <td>1.367</td>
+    </tr>
+    <tr>
+      <td>_includes/tags_list</td>
+      <td>559</td>
+      <td>73.99K</td>
+      <td>0.700</td>
+    </tr>
+    <tr>
+      <td>sitemap.xml</td>
+      <td>1</td>
+      <td>62.20K</td>
+      <td>0.251</td>
+    </tr>
+    <tr>
+      <td>archive.html</td>
+      <td>1</td>
+      <td>120.81K</td>
+      <td>0.119</td>
+    </tr>
+    <tr>
+      <td>_includes/posts_collate</td>
+      <td>1</td>
+      <td>120.80K</td>
+      <td>0.111</td>
+    </tr>
+    <tr>
+      <td>atom.xml</td>
+      <td>1</td>
+      <td>1739.13K</td>
+      <td>0.065</td>
+    </tr>
+    <tr>
+      <td>tags.html</td>
+      <td>1</td>
+      <td>108.78K</td>
+      <td>0.064</td>
+    </tr>
+    <tr>
+      <td>_includes/pages_list</td>
+      <td>2</td>
+      <td>103.64K</td>
+      <td>0.050</td>
+    </tr>
+    <tr>
+      <td>_includes/header.html</td>
+      <td>570</td>
+      <td>709.16K</td>
+      <td>0.041</td>
+    </tr>
+    <tr>
+      <td>index.md</td>
+      <td>1</td>
+      <td>106.79K</td>
+      <td>0.019</td>
+    </tr>
+    <tr>
+      <td>sitemap.txt</td>
+      <td>1</td>
+      <td>34.99K</td>
+      <td>0.011</td>
+    </tr>
+    <tr>
+      <td>_layouts/page.html</td>
+      <td>6</td>
+      <td>246.62K</td>
+      <td>0.008</td>
+    </tr>
+    <tr>
+      <td>done in 15.077 seconds.</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Ride sharing ride bailing</title>
