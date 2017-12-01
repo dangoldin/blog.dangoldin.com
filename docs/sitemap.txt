@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/11/30/google-voice-transcription-fails/
 http://dangoldin.com/2017/11/25/make-all-laws-temporary/
 http://dangoldin.com/2017/11/23/improving-jekyll-generation-speed-for-amp-pages/
 http://dangoldin.com/2017/11/20/ride-sharing-ride-bailing/
