@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Jira analysis script</title>
+  <meta name="description" content="I have a small script that analyzes Jira in order to help measure squad and sprint efficiency.">
+  <meta name="keywords" content="jira, developer efficiency, developer productivity" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2017/12/07/jira-analysis-script/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Jira analysis script" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2017/12/07/jira-analysis-script/" />
+  <meta property="og:title"               content="Jira analysis script" />
 
+  
+  <meta property="og:description"         content="I have a small script that analyzes Jira in order to help measure squad and sprint efficiency." />
+  <meta name="twitter:description"        content="I have a small script that analyzes Jira in order to help measure squad and sprint efficiency." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2017-12-07T22:52:56-05:00",
-  "dateModified": "2017-12-07T22:52:56-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2017/12/07/jira-analysis-script/",
+  "headline": "Jira analysis script",
+  "datePublished": "2017-12-07T00:00:00-05:00",
+  "dateModified": "2017-12-07T00:00:00-05:00",
+  "description": "A few days ago I wrote about using average number of sprints to complete a story as a way to measure a team’s sprint efficiency. Unfortunately at that time I...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,35 +726,66 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Jira analysis script</h1>
+      <span class="date">07 December 2017</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>A few days ago I <a href="2017/12/01/measuring-sprint-efficiency/">wrote</a> about using average number of sprints to complete a story as a way to measure a team’s sprint efficiency. Unfortunately at that time I had a pretty hacky <a href="https://github.com/dangoldin/automating-management/blob/master/jira-analysis.py">Jira analysis script</a> that I was too ashamed to share but it has been cleaned up enough for me to not feel too much guilt. It’s available on GitHub and comes with a few additional bells and whistles. One is specific to the way we work where we label relevant stories with a priority (priority:1, priority:2, etc) based on our planning process so we can hold ourselves accountable to spending the appropriate time on our initiatives. The other is a simple way that calculates the story points done by assignee. It’s a dangerous metric to use since story points are variable and not all work is measured via story points but it’s yet another metric that can help highlight or sharpen a potential issue.</p>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2017/12/01/measuring-sprint-efficiency/" title="Measuring sprint efficiency">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2017%2F12%2F07%2Fjira-analysis-script%2F&title=Jira+analysis+script">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -827,7 +861,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
