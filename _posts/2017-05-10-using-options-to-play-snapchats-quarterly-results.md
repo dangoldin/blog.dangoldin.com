@@ -5,7 +5,7 @@ description: "Snapchat announced earnings today and if you thought they were lik
 keywords: "snapchat, stock trading, options, investing"
 image_url:
 category:
-tags: ['#finance']
+tags: ["#finance"]
 ---
 {% include setup %}
 I rarely write about finance but a decade ago I did a stint in finance and picked up a few things. One of these was the idea of options which are an interesting and powerful way to participate in the market. There’s a ton of information online describing how they work but a simple explanation is that they give you the “option,” or the right, to buy or sell shares of the underlying stock at a particular price by a future expiration date. This particular price, referred to as the strike price, and the expiration date, are the significant drivers of the price of the option. But generally, buying options on unlikely scenarios (ie far away from the current value) in the very short term ends up being extremely cheap while buying very likely scenarios with a long horizon can get very expensive. I’m not the best equipped to get into the specifics of pricing options but it’s incredibly intricate and involves some deep math that one can get lost in and is worth exploring for the mathematically minded or curious.
