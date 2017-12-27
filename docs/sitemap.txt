@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2017/12/26/people-do-what-you-inspect-not-what-you-expect/
 http://dangoldin.com/2017/12/25/send-a-shirt-get-a-shirt/
 http://dangoldin.com/2017/12/24/top-posts-of-2017/
 http://dangoldin.com/2017/12/22/my-medium-experiment/
