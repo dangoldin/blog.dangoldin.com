@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2017-12-28T22:15:44-05:00</updated>
+ <updated>2017-12-29T17:53:49-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>AR Adblocking</title>
+   <link href="http://dangoldin.com/2017/12/28/ar-adblocking/"/>
+   <updated>2017-12-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2017/12/28/ar-adblocking</id>
+   <content:encoded><![CDATA[
+<p>Augmented reality is still in its infancy but when it grows up it will change modern life. We’ll have a world of information at our fingertips and will end up with tools we can’t even imagine. An idea I’ve been thinking about is an AR based adblock. The way I envision these AR headsets working is that everyone will be constantly wearing them, akin to glasses, and the headsets are always processing, monitoring and altering what we see. Now imagine that there’s an adblocking application that intercepts everything visible and replaces it with blanks. Web adblockers work by blocking ad requests as well as removing ad HTML elements. This would work at an entirely different level by being in between the world and our eyes, acting as a sensory input filter.</p>
+
+<p>This is just scratching the surface and it’s interesting to think how the world would change with the full adoption of AR - able to change everything we see and sense. We already have trouble with fake news and people choosing to see what interests them and AR has the potential to do this an entirely different level; arguably a much more dangerous one. I don’t know where we’ll end up but I’m hopeful we think through the implications of these technologies and their potential impact on society.</p>
+
+<p>Disclosure: I work at TripleLift, an adtech company that’s better than most by focusing on higher quality, non-disruptive native ads.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Visualizing my 2017 stats</title>
