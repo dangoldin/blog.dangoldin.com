@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Favorite books of 2017"
+description: ""
+keywords:
+image_url:
+category:
+tags: []
+---
+{% include setup %}
+For the past few years I’ve been writing two posts a week and my end of the year ritual is to catch up on my writing and finish off the year right. Last year I did a filler post for my favorite books of 2016 and thought it would be interesting to share the 2017 version as well. I’m a big reader and rarely dislike anything I read yet sharing every book I’ve read is a bit of a cop-out so I’ve tried to focus this on the books that I just couldn’t put down and couldn’t wait to resume reading.
+
+* [Deep Work: Rules for Focused Success in a Distracted World](https://www.amazon.com/gp/product/B00X47ZVXM/) (Cal Newport): I heard about this book from Ezra Klein’s [podcast](https://www.vox.com/2017/4/21/15382282/cal-newport-taking-life-back-technology) and knew I had to read it. I wasn’t disappointed. The world is changing rapidly and I feel much more distracted than I did as a kid. Cal Newport calls this out and offers a series of rules for eliminating the crap and concentrating on real and meaningful work. Especially as people are making resolutions for 2018 this is a worthwhile book to read and set the stage for a productive 2018.
+* [Who Says Elephants Can't Dance? Leading a Great Enterprise Through Dramatic Change](https://www.amazon.com/gp/product/B000FCKL6G/) (Louis Gerstner): Louis Gerstner led IBM in the 1990s and helped it transition from a hardware-focused to a services-oriented business and this is a half narrative, half management book on the transition. IBM was an incredibly large company on the brink of failure and its impressive seeing how they were able to pull themselves away from the edge and reinvent themselves. If you’re interested in business history or managing a team it’s a quick and worthwhile read.
+* [The Emperor of All Maladies: A Biography of Cancer](https://www.amazon.com/gp/product/B003UYUP58/) (Siddhartha Mukherjee): This has been on my reading list for a while and I’m glad I finally got the chance to read it. The book is incredibly well written and a gripping read despite covering such an intense and depressing topic. Beyond the history of cancer it chronicles the evolution of healthcare and how it’s evolved over the years to fight new threats.
+* [Before the Trumpet: Young Franklin Roosevelt, 1882-1905](https://www.amazon.com/gp/product/B00J1ISLC6/) (Geoffrey Ward): I’m an admirer of FDR and really enjoyed that this focused on his youth. Many biographies blow through childhood, the teenage years, and college since there’s both more limited information and fewer achievements but Geoffrey Ward does a great job digging through the archives and describing the story of a young FDR. It doesn’t strive to explain him as president but offers anecdotes on top of anecdotes that let readers make the connection themselves.
+* [Shoe Dog: A Memoir by the Creator of Nike](https://www.amazon.com/gp/product/B0176M1A44/) (Phil Knight): A book that came highly recommended and for good reason. Nike is a huge corporation now but it took an incredible out of perspiration to get there. The story itself is incredibly intense with many twists and turns that highlight how remarkable it is that Nike was able to survive and then thrive. The personalities in the book just draw you into their world and it makes you feel as if you’re there at the moment.
+* [Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration](https://www.amazon.com/gp/product/B00FUZQYBO/) (Ed Catmull): Similar to Who Says Elephants Can’t Dance this is half company biography, half management book but rather than focusing on reinventing and changing the culture of a nearly 100 year old company it’s focusing on how to keep a creative culture alive as a company grows. On its own it’s an interesting and engaging read but what makes it a joy to read are all the hidden Easter eggs behind our favorite Pixar movies.
+
+Looking forward to reading even more in 2018!
