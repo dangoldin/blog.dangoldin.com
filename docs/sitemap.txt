@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/01/13/calendar-query-language/
 http://dangoldin.com/2018/01/03/learning-docker/
 http://dangoldin.com/2017/12/31/favorite-books-of-2017/
 http://dangoldin.com/2017/12/28/ar-adblocking/

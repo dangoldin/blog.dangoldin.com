@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Calendar query language</title>
+  <meta name="description" content="I wish calendars had a SQL-like language that let me run queries.">
+  <meta name="keywords" content="calendars, query language, sql, jql" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2018/01/13/calendar-query-language/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Calendar query language" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/01/13/calendar-query-language/" />
+  <meta property="og:title"               content="Calendar query language" />
 
+  
+  <meta property="og:description"         content="I wish calendars had a SQL-like language that let me run queries." />
+  <meta name="twitter:description"        content="I wish calendars had a SQL-like language that let me run queries." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2018-01-13T22:33:10-05:00",
-  "dateModified": "2018-01-13T22:33:10-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/01/13/calendar-query-language/",
+  "headline": "Calendar query language",
+  "datePublished": "2018-01-13T00:00:00-05:00",
+  "dateModified": "2018-01-13T00:00:00-05:00",
+  "description": "I’m a power user of Google Calendar and use it to organize meetings, tasks, and important dates. The one thing I wish it had was a more powerful query langua...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,119 +726,68 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Calendar query language</h1>
+      <span class="date">13 January 2018</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>I’m a power user of Google Calendar and use it to organize meetings, tasks, and important dates. The one thing I wish it had was a more powerful query language. I often wish I could run SQL-like queries on top of my calendar. For example being able to get a count of the number of people taking a vacation by day by team or looking at the intersection between multiple calendars. The goal would be to automate much of the work I’m doing now when looking at managing my calendar but also uncover insights that are currently constrained by a lack of easy access.</p>
 
-
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>Given that calendars are reasonably well structured this should be doable by just dumping the data into a relational database and writing the appropriate queries. I’m positive there are some subtle nuances that I’d have to work around - ranging from missing fields, to recurring events, to overly complicated metadata - but it feels like a solvable problem. As I write this an analogy that comes to mind is <a href="https://www.atlassian.com/blog/jira-software/jql-the-most-flexible-way-to-search-jira-14">JQL</a>, or JIRA Query Language, a bastardized SQL that was designed to work on top of JIRA. It supports SELECT statement on top of the JIRA fields but neglects joins and aggregates. JQL is designed for a single purpose and a calendar query language can follow this model. I think I gave myself a project for the next couple of weeks.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/01/03/learning-docker/" title="Learning Docker">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F01%2F13%2Fcalendar-query-language%2F&title=Calendar+query+language">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -911,7 +863,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
