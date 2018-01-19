@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Phonetic distance</title>
+  <meta name="description" content="It turns out there's a series of algorithms called phonetic algorithms that allow you to compare two words but instead of looking at their spelling it examin...">
+  <meta name="keywords" content="phonetic distance, levenshtein, name similarity, word similarity" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2018/01/16/phonetic-distance/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Phonetic distance" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/01/16/phonetic-distance/" />
+  <meta property="og:title"               content="Phonetic distance" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="It turns out there's a series of algorithms called phonetic algorithms that allow you to compare two words but instead of looking at their spelling it examines their sound." />
+  <meta name="twitter:description"        content="It turns out there's a series of algorithms called phonetic algorithms that allow you to compare two words but instead of looking at their spelling it examines their sound." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2018-01-18T23:34:51-05:00",
-  "dateModified": "2018-01-18T23:34:51-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/01/16/phonetic-distance/",
+  "headline": "Phonetic distance",
+  "datePublished": "2018-01-16T00:00:00-05:00",
+  "dateModified": "2018-01-16T00:00:00-05:00",
+  "description": "Last year I wrote a simple script to automate posting our On-Call schedule. It worked by reading the schedule from a Google Spreadsheet, looking up the names...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,22 +726,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Phonetic distance</h1>
+      <span class="date">16 January 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>Last year I <a href="/2017/03/04/automating-admin-work-spreadsheets-to-slack/">wrote</a> a simple script to automate posting our On-Call schedule. It worked by reading the schedule from a Google Spreadsheet, looking up the names in Slack, and then sharing these usernames on Slack. A tiny problem I ran into was the fact that since I was using an exact match the names in the spreadsheet had to match the names in Slack. This is a trivial problem to solve since we have a finite number of engineers but it still felt a bit too sensitive. While lying in bed last night I got to thinking of ways to measure similarity between the names in order to make it a bit more fuzzy. I’ve used the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> in the past but it felt a bit too clinical for what I was trying to do and I wondered whether it was possible to do a phonetic match.</p>
+
+<p>After during some research I discovered, unsurprisingly, that there’s a whole category of <a href="https://en.wikipedia.org/wiki/Phonetic_algorithm">phonetic algorithms</a> designed to solve these problems. The original was Soundex but has been superceded by the <a href="http://www.amorphics.com/index.html">Metaphone</a> family. What’s interesting is that their implementation is more heuristic than anything else. They were primarily designed for the English language and have a series of rules to simplify words or names into much simpler forms that avoid confusion. For example, one of the rules says to treat the letter V the same as the letter F while another says to treat the letter Q the same as K. Using hundreds or thousands of these tranformations with a lintany of exceptions leads to a canonical word which can then be compared against others.</p>
+
+<p>I find this approach fascinating since it’s so antithetical to the modern approach of collecting a ton of data and pumping it through some machine learning algorithms. Instead this feels like a finely tweaked series of if-else statements designed for a single purpose.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/01/13/calendar-query-language/" title="Calendar query language">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F01%2F16%2Fphonetic-distance%2F&title=Phonetic+distance">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -817,7 +865,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
