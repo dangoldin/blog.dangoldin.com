@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-01-18T23:34:51-05:00</updated>
+ <updated>2018-01-23T23:02:26-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Design anti pattern: Tab switching autosave</title>
+   <link href="http://dangoldin.com/2018/01/23/design-anti-pattern-tab-switching-autosave/"/>
+   <updated>2018-01-23T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/01/23/design-anti-pattern-tab-switching-autosave</id>
+   <content:encoded><![CDATA[
+<p>Every once in awhile I get frustrated by a product experience and turn it into a design anti pattern rant. This time it was updating a bit of information in JIRA, switching to a different tab to look something up, and then going back to realize that my change was saved. Sure it was simple to edit and update the field but it seems the field should have just stayed in edit-mode until I was explicitly done. Since then I’ve been keeping an eye on how many products fall into this trap and it’s a fair amount. In the pursuit of improving efficiency they’re actually hurting it. Many tasks require referencing something else and I suspect there’s a bit of local optimization happening here with them focusing solely on their own product and not where it fits in to someone’s overall workflow.</p>
+
+<p>The solution here is to actually watch users in action solving real-world problems. I’ve done user testing which has been focused on solving a given problem but that only scratches the surface of what a real user test should do. Start with the contrived scenario to get the first 80% done but only by watching people use your product in a natural environment will you get the last 20%.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Phonetic distance</title>

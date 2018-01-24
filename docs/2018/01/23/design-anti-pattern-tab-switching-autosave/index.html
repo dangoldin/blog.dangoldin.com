@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Design anti pattern: Tab switching autosave</title>
+  <meta name="description" content="Another one of my minor workflow frustrations is when applications prematurely save my input if I switch to another tab or application.">
+  <meta name="keywords" content="ux, user experience, product design, efficiency" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2018/01/23/design-anti-pattern-tab-switching-autosave/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Design anti pattern: Tab switching autosave" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/01/23/design-anti-pattern-tab-switching-autosave/" />
+  <meta property="og:title"               content="Design anti pattern: Tab switching autosave" />
 
+  
+  <meta property="og:description"         content="Another one of my minor workflow frustrations is when applications prematurely save my input if I switch to another tab or application." />
+  <meta name="twitter:description"        content="Another one of my minor workflow frustrations is when applications prematurely save my input if I switch to another tab or application." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2018-01-23T23:02:26-05:00",
-  "dateModified": "2018-01-23T23:02:26-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/01/23/design-anti-pattern-tab-switching-autosave/",
+  "headline": "Design anti pattern: Tab switching autosave",
+  "datePublished": "2018-01-23T00:00:00-05:00",
+  "dateModified": "2018-01-23T00:00:00-05:00",
+  "description": "Every once in awhile I get frustrated by a product experience and turn it into a design anti pattern rant. This time it was updating a bit of information in ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,119 +726,68 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Design anti pattern: Tab switching autosave</h1>
+      <span class="date">23 January 2018</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>Every once in awhile I get frustrated by a product experience and turn it into a design anti pattern rant. This time it was updating a bit of information in JIRA, switching to a different tab to look something up, and then going back to realize that my change was saved. Sure it was simple to edit and update the field but it seems the field should have just stayed in edit-mode until I was explicitly done. Since then I’ve been keeping an eye on how many products fall into this trap and it’s a fair amount. In the pursuit of improving efficiency they’re actually hurting it. Many tasks require referencing something else and I suspect there’s a bit of local optimization happening here with them focusing solely on their own product and not where it fits in to someone’s overall workflow.</p>
 
-
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>The solution here is to actually watch users in action solving real-world problems. I’ve done user testing which has been focused on solving a given problem but that only scratches the surface of what a real user test should do. Start with the contrived scenario to get the first 80% done but only by watching people use your product in a natural environment will you get the last 20%.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##design-ref">#design </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/01/16/phonetic-distance/" title="Phonetic distance">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F01%2F23%2Fdesign-anti-pattern-tab-switching-autosave%2F&title=Design+anti+pattern%3A+Tab+switching+autosave">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -911,7 +863,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
