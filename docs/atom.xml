@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-01-23T23:02:26-05:00</updated>
+ <updated>2018-01-28T22:32:22-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>MoviePass: A fascinating business model</title>
+   <link href="http://dangoldin.com/2018/01/28/moviepass-a-fascinating-business-model/"/>
+   <updated>2018-01-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/01/28/moviepass-a-fascinating-business-model</id>
+   <content:encoded><![CDATA[
+<p>Given my lack of cultural knowledge the fact that I’ve heard of MoviePass should be a sign that it’s a big deal. I came across a <a href="https://www.wired.com/story/moviepass-second-act/">fascinating article</a> today about MoviePass’s revenue model - they charge just under $10/month and in return you get unlimited access to movies in theaters. What’s remarkable is that it seems MoviePass doesn’t actually have a subsidized relationship with theaters and just pays theaters the full ticket price.</p>
+
+<p>That seems like an odd combination - having a customer see one movie a month puts you in the red. At the same time I understand where they’re coming from. The major advantage of this approach is that they can start signing up customers without having any relationship with the theater. And once they have the customers they have <a href="https://stratechery.com/2015/aggregation-theory/">enough leverage to become dangerous</a>. They may get theaters to give them lower pricing for tickets or a fraction of the concession sales. They may be able to go beyond theaters themselves and into studios, as the aforementioned Wired article suggests. In any case it’s having the army of consumers that’s the source of power. I look forward to seeing how this plays out.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Design anti pattern: Tab switching autosave</title>
