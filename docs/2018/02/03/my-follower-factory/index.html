@@ -21,28 +21,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>My follower factory</title>
+  <meta name="description" content="The NY Times did some very neat visualizations on spotting fake Twitter followers and I ran an open source script to plot mine.">
+  <meta name="keywords" content="twitter, followers, twitter follower visualization, follower factory" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2018/02/03/my-follower-factory/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="My follower factory" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/02/03/my-follower-factory/" />
+  <meta property="og:title"               content="My follower factory" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="The NY Times did some very neat visualizations on spotting fake Twitter followers and I ran an open source script to plot mine." />
+  <meta name="twitter:description"        content="The NY Times did some very neat visualizations on spotting fake Twitter followers and I ran an open source script to plot mine." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/follower-factory-dang.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/follower-factory-dang.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -52,11 +55,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2018-02-03T23:01:17-05:00",
-  "dateModified": "2018-02-03T23:01:17-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/02/03/my-follower-factory/",
+  "headline": "My follower factory",
+  "datePublished": "2018-02-03T00:00:00-05:00",
+  "dateModified": "2018-02-03T00:00:00-05:00",
+  "description": "Last week, the New York Times ran an expose on the massive amount of follower fraud happening on Twitter. Unsurprisingly, when you can buy tens of thousands ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,29 +729,72 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">My follower factory</h1>
+      <span class="date">03 February 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>Last week, the New York Times <a href="https://www.nytimes.com/interactive/2018/01/27/technology/social-media-bots.html">ran an expose</a> on the massive amount of follower fraud happening on Twitter. Unsurprisingly, when you can buy tens of thousands of followers for a few thousand dollars it’s not very likely that they’re going to be real. Anyone who has used Twitter for even a nominal amount of time would have quickly discovered that there’s a rampant amount of bots. Some leave cryptic comments, others like and retweet, while others follow; most do all of the above.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>One of the cool ways they explored these fake followers is by plotting the growth of followers over time. Each point is a follower with the x-axis showing what number follower they were and the y-axis indicating when they joined Twitter. The idea here being that if you see a stretch of new followers that all joined Twitter at roughly the same time they’re likely bots.</p>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>This was a pretty cool way to look at it and one of my friends, <a href="https://twitter.com/geoffgolberg">Geoff</a>, shared an <a href="https://github.com/elaineo/FollowerFactory">open source script</a> that would pull and plot the data. I ran it for my meager, but amazing, 680 Twitter followers and am happy to report that there’s no obvious fraud pattern.</p>
 
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<amp-img src="/assets/static/images/follower-factory-dang.png" width="1786" height="694" layout="responsive" alt="My follower factory"></amp-img>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/01/31/exploring-keyboard-shortcuts/" title="Exploring keyboard shortcuts">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F02%2F03%2Fmy-follower-factory%2F&title=My+follower+factory">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -824,7 +870,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

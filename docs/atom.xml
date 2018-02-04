@@ -3,13 +3,43 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-01-28T22:32:22-05:00</updated>
+ <updated>2018-02-03T23:01:17-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My follower factory</title>
+   <link href="http://dangoldin.com/2018/02/03/my-follower-factory/"/>
+   <updated>2018-02-03T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/02/03/my-follower-factory</id>
+   <content:encoded><![CDATA[
+<p>Last week, the New York Times <a href="https://www.nytimes.com/interactive/2018/01/27/technology/social-media-bots.html">ran an expose</a> on the massive amount of follower fraud happening on Twitter. Unsurprisingly, when you can buy tens of thousands of followers for a few thousand dollars it’s not very likely that they’re going to be real. Anyone who has used Twitter for even a nominal amount of time would have quickly discovered that there’s a rampant amount of bots. Some leave cryptic comments, others like and retweet, while others follow; most do all of the above.</p>
+
+<p>One of the cool ways they explored these fake followers is by plotting the growth of followers over time. Each point is a follower with the x-axis showing what number follower they were and the y-axis indicating when they joined Twitter. The idea here being that if you see a stretch of new followers that all joined Twitter at roughly the same time they’re likely bots.</p>
+
+<p>This was a pretty cool way to look at it and one of my friends, <a href="https://twitter.com/geoffgolberg">Geoff</a>, shared an <a href="https://github.com/elaineo/FollowerFactory">open source script</a> that would pull and plot the data. I ran it for my meager, but amazing, 680 Twitter followers and am happy to report that there’s no obvious fraud pattern.</p>
+
+<img src="http://dangoldin.com/assets/static/images/follower-factory-dang.png" width="1786" height="694" layout="responsive" alt="My follower factory"/>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Exploring keyboard shortcuts</title>
+   <link href="http://dangoldin.com/2018/01/31/exploring-keyboard-shortcuts/"/>
+   <updated>2018-01-31T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/01/31/exploring-keyboard-shortcuts</id>
+   <content:encoded><![CDATA[
+<p>While messing around with my laptop I discovered that keyboard shortcuts don’t work when they’re mixed across the built-in and an external keyboard. For example to save a file is Cmd+S but if I hit the Cmd key on the external keyboard and the S on the built-in the file is not saved. I found this surprising since I figured the implementation was rooted in software and not in hardware.</p>
+
+<p>Time to dig in:
+Hit a button on each and see what happens in the text editor
+Capture input in an application</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>MoviePass: A fascinating business model</title>
