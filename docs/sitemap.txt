@@ -15,6 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/02/10/optimize-for-keyboard-shortcuts/
 http://dangoldin.com/2018/02/09/making-the-most-of-the-subway-commute/
 http://dangoldin.com/2018/02/03/my-follower-factory/
 http://dangoldin.com/2018/01/31/exploring-keyboard-shortcuts/
