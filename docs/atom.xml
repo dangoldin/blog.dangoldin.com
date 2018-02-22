@@ -3,13 +3,82 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-02-10T22:49:52-05:00</updated>
+ <updated>2018-02-21T22:47:29-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Analyzing AWS ELB logs</title>
+   <link href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/"/>
+   <updated>2018-02-20T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs</id>
+   <content:encoded><![CDATA[
+<p>Logging HTTP requests should be enabled for every application you run. When things go wrong, and they will, it’s often the first step to understand the problem. Unfortunately, logging isn’t always top of mind and is often forgotten. Luckily, if you use the Elastic Load Balancer (ELB) functionality within AWS you’re able to set up ELB logs that track every request and write it to an S3 bucket. The documentation is up on the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Amazon site</a> but there’s a surprising amount of information that’s hidden away in the logs. Since it’s Amazon and they want to make it as easy for you to use their various services together it’s simple to load the logs into Redshift and start digging into them via some basic queries.</p>
+
+<p>I wanted to highlight a few I used in the past couple of weeks to dig into an issue. Despite having a centralized logging system I still find it easier to just write SQL queries - it’s significantly more expressive than any log exploration tool I’ve used and allows me to exactly what I without any magic.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- Load the data into Redshift</span>
+<span class="k">copy</span> <span class="n">elb_logs</span>
+<span class="k">from</span> <span class="s1">'s3://logdirs/.../us-east-1/2018/02/19/'</span>
+<span class="n">COMPUPDATE</span> <span class="k">OFF</span> <span class="n">CREDENTIALS</span> <span class="s1">'aws_access_key_id=KEY;aws_secret_access_key=SECRET'</span>
+<span class="k">delimiter</span> <span class="s1">' '</span>
+<span class="n">TIMEFORMAT</span> <span class="k">as</span> <span class="s1">'auto'</span>
+<span class="n">ACCEPTINVCHARS</span>
+<span class="n">REMOVEQUOTES</span>
+<span class="n">FILLRECORD</span>
+<span class="n">MAXERROR</span> <span class="k">as</span> <span class="mi">100000</span><span class="p">;</span>
+
+<span class="c1">-- Look at the distribution of ELB status codes</span>
+<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+
+<span class="c1">-- Look at the distribution of backend status codes</span>
+<span class="k">select</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">backendresponsecode</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">backendresponsecode</span><span class="p">;</span>
+
+<span class="c1">-- Look at distribution by both</span>
+<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+
+<span class="c1">-- Look at distribution by both where they're unequal</span>
+<span class="c1">-- This highlights cases where the ELB was unable to reach the hosts</span>
+<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">!=</span> <span class="n">backendresponsecode</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+
+<span class="c1">-- A simple way to look at the request groups causing problems</span>
+<span class="k">select</span> <span class="n">split_part</span><span class="p">(</span><span class="n">httprequest</span><span class="p">,</span> <span class="s1">'?'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">httprequestbase</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">httprequestbase</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">cnt</span> <span class="k">desc</span><span class="p">;</span>
+
+<span class="c1">-- For fun, we can also look at the number of errors by minute to see if we can spot a pattern</span>
+<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datetime</span><span class="p">,</span>
+  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">500</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n500</span><span class="p">,</span>
+  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">501</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n501</span><span class="p">,</span>
+  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">502</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n502</span><span class="p">,</span>
+  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">503</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n503</span><span class="p">,</span>
+  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">504</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n504</span>
+<span class="k">from</span> <span class="n">elb_logs</span>
+<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">datetime</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">datetime</span><span class="p">;</span></code></pre></figure>
+
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Optimize for keyboard shortcuts</title>
