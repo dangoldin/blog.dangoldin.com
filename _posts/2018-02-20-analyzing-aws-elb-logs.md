@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Analyzing AWS ELB logs"
-description: ""
-keywords:
+description: "You can get a ton of useful information about your web application by loading the ELB logs into Redshift and running some queries."
+keywords: "aws elb logs, redshift"
 image_url:
 category:
-tags: []
+tags: ["#code", "#sql"]
 ---
 {% include setup %}
 Logging HTTP requests should be enabled for every application you run. When things go wrong, and they will, it’s often the first step to understand the problem. Unfortunately, logging isn’t always top of mind and is often forgotten. Luckily, if you use the Elastic Load Balancer (ELB) functionality within AWS you’re able to set up ELB logs that track every request and write it to an S3 bucket. The documentation is up on the [Amazon site](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html
