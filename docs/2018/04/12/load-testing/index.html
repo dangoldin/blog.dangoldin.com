@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Open sourcing self driving car data</title>
-  <meta name="description" content="The government can play a more active role in speeding up the development of self driving cars by offering prizes for different stages of achievement and man...">
-  <meta name="keywords" content="self driving cars, uber, waymo, stiglitz" />
+  <title>Load testing</title>
+  <meta name="description" content="It's important to load test our applications but it's surprising how difficult it is to do it right.">
+  <meta name="keywords" content="load testing, coordinated ommission, gil tene" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/04/03/open-sourcing-self-driving-car-data/">
+  <link rel="canonical" href="http://dangoldin.com/2018/04/12/load-testing/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Open sourcing self driving car data" />
+  <meta name="twitter:title" content="Load testing" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/04/03/open-sourcing-self-driving-car-data/" />
-  <meta property="og:title"               content="Open sourcing self driving car data" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/04/12/load-testing/" />
+  <meta property="og:title"               content="Load testing" />
 
   
-  <meta property="og:description"         content="The government can play a more active role in speeding up the development of self driving cars by offering prizes for different stages of achievement and mandating data sharing." />
-  <meta name="twitter:description"        content="The government can play a more active role in speeding up the development of self driving cars by offering prizes for different stages of achievement and mandating data sharing." />
+  <meta property="og:description"         content="It's important to load test our applications but it's surprising how difficult it is to do it right." />
+  <meta name="twitter:description"        content="It's important to load test our applications but it's surprising how difficult it is to do it right." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/04/03/open-sourcing-self-driving-car-data/",
-  "headline": "Open sourcing self driving car data",
-  "datePublished": "2018-04-03T00:00:00-04:00",
-  "dateModified": "2018-04-03T00:00:00-04:00",
-  "description": "There’s a rush by the world’s largest companies to develop the first fully self driving car. The investment so far has been insane and it’s only the start. I...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/04/12/load-testing/",
+  "headline": "Load testing",
+  "datePublished": "2018-04-12T00:00:00-04:00",
+  "dateModified": "2018-04-12T00:00:00-04:00",
+  "description": "I started writing this post about using Siege to do load testing but got carried away and ended up discovering how much I don’t know. In particular, I ended ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,17 +728,19 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Open sourcing self driving car data</h1>
-      <span class="date">03 April 2018</span>
+      <h1 class="post-title">Load testing</h1>
+      <span class="date">12 April 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>There’s a rush by the world’s largest companies to develop the first fully self driving car. The investment so far has been insane and it’s only the start. It’s one of those problems that get more and more difficult to solve the closer they are to the finish. The upside is so large that it also leads to some perverse behavior in order to get any advantage - the Uber/Waymo lawsuit comes to mind here.</p>
+<p>I started writing this post about using Siege to do load testing but got carried away and ended up discovering how much I don’t know. In particular, I ended up stumbling unto Gil Tene’s talk on measuring latency and how nearly every tool gets it wrong due to the bias in the tools themselves. The general idea is that most tools measure service time rather than request time. Service time is how long it takes your application to handle a request while request time is the time it takes for the user to receive a response. The former is from the perspective of the application but the latter is from the perspective of the caller.</p>
 
-<p>The space is competitive and everyone has an incentive to be first. At the same time the sooner we have self driving cars the more lives are saved. That’s a big reason for the worlds’ governments to encourage self driving technology to improve as quickly as possible. Something that I’ve been pondering is the idea of using <a href="https://en.wikipedia.org/wiki/Prizes_as_an_alternative_to_patents">prizes instead of patents</a> to encourage innovation. This is an idea attributed to Joseph Stiglitz and focuses on incentivizing research areas where patents don’t offer a good enough incentive. The self driving car space doesn’t have this incentive problem but the playing field isn’t level and it’s big company competing against big company. What if governments offered prize money for various stages of self driving car achievement but in return the winners needed to share their data?</p>
+<p>A good way to think about it is to imagine your application can handle 10 requests a second but also comes with an infinite request queue. If the queue is empty 10 requests will be handled immediately, otherwise the queue will start to fill up. Service time will measure how long it takes your application to handle a task once it’s off the queue but the request time is measured from the time the task was put on the queue - with no load they’re the same but as soon as load increases the request time blows up.</p>
 
-<p>Governments allow these cars to drive on public roads but in return I’d love to see governments mandate that these companies start sharing their data. This would allow lower resourced companies to benefit and get a jump start without the massive initial outlay necessary. There should be an advantage for the first comers so the data release can be delayed but having a shared data reserve will help society as a whole get to self driving cars sooner - a goal worth paying for.</p>
+<p>It’s a fascinating talk and if you’re at all interested in load testing your applications it’s well worth watching:</p>
+
+<amp-youtube data-videoid="lJ8ydIuPFeU" layout="responsive" width="640" height="480"></amp-youtube>
 
     </section>
 
@@ -753,7 +755,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##society-ref">#society </a></li>
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
@@ -770,11 +772,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/03/25/protecting-data-ouside-of-a-terms-of-service/" title="Protecting data ouside of a Terms of Service">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/04/03/open-sourcing-self-driving-car-data/" title="Open sourcing self driving car data">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/04/12/load-testing/" title="Load testing">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F04%2F03%2Fopen-sourcing-self-driving-car-data%2F&title=Open+sourcing+self+driving+car+data">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F04%2F12%2Fload-testing%2F&title=Load+testing">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
