@@ -5,7 +5,7 @@ description: "We ran a Connect Four bot competition at TripleLift and wanted to 
 keywords: "connect four, ai, bots, competition, contest"
 image_url:
 category:
-tags: ['#code"]
+tags: ["#code"]
 ---
 {% include setup %}
 Years ago when I worked at Yodle the engineering team held a Connect Four bot competition. The goal was for each person to write a Connect Four playing bot and then let them loose to determine the winner. We had either a few days or a few weeks to do this and my failed approach was to use genetic programming to evolve a bot. The best it did was beat a completely random bot 80% of the time while the winning entry leveraged Minimax with Alpha Beta Pruning.

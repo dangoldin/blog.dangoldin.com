@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-04-25T23:36:08-04:00</updated>
+ <updated>2018-04-25T23:54:52-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -12,10 +12,10 @@
 
  
  <entry>
-   <title></title>
-   <link href="http://dangoldin.com/2018/04/25/2018-04-25-connect-four-bot-competition/"/>
-   <updated>2018-04-25T23:36:08-04:00</updated>
-   <id>http://dangoldin.com/2018/04/25/2018-04-25-connect-four-bot-competition</id>
+   <title>Connect Four bot competition</title>
+   <link href="http://dangoldin.com/2018/04/25/connect-four-bot-competition/"/>
+   <updated>2018-04-25T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2018/04/25/connect-four-bot-competition</id>
    <content:encoded><![CDATA[
 <p>Years ago when I worked at Yodle the engineering team held a Connect Four bot competition. The goal was for each person to write a Connect Four playing bot and then let them loose to determine the winner. We had either a few days or a few weeks to do this and my failed approach was to use genetic programming to evolve a bot. The best it did was beat a completely random bot 80% of the time while the winning entry leveraged Minimax with Alpha Beta Pruning.</p>
 

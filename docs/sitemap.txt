@@ -15,7 +15,7 @@ http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
-http://dangoldin.com/2018/04/25/2018-04-25-connect-four-bot-competition/
+http://dangoldin.com/2018/04/25/connect-four-bot-competition/
 http://dangoldin.com/2018/04/17/secure-at-the-network-level/
 http://dangoldin.com/2018/04/12/load-testing/
 http://dangoldin.com/2018/04/03/open-sourcing-self-driving-car-data/
