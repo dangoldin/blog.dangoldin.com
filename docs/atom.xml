@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-04-28T15:16:54-04:00</updated>
+ <updated>2018-04-28T16:40:47-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -261,20 +261,6 @@
 <p>This was a pretty cool way to look at it and one of my friends, <a href="https://twitter.com/geoffgolberg">Geoff</a>, shared an <a href="https://github.com/elaineo/FollowerFactory">open source script</a> that would pull and plot the data. I ran it for my meager, but amazing, 680 Twitter followers and am happy to report that there’s no obvious fraud pattern.</p>
 
 <img src="http://dangoldin.com/assets/static/images/follower-factory-dang.png" width="1786" height="694" layout="responsive" alt="My follower factory"/>
-]]></content:encoded>
- </entry>
- 
- <entry>
-   <title>Exploring keyboard shortcuts</title>
-   <link href="http://dangoldin.com/2018/01/31/exploring-keyboard-shortcuts/"/>
-   <updated>2018-01-31T00:00:00-05:00</updated>
-   <id>http://dangoldin.com/2018/01/31/exploring-keyboard-shortcuts</id>
-   <content:encoded><![CDATA[
-<p>While messing around with my laptop I discovered that keyboard shortcuts don’t work when they’re mixed across the built-in and an external keyboard. For example to save a file is Cmd+S but if I hit the Cmd key on the external keyboard and the S on the built-in the file is not saved. I found this surprising since I figured the implementation was rooted in software and not in hardware.</p>
-
-<p>Time to dig in:
-Hit a button on each and see what happens in the text editor
-Capture input in an application</p>
 ]]></content:encoded>
  </entry>
  

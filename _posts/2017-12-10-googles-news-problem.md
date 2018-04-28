@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Google's news problem"
-description: ""
-keywords:
-image_url:
+description: "It's surprising how poor some of the Google News recommendations are. It seems the prediction is optimizing towards click bait."
+keywords: "google news, politics"
+image_url: "/assets/static/images/google-news-alabama-vote-2017-12-05.png"
 category:
-tags: []
+tags: ["#society"]
 ---
 {% include setup %}
 Last week, I wanted to get a bit more information about the vote in Alabama and have always had good success by starting with a Google search so did a simple search for "alabama vote." I saw three suggested results but surprisingly the first one was a link to Breitbart.

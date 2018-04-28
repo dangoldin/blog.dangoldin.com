@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Favorite books of 2017"
-description: ""
-keywords:
+description: "The annual post highlighting my favorite books read in 2017."
+keywords: "books, reading"
 image_url:
 category:
-tags: []
+tags: ["#meta"]
 ---
 {% include setup %}
 For the past few years I’ve been writing two posts a week and my end of the year ritual is to catch up on my writing and finish off the year right. Last year I did a filler post for my favorite books of 2016 and thought it would be interesting to share the 2017 version as well. I’m a big reader and rarely dislike anything I read yet sharing every book I’ve read is a bit of a cop-out so I’ve tried to focus this on the books that I just couldn’t put down and couldn’t wait to resume reading.

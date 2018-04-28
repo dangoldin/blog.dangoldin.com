@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Mary Meeker's Internet Trends 2017"
-description: ""
-keywords:
+description: "Mary Meeker does an annual report highlighting internet trends and the 2017 version was a blast to read."
+keywords: "mary meeker, internet trends report"
 image_url:
 category:
-tags: []
+tags: ["#society"]
 ---
 {% include setup %}
 In what has become annual tradition, Mary Meeker has just published the [2017 Internet Trends report](http://dq756f9pzlyr3.cloudfront.net/file/Internet+Trends+2017+Report.pdf) and it’s a whopper. Over 350 pages describing the state of the modern digital world. I can’t imagine how long it must have taken to pull the data and put it together but I’m incredibly grateful that it’s been done and continues to be done every year. There’s so much great stuff in there that it’s worth going through it on your own but I wanted to highlight the slides that stood out to me.
