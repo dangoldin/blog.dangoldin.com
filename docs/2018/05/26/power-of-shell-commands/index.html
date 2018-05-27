@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Memory as a stack</title>
-  <meta name="description" content="My short term memory has become optimized for interruptions and that's not a good thing.">
-  <meta name="keywords" content="memory, stack, queue, efficiency, productivity" />
+  <title>Power of shell commands</title>
+  <meta name="description" content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything.">
+  <meta name="keywords" content="shell, bash, command line" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/05/14/memory-as-a-stack/">
+  <link rel="canonical" href="http://dangoldin.com/2018/05/26/power-of-shell-commands/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Memory as a stack" />
+  <meta name="twitter:title" content="Power of shell commands" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/05/14/memory-as-a-stack/" />
-  <meta property="og:title"               content="Memory as a stack" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/05/26/power-of-shell-commands/" />
+  <meta property="og:title"               content="Power of shell commands" />
 
   
-  <meta property="og:description"         content="My short term memory has become optimized for interruptions and that's not a good thing." />
-  <meta name="twitter:description"        content="My short term memory has become optimized for interruptions and that's not a good thing." />
+  <meta property="og:description"         content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything." />
+  <meta name="twitter:description"        content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/05/14/memory-as-a-stack/",
-  "headline": "Memory as a stack",
-  "datePublished": "2018-05-14T00:00:00-04:00",
-  "dateModified": "2018-05-14T00:00:00-04:00",
-  "description": "While the title is using two technical terms the post is actually about human memory - my memory. I’m not sure if it’s just me but lately my short term memor...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/05/26/power-of-shell-commands/",
+  "headline": "Power of shell commands",
+  "datePublished": "2018-05-26T00:00:00-04:00",
+  "dateModified": "2018-05-26T00:00:00-04:00",
+  "description": "",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,17 +728,21 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Memory as a stack</h1>
-      <span class="date">14 May 2018</span>
+      <h1 class="post-title">Power of shell commands</h1>
+      <span class="date">26 May 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>While the title is using two technical terms the post is actually about human memory - my memory. I’m not sure if it’s just me but lately my short term memory has been behaving like a stack. I’m working on something and then an interruption new comes along which suddenly gets pushed to the top of the stack. Now I’m working on this intrusion and when that’s done I hopefully remember my previous task so I can resume until it’s either done or the next task comes along and gets pushed to the top again.</p>
+<p>It’s surprising how unappreciated shell commands are. They’re incredibly powerful and once understood are able to handle small one-off tasks much quicker than writing even simple scripts. Earlier this week I ran into a small task that highlights the power and ability of the shell.</p>
 
-<p>The modern world has encouraged this mindset and approach with constant interruptions. It’s more difficult to stay focused on the task at hand. We take breaks to check our email or browse a social media app and we’re adopting that approach to more serious work. As I write this post I have to resist the urge to take a break but at least I’m self aware enough to catch my subconscious in the act.</p>
+<p>A few of our applications use the same configuration file which contains a variety of URLs, secrets, and passwords. If any of these applications require a field the it gets added to this growing configuration file. This is clearly not good for security and as part of a larger security revamp we’re moving to application-specific config files. Long term we want to revamp the way we do deploys such that the configuration is kept in environment variables and handled by the build system but as a short term solution we want to split this single configuration file into a file per application.</p>
 
-<p>Rather than treating our short term memory as a stack we should be treating it as a priority queue. Then the important pieces stick around and the interruptions get forgotten. Unfortunately we’ve trained ourselves to do the exact opposite and something we need to actively train ourselves to avoid.</p>
+<p>The solution is straightforward - go through the config reader code of each application, extract the keys, and then find them in the main configuration file. Easy to explain but parsing files is fickle and not very interesting. Luckily for us with a few shell commands we can do exactly what we need to do. We use the cut command and a few pipes to extract the keys from the config reading file and then combine it with the join command to get the intersection. A one liner is all that’s needed to give us the application specific config file.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">join <span class="nt">-t</span><span class="s1">'='</span> &lt;<span class="o">(</span> <span class="nb">grep</span> <span class="s1">'\$configObj'</span> code/application/config/reader.php | cut <span class="nt">-d</span><span class="s1">'('</span> <span class="nt">-f3</span> | cut <span class="nt">-d</span><span class="s2">"'"</span> <span class="nt">-f2</span> | sort <span class="o">)</span> &lt;<span class="o">(</span> sort ~/config.properties <span class="o">)</span></code></pre></figure>
+
+<p>Shell commands are simple but it’s the ability to chain them together that gives us an incredible set of tools. We’re often tempted to write a simple script but it’s very likely that it’s possible to do the same with a series of shell commands and pipes.</p>
 
     </section>
 
@@ -753,7 +757,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##meta-ref">#meta </a></li>
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
@@ -770,11 +774,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/05/12/curse-of-the-early-adopter/" title="Curse of the early adopter">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/05/14/memory-as-a-stack/" title="Memory as a stack">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/05/26/power-of-shell-commands/" title="Power of shell commands">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +789,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F05%2F14%2Fmemory-as-a-stack%2F&title=Memory+as+a+stack">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F05%2F26%2Fpower-of-shell-commands%2F&title=Power+of+shell+commands">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
