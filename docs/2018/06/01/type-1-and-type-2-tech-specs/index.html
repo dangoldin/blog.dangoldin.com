@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Power of shell commands</title>
-  <meta name="description" content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything.">
-  <meta name="keywords" content="shell, bash, command line" />
+  <title>Type 1 and Type 2 tech specs</title>
+  <meta name="description" content="In the 2015 Amazon shareholder letter Jeff Bezos discusses Type 1 and Type 2 decisions and I think that's a great framework to use when writing tech specs.">
+  <meta name="keywords" content="amazon, tech specs, startups, engineering" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/05/26/power-of-shell-commands/">
+  <link rel="canonical" href="http://dangoldin.com/2018/06/01/type-1-and-type-2-tech-specs/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Power of shell commands" />
+  <meta name="twitter:title" content="Type 1 and Type 2 tech specs" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/05/26/power-of-shell-commands/" />
-  <meta property="og:title"               content="Power of shell commands" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/06/01/type-1-and-type-2-tech-specs/" />
+  <meta property="og:title"               content="Type 1 and Type 2 tech specs" />
 
   
-  <meta property="og:description"         content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything." />
-  <meta name="twitter:description"        content="We're often tempted to write programs to solve simple problems but the shell has a variety of commands that can let us do nearly anything." />
+  <meta property="og:description"         content="In the 2015 Amazon shareholder letter Jeff Bezos discusses Type 1 and Type 2 decisions and I think that's a great framework to use when writing tech specs." />
+  <meta name="twitter:description"        content="In the 2015 Amazon shareholder letter Jeff Bezos discusses Type 1 and Type 2 decisions and I think that's a great framework to use when writing tech specs." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/05/26/power-of-shell-commands/",
-  "headline": "Power of shell commands",
-  "datePublished": "2018-05-26T00:00:00-04:00",
-  "dateModified": "2018-05-26T00:00:00-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/06/01/type-1-and-type-2-tech-specs/",
+  "headline": "Type 1 and Type 2 tech specs",
+  "datePublished": "2018-06-01T00:00:00-04:00",
+  "dateModified": "2018-06-01T00:00:00-04:00",
+  "description": "Every year since Amazon went public, Jeff Bezos writes an insightful and penetrating shareholder letter that covers a variety of business topics driving Amaz...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,21 +728,41 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Power of shell commands</h1>
-      <span class="date">26 May 2018</span>
+      <h1 class="post-title">Type 1 and Type 2 tech specs</h1>
+      <span class="date">01 June 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>It’s surprising how unappreciated shell commands are. They’re incredibly powerful and once understood are able to handle small one-off tasks much quicker than writing even simple scripts. Earlier this week I ran into a small task that highlights the power and ability of the shell.</p>
+<p>Every year since Amazon went public, Jeff Bezos writes an insightful and penetrating shareholder letter that covers a variety of business topics driving Amazon’s success. In 2015 he wrote about Type 1 and Type 2 decisions:</p>
 
-<p>A few of our applications use the same configuration file which contains a variety of URLs, secrets, and passwords. If any of these applications require a field the it gets added to this growing configuration file. This is clearly not good for security and as part of a larger security revamp we’re moving to application-specific config files. Long term we want to revamp the way we do deploys such that the configuration is kept in environment variables and handled by the build system but as a short term solution we want to split this single configuration file into a file per application.</p>
+<blockquote>
+  <p>We want to be a large company that’s also an invention machine. We want to combine the extraordinary customer-serving capabilities that are enabled by size with the speed of movement, nimbleness, and risk-acceptance mentality normally associated with entrepreneurial start-ups.</p>
+</blockquote>
 
-<p>The solution is straightforward - go through the config reader code of each application, extract the keys, and then find them in the main configuration file. Easy to explain but parsing files is fickle and not very interesting. Luckily for us with a few shell commands we can do exactly what we need to do. We use the cut command and a few pipes to extract the keys from the config reading file and then combine it with the join command to get the intersection. A one liner is all that’s needed to give us the application specific config file.</p>
+<blockquote>
+  <p>Can we do it? I’m optimistic. We have a good start on it, and I think our culture puts us in a position to achieve the goal. But I don’t think it’ll be easy. There are some subtle traps that even high-performing large organizations can fall into as a matter of course, and we’ll have to learn as an institution how to guard against them. One common pitfall for large organizations – one that hurts speed and inventiveness – is “one-size-fits-all” decision making.</p>
+</blockquote>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">join <span class="nt">-t</span><span class="s1">'='</span> &lt;<span class="o">(</span> <span class="nb">grep</span> <span class="s1">'\$configObj'</span> code/application/config/reader.php | cut <span class="nt">-d</span><span class="s1">'('</span> <span class="nt">-f3</span> | cut <span class="nt">-d</span><span class="s2">"'"</span> <span class="nt">-f2</span> | sort <span class="o">)</span> &lt;<span class="o">(</span> sort ~/config.properties <span class="o">)</span></code></pre></figure>
+<blockquote>
+  <p>Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation. If you walk through and don’t like what you see on the other side, you can’t get back to where you were before. We can call these Type 1 decisions. But most decisions aren’t like that – they are changeable, reversible – they’re two-way doors. If you’ve made a suboptimal Type 2 decision, you don’t have to live with the consequences for that long. You can reopen the door and go back through. Type 2 decisions can and should be made quickly by high judgment individuals or small groups.</p>
+</blockquote>
 
-<p>Shell commands are simple but it’s the ability to chain them together that gives us an incredible set of tools. We’re often tempted to write a simple script but it’s very likely that it’s possible to do the same with a series of shell commands and pipes.</p>
+<blockquote>
+  <p>As organizations get larger, there seems to be a tendency to use the heavy-weight Type 1 decision-making process on most decisions, including many Type 2 decisions. The end result of this is slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention.1 We’ll have to figure out how to fight that tendency.</p>
+</blockquote>
+
+<blockquote>
+  <p>And one-size-fits-all thinking will turn out to be only one of the pitfalls. We’ll work hard to avoid it… and any other large organization maladies we can identify.</p>
+</blockquote>
+
+<p>This has stuck with me over the years and I often com back to it. Lately I’ve been thinking about how this fits in with tech specs. As our applications become more complicated it becomes more important to take the time to think about the impact new code will have and tech specs help clarify that thinking, highlight risks, and get buying from everyone involved. At the same time it’s very easy to get carried away and spend so much time moving things around with actually pushing anything forward.</p>
+
+<p>This is where the Type 1 vs Type 2 approach makes sense. Critical components warrant the extra diligence but many features would benefit from a more iterative approach. The entire Agile development process is designed around getting features built and quickly iterating to get closer to the ideal. Microservices also fit into this idea - by splitting your application into many small components you can work on each one independently without having to worry what impact it will have on the others.</p>
+
+<p>The key question is determining what feature or improvement need a Type 1 spec and which can settle for a Type 2. This is where experience and context are extremely valuable. Many experienced engineers have an intuitive feel for what’s going to be risky and warrants a deeper dive and spend the extra effort there. As engineering teams grow they introduce additional process in order to protect against the edge case but that cost is incurred in every other case that would have benefited from a looser process.</p>
+
+<p>Finding that sweet spot is how you find the balance between moving quickly and moving safely. Amazon’s growth has been incredible and their ability to maintain this mindset is even more impressive.</p>
 
     </section>
 
@@ -757,7 +777,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##management-ref">#management </a></li>
     
   
 
@@ -774,11 +794,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/05/14/memory-as-a-stack/" title="Memory as a stack">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/05/26/power-of-shell-commands/" title="Power of shell commands">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/06/01/type-1-and-type-2-tech-specs/" title="Type 1 and Type 2 tech specs">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -789,7 +809,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F05%2F26%2Fpower-of-shell-commands%2F&title=Power+of+shell+commands">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F06%2F01%2Ftype-1-and-type-2-tech-specs%2F&title=Type+1+and+Type+2+tech+specs">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
