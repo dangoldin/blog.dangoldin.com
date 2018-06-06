@@ -8,7 +8,7 @@ category:
 tags: ["#code"]
 ---
 {% include setup %}
-Back in February I [wrote](2018/02/20/analyzing-aws-elb-logs/) about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurprisingly in hindsight but frustrating at the time the ALBs have a different log schema. Both the [Classic](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html) and [Application](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html) Load Balancer logs are well documented on the AWS site but unfortunately the code to create the appropriate Redshift schema is not. In the hope of helping others and passing it forward I wanted to share the Redshift schemas for both types of access logs.
+Back in February I [wrote](/2018/02/20/analyzing-aws-elb-logs/) about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurprisingly in hindsight but frustrating at the time the ALBs have a different log schema. Both the [Classic](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html) and [Application](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html) Load Balancer logs are well documented on the AWS site but unfortunately the code to create the appropriate Redshift schema is not. In the hope of helping others and passing it forward I wanted to share the Redshift schemas for both types of access logs.
 
 {% highlight sql %}
 -- ELB Logs
