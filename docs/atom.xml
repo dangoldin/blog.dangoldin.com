@@ -3,13 +3,72 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-06-01T22:32:43-04:00</updated>
+ <updated>2018-06-05T23:18:35-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>ALB and ELB access log schemas for Redshift</title>
+   <link href="http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/"/>
+   <updated>2018-06-05T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift</id>
+   <content:encoded><![CDATA[
+<p>Back in February I <a href="2018/02/20/analyzing-aws-elb-logs/">wrote</a> about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurprisingly in hindsight but frustrating at the time the ALBs have a different log schema. Both the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Classic</a> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Application</a> Load Balancer logs are well documented on the AWS site but unfortunately the code to create the appropriate Redshift schema is not. In the hope of helping others and passing it forward I wanted to share the Redshift schemas for both types of access logs.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- ELB Logs</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">elb_logs</span> <span class="p">(</span>
+	<span class="n">requesttime</span> <span class="k">timestamp</span><span class="p">,</span>
+	<span class="n">elbname</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+	<span class="n">requestip_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+	<span class="n">backendip_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+	<span class="n">requestprocessingtime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">backendprocessingtime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">clientresponsetime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">elbresponsecode</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+	<span class="n">backendresponsecode</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+	<span class="n">receivedbytes</span> <span class="n">bigint</span><span class="p">,</span>
+	<span class="n">sentbytes</span> <span class="n">bigint</span><span class="p">,</span>
+	<span class="n">httprequest</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5083</span><span class="p">),</span>
+	<span class="n">useragent</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+	<span class="n">ssl_cipher</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+	<span class="n">ssl_protocol</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
+
+<span class="c1">-- ALB Logs</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">alb_logs</span> <span class="p">(</span>
+ <span class="k">type</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">requesttime</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="n">elb</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">client_and_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+ <span class="n">target_and_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+ <span class="n">request_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">target_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">response_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">elb_status_code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+ <span class="n">target_status_code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+ <span class="n">received_bytes</span> <span class="n">bigint</span><span class="p">,</span>
+ <span class="n">sent_bytes</span> <span class="n">bigint</span><span class="p">,</span>
+ <span class="n">request</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
+ <span class="n">user_agent</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+ <span class="n">ssl_cipher</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+ <span class="n">ssl_protocol</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">target_group_arn</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">trace_id</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">domain_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">chosen_cert_arn</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">matched_rule_priority</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">request_creation_time</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="n">actions_executed</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+ <span class="p">)</span> <span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
+ </code></pre></figure>
+
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Type 1 and Type 2 tech specs</title>
