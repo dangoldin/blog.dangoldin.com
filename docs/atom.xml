@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-06-28T23:32:20-04:00</updated>
+ <updated>2018-06-28T23:49:13-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -12,10 +12,10 @@
 
  
  <entry>
-   <title>Lessons learned revoking personal AWS credentials used in production</title>
-   <link href="http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credentials-used-in-production/"/>
+   <title>Using personal AWS credentials in production</title>
+   <link href="http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/"/>
    <updated>2018-06-28T00:00:00-04:00</updated>
-   <id>http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credentials-used-in-production</id>
+   <id>http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production</id>
    <content:encoded><![CDATA[
 <p>Earlier this week in a fit of security I went into AWS and revoked my old AWS credentials. I assumed that all would be well but unfortunately didn’t realize that my AWS credentials were being used on a production system that wrote data to S3. Before I revoked them I did see that the recent activity contained S3 but assumed it was just me playing around with the AWS CLI. Of course I shouldn’t have had my AWS credentials used on a live system and of course we updated the application to use its own account. At the same time the experienced taught me a few valuable lessons besides not using personal keys on deployed systems:</p>
 
