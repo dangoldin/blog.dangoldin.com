@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Using personal AWS credentials in production</title>
-  <meta name="description" content="I revoked my personal AWS credentials without realizing that they were being used on a production system. Lessons ensued.">
-  <meta name="keywords" content="aws, devops, aws credentials, security, monitoring, alerting" />
+  <title>MySQL foreign keys</title>
+  <meta name="description" content="MySQL foreign keys are a great way to enforce consistency in your database but it's not always obvious how they work. I provide examples for each option and ...">
+  <meta name="keywords" content="mysql, foreign keys, database integrity, relational databases" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/">
+  <link rel="canonical" href="http://dangoldin.com/2018/07/07/mysql-foreign-keys/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Using personal AWS credentials in production" />
+  <meta name="twitter:title" content="MySQL foreign keys" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/" />
-  <meta property="og:title"               content="Using personal AWS credentials in production" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/07/07/mysql-foreign-keys/" />
+  <meta property="og:title"               content="MySQL foreign keys" />
 
   
-  <meta property="og:description"         content="I revoked my personal AWS credentials without realizing that they were being used on a production system. Lessons ensued." />
-  <meta name="twitter:description"        content="I revoked my personal AWS credentials without realizing that they were being used on a production system. Lessons ensued." />
+  <meta property="og:description"         content="MySQL foreign keys are a great way to enforce consistency in your database but it's not always obvious how they work. I provide examples for each option and its impact." />
+  <meta name="twitter:description"        content="MySQL foreign keys are a great way to enforce consistency in your database but it's not always obvious how they work. I provide examples for each option and its impact." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/",
-  "headline": "Using personal AWS credentials in production",
-  "datePublished": "2018-06-28T00:00:00-04:00",
-  "dateModified": "2018-06-28T00:00:00-04:00",
-  "description": "Earlier this week in a fit of security I went into AWS and revoked my old AWS credentials. I assumed that all would be well but unfortunately didn’t realize ...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/07/07/mysql-foreign-keys/",
+  "headline": "MySQL foreign keys",
+  "datePublished": "2018-07-07T00:00:00-04:00",
+  "dateModified": "2018-07-07T00:00:00-04:00",
+  "description": "Databases are the last layer of defense against corrupt data and the more restrictive you can make them the better. No matter how much validation you may hav...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,18 +728,128 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Using personal AWS credentials in production</h1>
-      <span class="date">28 June 2018</span>
+      <h1 class="post-title">MySQL foreign keys</h1>
+      <span class="date">07 July 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>Earlier this week in a fit of security I went into AWS and revoked my old AWS credentials. I assumed that all would be well but unfortunately didn’t realize that my AWS credentials were being used on a production system that wrote data to S3. Before I revoked them I did see that the recent activity contained S3 but assumed it was just me playing around with the AWS CLI. Of course I shouldn’t have had my AWS credentials used on a live system and of course we updated the application to use its own account. At the same time the experienced taught me a few valuable lessons besides not using personal keys on deployed systems:</p>
+<p>Databases are the last layer of defense against corrupt data and the more restrictive you can make them the better. No matter how much validation you may have missed in your code having a strong and restrictive database schema will protect your data. One of the best approaches to building a restrictive schema is using foreign keys which specify how fields from one table relate to the fields of another table. There are a few options here and make it possible for you to specify anything from automatically removing rows when a row they’re referencing is removed to recursively updating rows when their references have changed.</p>
 
-<ul>
-  <li>Logging should be consistent and accessible. I knew where the logs for this application were but it wasn’t obvious to the rest of the team. More importantly, people shouldn’t have to log in to an instance to access the logs. Instead they should be pushed to a central repository. We have this for some of our applications but not as many as we should.</li>
-  <li>Symptom based monitoring really works. I came across this phrase when reading Rob Ewaschuk’s <a href="https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit">observations on alerting and monitoring</a> years ago and it stuck with me. We had a few alerts on this application - ranging from making sure CPU usage was neither too high nor too low, it had a healthy rate of data in, and it had a healthy rate of data out. In this case the application was receiving data and was processing but it failed to upload to S3. This meant that the first two alerts were fine and it was the network out alert that was triggered. This is exactly what you want - in this case that alert encapsulates the others and is really what affects end users. They care that the data is on S3 and don’t worry about the CPU usage or how the instance is receiving the data.</li>
-</ul>
+<p>The <a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html">MySQL docs</a> give a nice overview of how foreign keys work but they’re light on examples and since I tend to learn best from examples I wanted to share them along with a brief description. Hopefully others find these examples useful as well. Each of the examples creates two tables, test_parent and test_child, with test_child having a different foreign key option on a field referencing the test_parent. I also insert the same data into each one to start and then do a few follow up queries describing what happens in each scenario. Also note that there is both an “ON DELETE” and an “ON UPDATE” option which, as expected, controls the respective behaviors.</p>
+
+<h3 id="restrict">RESTRICT</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_child</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
+    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">RESTRICT</span>
+        <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">RESTRICT</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_parent</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_child</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">parent_id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_child</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_parent</span><span class="p">;</span>
+
+<span class="c1">-- This fails since one of test_child rows referneces this row.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">test_parent</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- By deleting the associated test_child row first we'll be able to delete the row in test_parent.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">test_child</span> <span class="k">where</span> <span class="n">parent_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- Now that there's no test_child row referencing this we're able to delete successfully.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">test_parent</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- Similarly, we can't update the key since it's being referenced by one of the child rows.</span>
+<span class="k">update</span> <span class="n">test_parent</span> <span class="k">set</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="cascade">CASCADE</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_child</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
+    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
+        <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">CASCADE</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_parent</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_child</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">parent_id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_child</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_parent</span><span class="p">;</span>
+
+<span class="c1">-- This removes both the row in test_parent as well as the associated row in test_child.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">test_parent</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">-- This updates both the row in test_parents as well as the referenced field in test_child.</span>
+<span class="k">update</span> <span class="n">test_parent</span> <span class="k">set</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="set-null">SET NULL</h3>
+
+<p>Note that in this case we can’t even make parent_id NOT NULL in the test_child table create - MySQL rejects that statement.</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_child</span><span class="p">;</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
+    <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">SET</span> <span class="k">NULL</span>
+        <span class="k">ON</span> <span class="k">UPDATE</span> <span class="k">SET</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_parent</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test_child</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">parent_id</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_parent</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_child</span><span class="p">;</span>
+
+<span class="c1">-- This deletes the row in test_parent and also makes the parent_id value for the associated row in test_child null.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">test_parent</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_child</span><span class="p">;</span>
+
+<span class="c1">-- Similarly, the parent_id field in test_child that used to be 2 is now null.</span>
+<span class="k">update</span> <span class="n">test_parent</span> <span class="k">set</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test_child</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="no-action">NO ACTION</h3>
+
+<p>No example here since in MySQL this works exactly the same as the RESTRICT option above.</p>
+
+<h3 id="set-default">SET DEFAULT</h3>
+
+<p>This is not a valid option in MySQL using the INNODB engine.</p>
 
     </section>
 
@@ -754,7 +864,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##devops-ref">#devops </a></li>
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
@@ -771,11 +881,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/" title="ALB and ELB access log schemas for Redshift">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/06/28/using-personal-aws-credentials-in-production/" title="Using personal AWS credentials in production">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/07/07/mysql-foreign-keys/" title="MySQL foreign keys">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -786,7 +896,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F06%2F28%2Fusing-personal-aws-credentials-in-production%2F&title=Using+personal+AWS+credentials+in+production">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F07%2F07%2Fmysql-foreign-keys%2F&title=MySQL+foreign+keys">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/07/07/mysql-foreign-keys/
 http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/
 http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/
 http://dangoldin.com/2018/06/01/type-1-and-type-2-tech-specs/
