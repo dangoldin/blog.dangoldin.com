@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/07/21/class-action-settlement-emails/
 http://dangoldin.com/2018/07/10/in-a-software-world-humanity-comes-first/
 http://dangoldin.com/2018/07/07/mysql-foreign-keys/
 http://dangoldin.com/2018/06/28/using-personal-aws-credentials-in-production/
