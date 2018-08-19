@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/08/18/yahoo-fantasy-football-stats-2018-2019-edition/
 http://dangoldin.com/2018/08/15/google-calendar-constantly-shipping/
 http://dangoldin.com/2018/07/29/privacy-vs-user-experience/
 http://dangoldin.com/2018/07/22/bulk-discounts-hurt-competition/

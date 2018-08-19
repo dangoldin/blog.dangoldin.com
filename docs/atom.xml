@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-08-15T23:35:39-04:00</updated>
+ <updated>2018-08-18T23:00:07-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Yahoo fantasy football stats: 2018 2019 edition</title>
+   <link href="http://dangoldin.com/2018/08/18/yahoo-fantasy-football-stats-2018-2019-edition/"/>
+   <updated>2018-08-18T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2018/08/18/yahoo-fantasy-football-stats-2018-2019-edition</id>
+   <content:encoded><![CDATA[
+<p>This is much later than in previous years but hopefully that just makes the data more accurate. I updated my Yahoo fantasy football stats scraper to account for the slightly different design for the upcoming season. It still works as before and uses Selenium to open up Chrome and scrape the projected stats by week. The change this year involved shifting the columns around a tiny bit as Yahoo changed the order but other than that there were no changes. Maybe by next year I’ll update the script to be able to actually determine the column indices for each stat automatically. As usual, the script is up on <a href="https://github.com/dangoldin/yahoo-ffl">GitHub</a> and the scraped data can just be downloaded <a href="http://dangoldin.com/assets/static/data/stats-2019.csv">here</a>.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Google Calendar: Constantly shipping</title>
