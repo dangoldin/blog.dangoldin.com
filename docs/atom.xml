@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-08-18T23:02:10-04:00</updated>
+ <updated>2018-08-21T23:19:14-04:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Incognito mode: Chrome vs Safari</title>
+   <link href="http://dangoldin.com/2018/08/21/incognito-mode-chrome-vs-safari/"/>
+   <updated>2018-08-21T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2018/08/21/incognito-mode-chrome-vs-safari</id>
+   <content:encoded><![CDATA[
+<p>To maintain some semblance of privacy I’ve been doing the majority of my searches in incognito mode. I normally use Chrome but a few days ago I had to do some browser testing in Safari and discovered that the two browsers handle incognito mode differently. Chrome’s incognito mode will share cookies across all incognito tabs - equivalent to running another instance of Chrome. Safari, on the other hand, will give each tab as its own cookie store.</p>
+
+<p>This is pure speculation but Apple has been pushing the narrative that they care more about privacy than Google and this reinforces that view. Depending on the scenario either one can be considered less user friendly - Chrome if you truly do want each tab to be unique or Safari if you want the entire incognito session to act as a single browser - so it does seem as if it was just a product decision made by the respective teams. The behavior difference may even be explained by the name - it’s “incognito” in Chrome but “private” in Safari - and they actually do suggest different behaviors. I wonder if we’ll see a browser with support for both types.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Yahoo fantasy football stats: 2018-2019 edition</title>
