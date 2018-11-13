@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Equty in the gig economy"
+title: "Equity in the gig economy"
 description: "Both Uber and AirBnB asked to give their gig workers equity. It's a long awaited move and sets a strong foundation for the gig economy."
 keywords: "gig economy, airbnb, uber, equity"
 image_url:
