@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/11/12/social-security-administration-spoofing-scam/
 http://dangoldin.com/2018/10/29/gmails-autocomplete/
 http://dangoldin.com/2018/10/25/just-ship-it/
 http://dangoldin.com/2018/10/13/equity-in-the-gig-economy/
