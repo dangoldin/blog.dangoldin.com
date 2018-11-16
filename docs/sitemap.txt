@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/11/15/limiting-tracking-in-email/
 http://dangoldin.com/2018/11/14/what-messaging-war/
 http://dangoldin.com/2018/11/13/a-ux-gem-in-google-slides/
 http://dangoldin.com/2018/11/12/social-security-administration-spoofing-scam/
