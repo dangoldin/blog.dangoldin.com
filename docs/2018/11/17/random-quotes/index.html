@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Python 3 and aiohttp</title>
-  <meta name="description" content="I finally got the chance to mess aroun with Python 3's async functionality and had fun using the aiohttp library.">
-  <meta name="keywords" content="python3, scraping, aiohttp, asyncio" />
+  <title>Random quotes</title>
+  <meta name="description" content="As I read I collect quotes in a GitHub repo and just wrote a simple endpoint to fetch a random one.">
+  <meta name="keywords" content="quotes, bots, reading" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/11/16/python-3-and-aiohttp/">
+  <link rel="canonical" href="http://dangoldin.com/2018/11/17/random-quotes/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Python 3 and aiohttp" />
+  <meta name="twitter:title" content="Random quotes" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/11/16/python-3-and-aiohttp/" />
-  <meta property="og:title"               content="Python 3 and aiohttp" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/11/17/random-quotes/" />
+  <meta property="og:title"               content="Random quotes" />
 
   
-  <meta property="og:description"         content="I finally got the chance to mess aroun with Python 3's async functionality and had fun using the aiohttp library." />
-  <meta name="twitter:description"        content="I finally got the chance to mess aroun with Python 3's async functionality and had fun using the aiohttp library." />
+  <meta property="og:description"         content="As I read I collect quotes in a GitHub repo and just wrote a simple endpoint to fetch a random one." />
+  <meta name="twitter:description"        content="As I read I collect quotes in a GitHub repo and just wrote a simple endpoint to fetch a random one." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/11/16/python-3-and-aiohttp/",
-  "headline": "Python 3 and aiohttp",
-  "datePublished": "2018-11-16T00:00:00-05:00",
-  "dateModified": "2018-11-16T00:00:00-05:00",
-  "description": "A few months back I read about aiohttp and asyncio and finally got the chance to play around with it a few weeks back. The project was a quick one-off scrape...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/11/17/random-quotes/",
+  "headline": "Random quotes",
+  "datePublished": "2018-11-17T00:00:00-05:00",
+  "dateModified": "2018-11-17T00:00:00-05:00",
+  "description": "Besides blogging I’m a big reader and normally get through read a book a week. Most of my reading is done on Kindle and whenever I come across any interestin...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,65 +728,13 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Python 3 and aiohttp</h1>
-      <span class="date">16 November 2018</span>
+      <h1 class="post-title">Random quotes</h1>
+      <span class="date">17 November 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>A few months back I read about <a href="https://aiohttp.readthedocs.io/en/stable/">aiohttp</a> and asyncio and finally got the chance to play around with it a few weeks back. The project was a quick one-off scrape of a few thousand domains to see what percentage had implemented the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/pubvendors.json%20v1.0%20Draft%20for%20Public%20Comment.md">pubvendors.json</a> spec, an extension of GDPR that allows publishers to specify the vendors they’re working with.</p>
-
-<p>My initial reaction was to do it in the way I’ve done it countless times before: the requests library in a for loop. Instead I decided to actually try something new and use the aiohttp library, a new asynchronous library for Python 3. It took me a little bit of time to figure out how to structure the code and use Python’s new async functionality (which by the way is very similar to modern JavaScript) but the end result is simple for what it does and runs incredibly quickly.</p>
-
-<p>The code below is my attempt at a functional solution - it’s inspired by imitating the aiohttp examples as well as a few helpful blog posts. I’m sure it’s far from perfect and I don’t do much other than print the status but it got me what I needed. If you’re doing any sort of scraping or network heavy work take the time to learn the new async functionality provided in Python 3 - it’s a massive performance improvement.</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#! /usr/bin/env python</span>
-
-<span class="kn">import</span> <span class="nn">aiohttp</span>
-<span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="n">timeout</span> <span class="o">=</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientTimeout</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="n">URLS</span> <span class="o">=</span> <span class="s">"example1.com example2.com example3.com"</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
-            <span class="n">valid_pv</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'{'</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">valid_pv</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">valid_pv</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s">'Error'</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s">'Error'</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">bound_fetch</span><span class="p">(</span><span class="n">sem</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-    <span class="n">async</span> <span class="k">with</span> <span class="n">sem</span><span class="p">:</span>
-        <span class="n">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
-
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
-    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">sem</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-
-    <span class="n">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-            <span class="c"># Blame the spec for the path, don't worry about HTTPS for now</span>
-            <span class="n">full_url</span> <span class="o">=</span> <span class="s">'http://'</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">'/.well-known/pubvendors.json'</span>
-            <span class="n">task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">bound_fetch</span><span class="p">(</span><span class="n">sem</span><span class="p">,</span> <span class="n">full_url</span><span class="p">,</span> <span class="n">session</span><span class="p">))</span>
-            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-
-        <span class="n">responses</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-        <span class="n">await</span> <span class="n">responses</span>
-
-<span class="n">URLS</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">URLS</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.app'</span><span class="p">)]</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">URLS</span><span class="p">)</span>
-
-<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
-<span class="n">future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">run</span><span class="p">(</span><span class="n">URLS</span><span class="p">))</span>
-<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">future</span><span class="p">)</span></code></pre></figure>
-
+<p>Besides blogging I’m a big reader and normally get through read a book a week. Most of my reading is done on Kindle and whenever I come across any interesting passage or quote I highlight them. Then every few weeks I go through my highlights, add them to a single <a href="https://github.com/dangoldin/quotes/blob/master/quotes.txt">file</a>, and dump it into a GitHub <a href="https://github.com/dangoldin/quotes">repo</a>. Earlier today I decided to do something fun and wrote a simple <a href="https://bots.dangoldin.com/quoteme">endpoint</a> to fetch a random quote. The majority of my reading is nonfiction and this is reflected in my quotes. In addition, I’m a sucker for biographies and computer history books so they’re an even larger share of the quotes. I also like to throw a few idioms into the mix. So if you’re ever in the mood for a random quote take a look at <a href="https://bots.dangoldin.com/quoteme">https://bots.dangoldin.com/quoteme</a>.</p>
 
     </section>
 
@@ -801,7 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
@@ -818,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/11/15/limiting-tracking-in-email/" title="Limiting tracking in email">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/11/16/python-3-and-aiohttp/" title="Python 3 and aiohttp">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/11/17/random-quotes/" title="Random quotes">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -833,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F11%2F16%2Fpython-3-and-aiohttp%2F&title=Python+3+and+aiohttp">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F11%2F17%2Frandom-quotes%2F&title=Random+quotes">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
