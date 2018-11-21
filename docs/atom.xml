@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-11-19T23:04:42-05:00</updated>
+ <updated>2018-11-20T23:32:40-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My DataEngConf 2018 talk</title>
+   <link href="http://dangoldin.com/2018/11/20/my-dataengconf-2018-talk/"/>
+   <updated>2018-11-20T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/11/20/my-dataengconf-2018-talk</id>
+   <content:encoded><![CDATA[
+<p>On November 9th I had the privilege of speaking at DataEngConf under the “Hero Engineering” track. My talk was titled “The Highs and Lows of Building an AdTech Data Pipeline” and I covered our evolution from a dead simple, sampled approach that had nothing to do with big data to the latest version which is leveraging a variety of modern open source data technologies.</p>
+
+<p>I spoke about the motivation, challenges, and lessons learned during each iteration and ended the talk with the top 3 lessons learned across the various iterations of the pipeline. If you’re interested in the details you can grab the slides as either <a href="https://docs.google.com/presentation/d/1XmOPgsbxoah2Pulw3eRvzjClOM5A5Dq-B2MWfot0guo/edit#slide=id.p">Google Slides</a> or as PowerPoint from the <a href="https://www.dataengconf.com/speaker/the-highs-and-lows-of-building-an-adtech-data-pipeline">DataEngConf site</a>. Note that there was also a recording made but I’m still waiting for it to be processed and uploaded it to YouTube and will share that when it’s available.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Computer history books</title>

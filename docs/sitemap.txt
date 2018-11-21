@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/11/20/my-dataengconf-2018-talk/
 http://dangoldin.com/2018/11/19/computer-history-books/
 http://dangoldin.com/2018/11/18/falling-behind-my-2018-blogging-goal/
 http://dangoldin.com/2018/11/17/random-quotes/
