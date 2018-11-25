@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Aggressive code deprecation</title>
+  <meta name="description" content="Remove unused code is important to keeping your code clean and maintainable. To do it properly you need to aggressively deprecate code.">
+  <meta name="keywords" content="code deprecation, software engineering, tech debt" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2018/11/25/aggressive-code-deprecation/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Aggressive code deprecation" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/11/25/aggressive-code-deprecation/" />
+  <meta property="og:title"               content="Aggressive code deprecation" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="Remove unused code is important to keeping your code clean and maintainable. To do it properly you need to aggressively deprecate code." />
+  <meta name="twitter:description"        content="Remove unused code is important to keeping your code clean and maintainable. To do it properly you need to aggressively deprecate code." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2018-11-25T13:45:21-05:00",
-  "dateModified": "2018-11-25T13:45:21-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/11/25/aggressive-code-deprecation/",
+  "headline": "Aggressive code deprecation",
+  "datePublished": "2018-11-25T00:00:00-05:00",
+  "dateModified": "2018-11-25T00:00:00-05:00",
+  "description": "Part of writing high quality code quickly is deprecating no longer used features and functionality. It sounds simple but more often than not there’s an abund...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,22 +726,83 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Aggressive code deprecation</h1>
+      <span class="date">25 November 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
+<p>Part of writing high quality code quickly is deprecating no longer used features and functionality. It sounds simple but more often than not there’s an abundance of references throughout - some tightly coupled and others loosely coupled - that make a full deprecation difficult. In some cases it’s is as simple as an isolated code change while in other cases it’s removing code along with some database migrations and in the extreme case it may be removing an entire service. It’s crucial to be exhaustive in your deprecation or you’ll end up in a situation months or years later where the team has changed enough that no one can tell what the code is meant to do and whether it’s still used.</p>
+
+<p>Ideally you have enough tests and code coverage to take care of the obvious changes but even that won’t catch everything. I found the following checklist to be helpful in aggressively deprecating code:</p>
+
 <ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
+  <li>
+<em>Actual code deprecation</em>. All references to the deprecated should be removed across all relevant repos. It’s straightforward to remove it from the primary code base but are there references to it in other applications? You may have a field you’re deprecating in the API but you need to make sure you remove its references in the UI code as well. As a side note this is a reason why you should make your applications as loosely coupled as possible. With the previous example was there a way to write the UI code so it doesn’t make any assumptions about the API and instead makes a request to the API to get the list of available fields? That way not every API change will warrant a UI change.</li>
+  <li>
+<em>Database migrations</em>. If you removed a field in the code make sure to remove it from the database along with all foreign key references. If necessary make a dump of the table(s) as a backup but remember to set a reminder to delete the backup in the future. If it’s a risky change rename the column first and make sure nothing breaks - then if something does break you can quickly revert the name change.</li>
+  <li>
+<em>Package requirements</em>. Did you install a particular package just to get your code working? If so you should review your package requirements and remove the ones that are no longer being used. It’s unlikely that you installed an open source library just to use it in a single place but you never know. The fewer external packages you have the more maintainable your code since you don’t have to worrying about version incompatibilities or library deprecation.</li>
+  <li>
+<em>Configuration options</em>. Was there any configuration that referenced the code? What about a configuration option that was only used by the deprecated code? Having additional fields in your configuration files won’t break anything but it makes future deprecation more difficult since someone will need to confirm these configuration options are no longer used and just introduces bloat.</li>
+  <li>
+<em>DevOps</em>. Unless you’re removing an entire application this isn’t common but something to definitely keep in mind is to reduce DevOps bloat. The goal here is to remove all resources that were created for your application. If you were using Terraform or another “infrastructure as code” system this is easier since you may be able to just remove files and let Terraform do the rest. Otherwise you should take a look at all the DevOps resources your application needed and remove them. These range from the DNS entries to the relevant security groups to the instance images to the cloud-stored files. The cloud makes it easy to spin things up but it’s on us to fully spin things down.</li>
 </ul>
 
+<p>The work to aggressively deprecate isn’t easy but thoroughness is essential. It’s much better to take the time to do a deep cleanup while the code is still fresh in mind instead of having a new set of people figuring out what’s still used years later. It’s also a strong investment in keeping your code clean and light which improves future development speed.</p>
+
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/11/24/code-without-online-help/" title="Code without online help">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F11%2F25%2Faggressive-code-deprecation%2F&title=Aggressive+code+deprecation">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -817,7 +878,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
