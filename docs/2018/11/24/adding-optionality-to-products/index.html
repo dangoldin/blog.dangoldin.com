@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Code without online help</title>
-  <meta name="description" content="It's too easy to find answers online to our coding problems but it's much better to take the time to solve it on your own locally before going online for help.">
-  <meta name="keywords" content="python, coding, software development, inspect module" />
+  <title>Adding optionality to products</title>
+  <meta name="description" content="It's easy to expose some functionality in a product by adding a new option but it's likely the wrong move.">
+  <meta name="keywords" content="product management, software engineering, software, product design, user experience" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/11/24/code-without-online-help/">
+  <link rel="canonical" href="http://dangoldin.com/2018/11/24/adding-optionality-to-products/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Code without online help" />
+  <meta name="twitter:title" content="Adding optionality to products" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/11/24/code-without-online-help/" />
-  <meta property="og:title"               content="Code without online help" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/11/24/adding-optionality-to-products/" />
+  <meta property="og:title"               content="Adding optionality to products" />
 
   
-  <meta property="og:description"         content="It's too easy to find answers online to our coding problems but it's much better to take the time to solve it on your own locally before going online for help." />
-  <meta name="twitter:description"        content="It's too easy to find answers online to our coding problems but it's much better to take the time to solve it on your own locally before going online for help." />
+  <meta property="og:description"         content="It's easy to expose some functionality in a product by adding a new option but it's likely the wrong move." />
+  <meta name="twitter:description"        content="It's easy to expose some functionality in a product by adding a new option but it's likely the wrong move." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/11/24/code-without-online-help/",
-  "headline": "Code without online help",
+  "mainEntityOfPage": "http://dangoldin.com/2018/11/24/adding-optionality-to-products/",
+  "headline": "Adding optionality to products",
   "datePublished": "2018-11-24T00:00:00-05:00",
   "dateModified": "2018-11-24T00:00:00-05:00",
-  "description": "Whenever I need some coding help my first step is to do an online search which usually leads me to either the library documentation or a StackOverflow page. ...",
+  "description": "Building products involves making countless decisions. One of the biggest is defining the functionality and how it should be exposed to the users. In my mind...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,27 +728,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Code without online help</h1>
+      <h1 class="post-title">Adding optionality to products</h1>
       <span class="date">24 November 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>Whenever I need some coding help my first step is to do an online search which usually leads me to either the library documentation or a StackOverflow page. This is a poor habit and something I’m trying to move away from. While I’m almost always online it’s dangerous to rely on the internet to code - both because there will be times you may not have internet access but also because you lose the ability to do your own investigation, discovery, and critical thinking.</p>
+<p>Building products involves making countless decisions. One of the biggest is defining the functionality and how it should be exposed to the users. In my mind, answers to this question like on a spectrum. On one extreme you have the “take what you can get” approach where the functionality is exposed with no customization and no advanced features but the experience is optimized for one specific use case. As an example of this think of the original Google search - a single search field, minimal search functionality, and two buttons. On the other extreme you have the “customize everything” approach where you think of all possible use cases and provide options to allow users to do what they want. An example of this is Microsoft Word - most people use a fraction of all the functionality yet there’s a ton hidden away behind some menu.</p>
 
-<p>There will always be cases where I’ll have to do a search but even then I first make it an effort to solve the problem locally. The following are some tools that have become indispensable for me when doing my local discovery. Note that Python is primary programming language so the last 3 tools are Python-specific but other modern languages should have equivalent tools.</p>
+<p>Consumer facing products generally fall into the first camp since you want them to be as accessible as possible while enterprise and productivity products fall into the latter camp where it’s about optimizing for power users. I understand the value of both approaches and often times you can get away with the experience of the former while providing the functionality of the latter. Google search is an example of this - it’s a single field but after doing a search you have access to the advanced search functionality to refine your search. Also, if you’re a power user you know there are a few things you can type in to the search bar to further control your search - for example using quotes for an exact match or limiting the search to a single site.</p>
 
-<ul>
-  <li>history. While not specific to Python I find the history command incredibly useful. I make my history retention as long as I can and then pipe it into grep to see the way I used various commands and their arguments. I may not even know the command itself but by grepping for filenames or directories I’m usually able to figure out what I was looking for.</li>
-  <li>man. Short for manual and works just like one. Type man in front of any Linux command and you’ll get an exhaustive, but dense, explanation of the command with a description of the options. The documentation is dense and I have to attempt an option a few times to make sure it’s working as expected but it’s powerful having all the information in a single place. Even better is making it a habit to use man on commands you already use since you will inevitable discover some new functionality.</li>
-  <li>dir (Python). Now we’re beyond the shell but dir works similarly to the command line and lists the attributes of an object. I find this really helpful when using an open source library that is sparse on documentation since I can easily see the methods that the objects I’m using have. It’s often enough that just seeing the name gives me what I need.</li>
-  <li>
-<a href="https://docs.python.org/3/library/functions.html#dir"><strong>doc</strong></a> (Python). Combined with the above typing <strong>doc</strong> after an object gives you the docstring of that attribute. This is usually a quick blurb documenting the function - both what it does as well as the argument(s) it takes. This combined with the dir function above makes it pretty easy to write a quick script to dump all the attributes of an object along with their documentation. For example you can do this for the “set” module: print(“\n”.join([a + “: “ + str(getattr(set, a).<strong>doc</strong>) for a in dir(set)]))</li>
-  <li>
-<a href="https://docs.python.org/3/library/inspect.html">inspect</a> module (Python). While researching the above I came across the inspect module which provides some advanced object inspection functionality - including a cleaner for of the <strong>doc</strong> approach above. I’m still getting a feel for it but just by reading the linked docs you can get a feel for how it can be used to inspect Python objects.</li>
-</ul>
-
-<p>There must be a ton of other tools I didn’t cover and I’d love to learn them. I’m a big believer in being as independent of a developer as one can be. A good way is to push one’s craft without relying on outside support. It’s too easy to do a search and get what you want but then it’s one ear out the other. Instead, the way to become stronger is by struggling and doing things the hard way with the hope that they stick over time.</p>
+<p>It’s rare that you find a product with fewer features in newer versions. The majority of the time products get more complex as functionality is added to make the product more appealing to a wider set of users. This makes sense when making an isolated decision but it also feels like death by a thousand cuts since each option makes the product just slightly worse for a majority of users. As product managers and engineers we should be extra thoughtful in taking the easy way out and adding an option to expose a different behavior. This option will be incredibly difficult to remove and we should take the time to understand the underlying problem and use case to determine whether the option is something that’s necessary or just us being lazy.</p>
 
     </section>
 
@@ -763,7 +753,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
@@ -780,11 +770,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/11/24/adding-optionality-to-products/" title="Adding optionality to products">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/11/23/electronic-goods-are-cheaper-than-ever/" title="Electronic goods are cheaper than ever">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a></li>
+        <li class="next"> | <a href="/2018/11/24/code-without-online-help/" title="Code without online help">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -795,7 +785,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F11%2F24%2Fcode-without-online-help%2F&title=Code+without+online+help">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F11%2F24%2Fadding-optionality-to-products%2F&title=Adding+optionality+to+products">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
