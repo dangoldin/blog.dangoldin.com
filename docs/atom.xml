@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-11-25T13:51:00-05:00</updated>
+ <updated>2018-11-25T22:41:29-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Exploring my backlinks</title>
+   <link href="http://dangoldin.com/2018/11/25/exploring-my-backlinks/"/>
+   <updated>2018-11-25T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/11/25/exploring-my-backlinks</id>
+   <content:encoded><![CDATA[
+<p>I enjoy <a href="https://hackernoon.com">Hacker Noon</a> and often find myself coming across an interesting article on the site. Yesterday I got a pleasant surprise from an old coworker who sent me an <a href="https://hackernoon.com/how-to-create-a-slack-bot-that-messages-all-members-of-a-workspace-in-8-minutes-32a5b52838be">article</a> about building a Slack bot that mentioned of one of my <a href="http://dangoldin.com/2017/06/30/send-private-messages-to-all-members-of-a-slack-channel/">blog posts</a>. A few months earlier the author and I had a conversation in the comment thread and I’m glad she found the conversation useful enough to write a much more thorough post.</p>
+
+<p>I don’t write write for publicity and genuinely enjoy the process of clarifying my thoughts through writing so it’s definitely rewarding to see a link back to my blog. It feels good knowing that my blog is interesting enough to warrant a link and it’s definitely appreciated.</p>
+
+<p>Since I only discovered this backlink accidentally I got curious about how many others I missed over the years and decided to dig in. I found a free <a href="https://lxrmarketplace.com/seo-inbound-link-checker-tool.html">backlink checker</a> and after searching for my domain name discovered that there are actually quite a few linkbacks. Some are list aggregators - such as <a href="http://www.largeheartedboy.com/blog/archive/2016/11/online_best_of_73.html">top books</a> or <a href="http://quantifiedself.com/2015/01/represent-year-numbers/">quantified self visualizations</a> while others are more interesting - there are quite a few links to a 5 year old <a href="http://dangoldin.com/2013/04/12/why-dont-cellphones-have-a-dialtone/">blog post</a> about the lack of a dial tone in cell phones as well as a link from <a href="https://www.citylab.com/transportation/2017/06/in-new-york-city-bikeshare-is-faster-than-cabs-when-it-matters-most/530469/">CityLab</a> for a post about Citi Bike trip planning.</p>
+
+<p>It turns out some of my posts and projects actually do make their way past my blog. It’s not much but it’s definitely cool.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Aggressive code deprecation</title>

@@ -16,6 +16,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/11/25/exploring-my-backlinks/
 http://dangoldin.com/2018/11/25/aggressive-code-deprecation/
 http://dangoldin.com/2018/11/24/code-without-online-help/
 http://dangoldin.com/2018/11/24/adding-optionality-to-products/
