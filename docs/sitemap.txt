@@ -1,6 +1,7 @@
 http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
+http://dangoldin.com/citibike-station-directions/
 http://dangoldin.com/
 http://dangoldin.com/about/
 http://dangoldin.com/lore/
