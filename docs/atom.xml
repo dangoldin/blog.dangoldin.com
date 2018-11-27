@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-11-25T22:49:19-05:00</updated>
+ <updated>2018-11-26T23:35:07-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>An ad on the Google search homepage</title>
+   <link href="http://dangoldin.com/2018/11/26/an-ad-on-the-google-search-homepage/"/>
+   <updated>2018-11-26T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/11/26/an-ad-on-the-google-search-homepage</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/google-search-store-ad.png" width="2266" height="1209" alt="Google Search Homepage Store Ad" layout="responsive"/>
+
+<p>Turns out not even Google is immune from the pressures of Cyber Monday. As minimal as the Google search homepage is they still made the effort to have a callout, however slight, to promote their Cyber Monday deals. A while back I read an article that calculated how much additional revenue Google would be able to generate if they put ads on their homepage. I don’t recall the exact number or the details but I imagine it’s a massive amount. Yet Google never took the step of putting ads on the search homepage so it’s interesting to see them doing it for their own store. The revenue here must be significantly less than what they’d see through traditional advertising but at the same time it’s a very minimal hit to the user experience. I can only imagine how many people needed to be involved in this decision though.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Exploring my backlinks</title>
