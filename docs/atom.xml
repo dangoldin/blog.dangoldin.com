@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-11-27T22:53:21-05:00</updated>
+ <updated>2018-11-27T22:56:04-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -327,7 +327,7 @@
    <updated>2018-10-29T00:00:00-04:00</updated>
    <id>http://dangoldin.com/2018/10/29/gmails-autocomplete</id>
    <content:encoded><![CDATA[
-<p>Ever since I’ve been managing I’ve spend an inordinate amount of time in my inbox. What’s both sad and amazing is how accurate the new Gmail autocompletions (officially called <a href="https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html">Smart Compose</a>) have gotten. They’re incredibly accurate for common phrases and are likely leveraging very similar technology to what Google is using for their autocomplete search. It’s great for finishing off that last sentence and even acts as a real time phrase thesaurus that helps suggest alternate phrasing.</p>
+<p>Ever since I’ve been managing I’ve spent an inordinate amount of time in my inbox. What’s both sad and amazing is how accurate the new Gmail autocompletions (officially called <a href="https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html">Smart Compose</a>) have gotten. They’re incredibly accurate for common phrases and are likely leveraging very similar technology to what Google is using for their autocomplete search. It’s great for finishing off that last sentence and even acts as a real time phrase thesaurus that helps suggest alternate phrasing.</p>
 
 <p>It does make you think about the information Google is collecting to make this happen. By using Gmail we’re already trusting Google with our sensitive information but this feels like a step beyond. The tech blog linked above addresses this concern by indicating that it’s only used for common phrases but it’s still sending the message contents to the autocomplete servers to get a prediction.</p>
 

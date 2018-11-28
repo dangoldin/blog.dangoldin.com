@@ -8,7 +8,7 @@ category:
 tags: ["#product"]
 ---
 {% include setup %}
-Ever since I’ve been managing I’ve spend an inordinate amount of time in my inbox. What’s both sad and amazing is how accurate the new Gmail autocompletions (officially called [Smart Compose](https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html)) have gotten. They’re incredibly accurate for common phrases and are likely leveraging very similar technology to what Google is using for their autocomplete search. It’s great for finishing off that last sentence and even acts as a real time phrase thesaurus that helps suggest alternate phrasing.
+Ever since I’ve been managing I’ve spent an inordinate amount of time in my inbox. What’s both sad and amazing is how accurate the new Gmail autocompletions (officially called [Smart Compose](https://ai.googleblog.com/2018/05/smart-compose-using-neural-networks-to.html)) have gotten. They’re incredibly accurate for common phrases and are likely leveraging very similar technology to what Google is using for their autocomplete search. It’s great for finishing off that last sentence and even acts as a real time phrase thesaurus that helps suggest alternate phrasing.
 
 It does make you think about the information Google is collecting to make this happen. By using Gmail we’re already trusting Google with our sensitive information but this feels like a step beyond. The tech blog linked above addresses this concern by indicating that it’s only used for common phrases but it’s still sending the message contents to the autocomplete servers to get a prediction.
 
