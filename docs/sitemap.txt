@@ -17,6 +17,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/11/28/shell-history-2018-edition/
 http://dangoldin.com/2018/11/27/privacy-in-a-face-detection-world/
 http://dangoldin.com/2018/11/26/an-ad-on-the-google-search-homepage/
 http://dangoldin.com/2018/11/25/exploring-my-backlinks/
