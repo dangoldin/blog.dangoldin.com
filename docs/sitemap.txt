@@ -17,6 +17,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/01/fat-specs-light-stories/
 http://dangoldin.com/2018/11/30/tragedy-of-the-commons-apartment-edition/
 http://dangoldin.com/2018/11/29/a-delivery-aggregation-service/
 http://dangoldin.com/2018/11/28/shell-history-2018-edition/
