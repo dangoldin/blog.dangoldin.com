@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-02T21:48:11-05:00</updated>
+ <updated>2018-12-03T21:26:07-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Overcoming writing rustiness</title>
+   <link href="http://dangoldin.com/2018/12/03/overcoming-writing-rustiness/"/>
+   <updated>2018-12-03T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/03/overcoming-writing-rustiness</id>
+   <content:encoded><![CDATA[
+<p>Now that I’ve forced myself to write every day in order to catch up on my blogging goal it’s been much easier. The challenge was always getting started but as soon as I start the thoughts and sentences come out pretty quickly. They nearly always require a bit of editing and cleanup at the end but the initial dump is usually a pretty good basis for the rest of the post. Knowing that I need to write more than a post a day is enough to motivate me to put the proverbial pen to paper and get over that initial hump.</p>
+
+<p>I’ve also found myself being much more aware of what I encounter throughout the day and whether it would make for an appropriate blog post. I have a running list of a few hundred blog topics that I keep adding to and my constant writing has me thinking of multiple ideas every day. It’s amazing how the mind works - you make something a conscious effort and your brain quickly rewires itself to prioritize it.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Mobile payments and messaging apps</title>
