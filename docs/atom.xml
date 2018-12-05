@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-03T21:26:07-05:00</updated>
+ <updated>2018-12-04T22:56:13-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>How many wifi devices do we have?</title>
+   <link href="http://dangoldin.com/2018/12/04/how-many-wifi-devices-do-we-have/"/>
+   <updated>2018-12-04T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/04/how-many-wifi-devices-do-we-have</id>
+   <content:encoded><![CDATA[
+<p>Benedict Evans wrote a <a href="https://www.ben-evans.com/benedictevans/2014/5/26/the-internet-of-things">great post</a> back in 2014 that started with the observation that while our grandparents knew how many motors they owned we have no idea and that while we know how many of our devices connect to the internet our children will not.</p>
+
+<p>It sounded nice at the time but I lived it today. Verizon sent me a new router and rather than taking the small amount of time to change the wifi network name and password back to the previous version I decided it wouldn’t be that hard to just update the wifi settings in the various devices. After I updated my phone, computer, and Fire TV Stick I realized I still had many more to go and decided, albeit too late, that it would be easier to just revert the settings. What makes changing the settings difficult is that updating the wifi settings on devices without a keyboard is just incredibly difficult. For some, such as the Fire TV Stick, you have to type using a remote and an on-screen keyboard. For others, such as the Echo, you have to switch back and forth between wifi networks to get everything set up.</p>
+
+<p>I can’t imagine what it will be like when we actually have hundreds of devices that all need to connect to a wifi network and the settings change. There will have to be a way to make the network settings easier to manage and I wonder what that will be.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Overcoming writing rustiness</title>
