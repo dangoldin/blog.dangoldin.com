@@ -17,6 +17,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/05/the-golden-age-of-browsers/
 http://dangoldin.com/2018/12/04/how-many-wifi-devices-do-we-have/
 http://dangoldin.com/2018/12/03/overcoming-writing-rustiness/
 http://dangoldin.com/2018/12/02/mobile-payments-and-messaging-apps/
