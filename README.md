@@ -8,4 +8,15 @@ Feel free to fork it and use it in whichever way you want.
 
 This blog went through a bunch of iterations starting with Jekyll-Bootstrap, to a theme that was inspired by [Simon Hørup Eskildsen](http://sirupsen.com/), to the current setup where it's entirely written in [AMP](https://www.ampproject.org/).
 
-I'm sure within a year it'll be something else.
+Intall required gems:
+
+```
+gem install bundler
+gem install jekyll
+gem install nokogiri
+gem install nokogiri
+gem install fastimage
+gem install jekyll-redirect-from
+gem install jekyll-sitemap
+gem install jekyll-include-cache
+```
