@@ -752,7 +752,7 @@ table {
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-project.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$LOGFILE</span><span class="k">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>3
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu
@@ -763,7 +763,7 @@ table {
 <span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
 <span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
 
-<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
+<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
 <span class="nb">exec</span> /home/ubuntu/project/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
   <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
   <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8001 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>

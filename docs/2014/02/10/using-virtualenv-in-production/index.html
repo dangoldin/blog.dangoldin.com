@@ -758,7 +758,7 @@ table {
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>app.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-app.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$LOGFILE</span><span class="k">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>2
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu
@@ -769,7 +769,7 @@ table {
 <span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
 <span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
 
-<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
+<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
 <span class="nb">exec</span> /home/ubuntu/app/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
   <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
   <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8000 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
@@ -823,13 +823,13 @@ table {
 <span class="n">env</span><span class="o">.</span><span class="n">activate</span> <span class="o">=</span> <span class="s">'source /home/ubuntu/myapp/venv/bin/activate'</span>
 <span class="n">env</span><span class="o">.</span><span class="n">directory</span> <span class="o">=</span> <span class="s">'/home/ubuntu/myapp'</span>
 
-<span class="nd">@_contextmanager</span>
+<span class="o">@</span><span class="n">_contextmanager</span>
 <span class="k">def</span> <span class="nf">virtualenv</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">cd</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">directory</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">prefix</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">activate</span><span class="p">):</span>
             <span class="k">yield</span>
 
-<span class="nd">@hosts</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">'db'</span><span class="p">])</span>
+<span class="o">@</span><span class="n">hosts</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">'db'</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">rebuild_index</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">virtualenv</span><span class="p">():</span>
         <span class="n">run</span><span class="p">(</span><span class="s">"python manage.py rebuild_index"</span><span class="p">)</span></code></pre></figure>

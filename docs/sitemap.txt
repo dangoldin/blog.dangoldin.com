@@ -2,9 +2,9 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/
-http://dangoldin.com/about/
 http://dangoldin.com/lore/
+http://dangoldin.com/about/
+http://dangoldin.com/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
 http://dangoldin.com/tags/
@@ -14,9 +14,11 @@ http://dangoldin.com/2015/11/12/projects-ive-worked-on/
 http://dangoldin.com/2015/12/06/setting-up-a-new-computer---then-and-now/
 http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credentials-used-in-production/
+http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/06/conference-call-echoes/
 http://dangoldin.com/2018/12/05/the-golden-age-of-browsers/
 http://dangoldin.com/2018/12/04/how-many-wifi-devices-do-we-have/
 http://dangoldin.com/2018/12/03/overcoming-writing-rustiness/
