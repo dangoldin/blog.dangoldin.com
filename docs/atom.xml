@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-08T22:32:59-05:00</updated>
+ <updated>2018-12-09T21:28:29-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>The modern economy relies on information</title>
+   <link href="http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/"/>
+   <updated>2018-12-09T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information</id>
+   <content:encoded><![CDATA[
+<p>In many ways modern capitalism is about bigger and bigger companies owning more and more industries. We’re seeing with the major tech companies moving into new verticals to keep growing. We’re seeing it with the media and telecom companies going on acquisition sprees aimed at both vertical integration and horizontal scale.</p>
+
+<p>Yet there are also ton of small business being launched across a variety of industries - especially in consumer products. The world is much more open now and if you offer something unique and compelling it’s easier to find customers than at any other time in history. You don’t need to invest in a ton of marketing or advertising so long as you know your audience and figure out the best channels to reach them.</p>
+
+<p>The modern world is great at reducing friction. At first it was friction in the transport of physical goods with the standardization of the shipping container and railroads. Now it’s the reduction in information friction. In the past it made a ton of sense to vertically integrate your business and control each step so you can control as much as possible. That’s still advantageous if you can swing but but it’s so much easier to be small and access the transparent market to find what you need. There are numerous vendors for anything you need and you can find exactly what you need. Moving from small to medium is a whole other story but it’s easier to be smaller than ever.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Automatic login</title>
