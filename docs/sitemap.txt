@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/
+http://dangoldin.com/2018/12/09/avoiding-content-overload/
 http://dangoldin.com/2018/12/08/automatic-login/
 http://dangoldin.com/2018/12/07/speech-recognition-and-a-bunch-of-apis/
 http://dangoldin.com/2018/12/06/conference-call-echoes/
