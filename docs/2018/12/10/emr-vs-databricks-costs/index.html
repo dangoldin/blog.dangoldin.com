@@ -21,28 +21,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>The modern economy relies on information</title>
-  <meta name="description" content="It's much easier to be a small business these days due to how cheaply information flows.">
-  <meta name="keywords" content="small business, modern economy" />
+  <title>EMR vs Databricks costs</title>
+  <meta name="description" content="Comparing EMR and Databricks costs is not the easiest since Databricks introduced a DBU 'currency' type but with a little bit of math it's easy to compare.">
+  <meta name="keywords" content="aws emr, databricks, spark hosting" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="The modern economy relies on information" />
+  <meta name="twitter:title" content="EMR vs Databricks costs" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/" />
-  <meta property="og:title"               content="The modern economy relies on information" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/" />
+  <meta property="og:title"               content="EMR vs Databricks costs" />
 
   
-  <meta property="og:description"         content="It's much easier to be a small business these days due to how cheaply information flows." />
-  <meta name="twitter:description"        content="It's much easier to be a small business these days due to how cheaply information flows." />
+  <meta property="og:description"         content="Comparing EMR and Databricks costs is not the easiest since Databricks introduced a DBU 'currency' type but with a little bit of math it's easy to compare." />
+  <meta name="twitter:description"        content="Comparing EMR and Databricks costs is not the easiest since Databricks introduced a DBU 'currency' type but with a little bit of math it's easy to compare." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/emr-vs-databricks.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/emr-vs-databricks.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -52,11 +55,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/",
-  "headline": "The modern economy relies on information",
-  "datePublished": "2018-12-09T00:00:00-05:00",
-  "dateModified": "2018-12-09T00:00:00-05:00",
-  "description": "In many ways modern capitalism is about bigger and bigger companies owning more and more industries. We’re seeing with the major tech companies moving into n...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/",
+  "headline": "EMR vs Databricks costs",
+  "datePublished": "2018-12-10T00:00:00-05:00",
+  "dateModified": "2018-12-10T00:00:00-05:00",
+  "description": "It’s frustrating when vendors introduce their own currency in what seems to be a way to obfuscate pricing. The most recent example is Databricks which offers...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,17 +731,21 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">The modern economy relies on information</h1>
-      <span class="date">09 December 2018</span>
+      <h1 class="post-title">EMR vs Databricks costs</h1>
+      <span class="date">10 December 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>In many ways modern capitalism is about bigger and bigger companies owning more and more industries. We’re seeing with the major tech companies moving into new verticals to keep growing. We’re seeing it with the media and telecom companies going on acquisition sprees aimed at both vertical integration and horizontal scale.</p>
+<p>It’s frustrating when vendors introduce their own currency in what seems to be a way to obfuscate pricing. The most recent example is Databricks which offers a slick Spark hosting solution on top of AWS and Azure. Unfortunately, instead of being explicit about the prices they introduced a Databricks Unit (DBU) currency type that then translates into dollars based on the type of usage - ranging from a simple Spark cluster with limited optimizations (Basic Plan) to an interactive one with all sorts of behind the scenes performance tweaks (Data Analytics Plan).</p>
 
-<p>Yet there are also ton of small business being launched across a variety of industries - especially in consumer products. The world is much more open now and if you offer something unique and compelling it’s easier to find customers than at any other time in history. You don’t need to invest in a ton of marketing or advertising so long as you know your audience and figure out the best channels to reach them.</p>
+<p>The nice thing is that <a href="https://databricks.com/product/aws-pricing/instance-types">Databricks is transparent</a> about the amount of DBUs per EC2 instance and the price per DBU so it took a bit of data cleanup to dump everything into a <a href="https://docs.google.com/spreadsheets/d/1WnHBixRBXw0PhKfA0XidgNQN1sM0TEHRCxFHL6laEHY/edit#gid=0">spreadsheet</a> and then do the lookups and math to compare the <a href="https://aws.amazon.com/emr/pricing/">EMR</a> vs <a href="https://databricks.com/product/pricing">Databricks</a> pricing.</p>
 
-<p>The modern world is great at reducing friction. At first it was friction in the transport of physical goods with the standardization of the shipping container and railroads. Now it’s the reduction in information friction. In the past it made a ton of sense to vertically integrate your business and control each step so you can control as much as possible. That’s still advantageous if you can swing but but it’s so much easier to be small and access the transparent market to find what you need. There are numerous vendors for anything you need and you can find exactly what you need. Moving from small to medium is a whole other story but it’s easier to be smaller than ever.</p>
+<p>Turns out that the Databricks Basic plan is comparable to standard EMR - in some cases it’s more expensive and in some cases it’s significantly cheaper. For example an i2.xlarge costs $0.213/hour in AWS EMR but 1.5 DBUs (equivalent to $0.105/hour) in Databricks. At the same time an i3.16xlarge costs $0.270 in AWS EMR but 16 DBUs (equivalent to $1.120/hour) in Databricks. That’s a huge range, the i2.xlarge is less than half the cost in Databricks but the i3.16xlarge is more than 4 times as much in Databricks than in AWS. In general Databricks is more expensive for the larger instance types and cheaper for the smaller ones and I’d be curious to understand the reasoning. Also note that this is just using the Basic plan - Databricks has other plans which are never cheaper than the EMR equivalent.</p>
+
+<p>I’ve included a screenshot of the analysis below but all the data is also available on a shared <a href="https://docs.google.com/spreadsheets/d/1WnHBixRBXw0PhKfA0XidgNQN1sM0TEHRCxFHL6laEHY/edit#gid=0">Google Spreadsheet</a>.</p>
+
+<amp-img src="/assets/static/images/emr-vs-databricks.png" alt="EMR vs Databricks costs by instance type" width="2168" height="1402" layout="responsive"></amp-img>
 
     </section>
 
@@ -753,7 +760,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##society-ref">#society </a></li>
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
@@ -770,11 +777,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/12/09/avoiding-content-overload/" title="Avoiding content overload">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/12/09/the-modern-economy-relies-on-information/" title="The modern economy relies on information">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/12/10/emr-vs-databricks-costs/" title="EMR vs Databricks costs">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +792,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F09%2Fthe-modern-economy-relies-on-information%2F&title=The+modern+economy+relies+on+information">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F10%2Femr-vs-databricks-costs%2F&title=EMR+vs+Databricks+costs">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

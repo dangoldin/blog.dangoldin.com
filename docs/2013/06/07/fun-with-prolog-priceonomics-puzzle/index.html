@@ -770,7 +770,7 @@ table {
 <span class="ss">exchange</span><span class="p">(</span><span class="ss">btc</span><span class="p">,</span><span class="ss">eur</span><span class="p">,</span><span class="mf">88.8499</span><span class="p">).</span>
 <span class="ss">exchange</span><span class="p">(</span><span class="ss">btc</span><span class="p">,</span><span class="ss">jpy</span><span class="p">,</span><span class="mf">12325.44</span><span class="p">).</span>
 
-<span class="c1">% Calculate profit for a usd-&gt;x-&gt;y-&gt;usd currency chain</span>
+<span class="err">%</span> <span class="nv">Calculate</span> <span class="ss">profit</span> <span class="ss">for</span> <span class="ss">a</span> <span class="ss">usd</span><span class="o">-&gt;</span><span class="ss">x</span><span class="o">-&gt;</span><span class="ss">y</span><span class="o">-&gt;</span><span class="ss">usd</span> <span class="ss">currency</span> <span class="ss">chain</span>
 <span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">)</span> <span class="p">:-</span>
     <span class="ss">exchange</span><span class="p">(</span><span class="ss">usd</span><span class="p">,</span><span class="nv">First</span><span class="p">,</span><span class="nv">P1</span><span class="p">),</span>
     <span class="ss">exchange</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span><span class="nv">Second</span><span class="p">,</span><span class="nv">P2</span><span class="p">),</span>
@@ -787,7 +787,7 @@ table {
 
 <span class="p">:-</span> <span class="ss">arb</span><span class="p">.</span>
 
-<span class="c1">% Results:</span>
+<span class="err">%</span> <span class="nv">Results</span><span class="o">:</span>
 <span class="ss">usd</span> <span class="ss">eur</span> <span class="ss">jpy</span> <span class="ss">usd</span> <span class="mf">1.0040882716200001</span>
 <span class="ss">usd</span> <span class="ss">eur</span> <span class="ss">btc</span> <span class="ss">usd</span> <span class="mf">1.0120965187500002</span>
 <span class="ss">usd</span> <span class="ss">btc</span> <span class="ss">jpy</span> <span class="ss">usd</span> <span class="mf">1.0025512896</span></code></pre></figure>
@@ -807,7 +807,7 @@ table {
     <span class="ss">atom_number</span><span class="p">(</span><span class="nv">S</span><span class="p">,</span><span class="nv">R</span><span class="p">),</span>
     <span class="ss">assert</span><span class="p">(</span><span class="ss">exchange</span><span class="p">(</span><span class="nv">A</span><span class="p">,</span><span class="nv">B</span><span class="p">,</span><span class="nv">R</span><span class="p">)).</span>
 
-<span class="c1">% Calculate profit for a usd-&gt;x-&gt;y-&gt;usd currency chain</span>
+<span class="err">%</span> <span class="nv">Calculate</span> <span class="ss">profit</span> <span class="ss">for</span> <span class="ss">a</span> <span class="ss">usd</span><span class="o">-&gt;</span><span class="ss">x</span><span class="o">-&gt;</span><span class="ss">y</span><span class="o">-&gt;</span><span class="ss">usd</span> <span class="ss">currency</span> <span class="ss">chain</span>
 <span class="ss">profit</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span> <span class="nv">Second</span><span class="p">,</span> <span class="nv">Profit</span><span class="p">)</span> <span class="p">:-</span>
     <span class="ss">exchange</span><span class="p">(</span><span class="ss">'USD'</span><span class="p">,</span><span class="nv">First</span><span class="p">,</span><span class="nv">P1</span><span class="p">),</span>
     <span class="ss">exchange</span><span class="p">(</span><span class="nv">First</span><span class="p">,</span><span class="nv">Second</span><span class="p">,</span><span class="nv">P2</span><span class="p">),</span>
@@ -831,7 +831,7 @@ table {
 
 <span class="p">:-</span> <span class="ss">arb</span><span class="p">.</span>
 
-<span class="c1">% Results (Might change each run):</span>
+<span class="err">%</span> <span class="nv">Results</span> <span class="p">(</span><span class="nv">Might</span> <span class="ss">change</span> <span class="ss">each</span> <span class="ss">run</span><span class="p">)</span><span class="o">:</span>
 <span class="nv">USD</span> <span class="nv">JPY</span> <span class="nv">EUR</span> <span class="nv">USD</span> <span class="mf">1.0071833283714342</span>
 <span class="nv">USD</span> <span class="nv">EUR</span> <span class="nv">JPY</span> <span class="nv">USD</span> <span class="mf">1.007164983424893</span></code></pre></figure>
 
