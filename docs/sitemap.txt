@@ -17,6 +17,7 @@ http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credential
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/
 http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/
 http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/
 http://dangoldin.com/2018/12/09/avoiding-content-overload/
