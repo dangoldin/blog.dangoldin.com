@@ -763,16 +763,16 @@ table {
 
 <li>The previous options still suffered from relying on the hostname so a simple improvement was using symbolic links to point to the appropriate file. With this approach we can still have a common file as well as the individual files but the environment-specific files are importing the shared settings. The big advantage to this approach is that the the symbolic link command only needs to be run once on each server and will always point to the correct file.
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># settings_prod.py
-</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># settings_prod.py</span>
+
 <span class="kn">from</span> <span class="nn">settings_common</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="c1"># Now set the prod only options
-</span><span class="n">CONFIG_OPTION</span> <span class="o">=</span> <span class="s">'prod-setting'</span></code></pre></figure>
+<span class="c"># Now set the prod only options</span>
+<span class="n">CONFIG_OPTION</span> <span class="o">=</span> <span class="s">'prod-setting'</span></code></pre></figure>
 
 
 
-<figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">ln</span> <span class="nt">-s</span> settings_prod.py settings.py</code></pre></figure>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">ln <span class="nt">-s</span> settings_prod.py settings.py</code></pre></figure>
 
 </li>
 
