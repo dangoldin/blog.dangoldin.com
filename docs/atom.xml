@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-12T23:48:03-05:00</updated>
+ <updated>2018-12-12T23:52:09-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
@@ -20,6 +20,36 @@
 <p>Way back when as I was just leaving the finance world to go into tech I attempted a startup with a friend called Scenepeek. The goal was to constantly aggregate all of a city’s events and make them easily searchable and discoverable by people who were looking to do something. Since both of us were in NYC and there are always a ton of events we decided that it would be the perfect candidate. We built a ton of scrapers optimized for all sorts of different sites, created a data model that was able to support nearly any type of event, and ended up launching a pretty crude but functional site. It never succeeded but we learned a ton throughout the process.</p>
 
 <p>I often think back to it given all the knowledge I’ve picked up over the past 10 years and wonder what we could have done differently and whether it would have made a difference. We launched around the time that the first iPhone was released but before apps were allowed and never even considered the mobile angle. I still believe it’s a great idea that was ahead of its time but the fact that there’s still nothing equivalent makes me wonder. The closest would be something like Swarm but that’s not so much about events as it is about places. Maybe the closest equivalent is actually Facebook Events but the events on there feel more private. Scraping every event is difficult but given how much technology and tooling has improved over the past decade it seems there should be something there. The learning experience was great and introduced me to the startup world but a tiny part of me wonders what would have happened had we started a tad later and leaned into mobile.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>The price of AWS vs GitHub</title>
+   <link href="http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/"/>
+   <updated>2018-12-11T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github</id>
+   <content:encoded><![CDATA[
+<p>This is a bit of an odd comparison since they offer two very different services with very different cost models but it’s just incredible how much more expensive AWS is than GitHub. It makes sense that GitHub is significantly cheaper since it’s fundamentally just git hosting and it has virtually zero marginal costs to support new customers. AWS on the other hand is bills entirely based on usage and has to allocate the additional hardware for every customer and is definitely not zero marginal cost. Yet they’re both integral in the modern tech ecosystem and are used extensively by companies and startups.</p>
+
+<p>There’s nothing out of the ordinary here and it’s just useful to take a step back every once in a while and think about the tools and products we use, how they fit into our workflows, and how much we pay for each. In this case they’re both incredibly valuable to us yet one is orders of magnitude cheaper than the other.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>EMR vs Databricks costs</title>
+   <link href="http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/"/>
+   <updated>2018-12-10T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/10/emr-vs-databricks-costs</id>
+   <content:encoded><![CDATA[
+<p>It’s frustrating when vendors introduce their own currency in what seems to be a way to obfuscate pricing. The most recent example is Databricks which offers a slick Spark hosting solution on top of AWS and Azure. Unfortunately, instead of being explicit about the prices they introduced a Databricks Unit (DBU) currency type that then translates into dollars based on the type of usage - ranging from a simple Spark cluster with limited optimizations (Basic Plan) to an interactive one with all sorts of behind the scenes performance tweaks (Data Analytics Plan).</p>
+
+<p>The nice thing is that <a href="https://databricks.com/product/aws-pricing/instance-types">Databricks is transparent</a> about the amount of DBUs per EC2 instance and the price per DBU so it took a bit of data cleanup to dump everything into a <a href="https://docs.google.com/spreadsheets/d/1WnHBixRBXw0PhKfA0XidgNQN1sM0TEHRCxFHL6laEHY/edit#gid=0">spreadsheet</a> and then do the lookups and math to compare the <a href="https://aws.amazon.com/emr/pricing/">EMR</a> vs <a href="https://databricks.com/product/pricing">Databricks</a> pricing.</p>
+
+<p>Turns out that the Databricks Basic plan is comparable to standard EMR - in some cases it’s more expensive and in some cases it’s significantly cheaper. For example an i2.xlarge costs $0.213/hour in AWS EMR but 1.5 DBUs (equivalent to $0.105/hour) in Databricks. At the same time an i3.16xlarge costs $0.270 in AWS EMR but 16 DBUs (equivalent to $1.120/hour) in Databricks. That’s a huge range, the i2.xlarge is less than half the cost in Databricks but the i3.16xlarge is more than 4 times as much in Databricks than in AWS. In general Databricks is more expensive for the larger instance types and cheaper for the smaller ones and I’d be curious to understand the reasoning. Also note that this is just using the Basic plan - Databricks has other plans which are never cheaper than the EMR equivalent.</p>
+
+<p>I’ve included a screenshot of the analysis below but all the data is also available on a shared <a href="https://docs.google.com/spreadsheets/d/1WnHBixRBXw0PhKfA0XidgNQN1sM0TEHRCxFHL6laEHY/edit#gid=0">Google Spreadsheet</a>.</p>
+
+<img src="http://dangoldin.com/assets/static/images/emr-vs-databricks.png" alt="EMR vs Databricks costs by instance type" width="2168" height="1402" layout="responsive"/>
 ]]></content:encoded>
  </entry>
  
