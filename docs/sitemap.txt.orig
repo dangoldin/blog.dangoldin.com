@@ -2,8 +2,6 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/
-http://dangoldin.com/about/
 http://dangoldin.com/lore/
 http://dangoldin.com/about/
 http://dangoldin.com/
@@ -20,7 +18,11 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+<<<<<<< HEAD
+http://dangoldin.com/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/
+=======
 http://dangoldin.com/2018/12/12/scenepeek/
+>>>>>>> 2cc94e268fe212a8e356a11655118caf1f8b39c6
 http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/
 http://dangoldin.com/2018/12/10/emr-vs-databricks-costs/
 http://dangoldin.com/2018/12/09/the-modern-economy-relies-on-information/

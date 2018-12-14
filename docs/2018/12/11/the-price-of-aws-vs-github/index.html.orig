@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Coding puzzle: Word transformation through valid words</title>
-  <meta name="description" content="A neat coding puzzle I heard is to find the shortest path from one word to another where you're only allowed to change a single letter at every step and each...">
-  <meta name="keywords" content="word transformation, coding puzzle, breadth first search" />
+  <title>The price of AWS vs GitHub</title>
+  <meta name="description" content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different busine...">
+  <meta name="keywords" content="github, aws, hosting" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2016/07/17/coding-puzzle-word-transformation-through-valid-words/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Coding puzzle: Word transformation through valid words" />
+  <meta name="twitter:title" content="The price of AWS vs GitHub" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2016/07/17/coding-puzzle-word-transformation-through-valid-words/" />
-  <meta property="og:title"               content="Coding puzzle: Word transformation through valid words" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/" />
+  <meta property="og:title"               content="The price of AWS vs GitHub" />
 
   
-  <meta property="og:description"         content="A neat coding puzzle I heard is to find the shortest path from one word to another where you're only allowed to change a single letter at every step and each step needs to be a valid word. I spent some time this morning writing the code to make it happen." />
-  <meta name="twitter:description"        content="A neat coding puzzle I heard is to find the shortest path from one word to another where you're only allowed to change a single letter at every step and each step needs to be a valid word. I spent some time this morning writing the code to make it happen." />
+  <meta property="og:description"         content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different businesses with very different cost structures but it's still useful to think about." />
+  <meta name="twitter:description"        content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different businesses with very different cost structures but it's still useful to think about." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2016/07/17/coding-puzzle-word-transformation-through-valid-words/",
-  "headline": "Coding puzzle: Word transformation through valid words",
-  "datePublished": "2016-07-17T00:00:00-04:00",
-  "dateModified": "2016-07-17T00:00:00-04:00",
-  "description": "A fun engineering puzzle I heard this week was to write an algorithm that finds the shortest path between two words of the same length where you’re only allo...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/",
+  "headline": "The price of AWS vs GitHub",
+  "datePublished": "2018-12-11T00:00:00-05:00",
+  "dateModified": "2018-12-11T00:00:00-05:00",
+  "description": "This is a bit of an odd comparison since they offer two very different services with very different cost models but it’s just incredible how much more expens...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,86 +728,15 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Coding puzzle: Word transformation through valid words</h1>
-      <span class="date">17 July 2016</span>
+      <h1 class="post-title">The price of AWS vs GitHub</h1>
+      <span class="date">11 December 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>A fun engineering puzzle I heard this week was to write an algorithm that finds the shortest path between two words of the same length where you’re only allowed to change a single letter each step and every word needs to be valid. This morning I decided to have some fun with it and wanted to jot down my thought process going through the exercise in the hope that it provides a bit of perspective on how I approach code.</p>
+<p>This is a bit of an odd comparison since they offer two very different services with very different cost models but it’s just incredible how much more expensive AWS is than GitHub. It makes sense that GitHub is significantly cheaper since it’s fundamentally just git hosting and it has virtually zero marginal costs to support new customers. AWS on the other hand is bills entirely based on usage and has to allocate the additional hardware for every customer and is definitely not zero marginal cost. Yet they’re both integral in the modern tech ecosystem and are used extensively by companies and startups.</p>
 
-<p>The first step was to just do an example in my head to visualize the problem. I started with two short words, dog and cat, and went through the manual transition. The optimal solution is where each letter changed is the final letter - in the case of dog to cat it was simply dog -&gt; dot -&gt; cot -&gt; cat. Now that I had a baseline (and a test), I decided to dive into the actual code.</p>
-
-<p>The immediate realization was that since this was asking for the shortest path I’d need to do a breadth first search, something I haven’t had to touch since some early job interviews. The other realization was that the graph would need to be constructed on the fly. With these two in mind I dove right in.</p>
-
-<p>I broke the problem down into three parts - one was loading the dictionary, two was writing a function that would get the “adjacent” words, and three was doing the search itself. The first function was straightforward since I just loaded in the built in OS X dictionary:</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">load_dictionary</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'/usr/share/dict/words'</span><span class="p">):</span>
-  <span class="n">dictionary</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'/usr/share/dict/words'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-      <span class="n">dictionary</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-  <span class="k">return</span> <span class="n">dictionary</span></code></pre></figure>
-
-<p>While thinking about the adjacent word function I thought back to <a href="http://norvig.com/spell-correct.html">Peter Norvig’s spell checker</a> and remembered how simple yet powerful it was (if you haven’t seen it yet you should take a look - one of the most elegant code examples I’ve seen). All his code needed was a tiny tweak to filter the list of generated words to those in the dictionary.</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">adjacent_words</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">):</span>
-  <span class="n">splits</span> <span class="o">=</span> <span class="p">[(</span><span class="n">word</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-  <span class="n">replaces</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">splits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet</span> <span class="k">if</span> <span class="n">b</span><span class="p">]</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">replaces</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">]</span></code></pre></figure>
-
-<p>Now it was time to do the actual search which took me a bit of time. I knew the theory but it took me a bit of time to translate it into code. And even then I wasn’t happy with how it looked so ended up finding a pretty simple <a href="http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/">Python implementation</a>.</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">bfs_paths</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">):</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(((</span><span class="n">source</span><span class="p">,</span> <span class="p">[</span><span class="n">source</span><span class="p">]),))</span>
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-    <span class="n">v</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">adjacent_words</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">)</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">path</span><span class="p">)]:</span>
-      <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">]))</span></code></pre></figure>
-
-<p>The last part was cleaning up the code and improving its efficiency. The key parts here were using string.lowercase as the universe of letters, replacing a standard list with a collections.dequeue to significantly speed up the “pop” operation, and making the dictionary and alphabet variables locally scoped. As a final test I ran through the dog to cat example and got two additional transformations: dog-&gt;cog-&gt;cag-&gt;cat and dog-&gt;cog-&gt;cot-&gt;cat. The complete code is below but note that I left it open-ended so it will print every path it finds rather than just the shortest one.</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#!/usr/bin/env python
-</span>
-<span class="kn">import</span> <span class="nn">string</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
-
-<span class="k">def</span> <span class="nf">load_dictionary</span><span class="p">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">'/usr/share/dict/words'</span><span class="p">):</span>
-  <span class="n">dictionary</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'/usr/share/dict/words'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-      <span class="n">dictionary</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-  <span class="k">return</span> <span class="n">dictionary</span>
-
-<span class="c1"># Peter Norvig's spellcheck code is amazing:
-# http://norvig.com/spell-correct.html
-# Just use the replace part of it
-</span><span class="k">def</span> <span class="nf">adjacent_words</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">):</span>
-  <span class="n">splits</span> <span class="o">=</span> <span class="p">[(</span><span class="n">word</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-  <span class="n">replaces</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">splits</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">alphabet</span> <span class="k">if</span> <span class="n">b</span><span class="p">]</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">replaces</span> <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">]</span>
-
-<span class="c1"># Had to remember how to get this working again
-# Took a bunch from http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
-</span><span class="k">def</span> <span class="nf">bfs_paths</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">):</span>
-  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(((</span><span class="n">source</span><span class="p">,</span> <span class="p">[</span><span class="n">source</span><span class="p">]),))</span>
-  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
-    <span class="n">v</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">adjacent_words</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">)</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">path</span><span class="p">)]:</span>
-      <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span>
-      <span class="k">else</span><span class="p">:</span>
-        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">]))</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-  <span class="n">alphabet</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lowercase</span>
-  <span class="n">dictionary</span> <span class="o">=</span> <span class="n">load_dictionary</span><span class="p">()</span>
-
-  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bfs_paths</span><span class="p">(</span><span class="s">'dog'</span><span class="p">,</span> <span class="s">'cat'</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">x</span></code></pre></figure>
+<p>There’s nothing out of the ordinary here and it’s just useful to take a step back every once in a while and think about the tools and products we use, how they fit into our workflows, and how much we pay for each. In this case they’re both incredibly valuable to us yet one is orders of magnitude cheaper than the other.</p>
 
     </section>
 
@@ -822,7 +751,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
@@ -839,11 +768,15 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2016/07/16/whatever-happened-to-automatic-login/" title="Whatever happened to automatic login?">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/12/10/emr-vs-databricks-costs/" title="EMR vs Databricks costs">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2016/07/22/double-down-on-your-brand-and-ip/" title="Double down on your brand and IP">Next &rarr;</a></li>
+<<<<<<< HEAD
+        <li class="next"> | <a href="/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/" title="Counting the number of lines of code in a GitHub account">Next &rarr;</a></li>
+=======
+        <li class="next"> | <a href="/2018/12/12/scenepeek/" title="Scenepeek">Next &rarr;</a></li>
+>>>>>>> 2cc94e268fe212a8e356a11655118caf1f8b39c6
       
       </ul>
     </div>
@@ -854,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2016%2F07%2F17%2Fcoding-puzzle-word-transformation-through-valid-words%2F&title=Coding+puzzle%3A+Word+transformation+through+valid+words">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F11%2Fthe-price-of-aws-vs-github%2F&title=The+price+of+AWS+vs+GitHub">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

@@ -2589,8 +2589,13 @@
 <lastmod>2018-12-11T00:00:00-05:00</lastmod>
 </url>
 <url>
+<<<<<<< HEAD
 <loc>/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/</loc>
 <lastmod>2018-12-13T00:00:00-05:00</lastmod>
+=======
+<loc>/2018/12/12/scenepeek/</loc>
+<lastmod>2018-12-12T00:00:00-05:00</lastmod>
+>>>>>>> 2cc94e268fe212a8e356a11655118caf1f8b39c6
 </url>
 <url>
 <loc>/archive/</loc>

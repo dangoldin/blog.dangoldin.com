@@ -57,8 +57,13 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://dangoldin.com/",
   "headline": "Dan Goldin",
+<<<<<<< HEAD
   "datePublished": "2018-12-13T23:09:30-05:00",
   "dateModified": "2018-12-13T23:09:30-05:00",
+=======
+  "datePublished": "2018-12-12T23:54:59-05:00",
+  "dateModified": "2018-12-12T23:54:59-05:00",
+>>>>>>> 2cc94e268fe212a8e356a11655118caf1f8b39c6
   "description": "",
   "author": {
     "@type": "Person",
@@ -725,8 +730,13 @@ table {
   <ul class="posts">
       
           <li>
+<<<<<<< HEAD
+              <a href="/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/">Counting the number of lines of code in a GitHub account</a>
+              <span class="date">13 Dec 2018</span>
+=======
               <a href="/2018/12/12/scenepeek/">Scenepeek</a>
               <span class="date">12 Dec 2018</span>
+>>>>>>> 2cc94e268fe212a8e356a11655118caf1f8b39c6
           </li>
       
           <li>
