@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>The price of AWS vs GitHub</title>
-  <meta name="description" content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different busine...">
-  <meta name="keywords" content="github, aws, hosting" />
+  <title>Counting the number of lines of code in a GitHub account</title>
+  <meta name="description" content="It's surprisingly difficult to count the total number of lines in a GitHub account but using a few shell commands, open source libraries, and Python it's not...">
+  <meta name="keywords" content="git, lines of code, shell script" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="The price of AWS vs GitHub" />
+  <meta name="twitter:title" content="Counting the number of lines of code in a GitHub account" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/" />
-  <meta property="og:title"               content="The price of AWS vs GitHub" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/" />
+  <meta property="og:title"               content="Counting the number of lines of code in a GitHub account" />
 
   
-  <meta property="og:description"         content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different businesses with very different cost structures but it's still useful to think about." />
-  <meta name="twitter:description"        content="Both AWS and GitHub are integral to the modern tech startup yet they charge completely differently. That's not a surprise since they're very different businesses with very different cost structures but it's still useful to think about." />
+  <meta property="og:description"         content="It's surprisingly difficult to count the total number of lines in a GitHub account but using a few shell commands, open source libraries, and Python it's not too bad." />
+  <meta name="twitter:description"        content="It's surprisingly difficult to count the total number of lines in a GitHub account but using a few shell commands, open source libraries, and Python it's not too bad." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/",
-  "headline": "The price of AWS vs GitHub",
-  "datePublished": "2018-12-11T00:00:00-05:00",
-  "dateModified": "2018-12-11T00:00:00-05:00",
-  "description": "This is a bit of an odd comparison since they offer two very different services with very different cost models but it’s just incredible how much more expens...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/",
+  "headline": "Counting the number of lines of code in a GitHub account",
+  "datePublished": "2018-12-13T00:00:00-05:00",
+  "dateModified": "2018-12-13T00:00:00-05:00",
+  "description": "It’s surprisingly difficult to count the number of lines of code in a GitHub account. One day I’d like to come up with a fully automated solution but in the ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,15 +728,26 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">The price of AWS vs GitHub</h1>
-      <span class="date">11 December 2018</span>
+      <h1 class="post-title">Counting the number of lines of code in a GitHub account</h1>
+      <span class="date">13 December 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>This is a bit of an odd comparison since they offer two very different services with very different cost models but it’s just incredible how much more expensive AWS is than GitHub. It makes sense that GitHub is significantly cheaper since it’s fundamentally just git hosting and it has virtually zero marginal costs to support new customers. AWS on the other hand is bills entirely based on usage and has to allocate the additional hardware for every customer and is definitely not zero marginal cost. Yet they’re both integral in the modern tech ecosystem and are used extensively by companies and startups.</p>
+<p>It’s surprisingly difficult to count the number of lines of code in a GitHub account. One day I’d like to come up with a fully automated solution but in the meantime I’ve come up with a workaround that gets me what I need.</p>
 
-<p>There’s nothing out of the ordinary here and it’s just useful to take a step back every once in a while and think about the tools and products we use, how they fit into our workflows, and how much we pay for each. In this case they’re both incredibly valuable to us yet one is orders of magnitude cheaper than the other.</p>
+<ol>
+  <li>Follow the steps in the following <a href="https://stackoverflow.com/a/29012789">Stack Overflow</a> answer to create your own command, cloc-git, that fetches a repo and runs another utility, <a href="https://github.com/AlDanial/cloc">cloc</a>, that counts the number of lines in a git repo.</li>
+  <li>Get all your repos into a single file, one per line.</li>
+  <li>Bulk edit the file to have each line be an invocation of the clock-git command and save them all to a single file. For example, a single line of the file should be of the format: cloc-git git@github.com:dangoldin/dangoldin-blog.git</li>
+  <li>In the command line simply execute the file and pipe into an output file, for example sh loc.sh &gt; lines-of-code</li>
+  <li>Once the previous step succeeds you’ll have a single text file with the output of the cloc-git command for every specified repo but the formatting is not the easiest to follow.</li>
+  <li>Run a simple grep command to get every line containing the SUM line: grep “SUM” lines-of-code and save this to the clipboard</li>
+  <li>Unfortunately the spacing is all off so you can’t use the cut command to do a split via the shell so you have to use a simple programming language. I used python and just dumped the contents into a single variable and ran the following command to split it into lines and then retrieve the last value when splitting by a space.</li>
+  <li>Once you have these values just do a simple sum to get the total number of lines.</li>
+</ol>
+
+<p>It’s not very simple and forces you to use a variety of tools to get to the final result, ranging from reading Stack Overflow documentation to some shell commands to some Python scripting. It’s a good example of where having enough breadth of knowledge and experience with a variety of tools turns a hairy problem into one that can be solved relatively quickly. It’s not a perfect solution but for a one-off I’m happy with the results.</p>
 
     </section>
 
@@ -751,7 +762,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##meta-ref">#meta </a></li>
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
@@ -768,11 +779,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/12/10/emr-vs-databricks-costs/" title="EMR vs Databricks costs">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/12/11/the-price-of-aws-vs-github/" title="The price of AWS vs GitHub">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/" title="Counting the number of lines of code in a GitHub account">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -783,7 +794,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F11%2Fthe-price-of-aws-vs-github%2F&title=The+price+of+AWS+vs+GitHub">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F13%2Fcounting-the-number-of-lines-of-code-in-a-github-account%2F&title=Counting+the+number+of+lines+of+code+in+a+GitHub+account">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
