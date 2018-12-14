@@ -14,7 +14,6 @@ Intall required gems:
 gem install bundler
 gem install jekyll
 gem install nokogiri
-gem install nokogiri
 gem install fastimage
 gem install jekyll-redirect-from
 gem install jekyll-sitemap
