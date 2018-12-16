@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>New code is not a linear increase in complexity</title>
+  <meta name="description" content="Adding new code often feels easier at the moment but it can significantly increase the branching, and thus complexity, of your code.">
+  <meta name="keywords" content="software engineering, code complexity" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/15/new-code-is-not-a-linear-increase-in-complexity/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="New code is not a linear increase in complexity" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/15/new-code-is-not-a-linear-increase-in-complexity/" />
+  <meta property="og:title"               content="New code is not a linear increase in complexity" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="Adding new code often feels easier at the moment but it can significantly increase the branching, and thus complexity, of your code." />
+  <meta name="twitter:description"        content="Adding new code often feels easier at the moment but it can significantly increase the branching, and thus complexity, of your code." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2018-12-15T22:45:44-05:00",
-  "dateModified": "2018-12-15T22:45:44-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/15/new-code-is-not-a-linear-increase-in-complexity/",
+  "headline": "New code is not a linear increase in complexity",
+  "datePublished": "2018-12-15T00:00:00-05:00",
+  "dateModified": "2018-12-15T00:00:00-05:00",
+  "description": "When it comes to software development we often add features simply because it’s easy. And almost always they are - just add an additional optional argument o...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,29 +726,72 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">New code is not a linear increase in complexity</h1>
+      <span class="date">15 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>When it comes to software development we often add features simply because it’s easy. And almost always they are - just add an additional optional argument or two to a function and suddenly you’ve expanded your application’s functionality. The catch is that this assumes that this new code is a linear increase in complexity but it’s not.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>Computer science has the concept of “<a href="https://en.wikipedia.org/wiki/Big_O_notation">Big O notation</a>” to measure how a function behaves as a function of it’s input. A “Big O” of O(N) is linear while O(N^2) is quadratic. The implicit goal is that you should strive to write your code to minimize it’s complexity with the ultimate goal being O(1). The same approach can be applied to code complexity. How much will the new functionality affect the complexity of the code? A seemingly simple code change may change the “exponent” of your code’s complexity and a complex code change may actually reduce your code complexity. The code change is not always correlated with the complexity that is being introduced.</p>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p><a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">Cyclomatic complexity</a> was a concept introduced in the 70s to measure code complexity. It does so by measuring the number of branches in your code. A simple example is to think about a simple “if” statement: just adding a condition adds a new flow to your code which may have further implications down the line. The concept is more than 40 years old and is still incredibly useful in keeping ourselves honest.</p>
 
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>Adding a single feature is often easy and so we do it but we don’t consider the fact that dozens of these small changes increase the overall complexity of the code significantly. This makes future code changs more difficult to make, test, and maintain. It’s critical to think of the code you’re writing not purely in terms of the complexity of the code itself but of the complexity it introduces to the the rest of the code base.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/14/state-of-tech-in-2018/" title="State of tech in 2018">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F15%2Fnew-code-is-not-a-linear-increase-in-complexity%2F&title=New+code+is+not+a+linear+increase+in+complexity">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -824,7 +867,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
