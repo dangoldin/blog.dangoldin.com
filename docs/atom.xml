@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-15T22:45:44-05:00</updated>
+ <updated>2018-12-15T23:51:47-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Overanalyzing Medium's tag suggestions</title>
+   <link href="http://dangoldin.com/2018/12/15/overanalyzing-mediums-tag-suggestions/"/>
+   <updated>2018-12-15T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/15/overanalyzing-mediums-tag-suggestions</id>
+   <content:encoded><![CDATA[
+<div class="right10">
+    <img src="http://dangoldin.com/assets/static/images//medium-suggestions-startup.png" alt="Medium's tag suggestions for startup" layout="fixed" width="176" height="200"/>
+</div>
+
+<p>While I keep my primary blog on dangoldin.com I also cross post to Medium to get some more views but also because I’m curious to compare the performance. While adding tags to one of these posts I typed in startup and saw the following suggestions and their frequencies: Startup (334K), Startup Lessons (10.8K), Startup Life (3.6K), Startup Marketing (2.3K), and Startup Ideas (1.1K).</p>
+
+<p>The frequencies stood out. It makes sense that the generic term “startup” would have the highest volume but it’s interesting to see how the others compare. I was surprised that the second highest, Startup Lessons, was only 3% of the first one. I was also surprised that the next two were Startup Lessons and Startup Life - they’re both about the same topic but it seems lessons is someone writing about the past while life is someone writing about the present. I suspect it’s catharsis where founders want to write about their mistakes while far fewer want, or have the time, to write about their current startup experience. I know when I was working on my startup I definitely didn’t have the time for writing but at the end it felt great to do a brain dump of everything I learned along the way.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>New code is not a linear increase in complexity</title>
