@@ -738,12 +738,12 @@ table {
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">    <span class="k">def</span> <span class="nf">add_usage_type_group</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span>
-        <span class="c"># Get rid of the nan</span>
-        <span class="n">all_usage_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">'UsageType'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="c1"># Get rid of the nan
+</span>        <span class="n">all_usage_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">'UsageType'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">)</span>
         <span class="n">d</span><span class="p">[</span><span class="s">'usage_type_group'</span><span class="p">]</span> <span class="o">=</span> <span class="s">''</span>
 
-        <span class="c"># Simple group assignment using substring</span>
-        <span class="n">usage_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s">'DataTransfer'</span><span class="p">,</span> <span class="s">'Requests'</span><span class="p">,</span> <span class="s">'In-Bytes'</span><span class="p">,</span> <span class="s">'Out-Bytes'</span><span class="p">,</span> <span class="s">'BoxUsage'</span><span class="p">]</span>
+        <span class="c1"># Simple group assignment using substring
+</span>        <span class="n">usage_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s">'DataTransfer'</span><span class="p">,</span> <span class="s">'Requests'</span><span class="p">,</span> <span class="s">'In-Bytes'</span><span class="p">,</span> <span class="s">'Out-Bytes'</span><span class="p">,</span> <span class="s">'BoxUsage'</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">usage_type</span> <span class="ow">in</span> <span class="n">all_usage_types</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">usage_group</span> <span class="ow">in</span> <span class="n">usage_groups</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">usage_group</span> <span class="ow">in</span> <span class="n">usage_type</span><span class="p">:</span>
@@ -752,8 +752,8 @@ table {
 
     <span class="k">def</span> <span class="nf">add_instance_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span>
-        <span class="c"># Extract from usage type which will be like "APS1-BoxUsage:c4.large"</span>
-        <span class="n">all_usage_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">'UsageType'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="c1"># Extract from usage type which will be like "APS1-BoxUsage:c4.large"
+</span>        <span class="n">all_usage_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s">'UsageType'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">)</span>
         <span class="n">d</span><span class="p">[</span><span class="s">'instance_type'</span><span class="p">]</span> <span class="o">=</span> <span class="s">''</span>
 
         <span class="k">for</span> <span class="n">usage_type</span> <span class="ow">in</span> <span class="n">all_usage_types</span><span class="p">:</span>
@@ -765,8 +765,8 @@ table {
 
 <p>I was also a bit curious about this issue and wrote a toy <a href="https://github.com/dangoldin/code-samples/blob/master/iteration_filter_testing.py">Python script</a> to compare the various implementations of a simple for loop filter. The data reinforces this conflict between efficiency and expressiveness. The script generates a random integer array and then filters it down to two smaller arrays - one for numbers divisible by 100 and one for numbers divisible by 200. The naive way is to do a single for loop and then have if statements for each condition but the slightly improved version is to realize that 200 is a multiple of 100 and one can nest that check. The more Pythonic way of doing these is through a list comprehension and I gave that shot as well. The last attempt was even more functional and do the exercise using a filter/lambda combination.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#! /usr/bin/env python</span>
-
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#! /usr/bin/env python
+</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">timeit</span>
 

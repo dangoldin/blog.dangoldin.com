@@ -2,9 +2,9 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/
-http://dangoldin.com/about/
 http://dangoldin.com/lore/
+http://dangoldin.com/about/
+http://dangoldin.com/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
 http://dangoldin.com/tags/
@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/14/state-of-tech-in-2018/
 http://dangoldin.com/2018/12/13/counting-the-number-of-lines-of-code-in-a-github-account/
 http://dangoldin.com/2018/12/12/scenepeek/
 http://dangoldin.com/2018/12/11/the-price-of-aws-vs-github/
