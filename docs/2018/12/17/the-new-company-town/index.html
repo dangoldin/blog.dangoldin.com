@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Adding attachments to django-postman</title>
-  <meta name="description" content="We built a small app that let us add attachments to django-postman by leveraging the the jquery-file-upload library.">
-  <meta name="keywords" content="Django, python, django-postman, attachments, jquery file upload" />
+  <title>The new company town</title>
+  <meta name="description" content="Amazon is vertically integrating our lives and their latest moves are this century's version of the company town.">
+  <meta name="keywords" content="amazon, company town" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/05/17/adding-attachments-to-django-postman/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/17/the-new-company-town/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Adding attachments to django-postman" />
+  <meta name="twitter:title" content="The new company town" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/05/17/adding-attachments-to-django-postman/" />
-  <meta property="og:title"               content="Adding attachments to django-postman" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/17/the-new-company-town/" />
+  <meta property="og:title"               content="The new company town" />
 
   
-  <meta property="og:description"         content="We built a small app that let us add attachments to django-postman by leveraging the the jquery-file-upload library." />
-  <meta name="twitter:description"        content="We built a small app that let us add attachments to django-postman by leveraging the the jquery-file-upload library." />
+  <meta property="og:description"         content="Amazon is vertically integrating our lives and their latest moves are this century's version of the company town." />
+  <meta name="twitter:description"        content="Amazon is vertically integrating our lives and their latest moves are this century's version of the company town." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/05/17/adding-attachments-to-django-postman/",
-  "headline": "Adding attachments to django-postman",
-  "datePublished": "2013-05-17T00:00:00-04:00",
-  "dateModified": "2013-05-17T00:00:00-04:00",
-  "description": "After doing a round of customer development for Makers Alley, we discovered that customers really wanted to communicate with makers about their pieces. In tr...",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/17/the-new-company-town/",
+  "headline": "The new company town",
+  "datePublished": "2018-12-17T00:00:00-05:00",
+  "dateModified": "2018-12-17T00:00:00-05:00",
+  "description": "A few months ago I read an article describing Amazon’s potential move to offer home insurance. The premise is that Amazon is incredibly strong operationally ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,140 +728,15 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Adding attachments to django-postman</h1>
-      <span class="date">17 May 2013</span>
+      <h1 class="post-title">The new company town</h1>
+      <span class="date">17 December 2018</span>
     </div>
 
     <section class="post-content">
       
-<p>After doing a round of customer development for <a href="https://makersalley.com/" target="_blank">Makers Alley</a>, we discovered that customers really wanted to communicate with makers about their pieces. In true MVP fashion, we got the first iteration out in a day by using <a href="https://bitbucket.org/psam/django-postman/overview" target="_blank">django-postman</a> to handle the user to user communication. Within a few days, we quickly discovered that text messages weren’t enough and we needed to support file attachments, otherwise makers can’t easily show their designs and customers can’t share what they like. Unfortunately, django-postman does not support attachments and we didn’t want to have to incorporate another messaging library. Another constraint was that we were already using the awesome <a href="http://blueimp.github.io/jQuery-File-Upload/" target="_blank">jQuery File Upload</a> library (in truth, a modified <a href="https://github.com/sigurdga/django-jquery-file-upload" target="_blank">Django version by Sigurd Gartmann</a>) to allow makers to upload images when managing their storefronts.</p>
+<p>A few months ago I read an article describing Amazon’s <a href="https://www.theinformation.com/articles/amazon-considers-offering-home-insurance">potential move</a> to offer home insurance. The premise is that Amazon is incredibly strong operationally and both their integration of Echo into all things home and their acquisition of Ring gives them valuable signals that the typical insurer does not have.</p>
 
-<p>We wanted to leverage our existing file upload system but also incorporate it with the django-postman messaging library without having to modify any of the code in django-postman. We weren’t able to find <a href="http://stackoverflow.com/questions/16570019/how-can-i-modify-django-postman-to-allow-sending-of-attachments/" target="_blank">anything on StackOverflow</a> that dealt with this issue so we were left with writing our own. Here’s the approach we ended up taking that might come in handy for anyone else running into the same problem. The code needs some cleaning and I need to add some error checking but I’m sharing it with the excuse of “perfect is the enemy of good.”</p>
-
-<p>We built a new app, postman_attachments, that would serve as the intermediary between the file upload piece and django-postman.</p>
-
-<ul>
-    <li>
-        models.py: Attachment that would map the django-postman Message model to an uploaded file
-        
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Attachment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">postman_models</span><span class="o">.</span><span class="n">Message</span><span class="p">)</span>
-    <span class="n">attachment</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">fileupload_models</span><span class="o">.</span><span class="n">GenericFile</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">attachment</span><span class="o">.</span><span class="n">__unicode__</span><span class="p">()</span></code></pre></figure>
-
-    </li>
-    <li>
-        api.py: Versions of pm_write and pm_broadcast that would do the same work as the original but would also map the attachments between
-        
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">pma_write</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">recipient</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">file_ids</span><span class="o">=</span><span class="p">[],</span> <span class="n">body</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="n">skip_notification</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-        <span class="n">auto_archive</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">auto_delete</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">auto_moderators</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-
-        <span class="c">### Same code as in pm_write</span>
-
-        <span class="k">for</span> <span class="n">file_id</span> <span class="ow">in</span> <span class="n">file_ids</span><span class="p">:</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="n">GenericFile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">file_id</span><span class="p">)</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">Attachment</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span><span class="n">attachment</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-            <span class="n">a</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></code></pre></figure>
-
-    </li>
-    <li>
-        forms.py: In our case, we needed to tweak the FullReplyForm and created our own version that included a new “file_ids” field to hold the ids of the uploaded files. The full solution would need to make versions of the other forms included in django-postman.
-        
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">allow_copies</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="s">'POSTMAN_DISALLOW_COPIES_ON_REPLY'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">FullReplyImageForm</span><span class="p">(</span><span class="n">BaseReplyForm</span><span class="p">):</span>
-    <span class="s">"""The complete reply form."""</span>
-    <span class="k">if</span> <span class="n">allow_copies</span><span class="p">:</span>
-        <span class="n">recipients</span> <span class="o">=</span> <span class="n">CommaSeparatedUserField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s">"Additional recipients"</span><span class="p">),</span> <span class="n">_</span><span class="p">(</span><span class="s">"Additional recipient"</span><span class="p">)),</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
-    <span class="n">file_ids</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">HiddenInput</span><span class="p">())</span>
-
-    <span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="n">BaseReplyForm</span><span class="o">.</span><span class="n">Meta</span><span class="p">):</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="p">([</span><span class="s">'recipients'</span><span class="p">]</span> <span class="k">if</span> <span class="n">allow_copies</span> <span class="k">else</span> <span class="p">[])</span> <span class="o">+</span> <span class="p">[</span><span class="s">'subject'</span><span class="p">,</span> <span class="s">'body'</span><span class="p">,</span> <span class="s">'file_ids'</span><span class="p">]</span>
-
-    <span class="nd">@transaction.commit_on_success</span>
-    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recipient</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">auto_moderators</span><span class="o">=</span><span class="p">[]):</span>
-        <span class="c">### Bunch of code from original save method in BaseWriteForm from django-postman</span>
-        <span class="n">file_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'file_ids'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
-        <span class="c">### Bunch of code from original save method in BaseWriteForm from django-postman</span>
-        <span class="k">for</span> <span class="n">file_id</span> <span class="ow">in</span> <span class="n">file_ids</span><span class="p">:</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="n">GenericFile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">file_id</span><span class="p">)</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">Attachment</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="p">,</span><span class="n">attachment</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
-            <span class="n">a</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></code></pre></figure>
-
-    </li>
-</ul>
-
-<p>In addition, we needed to override the default django-postman templates to display the attachments for a message as well as include the necessary javascript to deal with the jQuery File Upload piece.</p>
-
-<ul>
-    <li>view.html
-        
-<figure class="highlight"><pre><code class="language-html" data-lang="html">        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pm_body"</span><span class="nt">&gt;</span>{{ message.body|linebreaksbr }}<span class="nt">&lt;/div&gt;</span>
-      {% if message.attachment_set.all %}
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pm_attachments"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;span&gt;</span>Attachments<span class="nt">&lt;/span&gt;</span>
-          <span class="nt">&lt;ul&gt;</span>
-            {% for a in message.attachment_set.all %}
-              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ a.attachment.file.url }}"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>{{ a.attachment.file.url }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            {% endfor %}
-          <span class="nt">&lt;/ul&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-      {% endif %}</code></pre></figure>
-
-    </li>
-
-    <li>view.js
-        
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="kd">var</span> <span class="nx">upload_ids</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploaddone'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Done uploading product images'</span><span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-      <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
-    <span class="p">});</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span> <span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#id_file_ids'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span> <span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments td.preview'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Enabling input'</span><span class="p">);</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">'#reply-form button[type="submit"]'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
-    <span class="p">};</span>
-  <span class="p">});</span>
-
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploadstart'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Disabling input'</span><span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#reply-form button[type="submit"]'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">,</span><span class="s1">'disabled'</span><span class="p">);</span>
-  <span class="p">});</span>
-
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploadpreviewdone'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments td.preview'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">product_image_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments tbody.files tr'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
-    <span class="p">};</span>
-  <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
-
-    </li>
-</ul>
-
-<p>The last minor thing we needed to do was update our urls.py file to override the standard django-postman urls to have them use our custom form.</p>
-
-<ul>
-    <li>urls.py
-        
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
-        <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
-        <span class="n">name</span><span class="o">=</span><span class="s">'postman_reply'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
-        <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
-        <span class="n">name</span><span class="o">=</span><span class="s">'postman_view_conversation'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>
-
-    </li>
-</ul>
-
-<p>I’d love to release this publicly but don’t have much experience creating standalone Django apps. If you have experience in open sourcing Django apps let me know - I’d love to get this out there as a standalone app or somehow incorporated into django-postman.</p>
+<p>I couldn’t help but think back to the 19th century where companies were large enough to <a href="https://en.wikipedia.org/wiki/Company_town">own</a> all the property in a town and have their employees live there. As one can imagine it was extremely exploitative since you had the company that paid you also collect money from you for your housing. They died down in the 20th century but this feels like a step in that direction. We’re clearly not all going to work for Amazon but the idea of having a single company vertically integrating around our lives seems a bit dystopian.</p>
 
     </section>
 
@@ -876,9 +751,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##python-ref">#python </a></li>
-    
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
@@ -895,11 +768,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/05/15/googles-free-adwords-credits/" title="Google's “free” Adwords credits">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2018/12/16/stuck-on-a-problem-take-a-break/" title="Stuck on a problem? Take a break">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/05/22/save-my-reading-spot-damn-it/" title="Save my reading spot, damn it">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -910,7 +783,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F05%2F17%2Fadding-attachments-to-django-postman%2F&title=Adding+attachments+to+django-postman">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F17%2Fthe-new-company-town%2F&title=The+new+company+town">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
