@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2018/12/21/global-roaming/
+http://dangoldin.com/2018/12/21/fixing-spotty-airbnb-wifi/
 http://dangoldin.com/2018/12/20/tech-startups-are-not-the-only-ones-taking-risks/
 http://dangoldin.com/2018/12/19/new-iteration-of-devops/
 http://dangoldin.com/2018/12/19/facebooks-latest-hit/
