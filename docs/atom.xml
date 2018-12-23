@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-21T22:10:48-05:00</updated>
+ <updated>2018-12-22T22:51:41-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Edge moving to Chromium</title>
+   <link href="http://dangoldin.com/2018/12/22/edge-moving-to-chromium/"/>
+   <updated>2018-12-22T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/22/edge-moving-to-chromium</id>
+   <content:encoded><![CDATA[
+<p>I’m a bit late to the party but it’s unbelievable that Microsoft is going to <a href="https://www.windowscentral.com/microsoft-building-chromium-powered-web-browser-windows-10">move future versions</a> of Edge to be built on top of Chromium. This is shocking. I can’t separate Internet Explorer from Microsoft. In fact, Microsoft built, launched, and bundled Internet Explorer to drive Netscape into the ground which led to the famous Microsoft <a href="https://en.wikipedia.org/wiki/United_States_v._Microsoft_Corp.">antitrust case</a>. It feels as if Microsoft is giving up on Internet Explorer and it’s incredibly surprising. This is bigger than any of the other moves Microsoft has done to show they are a very different company. This is more significant than the GitHub acquisition. This is more significant than supporting their applications on operating systems other than windows. This is moving away from 20 years of history and it shows how different the current Microsoft is from the one of the past. I would have loved to have been a fly on the wall when this decision was discussed - there must have been so much passion in that room. There must have been so many viewpoints: ranging from those that have been working on IE for the past 20 years, to the product team that’s responsible for the future of IE, to the executive team that needed to make the call. It really is surprising that they had the strength and conviction to be able to acknowledge that they’d be better off using Chromium.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Global roaming</title>
