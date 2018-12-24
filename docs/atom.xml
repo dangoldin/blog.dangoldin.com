@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-22T23:09:03-05:00</updated>
+ <updated>2018-12-23T23:18:13-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Quora's revenue model</title>
+   <link href="http://dangoldin.com/2018/12/23/quoras-revenue-model/"/>
+   <updated>2018-12-23T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/23/quoras-revenue-model</id>
+   <content:encoded><![CDATA[
+<p>While browsing a Hacker News thread about Quora I came across the following exchange:</p>
+
+<img src="http://dangoldin.com/assets/static/images/hackernews-quora-revenue-model.png" alt="Hacker News thread about Quora's revenue model" width="2604" height="676" layout="responsive"/>
+
+<p>I had always assumed Quora made money through ads and didn’t even consider that they had another revenue stream. The Hacker News thread indicates that they have a substantial revenue stream coming from selling the Q&amp;A data to AI/ML companies but I haven’t been able to find anything else that supports this. Part of the difficulty in searching for results is that just by typing in “Quora” the results are biased towards Quora itself.</p>
+
+<p>If, in fact, Quora does sell its Q&amp;A data it’s an interesting move - it’s similar to Duolingo’s revenue model which gives users free language learning exercises and in turns sells translation services powered by those same users.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>HackerRank</title>
