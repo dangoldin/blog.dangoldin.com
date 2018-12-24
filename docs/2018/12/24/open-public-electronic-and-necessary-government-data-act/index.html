@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Open, Public, Electronic, and Necessary Government Data Act</title>
+  <meta name="description" content="The US Congress recently passed an act to make government data available and accessible. There's a lot left but it's a great start.">
+  <meta name="keywords" content="open data, government, databases" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/24/open-public-electronic-and-necessary-government-data-act/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Open, Public, Electronic, and Necessary Government Data Act" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/24/open-public-electronic-and-necessary-government-data-act/" />
+  <meta property="og:title"               content="Open, Public, Electronic, and Necessary Government Data Act" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="The US Congress recently passed an act to make government data available and accessible. There's a lot left but it's a great start." />
+  <meta name="twitter:description"        content="The US Congress recently passed an act to make government data available and accessible. There's a lot left but it's a great start." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2018-12-24T00:02:36-05:00",
-  "dateModified": "2018-12-24T00:02:36-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/24/open-public-electronic-and-necessary-government-data-act/",
+  "headline": "Open, Public, Electronic, and Necessary Government Data Act",
+  "datePublished": "2018-12-24T00:00:00-05:00",
+  "dateModified": "2018-12-24T00:00:00-05:00",
+  "description": "The US Congress recently passed HR-4174 (The Open, Public, Electronic, and Necessary Government Data Act) which is intended to make all public government dat...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,22 +726,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Open, Public, Electronic, and Necessary Government Data Act</h1>
+      <span class="date">24 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>The US Congress recently <a href="https://e-pluribusunum.org/2018/12/21/congress-made-open-government-data-the-default-in-the-united-states/">passed</a> <a href="https://www.govtrack.us/congress/bills/115/hr4174">HR-4174</a> (The Open, Public, Electronic, and Necessary Government Data Act) which is intended to make all public government data available and accessible. Over the years I’ve done my fair share of poking around various government datasets - both public and private - and while the data was generally available it was rarely accessible. More often than not the data would be available via a scanned PDF which required some heavy OCR work to extract anything useful or the slightly easier PDF parsing code. Even when the data was in CSV files I often ran into formatting issues or inconsistency between the column documentation and the data contents themselves. The most important available datasets will always have people willing to go through the grunt work of cleaning them up but it’s the fringe datasets that end up having too much friction for researchers and developers to dig into them. I’m glad the government is moving to make the data accessible as well since it is the strongest way to make it actionable.</p>
+
+<p>It’s definitely not going to perfect to start as it’s incredibly difficult to get consistent and clean data. Imagine a survey being done every decade. An obvious way to structure it is to have a set of files for each decade containing a description of the available fields and then a file containing the data itself. You can have each survey’s files being internally consistent but there are no guarantees that they will be consistent across surveys. What if some fields or questions were renamed, added, or removed? That makes it more difficult to compare the results over time. To maintain consistency across years all of the surveys would need to be a part of the same data set and use consistent values and formatting in order to make it dead simple to compare one year to another.</p>
+
+<p>In an ideal world the datasets would actually come in prepackaged as database dumps. Then you’d be able to just load into your database with the appropriate database definitions, foreign keys, and field constraints. I can’t wait till the day all government data is in <a href="https://en.wikipedia.org/wiki/Third_normal_form">third normal form</a>.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##data-ref">#data </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/23/quoras-revenue-model/" title="Quora's revenue model">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F24%2Fopen-public-electronic-and-necessary-government-data-act%2F&title=Open%2C+Public%2C+Electronic%2C+and+Necessary+Government+Data+Act">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -817,7 +865,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
