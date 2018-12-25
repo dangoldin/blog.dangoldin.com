@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Calendars as streaming events</title>
+  <meta name="description" content="All calendars are are event streams and I'd love to be able to interact with them in a way taking advantage of that.">
+  <meta name="keywords" content="calendars, event streams" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/24/calendars-as-streaming-events/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Calendars as streaming events" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/24/calendars-as-streaming-events/" />
+  <meta property="og:title"               content="Calendars as streaming events" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="All calendars are are event streams and I'd love to be able to interact with them in a way taking advantage of that." />
+  <meta name="twitter:description"        content="All calendars are are event streams and I'd love to be able to interact with them in a way taking advantage of that." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2018-12-24T23:04:57-05:00",
-  "dateModified": "2018-12-24T23:04:57-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/24/calendars-as-streaming-events/",
+  "headline": "Calendars as streaming events",
+  "datePublished": "2018-12-24T00:00:00-05:00",
+  "dateModified": "2018-12-24T00:00:00-05:00",
+  "description": "I like calendars. They appeal to both my sense of organization and efficiency but also to the actual depth of the technical implementation. It’s not easy cre...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,29 +726,66 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Calendars as streaming events</h1>
+      <span class="date">24 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
-
-<p>Here are some side projects I’ve been hacking on:</p>
-
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
-
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>I like calendars. They appeal to both my sense of organization and efficiency but also to the actual depth of the technical implementation. It’s not easy creating a good calendar application - you have to think about all sorts of edge cases - for example rescheduling an event that was part of a recurring series or the usual time zone nonsense. A thought I keep going back to is treating calendars as event streams. Right now I have a personal calendar as well as a few others that are shared with different groups. Using code it’s possible to collect the events across these calendars and then apply various operations on top of them - find events that overlap, find people that overlap, analyze the event frequencies, etc but this has to be done through very specific logic. I love the idea of calendars just consistent of event streams. That way you can apply transformations on top of the streams to answer any questions you have. I imagine this to be a form of lazy list expression or even something like a SQL query that would allow me to take all the events I have going on and apply a map/reduce like operation to get what I need. This still feels a bit abstract and I need to flesh out the idea a bit more but I feel there’s something here - just being able to treat your calendar as a single stream and provide a simple way to act on top of them.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/23/quoras-revenue-model/" title="Quora's revenue model">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2018/12/24/open-public-electronic-and-necessary-government-data-act/" title="Open, Public, Electronic, and Necessary Government Data Act">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F24%2Fcalendars-as-streaming-events%2F&title=Calendars+as+streaming+events">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -824,7 +861,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

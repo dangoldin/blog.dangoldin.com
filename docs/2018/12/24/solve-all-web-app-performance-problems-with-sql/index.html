@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Solve all web app performance problems with SQL</title>
+  <meta name="description" content="More often than not web application performance problems can be solved by digging into, and optimizing, the queries.">
+  <meta name="keywords" content="sql, web performnace" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/24/solve-all-web-app-performance-problems-with-sql/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Solve all web app performance problems with SQL" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/24/solve-all-web-app-performance-problems-with-sql/" />
+  <meta property="og:title"               content="Solve all web app performance problems with SQL" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="More often than not web application performance problems can be solved by digging into, and optimizing, the queries." />
+  <meta name="twitter:description"        content="More often than not web application performance problems can be solved by digging into, and optimizing, the queries." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2018-12-24T23:04:57-05:00",
-  "dateModified": "2018-12-24T23:04:57-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/24/solve-all-web-app-performance-problems-with-sql/",
+  "headline": "Solve all web app performance problems with SQL",
+  "datePublished": "2018-12-24T00:00:00-05:00",
+  "dateModified": "2018-12-24T00:00:00-05:00",
+  "description": "The title is clearly tongue in cheek but a very large number of web application issues can be solved through better SQL. Web applications performance problem...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,29 +726,66 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Solve all web app performance problems with SQL</h1>
+      <span class="date">24 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
-
-<p>Here are some side projects I’ve been hacking on:</p>
-
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
-
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>The title is clearly tongue in cheek but a very large number of web application issues can be solved through better SQL. Web applications performance problems are either UI or API related. And if the performance is on the API side it’s likely due to slow queries. The majority of endpoints are doing some form of database interaction and many are making multiple database calls. It only takes one of these to be slow to make the entire application feel sluggish - especially if you have lots of concurrent requests to this endpoint. This often happens when you rely on an ORM to manage your database reads and writes without understanding the queries that are actually being made. An ORM makes it much easier to get started but to get the best performance you need to go lower level and write your own queries. The way to dig into these is to look at the slow query log which gives you (at least in MySQL) both the query, the duration, and the amount of rows examined and snet. Sorting by the query duration gives you a the worst performing queries and then it’s up to you to address them. Sometimes it’s adding a few indices to a table. Other times it’s rewriting the query to be more efficient. Even more rarely it highlights a weakness in the application logic that requires rethinking a particular approach.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/24/open-public-electronic-and-necessary-government-data-act/" title="Open, Public, Electronic, and Necessary Government Data Act">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F24%2Fsolve-all-web-app-performance-problems-with-sql%2F&title=Solve+all+web+app+performance+problems+with+SQL">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -824,7 +861,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
