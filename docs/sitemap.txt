@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2018/12/25/top-posts-of-2018/
+http://dangoldin.com/2018/12/25/happy-holidays-from-visual-studio-code/
 http://dangoldin.com/2018/12/24/solve-all-web-app-performance-problems-with-sql/
 http://dangoldin.com/2018/12/24/open-public-electronic-and-necessary-government-data-act/
 http://dangoldin.com/2018/12/24/calendars-as-streaming-events/
