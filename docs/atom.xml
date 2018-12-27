@@ -3,13 +3,31 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-26T22:29:06-05:00</updated>
+ <updated>2018-12-26T23:10:22-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Secret management across computers</title>
+   <link href="http://dangoldin.com/2018/12/26/secret-management-across-computers/"/>
+   <updated>2018-12-26T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/26/secret-management-across-computers</id>
+   <content:encoded><![CDATA[
+<p>As part of the Cyber Monday nonsense I convinced myself to purchase a ThinkPad in order to run Linux. I have a separate post coming about the transition from OS X to Ubuntu but one area I’m still trying to get under control is secret management. I have a ton of code on the old computer and almost all of it is on GitHub. The biggest challenge so far has been migrating secrets across computers. For example I have a variety of scripts that talk to Slack or the Google ecosystem which require their own tokens and keys. Some are straightforward to reissue - for example AWS - while others require a fair amount of frustrated searching. I don’t have the answer here but have been thinking about the following approaches to make things easier and would love to know how others handle this.</p>
+
+<ul>
+  <li><strong>Just step it up and get the new secrets</strong>. For each project I have I can look at the configuration file and determine exactly what I need and then issue the appropriate credentials from the various services. I know this will work but just feels like a lot of grunt work and not very interesting.</li>
+  <li><strong>Move all secrets to Dropbox</strong>. I can just move all the secrets to Dropbox so they automatically sync across my computers. It will work but will require me figuring out a naming convention and then rewrite a bunch of my scripts to allow for a explicitly named configuration file. The nice thing is that this will automatically update as I add or modify the existing credential files.</li>
+  <li><strong>Encrypt and upload to GitHub</strong>. Rather than relying on Dropbox I can encrypt the secrets and store them in GitHub. I don’t like the fact that I’m actually uploading secrets to a public repo, even if they are encrypted - it just feels dangerous.</li>
+  <li><strong>Keep all secrets to S3</strong>. Similar to the others but this feels more private than the others. I still don’t like the fact that I’d have to come up with a naming convention to keep things organized but this seems like a reasonable approach.</li>
+  <li><strong>Host a personal copy of <a href="https://www.vaultproject.io">Vault</a> or an equivalent system</strong>. I messed around with Vault years ago and it’s a full featured application to improve secret management that comes with a role based system. This may be overkill for what I’m trying to do but I’m tempted since it will give me experience with something new and can serve as a foundation for future projects.</li>
+</ul>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Visualizing my blog: 2018 edition</title>

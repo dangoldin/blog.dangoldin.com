@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Secret management across computers</title>
+  <meta name="description" content="While setting up a new computer a problem I ran into was transferring secrets from one computer to another and am looking for a system to help here.">
+  <meta name="keywords" content="secret management" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/26/secret-management-across-computers/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Secret management across computers" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/26/secret-management-across-computers/" />
+  <meta property="og:title"               content="Secret management across computers" />
 
+  
+  <meta property="og:description"         content="While setting up a new computer a problem I ran into was transferring secrets from one computer to another and am looking for a system to help here." />
+  <meta name="twitter:description"        content="While setting up a new computer a problem I ran into was transferring secrets from one computer to another and am looking for a system to help here." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2018-12-26T23:10:22-05:00",
-  "dateModified": "2018-12-26T23:10:22-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/26/secret-management-across-computers/",
+  "headline": "Secret management across computers",
+  "datePublished": "2018-12-26T00:00:00-05:00",
+  "dateModified": "2018-12-26T00:00:00-05:00",
+  "description": "As part of the Cyber Monday nonsense I convinced myself to purchase a ThinkPad in order to run Linux. I have a separate post coming about the transition from...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,131 +726,81 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Secret management across computers</h1>
+      <span class="date">26 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
+<p>As part of the Cyber Monday nonsense I convinced myself to purchase a ThinkPad in order to run Linux. I have a separate post coming about the transition from OS X to Ubuntu but one area I’m still trying to get under control is secret management. I have a ton of code on the old computer and almost all of it is on GitHub. The biggest challenge so far has been migrating secrets across computers. For example I have a variety of scripts that talk to Slack or the Google ecosystem which require their own tokens and keys. Some are straightforward to reissue - for example AWS - while others require a fair amount of frustrated searching. I don’t have the answer here but have been thinking about the following approaches to make things easier and would love to know how others handle this.</p>
 
-
-
-
-
-
-
-
-<h2>All Pages</h2>
 <ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
+  <li>
+<strong>Just step it up and get the new secrets</strong>. For each project I have I can look at the configuration file and determine exactly what I need and then issue the appropriate credentials from the various services. I know this will work but just feels like a lot of grunt work and not very interesting.</li>
+  <li>
+<strong>Move all secrets to Dropbox</strong>. I can just move all the secrets to Dropbox so they automatically sync across my computers. It will work but will require me figuring out a naming convention and then rewrite a bunch of my scripts to allow for a explicitly named configuration file. The nice thing is that this will automatically update as I add or modify the existing credential files.</li>
+  <li>
+<strong>Encrypt and upload to GitHub</strong>. Rather than relying on Dropbox I can encrypt the secrets and store them in GitHub. I don’t like the fact that I’m actually uploading secrets to a public repo, even if they are encrypted - it just feels dangerous.</li>
+  <li>
+<strong>Keep all secrets to S3</strong>. Similar to the others but this feels more private than the others. I still don’t like the fact that I’d have to come up with a naming convention to keep things organized but this seems like a reasonable approach.</li>
+  <li>
+<strong>Host a personal copy of <a href="https://www.vaultproject.io">Vault</a> or an equivalent system</strong>. I messed around with Vault years ago and it’s a full featured application to improve secret management that comes with a role based system. This may be overkill for what I’m trying to do but I’m tempted since it will give me experience with something new and can serve as a foundation for future projects.</li>
 </ul>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/26/analyzing-my-blog-2018-edition/" title="Visualizing my blog: 2018 edition">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F26%2Fsecret-management-across-computers%2F&title=Secret+management+across+computers">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -923,7 +876,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
