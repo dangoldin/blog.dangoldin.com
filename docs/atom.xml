@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com"/>
- <updated>2018-12-27T22:15:20-05:00</updated>
+ <updated>2018-12-27T23:15:05-05:00</updated>
  <id>http://dangoldin.com</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Eerie blue NYC sky</title>
+   <link href="http://dangoldin.com/2018/12/27/eerie-blue-nyc-sky/"/>
+   <updated>2018-12-27T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/27/eerie-blue-nyc-sky</id>
+   <content:encoded><![CDATA[
+<amp-youtube data-videoid="6G4dYRcKnVE" layout="responsive" width="640" height="480"></amp-youtube>
+
+<p>Earlier tonight I looked out the window to notice an eerie blue-green sky over NYC. It looked like the standard alien landing in a scifi movie and was incredibly surreal. It turns out it was a <a href="https://www.nbcnewyork.com/news/local/Blue-Light-Sky-Explosion-Queens-503589291.html">transformer explosion</a> in Queens but for a second it really did feel as if something bizzare was happening. It makes you both appreciate and fear about the modern world - the technologies and cities we have are so complex and modern that an explosion led the night sky to glow blue for more than a minute. I didn’t even realize there was anything powerful enough to make the night sky glow that bright for that long but apparently we’re surrounded by that potential.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Amazon's "Add to list" design</title>
