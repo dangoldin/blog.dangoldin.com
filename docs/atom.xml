@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" >
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" >
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
- <link href="http://dangoldin.com"/>
- <updated>2018-12-27T23:15:05-05:00</updated>
- <id>http://dangoldin.com</id>
+ <link href="http://dangoldin.com/"/>
+ <updated>2018-12-28T09:56:39-05:00</updated>
+ <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
