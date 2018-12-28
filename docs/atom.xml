@@ -3,13 +3,23 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2018-12-28T09:56:39-05:00</updated>
+ <updated>2018-12-28T18:22:54-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Calendly</title>
+   <link href="http://dangoldin.com/2018/12/28/calendly/"/>
+   <updated>2018-12-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/28/calendly</id>
+   <content:encoded><![CDATA[
+<p>Over the years I’ve received a ton of <a href="https://calendly.com">Calendly</a> links - it’s an application that integrates with your calendar and hosts a personal page that allows others to book time on your calendar. As a user it’s great since it offloads scheduling responsibility from you to others. At the same time, I was was always bothered by the fact that that effort was externalized to me despite it actually being more efficient for both sides. In any case, I had a real need to actually use it in order to help an external recruiter find time on my calendar to conduct some phone screens and the onboarding process was extremely slick. It was as simple as authenticating with my Google account, granting a few permissions, and then receiving a public link that could be shared with others. I wish more products had as simple of an onboarding - you get the basic functionality with minimal effort yet have the option to customize it as you become comfortable with the product and your use case expands.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Eerie blue NYC sky</title>
