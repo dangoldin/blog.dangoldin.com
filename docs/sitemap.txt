@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2018/12/29/wired-headphones/
+http://dangoldin.com/2018/12/29/the-teotihuacan-pyramids/
 http://dangoldin.com/2018/12/28/calendly/
 http://dangoldin.com/2018/12/27/eerie-blue-nyc-sky/
 http://dangoldin.com/2018/12/27/amazons-add-to-list-design/

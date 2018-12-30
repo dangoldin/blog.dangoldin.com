@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2018-12-29T13:13:15-05:00</updated>
+ <updated>2018-12-29T22:37:13-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -18,6 +18,18 @@
    <id>http://dangoldin.com/2018/12/29/wired-headphones</id>
    <content:encoded><![CDATA[
 <p>I left my Bluetooth headphones at home this morning and ended up borrowing a wired pair during the day. I forgot how easy it is to just be able to plug in and go - no waiting for the headphones to turn on, no waiting for the Bluetooth to connect, and no having to deal with selecting the proper audio out channel. The convenience of Bluetooth outweighs the costs but it was a stark reminder of how much more robust and simpler tools used to be. To be indistinguishable from “magic” our products need to have a lot of magic inside them. Almost always the magic works but every once in a while we end up stuck. It seems to be the natural way of things. When cars were first created they were extremely mechanical and owners had the skillset and ability to fix them. Now they’re all digital and require a licensed mechanic. Computers are the same way - I grew up being able to do some quick repairs and replacements but good luck trying to replace components in modern computers or phones: it’s doable but not very enjoyable. There is a part of me that yearns for the simpler days but I’m realistic enough to know that I don’t really want to go back.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>The Teotihuacan pyramids</title>
+   <link href="http://dangoldin.com/2018/12/29/the-teotihuacan-pyramids/"/>
+   <updated>2018-12-29T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/29/the-teotihuacan-pyramids</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images//teotihuacan-pyramids.jpg" alt="The Teotihuacan pyramids" width="6127" height="2037" layout="responsive"/>
+
+<p>Last week I was on vacation in Mexico City and did a day trip to <a href="https://en.wikipedia.org/wiki/Teotihuacan">Teotihuacan</a>, an ancient Mesoamerican city known for its pyramids. I find it inspiring being able to visit ruins from more than a thousand years ago. There’s something magical being able to set foot on a lost world with its own unique way of life that is impossible to recapture. So much time has passed between the actual living civilization and tourists exploring the ruins that it feels we’re completely different species and yet we’re still the same flesh, blood, and potential - just born at different times. It gives you some perspective knowing that what was once this huge civilization is now a tourist site.</p>
 ]]></content:encoded>
  </entry>
  
