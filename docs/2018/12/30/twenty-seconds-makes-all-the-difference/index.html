@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Twenty seconds makes all the difference</title>
+  <meta name="description" content="Upgrading my computer improved the blog's build time but also exposed the lack of an attention span.">
+  <meta name="keywords" content="jekyll, blog build times, performance, attention span" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2018/12/30/twenty-seconds-makes-all-the-difference/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Twenty seconds makes all the difference" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2018/12/30/twenty-seconds-makes-all-the-difference/" />
+  <meta property="og:title"               content="Twenty seconds makes all the difference" />
 
+  
+  <meta property="og:description"         content="Upgrading my computer improved the blog's build time but also exposed the lack of an attention span." />
+  <meta name="twitter:description"        content="Upgrading my computer improved the blog's build time but also exposed the lack of an attention span." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2018-12-30T23:25:08-05:00",
-  "dateModified": "2018-12-30T23:25:08-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2018/12/30/twenty-seconds-makes-all-the-difference/",
+  "headline": "Twenty seconds makes all the difference",
+  "datePublished": "2018-12-30T00:00:00-05:00",
+  "dateModified": "2018-12-30T00:00:00-05:00",
+  "description": "I recently switched from a 2015 Macbook Pro to a new ThinkPad with Ubuntu and one of the most noticeable differences is how much faster this blog builds. A f...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,35 +726,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Twenty seconds makes all the difference</h1>
+      <span class="date">30 December 2018</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>I recently switched from a 2015 Macbook Pro to a new ThinkPad with Ubuntu and one of the most noticeable differences is how much faster this blog builds. A few years ago I moved this blog over to <a href="https://www.ampproject.org/">AMP</a> to improve its load times. I don’t want to go into the details of AMP but in order to get the performance wins all styling is inlined - that means that instead of linking to a CSS file the CSS rules are explicitly defined on each page. That means the build system is not simply generating an HTML page off of a template but also inlining the CSS rules onto every generated page.</p>
+
+<p>The above was only meant to set the context and the primary point is that building this blog is not simple. On the Macbook the build process took close to 30 seconds but on the ThinkPad it’s almost always done within 8 seconds. While just over 20 seconds longer it’s almost 4 times as long and it makes all the difference. I find that I’m willing to just stay on the terminal and wait the 8 seconds for it to finish while if it’s over 20 seconds I decide to do something else in the meantime. Unfortunately, that break often ends up taking a few minutes before I go back and actually check the status.</p>
+
+<p>It’s a bit sad that 20 seconds is enough to change my workflow but there’s a lesson here somewhere. These days there are so many distractions that unfortunately seconds do matter and it affects website behavior as much as desktop software. We’ve trained ourselves to be easily distracted that it’s something all product builders need to keep in mnd.</p>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2018/12/30/mexico-city-thoughts/" title="Mexico city thoughts">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F12%2F30%2Ftwenty-seconds-makes-all-the-difference%2F&title=Twenty+seconds+makes+all+the+difference">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -827,7 +865,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
