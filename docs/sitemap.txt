@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2018/12/30/mexico-city-thoughts/
+http://dangoldin.com/2018/12/30/amazon-vs-walmart/
 http://dangoldin.com/2018/12/29/wired-headphones/
 http://dangoldin.com/2018/12/29/the-teotihuacan-pyramids/
 http://dangoldin.com/2018/12/29/moving-from-os-x-to-ubunu/
