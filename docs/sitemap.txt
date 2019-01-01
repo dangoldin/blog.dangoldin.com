@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2018/12/31/farewell-2018-hello-2019/
 http://dangoldin.com/2018/12/31/dorm-rooms-for-adults/
 http://dangoldin.com/2018/12/31/2019-predictions/
 http://dangoldin.com/2018/12/30/twenty-seconds-makes-all-the-difference/
