@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2018-12-31T20:11:48-05:00</updated>
+ <updated>2018-12-31T20:30:16-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Dorm rooms for adults</title>
+   <link href="http://dangoldin.com/2018/12/31/dorm-rooms-for-adults/"/>
+   <updated>2018-12-31T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2018/12/31/dorm-rooms-for-adults</id>
+   <content:encoded><![CDATA[
+<p>Not to keep beating a dead horse but the housing situation in San Francisco seems ridiculous. Back in March, the NY Times <a href="https://www.nytimes.com/2018/03/04/technology/dorm-living-grown-ups-san-francisco.html">wrote an article</a> covering Starcity, a company that builds “dorms” for professionals. The article is positioned as a positive since it’s giving people an option to live in San Francisco who may not be able to afford a place to themselves but it just feels like as if the real world is mirroring the software world.</p>
+
+<p>Cloud providers rent server space by the second and allow companies to avoid building their own data centers. The parallel to housing is that building your own data center is akin to owning a house while using a cloud provider is akin to renting. Taking this analogy further having one of these dorm rooms is equivalent to renting a Wordpress blog - you get a website but the functionality and freedom is restricted.</p>
+
+<p>I don’t mean to come off as negative - this is actually solving a problem and it’s great that capitalism has come up with a solution; it’s just disappointing that we have this situation in the first place.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>2019 Predictions</title>
