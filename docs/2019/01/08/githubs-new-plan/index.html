@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Run Django under Nginx, Virtualenv and Supervisor</title>
-  <meta name="description" content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor">
-  <meta name="keywords" content="django, nginx, virtualenv, supervisor" />
+  <title>GitHub&#39;s new plan</title>
+  <meta name="description" content="GitHub announced that they would allow private repos on their free plan. This is a smart move that sacrifices the short term for the long term.">
+  <meta name="keywords" content="github, hosting" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/">
+  <link rel="canonical" href="http://dangoldin.com/2019/01/08/githubs-new-plan/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Run Django under Nginx, Virtualenv and Supervisor" />
+  <meta name="twitter:title" content="GitHub's new plan" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/" />
-  <meta property="og:title"               content="Run Django under Nginx, Virtualenv and Supervisor" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/01/08/githubs-new-plan/" />
+  <meta property="og:title"               content="GitHub's new plan" />
 
   
-  <meta property="og:description"         content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor" />
-  <meta name="twitter:description"        content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor" />
+  <meta property="og:description"         content="GitHub announced that they would allow private repos on their free plan. This is a smart move that sacrifices the short term for the long term." />
+  <meta name="twitter:description"        content="GitHub announced that they would allow private repos on their free plan. This is a smart move that sacrifices the short term for the long term." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/",
-  "headline": "Run Django under Nginx, Virtualenv and Supervisor",
-  "datePublished": "2013-07-30T00:00:00-04:00",
-  "dateModified": "2013-07-30T00:00:00-04:00",
-  "description": "After yet another attempt to deploy a Django application I decided to document the steps required to get everything up and running. The tutorials I’ve seen t...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/01/08/githubs-new-plan/",
+  "headline": "GitHub&#39;s new plan",
+  "datePublished": "2019-01-08T00:00:00-05:00",
+  "dateModified": "2019-01-08T00:00:00-05:00",
+  "description": "Earlier today GitHub announced that they would make a significant change to their plans: a free plan would now be able to have private repos. I’m likely one ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -728,119 +728,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Run Django under Nginx, Virtualenv and Supervisor</h1>
-      <span class="date">30 July 2013</span>
+      <h1 class="post-title">GitHub's new plan</h1>
+      <span class="date">08 January 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>After yet another attempt to deploy a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application I decided to document the steps required to get everything up and running. The tutorials I’ve seen tend to focus on individual pieces rather than on the way all these packages work together which always led to me a lot of dead ends and StackOverflow so this will hopefully address some of those issues.</p>
+<p>Earlier today GitHub announced that they would make a significant change to their plans: a free plan would now be able to have private repos. I’m likely one of the many GitHub users who host their personal projects on GitHub with many being private. Some of these are projects I’m just not ready to release while others are proprietary scripts or private DevOps code. I was on the $7/mo Pro plan and downgraded to the free plan. I lost the advanced collaboration tools which I wasn’t using for my personal projects in the first place and it feels good to be $7 richer each month.</p>
 
-<p>In particular, I want to focus on the configuration rather than the installation of the various packages since that’s covered in the package documentation.</p>
+<p>I think this is an intelligent move on GitHub’s part. While they probably have tons of engineers paying the $7 for the Pro plan they’re likely making the vast majority of their revenue off of companies that are paying hundreds and thousands of dollars each month and would rather be thought of as the leader in git hosting. This allows them to hook new developers early and discourage them from leaving GitHub to another service as they grow in their careers.</p>
 
-<p>I don’t know if this is the best way to deploy Django but it’s the approach I’ve been able to come up with by stumbling around and getting help from the docs, Google, and StackOverflow. If there are better ways out there please let me know.</p>
-
-<ul class="bulleted">
-	<li>
-		<p><strong>Gunicorn</strong>- /home/ubuntu/project/scripts/start.sh</p>
-		<p>The nice thing here is that we define the port to serve our application on so we can serve multiple projects on a single server with each one using a different port. Note that the settings approach used here is from <a href="https://github.com/twoscoops/django-twoscoops-project/tree/develop/project_name/project_name/settings" target="_blank">Two Scoops of Django</a>.
-		</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
-<span class="nb">set</span> <span class="nt">-e</span>
-<span class="nv">DJANGODIR</span><span class="o">=</span>/home/ubuntu/project
-<span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
-
-<span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-project.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$LOGFILE</span><span class="k">)</span>
-<span class="nv">NUM_WORKERS</span><span class="o">=</span>3
-<span class="c"># user/group to run as</span>
-<span class="nv">USER</span><span class="o">=</span>ubuntu
-<span class="nv">GROUP</span><span class="o">=</span>ubuntu
-<span class="nb">cd</span> /home/ubuntu/project
-<span class="nb">source</span> /home/ubuntu/project/venv/bin/activate
-
-<span class="nb">export </span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span><span class="nv">$DJANGO_SETTINGS_MODULE</span>
-<span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$DJANGODIR</span>:<span class="nv">$PYTHONPATH</span>
-
-<span class="nb">test</span> <span class="nt">-d</span> <span class="nv">$LOGDIR</span> <span class="o">||</span> mkdir <span class="nt">-p</span> <span class="nv">$LOGDIR</span>
-<span class="nb">exec</span> /home/ubuntu/project/venv/bin/gunicorn_django <span class="nt">-w</span> <span class="nv">$NUM_WORKERS</span> <span class="se">\</span>
-  <span class="nt">--user</span><span class="o">=</span><span class="nv">$USER</span> <span class="nt">--group</span><span class="o">=</span><span class="nv">$GROUP</span> <span class="nt">--log-level</span><span class="o">=</span>debug <span class="se">\</span>
-  <span class="nt">--log-file</span><span class="o">=</span><span class="nv">$LOGFILE</span> <span class="nt">-b</span> 0.0.0.0:8001 2&gt;&gt;<span class="nv">$LOGFILE</span></code></pre></figure>
-
-</li>
-
-<li>
-	<p><strong>Nginx</strong> - /etc/nginx/sites-enabled/project</p>
-	<p>The key parts here are that we're redirecting all www.project.com requests to project.com, serving the static files using Nginx rather than rely on Gunicorn, and passing other requests to the Gunicorn server running on the port defined in the Gunicorn start script above.
-	</p>
-
-<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
-    <span class="c1"># Redirect all www.project.com requests to project.com
-</span>    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">www.project.com</span><span class="p">;</span>
-    <span class="kn">return</span> <span class="mi">301</span> <span class="s">http://project.com</span><span class="nv">$request_uri</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span>   <span class="mi">80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">project.com</span><span class="p">;</span>
-    <span class="c1"># no security problem here, since / is alway passed to upstream
-</span>    <span class="kn">root</span> <span class="n">/home/ubuntu/project/</span><span class="p">;</span>
-    <span class="c1"># serve directly - analogous for static/staticfiles
-</span>    <span class="kn">location</span> <span class="n">/media/</span> <span class="p">{</span>
-        <span class="c1"># if asset versioning is used
-</span>        <span class="kn">if</span> <span class="s">(</span><span class="nv">$query_string</span><span class="s">)</span> <span class="p">{</span>
-            <span class="kn">expires</span> <span class="s">max</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="kn">location</span> <span class="n">/admin/media/</span> <span class="p">{</span>
-        <span class="c1"># this changes depending on your python version
-</span>        <span class="kn">root</span> <span class="n">/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kn">location</span> <span class="n">/static/admin</span> <span class="p">{</span>
-        <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span>
-        <span class="kn">root</span>   <span class="n">/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib/admin/</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kn">location</span> <span class="n">/static/</span> <span class="p">{</span>
-        <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span>
-        <span class="kn">alias</span>   <span class="n">/home/ubuntu/project/assets/</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
-    <span class="c1"># This section is to redirect all http traffic to https if desired
-</span>    <span class="c1"># if ($http_x_forwarded_proto != 'https') {
-</span>    <span class="c1">#   rewrite ^ https://$host$request_uri? permanent;
-</span>    <span class="c1"># }
-</span>
-        <span class="kn">client_max_body_size</span> <span class="mi">5M</span><span class="p">;</span>
-        <span class="kn">client_body_buffer_size</span> <span class="mi">128k</span><span class="p">;</span>
-        <span class="kn">proxy_pass_header</span> <span class="s">Server</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
-        <span class="kn">proxy_redirect</span> <span class="no">off</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
-        <span class="kn">proxy_set_header</span> <span class="s">X-Scheme</span> <span class="nv">$scheme</span><span class="p">;</span>
-        <span class="kn">proxy_connect_timeout</span> <span class="mi">300</span><span class="p">;</span>
-        <span class="kn">proxy_read_timeout</span> <span class="mi">300</span><span class="p">;</span>
-        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8001/</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1"># what to serve if upstream is not available or crashes
-</span>    <span class="kn">error_page</span> <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span> <span class="n">/media/50x.html</span><span class="p">;</span></code></pre></figure>
-
-</li>
-
-<li>
-	<p><strong>Supervisord</strong> - /etc/supervisord/gunicorn-project.conf</p>
-	<p>Here we just specify the location of the Gunicorn start script so Supervisor can manage it.</p>
-
-<figure class="highlight"><pre><code class="language-ini" data-lang="ini"><span class="nn">[program:gunicorn-project]</span>
-<span class="py">directory</span> <span class="p">=</span> <span class="s">/home/ubuntu/project</span>
-<span class="py">user</span> <span class="p">=</span> <span class="s">ubuntu</span>
-<span class="py">command</span> <span class="p">=</span> <span class="s">/home/ubuntu/project/scripts/start.sh</span>
-<span class="py">stdout_logfile</span> <span class="p">=</span> <span class="s">/var/log/gunicorn/project-std.log</span>
-<span class="py">stderr_logfile</span> <span class="p">=</span> <span class="s">/var/log/gunicorn/project-err.log</span></code></pre></figure>
-
-</li>
-</ul>
+<p>It’s always impressive when companies are able to sacrifice the short term in favor of the long term. It’s not easy to make the case that a company should sacrifice the money it’s making now for a potential payoff later and it’s great that GitHub made the choice. It’s impossible to predict the outcome but I’m optimistic that this was the right call for them - they’re already the market leader and this makes it that much harder for others to compete.</p>
 
     </section>
 
@@ -855,9 +753,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##python-ref">#python </a></li>
-    
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
@@ -874,11 +770,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/07/27/the-power-inbox/" title="The power inbox">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/" title="Java's SimpleDateFormat: YYYY vs yyyy">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/08/02/a-brief-history-of-manufacturing/" title="A brief history of manufacturing">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -889,7 +785,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F07%2F30%2Frun-django-under-nginx-virtualenv-and-supervisor%2F&title=Run+Django+under+Nginx%2C+Virtualenv+and+Supervisor">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F01%2F08%2Fgithubs-new-plan%2F&title=GitHub%27s+new+plan">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

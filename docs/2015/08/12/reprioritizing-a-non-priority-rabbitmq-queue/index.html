@@ -747,7 +747,7 @@ table {
 <span class="c"># 2 - Remove the header rows</span>
 <span class="c"># 3 - Trim the line</span>
 <span class="c"># 4 - Prepend the publish command and turn the task message string into an argument</span>
-<span class="nb">cut</span> <span class="nt">-d</span><span class="s1">'|'</span> <span class="nt">-f5</span> tasks.log | <span class="nb">sed</span> <span class="s1">'$d'</span> | <span class="nb">sed</span> <span class="s1">'1,3d'</span> | <span class="nb">sed</span> <span class="s1">'s/^ *//;s/*$//'</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> <span class="o">&gt;</span> tasks.clean
+cut <span class="nt">-d</span><span class="s1">'|'</span> <span class="nt">-f5</span> tasks.log | sed <span class="s1">'$d'</span> | sed <span class="s1">'1,3d'</span> | sed <span class="s1">'s/^ *//;s/*$//'</span> | sed <span class="nt">-e</span> <span class="s2">"s/^/.</span><span class="se">\/</span><span class="s2">rabbitmqadmin publish exchange=data_queue.task routing_key=standard payload='/"</span> | sed <span class="nt">-e</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2">'/"</span> <span class="o">&gt;</span> tasks.clean
 
 <span class="c"># Split the tasks into two pieces</span>
 <span class="nb">cat </span>tasks.clean | <span class="nb">grep </span>log <span class="o">&gt;</span> tasks.clean1
