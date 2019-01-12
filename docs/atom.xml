@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-01-12T14:16:51-05:00</updated>
+ <updated>2019-01-12T14:19:19-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -143,7 +143,7 @@ For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre><
 
 <p>The above was only meant to set the context and the primary point is that building this blog is not simple. On the Macbook the build process took close to 30 seconds but on the ThinkPad it’s almost always done within 8 seconds. While just over 20 seconds longer it’s almost 4 times as long and it makes all the difference. I find that I’m willing to just stay on the terminal and wait the 8 seconds for it to finish while if it’s over 20 seconds I decide to do something else in the meantime. Unfortunately, that break often ends up taking a few minutes before I go back and actually check the status.</p>
 
-<p>It’s a bit sad that 20 seconds is enough to change my workflow but there’s a lesson here somewhere. These days there are so many distractions that unfortunately seconds do matter and it affects website behavior as much as desktop software. We’ve trained ourselves to be easily distracted that it’s something all product builders need to keep in mnd.</p>
+<p>It’s a bit sad that 20 seconds is enough to change my workflow but there’s a lesson here somewhere. These days there are so many distractions that unfortunately seconds do matter and it affects website behavior as much as desktop software. We’ve trained ourselves to be easily distracted that it’s something all product builders need to keep in mind.</p>
 ]]></content:encoded>
  </entry>
  
