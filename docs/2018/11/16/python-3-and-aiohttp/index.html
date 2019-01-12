@@ -740,8 +740,8 @@ table {
 
 <p>The code below is my attempt at a functional solution - it’s inspired by imitating the aiohttp examples as well as a few helpful blog posts. I’m sure it’s far from perfect and I don’t do much other than print the status but it got me what I needed. If you’re doing any sort of scraping or network heavy work take the time to learn the new async functionality provided in Python 3 - it’s a massive performance improvement.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#! /usr/bin/env python</span>
-
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#! /usr/bin/env python
+</span>
 <span class="kn">import</span> <span class="nn">aiohttp</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -750,10 +750,10 @@ table {
 
 <span class="n">URLS</span> <span class="o">=</span> <span class="s">"example1.com example2.com example3.com"</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="n">valid_pv</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'{'</span><span class="p">)</span>
             <span class="k">print</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">valid_pv</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">valid_pv</span>
@@ -761,23 +761,23 @@ table {
         <span class="k">print</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s">'Error'</span><span class="p">)</span>
         <span class="k">return</span> <span class="s">'Error'</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">bound_fetch</span><span class="p">(</span><span class="n">sem</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-    <span class="n">async</span> <span class="k">with</span> <span class="n">sem</span><span class="p">:</span>
-        <span class="n">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">bound_fetch</span><span class="p">(</span><span class="n">sem</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">sem</span><span class="p">:</span>
+        <span class="k">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
 
-<span class="n">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">urls</span><span class="p">):</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">sem</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
-    <span class="n">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
-            <span class="c"># Blame the spec for the path, don't worry about HTTPS for now</span>
-            <span class="n">full_url</span> <span class="o">=</span> <span class="s">'http://'</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">'/.well-known/pubvendors.json'</span>
+            <span class="c1"># Blame the spec for the path, don't worry about HTTPS for now
+</span>            <span class="n">full_url</span> <span class="o">=</span> <span class="s">'http://'</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">'/.well-known/pubvendors.json'</span>
             <span class="n">task</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">bound_fetch</span><span class="p">(</span><span class="n">sem</span><span class="p">,</span> <span class="n">full_url</span><span class="p">,</span> <span class="n">session</span><span class="p">))</span>
             <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
 
         <span class="n">responses</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
-        <span class="n">await</span> <span class="n">responses</span>
+        <span class="k">await</span> <span class="n">responses</span>
 
 <span class="n">URLS</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">URLS</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.app'</span><span class="p">)]</span>
 
