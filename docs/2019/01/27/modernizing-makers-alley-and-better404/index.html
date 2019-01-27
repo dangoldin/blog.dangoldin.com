@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Modernizing Makers Alley and Better404</title>
+  <meta name="description" content="I accidentally broke two old sites and decided to use it as an opporutnity to modernize them.">
+  <meta name="keywords" content="tech debt, django, devops" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2019/01/27/modernizing-makers-alley-and-better404/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Modernizing Makers Alley and Better404" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/01/27/modernizing-makers-alley-and-better404/" />
+  <meta property="og:title"               content="Modernizing Makers Alley and Better404" />
 
+  
+  <meta property="og:description"         content="I accidentally broke two old sites and decided to use it as an opporutnity to modernize them." />
+  <meta name="twitter:description"        content="I accidentally broke two old sites and decided to use it as an opporutnity to modernize them." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2019-01-27T14:10:30-05:00",
-  "dateModified": "2019-01-27T14:10:30-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/01/27/modernizing-makers-alley-and-better404/",
+  "headline": "Modernizing Makers Alley and Better404",
+  "datePublished": "2019-01-27T00:00:00-05:00",
+  "dateModified": "2019-01-27T00:00:00-05:00",
+  "description": "Years ago I started two companies, Makers Alley and Better404, and while they were both failures I didn’t have the heart to shut down the site. I put a lot o...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,131 +726,75 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Modernizing Makers Alley and Better404</h1>
+      <span class="date">27 January 2019</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>Years ago I started two companies, <a href="http://makersalley.com">Makers Alley</a> and <a href="https://better404.com">Better404</a>, and while they were both failures I didn’t have the heart to shut down the site. I put a lot of heart into building them and just pulling the plug felt cold. Instead I just paid the annual hosting fee and had them both running on a small AWS instance. This worked fine for years but unfortunately while I was messing around with Terraform I ended up terminating the instance entirely. Beyond the fact that they were both running incredibly old libraries with no available pip libraries the instance also contained the only copy of the database. I wa stuck with having the source code from a few years ago and not much else. Rather than give up I decided to use this as an opportunity to learn a bit and modernize them using some of the newer technologies.</p>
 
+<p>The one saving grace was that for both repos I found an old commit containing a database dump so I didn’t have to start from scratch. It took me a bit of time to find them but I discovered a set of git commands to find the deleted file and the associated commit which allowed me to retrieve the file.</p>
 
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">git log <span class="nt">--diff-filter</span><span class="o">=</span>D <span class="nt">--summary</span> | <span class="nb">grep </span>delete | <span class="nb">grep </span>dump.tgz
+git log <span class="nt">--oneline</span> <span class="nt">--follow</span> <span class="nt">--</span> dump.tgz</code></pre></figure>
 
+<p>Getting the data back took care of a big problem and the rest was making sure that the applications actually ran. They were both created using old versions of Django - 1.4 for Makers Alley and 1.5 for Better404. Remarkably, everything in the Better404 requirements.txt file installed properly and I was able to both cleanup the config files and get everything working using Docker and docker-compose in a single evening session. Makers Alley, on the other hand, proved more difficult. Many of the dependencies in the requirements.txt file refused to install and I got stuck in a loop of library upgrades where upgrading one library required an upgrade to another library. At some point I just gave up and upgraded everything to the latest version and did a scrubbing session where I just stripped away all unused functionality in order to reduce the amount of dependencies. One of the biggest changes was upgrading Makers Alley to support Elasticsearch 6.5 from 1.9 - there were so many breaking changes that I had to go through the code and update the way indexing and search was implemented since the old libraries had no support for the latest version of Elasticsearch. Fixing Makers Alley took a holiday weekend to get right but I’m happy with the overall result - it’s now running on Django 1.11 and every library is at the latest version.</p>
 
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>The entire process was fun and both made me appreciate how much easier it is do develop using Docker. At the same time, it’s a reminder of how difficult and frustrating dependency management can be. Had I been actively developing the apps I would have made an effort to constantly be upgrading the libraries and resolving issues as they came up rather than doing a large scale cleanup with 5 years worth of package upgrades.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/01/12/buying-kindle-books-on-ios/" title="Buying Kindle books on iOS">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F01%2F27%2Fmodernizing-makers-alley-and-better404%2F&title=Modernizing+Makers+Alley+and+Better404">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -923,7 +870,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
