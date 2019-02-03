@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/02/02/finally-some-price-increases/
 http://dangoldin.com/2019/01/27/modernizing-makers-alley-and-better404/
 http://dangoldin.com/2019/01/12/buying-kindle-books-on-ios/
 http://dangoldin.com/2019/01/08/githubs-new-plan/
