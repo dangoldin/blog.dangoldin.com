@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-02-09T23:06:40-05:00</updated>
+ <updated>2019-02-10T22:29:45-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Netflix recommendation system</title>
+   <link href="http://dangoldin.com/2019/02/10/netflix-recommendation-system/"/>
+   <updated>2019-02-10T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/02/10/netflix-recommendation-system</id>
+   <content:encoded><![CDATA[
+<p>I have zero interest in horror or drama and have never watched any of them on Netflix yet Netflix decided to automatically start playing the gory intro to their new Ted Bundy series. I understand their desire to highlight their shows but autoplaying something that gory just seems like a terrible decision, especially given my viewing history.</p>
+
+<p>Many people will launch Netflix with their families around and having something so graphically violent greet you is a surefire way to lose fans and subscribers. It seems obvious that a company should not be autoplaying violence and I’m surprised that Netflix, a company that takes pride in its recommendation system, managed to do something this tone-deaf.</p>
+
+<p>Maybe they have enough data to indicate that these sorts of scenes hook people and actually lead to higher engagement but this still feels wrong. Maybe I’m just a curmudgeon and non else cares but this seems like a case of a run-away AI that may be optimizing for the more immediate, but wrong thing.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>A personal DSP</title>

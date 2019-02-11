@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/02/10/netflix-recommendation-system/
 http://dangoldin.com/2019/02/09/a-personal-dsp/
 http://dangoldin.com/2019/02/02/finally-some-price-increases/
 http://dangoldin.com/2019/01/27/modernizing-makers-alley-and-better404/
