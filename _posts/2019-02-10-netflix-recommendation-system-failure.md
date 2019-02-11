@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Netflix recommendation system"
+title: "Netflix recommendation system failure"
 description: "I had the unfortunate privilege of having Netflix start autoplaying their graphic Ted Bundy series. In no world should Netflix autoplay something so graphically violent."
 keywords: "netflix, ai, recommendation system"
 image_url:
