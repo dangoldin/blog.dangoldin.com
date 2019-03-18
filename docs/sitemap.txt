@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/03/17/airbnb-and-hoteltonight/
 http://dangoldin.com/2019/03/10/linkedins-terrible-messaging-experience/
 http://dangoldin.com/2019/02/28/dropbox-should-drop-the-freemium-model/
 http://dangoldin.com/2019/02/10/netflix-recommendation-system-failure/
