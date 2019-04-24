@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-03-22T23:49:24-04:00</updated>
+ <updated>2019-04-23T23:29:03-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Free as in puppy</title>
+   <link href="http://dangoldin.com/2019/04/23/free-as-in-puppy/"/>
+   <updated>2019-04-23T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/04/23/free-as-in-puppy</id>
+   <content:encoded><![CDATA[
+<p>I’ve known about “free as in beer” and “free as in speech” for a while now but only recently have I learned about “free as in puppy.” I came across the phrase while reading a <a href="https://stratechery.com/2019/a-regulatory-framework-for-the-internet/">Stratechery article</a> describing various ways of thinking about regulation. The idea is that just like getting a free puppy, you get it for free but it comes with a significant long term cost.</p>
+
+<p>I’m a big fan of the phrase and it highlights a very common tradeoff we make, especially in engineering. We often get carried away solving a problem but fail to consider the long term cost of maintenance and support. By the time we discover these long term costs the product is entrenched and we’re on the hook for maintaining it in its current form. It’s important to slow down and realize that nearly all software we write is in the “free as in puppy” camp. Writing the code to work is the easy part - writing it to work with no ongoing cost is the challenge.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>YouTube's popularity</title>
