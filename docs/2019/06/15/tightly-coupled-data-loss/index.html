@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Tightly coupled data loss</title>
+  <meta name="description" content="In a tightly coupled system a uniform outage has a higher impact than the sum of the individual parts.">
+  <meta name="keywords" content="kafka, data outage, distributed systems" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2019/06/15/tightly-coupled-data-loss/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Tightly coupled data loss" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/06/15/tightly-coupled-data-loss/" />
+  <meta property="og:title"               content="Tightly coupled data loss" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="In a tightly coupled system a uniform outage has a higher impact than the sum of the individual parts." />
+  <meta name="twitter:description"        content="In a tightly coupled system a uniform outage has a higher impact than the sum of the individual parts." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2019-06-15T23:00:19-04:00",
-  "dateModified": "2019-06-15T23:00:19-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/06/15/tightly-coupled-data-loss/",
+  "headline": "Tightly coupled data loss",
+  "datePublished": "2019-06-15T00:00:00-04:00",
+  "dateModified": "2019-06-15T00:00:00-04:00",
+  "description": "A few months while doing some Kafka maintenance we ran into an issue that caused us to lose approximately 10% of records across all our topics over the cours...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,22 +726,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Tightly coupled data loss</h1>
+      <span class="date">15 June 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>A few months while doing some Kafka maintenance we ran into an issue that caused us to lose approximately 10% of records across all our topics over the course of an hour. It was a big screw up but what made it worse was the interaction between the records. Our records represent the life cycle of an ad from the auction, to the render, to whether it was in view, and beyond. Rather than send all the information along for each on we keep the records as lightweight as possible and rely on our backend processing to join them together to come up with an auction log.</p>
+
+<p>You can probably tell where I’m going with this but since the loss was distributed uniformly across our various topics it the final effect was a much larger drop. For example knowing that a particular auction resulted in a click isn’t very helpful if you don’t have the other details of that auction.</p>
+
+<p>It’s obvious in hindsight but the general idea is if your pipeline depends on joining records from multiple streams a uniform outage will have a much higher impact than the actual number of records dropped due to the interactive nature. A simple example is if you have two Kafka topics that end up being joined during processing and you lose 10% of records for each topic you don’t end up with 90% data left but rather 81% (0.9 * 0.9). This gets even worse when you move to 3 dependent topics (72.9% = 0.9 * 0.9 * 0.9). It’s not as simple since some topics are more important to capture than others and they all have different cardinality but the key idea is that in any system with tightly coupled components any uniform outage the combined impact is more than the sum of the individual outages. This applies not just to Kafka but to any system that requires multiple components working together - for example a microservice architecture where 10% of requests fail over the course of an hour will have a higher failure rate than 10%.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/05/31/video-games-of-my-youth/" title="Video games of my youth">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F06%2F15%2Ftightly-coupled-data-loss%2F&title=Tightly+coupled+data+loss">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -817,7 +865,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
