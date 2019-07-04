@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-02T22:33:59-04:00</updated>
+ <updated>2019-07-03T21:16:41-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Revamping my online security</title>
+   <link href="http://dangoldin.com/2019/07/03/revamping-my-online-security/"/>
+   <updated>2019-07-03T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/03/revamping-my-online-security</id>
+   <content:encoded><![CDATA[
+<p>Out of curiosity I checked out <a href="https://haveibeenpwned.com/">haveibeenpwned</a> to see if my data was exposed in any breach and it turns out my email was found in 22 breaches. I’m not surprised - I’m probably registered on hundreds, if not thousands, of sites and it’s only a matter of time before some of them get compromised. You should assume that every time you register for a site that data will get leaked and act accordingly - this means using a unique password on every site and, if possible, even obfuscating your email address. For the past year and a half I’ve embraced the approach of assuming my email address is public but investing heavily in strong, secure, and randomly generated passwords that are unique to every site. I’ve also been slowly going through my older registrations and updating the passwords.</p>
+
+<p>It’s not easy going through every registration and updating the password so I’ve prioritized the sites that are important, such as those containing financial or personal identifiable information, and those that do not offer 2FA. The rest, if compromised, wouldn’t give the attacker any more data than my email would so I’m not worrying about them.</p>
+
+<p>This will never get easier so it’s important to both get into better habits going forward and upgrade the security of the existing accounts. The reality is we’re all only a breach away from having to deal with a whole world of pain and investing in security, while miserable, is going to save us from a lot of pain later on. If you haven’t checked out haveibeenpwned give it a shot and be surprised.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Combine registration and sign in</title>
