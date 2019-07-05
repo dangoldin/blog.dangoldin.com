@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/07/04/increasing-the-bar-for-reelection/
 http://dangoldin.com/2019/07/03/revamping-my-online-security/
 http://dangoldin.com/2019/07/02/combine-registration-and-sign-in/
 http://dangoldin.com/2019/07/01/sign-in-with-apple/
