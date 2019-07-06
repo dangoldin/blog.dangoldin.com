@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-04T21:50:16-04:00</updated>
+ <updated>2019-07-05T22:38:35-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Future of cloud is hybrid</title>
+   <link href="http://dangoldin.com/2019/07/05/future-of-cloud-is-hybrid/"/>
+   <updated>2019-07-05T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/05/future-of-cloud-is-hybrid</id>
+   <content:encoded><![CDATA[
+<p>Cloud providers are doing all they can to lock companies into their own offerings but my suspicion is that the future looks hybrid. On the surface they all offer the same base functionality but there’s a variety of specialization on the edges offered by Amazon vs Microsoft vs Google vs your own data center. My suspicion is that over time more and more companies will adopt hybrid setups that allow them to leverage the strengths of each platform. For example, using Google for their AI and ML capabilities, Microsoft for integrating with an existing data center (and not competing with your existing business!), your own data center for the well defined and scoped use case, and Amazon for everything else.</p>
+
+<p>All this is made easier by the growth of orchestration services, such as Kubernetes, that allow you to write code that is independent of where or how it’s deployed. That makes it much easier to shift your usage to the provider that gives you the best value.</p>
+
+<p>These days, a hybrid setup is not very easy to configure. It requires having a team familiar with multiple environments, the tooling to work across them, as well as a variety of configurations and deployments to communicate securely across clouds. But as with any new technology this will get easier and more approachable as the ecosystem is built out to support these new deployments. Unfortunately, the providers are intelligent enough to offer steep discounts in return for long term contracts and spend commitments. These lead to lock in and make it  difficult to be truly provider agnostic but the infrastructure and technology will be there.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Increasing the bar for reelection</title>
