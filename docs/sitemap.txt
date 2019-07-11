@@ -18,6 +18,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/07/10/personal-dashboards/
 http://dangoldin.com/2019/07/09/ideal-tech-intern-projects/
 http://dangoldin.com/2019/07/08/power-of-habit/
 http://dangoldin.com/2019/07/07/video-of-my-data-council-nyc-talk/
