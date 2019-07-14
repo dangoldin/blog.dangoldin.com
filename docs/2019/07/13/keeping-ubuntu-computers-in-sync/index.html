@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Keeping Ubuntu computers in sync</title>
+  <meta name="description" content="When I switched to Ubuntu I started keeping my configuration and setup in version control in order to make it as easy as possible to set up new computers wit...">
+  <meta name="keywords" content="ubuntu, sync, apt" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2019/07/13/keeping-ubuntu-computers-in-sync/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Keeping Ubuntu computers in sync" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/07/13/keeping-ubuntu-computers-in-sync/" />
+  <meta property="og:title"               content="Keeping Ubuntu computers in sync" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="When I switched to Ubuntu I started keeping my configuration and setup in version control in order to make it as easy as possible to set up new computers with the same settings." />
+  <meta name="twitter:description"        content="When I switched to Ubuntu I started keeping my configuration and setup in version control in order to make it as easy as possible to set up new computers with the same settings." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2019-07-13T22:45:47-04:00",
-  "dateModified": "2019-07-13T22:45:47-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/07/13/keeping-ubuntu-computers-in-sync/",
+  "headline": "Keeping Ubuntu computers in sync",
+  "datePublished": "2019-07-13T00:00:00-04:00",
+  "dateModified": "2019-07-13T00:00:00-04:00",
+  "description": "I switched to Ubuntu a few years ago and along with the change decided to keep as much of my environment setup in version control as possible. The motivation...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -726,29 +726,83 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Keeping Ubuntu computers in sync</h1>
+      <span class="date">13 July 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>I switched to Ubuntu a few years ago and along with the change decided to keep as much of my environment setup in version control as possible. The motivation was to make the process of setting up a new computer as simple and repeatable as possible since I planned on shifting both my personal and work computers to Ubuntu and wanted to keep them in sync as much as possible.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<table>
+  <tbody>
+    <tr>
+      <td>The two primary things I wanted to take care of was to keep my applications and config files in sync between the two systems. The first I was able to do partially. I found a single command that captured everything installed via apt (pkg -l</td>
+      <td>grep ^ii</td>
+      <td>awk ‘{print $2}’) and then saved into a file that’s kept in version control. These can then be installed again using another command that just pipes the list into apt-get: apt-get install $(grep -vE “^\s*#” filename</td>
+      <td>tr “\n” “ “). There are still some issues I need to handle around custom repositories but it generally works well.</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>To handle configs I settled on using symbolic links. I keep all my key config files in the same git repo and then just symbolic link them to the appropriate place. For example, I use <a href="https://github.com/robbyrussell/oh-my-zsh">Oh My Zsh</a> and have my own .zshrc file that I link to my root directory by doing “ln -s ~/code/dev-ops/config/.zshrc .zshrc”</p>
 
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>This approach definitely has room for improvement but it’s simple and lightweight and gets me most of the way to what I need.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/07/10/personal-dashboards/" title="Personal dashboards">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F07%2F13%2Fkeeping-ubuntu-computers-in-sync%2F&title=Keeping+Ubuntu+computers+in+sync">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -824,7 +878,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
