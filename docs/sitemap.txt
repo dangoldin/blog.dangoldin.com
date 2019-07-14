@@ -19,6 +19,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2019/07/14/towards-a-global-government/
+http://dangoldin.com/2019/07/14/dns-resolution-gotchas/
 http://dangoldin.com/2019/07/13/keeping-ubuntu-computers-in-sync/
 http://dangoldin.com/2019/07/10/personal-dashboards/
 http://dangoldin.com/2019/07/09/ideal-tech-intern-projects/

@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>DNS resolution gotchas</title>
+  <meta name="description" content="We ran into an issue a few months ago that highlighted an unexpected behavior in DNS resolution and taught us a lesson.">
+  <meta name="keywords" content="DNS, domain name servers" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2019/07/14/dns-resolution-gotchas/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="DNS resolution gotchas" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/07/14/dns-resolution-gotchas/" />
+  <meta property="og:title"               content="DNS resolution gotchas" />
 
+  
+  <meta property="og:description"         content="We ran into an issue a few months ago that highlighted an unexpected behavior in DNS resolution and taught us a lesson." />
+  <meta name="twitter:description"        content="We ran into an issue a few months ago that highlighted an unexpected behavior in DNS resolution and taught us a lesson." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2019-07-14T17:30:39-04:00",
-  "dateModified": "2019-07-14T17:30:39-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/07/14/dns-resolution-gotchas/",
+  "headline": "DNS resolution gotchas",
+  "datePublished": "2019-07-14T00:00:00-04:00",
+  "dateModified": "2019-07-14T00:00:00-04:00",
+  "description": "A few months ago we ran a pretty complex migration from AWS Route 53 to NS1 and ran into a few gotchas that I wanted to share. On the surface, DNS seems simp...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -723,131 +726,76 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">DNS resolution gotchas</h1>
+      <span class="date">14 July 2019</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>A few months ago we ran a pretty complex migration from AWS Route 53 to NS1 and ran into a few gotchas that I wanted to share. On the surface, DNS seems simple: you associate subdomains to specific records and then rely on the DNS provider to handle that resolution.</p>
 
+<p>The nuance occurs when you have a deeper structure where it takes a few steps to get to the final IP address. This is fairly common if you want to do DNS resolution based on the geography of the user. As an example, if I have a single site, www.dangoldin.com, I can use AWS Route 53 to create multiple records, each for a specific geographic region containing dedicated servers. In this case, I can set it up so that users from Europe end up with the record www-eu.dangoldin.com while users in North America end up with www-na.dangoldin.com. It’s still up to me to then have another resolution to map these regional records to the final locations but this allows the DNS resolution to be a bit more granular.</p>
 
+<p>The trap we fell into was assuming that the resolution would be sticky. We thought that if Route53 was going to be used for the original lookup (www.dangoldin.com) we did not have to worry about NS1 being used for subsequent lookups. This was true most of the time but unfortunately not all the time. As part of the migrations we made some optimizations in our record hierarchy which caused the two systems to have a differing set of records. They were internally consistent but if some resolutions bled from Route53 to NS1 and vice versa they would end up unresolved.</p>
 
+<p>Using the previous example (www.dangoldin.com), imagine we had www-na and www-eu in Route53 but decided to split www-na into www-useast and www-uswest in NS1. The problem would occur if the first request was to Route53 which would resolve with www-na but the second request tried to resolve www-na in NS1 since that record was not present. The same thing would have happened if we tried to resolve www-useast or www-uswest in Route53.</p>
 
+<p>This was a gnarly problem and difficult to diagnose and catch since the issue manifested itself before the request even made it to our servers. In fact, we caught it by noticing that our traffic was lower than expected.</p>
 
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>The takeaway here is that DNS is incredibly important, difficult to test and monitor, and if you ever switch your DNS providers to keep them in alignment until you’re sure all of the traffic has shifted over.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/07/13/keeping-ubuntu-computers-in-sync/" title="Keeping Ubuntu computers in sync">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2019/07/14/towards-a-global-government/" title="Towards a global government">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F07%2F14%2Fdns-resolution-gotchas%2F&title=DNS+resolution+gotchas">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -923,7 +871,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
