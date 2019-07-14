@@ -14,11 +14,12 @@ http://dangoldin.com/2015/11/12/projects-ive-worked-on/
 http://dangoldin.com/2015/12/06/setting-up-a-new-computer---then-and-now/
 http://dangoldin.com/2016/10/23/avoiding-future-ddos-attacks/
 http://dangoldin.com/2018/06/28/lessons-learned-revoking-personal-aws-credentials-used-in-production/
+http://dangoldin.com/2019/07/14/towards-a-global-government/
 http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
-http://dangoldin.com/2019/07/14/towards-a-global-government/
+http://dangoldin.com/2019/07/14/toward-a-global-government/
 http://dangoldin.com/2019/07/14/dns-resolution-gotchas/
 http://dangoldin.com/2019/07/13/keeping-ubuntu-computers-in-sync/
 http://dangoldin.com/2019/07/10/personal-dashboards/

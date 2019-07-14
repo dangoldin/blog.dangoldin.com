@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Towards a global government"
+title: "Toward a global government"
 description: "The problems facing the world need to be solved by a global government."
 keywords: "global government, united nations"
 image_url:
 category:
 tags: ["#society"]
+redirect_from: "/2019/07/14/towards-a-global-government/"
 ---
 {% include setup %}
 The world isn't in the best shape these days. There's a rise in extreme nationalism and intolerance, climate change is leading to some wild weather, and overall it just feels we're moving in the wrong direction. Everyone can speculate on the causes but to me it's a function of the complicated, and often, antithetical incentives from the various global players. Each country is looking out for its own interests and despite their behavior having an impact on others. This leads to a "[tragedy of the commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons)" situation where the earth is being abused. The world's institutions are just not strong enough to support the policies the world needs.
