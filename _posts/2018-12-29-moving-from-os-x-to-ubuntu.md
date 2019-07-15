@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Moving from OS X to Ubunu"
+title: "Moving from OS X to Ubuntu"
 description: "It's easier than ever to become productive on a new computer - even if it's changing operating systems."
 keywords: "os x, ubuntu, linux"
 image_url:
 category:
 tags: ["#meta"]
+redirect_from: "/2018/12/29/moving-from-os-x-to-ubunu/"
 ---
 {% include setup %}
 It gets easier and easier to set up a new computer. I took advantage of the Cyber Monday deals to get myself a ThinkPad that I immediately proceeded to switch over to Ubuntu. Before the cloud getting a new computer introduced a whole world of pain since you had to worry about migrating important files. These days it’s incredibly simple: most of our digital lives are replicated somewhere online and local files can be kept in Dropbox while code is kept on GitHub. I migrated from OS X to Ubuntu and the vast majority of the issues I’m running into are keyboard shortcut and workflow related and nothing to do with the software itself.
