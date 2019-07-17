@@ -2,8 +2,8 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/lore/
 http://dangoldin.com/about/
+http://dangoldin.com/lore/
 http://dangoldin.com/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/
 http://dangoldin.com/2019/07/15/environmental-sustainability/
 http://dangoldin.com/2019/07/14/toward-a-global-government/
 http://dangoldin.com/2019/07/14/my-ubuntu-experinece/

@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-15T23:47:47-04:00</updated>
+ <updated>2019-07-16T23:44:08-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Cloudflare outage postmortem</title>
+   <link href="http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/"/>
+   <updated>2019-07-16T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem</id>
+   <content:encoded><![CDATA[
+<p>Postmortems are one of the best practices of modern software engineering. They allow engineering teams to learn from mistakes and drive changes that eliminate entire categories of problems. They’re a great way to own issues, and if shared publicly, provide transparency to customers and describe what will be done to prevent these types of issues in the future.</p>
+
+<p>As an engineer, it’s incredibly valuable and interesting to read these public postmortems. When large companies are hit with an issue that requires a postmortem it’s usually a gnarly issue that is inspiring and interesting to learn about. In addition, they offer a glimpse into how larger companies operate, the way their teams are organized, and the types of tools and systems they have to address issues. These are all very helpful to those of us who are running at a much smaller scale since they force us to compare and contrast our systems against theirs and helpfully allow us to improve the way we operate.</p>
+
+<p>One of the best postmortems I’ve read recently was <a href="https://new.blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">published by Cloudflare</a>; they had an outage on July 2nd and wrote a deep and thoughtful postmortem that explained the issue in depth and the changes being made to avoid something similar in the future. If you haven’t had a chance to read it yet definitely take the time.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Environmental sustainability</title>
