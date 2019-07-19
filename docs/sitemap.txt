@@ -20,6 +20,8 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/07/17/substack-vs-medium/
+http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/
 http://dangoldin.com/2019/07/15/environmental-sustainability/
 http://dangoldin.com/2019/07/14/toward-a-global-government/
 http://dangoldin.com/2019/07/14/my-ubuntu-experinece/

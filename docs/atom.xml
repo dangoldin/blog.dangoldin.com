@@ -3,13 +3,43 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-18T22:51:50-04:00</updated>
+ <updated>2019-07-18T22:55:59-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Substack vs Medium</title>
+   <link href="http://dangoldin.com/2019/07/17/substack-vs-medium/"/>
+   <updated>2019-07-17T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/17/substack-vs-medium</id>
+   <content:encoded><![CDATA[
+<p>I heard about Substack for the first time today while reading the <a href="https://stratechery.com/2019/substack-raises-series-a-an-interview-with-substack-co-founders-christopher-best-and-hamish-mckenzie/">Stratechery newsletter</a>. For those not familiar (like me before today!), Substack is a startup that makes it easier for individual content creators to create and monetize newsletters with the goal of empowering them to build their own media empires.</p>
+
+<p>As I read the article I couldn’t help but think about the struggles Medium has had since its founding. It started as a blogging platform and had a variety of challenges with monetization over the years. At one point they had advertising but <a href="https://digiday.com/media/medium-gives-ad-sales-calling-system-broken/">gave up</a> on it in 2017. Since then they’ve shifted to a subscription model where once you hit a limit some articles end up being put up behind a paywall, very similar to a traditional publisher. I don’t know how Medium is doing but I doubt this is where they wanted to be - monetizing in the same way as the NY Times.</p>
+
+<p>They’re very different businesses and the jury is still out on Substack but it seems this was a lost opportunity by Medium. They focused so much on the content and growing the Medium brand as a destination that they didn’t invest in improving the lives of content creators who are the bread and butter of the platform. Conversely, Substack didn’t focus on building a consumer audience and instead focused on getting high quality authors to start newsletters and gave them all the tools to do it efficiently and safely.</p>
+
+<p>It may be nothing or me overanalyzing but this feels like a healthy change in the attitude of startups. Rather than focus on growing consumer attention at all costs they’re slowing down, thinking about monetization early, and investigating in the drivers of their business. There are likely many similar opportunities out there - find startups that are trying to aggregate attention and then build services for their cream of the crop suppliers.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Cloudflare outage postmortem</title>
+   <link href="http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/"/>
+   <updated>2019-07-16T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem</id>
+   <content:encoded><![CDATA[
+<p>Postmortems are one of the best practices of modern software engineering. They allow engineering teams to learn from mistakes and drive changes that eliminate entire categories of problems. They’re a great way to own issues, and if shared publicly, provide transparency to customers and describe what will be done to prevent these types of issues in the future.</p>
+
+<p>As an engineer, it’s incredibly valuable and interesting to read these public postmortems. When large companies are hit with an issue that requires a postmortem it’s usually a gnarly issue that is inspiring and interesting to learn about. In addition, they offer a glimpse into how larger companies operate, the way their teams are organized, and the types of tools and systems they have to address issues. These are all very helpful to those of us who are running at a much smaller scale since they force us to compare and contrast our systems against theirs and helpfully allow us to improve the way we operate.</p>
+
+<p>One of the best postmortems I’ve read recently was <a href="https://new.blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">published by Cloudflare</a>; they had an outage on July 2nd and wrote a deep and thoughtful postmortem that explained the issue in depth and the changes being made to avoid something similar in the future. If you haven’t had a chance to read it yet definitely take the time.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Environmental sustainability</title>

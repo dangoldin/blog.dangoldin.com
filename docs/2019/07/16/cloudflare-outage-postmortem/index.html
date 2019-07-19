@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Cloudflare outage postmortem</title>
+  <meta name="description" content="Postmortems are a great way to learn and Cloudflare published an extremely thoughtful one to explain their outage on July 2nd.">
+  <meta name="keywords" content="cloudflare outage, postmortem" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Cloudflare outage postmortem" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/" />
+  <meta property="og:title"               content="Cloudflare outage postmortem" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="Postmortems are a great way to learn and Cloudflare published an extremely thoughtful one to explain their outage on July 2nd." />
+  <meta name="twitter:description"        content="Postmortems are a great way to learn and Cloudflare published an extremely thoughtful one to explain their outage on July 2nd." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2019-07-18T22:55:59-04:00",
-  "dateModified": "2019-07-18T22:55:59-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/07/16/cloudflare-outage-postmortem/",
+  "headline": "Cloudflare outage postmortem",
+  "datePublished": "2019-07-16T00:00:00-04:00",
+  "dateModified": "2019-07-16T00:00:00-04:00",
+  "description": "Postmortems are one of the best practices of modern software engineering. They allow engineering teams to learn from mistakes and drive changes that eliminat...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -730,22 +730,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Cloudflare outage postmortem</h1>
+      <span class="date">16 July 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>Postmortems are one of the best practices of modern software engineering. They allow engineering teams to learn from mistakes and drive changes that eliminate entire categories of problems. They’re a great way to own issues, and if shared publicly, provide transparency to customers and describe what will be done to prevent these types of issues in the future.</p>
+
+<p>As an engineer, it’s incredibly valuable and interesting to read these public postmortems. When large companies are hit with an issue that requires a postmortem it’s usually a gnarly issue that is inspiring and interesting to learn about. In addition, they offer a glimpse into how larger companies operate, the way their teams are organized, and the types of tools and systems they have to address issues. These are all very helpful to those of us who are running at a much smaller scale since they force us to compare and contrast our systems against theirs and helpfully allow us to improve the way we operate.</p>
+
+<p>One of the best postmortems I’ve read recently was <a href="https://new.blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">published by Cloudflare</a>; they had an outage on July 2nd and wrote a deep and thoughtful postmortem that explained the issue in depth and the changes being made to avoid something similar in the future. If you haven’t had a chance to read it yet definitely take the time.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/07/15/environmental-sustainability/" title="Environmental sustainability">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2019/07/17/substack-vs-medium/" title="Substack vs Medium">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F07%2F16%2Fcloudflare-outage-postmortem%2F&title=Cloudflare+outage+postmortem">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -821,7 +869,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
