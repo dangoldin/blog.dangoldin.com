@@ -19,3 +19,5 @@ gem install jekyll-redirect-from
 gem install jekyll-sitemap
 gem install jekyll-include-cache
 ```
+
+blog.dangoldin.com git:(master) ✗ sass  --watch _includes/styles.scss:_includes/styles.css -I _sass
