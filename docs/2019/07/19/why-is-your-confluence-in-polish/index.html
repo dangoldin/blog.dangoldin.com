@@ -21,25 +21,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Why is your Confluence in Polish?</title>
+  <meta name="description" content="In order to get proper sorting of dates I had to change my Confluence settings to Polish.">
+  <meta name="keywords" content="confluence, dates, ux" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2019/07/19/why-is-your-confluence-in-polish/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Why is your Confluence in Polish?" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/07/19/why-is-your-confluence-in-polish/" />
+  <meta property="og:title"               content="Why is your Confluence in Polish?" />
 
   
+  <meta property="og:description"         content="In order to get proper sorting of dates I had to change my Confluence settings to Polish." />
+  <meta name="twitter:description"        content="In order to get proper sorting of dates I had to change my Confluence settings to Polish." />
+  
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/confluence-date-lozenge.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/confluence-date-lozenge.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -49,10 +55,10 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2019-07-19T23:33:24-04:00",
-  "dateModified": "2019-07-19T23:33:24-04:00",
+  "mainEntityOfPage": "http://dangoldin.com/2019/07/19/why-is-your-confluence-in-polish/",
+  "headline": "Why is your Confluence in Polish?",
+  "datePublished": "2019-07-19T00:00:00-04:00",
+  "dateModified": "2019-07-19T00:00:00-04:00",
   "description": "",
   "author": {
     "@type": "Person",
@@ -727,135 +733,76 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Why is your Confluence in Polish?</h1>
+      <span class="date">19 July 2019</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<amp-img src="/assets/static/images/confluence-date-lozenge.png" alt="Confluence Date Lozenge settings" width="634" height="257" layout="responsive"></amp-img>
 
+<p>Despite not speaking any Polish, I changed my Confluence language to Polish earlier this week to finally fix a problem that’s been bugging me for years. Confluence has the concept of a “<a href="https://confluence.atlassian.com/doc/configuring-time-and-date-formats-150144.html">date lozenge</a>” which allows you to add a date via a helpful calendar and gives it a nice looking format. We decided to use these lozenges to track dates in our system since it improves consistency and they do get special treatment in Confluence and lead to a few neat features - for example being able to use them as due dates in tasks.</p>
 
+<p>Unfortunately, the default English settings have them formatted as “dd mmm YYYY” so June 5, 2019 would be displayed as “05 Jun 2019”. In isolation this is fine but it causes a big pain if you want to sort by a date in a table since, as you can probably guess at this point, it sorts by the day of the month, then the month string, and then the year. In essence, it doesn’t actually treat it as a date and instead sorts them as if they were all strings.</p>
 
+<p>This is not very helpful when you have a list of documents and want to see the most recent ones first. Luckily, after poking around, I realized that Confluence had a date format that I assumed would change the lozenge formatting. Unfortunately, this only changed the formatting of internal dates - for example document data.</p>
 
+<p>It turns out that the only way to change the format of the “date lozenge” is to change language settings. And in order to get something that’s year, month, and then date I get to pick out of either Polish or Japanese.</p>
 
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>I’ve used Confluence enough that I can navigate it by feel so the Polish doesn’t bother me too much but it is ridiculous that there’s no way to actually change the format of the date lozenge without changing your language setting and that sorting date objects sorts based on the date format. If either of these worked as expected my Confluence would still be in English but then I wouldn’t be improving my language skills.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##product-ref">#product </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/07/17/substack-vs-medium/" title="Substack vs Medium">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F07%2F19%2Fwhy-is-your-confluence-in-polish%2F&title=Why+is+your+Confluence+in+Polish%3F">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -931,7 +878,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
