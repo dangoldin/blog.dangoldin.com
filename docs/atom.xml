@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-21T22:33:39-04:00</updated>
+ <updated>2019-07-26T23:28:16-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>PagerDuty's incident response guide</title>
+   <link href="http://dangoldin.com/2019/07/26/pagerdutys-incident-response-guide/"/>
+   <updated>2019-07-26T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/07/26/pagerdutys-incident-response-guide</id>
+   <content:encoded><![CDATA[
+<p>As companies grow they need to develop their incident response processes. The risks are greater and the systems become increasingly more complicated with significantly more specialized knowledge. We’re going through a process to redo our incident response process and while doing research I came across <a href="https://response.pagerduty.com">PagerDuty’s guide</a> which has been incredibly helpful in guiding our approach.</p>
+
+<p>It’s extremely thorough and goes into painstaking detail that describes everything one needs to do to build a mature incident response process. There’s a slew of content around setting up the tools (using PagerDuty of course) but also around the cultural and organization pieces that need to be there to make it a success.</p>
+
+<p>Redoing an incident response process is a big undertaking and the PagerDuty guide make it a lot more tractable. Even if you’re happy with your current approach it’s definitely worth a read just for the sheer amount of content and information.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>A more efficient Google Calendar</title>

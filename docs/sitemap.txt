@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/07/26/pagerdutys-incident-response-guide/
 http://dangoldin.com/2019/07/21/a-more-efficient-google-calendar/
 http://dangoldin.com/2019/07/19/why-is-your-confluence-in-polish/
 http://dangoldin.com/2019/07/17/substack-vs-medium/
