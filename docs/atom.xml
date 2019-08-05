@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-07-29T23:55:42-04:00</updated>
+ <updated>2019-08-04T23:50:03-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Diablo on the web</title>
+   <link href="http://dangoldin.com/2019/08/04/diablo-on-the-web/"/>
+   <updated>2019-08-04T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/08/04/diablo-on-the-web</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/diablo.jpg" alt="Diablo game cover" width="400" height="300" layout="responsive"/>
+
+<p>I spent more time than I should have playing the newly released JavaScript port of Diablo. I remember saving up to buy this game and poring over the manual for hours before actually being able to play it due to a single and shared family computer. Diablo was different than anything I had played before and I got hooked. It was also one of the first games I played that had online support. I never beat it without cheating but it was an incredible game to play and world to explore. It also led me to lose a chunk of my high school life to Diablo 2 but that’s another story.</p>
+
+<p>It turns out that there’s a <a href="https://github.com/diasurgical/devilution">GitHub project</a> containing the code of the original game. It’s being maintained by a small team that was able to reverse engineer the compiled code based on some additional leaks. That is incredibly impressive but what makes it even more exciting is that someone took this version and <a href="https://github.com/d07RiV/diabloweb">ported it over</a> to WebAssembly which allows it to run in the browser.</p>
+
+<p>Diablo was released in 1996 and it took 23 years to port it to the browser. It’s an incredible example of the power of open source. A small community was passionate enough to keep working on this project and release it to the broader world. I’m almost as happy now as I was 23 years ago when I first played it.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Sports biographies as management books</title>
