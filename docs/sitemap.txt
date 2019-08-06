@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition/
 http://dangoldin.com/2019/08/04/diablo-on-the-web/
 http://dangoldin.com/2019/07/29/sports-biographies-as-management-books/
 http://dangoldin.com/2019/07/28/open-sourcing-configurations/

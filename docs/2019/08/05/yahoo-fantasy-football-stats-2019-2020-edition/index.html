@@ -21,26 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Yahoo fantasy football stats: 2019 2020 edition</title>
+  <meta name="description" content="Every year I scrape Yahoo's fantasy football stats for the upcoming season and have done that for the upcoming season.">
+  <meta name="keywords" content="yahoo fantasy football stats, fantasy football, scraper" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Yahoo fantasy football stats: 2019 2020 edition" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition/" />
+  <meta property="og:title"               content="Yahoo fantasy football stats: 2019 2020 edition" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="Every year I scrape Yahoo's fantasy football stats for the upcoming season and have done that for the upcoming season." />
+  <meta name="twitter:description"        content="Every year I scrape Yahoo's fantasy football stats for the upcoming season and have done that for the upcoming season." />
   
 
   
@@ -52,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2019-08-05T23:50:02-04:00",
-  "dateModified": "2019-08-05T23:50:02-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition/",
+  "headline": "Yahoo fantasy football stats: 2019 2020 edition",
+  "datePublished": "2019-08-05T00:00:00-04:00",
+  "dateModified": "2019-08-05T00:00:00-04:00",
+  "description": "In what has become an annual tradition I’ve updated my Yahoo Fantasy Football scraping script for the 2019-2020 NFL season. The script works by logging into ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -730,29 +730,72 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Yahoo fantasy football stats: 2019 2020 edition</h1>
+      <span class="date">05 August 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the director of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I founded <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Prior to the startups, I worked as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>. I went to <a href="http://www.cornell.edu" target="_blank">Cornell</a> and graduated in 2005 with a BA in Mathematics.</p>
+<p>In what has become an annual tradition I’ve updated my Yahoo Fantasy Football scraping script for the 2019-2020 NFL season. The script works by logging into the Yahoo Fantasy Football site and downloading the first 4 pages of projected stats for each week. The code is up on <a href="https://github.com/dangoldin/yahoo-ffl">GitHub</a> as well as the stats in a <a href="https://github.com/dangoldin/yahoo-ffl/blob/master/stats-2020.csv">CSV file</a>.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>Every year there’s been something that Yahoo did to break my script and this year was no different. The first thing I discovered was the login broke despite the HTML elements staying the same - it turns out my login “click” event was actually clicking on an ad which was opening up a new window. Changing the code from a click to an enter solved that problem.</p>
 
-<ul>
-    <li><a href="http://www.twirlapp.com" target="_blank">Twirl</a> - a bookmarklet to let you quickly share articles</li>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li><a href="https://github.com/dangoldin/lawdiff" target="_blank">Lawdiff</a> - identify similar laws across multiple states</li>
-    <!-- <li><a href="http://www.wordsio.com" target="_blank">Wordsio</a> - word games to improve vocabulary learning</li> -->
-    <!-- <li><a href="http://www.gemsofcl.com" target="_blank">Gems of Craigslist</a> - a "Hot or Not" for Craigslist furniture</li> -->
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>The next problem was that after a few pages the site would just hang and timeout. Digging into it I discovered that it was always timing out with a request to a subdomain of doubleverify.com, a digital fraud vendor. My suspicion is that since I was using Selenium to automate the scrape it was rightfully flagged as fraud and rather than bail it decided to just hang my process. Since DoubleVerify is also a tracking the company the fix here was to run Chrome with the <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en">uBlock Origin</a> extension enabled which required a bit of research to configure but ended up solving the problem.</p>
 
-<!-- I also have a <a href="/assets/static/data/dg_res.pdf">resume</a> -->
+<p>I haven’t been defeated by Yahoo’s anti-scrape systems yet but there’s always next year.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/08/04/diablo-on-the-web/" title="Diablo on the web">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F08%2F05%2Fyahoo-fantasy-football-stats-2019-2020-edition%2F&title=Yahoo+fantasy+football+stats%3A+2019+2020+edition">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -828,7 +871,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

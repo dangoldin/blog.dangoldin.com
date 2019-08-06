@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-08-04T23:50:03-04:00</updated>
+ <updated>2019-08-05T23:50:02-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Yahoo fantasy football stats: 2019 2020 edition</title>
+   <link href="http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition/"/>
+   <updated>2019-08-05T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/08/05/yahoo-fantasy-football-stats-2019-2020-edition</id>
+   <content:encoded><![CDATA[
+<p>In what has become an annual tradition I’ve updated my Yahoo Fantasy Football scraping script for the 2019-2020 NFL season. The script works by logging into the Yahoo Fantasy Football site and downloading the first 4 pages of projected stats for each week. The code is up on <a href="https://github.com/dangoldin/yahoo-ffl">GitHub</a> as well as the stats in a <a href="https://github.com/dangoldin/yahoo-ffl/blob/master/stats-2020.csv">CSV file</a>.</p>
+
+<p>Every year there’s been something that Yahoo did to break my script and this year was no different. The first thing I discovered was the login broke despite the HTML elements staying the same - it turns out my login “click” event was actually clicking on an ad which was opening up a new window. Changing the code from a click to an enter solved that problem.</p>
+
+<p>The next problem was that after a few pages the site would just hang and timeout. Digging into it I discovered that it was always timing out with a request to a subdomain of doubleverify.com, a digital fraud vendor. My suspicion is that since I was using Selenium to automate the scrape it was rightfully flagged as fraud and rather than bail it decided to just hang my process. Since DoubleVerify is also a tracking the company the fix here was to run Chrome with the <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en">uBlock Origin</a> extension enabled which required a bit of research to configure but ended up solving the problem.</p>
+
+<p>I haven’t been defeated by Yahoo’s anti-scrape systems yet but there’s always next year.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Diablo on the web</title>
