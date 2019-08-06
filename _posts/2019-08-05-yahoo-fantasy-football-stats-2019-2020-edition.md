@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yahoo fantasy football stats: 2019 2020 edition"
+title: "Yahoo fantasy football stats: 2019-2020 edition"
 description: "Every year I scrape Yahoo's fantasy football stats for the upcoming season and have done that for the upcoming season."
 keywords: "yahoo fantasy football stats, fantasy football, scraper"
 image_url: 
