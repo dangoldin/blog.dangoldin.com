@@ -3,13 +3,30 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-08-22T00:07:32-04:00</updated>
+ <updated>2019-08-24T23:11:46-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Disney+</title>
+   <link href="http://dangoldin.com/2019/08/24/disney/"/>
+   <updated>2019-08-24T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/08/24/disney</id>
+   <content:encoded><![CDATA[
+<p>Yesterday the internet blew up after Disney’s announcement of a new series, <a href="https://en.wikipedia.org/wiki/The_Mandalorian">The Mandalorian</a>, that would be available as a part of their new streaming service, Disney+. I watched the <a href="https://www.youtube.com/watch?v=aOC8E8z_ifw">trailer</a> and as expected it hit all the right Star Wars nostalgia points. The show itself wasn’t what stood out. Instead it was the closing scene where Disney highlights what Disney+ includes: Disney, Pixar, Marvel, Star Wars, and National Geographic.</p>
+
+<img src="http://dangoldin.com/assets/static/images/disney-plus.png" alt="Disney+ ownership" width="1256" height="521" layout="responsive"/>
+
+<p>People following the “streaming wars” know how many properties Disney owns but this is a shot to everyone else that Disney owns a ton of content. It’s an incredibly strong move and makes me more and more bullish about Disney and the Disney+ offering. I’d be shocked if they don’t quickly rise to the top ranking. It’s a bit difficult to pull up to date subscriber numbers by service but I found some data from April 2018 indicating that HBO is ahead of Netflix which is ahead of Amazon Prime. I don’t know what the latest numbers are but I can easily imagine Disney quickly competing with the top 3. I wouldn’t even be surprised if they surpass every other streaming service - they have content that runs the gamut and the price is more than fair. I currently own a small amount of Disney stock but to put my money where my mouth is I plan on purchasing more this week.</p>
+
+<img src="http://dangoldin.com/assets/static/images/streaming-subscribers-april-2018.png" alt="Number of streaming subscribers as of April 2018" width="762" height="427" layout="responsive"/>
+<p class="caption">Source: <a href="https://www.vox.com/2018/4/19/17257942/amazon-prime-100-million-subscribers-hulu-hbo-tinder-members">vox.com</a></p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>What do airlines and LinkedIn have in common?</title>
