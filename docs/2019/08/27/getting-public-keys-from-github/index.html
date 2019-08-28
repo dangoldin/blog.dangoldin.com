@@ -21,23 +21,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Getting public keys from GitHub</title>
+  <meta name="description" content="I ran into an issue and solved it by fetching my public keys from GitHub.">
+  <meta name="keywords" content="github, digitalocean, ssh, public keys" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2019/08/27/getting-public-keys-from-github/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Getting public keys from GitHub" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/08/27/getting-public-keys-from-github/" />
+  <meta property="og:title"               content="Getting public keys from GitHub" />
 
+  
+  <meta property="og:description"         content="I ran into an issue and solved it by fetching my public keys from GitHub." />
+  <meta name="twitter:description"        content="I ran into an issue and solved it by fetching my public keys from GitHub." />
   
 
   
@@ -49,11 +52,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2019-08-28T00:04:06-04:00",
-  "dateModified": "2019-08-28T00:04:06-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/08/27/getting-public-keys-from-github/",
+  "headline": "Getting public keys from GitHub",
+  "datePublished": "2019-08-27T00:00:00-04:00",
+  "dateModified": "2019-08-27T00:00:00-04:00",
+  "description": "I use DigitalOcean to host a variety of personal projects and every once in a while go through a “DevOps” spree where I upgrade everything I can. Last time a...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -727,35 +730,70 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Getting public keys from GitHub</h1>
+      <span class="date">27 August 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>I use DigitalOcean to host a variety of personal projects and every once in a while go through a “DevOps” spree where I upgrade everything I can. Last time around I switched them over to Ansible to make these sorts of updates easier. I ran this playbook earlier this week and discovered that one of the instances had an outdated public key and I no longer had SSH access.</p>
+
+<p>It would have been straightforward to go through the DigitalOcean flow of stopping the instance and launching it again with an updated key but I wanted to explore and see if I could find a way to avoid the reboot. After poking around the DigitalOcean UI I found a section that allowed to me to login to the terminal of the instance. I was somehow able to guess the password here (shows how secure my passwords are) but then ran into another problem: the paste command garbled the text as I was pasting it into the spoofed terminal. I tried a few alternatives but was unable to get public key added through the UI.</p>
+
+<p>What I needed was a simple way to publicly host my keys and then download them using a curl command. I was about to upload them to a personal S3 bucket and then somehow remembered that you can get any GitHub user’s keys from a GitHub url: https://github.com/{user}.keys - my keys are available at https://github.com/dangoldin.keys. Fetching this file and dumping them into authorized_keys solved my problem and I was able to finish up the update. The lesson here is that 1) your GitHub public keys are publicly accessible via GitHub and 2) it’s useful to keep accumulating info since you don’t know when you’ll need it.</p>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/08/25/explain-the-why-in-code-reviews/" title="Explain the why in code reviews">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F08%2F27%2Fgetting-public-keys-from-github%2F&title=Getting+public+keys+from+GitHub">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -831,7 +869,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
