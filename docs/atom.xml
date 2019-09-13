@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-08-28T00:04:06-04:00</updated>
+ <updated>2019-09-12T23:10:44-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Where's the new iPhone SE?</title>
+   <link href="http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se/"/>
+   <updated>2019-09-12T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se</id>
+   <content:encoded><![CDATA[
+<p>After the new iPhone announcement there’s been a bunch of commentary around the desire to come up with a new version of the SE, a smaller factor phone. Fred Wilson posted a <a href="https://avc.com/2019/09/bring-back-the-se/">short post</a> about it and it was quickly picked up and spread across various forums, such as <a href="https://news.ycombinator.com/item?id=20931512">Hacker News</a>. The discussions generally ranged around the market size and how it’s not just worth it but I suspect a big part is the hardware.</p>
+
+<p>It may be incredibly difficult and expensive to pack the same performance into a much smaller form factor. The newly announced iPhone 11 is 5.94” tall, 2.98” wide, 0.33” deep, and weighs 6.48 ounces. The iPhone SE, on the other hand, is 4.86” tall, 2.31” wide, 0.30” deep, and weighs 3.99 ounces. The volume of an iPhone 11 is 5.84 cubic inches while the SE is 3.37 cubic inches, just over 40% smaller. That doesn’t even include the case or screen depth and it’s incredible to see how much technology is packed into such a small space but also shows how much much smaller the SE is.</p>
+
+<p>I’m far from an expert and am just speculating but it can’t be that simple to reduce the volume of components by 40% and still expect the same functionality. It may be possible that they can pack the hardware in to the SE size from a few years ago but then the specs would be significantly worse than the flagship model. And why many people want the SE back how many of those would take specs that are a few years out of date? I would given that I’m still on a 6S but I’m not sure how many others would.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Getting public keys from GitHub</title>

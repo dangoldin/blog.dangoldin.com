@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se/
 http://dangoldin.com/2019/08/27/getting-public-keys-from-github/
 http://dangoldin.com/2019/08/25/explain-the-why-in-code-reviews/
 http://dangoldin.com/2019/08/24/disney/
