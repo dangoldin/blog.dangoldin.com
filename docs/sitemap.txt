@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/09/15/google-sheets-explore-functionality/
 http://dangoldin.com/2019/09/14/solving-num-a-combinatoric-math-game/
 http://dangoldin.com/2019/09/13/in-praise-of-tcpdump/
 http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se/
