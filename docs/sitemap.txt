@@ -21,6 +21,12 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2019/09/23/free-speech-and-the-first-amendment/
+http://dangoldin.com/2019/09/16/goldilocks-and-the-three-implementations/
+http://dangoldin.com/2019/09/15/google-sheets-explore-functionality/
+http://dangoldin.com/2019/09/14/solving-num-a-combinatoric-math-game/
+http://dangoldin.com/2019/09/13/in-praise-of-tcpdump/
+http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se/
+http://dangoldin.com/2019/08/27/getting-public-keys-from-github/
 http://dangoldin.com/2019/08/25/explain-the-why-in-code-reviews/
 http://dangoldin.com/2019/08/24/disney/
 http://dangoldin.com/2019/08/22/what-do-airlines-and-linkedin-have-in-common/

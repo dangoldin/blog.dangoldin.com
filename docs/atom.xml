@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-09-23T23:00:28-04:00</updated>
+ <updated>2019-09-23T23:03:08-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -24,6 +24,131 @@
 <p>Over the course of the 20th century the interpretation changed to not penalize the speaker and instead follow the rule of “clear and present danger” when determining if something should be truly limited. This led to stronger opposition and more thoughtful conversations which I like to think led to a healthier and more tolerant world.</p>
 
 <p>These days we see pundits referencing free speech as if it’s a static entity but it has and will continue to evolve. What we define as free speech now will be different in 50 years. It’s difficult to imagine it changing but laws invariably change along with society.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Goldilocks and the three implementations</title>
+   <link href="http://dangoldin.com/2019/09/16/goldilocks-and-the-three-implementations/"/>
+   <updated>2019-09-16T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/16/goldilocks-and-the-three-implementations</id>
+   <content:encoded><![CDATA[
+<p>While browsing Twitter I came across the following tweet that resonated:</p>
+
+<amp-twitter width="609" height="274" layout="responsive" data-tweetid="1173706283859341312">
+</amp-twitter>
+
+<p>A common refrain I have is that the best engineers are not the ones that write the most code but are instead making decisions that reduce the amount of code that needs to be written in the future. This tweet speaks to that since very often an implementation will either be too simple to support a future use or be over-implemented to support a potential future use case. The truth is often somewhere in between.</p>
+
+<p>That’s why business and commercial context is incredibly valuable to an engineering team and why, for the most part, the closer an engineer is to the problem the better the overall solution. This is also a big reason why startups can out-build larger companies. They have fewer layers of translations in between the problem and the product that’s meant to solve it.</p>
+
+<p>The solution here is to eliminate as much friction between engineers and the problem being solved. The goal isn’t to understate the problem which will lead to an implementation that solves the immediate problem but isn’t flexible enough to grow with the problem opportunity. Similarly, overstating the problem will lead to an implementation that lacks flexibility due to its complexity.</p>
+
+<p>This is very similar to Goldilocks and the Three Bears - the first approach is wrong in one direction, the second is wrong in the opposite direction, and the last approach is the one that’s “just right.”</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Google Sheets explore functionality</title>
+   <link href="http://dangoldin.com/2019/09/15/google-sheets-explore-functionality/"/>
+   <updated>2019-09-15T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/15/google-sheets-explore-functionality</id>
+   <content:encoded><![CDATA[
+<p>For the past few years I’ve been tracking a variety of daily metrics - ranging from sleep, to what I eat and drink, to my mood - in a Google spreadsheet. I have an annual tradition of analyzing and visualizing the data but I never go beyond the simple summary statistics. I always mean to do a deeper analysis but inevitably just run a script I barely touched in the past few years.</p>
+
+<p>At the same time, I keep seeing the prompt from Google Sheets to try out their new “Explore” functionality so I decided to give it a shot and see if surfaced any interesting insights. It’s extremely simple to use and if you know what you’re looking for a great way to quickly get answers and visualize your information. For example, typing in “Histogram of Time Slept” gets you a plot containing exactly what you wanted.</p>
+
+<img src="http://dangoldin.com/assets/static/images/google-explore-duration-time-slept.png" alt="Time slept histogram" width="1029" height="631" layout="responsive"/>
+
+<p>The above made it easier to get what I wanted so I had high hopes for the “Analysis” functionality which I hoped would surface something novel. Instead, it seems it just ran through all the data and chose the appropriate chart depending on the data type and cardinality. For example, it generated the time slept histogram above but a pie chart for my moods.</p>
+
+<img src="http://dangoldin.com/assets/static/images/google-explore-time-slept-by-date.png" alt="Time slept by date" width="948" height="707" layout="responsive"/>
+
+<p>Part of the challenge is that most of the interesting data is semi structured and I’d need to do a variety of transformations to make it easier for Sheets to work with. Overall, I’m impressed with how simple and quick to do the visualizations but also disappointed in the depth of the analysis.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Solving Num: A combinatoric math game</title>
+   <link href="http://dangoldin.com/2019/09/14/solving-num-a-combinatoric-math-game/"/>
+   <updated>2019-09-14T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/14/solving-num-a-combinatoric-math-game</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/num-level-68-combined.png" alt="Num puzzle unsolved and solved" width="1108" height="985" layout="responsive"/>
+
+<p>I don’t play games on my phone but one game I keep going back to is “<a href="Num">https://apps.apple.com/us/app/num-insanely-hard-math-game/id861791129</a>” - an “insanely hard math game.” The premise is pretty simple - you have a few numbers that you need to combine, using the four basic math operations, so it computes to a specific number.</p>
+
+<p>The levels start off simple but it gets more difficult with a lot of trial and error at the higher levels. They’re no longer simple expressions that can be evaluated fairly linearly but instead are solved by using fairly complex intermediate values.</p>
+
+<p>I enjoy the process of solving these problems but decided to challenge myself to write a program that can solve these sorts of problems. Last night I was able to get a crude solution working that’s able to solve a 6-number problem in about 5 minutes on my laptop. The next challenge is speeding this to be even quicker but even the crude solution took a few attempts to get right.</p>
+
+<p>The approach I took was a somewhat intelligent brute force. While it’s still fresh I wanted to share the attempts to highlight my thought process and the difficulties with each failed attempt.</p>
+
+<h3 id="attempt-1">Attempt 1</h3>
+
+<p>Idea here was to simply get all the number permutations and alternate them with all combinations of the operators - for example “1 + 4 - 5 * 6 / 4 + 1” - and then run them through Python’s eval to see how far I could get. I knew full well this would not solve all types of problems due to not being able to control the order of operations but I just wanted to get a starting point.</p>
+
+<h3 id="attempt-2">Attempt 2</h3>
+
+<p>At this point I wanted to handle the order of operations issue from the first attempt and figured it would be easier to do that if I switched to a <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> (RPN). The intuition here was to simplify the expressions I’d need to generate by not having to worry about the parentheses. This required implementing an RPN evaluator but I found a <a href="https://blog.klipse.tech/python/2016/09/22/python-reverse-polish-evaluator.html">simple one online</a>. Similar to the first attempt, this approach was still not able to represent every type of expression but it was much easier to work with. An example of an expression generated with this approach is “1 2 9 8 17 3 / + * - *”.</p>
+
+<h3 id="attempt-3">Attempt 3</h3>
+
+<p>This was an extremely brute force attempt by treating each combination of numbers and operators as its own expression to be permuted. I didn’t worry about validation and instead just relied on evaluating and then ignoring the exceptions. The permutation step was incredibly simple to implement but as expected this was extremely inefficient and I was unable to actually get a solution in a reasonable amount of time. An example of an expression generated (invalid) with this approach was “1 + * 2 9 8 17 3 / - *” - it had the right numbers and operators but the RPN order was just invalid.</p>
+
+<h3 id="attempt-4">Attempt 4</h3>
+
+<p>This was simply validating the expressions generated in the third attempt to before running the evaluator. With RPN the approach is incredibly simple since all we need to do is read from left to right and make sure that the number of numbers seen is always greater than the number of operators. This is the current approach and actually results in a working solution in a reasonable amount of time. I tested it on a few problems that have 6 starting numbers and the solutions were all within the 5 to 10 minute range.</p>
+
+<h3 id="future">Future</h3>
+
+<p>There are some clear deficiencies with the previous approach. The major one is that why validate instead of generating the valid expressions at the beginning? The ideal approach would also do a fair amount of memoization to avoid having to recompute the same sub-expressions over and over. I expect that implementing these ideas will improve the speed by an order of magnitude.</p>
+
+<p>If you’re interested in following along or building your own implementation it’s all available on GitHub: <a href="https://github.com/dangoldin/num-game-solver/blob/master/solve.py">https://github.com/dangoldin/num-game-solver/blob/master/solve.py</a>.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>In praise of tcpdump</title>
+   <link href="http://dangoldin.com/2019/09/13/in-praise-of-tcpdump/"/>
+   <updated>2019-09-13T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/13/in-praise-of-tcpdump</id>
+   <content:encoded><![CDATA[
+<p>We switched over to Prometheus and Grafana for our monitoring but some of our older systems are still on Graphite and StatsD. One of these is an alert for disk usage that started going off a few weeks ago. Over the course of the day it kept fluctuating from 100% disk usage to ~40% and whenever we dug into it we only saw the 40% number. Since StatsD is push based we assumed it was another instance that was submitting its metrics under the same key. Unfortunately, because StatsD is push based, it wasn’t clear which instance was actually doing the conflicting metrics push.</p>
+
+<p>After a few days of poking around we weren’t any closer to solving the problem and wished there was something on our StatsD instance that could track the source of every metric submission. That’s exactly what tcpdump does and after a bit of research we came up with the following command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>tcpdump <span class="nt">-i</span> eth0 udp port 8125 <span class="nt">-vv</span> <span class="nt">-X</span> <span class="o">&gt;</span> /tmp/tcpdump.tmp</code></pre></figure>
+
+<p>This listens to all UDP traffic going into port 8125 and dumps it into a temp file. We kicked this off and after running it for a few hours we saw that there was, in fact, another instance sending this conflicting metric data. This led to a new problem as we were unable to find the instance in our account. After a bit of poking around, we discovered that we had a rogue instance in another account that was created while we were testing a provisioning script and was never deactivated. A relatively simple issue took us quite a bit of time to resolve and I’m not sure where we’d be without tcpdump.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Where's the new iPhone SE?</title>
+   <link href="http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se/"/>
+   <updated>2019-09-12T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/09/12/wheres-the-new-iphone-se</id>
+   <content:encoded><![CDATA[
+<p>After the new iPhone announcement there’s been a bunch of commentary around the desire to come up with a new version of the SE, a smaller factor phone. Fred Wilson posted a <a href="https://avc.com/2019/09/bring-back-the-se/">short post</a> about it and it was quickly picked up and spread across various forums, such as <a href="https://news.ycombinator.com/item?id=20931512">Hacker News</a>. The discussions generally ranged around the market size and how it’s not just worth it but I suspect a big part is the hardware.</p>
+
+<p>It may be incredibly difficult and expensive to pack the same performance into a much smaller form factor. The newly announced iPhone 11 is 5.94” tall, 2.98” wide, 0.33” deep, and weighs 6.48 ounces. The iPhone SE, on the other hand, is 4.86” tall, 2.31” wide, 0.30” deep, and weighs 3.99 ounces. The volume of an iPhone 11 is 5.84 cubic inches while the SE is 3.37 cubic inches, just over 40% smaller. That doesn’t even include the case or screen depth and it’s incredible to see how much technology is packed into such a small space but also shows how much much smaller the SE is.</p>
+
+<p>I’m far from an expert and am just speculating but it can’t be that simple to reduce the volume of components by 40% and still expect the same functionality. It may be possible that they can pack the hardware in to the SE size from a few years ago but then the specs would be significantly worse than the flagship model. And why many people want the SE back how many of those would take specs that are a few years out of date? I would given that I’m still on a 6S but I’m not sure how many others would.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Getting public keys from GitHub</title>
+   <link href="http://dangoldin.com/2019/08/27/getting-public-keys-from-github/"/>
+   <updated>2019-08-27T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/08/27/getting-public-keys-from-github</id>
+   <content:encoded><![CDATA[
+<p>I use DigitalOcean to host a variety of personal projects and every once in a while go through a “DevOps” spree where I upgrade everything I can. Last time around I switched them over to Ansible to make these sorts of updates easier. I ran this playbook earlier this week and discovered that one of the instances had an outdated public key and I no longer had SSH access.</p>
+
+<p>It would have been straightforward to go through the DigitalOcean flow of stopping the instance and launching it again with an updated key but I wanted to explore and see if I could find a way to avoid the reboot. After poking around the DigitalOcean UI I found a section that allowed to me to login to the terminal of the instance. I was somehow able to guess the password here (shows how secure my passwords are) but then ran into another problem: the paste command garbled the text as I was pasting it into the spoofed terminal. I tried a few alternatives but was unable to get public key added through the UI.</p>
+
+<p>What I needed was a simple way to publicly host my keys and then download them using a curl command. I was about to upload them to a personal S3 bucket and then somehow remembered that you can get any GitHub user’s keys from a GitHub url: https://github.com/{user}.keys - my keys are available at https://github.com/dangoldin.keys. Fetching this file and dumping them into authorized_keys solved my problem and I was able to finish up the update. The lesson here is that 1) your GitHub public keys are publicly accessible via GitHub and 2) it’s useful to keep accumulating info since you don’t know when you’ll need it.</p>
 ]]></content:encoded>
  </entry>
  
