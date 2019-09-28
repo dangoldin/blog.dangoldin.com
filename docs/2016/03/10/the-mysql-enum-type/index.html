@@ -746,8 +746,8 @@ table {
 
 <span class="c1">-- Create the toy table</span>
 <span class="k">create</span> <span class="k">table</span> <span class="n">test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="n">int</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">)</span>
+  <span class="n">id</span> <span class="nb">int</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">-- Populate it with some sample values</span>
@@ -757,7 +757,7 @@ table {
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Now let's add another possible enum value</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
 
 <span class="c1">-- Looks good</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
@@ -769,19 +769,19 @@ table {
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Change the order around</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Change it again</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Add and change the order</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
@@ -793,10 +793,10 @@ table {
 <span class="k">update</span> <span class="n">test</span> <span class="k">set</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'f'</span> <span class="k">where</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
 
 <span class="c1">-- Now get rid of 'a'</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
 
 <span class="c1">-- Now add 'a' back in</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
 
 <span class="c1">-- Now swap 'f' back with 'a'</span>
 <span class="k">update</span> <span class="n">test</span> <span class="k">set</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'a'</span> <span class="k">where</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'f'</span><span class="p">;</span>

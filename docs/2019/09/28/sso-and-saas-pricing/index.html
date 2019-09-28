@@ -23,31 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Extract info from a web page using JavaScript</title>
-  <meta name="description" content="With a little bit of JavaScript knowledge you can cleanly extract information from a web page while avoiding formatting issues.">
-  <meta name="keywords" content="html, css, javascript, crawling, scraping" />
+  <title>SSO and SAAS pricing</title>
+  <meta name="description" content="SSO solves a real problem but it's incredible how much higher SAAS packages charge for SSO.">
+  <meta name="keywords" content="sso, saas, single sign on, enterprise software, security" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2013/08/26/extract-info-from-a-web-page-using-javascript/">
+  <link rel="canonical" href="http://dangoldin.com/2019/09/28/sso-and-saas-pricing/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Extract info from a web page using JavaScript" />
+  <meta name="twitter:title" content="SSO and SAAS pricing" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2013/08/26/extract-info-from-a-web-page-using-javascript/" />
-  <meta property="og:title"               content="Extract info from a web page using JavaScript" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/09/28/sso-and-saas-pricing/" />
+  <meta property="og:title"               content="SSO and SAAS pricing" />
 
   
-  <meta property="og:description"         content="With a little bit of JavaScript knowledge you can cleanly extract information from a web page while avoiding formatting issues." />
-  <meta name="twitter:description"        content="With a little bit of JavaScript knowledge you can cleanly extract information from a web page while avoiding formatting issues." />
+  <meta property="og:description"         content="SSO solves a real problem but it's incredible how much higher SAAS packages charge for SSO." />
+  <meta name="twitter:description"        content="SSO solves a real problem but it's incredible how much higher SAAS packages charge for SSO." />
   
 
   
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/ff-roster-source.jpeg" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/ff-roster-source.jpeg" />
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/dropbox-pricing.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/dropbox-pricing.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -57,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2013/08/26/extract-info-from-a-web-page-using-javascript/",
-  "headline": "Extract info from a web page using JavaScript",
-  "datePublished": "2013-08-26T00:00:00-04:00",
-  "dateModified": "2013-08-26T00:00:00-04:00",
-  "description": "How many times have you tried copying something from a webpage into Excel and discovering that the formatting got completely messed up and forced you to clea...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/09/28/sso-and-saas-pricing/",
+  "headline": "SSO and SAAS pricing",
+  "datePublished": "2019-09-28T00:00:00-04:00",
+  "dateModified": "2019-09-28T00:00:00-04:00",
+  "description": "",
   "author": {
     "@type": "Person",
     "name": ""
@@ -737,66 +737,28 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Extract info from a web page using JavaScript</h1>
-      <span class="date">26 August 2013</span>
+      <h1 class="post-title">SSO and SAAS pricing</h1>
+      <span class="date">28 September 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>How many times have you tried copying something from a webpage into Excel and discovering that the formatting got completely messed up and forced you to clean the data up manually? With just a bit of knowledge about HTML and CSS you can use JavaScript to get the information you want without having to struggle with the formatting issues.</p>
+<amp-img src="/assets/static/images/dropbox-pricing.png" alt="Dropbox business pricing" width="604" height="831" layout="responsive"></amp-img>
 
-<p>In my case, I participated in a fantasy football draft and wanted to share the list of players I drafted with a friend. Unfortunately, copying and pasting didn’t work so I decided to jump into JavaScript. Hope these steps give a sense of how to approach a simple scraping problem. The idea is to use the browser’s inspect element feature to find the pattern that the element we’re interested in have in common. Then, we use JavaScript to find the elements matching that pattern and extract the information we want.</p>
+<p>For a very long time I wondered why SSO was always listed as a premium feature across nearly every enterprise software pricing page but no more! When you’re small it’s simple to manage permissions and the costs of screwing up are far smaller. Large companies, on the other hand, have complex organization structures with hundreds of employees that use a wide range of applications and access controls are a real concern. It’s possible to manage that through a herculean manual effort but it’s so much easier to just pay someone to solve the problem for you. Along similar lines, it’s valuable to minimize the amount of SAAS services used across the organization to reduce both the complexity and the cost although these days it feels like a fool’s errand.</p>
 
-<ul class="thumbnails">
-  <li class="span8">
-    <div class="thumbnail">
-    <p>1. The page we want to parse - please ignore the quality of my fantasy team.</p>
-      <amp-img src="/assets/static/images/ff-roster.jpeg" alt="My fantasy roster" width="1038" height="800" layout="responsive"></amp-img>
-    </div>
-  </li>
+<p>It’s surprising how many third party services a typical midsize tech (but every company is tech!) company uses these days. This ranges from cloud providers (AWS) to version control (Github) to storage (Dropbox)  to communication (Slack) and workflow (Atlassian) tools. And the list above is just the basics - there are a ton of other tools that teams use that all require a proper access control policy. Each of these has their own rules and permissions to manage and it’s inevitable that something slips by if managed manually.</p>
 
-  <li class="span8">
-    <div class="thumbnail">
-    	<p>2. Use the Chrome "Inspect Element" feature to figure out the HTML/CSS of the element we're interested in. In this case, the element containing player name has the class value “name playernote”.</p>
-      <amp-img src="/assets/static/images/ff-roster-source.jpeg" alt="Using inspect element to identify the HTML/CSS for the elements" width="1370" height="800" layout="responsive"></amp-img>
-    </div>
-  </li>
+<p>I’ll end this with some examples to highlight the difference in pricing between the SSO and non-SSO option across a few services.</p>
 
-  <li class="span8">
-    <div class="thumbnail">
-    	<p>3. Run a JavaScript command to get all the HTML elements that have those classes.
-      	
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">name playernote</span><span class="dl">'</span><span class="p">)</span></code></pre></figure>
-
-      </p>
-      <amp-img src="/assets/static/images/ff-roster-get-players.jpeg" alt="JavaScript to get the elements matching our CSS query" width="4166" height="800" layout="responsive"></amp-img>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-    	<p>4. Store those HTML elements in a variable so we can quickly iterate through the list.
-		
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">players</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">name playernote</span><span class="dl">'</span><span class="p">)</span></code></pre></figure>
-
-      </p>
-      <amp-img src="/assets/static/images/ff-roster-get-players-2.jpeg" alt="Store the elements in a variable" width="4592" height="800" layout="responsive"></amp-img>
-    </div>
-  </li>
-
-  <li class="span8">
-    <div class="thumbnail">
-    	<p>5. Use JavaScript to go through the previous list and extract the player name. Then we can just copy and paste the list of names without having to deal with the formatting issues.
-      	
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">players</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">players</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span> <span class="p">);</span> <span class="p">}</span></code></pre></figure>
-
-      </p>
-      <amp-img src="/assets/static/images/ff-roster-get-player-names.jpeg" alt="Iterate through the list to extract the player name" width="3838" height="800" layout="responsive"></amp-img>
-    </div>
-  </li>
+<ul>
+  <li>
+<strong><a href="https://github.com/pricing">GitHub</a></strong>: Non SSO is $9/user/month. SSO isn’t even priced publicly but seems to be $21/user/month.</li>
+  <li>
+<strong><a href="https://www.dropbox.com/business/pricing">Dropbox</a></strong>: Non SSO is $12.50/user/month. SSO is $20/user/month.</li>
+  <li>
+<strong><a href="https://www.atlassian.com/software/jira/pricing">Atlassian</a></strong>: Non SSO is $7/user/month. SSO requires a <a href="https://www.atlassian.com/software/access/pricing">separate addon</a> that starts at $3/user/month but drops with scale.</li>
 </ul>
-
-<p>In addition to extracting information, JavaScript can be used to interact with a web page. This comes in handy when you want to automate a certain action on a site that would take too long to do manually. For example, I was able to code up some quick JavaScript that would go through a list of my Facebook friends and invite them to like my startup’s new page. Hope this little JavaScript hack comes in handy and let me know if you have any questions.</p>
 
     </section>
 
@@ -811,11 +773,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##python-ref">#python </a></li>
-    
-      <li><a href="/tags/##javascript-ref">#javascript </a></li>
-    
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
@@ -832,11 +790,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2013/08/24/splitting-an-aws-account/" title="Splitting an AWS account">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/09/23/free-speech-and-the-first-amendment/" title="Free speech and the First Amendment">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2013/08/28/simplicity-vs-power-in-product-design/" title="Simplicity vs power in product design">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -847,7 +805,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2013%2F08%2F26%2Fextract-info-from-a-web-page-using-javascript%2F&title=Extract+info+from+a+web+page+using+JavaScript">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F09%2F28%2Fsso-and-saas-pricing%2F&title=SSO+and+SAAS+pricing">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/09/28/sso-and-saas-pricing/
 http://dangoldin.com/2019/09/23/free-speech-and-the-first-amendment/
 http://dangoldin.com/2019/09/16/goldilocks-and-the-three-implementations/
 http://dangoldin.com/2019/09/15/google-sheets-explore-functionality/

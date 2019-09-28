@@ -744,12 +744,12 @@ table {
 <p>It looks as if declaring a variable with the "my" statement but then guarded with an "if" statement causes the scope of the variable to be global - note that the "use strict 'vars';" pragma does not give an error in this case.</p>
 
 <figure class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="c1">#!/usr/bin/perl -w</span>
-<span class="k">use</span> <span class="nv">strict</span>  <span class="s">'vars'</span><span class="p">;</span>
+<span class="k">use</span> <span class="nv">strict</span>  <span class="p">'</span><span class="s1">vars</span><span class="p">';</span>
 
 <span class="k">sub </span><span class="nf">foo</span><span class="p">{</span>
     <span class="k">my</span> <span class="nv">$val</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="nv">$val</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">unless</span> <span class="nb">defined</span><span class="p">(</span><span class="nv">$val</span><span class="p">);</span>
-    <span class="k">print</span> <span class="s">"Val: $val\n"</span><span class="p">;</span>
+    <span class="k">print</span> <span class="p">"</span><span class="s2">Val: </span><span class="si">$val</span><span class="se">\n</span><span class="p">";</span>
     <span class="nv">$val</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 
