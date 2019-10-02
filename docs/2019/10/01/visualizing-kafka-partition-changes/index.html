@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Visualizing Kafka partition changes</title>
+  <meta name="description" content="While doing some Kafka maintenance I wrote a simple way to visualize differences in partition assignments.">
+  <meta name="keywords" content="kafka" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2019/10/01/visualizing-kafka-partition-changes/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Visualizing Kafka partition changes" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/10/01/visualizing-kafka-partition-changes/" />
+  <meta property="og:title"               content="Visualizing Kafka partition changes" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="While doing some Kafka maintenance I wrote a simple way to visualize differences in partition assignments." />
+  <meta name="twitter:description"        content="While doing some Kafka maintenance I wrote a simple way to visualize differences in partition assignments." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/kafka-partition-diff-vis.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/kafka-partition-diff-vis.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2019-10-01T23:07:19-04:00",
-  "dateModified": "2019-10-01T23:07:19-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/10/01/visualizing-kafka-partition-changes/",
+  "headline": "Visualizing Kafka partition changes",
+  "datePublished": "2019-10-01T00:00:00-04:00",
+  "dateModified": "2019-10-01T00:00:00-04:00",
+  "description": "Earlier this week we scaled up our Kafka cluster to take advantage of more availability zones and increase the replication for some of our key topics. After ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -732,22 +735,78 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Visualizing Kafka partition changes</h1>
+      <span class="date">01 October 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>Earlier this week we scaled up our Kafka cluster to take advantage of more availability zones and increase the replication for some of our key topics. After making sure the new brokers joined the existing cluster we needed to redo the partitioning to take advantage of these newly available brokers.</p>
+
+<p>I’m sure there are better and more modern tools out there but we’ve been using <a href="https://github.com/SiftScience/kafka-assigner">SiftScience’s kafka-assigner</a>. Rather than being a naive partitioning it looks at the existing assignments and optimizes the new assignment to minimize the number of moves while striving to keep the partitions evenly distributed across all brokers.</p>
+
+<p>The script is simple to run - you give it the topic and the desired replication factor and it generates the new partition assignments via JSON that can then be passed into Kafka’s built in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Replication+tools#Replicationtools-4.ReassignPartitionsTool">partition reassignment tool</a>.</p>
+
+<p>As part of our testing we wanted to verify that the new assignments made sense by quickly looking at the differences but the task was made difficult since the original assignment was printed in a random order. This made a standard diff difficult to do so I ended up building a small tool to sort the JSON and then visualize the differences.</p>
+
+<p>The code is up on <a href="https://github.com/dangoldin/js-tools">GitHub</a> and the tool is available at <a href="https://dangoldin.github.io/js-tools/#tab-kafka-partition-diff">https://dangoldin.github.io/js-tools/#tab-kafka-partition-diff</a>. It’s not the fanciest but is a simple solution to a simple problem. I wish the tool itself did a better job of highlighting the differences but that’s another project.</p>
+
+<amp-img src="/assets/static/images/kafka-partition-diff-vis.png" alt="Kafka partition difference visualizer" width="1224" height="749" layout="responsive"></amp-img>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/09/28/sso-and-saas-pricing/" title="SSO and SAAS pricing">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F10%2F01%2Fvisualizing-kafka-partition-changes%2F&title=Visualizing+Kafka+partition+changes">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -823,7 +882,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

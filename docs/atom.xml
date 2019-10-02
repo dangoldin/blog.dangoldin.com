@@ -3,13 +3,33 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-09-28T15:13:45-04:00</updated>
+ <updated>2019-10-01T23:07:19-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Visualizing Kafka partition changes</title>
+   <link href="http://dangoldin.com/2019/10/01/visualizing-kafka-partition-changes/"/>
+   <updated>2019-10-01T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/10/01/visualizing-kafka-partition-changes</id>
+   <content:encoded><![CDATA[
+<p>Earlier this week we scaled up our Kafka cluster to take advantage of more availability zones and increase the replication for some of our key topics. After making sure the new brokers joined the existing cluster we needed to redo the partitioning to take advantage of these newly available brokers.</p>
+
+<p>I’m sure there are better and more modern tools out there but we’ve been using <a href="https://github.com/SiftScience/kafka-assigner">SiftScience’s kafka-assigner</a>. Rather than being a naive partitioning it looks at the existing assignments and optimizes the new assignment to minimize the number of moves while striving to keep the partitions evenly distributed across all brokers.</p>
+
+<p>The script is simple to run - you give it the topic and the desired replication factor and it generates the new partition assignments via JSON that can then be passed into Kafka’s built in <a href="https://cwiki.apache.org/confluence/display/KAFKA/Replication+tools#Replicationtools-4.ReassignPartitionsTool">partition reassignment tool</a>.</p>
+
+<p>As part of our testing we wanted to verify that the new assignments made sense by quickly looking at the differences but the task was made difficult since the original assignment was printed in a random order. This made a standard diff difficult to do so I ended up building a small tool to sort the JSON and then visualize the differences.</p>
+
+<p>The code is up on <a href="https://github.com/dangoldin/js-tools">GitHub</a> and the tool is available at <a href="https://dangoldin.github.io/js-tools/#tab-kafka-partition-diff">https://dangoldin.github.io/js-tools/#tab-kafka-partition-diff</a>. It’s not the fanciest but is a simple solution to a simple problem. I wish the tool itself did a better job of highlighting the differences but that’s another project.</p>
+
+<img src="http://dangoldin.com/assets/static/images/kafka-partition-diff-vis.png" alt="Kafka partition difference visualizer" width="1224" height="749" layout="responsive"/>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>SSO and SAAS pricing</title>
