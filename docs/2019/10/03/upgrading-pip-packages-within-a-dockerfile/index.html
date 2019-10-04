@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Upgrading pip packages within a Dockerfile</title>
+  <meta name="description" content="It's not as simple as it should be to bulk update pip packages in a requirements.txt file while using Docker.">
+  <meta name="keywords" content="django, python, docker, dockerfile" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2019/10/03/upgrading-pip-packages-within-a-dockerfile/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Upgrading pip packages within a Dockerfile" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/10/03/upgrading-pip-packages-within-a-dockerfile/" />
+  <meta property="og:title"               content="Upgrading pip packages within a Dockerfile" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="It's not as simple as it should be to bulk update pip packages in a requirements.txt file while using Docker." />
+  <meta name="twitter:description"        content="It's not as simple as it should be to bulk update pip packages in a requirements.txt file while using Docker." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2019-10-03T21:50:20-04:00",
-  "dateModified": "2019-10-03T21:50:20-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/10/03/upgrading-pip-packages-within-a-dockerfile/",
+  "headline": "Upgrading pip packages within a Dockerfile",
+  "datePublished": "2019-10-03T00:00:00-04:00",
+  "dateModified": "2019-10-03T00:00:00-04:00",
+  "description": "I have an old project, http://makersalley.com, that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -732,25 +732,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Upgrading pip packages within a Dockerfile</h1>
+      <span class="date">03 October 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
+<p>I have an old project, <a href="makersalley.com">http://makersalley.com</a>, that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I overhauled it to run on a newer version of Django (1.11) and Dockerized the entire setup which required all sorts of changes and library fixes.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>Last night, I took it one step further by upgrading it to the latest versions of both Python (3.7) and Django (2.2). The most difficult part was figuring out how to upgrade to the latest versions while being tied down to Docker. For example, changing the Python version in the Dockerfile caused many of the packages in requirements.txt to not build but because they were all executed within Docker I had to get the entire requirements.txt fixed before that step would succeed. Similarly, it wasn’t clear which versions of the packages in the requirements.txt depended on one another and upgrading all of them blindly would have been a fool’s errand. It also turned out that one package, MySQL-python, was not available in Python 3+.</p>
 
-<ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>The ideal workflow for me would have been to upgrade the Python version first, install the latest version of Django, and then go through and upgrade each of the pip packages one at a time resolving issues along the way. This approach was not possible using Docker and a requirements.txt file. I could have come up with a minimal Dockerfile and then entered the container to do the individual upgrades but that didn’t seem worth and instead I did everything through a virtualenv.</p>
 
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
+<p>Somewhat surprisingly, updating the code itself was quick and easy and only required changing about 130 lines which were primarily Python 2.7 vs 3.7 syntax errors.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/10/01/visualizing-kafka-partition-changes/" title="Visualizing Kafka partition changes">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F10%2F03%2Fupgrading-pip-packages-within-a-dockerfile%2F&title=Upgrading+pip+packages+within+a+Dockerfile">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -826,7 +875,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
