@@ -745,34 +745,34 @@ table {
 <p>The only question was exposing the Lambda function to the outside world but AWS offers the <a href="https://aws.amazon.com/api-gateway/">API Gateway</a> service to make this happen. This also gave me a chance to mess around with the API Gateway for the first time and definitely has me thinking about entire tools and applications that can be done in a “serverless” way.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">A</span> <span class="nx">simple</span> <span class="nx">Lambda</span> <span class="kd">function</span> <span class="nx">to</span> <span class="nx">calculate</span> <span class="nx">the</span> <span class="nx">factorial</span>
-<span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="s1">'use strict'</span><span class="p">;</span>
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
     <span class="kd">const</span> <span class="nx">done</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">statusCode</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">400</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">200</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">statusCode</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="s1">'400'</span> <span class="p">:</span> <span class="s1">'200'</span><span class="p">,</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">),</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">});</span>
 
     <span class="k">switch</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">httpMethod</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Calculate the factorial</span>
-        <span class="k">case</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">:</span>
+        <span class="k">case</span> <span class="s1">'GET'</span><span class="p">:</span>
             <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">queryStringParameters</span><span class="p">.</span><span class="nx">n</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
             <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">queryStringParameters</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">factorial</span><span class="dl">'</span><span class="p">:</span> <span class="nx">a</span><span class="p">});</span>
+                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="s1">'factorial'</span><span class="p">:</span> <span class="nx">a</span><span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">try a smaller number</span><span class="dl">'</span><span class="p">});</span>
+                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="s1">'status'</span><span class="p">:</span> <span class="s1">'try a smaller number'</span><span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://rrouzys2ra.execute-api.us-east-1.amazonaws.com/prod/redirect-recursion?</span><span class="dl">'</span><span class="p">;</span>
-                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">n=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&amp;a=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'https://rrouzys2ra.execute-api.us-east-1.amazonaws.com/prod/redirect-recursion?'</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="s1">'n='</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'&amp;a='</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
                 <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
                     <span class="na">statusCode</span><span class="p">:</span> <span class="mi">302</span><span class="p">,</span>
                     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="dl">'</span><span class="s1">Location</span><span class="dl">'</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="nx">args</span>
+                        <span class="s1">'Location'</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="nx">args</span>
                     <span class="p">}</span>
                 <span class="p">});</span>
             <span class="p">}</span>

@@ -789,7 +789,7 @@ table {
 <span class="k">order</span> <span class="k">by</span> <span class="n">cnt</span> <span class="k">desc</span><span class="p">;</span>
 
 <span class="c1">-- For fun, we can also look at the number of errors by minute to see if we can spot a pattern</span>
-<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">datetime</span><span class="p">,</span>
+<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datetime</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">500</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n500</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">501</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n501</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">502</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n502</span><span class="p">,</span>
@@ -797,8 +797,8 @@ table {
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">504</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n504</span>
 <span class="k">from</span> <span class="n">elb_logs</span>
 <span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
-<span class="k">group</span> <span class="k">by</span> <span class="nb">datetime</span>
-<span class="k">order</span> <span class="k">by</span> <span class="nb">datetime</span><span class="p">;</span></code></pre></figure>
+<span class="k">group</span> <span class="k">by</span> <span class="n">datetime</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">datetime</span><span class="p">;</span></code></pre></figure>
 
 
     </section>
