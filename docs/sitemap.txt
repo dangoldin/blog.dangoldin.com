@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/10/11/combining-excel-and-the-command-line/
 http://dangoldin.com/2019/10/07/visualizing-my-twitter-archive-2019-edition/
 http://dangoldin.com/2019/10/06/make-sure-youre-understood/
 http://dangoldin.com/2019/10/03/upgrading-pip-packages-within-a-dockerfile/
