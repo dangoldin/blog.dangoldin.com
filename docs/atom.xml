@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-10-11T23:38:31-04:00</updated>
+ <updated>2019-10-12T23:30:57-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Online food delivery markups: Seamless vs UberEats vs DoorDash</title>
+   <link href="http://dangoldin.com/2019/10/12/online-food-delivery-markups-seamless-vs-ubereats-vs-doordash/"/>
+   <updated>2019-10-12T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/10/12/online-food-delivery-markups-seamless-vs-ubereats-vs-doordash</id>
+   <content:encoded><![CDATA[
+<p>There are a variety of online food ordering and delivery services out there but lately I’ve been a fan of DoorDash since the delivery time seems to be both quicker and more consistent than the others. Yesterday I ordered some <a href="http://www.linglongxuannj.com/">Chinese food</a> and noticed that the restaurant had added a receipt with prices that differed from what DoorDash charged. In hindsight I’m not surprised but did feel a bit misled since DoorDash has separate service and delivery that I figured covered the actual service. After I overcame the feeling of being tricked I thought it would be interesting to see how whether other delivery services are doing the same thing and by how much. I looked at the items I ordered across DoorDash, UberEats, and Seamless/GrubHub. Solely looking at the prices it looks as if DoorDash has the highest markup, followed up UberEats, and then Seamless/GrubHub. Surprisingly, the cheapest item (Hot &amp; Sour Soup) hsa no markup across any of the services and the percentage markup across all of them drops as the item price increases.</p>
+
+<p>My takeaway is that DoorDash is the most expensive but you’re paying for that reliable and quick delivery.</p>
+
+<table class="table"><thead><tr><th>Item</th><th>Original</th><th>Seamless / GrubHub</th><th>UberEats</th><th>DoorDash</th><th>Seamless / GrubHub % Markup</th><th>UberEats % Markup</th><th>DoorDash % Markup</th></tr></thead><tbody><tr><td>Hot &amp; Sour Soup (Small)</td><td>$4</td><td>$4</td><td>$4</td><td>$4</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr><tr><td>Sauteed Triple Vegetable</td><td>$10</td><td>$11</td><td>$11.50</td><td>$12</td><td>10.00%</td><td>15.00%</td><td>20.00%</td></tr><tr><td>General Tso's Chicken</td><td>$12</td><td>$13</td><td>$13.50</td><td>$14</td><td>8.33%</td><td>12.50%</td><td>16.67%</td></tr><tr><td>Xin Jiang Style Lamb</td><td>$19</td><td>$20</td><td>$21</td><td>$21</td><td>5.26%</td><td>10.53%</td><td>10.53%</td></tr></tbody></table>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Combining Excel and the command line</title>
