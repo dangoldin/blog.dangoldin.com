@@ -3,7 +3,7 @@ layout: post
 title: "Online food delivery markups: Seamless vs UberEats vs DoorDash"
 description: "The online food delivery companies all add a markup to the restaurant's listed prices."
 keywords: "online food delivery markups, seamless, ubereats, doordash"
-image_url:
+image_url: "/assets/static/images/food-delivery-markups.png"
 category:
 tags: ["#meta"]
 ---
