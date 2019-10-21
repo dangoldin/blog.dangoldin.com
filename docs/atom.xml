@@ -3,13 +3,28 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-10-13T23:05:34-04:00</updated>
+ <updated>2019-10-20T23:50:03-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>File size histogram via the command line</title>
+   <link href="http://dangoldin.com/2019/10/20/file-size-histogram-via-the-command-line/"/>
+   <updated>2019-10-20T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/10/20/file-size-histogram-via-the-command-line</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/file-size-distribution-shell-script.png" alt="File size histogram using the command line" width="951" height="294" layout="responsive"/>
+
+<p>I’m a sucker for a good shell command and recently discovered (via <a href="https://superuser.com/questions/565443/generate-distribution-of-file-sizes-from-the-command-prompt">StackOverflow</a>) the most complex one yet - a one liner to generate a histogram of file sizes within a directory. The sizes are in powers of two but it’s a great way to get some simple summary statistics of files inside a directory. I still find awk mystifying to write but nearly every advanced shell command uses awk in some way. Most engineers thee days have a bias for a traditional scripting language but it’s still amazing what an awk one-liner can do.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">find <span class="nb">.</span> <span class="nt">-type</span> f <span class="nt">-print0</span> | xargs <span class="nt">-0</span> <span class="nb">ls</span> <span class="nt">-l</span> | <span class="nb">awk</span> <span class="s1">'{ n=int(log($5)/log(2)); if (n&lt;10) { n=10; } size[n]++ } END { for (i in size) printf("%d %d\n", 2^i, size[i]) }'</span> | <span class="nb">sort</span> <span class="nt">-n</span> | <span class="nb">awk</span> <span class="s1">'function human(x) { x[1]/=1024; if (x[1]&gt;=1024) { x[2]++; human(x) } } { a[1]=$1; a[2]=0; human(a); printf("%3d%s: %6d\n", a[1],substr("kMGTEPYZ",a[2]+1,1),$2) }'</span></code></pre></figure>
+
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Bypassing the incognito browser check on nytimes.com</title>
