@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>GitHub&#39;s security automation</title>
+  <meta name="description" content="GitHub is now scanning repos for security vulnerabiltiies and opening up PRs to upgrade the affected dependencies.">
+  <meta name="keywords" content="github, security, automation" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2019/10/26/githubs-security-automation/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="GitHub's security automation" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/10/26/githubs-security-automation/" />
+  <meta property="og:title"               content="GitHub's security automation" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="GitHub is now scanning repos for security vulnerabiltiies and opening up PRs to upgrade the affected dependencies." />
+  <meta name="twitter:description"        content="GitHub is now scanning repos for security vulnerabiltiies and opening up PRs to upgrade the affected dependencies." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2019-10-26T23:31:55-04:00",
-  "dateModified": "2019-10-26T23:31:55-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/10/26/githubs-security-automation/",
+  "headline": "GitHub&#39;s security automation",
+  "datePublished": "2019-10-26T00:00:00-04:00",
+  "dateModified": "2019-10-26T00:00:00-04:00",
+  "description": "I have a variety of old projects up on GitHub and recently noticed pull requests being opened from “dependabot” to fix security vulnerabilities in old requir...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,25 +722,68 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">GitHub's security automation</h1>
+      <span class="date">26 October 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
+<p>I have a variety of old projects up on GitHub and recently noticed pull requests being opened from “dependabot” to fix security vulnerabilities in old requirements files. Turns out it’s a <a href="https://help.github.com/en/github/managing-security-vulnerabilities/configuring-automated-security-fixes">new feature</a> offered by GitHub that scans repos and submits patches to upgrade insecure versions. This is a great idea - there’s very little chance that I’d go through my old and unmaintained repos to upgrade their dependencies but I’d definitely approve and merge a PR that upgrades a few of my libraries.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
-
-<ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
-
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
+<p>GitHub is incredibly well positioned to launch a new product line focused on security. They recently acquired <a href="https://thenextweb.com/security/2019/09/19/github-acquires-semmle-to-help-developers-spot-security-vulnerabilities/">Semmle</a> that further identifies vulnerabilities and a massive market for GitHub. It can be as simple as enabling the scan in a repo’s settings and having it automatically monitored and probed for vulnerabilities. Right now it seems to happen on a set interval but it can easily expand to occuring at a pull request level. Imagine having a security scan run every time a pull request is opened - that would be a huge win to companies, developers, and the security of the web.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##product-ref">#product </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/10/20/file-size-histogram-via-the-command-line/" title="File size histogram via the command line">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F10%2F26%2Fgithubs-security-automation%2F&title=GitHub%27s+security+automation">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -806,7 +849,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
