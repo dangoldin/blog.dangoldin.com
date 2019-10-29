@@ -3,13 +3,50 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-10-26T23:31:55-04:00</updated>
+ <updated>2019-10-28T23:33:39-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Deplying Docker using systemd</title>
+   <link href="http://dangoldin.com/2019/10/28/deplying-docker-using-systemd/"/>
+   <updated>2019-10-28T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/10/28/deplying-docker-using-systemd</id>
+   <content:encoded><![CDATA[
+<p>A few months ago in a burst of inspiration I converted a bunch of my side projects to run inside Docker. Unfortunately, I didn’t do the follow up work of actually creating a Kubernetes cluster and instead came up with a ridiculously hacky process to get them running. I created a simple shell script that would just build and run a Docker image and have just been running it inside a screen session.</p>
+
+<p>This worked surprisingly well. The only problem was that every time the instance was rebooted the screen sessions died and I had to SSH into it in order to restart the scripts. Earlier today I had another instance reboot and decided to finally do something about it. The solution I ended up with was to just bundle the aforementioned shell script into a systemd file and configure it to run at startup. It’s been a few hours and so far so good and delay the inevitable move to Kubernetes by a few more months.</p>
+
+<figure>
+  <figcaption>run.sh</figcaption>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>docker <span class="nb">rm test</span> <span class="o">||</span> <span class="nb">true</span><span class="o">)</span> <span class="o">&amp;&amp;</span> docker build <span class="nt">-t</span> <span class="nb">test</span>:latest <span class="nb">.</span> <span class="o">&amp;&amp;</span> docker run <span class="nt">--env-file</span> env.list <span class="nt">--name</span> <span class="nb">test</span> <span class="nt">-p</span> 8001:8000 <span class="nt">-i</span> <span class="nb">test</span>:latest</code></pre></figure>
+
+</figure>
+
+<figure>
+  <figcaption>/etc/systemd/system/test.service</figcaption>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[Unit]
+Description=Test service.
+
+[Service]
+#Type=simple
+WorkingDirectory=/root/test
+ExecStart=/bin/bash /root/test/run.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target</code></pre></figure>
+
+</figure>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>GitHub's security automation</title>
