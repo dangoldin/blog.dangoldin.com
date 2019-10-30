@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-10-28T23:33:39-04:00</updated>
+ <updated>2019-10-29T23:03:47-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Computer history memos</title>
+   <link href="http://dangoldin.com/2019/10/29/computer-history-memos/"/>
+   <updated>2019-10-29T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2019/10/29/computer-history-memos</id>
+   <content:encoded><![CDATA[
+<p>I’m a fan of tech industry history and came across a neat trove of <a href="https://sriramk.com/memos">memos</a> compiled by <a href="https://twitter.com/sriramk">Sriram Krishnan</a>. The memos cover a wide time period and are first party accounts by the people actually involved. It’s easy to judge historical decisions with the gift of knowledge but reading these teleports you back to the past and gives you an appreciation for the challenges they faced.</p>
+
+<p>I only wish there were more of these memos floating around. Seminal ones usually make their way in the public domain one way or another but there’s a huge trove of second-tier memos, notes, and emails that would provide tech historians a trove of information if only they became accessible.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Deplying Docker using systemd</title>
