@@ -2,8 +2,8 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/about/
 http://dangoldin.com/lore/
+http://dangoldin.com/about/
 http://dangoldin.com/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/11/04/upgrade-your-libraries/
 http://dangoldin.com/2019/11/02/qr-codes-in-china/
 http://dangoldin.com/2019/10/29/computer-history-memos/
 http://dangoldin.com/2019/10/28/deplying-docker-using-systemd/

@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-11-02T23:16:38-04:00</updated>
+ <updated>2019-11-04T23:10:48-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Upgrade your libraries</title>
+   <link href="http://dangoldin.com/2019/11/04/upgrade-your-libraries/"/>
+   <updated>2019-11-04T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/04/upgrade-your-libraries</id>
+   <content:encoded><![CDATA[
+<p>This blog is <a href="https://github.com/dangoldin/blog.dangoldin.com">hosted</a> on GitHub and built using <a href="https://jekyllrb.com/">Jekyll</a>. Jekyll is a simple static site generator that’s been working well for me and was flexible enough to allow me to switch the entire site over to <a href="https://amp.dev/">AMP</a>. Unfortunately, the switch to AMP led to the site generation becoming significant slower due to the CSS-inlining requirement. Two years ago I started profiling and <a href="http://dangoldin.com/2017/11/23/improving-jekyll-generation-speed-for-amp-pages/">dropped the site generation time</a> down to about 15 seconds from over 4 minutes by generating the CSS once and then reusing it for all future pages.</p>
+
+<p>Earlier this year I noticed that my build times dropped even further, down to 4 seconds. Part of the drop was the switch to a new computer but the primarily driver was upgrading each of the libraries. Jekyll improved significantly over the past 2 years and coupled with the improved hardware caused a nearly 4x improvement in speed.</p>
+
+<p>We often fall into the trap of installing some open source code, getting it set up, and then promptly forgetting about it. In the meantime, that code has a life of its own and continues to grow and evolve. If you don’t have a process in place to audit and upgrade your libraries it’s well worth introducing one. Sometimes you have to deal with breaking changes and sometimes the code is slower but most upgrades are smooth and often lead to improvements in speed and functionality.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>QR codes in China</title>
@@ -1224,20 +1238,20 @@ git log <span class="nt">--oneline</span> <span class="nt">--follow</span> <span
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
-            <span class="nc">String</span><span class="o">[]</span> <span class="n">dates</span> <span class="o">=</span> <span class="o">{</span><span class="s">"2018-12-01"</span><span class="o">,</span> <span class="s">"2018-12-31"</span><span class="o">,</span> <span class="s">"2019-01-01"</span><span class="o">};</span>
-            <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="nl">date:</span> <span class="n">dates</span><span class="o">)</span> <span class="o">{</span>
-                <span class="nc">SimpleDateFormat</span> <span class="n">dt</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
-                <span class="nc">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">dates</span> <span class="o">=</span> <span class="o">{</span><span class="s">"2018-12-01"</span><span class="o">,</span> <span class="s">"2018-12-31"</span><span class="o">,</span> <span class="s">"2019-01-01"</span><span class="o">};</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">date:</span> <span class="n">dates</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">dt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
+                <span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
 
-                <span class="nc">SimpleDateFormat</span> <span class="n">dtYYYY</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"YYYY"</span><span class="o">);</span>
-                <span class="nc">SimpleDateFormat</span> <span class="n">dtyyyy</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy"</span><span class="o">);</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">dtYYYY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"YYYY"</span><span class="o">);</span>
+                <span class="n">SimpleDateFormat</span> <span class="n">dtyyyy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy"</span><span class="o">);</span>
 
-                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"For date "</span> <span class="o">+</span> <span class="n">date</span> <span class="o">+</span> <span class="s">" the YYYY year is "</span> <span class="o">+</span> <span class="n">dtYYYY</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">)</span> <span class="o">+</span> <span class="s">" while for yyyy it's "</span> <span class="o">+</span> <span class="n">dtyyyy</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">));</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"For date "</span> <span class="o">+</span> <span class="n">date</span> <span class="o">+</span> <span class="s">" the YYYY year is "</span> <span class="o">+</span> <span class="n">dtYYYY</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">)</span> <span class="o">+</span> <span class="s">" while for yyyy it's "</span> <span class="o">+</span> <span class="n">dtyyyy</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">));</span>
             <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Failed with exception: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Failed with exception: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
@@ -2471,13 +2485,13 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span><span class="p">,</span>
-    <span class="n">parent_id</span> <span class="nb">INT</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
     <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
     <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
         <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">RESTRICT</span>
@@ -2508,13 +2522,13 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span><span class="p">,</span>
-    <span class="n">parent_id</span> <span class="nb">INT</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
     <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
     <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
         <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span>
@@ -2541,13 +2555,13 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">test_parent</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_parent</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">INNODB</span><span class="p">;</span>
 
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_child</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">INT</span><span class="p">,</span>
-    <span class="n">parent_id</span> <span class="nb">INT</span><span class="p">,</span>
+    <span class="n">id</span> <span class="n">INT</span><span class="p">,</span>
+    <span class="n">parent_id</span> <span class="n">INT</span><span class="p">,</span>
     <span class="k">INDEX</span> <span class="n">par_ind</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">),</span>
     <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">parent_id</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">test_parent</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
         <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">SET</span> <span class="k">NULL</span>
@@ -2605,49 +2619,49 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- ELB Logs</span>
 <span class="k">create</span> <span class="k">table</span> <span class="n">elb_logs</span> <span class="p">(</span>
-	<span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
-	<span class="n">elbname</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-	<span class="n">requestip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">backendip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">requestprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">backendprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">clientresponsetime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">elbresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">backendresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">receivedbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">sentbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">httprequest</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5083</span><span class="p">),</span>
-	<span class="n">useragent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
-	<span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
-	<span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+	<span class="n">requesttime</span> <span class="k">timestamp</span><span class="p">,</span>
+	<span class="n">elbname</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+	<span class="n">requestip_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+	<span class="n">backendip_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
+	<span class="n">requestprocessingtime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">backendprocessingtime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">clientresponsetime</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+	<span class="n">elbresponsecode</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+	<span class="n">backendresponsecode</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+	<span class="n">receivedbytes</span> <span class="n">bigint</span><span class="p">,</span>
+	<span class="n">sentbytes</span> <span class="n">bigint</span><span class="p">,</span>
+	<span class="n">httprequest</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5083</span><span class="p">),</span>
+	<span class="n">useragent</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+	<span class="n">ssl_cipher</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
+	<span class="n">ssl_protocol</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
 
 <span class="c1">-- ALB Logs</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">alb_logs</span> <span class="p">(</span>
- <span class="k">type</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">elb</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">client_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">target_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">request_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">target_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">response_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">elb_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">target_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">received_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">sent_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">request</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
- <span class="n">user_agent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">target_group_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">trace_id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">domain_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">chosen_cert_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">matched_rule_priority</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">request_creation_time</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">actions_executed</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+ <span class="k">type</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">requesttime</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="n">elb</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">client_and_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+ <span class="n">target_and_port</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
+ <span class="n">request_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">target_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">response_processing_time</span> <span class="n">double</span> <span class="k">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
+ <span class="n">elb_status_code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+ <span class="n">target_status_code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+ <span class="n">received_bytes</span> <span class="n">bigint</span><span class="p">,</span>
+ <span class="n">sent_bytes</span> <span class="n">bigint</span><span class="p">,</span>
+ <span class="n">request</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
+ <span class="n">user_agent</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+ <span class="n">ssl_cipher</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
+ <span class="n">ssl_protocol</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">target_group_arn</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">trace_id</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">domain_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">chosen_cert_arn</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+ <span class="n">matched_rule_priority</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+ <span class="n">request_creation_time</span> <span class="k">timestamp</span><span class="p">,</span>
+ <span class="n">actions_executed</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
  <span class="p">)</span> <span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
  </code></pre></figure>
 
@@ -2955,7 +2969,7 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <span class="k">order</span> <span class="k">by</span> <span class="n">cnt</span> <span class="k">desc</span><span class="p">;</span>
 
 <span class="c1">-- For fun, we can also look at the number of errors by minute to see if we can spot a pattern</span>
-<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">datetime</span><span class="p">,</span>
+<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datetime</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">500</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n500</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">501</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n501</span><span class="p">,</span>
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">502</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n502</span><span class="p">,</span>
@@ -2963,8 +2977,8 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
   <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">504</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n504</span>
 <span class="k">from</span> <span class="n">elb_logs</span>
 <span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
-<span class="k">group</span> <span class="k">by</span> <span class="nb">datetime</span>
-<span class="k">order</span> <span class="k">by</span> <span class="nb">datetime</span><span class="p">;</span></code></pre></figure>
+<span class="k">group</span> <span class="k">by</span> <span class="n">datetime</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">datetime</span><span class="p">;</span></code></pre></figure>
 
 ]]></content:encoded>
  </entry>
@@ -3894,14 +3908,14 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <span class="nx">usernames</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1">// Run this a bunch of times after scrolling a bit to get the next set of screen names</span>
-<span class="nx">els</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">user-item</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">els</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'user-item'</span><span class="p">);</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">els</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">els</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">);</span>
     <span class="nx">usernames</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">els</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Just write to the screen but there will likely be duplicates unless you did your scrolls perfectly.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">usernames</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="se">\n</span><span class="dl">"</span><span class="p">)</span> <span class="p">);</span></code></pre></figure>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">usernames</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span> <span class="p">);</span></code></pre></figure>
 
 ]]></content:encoded>
  </entry>
@@ -6306,34 +6320,34 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <p>The only question was exposing the Lambda function to the outside world but AWS offers the <a href="https://aws.amazon.com/api-gateway/">API Gateway</a> service to make this happen. This also gave me a chance to mess around with the API Gateway for the first time and definitely has me thinking about entire tools and applications that can be done in a “serverless” way.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">A</span> <span class="nx">simple</span> <span class="nx">Lambda</span> <span class="kd">function</span> <span class="nx">to</span> <span class="nx">calculate</span> <span class="nx">the</span> <span class="nx">factorial</span>
-<span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+<span class="s1">'use strict'</span><span class="p">;</span>
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
     <span class="kd">const</span> <span class="nx">done</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">statusCode</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">400</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">200</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">statusCode</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="s1">'400'</span> <span class="p">:</span> <span class="s1">'200'</span><span class="p">,</span>
         <span class="na">body</span><span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">),</span>
         <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">});</span>
 
     <span class="k">switch</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">httpMethod</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Calculate the factorial</span>
-        <span class="k">case</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">:</span>
+        <span class="k">case</span> <span class="s1">'GET'</span><span class="p">:</span>
             <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">queryStringParameters</span><span class="p">.</span><span class="nx">n</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
             <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">queryStringParameters</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">factorial</span><span class="dl">'</span><span class="p">:</span> <span class="nx">a</span><span class="p">});</span>
+                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="s1">'factorial'</span><span class="p">:</span> <span class="nx">a</span><span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">try a smaller number</span><span class="dl">'</span><span class="p">});</span>
+                <span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="s1">'status'</span><span class="p">:</span> <span class="s1">'try a smaller number'</span><span class="p">});</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://rrouzys2ra.execute-api.us-east-1.amazonaws.com/prod/redirect-recursion?</span><span class="dl">'</span><span class="p">;</span>
-                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">n=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&amp;a=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'https://rrouzys2ra.execute-api.us-east-1.amazonaws.com/prod/redirect-recursion?'</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="s1">'n='</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'&amp;a='</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
                 <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span>
                     <span class="na">statusCode</span><span class="p">:</span> <span class="mi">302</span><span class="p">,</span>
                     <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="dl">'</span><span class="s1">Location</span><span class="dl">'</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="nx">args</span>
+                        <span class="s1">'Location'</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="nx">args</span>
                     <span class="p">}</span>
                 <span class="p">});</span>
             <span class="p">}</span>
@@ -6771,54 +6785,54 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90114909</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02wbm"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90114909</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02wbm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"food"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.88251483</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.88251483</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81870794</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cxn2"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice cream"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81870794</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cxn2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice cream"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.76996088</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0270h"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dessert"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.76996088</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0270h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dessert"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75129372</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02fz11"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gelato"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75129372</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02fz11"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gelato"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69974077</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.69974077</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57035172</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02q08p0"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dish"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57035172</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02q08p0"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dish"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54961139</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54961139</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53331912</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/031bff"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window covering"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53331912</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/031bff"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"window covering"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.51523668</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01_bhs"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fast food"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.51523668</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01_bhs"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fast food"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -6831,49 +6845,49 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87785435</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/07yv9"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87785435</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/07yv9"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vehicle"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78110605</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0k5j"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aircraft"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78110605</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0k5j"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aircraft"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77443254</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cmf2"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"airplane"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77443254</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0cmf2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"airplane"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7131173</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02pkr5"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plumbing fixture"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7131173</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02pkr5"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plumbing fixture"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.71218145</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/015y8h"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jet aircraft"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.71218145</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/015y8h"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jet aircraft"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66169083</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/06ht1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"room"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66169083</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/06ht1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"room"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5944497</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01lgkm"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recreational vehicle"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5944497</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/01lgkm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recreational vehicle"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54411179</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/041x_j"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public toilet"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54411179</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/041x_j"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public toilet"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53394085</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/017_cz"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"major appliance"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.53394085</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/017_cz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"major appliance"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -6887,29 +6901,29 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
       
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78413528</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78413528</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02phwj2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display window"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.647836</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.647836</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/02rfdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interior design"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59498113</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0c_jw"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"furniture"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59498113</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0c_jw"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"furniture"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57692927</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57692927</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/0191_7"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"retail store"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54954523</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/08790l"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boutique"</span><span class="w">
+          </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54954523</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"mid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/m/08790l"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boutique"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span></code></pre></figure>
 
@@ -7713,14 +7727,14 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <p>After getting a feel for the data it was time to actually think about the data necessary for the analysis. To see what was possible I examined the person_info table which contains a variety of information about each person - anywhere from birth and death dates, to spouse, to various names, to height. In my case looking at the birth and height gave me some ideas but I needed to extract these to make them useful. I ended up creating a table for each one and writing a series of queries to populate each one. This required looking at the format of the data in each of the rows and leveraging various combinations of the locate, substring, and cast commands to transform the text fields into something numeric. The birth date was straightforward since it came in two styles - one was just a year and the other was the full birth day with day and month.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">insert</span> <span class="k">into</span> <span class="n">person_birth</span>
-    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="n">info</span> <span class="k">as</span> <span class="nb">UNSIGNED</span><span class="p">)</span>
+    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="n">info</span> <span class="k">as</span> <span class="n">UNSIGNED</span><span class="p">)</span>
     <span class="k">FROM</span> <span class="n">person_info</span>
     <span class="k">WHERE</span> <span class="n">info_type_id</span> <span class="o">=</span> <span class="mi">21</span>
     <span class="k">AND</span> <span class="k">length</span><span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
 <span class="c1">-- Birthdate is full date so just take the year</span>
 <span class="k">insert</span> <span class="k">into</span> <span class="n">person_birth</span>
-    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="nb">unsigned</span><span class="p">)</span>
+    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">unsigned</span><span class="p">)</span>
     <span class="k">FROM</span> <span class="n">person_info</span>
     <span class="k">WHERE</span> <span class="n">info_type_id</span> <span class="o">=</span> <span class="mi">21</span>
     <span class="k">AND</span> <span class="k">length</span><span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">;</span></code></pre></figure>
@@ -7728,7 +7742,7 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 <p>Height was a bit more difficult since it came in a variety of formats. Some were in centimeters, while others were in feet, while others were in feet and inches, with a small fraction having partial inches. Each of these required a complicated series of MySQL commands to convert to inches.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">insert</span> <span class="k">into</span> <span class="n">person_height</span>
-    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="k">replace</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s1">' cm'</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="k">as</span> <span class="nb">unsigned</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">393701</span>
+    <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="k">replace</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s1">' cm'</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">unsigned</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">393701</span>
     <span class="k">FROM</span> <span class="n">person_info</span>
     <span class="k">WHERE</span> <span class="n">info_type_id</span> <span class="o">=</span> <span class="mi">22</span>
     <span class="k">AND</span> <span class="n">info</span> <span class="k">like</span> <span class="s1">'%cm'</span><span class="p">;</span>
@@ -7753,7 +7767,7 @@ I’ve finally embraced docker. Before 2018 I had never used Docker and now use 
 
 <span class="c1">-- Fractional inches</span>
 <span class="k">insert</span> <span class="k">into</span> <span class="n">person_height</span>
-    <span class="k">select</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="n">base_height</span> <span class="k">as</span> <span class="nb">decimal</span><span class="p">)</span> <span class="o">+</span> <span class="k">cast</span><span class="p">(</span><span class="n">numerator</span> <span class="k">as</span> <span class="nb">decimal</span><span class="p">)</span><span class="o">/</span><span class="k">cast</span><span class="p">(</span><span class="n">denominator</span> <span class="k">as</span> <span class="nb">decimal</span><span class="p">)</span>
+    <span class="k">select</span> <span class="n">person_id</span><span class="p">,</span> <span class="k">cast</span><span class="p">(</span><span class="n">base_height</span> <span class="k">as</span> <span class="n">decimal</span><span class="p">)</span> <span class="o">+</span> <span class="k">cast</span><span class="p">(</span><span class="n">numerator</span> <span class="k">as</span> <span class="n">decimal</span><span class="p">)</span><span class="o">/</span><span class="k">cast</span><span class="p">(</span><span class="n">denominator</span> <span class="k">as</span> <span class="n">decimal</span><span class="p">)</span>
     <span class="k">from</span> <span class="p">(</span>
     <span class="k">SELECT</span> <span class="n">person_id</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">'</span><span class="se">\'</span><span class="s1">'</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">'</span><span class="se">\'</span><span class="s1">'</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">'"'</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span> <span class="o">-</span> <span class="n">locate</span><span class="p">(</span><span class="s1">'</span><span class="se">\'</span><span class="s1">'</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">base_height</span><span class="p">,</span>
         <span class="k">substring</span><span class="p">(</span><span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="k">substring</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">locate</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">numerator</span><span class="p">,</span>
@@ -8099,8 +8113,8 @@ Bundling is most successful when:
 
 <span class="c1">-- Create the toy table</span>
 <span class="k">create</span> <span class="k">table</span> <span class="n">test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">)</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="n">auto_increment</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">-- Populate it with some sample values</span>
@@ -8110,7 +8124,7 @@ Bundling is most successful when:
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Now let's add another possible enum value</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
 
 <span class="c1">-- Looks good</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
@@ -8122,19 +8136,19 @@ Bundling is most successful when:
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Change the order around</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Change it again</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
 
 <span class="c1">-- Add and change the order</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'a'</span><span class="p">);</span>
 
 <span class="c1">-- Looks the same</span>
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span><span class="p">;</span>
@@ -8146,10 +8160,10 @@ Bundling is most successful when:
 <span class="k">update</span> <span class="n">test</span> <span class="k">set</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'f'</span> <span class="k">where</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
 
 <span class="c1">-- Now get rid of 'a'</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
 
 <span class="c1">-- Now add 'a' back in</span>
-<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="nb">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">test</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">e</span> <span class="n">enum</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">,</span><span class="s1">'d'</span><span class="p">,</span><span class="s1">'e'</span><span class="p">,</span><span class="s1">'f'</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
 
 <span class="c1">-- Now swap 'f' back with 'a'</span>
 <span class="k">update</span> <span class="n">test</span> <span class="k">set</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'a'</span> <span class="k">where</span> <span class="n">e</span> <span class="o">=</span> <span class="s1">'f'</span><span class="p">;</span>
@@ -8688,8 +8702,8 @@ Bundling is most successful when:
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">drop</span> <span class="k">table</span> <span class="n">if</span> <span class="k">exists</span> <span class="n">dan_test</span><span class="p">;</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">dan_test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-  <span class="n">id2</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+  <span class="n">id2</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="k">insert</span> <span class="k">into</span> <span class="n">dan_test</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">id2</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
@@ -9358,42 +9372,42 @@ sh tasks.clean2</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">();</span>
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">();</span>
 <span class="o">}</span>
 
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
   <span class="o">}</span>
 
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="s">"Woof"</span><span class="o">;</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">aRandomFunction</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">..</span>  <span class="o">}</span> <span class="c1">// Can take anything that implements Animal</span></code></pre></figure>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">aRandomFunction</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">..</span>  <span class="o">}</span> <span class="c1">// Can take anything that implements Animal</span></code></pre></figure>
 
 <p>With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.</p>
 
 <p>Go’s approach is different. In go you would define the interface as usual with the expected methods and you would write functions that accept the interface as the argument. But instead of explicitly specifying that a particular object implements an interface you just do it. Then if it turns out you’ve successfully implemented the methods you can use that object wherever the interface is expected. The compiler is still able to point out signature issues since it can tell when you’re trying to use an object with a required method but it’s done in an implicit way. Below’s the equivalent Go code:</p>
 
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span> <span class="n">Animal</span> <span class="k">interface</span> <span class="p">{</span>
-  <span class="n">isFurry</span><span class="p">()</span> <span class="kt">bool</span>
-  <span class="n">speak</span> <span class="kt">string</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span><span class="x"> </span><span class="n">Animal</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+  </span><span class="n">speak</span><span class="x"> </span><span class="kt">string</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">type</span> <span class="n">Dog</span> <span class="k">struct</span> <span class="p">{</span>
-<span class="p">}</span>
+</span><span class="k">type</span><span class="x"> </span><span class="n">Dog</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="p">(</span><span class="n">d</span> <span class="n">Dog</span><span class="p">)</span> <span class="n">isFurry</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="no">true</span>
-<span class="p">}</span>
+</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="k">return</span><span class="x"> </span><span class="no">true</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="p">(</span><span class="n">d</span> <span class="n">Dog</span><span class="p">)</span> <span class="n">speak</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s">"Woof"</span>
-<span class="p">}</span>
+</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">speak</span><span class="p">()</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="k">return</span><span class="x"> </span><span class="s">"Woof"</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="n">aRandomFunction</span><span class="p">(</span><span class="n">a</span> <span class="n">Animal</span><span class="p">)</span> <span class="p">{</span> <span class="o">..</span> <span class="p">}</span></code></pre></figure>
+</span><span class="k">func</span><span class="x"> </span><span class="n">aRandomFunction</span><span class="p">(</span><span class="n">a</span><span class="x"> </span><span class="n">Animal</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x"> </span><span class="o">..</span><span class="x"> </span><span class="p">}</span></code></pre></figure>
 
 <p>Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.</p>
 
@@ -9500,15 +9514,15 @@ sh tasks.clean2</code></pre></figure>
 <p>Let’s say you have the following two tables - with items.category_id corresponding to categories.id</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">items</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-    <span class="n">category_id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">owner_id</span> <span class="nb">int</span>
+    <span class="n">id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">category_id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">owner_id</span> <span class="n">int</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">categories</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>It’s straightforward to join the two tables to get some basic info:</p>
@@ -9536,26 +9550,26 @@ sh tasks.clean2</code></pre></figure>
 <p>Yesterday, Amazon <a href="https://aws.amazon.com/blogs/aws/now-available-aws-sdk-for-python-3-boto3/" target="_blank">announced</a> a major update to their Python client, boto3. The core functionality is unchanged but they used a clever solution to make it easier to add, modify, and remove endpoints. By coming up with a <a href="https://github.com/boto/boto3/tree/develop/boto3/data" target="_blank">standardized representation</a> for each of the endpoints they’re able to write wrappers in different languages that generate the API calls programmatically. For example, I’ve included a subset of the <a href="https://github.com/boto/boto3/blob/develop/boto3/data/ec2/2015-04-15/resources-1.json" target="_blank">EC2 definition</a> below. It contains the information necessary to programatically generate the API wrapper to hit the appropriate EC2 endpoints.</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"CreateDhcpOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreateDhcpOptions"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions.DhcpOptionsId"</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CreateDhcpOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CreateDhcpOptions"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions.DhcpOptionsId"</span><span class="w"> </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
-          </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DhcpOptions"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"CreateInstances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RunInstances"</span><span class="w"> </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instance"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w"> </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[].InstanceId"</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"CreateInstances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RunInstances"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instance"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"identifiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w"> </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[].InstanceId"</span><span class="w"> </span><span class="p">}</span><span class="w">
           </span><span class="p">],</span><span class="w">
-          </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[]"</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instances[]"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="err">...</span><span class="w">
@@ -9953,16 +9967,16 @@ sh tasks.clean2</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- The original table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Let's say we need to add an age column</span>
 <span class="c1">-- Create the new table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_new</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-  <span class="n">age</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+  <span class="n">age</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Migrate the data</span>
@@ -9983,16 +9997,16 @@ sh tasks.clean2</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- The original table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Let's say we need to add an age column</span>
 <span class="c1">-- Create the new table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_new</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-  <span class="n">age</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+  <span class="n">age</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Migrate some of the data</span>
@@ -10020,16 +10034,16 @@ sh tasks.clean2</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- The original table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Let's say we need to add an age column</span>
 <span class="c1">-- Create the new table</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_new</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-  <span class="n">age</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+  <span class="n">age</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span>
 <span class="p">);</span>
 
 <span class="c1">-- Backup the old table</span>
@@ -10348,26 +10362,26 @@ sh tasks.clean2</code></pre></figure>
 <span class="p">}</span>
 
 <span class="c1">// Tests/Examples</span>
-<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
 
-<span class="nx">addItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Dan</span><span class="dl">"</span><span class="p">});</span>
-<span class="nx">addItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">food</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pizza</span><span class="dl">"</span><span class="p">});</span>
-<span class="nx">addItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">beer</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Newcastle</span><span class="dl">"</span><span class="p">});</span>
+<span class="nx">addItem</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">,</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Dan"</span><span class="p">});</span>
+<span class="nx">addItem</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">,</span> <span class="p">{</span><span class="s2">"food"</span><span class="p">:</span> <span class="s2">"pizza"</span><span class="p">});</span>
+<span class="nx">addItem</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">,</span> <span class="p">{</span><span class="s2">"beer"</span><span class="p">:</span> <span class="s2">"Newcastle"</span><span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lengths match: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">3</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value 0 matches: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">Dan</span><span class="dl">'</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value 1 matches: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">food</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">pizza</span><span class="dl">'</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value 2 matches: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">beer</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">Newcastle</span><span class="dl">'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Lengths match: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">3</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Value 0 matches: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'Dan'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Value 1 matches: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">food</span> <span class="o">===</span> <span class="s1">'pizza'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Value 2 matches: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">beer</span> <span class="o">===</span> <span class="s1">'Newcastle'</span><span class="p">));</span>
 
-<span class="nx">addItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">size</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">addItem</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">,</span> <span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="mi">2</span><span class="p">);</span>
 
-<span class="nx">l</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(</span><span class="dl">'</span><span class="s1">test_list</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">l</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(</span><span class="s1">'test_list'</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">List limit works: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">2</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value 0 matches: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">beer</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">Newcastle</span><span class="dl">'</span><span class="p">));</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Value 1 matches: </span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">size</span> <span class="o">===</span> <span class="mi">2</span><span class="p">));</span></code></pre></figure>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'List limit works: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">2</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Value 0 matches: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">beer</span> <span class="o">===</span> <span class="s1">'Newcastle'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Value 1 matches: '</span> <span class="o">+</span> <span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">size</span> <span class="o">===</span> <span class="mi">2</span><span class="p">));</span></code></pre></figure>
 ]]></content:encoded>
  </entry>
  
@@ -10455,14 +10469,14 @@ sh tasks.clean2</code></pre></figure>
 
 <p>The following   queries demonstrate this behavior - all but the BINARY one can run on both MySQL and PostgreSQL.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_table</span> <span class="p">(</span> <span class="n">t</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">);</span>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">test_table</span> <span class="p">(</span> <span class="n">t</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">);</span>
 
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">test_table</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'a'</span><span class="p">),(</span><span class="s1">'b'</span><span class="p">),(</span><span class="s1">'c'</span><span class="p">),(</span><span class="s1">'d'</span><span class="p">),(</span><span class="s1">'e'</span><span class="p">),(</span><span class="s1">'f'</span><span class="p">),(</span><span class="s1">'g'</span><span class="p">),(</span><span class="s1">'h'</span><span class="p">),(</span><span class="s1">'i'</span><span class="p">),(</span><span class="s1">'j'</span><span class="p">),(</span><span class="s1">'k'</span><span class="p">),(</span><span class="s1">'l'</span><span class="p">),(</span><span class="s1">'m'</span><span class="p">),(</span><span class="s1">'n'</span><span class="p">),(</span><span class="s1">'o'</span><span class="p">),(</span><span class="s1">'p'</span><span class="p">),(</span><span class="s1">'q'</span><span class="p">),(</span><span class="s1">'r'</span><span class="p">),(</span><span class="s1">'s'</span><span class="p">),(</span><span class="s1">'t'</span><span class="p">),(</span><span class="s1">'u'</span><span class="p">),(</span><span class="s1">'v'</span><span class="p">),(</span><span class="s1">'w'</span><span class="p">),(</span><span class="s1">'x'</span><span class="p">),(</span><span class="s1">'y'</span><span class="p">),(</span><span class="s1">'z'</span><span class="p">),(</span><span class="s1">'A'</span><span class="p">),(</span><span class="s1">'B'</span><span class="p">),(</span><span class="s1">'C'</span><span class="p">),(</span><span class="s1">'D'</span><span class="p">),(</span><span class="s1">'E'</span><span class="p">),(</span><span class="s1">'F'</span><span class="p">),(</span><span class="s1">'G'</span><span class="p">),(</span><span class="s1">'H'</span><span class="p">),(</span><span class="s1">'I'</span><span class="p">),(</span><span class="s1">'J'</span><span class="p">),(</span><span class="s1">'K'</span><span class="p">),(</span><span class="s1">'L'</span><span class="p">),(</span><span class="s1">'M'</span><span class="p">),(</span><span class="s1">'N'</span><span class="p">),(</span><span class="s1">'O'</span><span class="p">),(</span><span class="s1">'P'</span><span class="p">),(</span><span class="s1">'Q'</span><span class="p">),(</span><span class="s1">'R'</span><span class="p">),(</span><span class="s1">'S'</span><span class="p">),(</span><span class="s1">'T'</span><span class="p">),(</span><span class="s1">'U'</span><span class="p">),(</span><span class="s1">'V'</span><span class="p">),(</span><span class="s1">'W'</span><span class="p">),(</span><span class="s1">'X'</span><span class="p">),(</span><span class="s1">'Y'</span><span class="p">),(</span><span class="s1">'Z'</span><span class="p">),(</span><span class="s1">'0'</span><span class="p">),(</span><span class="s1">'1'</span><span class="p">),(</span><span class="s1">'2'</span><span class="p">),(</span><span class="s1">'3'</span><span class="p">),(</span><span class="s1">'4'</span><span class="p">),(</span><span class="s1">'5'</span><span class="p">),(</span><span class="s1">'6'</span><span class="p">),(</span><span class="s1">'7'</span><span class="p">),(</span><span class="s1">'8'</span><span class="p">),(</span><span class="s1">'9'</span><span class="p">),(</span><span class="s1">'['</span><span class="p">),(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">),(</span><span class="s1">']'</span><span class="p">),(</span><span class="s1">'^'</span><span class="p">),(</span><span class="s1">'_'</span><span class="p">),(</span><span class="s1">'`'</span><span class="p">);</span>
 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">test_table</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">t</span> <span class="k">ASC</span><span class="p">;</span>
 
 <span class="c1">-- MySQL only</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">test_table</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="nb">BINARY</span> <span class="n">t</span> <span class="k">ASC</span><span class="p">;</span></code></pre></figure>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">test_table</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">BINARY</span> <span class="n">t</span> <span class="k">ASC</span><span class="p">;</span></code></pre></figure>
 ]]></content:encoded>
  </entry>
  
@@ -10836,47 +10850,47 @@ The statement is attributed to Kent Beck but I’ve become a huge fan and try to
    <content:encoded><![CDATA[
 <p>I’ve stumbled onto what seems to be a solution without a problem but something that’s been fun to experiment with and might have an actual application. The idea is to replace a recursion step with a URL redirection. In this situation the base case will return a 200 response while the recursive step will do a redirection with a slightly updated URL. The sample node server below uses this idea to handle a three tasks - sum up to n, compute a factorial, and test whether an integer is prime.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">express</span>  <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">),</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">express</span>  <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">),</span>
     <span class="nx">port</span> <span class="o">=</span> <span class="mi">4000</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/sum</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/sum'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'a'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Sum: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">'Sum: '</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/sum?n=</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;a=</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">n</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"/sum?n="</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"&amp;a="</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">n</span><span class="p">);</span>
       <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/fact</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/fact'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nx">a</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'a'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Factorial: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">'Factorial: '</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/fact?n=</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;a=</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"/fact?n="</span> <span class="o">+</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"&amp;a="</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">*</span><span class="nx">n</span><span class="p">);</span>
       <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/isPrime</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">n</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">),</span>
-      <span class="nx">f</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="dl">'</span><span class="s1">f</span><span class="dl">'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/isPrime'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'n'</span><span class="p">),</span><span class="mi">10</span><span class="p">),</span>
+      <span class="nx">f</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="s1">'f'</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">f</span> <span class="o">&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Prime</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">'Prime'</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">f</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Composite</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">200</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s1">'Composite'</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="dl">'</span><span class="s1">/isPrime?n=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">n</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&amp;f=</span><span class="dl">'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">f</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/isPrime?n='</span> <span class="o">+</span> <span class="nx">n</span> <span class="o">+</span> <span class="s1">'&amp;f='</span> <span class="o">+</span> <span class="p">(</span><span class="nx">f</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Server started on port </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">port</span><span class="p">);</span></code></pre></figure>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server started on port '</span> <span class="o">+</span> <span class="nx">port</span><span class="p">);</span></code></pre></figure>
 
 <p>The only cases I can think of where it’s even remotely useful is if your servers are behind a CDN and you want to cache every intermediate result without having to write the application logic to do it or you need to reduce the amount of work done by a single HTTP request. It’s just not an efficient approach otherwise - the overhead of making new HTTP connections and handling arguments for every recursive step is usually more expensive than doing the actual logic within a single request.</p>
 
@@ -11311,24 +11325,24 @@ That differential allows people to buy something on the cheap but feel like they
 <span class="n">use</span> <span class="k">database</span> <span class="n">stats</span><span class="p">;</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">orig_stats</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-  <span class="k">position</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-  <span class="n">opp</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
-  <span class="n">passing_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">passing_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">passing_int</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_att</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_tgt</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_rec</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">return_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">twopt</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">fumbles</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">points</span> <span class="nb">float</span>
+  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="k">position</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+  <span class="n">opp</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+  <span class="n">passing_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">passing_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">passing_int</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_att</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_tgt</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_rec</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">return_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">twopt</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">fumbles</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">points</span> <span class="n">float</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>Now we load the CSV file into the table making sure to specify the options properly. In my case this took a few attempts to deal with the line endings.</p>
@@ -11342,51 +11356,51 @@ That differential allows people to buy something on the cheap but feel like they
 <p>Next step is to create the tables we want to end up with. In my case I wanted to normalize the data which required designed a new set of tables. A big assumption made here was that a player will not get traded from one team to another. This is definitely not correct in the real world but it is good enough for this exercise. If we wanted to allow for trades we would have a separate table that would map a player to a team by week.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">teams</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">positions</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">players</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-  <span class="n">position_id</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">team_id</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">position_id</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">team_id</span> <span class="n">int</span><span class="p">,</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">schedule</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">home_id</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">away_id</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">home_id</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">away_id</span> <span class="n">int</span><span class="p">,</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="n">home_id</span><span class="p">,</span> <span class="n">away_id</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">stats</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">player_id</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="n">passing_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">passing_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">passing_int</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_att</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">rushing_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_tgt</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_rec</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_yds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">receiving_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">return_tds</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">twopt</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">fumbles</span> <span class="nb">float</span><span class="p">,</span>
-  <span class="n">points</span> <span class="nb">float</span>
+  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">player_id</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">passing_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">passing_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">passing_int</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_att</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">rushing_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_tgt</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_rec</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_yds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">receiving_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">return_tds</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">twopt</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">fumbles</span> <span class="n">float</span><span class="p">,</span>
+  <span class="n">points</span> <span class="n">float</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>Now it’s on to the hard part. We want to take the data in the original stats table and convert into a properly normalized data set. The strategy here is to start with the simple tables and work our way up to the more complicated ones leveraging the normalized data we created at each step. The first two tables are teams and positions and we can derive them from the “position” field in the original stats table by splitting the position field into two and realizing that the left side is the team and the right side is the position of given the player.</p>
@@ -13025,7 +13039,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>app.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-app.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="si">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="si">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>2
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu
@@ -13256,7 +13270,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 <p>I thought it would be fun to see if I could do it in PostgreSQL and was surprised by how quick and easy it was. The most challenging part was figuring out how to read the file - after that it was just using a few of the built in functions to clean and organize the text.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">temp_t</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">temp_t</span> <span class="p">(</span><span class="k">c</span> <span class="nb">text</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">temp_t</span> <span class="p">(</span><span class="k">c</span> <span class="n">text</span><span class="p">);</span>
 
 <span class="k">COPY</span> <span class="n">temp_t</span><span class="p">(</span><span class="k">c</span><span class="p">)</span> <span class="k">FROM</span> <span class="s1">'/tmp/data.txt'</span><span class="p">;</span>
 
@@ -13272,14 +13286,14 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">EXISTS</span> <span class="n">fizzbuzz</span><span class="p">;</span>
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">fizzbuzz</span> <span class="p">(</span>
-  <span class="n">num</span> <span class="nb">int</span><span class="p">,</span>
-  <span class="nb">text</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
-  <span class="n">priority</span> <span class="nb">smallint</span>
+  <span class="n">num</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">text</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+  <span class="n">priority</span> <span class="n">smallint</span>
 <span class="p">);</span>
 
-<span class="k">insert</span> <span class="k">into</span> <span class="n">fizzbuzz</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="nb">text</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Fizz'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Buzz'</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">fizzbuzz</span> <span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Fizz'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Buzz'</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 
-<span class="k">select</span> <span class="n">coalesce</span><span class="p">(</span><span class="n">string_agg</span><span class="p">(</span><span class="n">fizzbuzz</span><span class="p">.</span><span class="nb">text</span><span class="p">,</span> <span class="s1">''</span> <span class="k">order</span> <span class="k">by</span> <span class="n">fizzbuzz</span><span class="p">.</span><span class="n">priority</span> <span class="k">asc</span><span class="p">),</span> <span class="n">nums</span><span class="p">.</span><span class="n">num</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span> <span class="k">as</span> <span class="nb">text</span>
+<span class="k">select</span> <span class="n">coalesce</span><span class="p">(</span><span class="n">string_agg</span><span class="p">(</span><span class="n">fizzbuzz</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">''</span> <span class="k">order</span> <span class="k">by</span> <span class="n">fizzbuzz</span><span class="p">.</span><span class="n">priority</span> <span class="k">asc</span><span class="p">),</span> <span class="n">nums</span><span class="p">.</span><span class="n">num</span><span class="p">::</span><span class="n">text</span><span class="p">)</span> <span class="k">as</span> <span class="n">text</span>
 <span class="k">from</span> <span class="p">(</span>
   <span class="k">select</span> <span class="n">generate_series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="k">as</span> <span class="n">num</span>
 <span class="p">)</span> <span class="n">nums</span>
@@ -13659,7 +13673,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
   </span><span class="n">theme_economist</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">scale_color_economist</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">geom_point</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
-  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">centers</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">V1</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">V2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'Center'</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">52</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">.3</span><span class="p">,</span><span class="w"> </span><span class="n">legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">centers</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">V</span><span class="m">1</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">V</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'Center'</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">52</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">.3</span><span class="p">,</span><span class="w"> </span><span class="n">legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="n">plot.title</span><span class="o">=</span><span class="n">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="o">=</span><span class="m">0.5</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">xlab</span><span class="p">(</span><span class="s1">'Speed'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
   </span><span class="n">ylab</span><span class="p">(</span><span class="s1">'Distance'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
@@ -14009,7 +14023,7 @@ The trick is to watch for bidding to slow down and then put in a bid. That's wha
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">table_schema</span><span class="p">,</span> <span class="k">table_name</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span> <span class="k">where</span> <span class="k">column_name</span> <span class="k">like</span> <span class="s1">'%user_id%’;
 
-select * from information_schema.columns where column_name like '</span><span class="o">%</span><span class="nb">time</span><span class="o">%</span><span class="err">’</span><span class="p">;</span>
+select * from information_schema.columns where column_name like '</span><span class="o">%</span><span class="n">time</span><span class="o">%</span><span class="err">’</span><span class="p">;</span>
 
 <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span> <span class="k">where</span> <span class="n">data_type</span> <span class="o">=</span> <span class="s1">'datetime'</span><span class="p">;</span></code></pre></figure>
 
@@ -14635,7 +14649,7 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
     <div class="thumbnail">
     	<p>3. Run a JavaScript command to get all the HTML elements that have those classes.
       	
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">name playernote</span><span class="dl">'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'name playernote'</span><span class="p">)</span></code></pre></figure>
 
       </p>
       <img src="http://dangoldin.com/assets/static/images/ff-roster-get-players.jpeg" alt="JavaScript to get the elements matching our CSS query" width="4166" height="800" layout="responsive"/>
@@ -14646,7 +14660,7 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
     <div class="thumbnail">
     	<p>4. Store those HTML elements in a variable so we can quickly iterate through the list.
 		
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">players</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">name playernote</span><span class="dl">'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">players</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'name playernote'</span><span class="p">)</span></code></pre></figure>
 
       </p>
       <img src="http://dangoldin.com/assets/static/images/ff-roster-get-players-2.jpeg" alt="Store the elements in a variable" width="4592" height="800" layout="responsive"/>
@@ -14832,7 +14846,7 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-project.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="si">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="si">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>3
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu
@@ -15567,28 +15581,28 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
         
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">upload_ids</span> <span class="o">=</span> <span class="p">[];</span>
-  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments</span><span class="dl">'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">fileuploaddone</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Done uploading product images</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploaddone'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Done uploading product images'</span><span class="p">);</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
       <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
     <span class="p">});</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">)</span> <span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#id_file_ids</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">)</span> <span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span> <span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#id_file_ids'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span> <span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments td.preview</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Enabling input</span><span class="dl">'</span><span class="p">);</span>
-      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#reply-form button[type="submit"]</span><span class="dl">'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments td.preview'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">upload_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Enabling input'</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#reply-form button[type="submit"]'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">);</span>
     <span class="p">};</span>
   <span class="p">});</span>
 
-  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments</span><span class="dl">'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">fileuploadstart</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Disabling input</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#reply-form button[type="submit"]</span><span class="dl">'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">disabled</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploadstart'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Disabling input'</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#reply-form button[type="submit"]'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'disabled'</span><span class="p">,</span><span class="s1">'disabled'</span><span class="p">);</span>
   <span class="p">});</span>
 
-  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments</span><span class="dl">'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">fileuploadpreviewdone</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments td.preview</span><span class="dl">'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">product_image_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#fileupload-attachments tbody.files tr</span><span class="dl">'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments'</span><span class="p">).</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'fileuploadpreviewdone'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments td.preview'</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="nx">product_image_ids</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'#fileupload-attachments tbody.files tr'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
     <span class="p">};</span>
   <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
@@ -17764,12 +17778,12 @@ Computers not only keep track of money, they make spending it easier. TV-telepho
 <p>It looks as if declaring a variable with the "my" statement but then guarded with an "if" statement causes the scope of the variable to be global - note that the "use strict 'vars';" pragma does not give an error in this case.</p>
 
 <figure class="highlight"><pre><code class="language-perl" data-lang="perl"><span class="c1">#!/usr/bin/perl -w</span>
-<span class="k">use</span> <span class="nv">strict</span>  <span class="p">'</span><span class="s1">vars</span><span class="p">';</span>
+<span class="k">use</span> <span class="nv">strict</span>  <span class="s">'vars'</span><span class="p">;</span>
 
 <span class="k">sub </span><span class="nf">foo</span><span class="p">{</span>
     <span class="k">my</span> <span class="nv">$val</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
     <span class="nv">$val</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">unless</span> <span class="nb">defined</span><span class="p">(</span><span class="nv">$val</span><span class="p">);</span>
-    <span class="k">print</span> <span class="p">"</span><span class="s2">Val: </span><span class="si">$val</span><span class="se">\n</span><span class="p">";</span>
+    <span class="k">print</span> <span class="s">"Val: $val\n"</span><span class="p">;</span>
     <span class="nv">$val</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 

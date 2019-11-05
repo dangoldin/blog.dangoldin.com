@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Java&#39;s SimpleDateFormat: YYYY vs yyyy</title>
-  <meta name="description" content="">
-  
+  <title>Upgrade your libraries</title>
+  <meta name="description" content="Simply upgrading Jekyll to a new version led to a significant speed up in my blog's build time. Upgrade your libraries!">
+  <meta name="keywords" content="jekyll, amp, website speed, performance" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/04/upgrade-your-libraries/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Java's SimpleDateFormat: YYYY vs yyyy" />
+  <meta name="twitter:title" content="Upgrade your libraries" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/" />
-  <meta property="og:title"               content="Java's SimpleDateFormat: YYYY vs yyyy" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/04/upgrade-your-libraries/" />
+  <meta property="og:title"               content="Upgrade your libraries" />
 
   
-  <meta property="og:description"         content="" />
-  <meta name="twitter:description"        content="" />
+  <meta property="og:description"         content="Simply upgrading Jekyll to a new version led to a significant speed up in my blog's build time. Upgrade your libraries!" />
+  <meta name="twitter:description"        content="Simply upgrading Jekyll to a new version led to a significant speed up in my blog's build time. Upgrade your libraries!" />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/",
-  "headline": "Java&#39;s SimpleDateFormat: YYYY vs yyyy",
-  "datePublished": "2019-01-06T00:00:00-05:00",
-  "dateModified": "2019-01-06T00:00:00-05:00",
-  "description": "This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when forma...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/04/upgrade-your-libraries/",
+  "headline": "Upgrade your libraries",
+  "datePublished": "2019-11-04T00:00:00-05:00",
+  "dateModified": "2019-11-04T00:00:00-05:00",
+  "description": "This blog is hosted on GitHub and built using Jekyll. Jekyll is a simple static site generator that’s been working well for me and was flexible enough to all...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,51 +724,39 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Java's SimpleDateFormat: YYYY vs yyyy</h1>
-      <span class="date">06 January 2019</span>
+      <h1 class="post-title">Upgrade your libraries</h1>
+      <span class="date">04 November 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when formatting dates in Java’s SimpleDateFormat class there is a subtle difference between YYYY and yyyy. They both represent a year but yyyy represents the calendar year while YYYY represents the year of the week. That’s a subtle difference that only causes problems around a year change so your code could have been running perfectly fine all year only to cause a problem in the new year.</p>
+<p>This blog is <a href="https://github.com/dangoldin/blog.dangoldin.com">hosted</a> on GitHub and built using <a href="https://jekyllrb.com/">Jekyll</a>. Jekyll is a simple static site generator that’s been working well for me and was flexible enough to allow me to switch the entire site over to <a href="https://amp.dev/">AMP</a>. Unfortunately, the switch to AMP led to the site generation becoming significant slower due to the CSS-inlining requirement. Two years ago I started profiling and <a href="http://dangoldin.com/2017/11/23/improving-jekyll-generation-speed-for-amp-pages/">dropped the site generation time</a> down to about 15 seconds from over 4 minutes by generating the CSS once and then reusing it for all future pages.</p>
 
-<p>An example illustrates this much better than words ever could.</p>
+<p>Earlier this year I noticed that my build times dropped even further, down to 4 seconds. Part of the drop was the switch to a new computer but the primarily driver was upgrading each of the libraries. Jekyll improved significantly over the past 2 years and coupled with the improved hardware caused a nearly 4x improvement in speed.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">dangoldin</span><span class="o">.</span><span class="na">test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">String</span><span class="o">[]</span> <span class="n">dates</span> <span class="o">=</span> <span class="o">{</span><span class="s">"2018-12-01"</span><span class="o">,</span> <span class="s">"2018-12-31"</span><span class="o">,</span> <span class="s">"2019-01-01"</span><span class="o">};</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">date:</span> <span class="n">dates</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">SimpleDateFormat</span> <span class="n">dt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
-                <span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
-
-                <span class="n">SimpleDateFormat</span> <span class="n">dtYYYY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"YYYY"</span><span class="o">);</span>
-                <span class="n">SimpleDateFormat</span> <span class="n">dtyyyy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy"</span><span class="o">);</span>
-
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"For date "</span> <span class="o">+</span> <span class="n">date</span> <span class="o">+</span> <span class="s">" the YYYY year is "</span> <span class="o">+</span> <span class="n">dtYYYY</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">)</span> <span class="o">+</span> <span class="s">" while for yyyy it's "</span> <span class="o">+</span> <span class="n">dtyyyy</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">));</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Failed with exception: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>This gives you the following:</p>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">For date 2018-12-01 the YYYY year is 2018 while for yyyy it's 2018
-For date 2018-12-31 the YYYY year is 2019 while for yyyy it's 2018
-For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre></figure>
-
-<p>The first and last make sense since the two year formats match. The middle one is the odd one out. The date starts as 2018-12-31 but YYYY gives you 2019 while yyyy gives you 2018. In general, you should almost always use yyyy so it’s a good tactic to add some form of linting or checking to make sure your code does not have any date formats referencing YYYY.</p>
+<p>We often fall into the trap of installing some open source code, getting it set up, and then promptly forgetting about it. In the meantime, that code has a life of its own and continues to grow and evolve. If you don’t have a process in place to audit and upgrade your libraries it’s well worth introducing one. Sometimes you have to deal with breaking changes and sometimes the code is slower but most upgrades are smooth and often lead to improvements in speed and functionality.</p>
 
     </section>
 
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
     
 
     <div class="follow-footer">
@@ -778,11 +766,11 @@ For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre><
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/12/31/farewell-2018-hello-2019/" title="Farewell 2018, Hello 2019!">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/11/02/qr-codes-in-china/" title="QR codes in China">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2019/01/08/githubs-new-plan/" title="GitHub's new plan">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -793,7 +781,7 @@ For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre><
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F01%2F06%2Fjavas-simpledateformat-yyyy-vs-yyyy%2F&title=Java%27s+SimpleDateFormat%3A+YYYY+vs+yyyy">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F04%2Fupgrade-your-libraries%2F&title=Upgrade+your+libraries">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
