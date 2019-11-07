@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>ALB and ELB access log schemas for Redshift</title>
-  <meta name="description" content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema nece...">
-  <meta name="keywords" content="redshift, aws, load balancer, elb, alb, elastic, application" />
+  <title>Importing resources into terraform</title>
+  <meta name="description" content="Terraform is great but I wish it were easier to import resources.">
+  <meta name="keywords" content="terraform, devops" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/06/importing-resources-into-terraform/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="ALB and ELB access log schemas for Redshift" />
+  <meta name="twitter:title" content="Importing resources into terraform" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/" />
-  <meta property="og:title"               content="ALB and ELB access log schemas for Redshift" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/06/importing-resources-into-terraform/" />
+  <meta property="og:title"               content="Importing resources into terraform" />
 
   
-  <meta property="og:description"         content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema necessary to load the access log data." />
-  <meta name="twitter:description"        content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema necessary to load the access log data." />
+  <meta property="og:description"         content="Terraform is great but I wish it were easier to import resources." />
+  <meta name="twitter:description"        content="Terraform is great but I wish it were easier to import resources." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/",
-  "headline": "ALB and ELB access log schemas for Redshift",
-  "datePublished": "2018-06-05T00:00:00-04:00",
-  "dateModified": "2018-06-05T00:00:00-04:00",
-  "description": "Back in February I wrote about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurpri...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/06/importing-resources-into-terraform/",
+  "headline": "Importing resources into terraform",
+  "datePublished": "2019-11-06T00:00:00-05:00",
+  "dateModified": "2019-11-06T00:00:00-05:00",
+  "description": "You don’t appreciate Terraform until you have hundreds of AWS resources with dozens of security rules. But once you develop that appreciate it becomes an ind...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,62 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">ALB and ELB access log schemas for Redshift</h1>
-      <span class="date">05 June 2018</span>
+      <h1 class="post-title">Importing resources into terraform</h1>
+      <span class="date">06 November 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>Back in February I <a href="/2018/02/20/analyzing-aws-elb-logs/">wrote</a> about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurprisingly in hindsight but frustrating at the time the ALBs have a different log schema. Both the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Classic</a> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Application</a> Load Balancer logs are well documented on the AWS site but unfortunately the code to create the appropriate Redshift schema is not. In the hope of helping others and passing it forward I wanted to share the Redshift schemas for both types of access logs.</p>
+<p>You don’t appreciate <a href="https://www.terraform.io">Terraform</a> until you have hundreds of AWS resources with dozens of security rules. But once you develop that appreciate it becomes an indispensable tool in managing and scaling your infrastructure. I’m a huge fan of Terraform and recently started moving a bunch of my personal project resources into Terraform.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- ELB Logs</span>
-<span class="k">create</span> <span class="k">table</span> <span class="n">elb_logs</span> <span class="p">(</span>
-	<span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
-	<span class="n">elbname</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-	<span class="n">requestip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">backendip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">requestprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">backendprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">clientresponsetime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">elbresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">backendresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">receivedbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">sentbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">httprequest</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5083</span><span class="p">),</span>
-	<span class="n">useragent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
-	<span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
-	<span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
+<p>I imagine for most people it’s a chore but I find the entire process zen-like. I take something that was a mess and clean it up while learning something new. My approach has been to create a placeholder resource and then do a “terraform import” to fetch the properties. Then I go through a series of “terraform plan”s to reconcile the differences.</p>
 
-<span class="c1">-- ALB Logs</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">alb_logs</span> <span class="p">(</span>
- <span class="k">type</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">elb</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">client_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">target_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">request_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">target_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">response_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">elb_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">target_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">received_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">sent_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">request</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
- <span class="n">user_agent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">target_group_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">trace_id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">domain_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">chosen_cert_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">matched_rule_priority</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">request_creation_time</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">actions_executed</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
- <span class="p">)</span> <span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
- </code></pre></figure>
-
+<p>What I wish was for Terraform to allow me to point it to a cloud resource and then have it generate the corresponding HCL that I can then migrate over to the .tf files. I can see why this isn’t built in: the entire point of Terraform is to link various resources together so just seeing a static set of properties for a given resource won’t tie them all together. At the same time, I’d rather have the option to see my entire resource in HCL and then decide what I want to remove, replace, or keep. Had I used Terraform from the beginning this wouldn’t have been a problem but for those of us that are migrating a ton of legacy resources it would be a big help.</p>
 
     </section>
 
@@ -794,7 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
@@ -811,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/06/01/type-1-and-type-2-tech-specs/" title="Type 1 and Type 2 tech specs">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/11/04/upgrade-your-libraries/" title="Upgrade your libraries">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/06/28/using-personal-aws-credentials-in-production/" title="Using personal AWS credentials in production">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -826,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F06%2F05%2Falb-and-elb-access-log-schemas-for-redshift%2F&title=ALB+and+ELB+access+log+schemas+for+Redshift">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F06%2Fimporting-resources-into-terraform%2F&title=Importing+resources+into+terraform">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

@@ -738,24 +738,24 @@ table {
 <span class="n">use</span> <span class="k">database</span> <span class="n">stats</span><span class="p">;</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">orig_stats</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-  <span class="k">position</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-  <span class="n">opp</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
-  <span class="n">passing_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">passing_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">passing_int</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_att</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_tgt</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_rec</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">return_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">twopt</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">fumbles</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">points</span> <span class="n">float</span>
+  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="k">position</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+  <span class="n">opp</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+  <span class="n">passing_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">passing_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">passing_int</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_att</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_tgt</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_rec</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">return_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">twopt</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">fumbles</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">points</span> <span class="nb">float</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>Now we load the CSV file into the table making sure to specify the options properly. In my case this took a few attempts to deal with the line endings.</p>
@@ -769,51 +769,51 @@ table {
 <p>Next step is to create the tables we want to end up with. In my case I wanted to normalize the data which required designed a new set of tables. A big assumption made here was that a player will not get traded from one team to another. This is definitely not correct in the real world but it is good enough for this exercise. If we wanted to allow for trades we would have a separate table that would map a player to a team by week.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">teams</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">positions</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">),</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">players</span> <span class="p">(</span>
-  <span class="n">id</span> <span class="n">int</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-  <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-  <span class="n">position_id</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">team_id</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">id</span> <span class="nb">int</span> <span class="nb">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+  <span class="n">position_id</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">team_id</span> <span class="nb">int</span><span class="p">,</span>
   <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">schedule</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">home_id</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">away_id</span> <span class="n">int</span><span class="p">,</span>
+  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">home_id</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">away_id</span> <span class="nb">int</span><span class="p">,</span>
   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">week</span><span class="p">,</span> <span class="n">home_id</span><span class="p">,</span> <span class="n">away_id</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">stats</span> <span class="p">(</span>
-  <span class="n">week</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">player_id</span> <span class="n">int</span><span class="p">,</span>
-  <span class="n">passing_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">passing_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">passing_int</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_att</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">rushing_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_tgt</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_rec</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_yds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">receiving_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">return_tds</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">twopt</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">fumbles</span> <span class="n">float</span><span class="p">,</span>
-  <span class="n">points</span> <span class="n">float</span>
+  <span class="n">week</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">player_id</span> <span class="nb">int</span><span class="p">,</span>
+  <span class="n">passing_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">passing_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">passing_int</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_att</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">rushing_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_tgt</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_rec</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_yds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">receiving_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">return_tds</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">twopt</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">fumbles</span> <span class="nb">float</span><span class="p">,</span>
+  <span class="n">points</span> <span class="nb">float</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>Now it’s on to the hard part. We want to take the data in the original stats table and convert into a properly normalized data set. The strategy here is to start with the simple tables and work our way up to the more complicated ones leveraging the normalized data we created at each step. The first two tables are teams and positions and we can derive them from the “position” field in the original stats table by splitting the position field into two and realizing that the left side is the team and the right side is the position of given the player.</p>
