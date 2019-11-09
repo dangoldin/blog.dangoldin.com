@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>DYI password manager</title>
-  <meta name="description" content="Rather than rely on a third party service I have a simple way of managing my passwords via encrypted text files.">
-  <meta name="keywords" content="password manager, pgp" />
+  <title>Importing resources into terraform</title>
+  <meta name="description" content="Terraform is great but I wish it were easier to import resources.">
+  <meta name="keywords" content="terraform, devops" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/11/08/dyi-password-manager/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/06/importing-resources-into-terraform/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="DYI password manager" />
+  <meta name="twitter:title" content="Importing resources into terraform" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/11/08/dyi-password-manager/" />
-  <meta property="og:title"               content="DYI password manager" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/06/importing-resources-into-terraform/" />
+  <meta property="og:title"               content="Importing resources into terraform" />
 
   
-  <meta property="og:description"         content="Rather than rely on a third party service I have a simple way of managing my passwords via encrypted text files." />
-  <meta name="twitter:description"        content="Rather than rely on a third party service I have a simple way of managing my passwords via encrypted text files." />
+  <meta property="og:description"         content="Terraform is great but I wish it were easier to import resources." />
+  <meta name="twitter:description"        content="Terraform is great but I wish it were easier to import resources." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/11/08/dyi-password-manager/",
-  "headline": "DYI password manager",
-  "datePublished": "2019-11-08T00:00:00-05:00",
-  "dateModified": "2019-11-08T00:00:00-05:00",
-  "description": "I prefer plaintext for all my note taking. Text files are extremely portable and serve as a flexible foundation for anything I’d want to do. For example, I c...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/06/importing-resources-into-terraform/",
+  "headline": "Importing resources into terraform",
+  "datePublished": "2019-11-06T00:00:00-05:00",
+  "dateModified": "2019-11-06T00:00:00-05:00",
+  "description": "You don’t appreciate Terraform until you have hundreds of AWS resources with dozens of security rules. But once you develop that appreciate it becomes an ind...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,30 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">DYI password manager</h1>
-      <span class="date">08 November 2019</span>
+      <h1 class="post-title">Importing resources into terraform</h1>
+      <span class="date">06 November 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>I prefer plaintext for all my note taking. Text files are extremely portable and serve as a flexible foundation for anything I’d want to do. For example, I can use grep to perform complex regex searches across thousands of files. If I want to apply a bulk operation to my notes I can write a quick script to do so. This is all possible because there’s no proprietary format backing them and I’m able to leverage the power of the command line.</p>
+<p>You don’t appreciate <a href="https://www.terraform.io">Terraform</a> until you have hundreds of AWS resources with dozens of security rules. But once you develop that appreciate it becomes an indispensable tool in managing and scaling your infrastructure. I’m a huge fan of Terraform and recently started moving a bunch of my personal project resources into Terraform.</p>
 
-<p>I recently adopted this approach to manage my passwords. I like to keep all my notes in Dropbox so it’s synced across devices while being accessible on my phone. I wanted to do the same thing for my passwords but also want to make sure it’s stored securely on Dropbox. To do so, I ended up with a pretty simple approach where I encrypt it using GPG via a symmetric cipher. That way the file itself is encrypted but can be easily decrypted when I need to access anything from it.</p>
+<p>I imagine for most people it’s a chore but I find the entire process zen-like. I take something that was a mess and clean it up while learning something new. My approach has been to create a placeholder resource and then do a “terraform import” to fetch the properties. Then I go through a series of “terraform plan”s to reconcile the differences.</p>
 
-<p>To search my passwords it’s a simple alias command:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">pass</span><span class="o">=</span><span class="s1">'gpg -d ~/Dropbox/notes/passwords.txt.gpg | grep -A 4'</span></code></pre></figure>
-
-<p>This decrypts the file and then pipes the result into grep which performs a simple search and shows the subsequent four lines upon given a match. The format of the file is simple: a series of blocks where the first line contains some descriptive information about the site/application/whatever followed by a line (or more) with the actual secrets. For example,</p>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">github.com
-d...g..@gmail.com/dasdsa321313212
-d..g..@workemail.com/12321dasdsadsa
-
-Anothersite.com
-	32132zxczxdsa1231</code></pre></figure>
-
-<p>It’s far from perfect. The most annoying part is accessing the secrets on a mobile device. My approach to that is a simple website that is just a wrapper around the above alias. There’s a lot more to do here but this approach works for me.</p>
+<p>What I wish was for Terraform to allow me to point it to a cloud resource and then have it generate the corresponding HCL that I can then migrate over to the .tf files. I can see why this isn’t built in: the entire point of Terraform is to link various resources together so just seeing a static set of properties for a given resource won’t tie them all together. At the same time, I’d rather have the option to see my entire resource in HCL and then decide what I want to remove, replace, or keep. Had I used Terraform from the beginning this wouldn’t have been a problem but for those of us that are migrating a ton of legacy resources it would be a big help.</p>
 
     </section>
 
@@ -762,7 +749,7 @@ Anothersite.com
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
@@ -779,11 +766,11 @@ Anothersite.com
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2019/11/06/importing-resources-into-terraform/" title="Importing resources into terraform">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/11/04/upgrade-your-libraries/" title="Upgrade your libraries">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a></li>
+        <li class="next"> | <a href="/2019/11/08/dyi-password-manager/" title="DYI password manager">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -794,7 +781,7 @@ Anothersite.com
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F08%2Fdyi-password-manager%2F&title=DYI+password+manager">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F06%2Fimporting-resources-into-terraform%2F&title=Importing+resources+into+terraform">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

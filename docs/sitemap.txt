@@ -21,6 +21,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2019/11/08/dyi-password-manager/
+http://dangoldin.com/2019/11/06/importing-resources-into-terraform/
 http://dangoldin.com/2019/11/04/upgrade-your-libraries/
 http://dangoldin.com/2019/11/02/qr-codes-in-china/
 http://dangoldin.com/2019/10/29/computer-history-memos/

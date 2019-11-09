@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-11-08T23:22:51-05:00</updated>
+ <updated>2019-11-08T23:26:19-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -35,6 +35,20 @@ Anothersite.com
 	32132zxczxdsa1231</code></pre></figure>
 
 <p>It’s far from perfect. The most annoying part is accessing the secrets on a mobile device. My approach to that is a simple website that is just a wrapper around the above alias. There’s a lot more to do here but this approach works for me.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Importing resources into terraform</title>
+   <link href="http://dangoldin.com/2019/11/06/importing-resources-into-terraform/"/>
+   <updated>2019-11-06T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/06/importing-resources-into-terraform</id>
+   <content:encoded><![CDATA[
+<p>You don’t appreciate <a href="https://www.terraform.io">Terraform</a> until you have hundreds of AWS resources with dozens of security rules. But once you develop that appreciate it becomes an indispensable tool in managing and scaling your infrastructure. I’m a huge fan of Terraform and recently started moving a bunch of my personal project resources into Terraform.</p>
+
+<p>I imagine for most people it’s a chore but I find the entire process zen-like. I take something that was a mess and clean it up while learning something new. My approach has been to create a placeholder resource and then do a “terraform import” to fetch the properties. Then I go through a series of “terraform plan”s to reconcile the differences.</p>
+
+<p>What I wish was for Terraform to allow me to point it to a cloud resource and then have it generate the corresponding HCL that I can then migrate over to the .tf files. I can see why this isn’t built in: the entire point of Terraform is to link various resources together so just seeing a static set of properties for a given resource won’t tie them all together. At the same time, I’d rather have the option to see my entire resource in HCL and then decide what I want to remove, replace, or keep. Had I used Terraform from the beginning this wouldn’t have been a problem but for those of us that are migrating a ton of legacy resources it would be a big help.</p>
 ]]></content:encoded>
  </entry>
  
