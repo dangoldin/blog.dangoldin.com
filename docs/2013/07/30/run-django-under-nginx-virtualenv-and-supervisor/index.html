@@ -748,7 +748,7 @@ table {
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-project.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="si">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="si">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>3
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu

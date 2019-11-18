@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>ALB and ELB access log schemas for Redshift</title>
-  <meta name="description" content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema nece...">
-  <meta name="keywords" content="redshift, aws, load balancer, elb, alb, elastic, application" />
+  <title>Rebirth of digital piracy?</title>
+  <meta name="description" content="I came across a comic joking about the rise of piracy now that there are so many streaming services and there's an element of truth to it.">
+  <meta name="keywords" content="piracy, streaming wars" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/17/rebirth-of-digital-piracy/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="ALB and ELB access log schemas for Redshift" />
+  <meta name="twitter:title" content="Rebirth of digital piracy?" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/" />
-  <meta property="og:title"               content="ALB and ELB access log schemas for Redshift" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/17/rebirth-of-digital-piracy/" />
+  <meta property="og:title"               content="Rebirth of digital piracy?" />
 
   
-  <meta property="og:description"         content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema necessary to load the access log data." />
-  <meta name="twitter:description"        content="It's very handy being able to analyze ELB access logs in Redshift but unfortunately it's not clear what the schema should be. The post shares the schema necessary to load the access log data." />
+  <meta property="og:description"         content="I came across a comic joking about the rise of piracy now that there are so many streaming services and there's an element of truth to it." />
+  <meta name="twitter:description"        content="I came across a comic joking about the rise of piracy now that there are so many streaming services and there's an element of truth to it." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/streaming-piracy.jpg" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/streaming-piracy.jpg" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/06/05/alb-and-elb-access-log-schemas-for-redshift/",
-  "headline": "ALB and ELB access log schemas for Redshift",
-  "datePublished": "2018-06-05T00:00:00-04:00",
-  "dateModified": "2018-06-05T00:00:00-04:00",
-  "description": "Back in February I wrote about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurpri...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/17/rebirth-of-digital-piracy/",
+  "headline": "Rebirth of digital piracy?",
+  "datePublished": "2019-11-17T00:00:00-05:00",
+  "dateModified": "2019-11-17T00:00:00-05:00",
+  "description": "The best jokes have an element of truth to them and earlier today I came across a comic that was a great example.",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,84 +727,27 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">ALB and ELB access log schemas for Redshift</h1>
-      <span class="date">05 June 2018</span>
+      <h1 class="post-title">Rebirth of digital piracy?</h1>
+      <span class="date">17 November 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>Back in February I <a href="/2018/02/20/analyzing-aws-elb-logs/">wrote</a> about using Redshift to quickly analyze ELB access logs. This worked great until we switched from using ELBs to using ALBs. Unsurprisingly in hindsight but frustrating at the time the ALBs have a different log schema. Both the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Classic</a> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html">Application</a> Load Balancer logs are well documented on the AWS site but unfortunately the code to create the appropriate Redshift schema is not. In the hope of helping others and passing it forward I wanted to share the Redshift schemas for both types of access logs.</p>
+<p>The best jokes have an element of truth to them and earlier today I came across a comic that was a great example.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- ELB Logs</span>
-<span class="k">create</span> <span class="k">table</span> <span class="n">elb_logs</span> <span class="p">(</span>
-	<span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
-	<span class="n">elbname</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-	<span class="n">requestip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">backendip_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">22</span><span class="p">),</span>
-	<span class="n">requestprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">backendprocessingtime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">clientresponsetime</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
-	<span class="n">elbresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">backendresponsecode</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
-	<span class="n">receivedbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">sentbytes</span> <span class="nb">bigint</span><span class="p">,</span>
-	<span class="n">httprequest</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5083</span><span class="p">),</span>
-	<span class="n">useragent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
-	<span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span>
-	<span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
-<span class="p">)</span>
-<span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
+<amp-img src="/assets/static/images/streaming-piracy.jpg" alt="Streaming piracy comic" width="700" height="596" layout="responsive"></amp-img>
+<p class="caption">Source: <a href="https://www.reddit.com/r/comics/comments/bcdlbf/hello_old_friend_oc/">Hoppy_Doodle @ reddit.com</a></p>
 
-<span class="c1">-- ALB Logs</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">alb_logs</span> <span class="p">(</span>
- <span class="k">type</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">requesttime</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">elb</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">client_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">target_and_port</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span>
- <span class="n">request_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">target_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">response_processing_time</span> <span class="nb">double</span> <span class="nb">precision</span> <span class="n">encode</span> <span class="n">bytedict</span><span class="p">,</span>
- <span class="n">elb_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">target_status_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
- <span class="n">received_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">sent_bytes</span> <span class="nb">bigint</span><span class="p">,</span>
- <span class="n">request</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span>
- <span class="n">user_agent</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_cipher</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">),</span>
- <span class="n">ssl_protocol</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">target_group_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">trace_id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">domain_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">chosen_cert_arn</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
- <span class="n">matched_rule_priority</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
- <span class="n">request_creation_time</span> <span class="nb">timestamp</span><span class="p">,</span>
- <span class="n">actions_executed</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
- <span class="p">)</span> <span class="n">sortkey</span><span class="p">(</span><span class="n">requesttime</span><span class="p">);</span>
- </code></pre></figure>
+<p>It’s surprising how true that is. Many of us have been cable TV free for years and were content paying a monthly internet bill along with Netflix and maybe one or two additional subscriptions. Now it feels as if there’s a new streaming service launching every few months with the costs adding up to be equivalent to a traditional cable TV bill.</p>
 
+<p>This is magnified with the new services pulling their content from Netflix - Disney <a href="https://www.cnbc.com/2019/03/06/disneys-streaming-service-will-rival-netflix-says-jp-morgan.html">pulled their content</a> and NBC is <a href="https://www.hollywoodreporter.com/live-feed/parks-recreation-moving-exclusively-nbcuniversal-streamer-1240225">pulling a variety of shows</a> as well. At what point are people paying $10/month to watch a single show?</p>
+
+<p>I like to joke that a future consumption model is to rotate these services monthly and catch up on shows every few months. That way I’m paying a single monthly fee but get the content from multiple services - all I have to do is wait. For those that do want to watch a single show I do expect privacy to make a comeback - it’s difficult to justify paying a monthly fee for a single show.</p>
+
+<p>This reminds me of the famous Jim Barksdale quote: “There’s only two ways I know of to make money– bundling, and unbundling” and it looks as if we’re approaching the unbundling cycle.</p>
 
     </section>
 
-    
-    <div>
-      <ul class="tags">
-        <li>Tagged under:</li>
-      
-      
-
-
-  <!-- <li>Tagged under:</li> -->
-  
-    
-      <li><a href="/tags/##code-ref">#code </a></li>
-    
-  
-
-
-
-      </ul>
-    </div><br/>
     
 
     <div class="follow-footer">
@@ -811,11 +757,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/06/01/type-1-and-type-2-tech-specs/" title="Type 1 and Type 2 tech specs">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/11/08/dyi-password-manager/" title="DYI password manager">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/06/28/using-personal-aws-credentials-in-production/" title="Using personal AWS credentials in production">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -826,7 +772,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F06%2F05%2Falb-and-elb-access-log-schemas-for-redshift%2F&title=ALB+and+ELB+access+log+schemas+for+Redshift">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F17%2Frebirth-of-digital-piracy%2F&title=Rebirth+of+digital+piracy%3F">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
