@@ -5,7 +5,7 @@ description: "I came across a comic joking about the rise of piracy now that the
 keywords: "piracy, streaming wars"
 image_url: "/assets/static/images/streaming-piracy.jpg"
 category:
-tags: []
+tags: ["#product"]
 ---
 {% include setup %}
 The best jokes have an element of truth to them and earlier today I came across a comic that was a great example.
