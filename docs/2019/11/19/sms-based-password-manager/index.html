@@ -23,23 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>SMS based password manager</title>
+  <meta name="description" content="To get my password manager working on mobile I set it up to work via SMS.">
+  <meta name="keywords" content="password manager, sms, twilio" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/19/sms-based-password-manager/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="SMS based password manager" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/19/sms-based-password-manager/" />
+  <meta property="og:title"               content="SMS based password manager" />
 
+  
+  <meta property="og:description"         content="To get my password manager working on mobile I set it up to work via SMS." />
+  <meta name="twitter:description"        content="To get my password manager working on mobile I set it up to work via SMS." />
   
 
   
@@ -51,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2019-11-19T23:47:15-05:00",
-  "dateModified": "2019-11-19T23:47:15-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/19/sms-based-password-manager/",
+  "headline": "SMS based password manager",
+  "datePublished": "2019-11-19T00:00:00-05:00",
+  "dateModified": "2019-11-19T00:00:00-05:00",
+  "description": "Two Fridays ago I wrote about my home-built password manager and while working well on a computer it was a pain to use on mobile. I’ve been trying to think o...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,135 +722,68 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">SMS based password manager</h1>
+      <span class="date">19 November 2019</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>Two Fridays ago I wrote about my <a href="http://dangoldin.com/2019/11/08/dyi-password-manager/">home-built password manager</a> and while working well on a computer it was a pain to use on mobile. I’ve been trying to think of a more friendly way of supporting this on mobile and came up with the idea of retrieving the passwords via SMS. The workflow would be to send a text to a number with a search term and then get the password back as a response. Twilio made it surprisingly easy to build a simple proof of concept (<a href="https://github.com/dangoldin/password-manager">GitHub code</a>) and the resulting code is fewer than 50 lines and supports the use case.</p>
 
-
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>There’s a fair amount of left to do - ranging from improving the error correction to dockerizing and deploying the code - but it works as is and I’ve been using it locally via <a href="https://ngrok.com">ngrok</a>. There are probably dozens of usability improvements I can make but the major one I noticed is that iOS doesn’t allow me to highlight a section of a text message - only the entire thing. This means that I need to tweak the Twilio code to send the response line by line. This will be a tad more expensive but cheaper than using a paid password manager. The other question I’m still trying to work through is the security of SMS.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/11/17/rebirth-of-digital-piracy/" title="Rebirth of digital piracy?">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F19%2Fsms-based-password-manager%2F&title=SMS+based+password+manager">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -913,7 +849,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
