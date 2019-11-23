@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Java&#39;s SimpleDateFormat: YYYY vs yyyy</title>
-  <meta name="description" content="">
-  
+  <title>Optimizing long running SQL queries</title>
+  <meta name="description" content="Someone reduced the size of a SQL query form 380 hours to 12 hours but that still feels slow and likely warrants a different approach.">
+  <meta name="keywords" content="sql, database performance, database optimization" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/">
+  <link rel="canonical" href="http://dangoldin.com/2019/11/23/optimizing-long-running-sql-queries/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Java's SimpleDateFormat: YYYY vs yyyy" />
+  <meta name="twitter:title" content="Optimizing long running SQL queries" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/" />
-  <meta property="og:title"               content="Java's SimpleDateFormat: YYYY vs yyyy" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/11/23/optimizing-long-running-sql-queries/" />
+  <meta property="og:title"               content="Optimizing long running SQL queries" />
 
   
-  <meta property="og:description"         content="" />
-  <meta name="twitter:description"        content="" />
+  <meta property="og:description"         content="Someone reduced the size of a SQL query form 380 hours to 12 hours but that still feels slow and likely warrants a different approach." />
+  <meta name="twitter:description"        content="Someone reduced the size of a SQL query form 380 hours to 12 hours but that still feels slow and likely warrants a different approach." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/",
-  "headline": "Java&#39;s SimpleDateFormat: YYYY vs yyyy",
-  "datePublished": "2019-01-06T00:00:00-05:00",
-  "dateModified": "2019-01-06T00:00:00-05:00",
-  "description": "This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when forma...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/11/23/optimizing-long-running-sql-queries/",
+  "headline": "Optimizing long running SQL queries",
+  "datePublished": "2019-11-23T00:00:00-05:00",
+  "dateModified": "2019-11-23T00:00:00-05:00",
+  "description": "A year ago I read a post on how someone took a SQL query that took 380 hours to run and by offloading some of the work to shell commands was able to get the ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,51 +724,37 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Java's SimpleDateFormat: YYYY vs yyyy</h1>
-      <span class="date">06 January 2019</span>
+      <h1 class="post-title">Optimizing long running SQL queries</h1>
+      <span class="date">23 November 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when formatting dates in Java’s SimpleDateFormat class there is a subtle difference between YYYY and yyyy. They both represent a year but yyyy represents the calendar year while YYYY represents the year of the week. That’s a subtle difference that only causes problems around a year change so your code could have been running perfectly fine all year only to cause a problem in the new year.</p>
+<p>A year ago I read a <a href="https://www.spinellis.gr/blog/20180805/">post</a> on how someone took a SQL query that took 380 hours to run and by offloading some of the work to shell commands was able to get the run time down to 12 hours. I’m a huge fan of the shell and believe it’s underutilized by most engineers yet I can’t get over the fact that a query still takes 12 hours to run. I have very little context around the data, the query, or the join but my approach would be to see if there’s a different toolset to solve the problem. Running a 12 hour query is dangerous - a disruption will require the query to be run from scratch and the affected tables are locked for that amount of time. It’s likely the case that this project doesn’t need anything better but even then there should be ways of improving the approach.</p>
 
-<p>An example illustrates this much better than words ever could.</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">dangoldin</span><span class="o">.</span><span class="na">test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">String</span><span class="o">[]</span> <span class="n">dates</span> <span class="o">=</span> <span class="o">{</span><span class="s">"2018-12-01"</span><span class="o">,</span> <span class="s">"2018-12-31"</span><span class="o">,</span> <span class="s">"2019-01-01"</span><span class="o">};</span>
-            <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="nl">date:</span> <span class="n">dates</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">SimpleDateFormat</span> <span class="n">dt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
-                <span class="n">Date</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
-
-                <span class="n">SimpleDateFormat</span> <span class="n">dtYYYY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"YYYY"</span><span class="o">);</span>
-                <span class="n">SimpleDateFormat</span> <span class="n">dtyyyy</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy"</span><span class="o">);</span>
-
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"For date "</span> <span class="o">+</span> <span class="n">date</span> <span class="o">+</span> <span class="s">" the YYYY year is "</span> <span class="o">+</span> <span class="n">dtYYYY</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">)</span> <span class="o">+</span> <span class="s">" while for yyyy it's "</span> <span class="o">+</span> <span class="n">dtyyyy</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">d</span><span class="o">));</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Failed with exception: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>This gives you the following:</p>
-
-<figure class="highlight"><pre><code class="language-txt" data-lang="txt">For date 2018-12-01 the YYYY year is 2018 while for yyyy it's 2018
-For date 2018-12-31 the YYYY year is 2019 while for yyyy it's 2018
-For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre></figure>
-
-<p>The first and last make sense since the two year formats match. The middle one is the odd one out. The date starts as 2018-12-31 but YYYY gives you 2019 while yyyy gives you 2018. In general, you should almost always use yyyy so it’s a good tactic to add some form of linting or checking to make sure your code does not have any date formats referencing YYYY.</p>
+<p>Maybe the solution is to create intermediate tables that get updated incrementally which are then the sources to the final query. Maybe it’s to revisit the indices and schema to see if there’s anything that can be restructured. Maybe it’s to shift to a different database engine - a columnar engine such as <a href="https://aws.amazon.com/redshift/">Redshift</a> (paid) or <a href="https://www.monetdb.org">MonetDB</a> (Open Source). Without knowing the details of the database or the query it’s difficult to say what the ideal solution would be but seeing a 12 hour query makes me think there’s a larger change that needs to be made.</p>
 
     </section>
 
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
     
 
     <div class="follow-footer">
@@ -778,11 +764,11 @@ For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre><
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/12/31/farewell-2018-hello-2019/" title="Farewell 2018, Hello 2019!">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/11/19/sms-based-password-manager/" title="SMS based password manager">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2019/01/08/githubs-new-plan/" title="GitHub's new plan">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -793,7 +779,7 @@ For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019</code></pre><
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F01%2F06%2Fjavas-simpledateformat-yyyy-vs-yyyy%2F&title=Java%27s+SimpleDateFormat%3A+YYYY+vs+yyyy">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F11%2F23%2Foptimizing-long-running-sql-queries%2F&title=Optimizing+long+running+SQL+queries">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
