@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-11-19T23:47:15-05:00</updated>
+ <updated>2019-12-05T10:21:47-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Thanksgiving</title>
+   <link href="http://dangoldin.com/2019/11/28/thanksgiving/"/>
+   <updated>2019-11-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/28/thanksgiving</id>
+   <content:encoded><![CDATA[
+<p>Despite Black Friday being my least favorite day of the year Thanksgiving is by far my favorite holiday. It’s completely secular and is about celebrating everything we have with the people closest to us. Rather than travel somewhere new we instead go to places we’ve already been to to see the same people we see every year.</p>
+
+<p>It’s a chance for us to slow down and really appreciate everything we have. I arrived to the United States as kid after family emigrated to seek a better life and I’m eternally grateful that they took that risk. We didn’t start with much but more than many others and Thanksgiving is my time to acknowledge the sacrifices my family has made while being thankful that the United States, despite its problems, remains a land of opportunity.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>SMS based password manager</title>

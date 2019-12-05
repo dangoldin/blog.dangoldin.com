@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/11/28/thanksgiving/
 http://dangoldin.com/2019/11/19/sms-based-password-manager/
 http://dangoldin.com/2019/11/17/rebirth-of-digital-piracy/
 http://dangoldin.com/2019/11/08/dyi-password-manager/
