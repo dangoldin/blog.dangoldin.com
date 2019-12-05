@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-05T10:21:47-05:00</updated>
+ <updated>2019-12-05T10:23:00-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -20,6 +20,32 @@
 <p>Despite Black Friday being my least favorite day of the year Thanksgiving is by far my favorite holiday. It’s completely secular and is about celebrating everything we have with the people closest to us. Rather than travel somewhere new we instead go to places we’ve already been to to see the same people we see every year.</p>
 
 <p>It’s a chance for us to slow down and really appreciate everything we have. I arrived to the United States as kid after family emigrated to seek a better life and I’m eternally grateful that they took that risk. We didn’t start with much but more than many others and Thanksgiving is my time to acknowledge the sacrifices my family has made while being thankful that the United States, despite its problems, remains a land of opportunity.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Improving product reviews</title>
+   <link href="http://dangoldin.com/2019/11/24/improving-product-reviews/"/>
+   <updated>2019-11-24T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/24/improving-product-reviews</id>
+   <content:encoded><![CDATA[
+<p>Modern ecommerce is predicated on having proper product reviews. Every site that sells online depends on them and yet they’re still far from what they can be. The reviews I’ve seen tend to be done when a product arrives rather than after years of use. Similarly, manufactures may change and shift production over time so early reviews will highlight the high quality of a product while latter reviews will bemoan the lack of quality.</p>
+
+<p>An ideal product review site would include information that would help understand the lifetime of a product. It might be cheap but will it need replacing within a year? Or is it expensive but it will last decades so the amortized price is actually good? It’s not possible to get these answers on modern review sites which leads us to focus on the purchase price and not the true cost of ownership.</p>
+
+<p>Two sites I’m aware of that are tackling this is <a href="https://thewirecutter.com">Wirecutter</a> and the <a href="https://www.reddit.com/r/BuyItForLife/">Buy It For Life</a> subreddit. Writecutter provides a top X list of items by category where they go through a serious array of tests before providing a suggestion. Buy It For Life, on the other hand, is a community site where people can both share the products they’ve owned (or inherited) for decades and ask advice from others. Neither of these are designed around a product listing and I’d love a review site that takes the design and feel of an Amazon product page with additional information about the longevity and true cost of ownership.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Optimizing long running SQL queries</title>
+   <link href="http://dangoldin.com/2019/11/23/optimizing-long-running-sql-queries/"/>
+   <updated>2019-11-23T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/23/optimizing-long-running-sql-queries</id>
+   <content:encoded><![CDATA[
+<p>A year ago I read a <a href="https://www.spinellis.gr/blog/20180805/">post</a> on how someone took a SQL query that took 380 hours to run and by offloading some of the work to shell commands was able to get the run time down to 12 hours. I’m a huge fan of the shell and believe it’s underutilized by most engineers yet I can’t get over the fact that a query still takes 12 hours to run. I have very little context around the data, the query, or the join but my approach would be to see if there’s a different toolset to solve the problem. Running a 12 hour query is dangerous - a disruption will require the query to be run from scratch and the affected tables are locked for that amount of time. It’s likely the case that this project doesn’t need anything better but even then there should be ways of improving the approach.</p>
+
+<p>Maybe the solution is to create intermediate tables that get updated incrementally which are then the sources to the final query. Maybe it’s to revisit the indices and schema to see if there’s anything that can be restructured. Maybe it’s to shift to a different database engine - a columnar engine such as <a href="https://aws.amazon.com/redshift/">Redshift</a> (paid) or <a href="https://www.monetdb.org">MonetDB</a> (Open Source). Without knowing the details of the database or the query it’s difficult to say what the ideal solution would be but seeing a 12 hour query makes me think there’s a larger change that needs to be made.</p>
 ]]></content:encoded>
  </entry>
  
