@@ -3,13 +3,32 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-05T10:23:00-05:00</updated>
+ <updated>2019-12-09T21:18:02-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My TI-89</title>
+   <link href="http://dangoldin.com/2019/11/29/my-ti-89/"/>
+   <updated>2019-11-29T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/11/29/my-ti-89</id>
+   <content:encoded><![CDATA[
+<p>A <a href="https://news.ycombinator.com/item?id=21638980">Hacker News thread</a> hit a nostalgic moment for me and brought back all my memories of my TI-89 that lasted me throughout high school and college. I unfortunately have no idea where it is and have very little use for one now but it was an incredible machine.</p>
+
+<p>It came with a built in solver and an algebraic manipulation library which made solving all sorts of problems a breeze. Rather than being purely decimal based it also expressed irrational and rational numbers which came in incredibly healthy for many tests. For some unfathomable reason it was somehow allowed on the SATs which made them that much easier.</p>
+
+<p>Beyond that, it came with all sorts of functions that barely scratched the surface off my knowledge. I vaguely recall using it in my college statistics classes to great effect so I assume it had a deep statistics library.</p>
+
+<p>But my favorite feature was probably the games. Why the high-school issued TI-83 had drug runner the TI-89 had a Street Fighter clone with some surprisingly
+Intricate graphics.</p>
+
+<p>It’s still a scam that high schoolers need to buy a $100 calculator but damn, what an incredible calculator.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Thanksgiving</title>
