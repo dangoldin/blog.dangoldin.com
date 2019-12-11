@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/12/10/solve-categories-not-individual-problems/
 http://dangoldin.com/2019/11/29/my-ti-89/
 http://dangoldin.com/2019/11/28/thanksgiving/
 http://dangoldin.com/2019/11/24/improving-product-reviews/

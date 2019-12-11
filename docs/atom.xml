@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-09T21:18:02-05:00</updated>
+ <updated>2019-12-10T22:23:53-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Solve categories, not individual problems</title>
+   <link href="http://dangoldin.com/2019/12/10/solve-categories-not-individual-problems/"/>
+   <updated>2019-12-10T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/10/solve-categories-not-individual-problems</id>
+   <content:encoded><![CDATA[
+<p>One of the most valuable abilities in modern software development is the ability to solve entire categories of issues instead of the immediate problem in front of us. It’s simpler and tempting to solve what’s in front of us so and then move on. It takes discipline and thoroughness to understand the problem, diagnose its cause, and prevent similar problems from arising in the future. Yet that’s the way to make an impact.</p>
+
+<p>Pattern recognition is a big part of this. Some engineers will see a variety of tasks or bugs as completely independent while others will realize there’s a pattern and they’re all related. The ability to think about the whole system is critical in writing scalable code and those looking to solve categories</p>
+
+<p>It’s the latter approach that leads to writing scalable code. The ability to think about the whole system is the key to keeping code simple and avoiding problems. By constantly asking ourselves “Is this truly isolated or is it one of many?” we’re able to train ourselves to solve the real problems.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>My TI-89</title>
