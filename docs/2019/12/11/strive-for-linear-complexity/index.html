@@ -23,23 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Strive for linear complexity</title>
+  <meta name="description" content="When writing code think of ways that will allow it to grow linearly in complexity rather than multiplicatively.">
+  <meta name="keywords" content="coding, software engineering, complexity" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2019/12/11/strive-for-linear-complexity/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Strive for linear complexity" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/12/11/strive-for-linear-complexity/" />
+  <meta property="og:title"               content="Strive for linear complexity" />
 
+  
+  <meta property="og:description"         content="When writing code think of ways that will allow it to grow linearly in complexity rather than multiplicatively." />
+  <meta name="twitter:description"        content="When writing code think of ways that will allow it to grow linearly in complexity rather than multiplicatively." />
   
 
   
@@ -51,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2019-12-11T21:20:56-05:00",
-  "dateModified": "2019-12-11T21:20:56-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/12/11/strive-for-linear-complexity/",
+  "headline": "Strive for linear complexity",
+  "datePublished": "2019-12-11T00:00:00-05:00",
+  "dateModified": "2019-12-11T00:00:00-05:00",
+  "description": "Good software is dynamic and evolves as the requirements grow. The code usually starts clean, elegant, and simple but inevitably grows in complexity. The cha...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,135 +722,68 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Strive for linear complexity</h1>
+      <span class="date">11 December 2019</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>Good software is dynamic and evolves as the requirements grow. The code usually starts clean, elegant, and simple but inevitably grows in complexity. The challenge is to manage that growing complexity. My approach is to strive to make that complexity linear rather than multiplicative. A multiplicative approach is one where a new requirement forces you to think through other parts of your code and determine what needs to change. A linear approach is one where this additional requirement forces you to think through others in its class but not much beyond that. A simple way to visualize the difference is through if statements. A codebase with multiplicative complexity has a ton of nested ifs where writing new code requires you to understand each of the other if-else branches. A linear complexity codebase would still require you to think through a new behavior but the complexity would be limited to a flat if block.</p>
 
-
-
-
-
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>I realize the above is a bit abstract and may not be getting the point across but the goal is to find the appropriate abstractions that let you take a complex problem and break it up into a series of independent and loosely coupled components. This requires understanding the problem domain and how to represent the various objects in a way that hides their complexity and only exposes the minimum that’s necessary. None of this is simple and feels more like art than science that can be grown with experience but it’s an incredibly valuable ability.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##meta-ref">#meta </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/12/10/solve-categories-not-individual-problems/" title="Solve categories, not individual problems">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F11%2Fstrive-for-linear-complexity%2F&title=Strive+for+linear+complexity">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -913,7 +849,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
