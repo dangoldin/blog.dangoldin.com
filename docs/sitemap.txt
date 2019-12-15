@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/12/13/disney/
 http://dangoldin.com/2019/12/12/2019-predictions-in-review/
 http://dangoldin.com/2019/12/11/strive-for-linear-complexity/
 http://dangoldin.com/2019/12/11/search-within-google-search/
