@@ -3,13 +3,34 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-11T21:35:34-05:00</updated>
+ <updated>2019-12-15T15:10:43-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>2019 Predictions in review</title>
+   <link href="http://dangoldin.com/2019/12/12/2019-predictions-in-review/"/>
+   <updated>2019-12-12T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/12/2019-predictions-in-review</id>
+   <content:encoded><![CDATA[
+<p>At the end of 2018 I made <a href="http://dangoldin.com/2018/12/31/2019-predictions/">four predictions for 2019</a> and now that we’re nearing the end of the year it’s time to see how accurate they were. It’s a valuable exercise to review them - both to hold myself accountable but also to get a glimpse of how I thought about the world a year ago. It’s also a way to understand the biases I fall into and use that information to hopefully improve my predictions for 2020.</p>
+
+<p>So how’d I do?</p>
+
+<ul>
+  <li><strong>The overall economy takes a hit</strong>. I was clearly wrong here and the market, as measured by the S&amp;P 500 grew 25%. My initial thinking was that there would be some event that in the current political climate would lead to a downturn but this year turned out to be exceptionally strong.</li>
+  <li><strong>Facebook privacy concerns are overblown</strong>. This turned out to be true and Facebook has performed exceptionally well in the market being up 45% year to date. There’s been a ton of harsh press but it hasn’t really impeded Facebook’s ability to grow and generate revenue.</li>
+  <li><strong>Amazon continues to dominate</strong>. Similar story with Amazon. It hasn’t grown as significantly as Facebook but is up 14% year to date. I am and have been more optimistic around Amazon’s growth prospects than Facebook’s so this was a bit of a surprise. Every company has a ceiling and I suspect Facebook will be hitting theirs ahead of Amazon.</li>
+  <li><strong>China vs US becomes a bigger deal</strong>. This is tough to say. There’s clearly a lot of back and forth between the two countries around tariffs that’s still playing out but I expected worse and drove my prediction for the hit to the economy.</li>
+</ul>
+
+<p>Overall I’d say I got at least two correct, one partially right, and one way off target. I’m still coming up with predictions for 2020 so we’ll see how accurate those are a year from now.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Strive for linear complexity</title>
