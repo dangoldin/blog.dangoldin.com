@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-15T15:21:48-05:00</updated>
+ <updated>2019-12-18T23:35:34-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Shoulders of giants</title>
+   <link href="http://dangoldin.com/2019/12/18/shoulders-of-giants/"/>
+   <updated>2019-12-18T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/18/shoulders-of-giants</id>
+   <content:encoded><![CDATA[
+<p>A few days ago I came across a <a href="https://www.thespacereview.com/article/3833/1">first hand account</a> from an engineer working on some early space programs and it made me realize how little hardware I know. It’s likely a case of the grass being greener but hardware feels like a whole new exciting world compared to software. Rather than dealing with the abstract world of software it’s dealing with the real world.</p>
+
+<p>The above article is an unfair one to use since anything related to space is going to be extra exciting but it highlights the depth and creativity necessary to work in hardware. Even in the 80s and 90s a software engineer needed to have a decent grasp of the underlying hardware to be productive. This is no longer the case. One can go through a career without understanding how computers actually work behind the scenes. That’s not necessarily a bad thing: the field is so wild with so much specialization that it’s difficult to have a good grasp of everything and we have to pick what we want to master.</p>
+
+<p>The closest I can get to that era is by reading first hand accounts - they’re a good reminder that we’re all standing on the shoulders of giants.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Disney+</title>
