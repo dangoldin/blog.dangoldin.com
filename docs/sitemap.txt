@@ -21,6 +21,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2019/12/18/shoulders-of-giants/
+http://dangoldin.com/2019/12/15/tabnine/
 http://dangoldin.com/2019/12/14/avoiding-the-mouse/
 http://dangoldin.com/2019/12/13/disney/
 http://dangoldin.com/2019/12/12/2019-predictions-in-review/

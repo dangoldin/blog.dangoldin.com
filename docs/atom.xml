@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-19T00:47:24-05:00</updated>
+ <updated>2019-12-19T02:03:33-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -22,6 +22,28 @@
 <p>The above article is an unfair one to use since anything related to space is going to be extra exciting but it highlights the depth and creativity necessary to work in hardware. Even in the 80s and 90s a software engineer needed to have a decent grasp of the underlying hardware to be productive. This is no longer the case. One can go through a career without understanding how computers actually work behind the scenes. That’s not necessarily a bad thing: the field is so wild with so much specialization that it’s difficult to have a good grasp of everything and we have to pick what we want to master.</p>
 
 <p>The closest I can get to that era is by reading first hand accounts - they’re a good reminder that we’re all standing on the shoulders of giants.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>TabNine</title>
+   <link href="http://dangoldin.com/2019/12/15/tabnine/"/>
+   <updated>2019-12-15T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/15/tabnine</id>
+   <content:encoded><![CDATA[
+<p>I’m a heavy Visual Studio Code user and one of my favorite plugins has been <a href="https://tabnine.com/">TabNine</a>. I use VS Code to hack around across a variety of languages in addition to note-taking and TabNine makes me significantly more productive. It’s a language-agnostic autocompleter that relies on machine learning rather than predefined heuristics and analyzes whatever you type in order to offer you a variety of suggestions. It’s similar to GMail’s new autocomplete functionality but in your editor.</p>
+
+<p>For example, I write this blog in Jekyll which has the following standard header:</p>
+
+<img src="http://dangoldin.com/assets/static/images/blogpost-header-tabnine.png" width="317" height="295" alt="Blogpost header" layout="intrinsic"/>
+
+<p>As soon as I start typing I get the following suggestions from TabNine:</p>
+
+<img src="http://dangoldin.com/assets/static/images/blogpost-header-tabnine2.png" width="968" height="297" alt="Blogpost header TabNine suggestions" layout="intrinsic"/>
+
+<img src="http://dangoldin.com/assets/static/images/blogpost-header-tabnine3.png" width="445" height="297" alt="Blogpost header TabNine suggestions" layout="intrinsic"/>
+
+<p>The suggestions aren’t based on any rules or an actual understanding of my intent but are instead trained through my usage. I didn’t have to do anything to configure it and it’s been working right out of the box. It’s not perfect and the lack of context around my intent limits the potential. Despite that, it has enough training data that it’s able to offer some surprisingly accurate predictions. I suspect we’ll see more and more full featured IDEs adopt a similar approach that’s less based on rules and heuristics and instead based on actual usage and behavior. Imagine being able to train not on just your own code but also what every other engineer had typed - for example generating predictions based on the content in StackOverlfow.</p>
 ]]></content:encoded>
  </entry>
  

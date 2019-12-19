@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Shoulders of giants</title>
-  <meta name="description" content="I came across a first hand account of a space engineer and it's incredible to see the challenges they had to solve.">
-  <meta name="keywords" content="hardware, software, space, engineering" />
+  <title>TabNine</title>
+  <meta name="description" content="TabNine is a language-agnostic autocomplete plugin for VS Code that's incredibly helpful.">
+  <meta name="keywords" content="visual studio code, tab nine, extensions, autocomplete" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/12/18/shoulders-of-giants/">
+  <link rel="canonical" href="http://dangoldin.com/2019/12/15/tabnine/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Shoulders of giants" />
+  <meta name="twitter:title" content="TabNine" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/12/18/shoulders-of-giants/" />
-  <meta property="og:title"               content="Shoulders of giants" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/12/15/tabnine/" />
+  <meta property="og:title"               content="TabNine" />
 
   
-  <meta property="og:description"         content="I came across a first hand account of a space engineer and it's incredible to see the challenges they had to solve." />
-  <meta name="twitter:description"        content="I came across a first hand account of a space engineer and it's incredible to see the challenges they had to solve." />
+  <meta property="og:description"         content="TabNine is a language-agnostic autocomplete plugin for VS Code that's incredibly helpful." />
+  <meta name="twitter:description"        content="TabNine is a language-agnostic autocomplete plugin for VS Code that's incredibly helpful." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/blogpost-header-tabnine2.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/blogpost-header-tabnine2.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/12/18/shoulders-of-giants/",
-  "headline": "Shoulders of giants",
-  "datePublished": "2019-12-18T00:00:00-05:00",
-  "dateModified": "2019-12-18T00:00:00-05:00",
-  "description": "A few days ago I came across a first hand account from an engineer working on some early space programs and it made me realize how little hardware I know. It...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/12/15/tabnine/",
+  "headline": "TabNine",
+  "datePublished": "2019-12-15T00:00:00-05:00",
+  "dateModified": "2019-12-15T00:00:00-05:00",
+  "description": "I’m a heavy Visual Studio Code user and one of my favorite plugins has been TabNine. I use VS Code to hack around across a variety of languages in addition t...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,17 +727,25 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Shoulders of giants</h1>
-      <span class="date">18 December 2019</span>
+      <h1 class="post-title">TabNine</h1>
+      <span class="date">15 December 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>A few days ago I came across a <a href="https://www.thespacereview.com/article/3833/1">first hand account</a> from an engineer working on some early space programs and it made me realize how little hardware I know. It’s likely a case of the grass being greener but hardware feels like a whole new exciting world compared to software. Rather than dealing with the abstract world of software it’s dealing with the real world.</p>
+<p>I’m a heavy Visual Studio Code user and one of my favorite plugins has been <a href="https://tabnine.com/">TabNine</a>. I use VS Code to hack around across a variety of languages in addition to note-taking and TabNine makes me significantly more productive. It’s a language-agnostic autocompleter that relies on machine learning rather than predefined heuristics and analyzes whatever you type in order to offer you a variety of suggestions. It’s similar to GMail’s new autocomplete functionality but in your editor.</p>
 
-<p>The above article is an unfair one to use since anything related to space is going to be extra exciting but it highlights the depth and creativity necessary to work in hardware. Even in the 80s and 90s a software engineer needed to have a decent grasp of the underlying hardware to be productive. This is no longer the case. One can go through a career without understanding how computers actually work behind the scenes. That’s not necessarily a bad thing: the field is so wild with so much specialization that it’s difficult to have a good grasp of everything and we have to pick what we want to master.</p>
+<p>For example, I write this blog in Jekyll which has the following standard header:</p>
 
-<p>The closest I can get to that era is by reading first hand accounts - they’re a good reminder that we’re all standing on the shoulders of giants.</p>
+<amp-img src="/assets/static/images/blogpost-header-tabnine.png" width="317" height="295" alt="Blogpost header" layout="intrinsic"></amp-img>
+
+<p>As soon as I start typing I get the following suggestions from TabNine:</p>
+
+<amp-img src="/assets/static/images/blogpost-header-tabnine2.png" width="968" height="297" alt="Blogpost header TabNine suggestions" layout="intrinsic"></amp-img>
+
+<amp-img src="/assets/static/images/blogpost-header-tabnine3.png" width="445" height="297" alt="Blogpost header TabNine suggestions" layout="intrinsic"></amp-img>
+
+<p>The suggestions aren’t based on any rules or an actual understanding of my intent but are instead trained through my usage. I didn’t have to do anything to configure it and it’s been working right out of the box. It’s not perfect and the lack of context around my intent limits the potential. Despite that, it has enough training data that it’s able to offer some surprisingly accurate predictions. I suspect we’ll see more and more full featured IDEs adopt a similar approach that’s less based on rules and heuristics and instead based on actual usage and behavior. Imagine being able to train not on just your own code but also what every other engineer had typed - for example generating predictions based on the content in StackOverlfow.</p>
 
     </section>
 
@@ -749,7 +760,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##meta-ref">#meta </a></li>
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
@@ -766,11 +777,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2019/12/15/tabnine/" title="TabNine">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/12/14/avoiding-the-mouse/" title="Avoiding the mouse">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a></li>
+        <li class="next"> | <a href="/2019/12/18/shoulders-of-giants/" title="Shoulders of giants">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -781,7 +792,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F18%2Fshoulders-of-giants%2F&title=Shoulders+of+giants">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F15%2Ftabnine%2F&title=TabNine">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
