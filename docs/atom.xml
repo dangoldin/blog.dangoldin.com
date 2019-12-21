@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-19T02:03:33-05:00</updated>
+ <updated>2019-12-20T21:21:49-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Privacy updates and emission standards</title>
+   <link href="http://dangoldin.com/2019/12/20/privacy-updates-and-emission-standards/"/>
+   <updated>2019-12-20T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/20/privacy-updates-and-emission-standards</id>
+   <content:encoded><![CDATA[
+<p>It’s that special time of the year when a whole slew of companies are sending out their privacy policy emails. Last year the culprit was GDPR, a European privacy law, and this year it’s the CCPA, the privacy protection bill from California. Given the onslaught most users will ignore these updates. These regulations seem to be having the desired effect. A bold company may choose to have separate privacy policies per geography to reduce the coverage of these laws but it looks as if most companies have just updated their general privacy policies. Europe and California are driving fairly significant change across the tech industry.</p>
+
+<p>The same occurred with auto emission standards. California has <a href="https://en.wikipedia.org/wiki/United_States_emission_standards">its own emission standards</a> that are stricter than the ones at the federal level. California is also the most populous state and leads car manufacturers to build towards these stricter standards in order to be more regionally-compliant without fragmenting their models. States with the largest clout are driving change beyond their borders by betting that the cost of compliance outweighs the cost of fragmentation.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Shoulders of giants</title>
