@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-20T21:44:06-05:00</updated>
+ <updated>2019-12-24T15:52:20-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -34,6 +34,24 @@
 <p>The above article is an unfair one to use since anything related to space is going to be extra exciting but it highlights the depth and creativity necessary to work in hardware. Even in the 80s and 90s a software engineer needed to have a decent grasp of the underlying hardware to be productive. This is no longer the case. One can go through a career without understanding how computers actually work behind the scenes. That’s not necessarily a bad thing: the field is so wild with so much specialization that it’s difficult to have a good grasp of everything and we have to pick what we want to master.</p>
 
 <p>The closest I can get to that era is by reading first hand accounts - they’re a good reminder that we’re all standing on the shoulders of giants.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>2019 donations</title>
+   <link href="http://dangoldin.com/2019/12/17/2019-donations/"/>
+   <updated>2019-12-17T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/17/2019-donations</id>
+   <content:encoded><![CDATA[
+<p>It’s that time of the year where I make my annual donations. I’ve settled on a core set of foundations and charities that I donate to but occasionally have an outlier depending on what’s happening in the world and this year was no different.</p>
+
+<ul>
+  <li><a href="https://www.eff.org/">EFF</a>. Being in technology I’m more aware than most of the perils of technology and the EFF is at the forefront of defending digital privacy and rights in a constantly threatened world.</li>
+  <li><a href="https://www.aclu.org/">ACLU</a>. Similar to the EFF but focused more broadly on all rights. Especially these days it’s critical to challenge unfair laws and fight for the bill of rights.</li>
+  <li><a href="https://wikimediafoundation.org/">Wikipedia</a>. I can’t live without Wikipedia and use it all the time so it’s only fair that I donate some to keep it going.</li>
+  <li><a href="https://www.plannedparenthood.org/">Planned Parenthood</a>. It’s a shame that we live in a world where Planned Parenthood even exists but until the day it’s unnecessary I’ll keep on donating. It provides incredibly valuable healthcare to remote areas and there are countless stories of them saving lives by being the only resource in a location.</li>
+  <li><a href="https://amymcgrath.com/">Amy McGrath</a>. I try to stay away from politics but the current state makes me feel negligent not donating. Amy is running for the Kentucky senate seat against Mitch McConnell. So many of today’s problems can be attributed to McConnell and the sooner he’s out of office the sooner the United States can get back on track.</li>
+</ul>
 ]]></content:encoded>
  </entry>
  
