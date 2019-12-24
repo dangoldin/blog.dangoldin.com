@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-24T15:52:20-05:00</updated>
+ <updated>2019-12-24T16:35:47-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -20,6 +20,20 @@
 <p>It’s that special time of the year when a whole slew of companies are sending out their privacy policy emails. Last year the culprit was GDPR, a European privacy law, and this year it’s the CCPA, the privacy protection bill from California. Given the onslaught most users will ignore these updates. These regulations seem to be having the desired effect. A bold company may choose to have separate privacy policies per geography to reduce the coverage of these laws but it looks as if most companies have just updated their general privacy policies. Europe and California are driving fairly significant change across the tech industry.</p>
 
 <p>The same occurred with auto emission standards. California has <a href="https://en.wikipedia.org/wiki/United_States_emission_standards">its own emission standards</a> that are stricter than the ones at the federal level. California is also the most populous state and leads car manufacturers to build towards these stricter standards in order to be more regionally-compliant without fragmenting their models. States with the largest clout are driving change beyond their borders by betting that the cost of compliance outweighs the cost of fragmentation.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Class action settlements</title>
+   <link href="http://dangoldin.com/2019/12/19/class-action-settlements/"/>
+   <updated>2019-12-19T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/19/class-action-settlements</id>
+   <content:encoded><![CDATA[
+<p>Earlier this month I received an email from Zappos with the subject “Settlement Notification re: 2012 Security Incident.” Sure enough, Zappos had a security issue in 2012 and the result of the class action lawsuit was that they’d give their affected customers a 10% off coupon on any order placed before January. As far as the typical class action settlement this was a surprisingly fair offer since it is something I’d actually use.</p>
+
+<p>This is reminiscent of the Experian settlement which gave affected customers the option of either $125 or free credit monitoring. To no one’s surprise nearly everyone chose the $125 option. Lo and behold it’s not actually $125 but instead “up to” $125 and given the volume it turns out this option is estimated to be only $7. Makes me wish I chose the credit monitoring!</p>
+
+<p>It really should not be possible for a company to pay a class action settlement through its own services. While some may be good (Zappos), others are not (Equifax), and in general it leads to some perverse incentives. The goal should be punitive towards the company but by being able to pay in kind it’s another opportunity to drum up business. For Zappos it was a free opportunity to email their customers with a promotion one may have seen anyway. For Equifax it was signing them up to a service that doesn’t cost them anything to offer and expires after a few years. Imagine if companies actually had to pay real money for their screwups without any of the “up to” language - we’d see much better care of customer data.</p>
 ]]></content:encoded>
  </entry>
  
