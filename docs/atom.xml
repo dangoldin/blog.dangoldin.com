@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-24T17:01:11-05:00</updated>
+ <updated>2019-12-25T15:25:57-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Netflix's CEO transition</title>
+   <link href="http://dangoldin.com/2019/12/22/netflixs-ceo-transition/"/>
+   <updated>2019-12-22T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/22/netflixs-ceo-transition</id>
+   <content:encoded><![CDATA[
+<p>While browsing Quora I came across a neat answer by Marc Randolph, the founder of Netflix, to the question “What led you to step down as Netflix’s CEO?” I didn’t even know Netflix had a founder other than Reed Hastings and beyond that didn’t know that there was a CEO transition that early in its history.</p>
+
+<p>Netflix is an incredibly dominant company now but it took more than two decades to get there. Netflix is actually older (founded in 1997) than both Google (1998) and Facebook (2004). The anecdote is remarkable since it shows a glimpse of the Netflix culture and how radical honesty was a key part from the very beginning. I’m impressed by both Reed’s ability to be that directly honest but also communicate in a way that kept Marc aligned and engaged. It’s an incredibly difficult thing to do - being able to have someone accept that they’re not not effective at their job - and a skill I continue to grow and develop. You need strong trust on both sides and the ability to let go of the ego. A good leader can make that happen.</p>
+
+<p>https://www.quora.com/What-led-you-to-step-down-as-Netflix-s-CEO/answers/180200952?ch=10&amp;share=d37236e7&amp;srid=XP</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>DeAMPifying my blog</title>
