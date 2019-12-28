@@ -3,13 +3,47 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-25T21:51:55-05:00</updated>
+ <updated>2019-12-28T14:10:54-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Parking spot finder</title>
+   <link href="http://dangoldin.com/2019/12/26/parking-spot-finder/"/>
+   <updated>2019-12-26T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/26/parking-spot-finder</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/jc-street-parking.jpg" alt="Jersey City street" width="1314" height="986" layout="responsive"/>
+
+<p>I live in Jersey City and rely on street parking rather than paying for a lot. Jersey City also some aggressive alternate side parking rules with many streets having twice-a-week cleanings which in the worst case requires me to move my car 4 times a week.</p>
+
+<p>A few years ago I decided to build a simple tool that would be hooked up to a camera and would notify me whenever a spot became available. I unfortunately never finished that up and am hoping that by posting it publicly it will act as a motivator and hold me accountable.</p>
+
+<p>The <a href="https://github.com/dangoldin/parking-spot-detector">repo is up on GitHub</a> for everyone who wants to follow along. I haven’t done much of this type of project so it will be a good introduction to the modern world of computer vision while also solving an actual problem.</p>
+
+<p>The approach I’m currently taking is to first confirm that I can actually identify parking spots in static images. I’ll attempt this using the various cloud APIs as well as some open source libraries, such as <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>. I’m hoping that they work but if not I’ll resort to something a bit more creative.</p>
+
+<p>After that step is done I’ll figure out how to automate the photo taking - it may be as simple as getting my Raspberry Pi working again or somehow integrating with a webcam. In any case, I imagine this part to be more straightforward than the first.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>In praise of the simple tech stack</title>
+   <link href="http://dangoldin.com/2019/12/26/in-praise-of-the-simple-tech-stack/"/>
+   <updated>2019-12-26T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/26/in-praise-of-the-simple-tech-stack</id>
+   <content:encoded><![CDATA[
+<p>These days it’s so easy to feel as if you’re falling behind the tech curve. There’s a new tool or technology being released every day and there’s a strong temptation to try everything lest you fall behind.</p>
+
+<p>That’s why it was so refreshing to come across “<a href="https://broadcast.listennotes.com/the-boring-technology-behind-listen-notes-56697c2e347b">The boring technology behind a one-person Internet company</a>.” It’s a post written by <a href="https://broadcast.listennotes.com/@wenbinf">Wenbin Fang</a>, the founder and CEO of <a href="https://www.listennotes.com/">ListenNotes.com</a>, and is exactly what you think it is.</p>
+
+<p>The technology is far from boring but it’s straightforward and has a proven track record. The author is comfortable with it and it allows him to focus on growing the business rather than be constantly in the weeds debugging some arcane behavior. Trying new things is incredibly valuable and is the only way we end up with improvements but this post was a nice reminder that you don’t need to be on the bleeding edge to build a successful product.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Increasing creativity</title>

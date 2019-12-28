@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Increasing creativity</title>
-  <meta name="description" content="By starting to do rough drafts on my phone I felt a surge in creativity. By doing the same, rote thing in a different way we're able to increase our creativity.">
-  <meta name="keywords" content="creativity, neural pathways, human brain" />
+  <title>Parking spot finder</title>
+  <meta name="description" content="A few years ago I started on an app to help me find a parking spot. I plan on actually finishing it up in the coming year.">
+  <meta name="keywords" content="computer vision, parking" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/12/25/increasing-creativity/">
+  <link rel="canonical" href="http://dangoldin.com/2019/12/26/parking-spot-finder/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Increasing creativity" />
+  <meta name="twitter:title" content="Parking spot finder" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/12/25/increasing-creativity/" />
-  <meta property="og:title"               content="Increasing creativity" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/12/26/parking-spot-finder/" />
+  <meta property="og:title"               content="Parking spot finder" />
 
   
-  <meta property="og:description"         content="By starting to do rough drafts on my phone I felt a surge in creativity. By doing the same, rote thing in a different way we're able to increase our creativity." />
-  <meta name="twitter:description"        content="By starting to do rough drafts on my phone I felt a surge in creativity. By doing the same, rote thing in a different way we're able to increase our creativity." />
+  <meta property="og:description"         content="A few years ago I started on an app to help me find a parking spot. I plan on actually finishing it up in the coming year." />
+  <meta name="twitter:description"        content="A few years ago I started on an app to help me find a parking spot. I plan on actually finishing it up in the coming year." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/12/25/increasing-creativity/",
-  "headline": "Increasing creativity",
-  "datePublished": "2019-12-25T00:00:00-05:00",
-  "dateModified": "2019-12-25T00:00:00-05:00",
-  "description": "I’ve been writing the rough drafts of my recent posts on my phone and this shift in environment has made me more creative. Maybe it’s due to the slower typin...",
+  "mainEntityOfPage": "http://dangoldin.com/2019/12/26/parking-spot-finder/",
+  "headline": "Parking spot finder",
+  "datePublished": "2019-12-26T00:00:00-05:00",
+  "dateModified": "2019-12-26T00:00:00-05:00",
+  "description": "",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,15 +724,23 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Increasing creativity</h1>
-      <span class="date">25 December 2019</span>
+      <h1 class="post-title">Parking spot finder</h1>
+      <span class="date">26 December 2019</span>
     </div>
 
     <section class="post-content">
       
-<p>I’ve been writing the rough drafts of my recent posts on my phone and this shift in environment has made me more creative. Maybe it’s due to the slower typing speed, the lack of distraction, the novelty, or just self-deception but it feels as if some of my previous rough drafts have had both more interesting thoughts, analogies, and wordsmithing. For example, <a href="http://dangoldin.com/2019/12/23/iphone-11-battery/">comparing the poor battery life</a> of my previous phone to checking out at a car’s gas tank before a trip or titling a post “<a href="http://dangoldin.com/2019/12/24/write-mobile-edit-desktop/">Write mobile, edit desktop</a>.” It’s impossible to know if I would have been able to do that if I were on my laptop but it really does seem as if the new environment had something to do with it.</p>
+<amp-img src="/assets/static/images/jc-street-parking.jpg" alt="Jersey City street" width="1314" height="986" layout="responsive"></amp-img>
 
-<p>I enjoy this new burst of creativity and am now trying to think of new ways to get this boost. A while back I <a href="https://trainingindustry.com/articles/content-development/how-the-brain-learns/">read something</a> about how changing your commute creates new neural pathways since you’re exercising entire new pathways. This is akin to that - breaking your routine and doing the same thing in a different way is a way to boost creativity. There are countless ways to find new ways of doing the same things and the process of thinking them up is itself a way to increase creativity.</p>
+<p>I live in Jersey City and rely on street parking rather than paying for a lot. Jersey City also some aggressive alternate side parking rules with many streets having twice-a-week cleanings which in the worst case requires me to move my car 4 times a week.</p>
+
+<p>A few years ago I decided to build a simple tool that would be hooked up to a camera and would notify me whenever a spot became available. I unfortunately never finished that up and am hoping that by posting it publicly it will act as a motivator and hold me accountable.</p>
+
+<p>The <a href="https://github.com/dangoldin/parking-spot-detector">repo is up on GitHub</a> for everyone who wants to follow along. I haven’t done much of this type of project so it will be a good introduction to the modern world of computer vision while also solving an actual problem.</p>
+
+<p>The approach I’m currently taking is to first confirm that I can actually identify parking spots in static images. I’ll attempt this using the various cloud APIs as well as some open source libraries, such as <a href="https://pjreddie.com/darknet/yolo/">YOLO</a>. I’m hoping that they work but if not I’ll resort to something a bit more creative.</p>
+
+<p>After that step is done I’ll figure out how to automate the photo taking - it may be as simple as getting my Raspberry Pi working again or somehow integrating with a webcam. In any case, I imagine this part to be more straightforward than the first.</p>
 
     </section>
 
@@ -747,7 +755,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##meta-ref">#meta </a></li>
+      <li><a href="/tags/##code-ref">#code </a></li>
     
   
 
@@ -764,11 +772,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2019/12/24/write-mobile-edit-desktop/" title="Write mobile, edit desktop">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/12/26/in-praise-of-the-simple-tech-stack/" title="In praise of the simple tech stack">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2019/12/26/in-praise-of-the-simple-tech-stack/" title="In praise of the simple tech stack">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -779,7 +787,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F25%2Fincreasing-creativity%2F&title=Increasing+creativity">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F26%2Fparking-spot-finder%2F&title=Parking+spot+finder">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
