@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-29T22:54:05-05:00</updated>
+ <updated>2019-12-29T22:56:29-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -12,10 +12,10 @@
 
  
  <entry>
-   <title>AWS vs Google computer vision cloud services</title>
-   <link href="http://dangoldin.com/2019/12/29/aws-vs-google-computer-vision-cloud-services/"/>
+   <title>Finding parked cars: AWS vs Google computer vision</title>
+   <link href="http://dangoldin.com/2019/12/29/finding-parked-cars-aws-vs-google-computer-vision/"/>
    <updated>2019-12-29T00:00:00-05:00</updated>
-   <id>http://dangoldin.com/2019/12/29/aws-vs-google-computer-vision-cloud-services</id>
+   <id>http://dangoldin.com/2019/12/29/finding-parked-cars-aws-vs-google-computer-vision</id>
    <content:encoded><![CDATA[
 <p>As part of the newly rebooted <a href="http://dangoldin.com/2019/12/26/parking-spot-finder/">Parking Spot Finder</a> project I started poking around the cloud computer vision services to see how well they’d do at identifying parked cars from an “apartment view.” The image is pretty straightforward and shows two intersecting streets with a single available parking spot. I didn’t expect these services to identify the spot but my hope was that they’d be able to identify the cars themselves. For this test I tried both Google’s <a href="https://cloud.google.com/vision/">Vision</a> and Amazon <a href="https://aws.amazon.com/rekognition/">Rekognition</a>. Google worked much better but still required a few tweaks to get what I wanted.</p>
 
