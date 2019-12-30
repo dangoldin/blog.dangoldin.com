@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Who&#39;s hosting? Who&#39;s managing?</title>
+  <meta name="description" content="An intersting framework to think about when working with third party vendors is to ask where is the software going to be deployed and who will be responsible...">
+  <meta name="keywords" content="self hosted, self managed, third party hosted, third party managed, vendors, cloud" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Who's hosting? Who's managing?" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/" />
+  <meta property="og:title"               content="Who's hosting? Who's managing?" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="An intersting framework to think about when working with third party vendors is to ask where is the software going to be deployed and who will be responsible for managing it?" />
+  <meta name="twitter:description"        content="An intersting framework to think about when working with third party vendors is to ask where is the software going to be deployed and who will be responsible for managing it?" />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2019-12-29T21:51:00-05:00",
-  "dateModified": "2019-12-29T21:51:00-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/",
+  "headline": "Who&#39;s hosting? Who&#39;s managing?",
+  "datePublished": "2019-12-27T00:00:00-05:00",
+  "dateModified": "2019-12-27T00:00:00-05:00",
+  "description": "The end of the year is when companies get inundated with a ton of vendors trying to hit their sales goals. Given this volume comparisons start to become easi...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,25 +722,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Who's hosting? Who's managing?</h1>
+      <span class="date">27 December 2019</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
+<p>The end of the year is when companies get inundated with a ton of vendors trying to hit their sales goals. Given this volume comparisons start to become easier and patterns start to emerge. One that I noticed is the gamut of hosting options as well as managed options.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>For hosting options, you can choose either the self-hosted option where the software is deployed to your own infrastructure. Alternatively, you can pay the vendor to deploy the code to their infrastructure and expose it through the necessary interfaces.</p>
 
-<ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>Managing options are similar, you can either choose to manage the software yourself which requires your team to do the deployment and configuration. On the other hand, you can pay a vendor to deploy and manage the service on your behalf.</p>
 
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
+<p>They’re not truly independent but it is useful to think about them independently. The more data-heavy products tend to fall into the self-hosted camp since you generally want customers to understand the hardware they’re using. A company such as <a href="https://databricks.com/">Databricks</a> falls into this camp. They will spin instances up your cloud account and will then charge a separate “Compute Cost” that varies across instance types. Companies that provide a more atomic, less customizable service, on the other hand, tend to go for the third party hosted option. Someone like <a href="https://www.confluent.io/">Confluent</a> (although they do have other hosting options) falls into this camp. They offer a hosted Kafka offering that is deployed within their account. The way the product is exposed to customers is simpler (I/O bandwidth, storage, retention) and there’s no need to expose the complexity of the deployment to customers.</p>
+
+<p>There’s no “right” approach here and this framework is still half baked but my gut is there’s something deeper here I need to think more about.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##product-ref">#product </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2019/12/27/drop-in-piracy-drop-in-accessibility/" title="Drop in piracy, drop in accessibility">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F27%2Fwhos-hosting-whos-managing%2F&title=Who%27s+hosting%3F+Who%27s+managing%3F">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -806,7 +855,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

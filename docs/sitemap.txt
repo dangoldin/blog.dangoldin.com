@@ -20,6 +20,8 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/
+http://dangoldin.com/2019/12/27/drop-in-piracy-drop-in-accessibility/
 http://dangoldin.com/2019/12/26/parking-spot-finder/
 http://dangoldin.com/2019/12/26/in-praise-of-the-simple-tech-stack/
 http://dangoldin.com/2019/12/25/increasing-creativity/

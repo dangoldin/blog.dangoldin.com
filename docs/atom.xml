@@ -3,13 +3,50 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-28T14:10:54-05:00</updated>
+ <updated>2019-12-29T21:51:00-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Who's hosting? Who's managing?</title>
+   <link href="http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/"/>
+   <updated>2019-12-27T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/27/whos-hosting-whos-managing</id>
+   <content:encoded><![CDATA[
+<p>The end of the year is when companies get inundated with a ton of vendors trying to hit their sales goals. Given this volume comparisons start to become easier and patterns start to emerge. One that I noticed is the gamut of hosting options as well as managed options.</p>
+
+<p>For hosting options, you can choose either the self-hosted option where the software is deployed to your own infrastructure. Alternatively, you can pay the vendor to deploy the code to their infrastructure and expose it through the necessary interfaces.</p>
+
+<p>Managing options are similar, you can either choose to manage the software yourself which requires your team to do the deployment and configuration. On the other hand, you can pay a vendor to deploy and manage the service on your behalf.</p>
+
+<p>They’re not truly independent but it is useful to think about them independently. The more data-heavy products tend to fall into the self-hosted camp since you generally want customers to understand the hardware they’re using. A company such as <a href="https://databricks.com/">Databricks</a> falls into this camp. They will spin instances up your cloud account and will then charge a separate “Compute Cost” that varies across instance types. Companies that provide a more atomic, less customizable service, on the other hand, tend to go for the third party hosted option. Someone like <a href="https://www.confluent.io/">Confluent</a> (although they do have other hosting options) falls into this camp. They offer a hosted Kafka offering that is deployed within their account. The way the product is exposed to customers is simpler (I/O bandwidth, storage, retention) and there’s no need to expose the complexity of the deployment to customers.</p>
+
+<p>There’s no “right” approach here and this framework is still half baked but my gut is there’s something deeper here I need to think more about.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Drop in piracy, drop in accessibility</title>
+   <link href="http://dangoldin.com/2019/12/27/drop-in-piracy-drop-in-accessibility/"/>
+   <updated>2019-12-27T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/27/drop-in-piracy-drop-in-accessibility</id>
+   <content:encoded><![CDATA[
+<p>A few days ago I came across a tweet that was making the rounds:</p>
+
+<amp-twitter width="609" height="274" layout="responsive" data-tweetid="1209255772250611712">
+</amp-twitter>
+
+<p>I agree with the sentiment and know how much I benefited from having access to software as a kid. It got me both interested in computers and gave me a head start on writing code.</p>
+
+<p>The one point that’s missed here is how difficult it is to pirate software these days. In the early days of the internet it would take a very, very long time to download applications but nearly all were piratable - even if it did require running some obscure code and editing hex files. These days, nearly all substantial software is subscription based which makes it incredibly difficult, and potentially impossible, to pirate. This doesn’t affect the well-off but it becomes more and more inaccessible for those that just can’t afford it.</p>
+
+<p>I’m not advocating piracy but the fact that it was an option, albeit with a ton of hoops, benefited tons of people that don’t get the same benefit now. A while back I read something explaining why Microsoft doesn’t penalize pirated copies of Windows. The answer was that even pirated Wndows is better than another OS and it has the side benefit of getting more and more people used to the Microsoft stack that they will hopefully be able to legally acquire later on. Sure Microsoft was in the dominant market position and was able to afford this perspective but there is some truth to it. Always on, subscription software does lead to a decline in piracy but what’s the cost in accessibility? Is it a short term gain for a long term loss?</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Parking spot finder</title>
