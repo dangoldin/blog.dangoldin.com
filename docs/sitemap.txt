@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/12/29/aws-vs-google-computer-vision-cloud-services/
 http://dangoldin.com/2019/12/28/gboard-vs-ios-swipe-keyboard/
 http://dangoldin.com/2019/12/27/whos-hosting-whos-managing/
 http://dangoldin.com/2019/12/27/drop-in-piracy-drop-in-accessibility/
