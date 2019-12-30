@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2019-12-29T21:51:00-05:00</updated>
+ <updated>2019-12-29T22:10:08-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Gboard vs iOS swipe keyboard</title>
+   <link href="http://dangoldin.com/2019/12/28/gboard-vs-ios-swipe-keyboard/"/>
+   <updated>2019-12-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/28/gboard-vs-ios-swipe-keyboard</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/keyboard-gboard.jpg" alt="Gboard keyboard" width="828" height="894" layout="intrinsic"/>
+
+<img src="http://dangoldin.com/assets/static/images/keyboard-ios.jpg" alt="Gboard keyboard" width="828" height="852" layout="intrinsic"/>
+
+<p>Now that I’ve been blogging <a href="http://dangoldin.com/2019/12/24/write-mobile-edit-desktop/">left-handed on my phone</a> for the post week I got the chance to try out multiple iOS keyboards all with the hope of improving my typing speed. So far the best one had been <a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin&amp;hl=en_US">Gboard</a> using the swipe. It’s pretty similar to the native swipe keyboard offered within iOS but it’s just a tad more accurate - especially for shorter words.</p>
+
+<p>Google has the reputation of being the AI and ML leader and it shows in the corrections and predictions. They’re likely training on larger corpus of data and leveraging the contextual information more intelligently. For example, Gboard is able to correct previously typed words based on subsequent words whereas once a word is written in the native iOS keyboard it’s finalized. Each of the keyboards still struggles with short words that lack context, esoteric and rarely used words, but overall it’s surprisingly effective and will continue to improve. Correcting mistakes is still a huge pain but at least in my case it’s a problem that can be solved later on an actual keyboard.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Who's hosting? Who's managing?</title>
