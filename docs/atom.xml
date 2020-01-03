@@ -3,13 +3,43 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-01-01T15:11:07-05:00</updated>
+ <updated>2020-01-02T22:36:22-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Self hosted, externally managed</title>
+   <link href="http://dangoldin.com/2019/12/31/self-hosted-externally-managed/"/>
+   <updated>2019-12-31T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/31/self-hosted-externally-managed</id>
+   <content:encoded><![CDATA[
+<p>A couple of days ago I <a href="/2019/12/27/whos-hosting-whos-managing/">wrote</a> about two questions one can ask when it comes to working with a technology vendor: who’s hosting and who’s managing?</p>
+
+<p>I find the externally managed but self hosted one interesting. You’re giving another company access to your accounts and have full visibility into what they’re doing yet you still pay them. An example of this is <a href="https://databricks.com/">Databricks</a>. They offer a product akin to Spark-as-a-service along with a variety of bells and whistles that make it much easier to run and manage.</p>
+
+<p>The primary Databricks product spins up instances in your cloud account, runs the proprietary Databricks code, and then charges you based on separate “Compute Units” that are a function of the instance type. This pricing model is interesting. Why not spin the instances up in their account and then charge you the total cost? You wouldn’t need to worry about the instance type to compute unit conversion and the final cost would be transparent.</p>
+
+<p>On the flipside, you wouldn’t have as much visibility into the underlying hardware and the impact it has on performance. My gut is that the primary motivation is to allow customers to keep all cloud costs within their own account. This gives them the benefit of being able to manage their own cloud costs - for example by negotiating for a discount on higher spend or through instance reservations. This is a way of both passing on savings to their customers who understand their own use case better as well as making the Databricks bill lower than it actually is.</p>
+
+<p>While many open source companies are struggling to compete against the cloud vendors Databricks is able to hold their own. Part of it is the uniqueness and value of the product but a large part is their pricing and billing.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Farewell 2019, hello 2020</title>
+   <link href="http://dangoldin.com/2019/12/31/farewell-2019-hello-2020/"/>
+   <updated>2019-12-31T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/31/farewell-2019-hello-2020</id>
+   <content:encoded><![CDATA[
+<p>Bill Gates once said “Most people overestimate what they can do in one year and underestimate what they can do in ten years” and it’s a good assessment of my decade. It was my first decade as an adult and it was very much about finding my footing, both professionally and personally. My first few years out of college were trying to figure things out and understand who I am and what I enjoy doing. I started the decade working as a quant, to attempting two startups, to joining a quickly growing <a href="https://triplelift.com/">startup</a> that I’ve been at for the past 6 years.</p>
+
+<p>It’s been an incredibly busy 10 years and I look forward to the next 10. Rather than breadth these will be focused on depth and I hope to write another short blog post then.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Zappos customer service</title>

@@ -20,6 +20,8 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2019/12/31/self-hosted-externally-managed/
+http://dangoldin.com/2019/12/31/farewell-2019-hello-2020/
 http://dangoldin.com/2019/12/30/zappos-customer-service/
 http://dangoldin.com/2019/12/29/finding-parked-cars-aws-vs-google-computer-vision/
 http://dangoldin.com/2019/12/28/gboard-vs-ios-swipe-keyboard/
