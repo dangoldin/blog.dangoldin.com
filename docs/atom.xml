@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-01-02T22:36:22-05:00</updated>
+ <updated>2020-01-06T21:51:03-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -26,6 +26,20 @@
 <p>On the flipside, you wouldn’t have as much visibility into the underlying hardware and the impact it has on performance. My gut is that the primary motivation is to allow customers to keep all cloud costs within their own account. This gives them the benefit of being able to manage their own cloud costs - for example by negotiating for a discount on higher spend or through instance reservations. This is a way of both passing on savings to their customers who understand their own use case better as well as making the Databricks bill lower than it actually is.</p>
 
 <p>While many open source companies are struggling to compete against the cloud vendors Databricks is able to hold their own. Part of it is the uniqueness and value of the product but a large part is their pricing and billing.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Gaming virtual kitchens</title>
+   <link href="http://dangoldin.com/2019/12/31/gaming-virtual-kitchens/"/>
+   <updated>2019-12-31T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2019/12/31/gaming-virtual-kitchens</id>
+   <content:encoded><![CDATA[
+<p>Given how popular food delivery has gotten it’s no surprise that some restaurants are opting out of a retail location and are starting to rely solely on their delivery efforts. This is leading to a variety of companies that are building kitchens that can be rented out by these types of restaurants. In fact, one of them, <a href="https://www.cloudkitchens.com/">CloudKitchens</a>, is Travis Kalanick new startup attempt.</p>
+
+<p>Given that these businesses depend on food delivery platforms and they don’t actually have a retail location I wonder if these restaurants are creating multiple listings on these platforms. This gives them another spot in the search results and allows them to crowd out their competitors. Of course, each would have a reduced number of orders and thus show up lower in the results but it still feels as if there’s potential for some gaming.</p>
+
+<p>Similar to how SEO started to get gamed soon after it proved to be valuable we’ll see the same occur on the newer platforms. Wherever there’s an opportunity there will be some that try to take advantage.</p>
 ]]></content:encoded>
  </entry>
  
