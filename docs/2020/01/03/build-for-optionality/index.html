@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Self hosted, externally managed</title>
-  <meta name="description" content="Databricks has an interesting pricing model where they will run instances your cloud account but then charge you on a separate compute unit.">
-  <meta name="keywords" content="databricks, cloud vendors, open source" />
+  <title>Build for optionality</title>
+  <meta name="description" content="I wrote a company wide email describing how our engineering team thinks about writing code and thought it would be helpful to post a modified version publicly.">
+  <meta name="keywords" content="software engineering, design" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2019/12/31/self-hosted-externally-managed/">
+  <link rel="canonical" href="http://dangoldin.com/2020/01/03/build-for-optionality/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Self hosted, externally managed" />
+  <meta name="twitter:title" content="Build for optionality" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2019/12/31/self-hosted-externally-managed/" />
-  <meta property="og:title"               content="Self hosted, externally managed" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/01/03/build-for-optionality/" />
+  <meta property="og:title"               content="Build for optionality" />
 
   
-  <meta property="og:description"         content="Databricks has an interesting pricing model where they will run instances your cloud account but then charge you on a separate compute unit." />
-  <meta name="twitter:description"        content="Databricks has an interesting pricing model where they will run instances your cloud account but then charge you on a separate compute unit." />
+  <meta property="og:description"         content="I wrote a company wide email describing how our engineering team thinks about writing code and thought it would be helpful to post a modified version publicly." />
+  <meta name="twitter:description"        content="I wrote a company wide email describing how our engineering team thinks about writing code and thought it would be helpful to post a modified version publicly." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2019/12/31/self-hosted-externally-managed/",
-  "headline": "Self hosted, externally managed",
-  "datePublished": "2019-12-31T00:00:00-05:00",
-  "dateModified": "2019-12-31T00:00:00-05:00",
-  "description": "A couple of days ago I wrote about two questions one can ask when it comes to working with a technology vendor: who’s hosting and who’s managing?",
+  "mainEntityOfPage": "http://dangoldin.com/2020/01/03/build-for-optionality/",
+  "headline": "Build for optionality",
+  "datePublished": "2020-01-03T00:00:00-05:00",
+  "dateModified": "2020-01-03T00:00:00-05:00",
+  "description": "I wrote a company wide email back in September titled “Building for optionality” that describes how our engineering team maintains its impact despite the gro...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,21 +724,23 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Self hosted, externally managed</h1>
-      <span class="date">31 December 2019</span>
+      <h1 class="post-title">Build for optionality</h1>
+      <span class="date">03 January 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>A couple of days ago I <a href="/2019/12/27/whos-hosting-whos-managing/">wrote</a> about two questions one can ask when it comes to working with a technology vendor: who’s hosting and who’s managing?</p>
+<p>I wrote a company wide email back in September titled “Building for optionality” that describes how our engineering team maintains its impact despite the growing complexity of the business. There are a few TripleLift-specific concepts that I stripped away to make it more approachable but the theme is the same.</p>
 
-<p>I find the externally managed but self hosted one interesting. You’re giving another company access to your accounts and have full visibility into what they’re doing yet you still pay them. An example of this is <a href="https://databricks.com/">Databricks</a>. They offer a product akin to Spark-as-a-service along with a variety of bells and whistles that make it much easier to run and manage.</p>
+<hr>
 
-<p>The primary Databricks product spins up instances in your cloud account, runs the proprietary Databricks code, and then charges you based on separate “Compute Units” that are a function of the instance type. This pricing model is interesting. Why not spin the instances up in their account and then charge you the total cost? You wouldn’t need to worry about the instance type to compute unit conversion and the final cost would be transparent.</p>
+<p>For a company that’s growing and changing as quickly as TripleLift, it’s critical to make sure our code is as impactful as possible. One way we do this is by building for optionality.</p>
 
-<p>On the flipside, you wouldn’t have as much visibility into the underlying hardware and the impact it has on performance. My gut is that the primary motivation is to allow customers to keep all cloud costs within their own account. This gives them the benefit of being able to manage their own cloud costs - for example by negotiating for a discount on higher spend or through instance reservations. This is a way of both passing on savings to their customers who understand their own use case better as well as making the Databricks bill lower than it actually is.</p>
+<p>The idea here is that the future is uncertain and we strive to design our solutions in ways that allow us to pivot and leverage them to support domains and problems that we may not yet be aware of. When faced with choices, rather than focusing on an individual feature we endeavor to think of ways to extend our overall platform that can then be used to support a variety of evolving business cases.</p>
 
-<p>While many open source companies are struggling to compete against the cloud vendors Databricks is able to hold their own. Part of it is the uniqueness and value of the product but a large part is their pricing and billing.</p>
+<p>This approach can be seen by the types of building blocks we create. Rather than solve the immediate problem it’s useful to take a step back and see whether there’s a pattern here and whether introducing intermediary concepts will give us a springboard into another potential opportunity. Unfortunately, this can easily lead to overengineering and solving problems you don’t yet have which results in a codebase that’s more and more difficult to rein in and manage.</p>
+
+<p>The ideal is to build in these layers of optionality when you’re building something new and uncertain but as the business evolves and you develop crisp business cases you invest in tighter and more optimal solutions. The challenge is finding that optimal point where the complexity and risk outweigh the value of this optionality.</p>
 
     </section>
 
@@ -752,6 +754,8 @@ table {
 
   <!-- <li>Tagged under:</li> -->
   
+    
+      <li><a href="/tags/##management-ref">#management </a></li>
     
       <li><a href="/tags/##product-ref">#product </a></li>
     
@@ -770,11 +774,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2019/12/31/power-of-media/" title="Power of media">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2019/12/31/self-hosted-externally-managed/" title="Self hosted, externally managed">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/01/03/build-for-optionality/" title="Build for optionality">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +789,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2019%2F12%2F31%2Fself-hosted-externally-managed%2F&title=Self+hosted%2C+externally+managed">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F01%2F03%2Fbuild-for-optionality%2F&title=Build+for+optionality">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

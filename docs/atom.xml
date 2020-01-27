@@ -3,13 +3,33 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-01-19T23:05:55-05:00</updated>
+ <updated>2020-01-26T21:53:05-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Build for optionality</title>
+   <link href="http://dangoldin.com/2020/01/03/build-for-optionality/"/>
+   <updated>2020-01-03T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/01/03/build-for-optionality</id>
+   <content:encoded><![CDATA[
+<p>I wrote a company wide email back in September titled “Building for optionality” that describes how our engineering team maintains its impact despite the growing complexity of the business. There are a few TripleLift-specific concepts that I stripped away to make it more approachable but the theme is the same.</p>
+
+<hr />
+
+<p>For a company that’s growing and changing as quickly as TripleLift, it’s critical to make sure our code is as impactful as possible. One way we do this is by building for optionality.</p>
+
+<p>The idea here is that the future is uncertain and we strive to design our solutions in ways that allow us to pivot and leverage them to support domains and problems that we may not yet be aware of. When faced with choices, rather than focusing on an individual feature we endeavor to think of ways to extend our overall platform that can then be used to support a variety of evolving business cases.</p>
+
+<p>This approach can be seen by the types of building blocks we create. Rather than solve the immediate problem it’s useful to take a step back and see whether there’s a pattern here and whether introducing intermediary concepts will give us a springboard into another potential opportunity. Unfortunately, this can easily lead to overengineering and solving problems you don’t yet have which results in a codebase that’s more and more difficult to rein in and manage.</p>
+
+<p>The ideal is to build in these layers of optionality when you’re building something new and uncertain but as the business evolves and you develop crisp business cases you invest in tighter and more optimal solutions. The challenge is finding that optimal point where the complexity and risk outweigh the value of this optionality.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Self hosted, externally managed</title>
