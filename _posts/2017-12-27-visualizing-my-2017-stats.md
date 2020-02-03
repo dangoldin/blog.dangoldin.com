@@ -3,7 +3,7 @@ layout: post
 title: "Visualizing my 2017 stats"
 description: "Similar to 2016 I've been tracking a few stats every single day ranging from my sleep to food to drinking habits and visualized them all here."
 keywords: "blog analysis, quantified self"
-image_url: "/assets/static/images/wordcloud-breakfast.png"
+image_url: "/assets/static/images/wordcloud-breakfast-2017.png"
 category:
 tags: ["#dataviz"]
 ---
