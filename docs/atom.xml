@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-02-07T22:08:47-05:00</updated>
+ <updated>2020-02-09T22:25:17-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Software comparison done right</title>
+   <link href="http://dangoldin.com/2020/01/24/software-comparison-done-right/"/>
+   <updated>2020-01-24T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/01/24/software-comparison-done-right</id>
+   <content:encoded><![CDATA[
+<p>There are a variety of sites out there that exist solely to do comparisons of enterprise software - just type “product A vs product B” in Google and the first few pages will be littered with results. They all generally follow the same format: a side by side table comparing them feature by feature. Some of the values are factual - for example pricing - while others are based on user reviews.</p>
+
+<p>The fact that so many of these exist indicate that many find these sorts of comparisons useful but what I really want to know is the actual customer usage of the product. A product may hit all the right features but if it’s not actually been adopted by customers then the features are for naught.</p>
+
+<p>Luckily, Okta (a Single Sign-on vendor) recently published a thorough <a href="https://www.okta.com/businesses-at-work/2020/">report</a> covering the software their customers used. Okta has a laundry list of prestige customers that they’re able to provide a representative report of the most used software by today’s businesses. I’d trust this data over any of the side by side comparison sites.</p>
+
+<p>It’s incredibly strong content marketing by Okta: easy to put together, extremely useful, and highlights their market dominance. If you haven’t taken a look yet <a href="https://www.okta.com/businesses-at-work/2020/">it’s</a> well worth checking out.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Instagram targeting ads based on likes</title>
