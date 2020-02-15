@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/
 http://dangoldin.com/2020/01/28/2020-goals/
 http://dangoldin.com/2020/01/24/software-comparison-done-right/
 http://dangoldin.com/2020/01/21/instagram-targeting-ads-based-on-likes/

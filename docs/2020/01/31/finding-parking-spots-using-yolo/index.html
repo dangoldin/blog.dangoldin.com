@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Finding parking spots using YOLO</title>
+  <meta name="description" content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot.">
+  <meta name="keywords" content="computer vision, YOLO" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Finding parking spots using YOLO" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/" />
+  <meta property="og:title"               content="Finding parking spots using YOLO" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot." />
+  <meta name="twitter:description"        content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2020-02-14T23:53:54-05:00",
-  "dateModified": "2020-02-14T23:53:54-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/",
+  "headline": "Finding parking spots using YOLO",
+  "datePublished": "2020-01-31T00:00:00-05:00",
+  "dateModified": "2020-01-31T00:00:00-05:00",
+  "description": "I finally managed to make a bit more progress on the Parking Spot Finder project. Last time I tested the computer vision products offered by Google and AWS t...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,25 +722,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Finding parking spots using YOLO</h1>
+      <span class="date">31 January 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
+<p>I finally managed to make a bit more progress on the Parking Spot Finder project. <a href="http://dangoldin.com/2019/12/29/finding-parked-cars-aws-vs-google-computer-vision/">Last time</a> I tested the computer vision products offered by Google and AWS to see how well they were able to detect cars. This time around I decided to actually start working on the computer vision side and found a nice <a href="https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/">tutorial</a> that allowed me to quickly try out the YOLO computer vision library. Surprisingly, it did significantly better than AWS but was more mixed against Google. On the original image it did better than both AWS and Google at detecting the cars but it did worse than Google on the cropped images. The next step is to actually try training a model and see how well it can do. Depending on how that goes I may end up changing my approach up and see how far I can get using heuristics.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<amp-img src="/assets/static/images/jc-street-parking-processed.jpg" alt="Daytime YOLO car detection" width="1314" height="986" layout="responsive"></amp-img>
 
-<ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<amp-img src="/assets/static/images/jc-street-parking-2-processed.jpg" alt="Nighttime YOLO car detection" width="1271" height="953" layout="responsive"></amp-img>
 
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
+<amp-img src="/assets/static/images/jc-street-parking-small-1-processed.png" alt="Daytme YOLO car detection cropped 1" width="362" height="130" layout="intrinsic"></amp-img>
+
+<amp-img src="/assets/static/images/jc-street-parking-small-2-processed.png" alt="Nighttime YOLO car detection cropped 2" width="264" height="317" layout="intrinsic"></amp-img>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/01/28/2020-goals/" title="2020 Goals">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F01%2F31%2Ffinding-parking-spots-using-yolo%2F&title=Finding+parking+spots+using+YOLO">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -806,7 +855,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
