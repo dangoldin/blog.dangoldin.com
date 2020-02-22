@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Finding parking spots using YOLO</title>
-  <meta name="description" content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot.">
-  <meta name="keywords" content="computer vision, YOLO" />
+  <title>Micromanaging is underrated</title>
+  <meta name="description" content="A common trope is to say that micromanaging is terrible and yet micromanaging has its benefits and successes.">
+  <meta name="keywords" content="managing, management, micromanaging" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/">
+  <link rel="canonical" href="http://dangoldin.com/2020/02/04/micromanaging-is-underrated/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Finding parking spots using YOLO" />
+  <meta name="twitter:title" content="Micromanaging is underrated" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/" />
-  <meta property="og:title"               content="Finding parking spots using YOLO" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/02/04/micromanaging-is-underrated/" />
+  <meta property="og:title"               content="Micromanaging is underrated" />
 
   
-  <meta property="og:description"         content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot." />
-  <meta name="twitter:description"        content="Instead of using Google or AWS for computer vision I gave the YOLO library a shot." />
+  <meta property="og:description"         content="A common trope is to say that micromanaging is terrible and yet micromanaging has its benefits and successes." />
+  <meta name="twitter:description"        content="A common trope is to say that micromanaging is terrible and yet micromanaging has its benefits and successes." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/",
-  "headline": "Finding parking spots using YOLO",
-  "datePublished": "2020-01-31T00:00:00-05:00",
-  "dateModified": "2020-01-31T00:00:00-05:00",
-  "description": "I finally managed to make a bit more progress on the Parking Spot Finder project. Last time I tested the computer vision products offered by Google and AWS t...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/02/04/micromanaging-is-underrated/",
+  "headline": "Micromanaging is underrated",
+  "datePublished": "2020-02-04T00:00:00-05:00",
+  "dateModified": "2020-02-04T00:00:00-05:00",
+  "description": "A common belief is that micromanaging is a poor way to manage. I subscribe to this view - it’s demotivating to have someone second-guessing every step and el...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,21 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Finding parking spots using YOLO</h1>
-      <span class="date">31 January 2020</span>
+      <h1 class="post-title">Micromanaging is underrated</h1>
+      <span class="date">04 February 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>I finally managed to make a bit more progress on the Parking Spot Finder project. <a href="http://dangoldin.com/2019/12/29/finding-parked-cars-aws-vs-google-computer-vision/">Last time</a> I tested the computer vision products offered by Google and AWS to see how well they were able to detect cars. This time around I decided to actually start working on the computer vision side and found a nice <a href="https://www.pyimagesearch.com/2018/11/12/yolo-object-detection-with-opencv/">tutorial</a> that allowed me to quickly try out the YOLO computer vision library. Surprisingly, it did significantly better than AWS but was more mixed against Google. On the original image it did better than both AWS and Google at detecting the cars but it did worse than Google on the cropped images. The next step is to actually try training a model and see how well it can do. Depending on how that goes I may end up changing my approach up and see how far I can get using heuristics.</p>
+<p>A common belief is that micromanaging is a poor way to manage. I subscribe to this view - it’s demotivating to have someone second-guessing every step and eliminates agency and autonomy. I’d rather have someone make a few mistakes and learn along the way rather than impose a top-down view that disincentives growth.</p>
 
-<amp-img src="/assets/static/images/jc-street-parking-processed.jpg" alt="Daytime YOLO car detection" width="1314" height="986" layout="responsive"></amp-img>
+<p>While reading <a href="https://www.amazon.com/Ride-Lifetime-Lessons-Learned-Company-ebook/dp/B07PF6XTD8/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">Bob Iger’s biography</a>, I came across a simple statement from his former boss and Disney CEO, Michael Eisner: “Micromanaging is underrated.” That gave me pause. So often we hear that micromanaging is terrible and no effective manager does yet here’s someone incredibly successful leaning into it. Bob Iger distances himself away from this black and white view by discussing finding the balance while admitting that in many cases the details do, in fact, matter and it’s up to the CEO to make sure the output of the team is as polished and great as possible. The passage reminded me of Steve Jobs and his reputation for being incredibly detail-oriented and obsessive. In many ways, his approach was all about micromanaging and yet Apple made some of the most incredible and breathtaking products. Clearly there’s some value in micromanaging.</p>
 
-<amp-img src="/assets/static/images/jc-street-parking-2-processed.jpg" alt="Nighttime YOLO car detection" width="1271" height="953" layout="responsive"></amp-img>
-
-<amp-img src="/assets/static/images/jc-street-parking-small-1-processed.png" alt="Daytme YOLO car detection cropped 1" width="362" height="130" layout="intrinsic"></amp-img>
-
-<amp-img src="/assets/static/images/jc-street-parking-small-2-processed.png" alt="Nighttime YOLO car detection cropped 2" width="264" height="317" layout="intrinsic"></amp-img>
+<p>There are always the great CEOs who go against the norms yet get results but for the rest of us it’s important to find the balance. A good leader doesn’t need to be involved in everything but should care about everything. She should know when it’s important to step in and when it’s useful to look away. There’s no right answer here and it depends on the leader, the company, the culture, and the product. What is important is to realize there are very few absolutes and to consider a variety of options when making decisions.</p>
 
     </section>
 
@@ -753,7 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##management-ref">#management </a></li>
     
   
 
@@ -770,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/01/28/2020-goals/" title="2020 Goals">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/01/31/finding-parking-spots-using-yolo/" title="Finding parking spots using YOLO">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/02/04/micromanaging-is-underrated/" title="Micromanaging is underrated">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F01%2F31%2Ffinding-parking-spots-using-yolo%2F&title=Finding+parking+spots+using+YOLO">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F02%2F04%2Fmicromanaging-is-underrated%2F&title=Micromanaging+is+underrated">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
