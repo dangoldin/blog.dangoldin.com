@@ -23,23 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Repository of configurations</title>
+  <meta name="description" content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations.">
+  <meta name="keywords" content="open source software, devops, kafka" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2020/02/07/repository-of-configurations/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Repository of configurations" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/02/07/repository-of-configurations/" />
+  <meta property="og:title"               content="Repository of configurations" />
 
+  
+  <meta property="og:description"         content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations." />
+  <meta name="twitter:description"        content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations." />
   
 
   
@@ -51,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2020-02-22T15:34:57-05:00",
-  "dateModified": "2020-02-22T15:34:57-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/02/07/repository-of-configurations/",
+  "headline": "Repository of configurations",
+  "datePublished": "2020-02-07T00:00:00-05:00",
+  "dateModified": "2020-02-07T00:00:00-05:00",
+  "description": "While tuning Kafka yet another time I started thinking of how useful a repository of configuration files would be. Very often we install an open-source proje...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,35 +722,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Repository of configurations</h1>
+      <span class="date">07 February 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>While tuning Kafka yet another time I started thinking of how useful a repository of configuration files would be. Very often we install an open-source project and default to the standard options. This works great when you’re starting out but as you grow you realize the deployment is no longer cutting it. So you go back to the documentation and do a few searches to see how others have it tuned. This gives you a bit of breathing and lets you keep going until the next scaling bottleneck. Throughout you’re likely scaling up, out, or both and yet very few of us actually know whether we’re properly configured.</p>
+
+<p>I suspect most of us do a pretty crappy job at configuring our software and instead rely on the scaling to solve our problems. That is a perfectly reasonable solution when the scaling cost is low but as you grow that cost becomes more and more significant and would benefit from some knowledgeable optimization. If it truly is a critical component you end up either building up the knowledge in house through experience, hiring someone to manage it, or paying a vendor to have it managed.</p>
+
+<p>I wish there was an online repository of configurations that would allow one to quickly see production configurations and setups for various open source applications as well as the resulting performance. Using Kafka as an example, I’d love to see the number and type of brokers people are running, the configuration they’re using across brokers, consumers, and producers, as well as the metrics themselves - number of topics, partitions, messages in addition to the cluster performance in terms of network IO and resource usage.</p>
+
+<p>One challenge is that the information is proprietary and unlikely to be shared. It’s possible having an anonymous submission option would solve this. Another challenge is the difficulty of the UX itself. These applications are all different and each have their own nuance that it would be difficult to come up with an approach that’s both abstract enough to support any application while being useful enough for any single one.</p>
+
+<p>Just writing this post is motivating me to get started building this out so if you’ve stumbled onto this post and find the idea interesting please reach out - blogname without the .com @ Google’s email service.</p>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/02/04/micromanaging-is-underrated/" title="Micromanaging is underrated">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F02%2F07%2Frepository-of-configurations%2F&title=Repository+of+configurations">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -813,7 +855,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/02/07/repository-of-configurations/
 http://dangoldin.com/2020/02/04/micromanaging-is-underrated/
 http://dangoldin.com/2020/01/31/finding-parking-spots-using-yolo/
 http://dangoldin.com/2020/01/28/2020-goals/
