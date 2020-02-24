@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Repository of configurations</title>
-  <meta name="description" content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations.">
-  <meta name="keywords" content="open source software, devops, kafka" />
+  <title>Embracing smartphone productivity</title>
+  <meta name="description" content="In order to get even more productive I've embraced the idea of doing small tasks on my phone in order to just knock them out.">
+  <meta name="keywords" content="productivity, queue, dequeue" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/02/07/repository-of-configurations/">
+  <link rel="canonical" href="http://dangoldin.com/2020/02/11/embracing-smartphone-productivity/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Repository of configurations" />
+  <meta name="twitter:title" content="Embracing smartphone productivity" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/02/07/repository-of-configurations/" />
-  <meta property="og:title"               content="Repository of configurations" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/02/11/embracing-smartphone-productivity/" />
+  <meta property="og:title"               content="Embracing smartphone productivity" />
 
   
-  <meta property="og:description"         content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations." />
-  <meta name="twitter:description"        content="Despite the wealth of open source applications out there it's still difficult to find a good resource for optimal configurations." />
+  <meta property="og:description"         content="In order to get even more productive I've embraced the idea of doing small tasks on my phone in order to just knock them out." />
+  <meta name="twitter:description"        content="In order to get even more productive I've embraced the idea of doing small tasks on my phone in order to just knock them out." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/02/07/repository-of-configurations/",
-  "headline": "Repository of configurations",
-  "datePublished": "2020-02-07T00:00:00-05:00",
-  "dateModified": "2020-02-07T00:00:00-05:00",
-  "description": "While tuning Kafka yet another time I started thinking of how useful a repository of configuration files would be. Very often we install an open-source proje...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/02/11/embracing-smartphone-productivity/",
+  "headline": "Embracing smartphone productivity",
+  "datePublished": "2020-02-11T00:00:00-05:00",
+  "dateModified": "2020-02-11T00:00:00-05:00",
+  "description": "Unlike a modern teenager, I tend to avoid using my smartphone for anything except consumption. I’d read emails but not respond, check up on Twitter but not t...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,21 +724,15 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Repository of configurations</h1>
-      <span class="date">07 February 2020</span>
+      <h1 class="post-title">Embracing smartphone productivity</h1>
+      <span class="date">11 February 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>While tuning Kafka yet another time I started thinking of how useful a repository of configuration files would be. Very often we install an open-source project and default to the standard options. This works great when you’re starting out but as you grow you realize the deployment is no longer cutting it. So you go back to the documentation and do a few searches to see how others have it tuned. This gives you a bit of breathing and lets you keep going until the next scaling bottleneck. Throughout you’re likely scaling up, out, or both and yet very few of us actually know whether we’re properly configured.</p>
+<p>Unlike a modern teenager, I tend to avoid using my smartphone for anything except consumption. I’d read emails but not respond, check up on Twitter but not tweet, look at my calendar but not schedule any events, and so forth. The excuse was that I’d be able to do these much more effectively in front of a real computer. Lately, I’ve realized that while the above is true I can still knock out a ton of small and simple tasks on my phone and save the meaty stuff for the computer. I’m not much more willing to respond to an email or send an invite on my phone rather than waiting to get on a computer. It also has the side benefit of reducing the amount of items on my mental todo list which will inevitably have loss.</p>
 
-<p>I suspect most of us do a pretty crappy job at configuring our software and instead rely on the scaling to solve our problems. That is a perfectly reasonable solution when the scaling cost is low but as you grow that cost becomes more and more significant and would benefit from some knowledgeable optimization. If it truly is a critical component you end up either building up the knowledge in house through experience, hiring someone to manage it, or paying a vendor to have it managed.</p>
-
-<p>I wish there was an online repository of configurations that would allow one to quickly see production configurations and setups for various open source applications as well as the resulting performance. Using Kafka as an example, I’d love to see the number and type of brokers people are running, the configuration they’re using across brokers, consumers, and producers, as well as the metrics themselves - number of topics, partitions, messages in addition to the cluster performance in terms of network IO and resource usage.</p>
-
-<p>One challenge is that the information is proprietary and unlikely to be shared. It’s possible having an anonymous submission option would solve this. Another challenge is the difficulty of the UX itself. These applications are all different and each have their own nuance that it would be difficult to come up with an approach that’s both abstract enough to support any application while being useful enough for any single one.</p>
-
-<p>Just writing this post is motivating me to get started building this out so if you’ve stumbled onto this post and find the idea interesting please reach out - blogname without the .com @ Google’s email service.</p>
+<p>The way I think about my approach is that I used to operate more akin to a queue - accumulating tasks throughout the day and then breezing through the list when I was at full capacity. Now I’m trying an approach that’s more akin to a dequeue where I’m able to both save tasks for later while also handling the most recent one. As in software, the dequeue is both a more complicated yet more powerful structure that will hopefully improve my productivity.</p>
 
     </section>
 
@@ -753,7 +747,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##devops-ref">#devops </a></li>
+      <li><a href="/tags/##productivity-ref">#productivity </a></li>
     
   
 
@@ -770,11 +764,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/02/04/micromanaging-is-underrated/" title="Micromanaging is underrated">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/02/07/repository-of-configurations/" title="Repository of configurations">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/02/11/embracing-smartphone-productivity/" title="Embracing smartphone productivity">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +779,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F02%2F07%2Frepository-of-configurations%2F&title=Repository+of+configurations">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F02%2F11%2Fembracing-smartphone-productivity%2F&title=Embracing+smartphone+productivity">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

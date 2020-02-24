@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-02-22T15:34:57-05:00</updated>
+ <updated>2020-02-23T20:44:17-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Embracing smartphone productivity</title>
+   <link href="http://dangoldin.com/2020/02/11/embracing-smartphone-productivity/"/>
+   <updated>2020-02-11T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/02/11/embracing-smartphone-productivity</id>
+   <content:encoded><![CDATA[
+<p>Unlike a modern teenager, I tend to avoid using my smartphone for anything except consumption. I’d read emails but not respond, check up on Twitter but not tweet, look at my calendar but not schedule any events, and so forth. The excuse was that I’d be able to do these much more effectively in front of a real computer. Lately, I’ve realized that while the above is true I can still knock out a ton of small and simple tasks on my phone and save the meaty stuff for the computer. I’m not much more willing to respond to an email or send an invite on my phone rather than waiting to get on a computer. It also has the side benefit of reducing the amount of items on my mental todo list which will inevitably have loss.</p>
+
+<p>The way I think about my approach is that I used to operate more akin to a queue - accumulating tasks throughout the day and then breezing through the list when I was at full capacity. Now I’m trying an approach that’s more akin to a dequeue where I’m able to both save tasks for later while also handling the most recent one. As in software, the dequeue is both a more complicated yet more powerful structure that will hopefully improve my productivity.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Repository of configurations</title>
