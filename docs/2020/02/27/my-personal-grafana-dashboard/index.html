@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>My personal Grafana dashboard</title>
+  <meta name="description" content="In order to measure my performance against my 2020 blogging goals I set up a simple Grafana dashboard powered by MySQL">
+  <meta name="keywords" content="grafana, quantified self, dashboard" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2020/02/27/my-personal-grafana-dashboard/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="My personal Grafana dashboard" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/02/27/my-personal-grafana-dashboard/" />
+  <meta property="og:title"               content="My personal Grafana dashboard" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="In order to measure my performance against my 2020 blogging goals I set up a simple Grafana dashboard powered by MySQL" />
+  <meta name="twitter:description"        content="In order to measure my performance against my 2020 blogging goals I set up a simple Grafana dashboard powered by MySQL" />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/personal-grafana-dashboard-blog-stats.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/personal-grafana-dashboard-blog-stats.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,10 +57,10 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2020-02-27T22:32:08-05:00",
-  "dateModified": "2020-02-27T22:32:08-05:00",
+  "mainEntityOfPage": "http://dangoldin.com/2020/02/27/my-personal-grafana-dashboard/",
+  "headline": "My personal Grafana dashboard",
+  "datePublished": "2020-02-27T00:00:00-05:00",
+  "dateModified": "2020-02-27T00:00:00-05:00",
   "description": "",
   "author": {
     "@type": "Person",
@@ -722,22 +725,155 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">My personal Grafana dashboard</h1>
+      <span class="date">27 February 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
+<amp-img src="/assets/static/images/personal-grafana-dashboard-blog-stats.png" alt="My personal Grafana dashboard for blog stats" width="1913" height="978" layout="responsive"></amp-img>
+
+<p>Last year I wrote about the idea of a <a href="/2019/07/10/personal-dashboards/">personal dashboard</a> and earlier this year I described my <a href="/2020/01/28/2020-goals/">2020 goals</a> and how I’d go about measuring my progress. The past two days I was able to combine the two concepts and created a simple Grafana dashboard to measure my progress against the blogging goal. As with most tasks, the most difficult part was getting started and the actual exercise took a few hours. While it’s still fresh in my mind I want to document the step by step process in order to both provide a perspective into how I work while also giving others a guide to setting up their own.</p>
+
 <ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
+  <li>
+<strong>Decide on the Grafana backend</strong>. I already committed to Grafana as the visualization layer but needed to decide on the actual statistics backend. This isn’t that important of a decision and I can change it any time so I just chose MySQL. I have a personal instance of MySQL floating around (who doesn’t?), am not going to be dumping much data into it, and am comfortable writing SQL queries.</li>
+  <li>
+<strong>Set up MySQL</strong>. I already had a MySQL instance up so this required setting up a new database and the appropriate users. Note that I needed to create a master user for adding the data as well as a read-only user that Grafana uses for querying.</li>
 </ul>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">'stats_user'</span><span class="o">@</span><span class="s1">'%'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'XYZ'</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="k">SELECT</span><span class="p">,</span><span class="k">INSERT</span><span class="p">,</span><span class="k">UPDATE</span><span class="p">,</span><span class="k">DELETE</span><span class="p">,</span><span class="k">CREATE</span><span class="p">,</span><span class="k">DROP</span><span class="p">,</span><span class="k">ALTER</span><span class="p">,</span><span class="k">INDEX</span><span class="p">,</span><span class="k">CREATE</span> <span class="k">TEMPORARY</span> <span class="n">TABLES</span><span class="p">,</span><span class="k">CREATE</span> <span class="k">VIEW</span><span class="p">,</span><span class="k">SHOW</span> <span class="k">VIEW</span> <span class="k">ON</span> <span class="n">stats</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'stats_user'</span><span class="o">@</span><span class="s1">'%'</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">'stats_read'</span><span class="o">@</span><span class="s1">'%'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'ABC'</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="k">SELECT</span> <span class="k">ON</span> <span class="n">stats</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'stats_read'</span><span class="o">@</span><span class="s1">'%'</span><span class="p">;</span></code></pre></figure>
+
+<ul>
+  <li>
+<strong>Determine the MySQL schema</strong>. Since I know both the unit I want to analyze (blog post) and the metric I care about the schema practically writes itself. At first I chose date, title, and a few of the fields but tweaked this after the subsequent step.</li>
+</ul>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">blog_post</span> <span class="p">(</span>
+    <span class="n">ymd</span> <span class="nb">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">slug</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">keywords</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">description</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">tags</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_chars</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_words</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_description</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_keywords</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_tags</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_images</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_links</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="k">unique</span> <span class="k">key</span> <span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
+<span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>
+<strong>Get the data into MySQL</strong>. Lucky for me I already had an old <a href="https://github.com/dangoldin/blog-analytics">blog analysis script</a> that took my blog, cleaned up all the posts, and dumped the contents to a CSV. I had to make a few tweaks to the script to allow me to specify the exact fields to write out but after that was done I had a CSV file that could be imported to MySQL. I had a few options for how to get this data into MySQL including modifying the above script to connect to MySQL but instead decided that using a manual <code class="highlighter-rouge">LOAD DATA</code> command would suffice for now. Out of all the steps this one took the longest time - especially figuring out the right syntax for the <code class="highlighter-rouge">LOAD DATA</code> command.</li>
+</ul>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">LOAD</span> <span class="k">DATA</span> <span class="k">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'/home/dan/code/blog-analytics/out.csv'</span>
+  <span class="k">REPLACE</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">blog_post</span>
+    <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">','</span> <span class="n">ENCLOSED</span> <span class="k">BY</span> <span class="s1">'"'</span> <span class="n">ESCAPED</span> <span class="k">BY</span> <span class="s1">'"'</span>
+    <span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
+    <span class="k">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span>
+    <span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="n">tags</span><span class="p">,</span><span class="n">keywords</span><span class="p">,</span><span class="n">description</span><span class="p">,</span><span class="n">num_chars</span><span class="p">,</span><span class="n">num_text_words</span><span class="p">,</span><span class="n">num_text_description</span><span class="p">,</span><span class="n">num_keywords</span><span class="p">,</span><span class="n">num_tags</span><span class="p">,</span><span class="n">num_images</span><span class="p">,</span><span class="n">num_links</span><span class="p">,</span><span class="n">ymd</span><span class="p">,</span><span class="n">slug</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>
+<strong>Connect Grafana to MySQL</strong>. Grafana worked right out of the box after installation with <code class="highlighter-rouge">apt get</code> but I had to create a read-only user as Grafana refused to use a user that had write access.</li>
+  <li>
+<strong>Create a few dashboards</strong>. Now came the fun part. I started by trying to use Grafana’s query builder took but quickly resorted to just writing the SQL manually. The nuance here was having to convert the MySQL date field into a UNIX timestamp that worked with Grafana.</li>
+</ul>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span>
+  <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="n">ymd</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">"time"</span><span class="p">,</span>
+  <span class="n">num_chars</span>
+<span class="k">FROM</span> <span class="n">blog_post</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="n">ymd</span><span class="p">);</span>
+
+<span class="k">SELECT</span>
+  <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="n">date_format</span><span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="s1">'%Y-%m-01'</span><span class="p">))</span> <span class="k">AS</span> <span class="nv">"time"</span><span class="p">,</span>
+  <span class="k">avg</span><span class="p">(</span><span class="n">num_chars</span><span class="p">)</span> <span class="k">as</span> <span class="n">average_monthly_chars</span>
+<span class="k">FROM</span> <span class="n">blog_post</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="nb">time</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="nb">time</span></code></pre></figure>
+
+<ul>
+  <li>
+<strong>Clean up the deployment</strong>. By default, Grafana runs on port 3000 and I wanted to serve it on a standard port behind HTTPS. This required installing nginx (via <code class="highlighter-rouge">apt get</code>), using it to create a simple reverse proxy, and then using <a href="https://letsencrypt.org/">Let’s Encrypt</a> to add SSL. At this point I also gave this a unique Grafana subdomain.</li>
+</ul>
+<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+
+	<span class="kn">server_name</span> <span class="s">xyz.abc</span><span class="p">;</span>
+
+	<span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+		 <span class="kn">proxy_pass</span> <span class="s">http://localhost:3000/</span><span class="p">;</span>
+	<span class="p">}</span>
+
+    <span class="kn">listen</span> <span class="s">[::]:443</span> <span class="s">ssl</span> <span class="s">ipv6only=on</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/xyz.abc/fullchain.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/xyz.abc/privkey.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">include</span> <span class="n">/etc/letsencrypt/options-ssl-nginx.conf</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span>    <span class="kn">ssl_dhparam</span> <span class="n">/etc/letsencrypt/ssl-dhparams.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
+</span><span class="p">}</span></code></pre></figure>
+
+<p>The solution is far from perfect - for example if the instance hosting Grafana goes down I’d have to repeat the bulk of the above steps. At the same time, that’s a risk I’m currently willing to take, especially since the process itself was so quick and I’m manually saving down the JSON behind the dashboard.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/02/11/embracing-smartphone-productivity/" title="Embracing smartphone productivity">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F02%2F27%2Fmy-personal-grafana-dashboard%2F&title=My+personal+Grafana+dashboard">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -803,7 +939,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
