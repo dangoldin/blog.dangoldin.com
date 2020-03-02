@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-02-27T22:32:08-05:00</updated>
+ <updated>2020-03-01T21:37:10-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Paying for improved productivity</title>
+   <link href="http://dangoldin.com/2020/03/01/paying-for-improved-productivity/"/>
+   <updated>2020-03-01T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/03/01/paying-for-improved-productivity</id>
+   <content:encoded><![CDATA[
+<p>Years ago I used to prioritize cost when it came to developer tools. I’d resist paying for anything if I could find an open source alternative that worked reasonably well. These days I prioritize my effectiveness and am much more likely to pay for the right tool. A great example of this is my search for a database IDE. I started using <a href="https://www.sequelpro.com/">Sequel Pro</a> (when I was on a mac) for MySQL and <a href="http://squirrel-sql.sourceforge.net/">SQuirreL</a> for everything else. Sequel Pro was great - it was smooth, responsive, and felt optimized for MySQL. SQuirreL, on the other hand, was designed to support nearly all databases which made it worse across all of them.</p>
+
+<p>A coworker turned me on to DataGrip and I haven’t looked elsewhere since. It has everything I enjoyed in Sequel Pro expanded to a variety of other database engines (somehow even Mongo support). My current usage only scratches the surface of what’s possible and it’s always interesting discovering a new trick - the most recent example is the ability to compare schemas across multiple databases.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>My personal Grafana dashboard</title>
