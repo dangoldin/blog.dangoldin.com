@@ -23,25 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Zoom&#39;s blow up and their financials</title>
+  <meta name="description" content="Zoom has been blowing up lately as the world moves to remote work. I'm curious what this is doing to their business, especially their margin.">
+  <meta name="keywords" content="Zoom, financials, video conferencing" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2020/03/15/zooms-blow-up-and-their-financials/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Zoom's blow up and their financials" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/03/15/zooms-blow-up-and-their-financials/" />
+  <meta property="og:title"               content="Zoom's blow up and their financials" />
 
   
+  <meta property="og:description"         content="Zoom has been blowing up lately as the world moves to remote work. I'm curious what this is doing to their business, especially their margin." />
+  <meta name="twitter:description"        content="Zoom has been blowing up lately as the world moves to remote work. I'm curious what this is doing to their business, especially their margin." />
+  
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/zoom-s1-financials.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/zoom-s1-financials.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -51,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2020-03-15T22:18:02-04:00",
-  "dateModified": "2020-03-15T22:18:02-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/03/15/zooms-blow-up-and-their-financials/",
+  "headline": "Zoom&#39;s blow up and their financials",
+  "datePublished": "2020-03-15T00:00:00-04:00",
+  "dateModified": "2020-03-15T00:00:00-04:00",
+  "description": "Zoom has had an incredible rise in the past few weeks as the tech world has shifted to remote work with nearly all meetings occurring over video conferencing...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,35 +725,72 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Zoom's blow up and their financials</h1>
+      <span class="date">15 March 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>Zoom has had an incredible rise in the past few weeks as the tech world has shifted to remote work with nearly all meetings occurring over video conferencing. The stock is up 30% over the past month and it’s the top app in Apple’s app store - all great things! What I’m curious about is their current financial performance. Zoom makes money by charging a flat fee per user per month. And that fee was set based on both the value delivered but also some assumptions around usage. What happens to their margin if customers go from using Zoom for a few hours a week to multiple hours in day?</p>
+
+<amp-img src="/assets/static/images/zoom-s1-financials.png" alt="Zoom's S-1" width="848" height="349" layout="responsive"></amp-img>
+
+<p>From their <a href="https://www.sec.gov/Archives/edgar/data/1585521/000119312519083351/d642624ds1.htm">S-1</a> it looks as if the cost of revenue has been consistently between 17% and 21% for the past 8 quarters - the bulk of this is likely the infrastructure to support the streaming product since it’s incredibly correlated with their growth. This makes it seem that a 5x increase in usage would significantly eat into their margin but I suspect I’m missing something. As a bottoms-up approach I took a look at their <a href="https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux">system requirements</a> to get a feel for their bandwidth usage. They recommend 600 kbps up/down for standard definition and 1.2 Mbps up/down for high def. If we assume someone is in a Zoom meeting 8 hours a day, 5 days a week at peak usage then over the course of 4 weeks they’re consuming 10.8 gigabytes (600 * 1e3 / 8 * 60 * 60 * 8 * 5 / 1e9) in standard definition and 21.6 gigabytes in high def. Amazon’s public data egress pricing (outside of Asia) is $0.045 per gigabyte so these full time Zoomers end up costing Zoom anywhere between 50 cents and a dollar per month. Of course this assumes a one-to-one feed and as the number of participants in a meeting increase the costs can go up pretty quickly although I expect Zoom made some optimizations to avoid sending the non-visible streams.</p>
+
+<p>The above approaches paint a very different picture - the first makes it seem that the Zoom infrastructure is incredibly expensive to operate while the latter makes it seem that it’s incredibly cheap. I suspect the reality is somewhere in between. In any case, their current usage explosion is  incredibly valuable for them - both because they’re likely still profitable but also because they’re able to acquire new customers that will convert to the higher margin when things get back to normal. Their next earnings report will be very interesting to follow.</p>
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/03/01/paying-for-improved-productivity/" title="Paying for improved productivity">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F03%2F15%2Fzooms-blow-up-and-their-financials%2F&title=Zoom%27s+blow+up+and+their+financials">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -813,7 +856,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
