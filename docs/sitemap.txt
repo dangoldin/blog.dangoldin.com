@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/03/28/covid-19/
 http://dangoldin.com/2020/03/15/zooms-blow-up-and-their-financials/
 http://dangoldin.com/2020/03/01/paying-for-improved-productivity/
 http://dangoldin.com/2020/02/27/my-personal-grafana-dashboard/
