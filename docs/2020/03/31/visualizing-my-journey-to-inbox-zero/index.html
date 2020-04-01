@@ -23,25 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Visualizing my journey to Inbox Zero</title>
+  <meta name="description" content="In my pursuit of quantifying more and more I now have a dashboard that tracks the amount of messages in my email inbox.">
+  <meta name="keywords" content="grafana, inbox zero, quantified self" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Visualizing my journey to Inbox Zero" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero/" />
+  <meta property="og:title"               content="Visualizing my journey to Inbox Zero" />
 
   
+  <meta property="og:description"         content="In my pursuit of quantifying more and more I now have a dashboard that tracks the amount of messages in my email inbox." />
+  <meta name="twitter:description"        content="In my pursuit of quantifying more and more I now have a dashboard that tracks the amount of messages in my email inbox." />
+  
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/grafana-emails-in-inbox.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/grafana-emails-in-inbox.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -51,10 +57,10 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2020-03-31T23:20:40-04:00",
-  "dateModified": "2020-03-31T23:20:40-04:00",
+  "mainEntityOfPage": "http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero/",
+  "headline": "Visualizing my journey to Inbox Zero",
+  "datePublished": "2020-03-31T00:00:00-04:00",
+  "dateModified": "2020-03-31T00:00:00-04:00",
   "description": "",
   "author": {
     "@type": "Person",
@@ -719,35 +725,124 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Visualizing my journey to Inbox Zero</h1>
+      <span class="date">31 March 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<amp-img src="/assets/static/images/grafana-emails-in-inbox.png" alt="Number of emails in my inbox by account" width="1855" height="518" layout="responsive"></amp-img>
+
+<p>I subscribe to the “Inbox Zero” philosophy and treat my email inbox as a todo list that I slowly work through. As part of the desire to get more and more quantitative I wrote a quick script to pull the number of emails from my Inbox and then insert the data as a row into a new table in my personal stats database. As usual, most of the work was in deciding to do it and once I got to coding the hacky solution was done within 20 minutes. The script uses Python’s built-in <a href="https://docs.python.org/3/library/imaplib.html">imaplib</a> library to log in to an email provider and then a simple MySQL query to insert the resulting data. I hooked this up to run every 15 minutes via cron and put together a Grafana dashboard to plot the count over time. I’m currently not actually going through the content of the email messages themselves but there are tons of directions I can take this - for example slicing the data by sender or examining the age of the messages. For now I’m just hopeful this motivates me to keep going through that email.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#! /usr/bin/python3
+</span>
+<span class="kn">import</span> <span class="nn">imaplib</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
+
+<span class="c1"># TODO: Handle credentials better (environment, config, etc)
+</span><span class="n">IMAP_INFO</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'work'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'imap_host'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_port'</span><span class="p">:</span> <span class="mi">993</span><span class="p">,</span>
+        <span class="s">'imap_user'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_pass'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s">'personal'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'imap_host'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_port'</span><span class="p">:</span> <span class="mi">993</span><span class="p">,</span>
+        <span class="s">'imap_user'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_pass'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">db_host</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_user</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_pass</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_database</span> <span class="o">=</span> <span class="s">''</span>
+
+<span class="k">def</span> <span class="nf">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">):</span>
+    <span class="n">imap</span> <span class="o">=</span> <span class="n">imaplib</span><span class="o">.</span><span class="n">IMAP4_SSL</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_host'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_port'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_user'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_pass'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">'Inbox'</span><span class="p">)</span>
+    <span class="n">tmp</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">'ALL'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">):</span>
+    <span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="n">db_host</span><span class="p">,</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">db_user</span><span class="p">,</span>
+        <span class="n">passwd</span> <span class="o">=</span> <span class="n">db_pass</span><span class="p">,</span>
+        <span class="n">database</span> <span class="o">=</span> <span class="n">db_database</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">mycursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO email_stats (account_name, num_emails) VALUES (</span><span class="si">%</span><span class="s">s, </span><span class="si">%</span><span class="s">s)"</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span>
+    <span class="n">mycursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">mydb</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mycursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">,</span> <span class="s">"record inserted."</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">account_name</span><span class="p">,</span> <span class="n">creds</span> <span class="ow">in</span> <span class="n">IMAP_INFO</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">num_emails</span> <span class="o">=</span> <span class="n">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Fetched'</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">,</span> <span class="s">'in'</span><span class="p">,</span> <span class="n">account_name</span><span class="p">)</span>
+    <span class="n">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span></code></pre></figure>
+
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/03/29/disabling-tabnine-to-improve-ubuntu-performance/" title="Disabling TabNine to improve Ubuntu performance">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F03%2F31%2Fvisualizing-my-journey-to-inbox-zero%2F&title=Visualizing+my+journey+to+Inbox+Zero">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -813,7 +908,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

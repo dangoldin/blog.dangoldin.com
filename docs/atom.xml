@@ -3,13 +3,79 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-03-29T23:02:14-04:00</updated>
+ <updated>2020-03-31T23:20:40-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Visualizing my journey to Inbox Zero</title>
+   <link href="http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero/"/>
+   <updated>2020-03-31T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/grafana-emails-in-inbox.png" alt="Number of emails in my inbox by account" width="1855" height="518" layout="responsive"/>
+
+<p>I subscribe to the “Inbox Zero” philosophy and treat my email inbox as a todo list that I slowly work through. As part of the desire to get more and more quantitative I wrote a quick script to pull the number of emails from my Inbox and then insert the data as a row into a new table in my personal stats database. As usual, most of the work was in deciding to do it and once I got to coding the hacky solution was done within 20 minutes. The script uses Python’s built-in <a href="https://docs.python.org/3/library/imaplib.html">imaplib</a> library to log in to an email provider and then a simple MySQL query to insert the resulting data. I hooked this up to run every 15 minutes via cron and put together a Grafana dashboard to plot the count over time. I’m currently not actually going through the content of the email messages themselves but there are tons of directions I can take this - for example slicing the data by sender or examining the age of the messages. For now I’m just hopeful this motivates me to keep going through that email.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#! /usr/bin/python3
+</span>
+<span class="kn">import</span> <span class="nn">imaplib</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
+
+<span class="c1"># TODO: Handle credentials better (environment, config, etc)
+</span><span class="n">IMAP_INFO</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'work'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'imap_host'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_port'</span><span class="p">:</span> <span class="mi">993</span><span class="p">,</span>
+        <span class="s">'imap_user'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_pass'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s">'personal'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'imap_host'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_port'</span><span class="p">:</span> <span class="mi">993</span><span class="p">,</span>
+        <span class="s">'imap_user'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+        <span class="s">'imap_pass'</span><span class="p">:</span> <span class="s">''</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">db_host</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_user</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_pass</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">db_database</span> <span class="o">=</span> <span class="s">''</span>
+
+<span class="k">def</span> <span class="nf">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">):</span>
+    <span class="n">imap</span> <span class="o">=</span> <span class="n">imaplib</span><span class="o">.</span><span class="n">IMAP4_SSL</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_host'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_port'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_user'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_pass'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">'Inbox'</span><span class="p">)</span>
+    <span class="n">tmp</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">'ALL'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">):</span>
+    <span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="n">db_host</span><span class="p">,</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">db_user</span><span class="p">,</span>
+        <span class="n">passwd</span> <span class="o">=</span> <span class="n">db_pass</span><span class="p">,</span>
+        <span class="n">database</span> <span class="o">=</span> <span class="n">db_database</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">mycursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO email_stats (account_name, num_emails) VALUES (</span><span class="si">%</span><span class="s">s, </span><span class="si">%</span><span class="s">s)"</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span>
+    <span class="n">mycursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">mydb</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mycursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">,</span> <span class="s">"record inserted."</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">account_name</span><span class="p">,</span> <span class="n">creds</span> <span class="ow">in</span> <span class="n">IMAP_INFO</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">num_emails</span> <span class="o">=</span> <span class="n">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Fetched'</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">,</span> <span class="s">'in'</span><span class="p">,</span> <span class="n">account_name</span><span class="p">)</span>
+    <span class="n">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span></code></pre></figure>
+
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Disabling TabNine to improve Ubuntu performance</title>
