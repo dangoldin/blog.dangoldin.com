@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/04/04/finding-the-truth-in-a-sea-of-misinformation/
 http://dangoldin.com/2020/03/31/visualizing-my-journey-to-inbox-zero/
 http://dangoldin.com/2020/03/29/disabling-tabnine-to-improve-ubuntu-performance/
 http://dangoldin.com/2020/03/29/a-tiktok-experience-for-streaming-services/

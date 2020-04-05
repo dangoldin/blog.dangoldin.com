@@ -3,13 +3,25 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-03-31T23:20:40-04:00</updated>
+ <updated>2020-04-04T23:20:49-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Finding the truth in a sea of misinformation</title>
+   <link href="http://dangoldin.com/2020/04/04/finding-the-truth-in-a-sea-of-misinformation/"/>
+   <updated>2020-04-04T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/04/04/finding-the-truth-in-a-sea-of-misinformation</id>
+   <content:encoded><![CDATA[
+<p>Two days ago I read an <a href="https://stratechery.com/2020/an-interview-with-zeynep-tufekci-about-masks-media-and-information-ecology/">interview</a> between Ben Thompson and Zeynep Tufekci which highlighted the current state of information (and misinformation). That same day I came across an <a href="https://marker.medium.com/what-everyones-getting-wrong-about-the-toilet-paper-shortage-c812e1358fe0">article</a> by <a href="https://twitter.com/WillOremus">Will Remus</a> on the cause of the toilet paper shortage (spoiler: it has to do with differences between the corporate and personal toilet paper supply chains). Both of these highlight how little I actually know and how valuable skeptical mindset is these days. I still don’t know the truth and it’s likely something that changes constantly but being able to separate fact from fiction is a massive advantage. The obvious example is knowing how serious COVID-19 would be and preparing for it in January. The challenges and opportunities will only get larger as the amount of information (majority of which will be misinformation) being produced increases. The ability to be objective, dig into the sources, and understand biases is going to be a critical skill in the upcoming century.</p>
+
+<p>Older generations grew up trusting TV News and still have the same bias. Modern kids, on the other hand, realize that there’s a ton of disinformation out there and know not to trust everything they see or read. Those of us in the middle need to learn from the kids and learn to navigate this information overload.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Visualizing my journey to Inbox Zero</title>
