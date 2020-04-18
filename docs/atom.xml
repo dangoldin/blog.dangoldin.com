@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-04-11T22:55:07-04:00</updated>
+ <updated>2020-04-18T14:53:49-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Google and Apple's COVID tracking project</title>
+   <link href="http://dangoldin.com/2020/04/18/google-and-apples-covid-tracking-project/"/>
+   <updated>2020-04-18T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/04/18/google-and-apples-covid-tracking-project</id>
+   <content:encoded><![CDATA[
+<p>Google and Apple recently announced a partnership to help people anonymously see if they’ve been exposed to someone with COVID. The idea itself is elegant and does a nice job balancing the functionality with the need for privacy. One of the most common takes I’ve seen in tech circles is that no one will use it due to a concern for privacy.</p>
+
+<p>I think the opposite. I believe that with enough marketing this will be a massive success. Over and over again we’ve seen that most people do not value privacy and this will be no different. In fact, for this case it may just be the opposite - most people would love to know the answer to “is there a chance I have Coronavirus.” Curiosity, one of our greatest traits, will be enough to overcome whatever privacy concerns people have.</p>
+
+<p>This is all predicated on some marketing campaign to raise awareness but something as simple as the pitch “find out if you’ve been exposed to Coronavirus by simply using your phone” would be incredibly effective. These days both Google and Apple have higher credibility than the government and the fact that this is led by two well respected private companies may actually be a benefit in the current political climate.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Dumping Apple health data into MySQL</title>
