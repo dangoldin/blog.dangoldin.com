@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-04-18T15:47:24-04:00</updated>
+ <updated>2020-04-18T23:04:03-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -38,6 +38,28 @@
 <p>I think the opposite. I believe that with enough marketing this will be a massive success. Over and over again we’ve seen that most people do not value privacy and this will be no different. In fact, for this case it may just be the opposite - most people would love to know the answer to “is there a chance I have Coronavirus.” Curiosity, one of our greatest traits, will be enough to overcome whatever privacy concerns people have.</p>
 
 <p>This is all predicated on some marketing campaign to raise awareness but something as simple as the pitch “find out if you’ve been exposed to Coronavirus by simply using your phone” would be incredibly effective. These days both Google and Apple have higher credibility than the government and the fact that this is led by two well respected private companies may actually be a benefit in the current political climate.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>AlphaGo documentary</title>
+   <link href="http://dangoldin.com/2020/04/18/alphago-documentary/"/>
+   <updated>2020-04-18T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/04/18/alphago-documentary</id>
+   <content:encoded><![CDATA[
+<amp-youtube data-videoid="WXuK6gekU1Y" layout="responsive" width="1280" height="720"></amp-youtube>
+
+<p><strong>Spoiler</strong>: If you haven’t seen the documentary and want to avoid any spoilers don’t read the post. At the same time you should watch it - it’s an incredible film.</p>
+
+<p>I watched the AlphaGo documentary and it left a powerful impression on me.</p>
+
+<p>The accomplishment by the AlphaGo team is incredible. At the same time I felt incredibly sad watching it and became slightly depressed. It felt very much like a man vs machine battle yet the machine was a huge team of engineers with nearly unlimited resources. You know that it’s inevitable that the machine wins and yet the way the documentary was done made it seem less of a highlight of the great work by the team and instead a defeat of a single person.</p>
+
+<p>The highlight was Lee Sedol’s win in Game 4 due to a move that AlphaGo attributed a tiny probability to and wasn’t able to react. At the same time, that underscores how outmatched Lee was - on one hand it was human genius and intuition that made the move on the other hand it felt like a flash in the pan based on AlphaGo’s dominance in the other games.</p>
+
+<p>I thought back to when I was a kid where we were able to have dreams at being the “best in the world at X”, where X could be any intellectual game. These days if you’re a kid the best you could hope for is to be “the best human at X” and that’s disappointing. Expected but disappointing.</p>
+
+<p>Maybe I’m a romantic but I can’t help but think that something gets lost every time there’s another AI or ML victory. I’m an optimist and know technology will change society and yet there is a cost to this progress. It may be a small price to pay but it’s also a point of no return.</p>
 ]]></content:encoded>
  </entry>
  

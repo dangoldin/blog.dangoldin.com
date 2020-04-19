@@ -22,6 +22,7 @@ http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2020/04/18/optimizing-code-think-theoretical-limits/
 http://dangoldin.com/2020/04/18/google-and-apples-covid-tracking-project/
+http://dangoldin.com/2020/04/18/alphago-documentary/
 http://dangoldin.com/2020/04/11/dumping-apple-health-data-into-mysql/
 http://dangoldin.com/2020/04/07/gamification-works/
 http://dangoldin.com/2020/04/05/start-open-sourcing-government-software/
