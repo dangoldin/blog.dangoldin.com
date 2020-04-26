@@ -11,6 +11,7 @@ tags: ["#management"]
 At the beginning of the year I gave myself a goal to write more management posts. We're nearly 5 months into the year and I've written only two posts even relating to management. A big reason is impostor syndrome - while I have only been managing a few years there are so many others that have more experience, are better managers, and are more effective writers. At the same time, the lack of experience hasn't really stopped me from writing on other topics though so why should this be any different? This coupled with the fact that I write to organize my thoughts and clarify my thinking is all the more reason to commit to writing about new topics. As a start, I thought it would be helpful to share some resources that have helped me grow as a manager.
 
 **Books**
+
 There's a bit of a recency bias here since I haven't kept the best track of all the books I've read but I'll keep adding as I become more organized.
 
 * **[The Manager's Path](https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth-ebook/dp/B06XP3GJ7F/)** (Camille Fournie). Rather than focusing on a specific level this book covers the various engineering leadership roles - ranging from being a mentor to being a CEO.
