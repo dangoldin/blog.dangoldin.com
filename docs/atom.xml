@@ -3,13 +3,42 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-04-24T22:34:47-04:00</updated>
+ <updated>2020-04-25T22:12:58-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Engineering management resources</title>
+   <link href="http://dangoldin.com/2020/04/25/engineering-management-resources/"/>
+   <updated>2020-04-25T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/04/25/engineering-management-resources</id>
+   <content:encoded><![CDATA[
+<p>At the beginning of the year I gave myself a goal to write more management posts. We’re nearly 5 months into the year and I’ve written only two posts even relating to management. A big reason is impostor syndrome - while I have only been managing a few years there are so many others that have more experience, are better managers, and are more effective writers. At the same time, the lack of experience hasn’t really stopped me from writing on other topics though so why should this be any different? This coupled with the fact that I write to organize my thoughts and clarify my thinking is all the more reason to commit to writing about new topics. As a start, I thought it would be helpful to share some resources that have helped me grow as a manager.</p>
+
+<p><strong>Books</strong>
+There’s a bit of a recency bias here since I haven’t kept the best track of all the books I’ve read but I’ll keep adding as I become more organized.</p>
+
+<ul>
+  <li><strong><a href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth-ebook/dp/B06XP3GJ7F/">The Manager’s Path</a></strong> (Camille Fournie). Rather than focusing on a specific level this book covers the various engineering leadership roles - ranging from being a mentor to being a CEO.</li>
+  <li><strong><a href="https://www.amazon.com/Making-Manager-What-Everyone-Looks/dp/0735219567">The Making of a Manager</a></strong> (Julie Zhou). The aim here is to give new managers a framework to think about management through a variety of personal anecdotes.</li>
+  <li><strong><a href="https://www.amazon.com/Trillion-Dollar-Coach-Leadership-Playbook/dp/B07MVKGV9V/">Trillion Dollar Coach</a></strong> (Eric Schmidt, Jonathan Rosenberg, Alan Eagle). This is not a typical engineering management book but covers a variety of lessons that Bill Campbell, the legendary angel investor, shared over his mentorship career.</li>
+  <li><strong><a href="https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management-ebook/dp/B07QYCHJ7V">An Elegant Puzzle</a></strong> (Will Larsen). Oftentimes books avoid giving advice in order to avoid being too black and white but that’s not the case here. Similar to The Making of a Manager, this is based on personal anecdotes and has advice covering a variety of areas.</li>
+  <li><strong><a href="https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205">The Hard Thing about Hard Things</a></strong> (Ben Horowitz). This reads like a series of personal anecdotes that each come with a lesson. There’s no unifying theme here but the advice itself feels more raw than the other books on this list.</li>
+  <li><strong><a href="https://leadingsnowflakes.com/">Leading Snowflakes</a></strong> (Oren Ellenbogen). This was the first book I read as a manager and remember it doing a great job giving prescriptive advice to the new manager with concrete exercises and “homework” to do.</li>
+  <li><strong><a href="https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884">High Output Management</a></strong> (Andy Grove). Impossible to include a management book list and not have this classic on here. High Output Management is less about engineering management and more about the role of management, the ways to drive leverage, and a bit of practical advice.</li>
+</ul>
+
+<p><strong>Newsletters</strong></p>
+<ul>
+  <li><strong><a href="https://firstround.com/review/">First Round Review</a></strong>. This is a series geared towards entrepreneurs where each article highlights an industry leader with a particular lesson to share. It’s rare that an article isn’t valuable and I strongly encourage everyone to subscribe.</li>
+  <li><strong><a href="https://softwareleadweekly.com/">Software Lead Weekly</a></strong>. This is a weekly newsletter for software engineering leaders (thus the name) and provides a list of recommended reads along with a quick blurb. Some of the topics are about technology but the majority are about the people side of engineering management.</li>
+</ul>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Margin of victory</title>
