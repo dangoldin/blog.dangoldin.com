@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Lore</title>
-  <meta name="description" content="Slowly buildign up a collection of hacker lore">
-  <meta name="keywords" content="lore, hacker lore, stories" />
+  <title>Data analysis and visualization</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="python, data analysis, data visualization" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/lore/">
+  <link rel="canonical" href="http://dangoldin.com/2020/04/29/data-analysis-and-visualization/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Lore" />
+  <meta name="twitter:title" content="Data analysis and visualization" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/lore/" />
-  <meta property="og:title"               content="Lore" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/04/29/data-analysis-and-visualization/" />
+  <meta property="og:title"               content="Data analysis and visualization" />
 
   
-  <meta property="og:description"         content="Slowly buildign up a collection of hacker lore" />
-  <meta name="twitter:description"        content="Slowly buildign up a collection of hacker lore" />
+  <meta property="og:description"         content="" />
+  <meta name="twitter:description"        content="" />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/sample-weekly-dim1-dim2.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/sample-weekly-dim1-dim2.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/lore/",
-  "headline": "Lore",
-  "datePublished": "2020-04-29T00:15:57-04:00",
-  "dateModified": "2020-04-29T00:15:57-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/04/29/data-analysis-and-visualization/",
+  "headline": "Data analysis and visualization",
+  "datePublished": "2020-04-29T00:00:00-04:00",
+  "dateModified": "2020-04-29T00:00:00-04:00",
+  "description": "Yesterday I had the rare chance to actually do some coding and realized how rusty I am at numerical analysis in Python. The task was simple - ingest a CSV th...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,22 +725,105 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Lore</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Data analysis and visualization</h1>
+      <span class="date">29 April 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<ul>
-  <li><a href="http://nedbatchelder.com/blog/200811/print_this_file_your_printer_will_jam.html">Print this file, your printer will jam</a></li>
-  <li><a href="http://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
-  <li><a href="http://www.cgl.uwaterloo.ca/smann/IceCream/humor.html">Car not starting after buying vanilla ice cream</a></li>
-  <li><a href="http://catb.org/esr/jargon/html/magic-story.html">Magical switch on an MIT computer</a></li>
-  <li><a href="http://patrickthomson.tumblr.com/post/2499755681/the-best-debugging-story-ive-ever-heard">Print jobs failing after 6 hours</a></li>
-  <li><a href="http://beza1e1.tuxen.de/lore/">Others</a></li>
-</ul>
+<p>Yesterday I had the rare chance to actually do some coding and realized how rusty I am at numerical analysis in Python. The task was simple - ingest a CSV that had a date column, two categorical columns, and a numerical column - and then generate a grid containing a series of line plots, each of which would be a combination of the two categorical columns.</p>
+
+<p>I did a ton of this work years ago so knew what was possible. That’s half the battle and after a bit of searches I got a working solution. At the same time I’m disappointed it took me that long, especially after seeing the brevity of the end result. Software ate the world and now every business is generating tons of data. Being able to make sense of it is an increasingly important skill set especially if you’re a leader. It’s unfortunately an area I haven’t kept up with over the years and something I plan on remedying after this experience.</p>
+
+<p>I also couldn’t help but be inspired by <a href="https://rt.live/">rt.live</a>, if the founders of Instagram have both the skillset and the inclination to do data work it’s a good indicator that there’s something there.</p>
+
+<amp-img src="/assets/static/images/sample-weekly-dim1-dim2.png" alt="Example screenshot of the grid plot" width="6000" height="6000" layout="responsive"></amp-img>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">'font.size'</span><span class="p">:</span> <span class="mi">6</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">'figure.figsize'</span><span class="p">:</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)})</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'weekly-dim1-dim2.txt'</span><span class="p">)</span>
+
+<span class="c1"># Fix up dates
+</span><span class="n">df2</span><span class="p">[</span><span class="s">'week_dt'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s">'week'</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d'</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s">'week_dt'</span><span class="p">])</span>
+
+<span class="c1"># Get unique vals
+</span><span class="n">dim1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s">'dim1'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+<span class="n">dim2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s">'dim2'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">d1</span><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span>
+
+<span class="c1"># Generate plots per dim1 and dim2 combination subject to data and threshold
+</span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">d2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d2</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="p">[</span><span class="s">'dim1'</span><span class="p">]</span><span class="o">==</span><span class="n">d1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s">'dim2'</span><span class="p">]</span><span class="o">==</span><span class="n">d2</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s">'week_dt'</span><span class="p">])[</span><span class="s">'num'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="o">+</span> <span class="s">'-'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">w_pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">h_pad</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'out.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span></code></pre></figure>
+
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/04/25/engineering-management-resources/" title="Engineering management resources">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F04%2F29%2Fdata-analysis-and-visualization%2F&title=Data+analysis+and+visualization">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -803,7 +889,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
