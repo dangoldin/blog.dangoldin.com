@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-04-29T00:15:57-04:00</updated>
+ <updated>2020-05-02T23:16:51-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Sometimes it really is just the dirty, hard work</title>
+   <link href="http://dangoldin.com/2020/05/02/sometimes-it-really-is-just-the-dirty-hard-work/"/>
+   <updated>2020-05-02T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/05/02/sometimes-it-really-is-just-the-dirty-hard-work</id>
+   <content:encoded><![CDATA[
+<p>It’s easy to fall into the trap of only wanting to do the new and sexy thing and giving up as soon as something requires the dirty work. That’s rarely a strategy for success and jumping from one idea to another idea and only focusing on the interesting parts is a sure fire way to not get anything done.</p>
+
+<p>Last week I had a brief conversation with Twitter that got me looking for Apple’s S-1. Apple filed this in 1980 as part of their IPO process and on one hand it’s remarkable that you can find a <a href="https://www.sec.gov/files/18-02062-FOIA.pdf">40 year old document online</a> and yet on the other hand it’s disappointing that it came as a PDF. I imagine every year there are thousands (tens of thousands?) of people that want to take a look at the IPO docs of one of the most impressive tech companies and yet end up with a poorly rendered version. What if someone took the time to modernize it and convert it to a modern S-1? A massive amount of people would benefit and they would get the credit.</p>
+
+<p>I tried searching for a non-PDF version and wasn’t able to find one. Why not? It’s incredibly menial work. There are tools that do a light conversion but you’d spend dozens of hours polishing and making sure the non-textual data was properly converted.</p>
+
+<p>Does this mean that I’m going to convert Apple’s S-1 from a PDF to HTML? No. I understand the hypocrisy but who has the time?</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Data analysis and visualization</title>
