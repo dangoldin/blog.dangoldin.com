@@ -3,13 +3,35 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-05-16T22:49:59-04:00</updated>
+ <updated>2020-05-21T22:21:44-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Shopify for food delivery</title>
+   <link href="http://dangoldin.com/2020/05/21/shopify-for-food-delivery/"/>
+   <updated>2020-05-21T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/05/21/shopify-for-food-delivery</id>
+   <content:encoded><![CDATA[
+<p>I wrote about the idea of a service that <a href="http://dangoldin.com/2018/11/29/a-delivery-aggregation-service/">aggregates delivery drivers</a> back in 2018 but given the latest wave of food delivery service bashing I couldn’t help but think of it again. This time around my thoughts are a bit more refined about how to actually build a business but do think there’s a real opportunity here, especially after seeing the challenges with the current model.</p>
+
+<p>The existing food delivery apps charge high fees because food delivery is one of the highest costs. That’s the part that needs to be improved in order for the companies to make sense. As many people note restaurants have been delivering food on their own for decades while maintaining profitability so it’s clearly possible. Yet these online services struggle. Instead of focusing on the delivery side they’re in a race to capture as much of the demand as possible.</p>
+
+<p>What if instead there was a focus on aggregating the delivery infrastructure in order to make the delivery network as efficient as possible. The goal would not be to drive demand to restaurants but instead to integrate with restaurants in order to provide a single delivery network that could be optimized globally.</p>
+
+<p>One way to think about it is ordering from Amazon - you can pick a completely random assortment of objects and yet Amazon is able to orchestrate the delivery into as few packages as possible and have them delivered within days of one another. That’s incredible. But they’re only able to do it because they have the scale to make it possible. Another way to think about it is how Shopify allows anyone to launch an ecommerce site while handling the logistics on the backend. Consumers are dealing with the site itself and have no knowledge that the heavy-lifting is handled by Shopify. Using this analogy, the food delivery services are all Amazon and there’s an opportunity in building the Shopify for food delivery.</p>
+
+<p>There are quite a few companies out there working on this - <a href="https://www.olo.com/">Olo</a>, <a href="https://get.chownow.com/">ChowNow</a>, and <a href="https://pos.toasttab.com/products/toast-delivery-services">Toast</a> all come to mind - but they’re looking at delivery as a feature rather than treating it as the primary product.</p>
+
+<p>It’s an incredibly complex space but I’m surprised that none of these restaurant-logistics focused companies have a user facing portal. It’s true that their core product is not focused on demand aggregation and yet it would be valuable to restaurants. They would not need to charge any of the markup the existing food delivery services charge since they’d be making money on the backend and do not have to worry about manipulating the results for profit. Instead, they can avoid the gimmicks and just allow searching by name with standard sorting and filtering. Given how much restaurants are being charged this would be an easy win for them.</p>
+
+<p>If you go to a typical restaurant you will notice drivers from GrubHub, DoorDash, and UberEats all waiting to pick up food at the same time. That’s inefficient! Instead these drivers should be picking up at places that would lead to a global optimum. This can only happen if there’s visibility into every order and this service should exist.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>The curse of mastery</title>
