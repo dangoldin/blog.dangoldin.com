@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/05/23/stock-portfolio-hedging-during-the-coronavirus-pandemic/
 http://dangoldin.com/2020/05/21/shopify-for-food-delivery/
 http://dangoldin.com/2020/05/21/prefer-verbs-to-adverbs/
 http://dangoldin.com/2020/05/16/the-curse-of-mastery/
