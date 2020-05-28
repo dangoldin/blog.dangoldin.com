@@ -3,13 +3,39 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-05-23T23:00:31-04:00</updated>
+ <updated>2020-05-27T23:19:16-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Metrics, logging, and error reporting</title>
+   <link href="http://dangoldin.com/2020/05/27/metrics-logging-and-error-reporting/"/>
+   <updated>2020-05-27T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/05/27/metrics-logging-and-error-reporting</id>
+   <content:encoded><![CDATA[
+<p>As software engineers it’s vital to understand how our applications are performing. The more information we have the better we can address problems, improve performance, and generally better solve problems for our customers. Imagine releasing a product with nothing being collected - you’d be flying blind.</p>
+
+<p>I’m a huge advocate for measuring application performance in terms of business metrics and aligning it as much with the customer experience as possible. This post does not go into that. Instead, I want to share my beliefs around measuring the technical application performance. In my mind, they’re grouped into three major categories: metrics, logging, and error reporting. There is some overlap but I find it a helpful way to think about them.</p>
+
+<h3 id="metrics">Metrics</h3>
+
+<p>Metrics are by far the most useful. This ranges from the business metrics but also includes the performance of the code itself. How long do things take to run? How are the instances performing? What is the distribution of status codes? Being able to surface this data visually in a way that’s easy to explore is one of the most important things you can do to improve the performance of your application. Having a visual representation of what your code is doing is empowering and you will immediately see problems when an existing pattern is broken. These dashboards start simple but if you invest in instrumenting your code you will end up with the ability to debug most issues without having to look at anything else. My go to tools here are <a href="https://prometheus.io/">Prometheus</a> and <a href="https://grafana.com/">Grafana</a>.</p>
+
+<h3 id="logging">Logging</h3>
+
+<p>I want to like logging but it’s the least useful bit of instrumentation one can do. It’s useful during development but once an application is deployed the other instrumentation pillars end up providing more value. There will be times when you need to add temporarily detailed logging to debug an issue but logging is difficult to get right. If you collect too little it adds very little value over metrics and if you collect too much it ends up being inaccessible and costly. Especially in a high volume and distributed system logging ends up being a burden rather than a help.</p>
+
+<h3 id="error-reporting">Error reporting</h3>
+
+<p>This seems underrated but I’m a huge fan of tools like <a href="https://sentry.io/">Sentry</a> that hook into your error/exception handling code and give you descriptive context and stack traces. Especially if you take every error seriously and work tirelessly to reduce the noise your code will become more and more robust. This also takes advantage of our ability to spot anomalies since novel errors will become obvious especially if they come after a release. We build complex systems and errors are inevitable but building a culture that takes each one seriously is not. The more a team cares about the quality of their code the more eager they are to eliminate errors.</p>
+
+<p>Each of the above serves a slightly different purpose and I didn’t even go into distributed tracing but if I were to rank them I would go with metrics, then error reporting, and then logging. The more accessible the tool the more helpful it will become.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Stock portfolio hedging during the coronavirus pandemic</title>
