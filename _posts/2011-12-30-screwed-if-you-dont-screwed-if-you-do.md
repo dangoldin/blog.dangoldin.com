@@ -7,7 +7,7 @@ category:
 tags: ["#meta"]
 ---
 
-<img src="http://timenerdworld.files.wordpress.com/2011/12/godaddy-logo.jpg?w=300&amp;h=200&amp;crop=1"/>
+<amp-img src="{{ IMG_PATH }}go-daddy-logo.jpg" alt="GoDaddy logo" width="2700" height="886" layout="intrinsic"/>
 
 <p>I'm not entirely sure what to think about the GoDaddy/SOPA situation. On one hand, it's great that the online community was able to get GoDaddy to completely reverse their position on SOPA. On the other, it's disappointing that a web company would support it in the first place.</p>
 
