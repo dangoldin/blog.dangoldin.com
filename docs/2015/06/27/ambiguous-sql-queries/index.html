@@ -735,15 +735,15 @@ table {
 <p>Let’s say you have the following two tables - with items.category_id corresponding to categories.id</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">items</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-    <span class="n">category_id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">owner_id</span> <span class="nb">int</span>
+    <span class="n">id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">category_id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">owner_id</span> <span class="n">int</span>
 <span class="p">);</span>
 
 <span class="k">create</span> <span class="k">table</span> <span class="n">categories</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">id</span> <span class="n">int</span><span class="p">,</span>
+    <span class="n">code</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>It’s straightforward to join the two tables to get some basic info:</p>

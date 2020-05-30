@@ -754,25 +754,25 @@ table {
 <strong>Determine the MySQL schema</strong>. Since I know both the unit I want to analyze (blog post) and the metric I care about the schema practically writes itself. At first I chose date, title, and a few of the fields but tweaked this after the subsequent step.</li>
 </ul>
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">blog_post</span> <span class="p">(</span>
-    <span class="n">ymd</span> <span class="nb">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">slug</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">keywords</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">description</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">tags</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_chars</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_text_words</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_text_description</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_keywords</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_tags</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_images</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_links</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">ymd</span> <span class="n">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">slug</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">title</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">keywords</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">description</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">tags</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_chars</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_words</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_description</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_keywords</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_tags</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_images</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_links</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="k">unique</span> <span class="k">key</span> <span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
 <span class="p">);</span></code></pre></figure>
 
 <ul>
   <li>
-<strong>Get the data into MySQL</strong>. Lucky for me I already had an old <a href="https://github.com/dangoldin/blog-analytics">blog analysis script</a> that took my blog, cleaned up all the posts, and dumped the contents to a CSV. I had to make a few tweaks to the script to allow me to specify the exact fields to write out but after that was done I had a CSV file that could be imported to MySQL. I had a few options for how to get this data into MySQL including modifying the above script to connect to MySQL but instead decided that using a manual <code class="highlighter-rouge">LOAD DATA</code> command would suffice for now. Out of all the steps this one took the longest time - especially figuring out the right syntax for the <code class="highlighter-rouge">LOAD DATA</code> command.</li>
+<strong>Get the data into MySQL</strong>. Lucky for me I already had an old <a href="https://github.com/dangoldin/blog-analytics">blog analysis script</a> that took my blog, cleaned up all the posts, and dumped the contents to a CSV. I had to make a few tweaks to the script to allow me to specify the exact fields to write out but after that was done I had a CSV file that could be imported to MySQL. I had a few options for how to get this data into MySQL including modifying the above script to connect to MySQL but instead decided that using a manual <code class="language-plaintext highlighter-rouge">LOAD DATA</code> command would suffice for now. Out of all the steps this one took the longest time - especially figuring out the right syntax for the <code class="language-plaintext highlighter-rouge">LOAD DATA</code> command.</li>
 </ul>
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">LOAD</span> <span class="k">DATA</span> <span class="k">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'/home/dan/code/blog-analytics/out.csv'</span>
   <span class="k">REPLACE</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">blog_post</span>
@@ -783,7 +783,7 @@ table {
 
 <ul>
   <li>
-<strong>Connect Grafana to MySQL</strong>. Grafana worked right out of the box after installation with <code class="highlighter-rouge">apt get</code> but I had to create a read-only user as Grafana refused to use a user that had write access.</li>
+<strong>Connect Grafana to MySQL</strong>. Grafana worked right out of the box after installation with <code class="language-plaintext highlighter-rouge">apt get</code> but I had to create a read-only user as Grafana refused to use a user that had write access.</li>
   <li>
 <strong>Create a few dashboards</strong>. Now came the fun part. I started by trying to use Grafana’s query builder took but quickly resorted to just writing the SQL manually. The nuance here was having to convert the MySQL date field into a UNIX timestamp that worked with Grafana.</li>
 </ul>
@@ -797,12 +797,12 @@ table {
   <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="n">date_format</span><span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="s1">'%Y-%m-01'</span><span class="p">))</span> <span class="k">AS</span> <span class="nv">"time"</span><span class="p">,</span>
   <span class="k">avg</span><span class="p">(</span><span class="n">num_chars</span><span class="p">)</span> <span class="k">as</span> <span class="n">average_monthly_chars</span>
 <span class="k">FROM</span> <span class="n">blog_post</span>
-<span class="k">GROUP</span> <span class="k">BY</span> <span class="nb">time</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="nb">time</span></code></pre></figure>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">time</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">time</span></code></pre></figure>
 
 <ul>
   <li>
-<strong>Clean up the deployment</strong>. By default, Grafana runs on port 3000 and I wanted to serve it on a standard port behind HTTPS. This required installing nginx (via <code class="highlighter-rouge">apt get</code>), using it to create a simple reverse proxy, and then using <a href="https://letsencrypt.org/">Let’s Encrypt</a> to add SSL. At this point I also gave this a unique Grafana subdomain.</li>
+<strong>Clean up the deployment</strong>. By default, Grafana runs on port 3000 and I wanted to serve it on a standard port behind HTTPS. This required installing nginx (via <code class="language-plaintext highlighter-rouge">apt get</code>), using it to create a simple reverse proxy, and then using <a href="https://letsencrypt.org/">Let’s Encrypt</a> to add SSL. At this point I also gave this a unique Grafana subdomain.</li>
 </ul>
 <figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
 

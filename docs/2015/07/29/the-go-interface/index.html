@@ -734,42 +734,42 @@ table {
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">();</span>
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">();</span>
 <span class="o">}</span>
 
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Animal</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isFurry</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
   <span class="o">}</span>
 
-  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="s">"Woof"</span><span class="o">;</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">aRandomFunction</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">..</span>  <span class="o">}</span> <span class="c1">// Can take anything that implements Animal</span></code></pre></figure>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">aRandomFunction</span><span class="o">(</span><span class="n">Animal</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">..</span>  <span class="o">}</span> <span class="c1">// Can take anything that implements Animal</span></code></pre></figure>
 
 <p>With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.</p>
 
 <p>Go’s approach is different. In go you would define the interface as usual with the expected methods and you would write functions that accept the interface as the argument. But instead of explicitly specifying that a particular object implements an interface you just do it. Then if it turns out you’ve successfully implemented the methods you can use that object wherever the interface is expected. The compiler is still able to point out signature issues since it can tell when you’re trying to use an object with a required method but it’s done in an implicit way. Below’s the equivalent Go code:</p>
 
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span> <span class="n">Animal</span> <span class="k">interface</span> <span class="p">{</span>
-  <span class="n">isFurry</span><span class="p">()</span> <span class="kt">bool</span>
-  <span class="n">speak</span> <span class="kt">string</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span><span class="x"> </span><span class="n">Animal</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+  </span><span class="n">speak</span><span class="x"> </span><span class="kt">string</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">type</span> <span class="n">Dog</span> <span class="k">struct</span> <span class="p">{</span>
-<span class="p">}</span>
+</span><span class="k">type</span><span class="x"> </span><span class="n">Dog</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="p">(</span><span class="n">d</span> <span class="n">Dog</span><span class="p">)</span> <span class="n">isFurry</span><span class="p">()</span> <span class="kt">bool</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="no">true</span>
-<span class="p">}</span>
+</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">isFurry</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="k">return</span><span class="x"> </span><span class="no">true</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="p">(</span><span class="n">d</span> <span class="n">Dog</span><span class="p">)</span> <span class="n">speak</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s">"Woof"</span>
-<span class="p">}</span>
+</span><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">Dog</span><span class="p">)</span><span class="x"> </span><span class="n">speak</span><span class="p">()</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="k">return</span><span class="x"> </span><span class="s">"Woof"</span><span class="x">
+</span><span class="p">}</span><span class="x">
 
-<span class="k">func</span> <span class="n">aRandomFunction</span><span class="p">(</span><span class="n">a</span> <span class="n">Animal</span><span class="p">)</span> <span class="p">{</span> <span class="o">..</span> <span class="p">}</span></code></pre></figure>
+</span><span class="k">func</span><span class="x"> </span><span class="n">aRandomFunction</span><span class="p">(</span><span class="n">a</span><span class="x"> </span><span class="n">Animal</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x"> </span><span class="o">..</span><span class="x"> </span><span class="p">}</span></code></pre></figure>
 
 <p>Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.</p>
 
