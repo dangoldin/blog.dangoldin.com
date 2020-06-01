@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Three categories of software engineering work</title>
-  <meta name="description" content="One way to think about software engineering work is to group into the work that should have been done yesterday, the work that has a deadline, and the work t...">
-  <meta name="keywords" content="software engineering management" />
+  <title>Giving Obsidian a shot</title>
+  <meta name="description" content="I love the idea of the networked-thought note taking apps but don't want to use a cloud product or a proprietary format. Luckily I discovered Obsidian.">
+  <meta name="keywords" content="obsidian, roam, note taking" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/05/30/three-categories-of-software-engineering-work/">
+  <link rel="canonical" href="http://dangoldin.com/2020/05/31/giving-obsidian-a-shot/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Three categories of software engineering work" />
+  <meta name="twitter:title" content="Giving Obsidian a shot" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/05/30/three-categories-of-software-engineering-work/" />
-  <meta property="og:title"               content="Three categories of software engineering work" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/05/31/giving-obsidian-a-shot/" />
+  <meta property="og:title"               content="Giving Obsidian a shot" />
 
   
-  <meta property="og:description"         content="One way to think about software engineering work is to group into the work that should have been done yesterday, the work that has a deadline, and the work that's important but not urgent." />
-  <meta name="twitter:description"        content="One way to think about software engineering work is to group into the work that should have been done yesterday, the work that has a deadline, and the work that's important but not urgent." />
+  <meta property="og:description"         content="I love the idea of the networked-thought note taking apps but don't want to use a cloud product or a proprietary format. Luckily I discovered Obsidian." />
+  <meta name="twitter:description"        content="I love the idea of the networked-thought note taking apps but don't want to use a cloud product or a proprietary format. Luckily I discovered Obsidian." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/05/30/three-categories-of-software-engineering-work/",
-  "headline": "Three categories of software engineering work",
-  "datePublished": "2020-05-30T00:00:00-04:00",
-  "dateModified": "2020-05-30T00:00:00-04:00",
-  "description": "Managers love frameworks to help think through problems and I’m no different. While trying to think of a way to reason through our engineering work I started...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/05/31/giving-obsidian-a-shot/",
+  "headline": "Giving Obsidian a shot",
+  "datePublished": "2020-05-31T00:00:00-04:00",
+  "dateModified": "2020-05-31T00:00:00-04:00",
+  "description": "I tried using Notion a while back but rebelled against having my data stored in the cloud in a proprietary format. For a variety of reasons I want my notes t...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,25 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Three categories of software engineering work</h1>
-      <span class="date">30 May 2020</span>
+      <h1 class="post-title">Giving Obsidian a shot</h1>
+      <span class="date">31 May 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>Managers love frameworks to help think through problems and I’m no different. While trying to think of a way to reason through our engineering work I started grouping it into three major categories:</p>
+<p>I tried using Notion a while back but rebelled against having my data stored in the cloud in a proprietary format. For a <a href="/2016/04/30/text-is-king/">variety of reasons</a> I want my notes to be available locally in a text based format. At the same time there’s a lot to like about the modern tools and I feel myself being worn down. A few weeks ago I discovered <a href="https://roamresearch.com/">Roam</a> and am sold on its networked thought model. I’ve been using it for some of my note taking but was hesitant to commit given my concerns. Earlier this week I came across <a href="https://obsidian.md/">Obsidian</a> - a Roam-like product that runs locally and stores everything in Markdown. This was opportune timing since I’m able to lean in on the networked thought model while still staying true to local files in an open format. I’m still getting used to Obsidian’s semantics - tags, links, and Markdown - but overall I’m bullish and glad to give it a shot.</p>
 
-<p><strong>Should have been done yesterday</strong>. Self explanatory but these are the items that as soon as you discover them you wish they had already been done. Critical bugs and issues fall into this but also product oversights that you wish you caught earlier.</p>
+<p>Obsidian is also a great example of why I keep my notes in a text format. All I had to do to get them into Obsidian was run find . -name “*.txt” -exec rename ‘s/.txt$/.md/’ ‘{}’ \; which replaced the .txt extension with .md for every file in my notes folder. This just would not have been possible had my notes been stored in the cloud in some proprietary format. Similarly, since Markdown is itself open and I can easily go back to plaintext - although I will likely need to do a bit of scripting to actually clean up the files.</p>
 
-<p><strong>Has a deadline</strong>. Deadlines are an interesting topic and they only exist as much as you want them to. There are true deadlines - imagine wanting to release something in time for the Superbowl or South by Southwest - but more often they are self imposed in order to hit a specific date. A weak reason is to motivate a team but a better reason is to hit a launch date. In that case customers, partners, and other departments are involved and a delay would cause ripple effects across everyone involved.</p>
-
-<p><strong>Important but can slip</strong>. This is the work that’s important but not urgent. A delay of a week here or there will not determine the success of this project and will not have significant ripple effects. These are often infrastructure related with the goal of investing in the foundation for future work.</p>
-
-<p>It’s useful to look at the work your team is doing and grouping it into those categories. If you have too much of the first it’s likely your team is either understaffed or not planning effectively. If you have too much in the middle bucket you’re likely not investing enough in the future and accruing unhandled tech debt. Too much in the last one and you may not be focused on customer facing products.</p>
-
-<p>There is no correct distribution since it will vary from company to company and industry to industry but it is useful to track and understand the work. Companies that are more service oriented and have many enterprise contracts may have a higher proportion of deadline driven work. Companies that are more consumer focused may have most of their work in the important but not urgent bucket.</p>
-
-<p>What is valuable is to see if you can shift work from one bucket to another. If a project has deadlines due to the multi-team effort involved is it possible to reorganize the teams so that it can be done by fewer teams? If you’re constantly discovering work that should have been done yesterday is there a way to identify the pattern in these interruptions and build a product to make them go away? It may not be possible but having a framework gives you a tool to at least think through options and may engender some valuable thoughts.</p>
+<p>I understand that adopting a proprietary format can improve the product it’s often a form of lockin that I’m just not willing to accept. I wish more people had this mindset so we’d see less cloud software and more open desktop software - especially for sensitive use cases.</p>
 
     </section>
 
@@ -757,7 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##manageent-ref">#manageent </a></li>
+      <li><a href="/tags/##productivity-ref">#productivity </a></li>
     
   
 
@@ -774,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/05/29/anatomy-of-a-crypto-mining-hack/" title="Anatomy of a crypto mining hack">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/05/30/three-categories-of-software-engineering-work/" title="Three categories of software engineering work">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/05/31/giving-obsidian-a-shot/" title="Giving Obsidian a shot">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -789,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F05%2F30%2Fthree-categories-of-software-engineering-work%2F&title=Three+categories+of+software+engineering+work">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F05%2F31%2Fgiving-obsidian-a-shot%2F&title=Giving+Obsidian+a+shot">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

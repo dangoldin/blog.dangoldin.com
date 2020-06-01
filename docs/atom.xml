@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-05-30T16:46:34-04:00</updated>
+ <updated>2020-05-31T22:07:36-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Giving Obsidian a shot</title>
+   <link href="http://dangoldin.com/2020/05/31/giving-obsidian-a-shot/"/>
+   <updated>2020-05-31T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/05/31/giving-obsidian-a-shot</id>
+   <content:encoded><![CDATA[
+<p>I tried using Notion a while back but rebelled against having my data stored in the cloud in a proprietary format. For a <a href="/2016/04/30/text-is-king/">variety of reasons</a> I want my notes to be available locally in a text based format. At the same time there’s a lot to like about the modern tools and I feel myself being worn down. A few weeks ago I discovered <a href="https://roamresearch.com/">Roam</a> and am sold on its networked thought model. I’ve been using it for some of my note taking but was hesitant to commit given my concerns. Earlier this week I came across <a href="https://obsidian.md/">Obsidian</a> - a Roam-like product that runs locally and stores everything in Markdown. This was opportune timing since I’m able to lean in on the networked thought model while still staying true to local files in an open format. I’m still getting used to Obsidian’s semantics - tags, links, and Markdown - but overall I’m bullish and glad to give it a shot.</p>
+
+<p>Obsidian is also a great example of why I keep my notes in a text format. All I had to do to get them into Obsidian was run find . -name “*.txt” -exec rename ‘s/.txt$/.md/’ ‘{}’ \; which replaced the .txt extension with .md for every file in my notes folder. This just would not have been possible had my notes been stored in the cloud in some proprietary format. Similarly, since Markdown is itself open and I can easily go back to plaintext - although I will likely need to do a bit of scripting to actually clean up the files.</p>
+
+<p>I understand that adopting a proprietary format can improve the product it’s often a form of lockin that I’m just not willing to accept. I wish more people had this mindset so we’d see less cloud software and more open desktop software - especially for sensitive use cases.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Three categories of software engineering work</title>
