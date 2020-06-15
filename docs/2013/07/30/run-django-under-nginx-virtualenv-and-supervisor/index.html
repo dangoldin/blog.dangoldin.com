@@ -748,7 +748,7 @@ table {
 <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>project.settings.prod
 
 <span class="nv">LOGFILE</span><span class="o">=</span>/var/log/gunicorn/guni-project.log
-<span class="nv">LOGDIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="k">)</span>
+<span class="nv">LOGDIR</span><span class="o">=</span><span class="si">$(</span><span class="nb">dirname</span> <span class="nv">$LOGFILE</span><span class="si">)</span>
 <span class="nv">NUM_WORKERS</span><span class="o">=</span>3
 <span class="c"># user/group to run as</span>
 <span class="nv">USER</span><span class="o">=</span>ubuntu
@@ -772,8 +772,8 @@ table {
 	</p>
 
 <figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
-    <span class="c1"># Redirect all www.project.com requests to project.com
-</span>    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="c1"># Redirect all www.project.com requests to project.com</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">www.project.com</span><span class="p">;</span>
     <span class="kn">return</span> <span class="mi">301</span> <span class="s">http://project.com</span><span class="nv">$request_uri</span><span class="p">;</span>
 <span class="p">}</span>
@@ -781,18 +781,18 @@ table {
 <span class="k">server</span> <span class="p">{</span>
     <span class="kn">listen</span>   <span class="mi">80</span><span class="p">;</span>
     <span class="kn">server_name</span> <span class="s">project.com</span><span class="p">;</span>
-    <span class="c1"># no security problem here, since / is alway passed to upstream
-</span>    <span class="kn">root</span> <span class="n">/home/ubuntu/project/</span><span class="p">;</span>
-    <span class="c1"># serve directly - analogous for static/staticfiles
-</span>    <span class="kn">location</span> <span class="n">/media/</span> <span class="p">{</span>
-        <span class="c1"># if asset versioning is used
-</span>        <span class="kn">if</span> <span class="s">(</span><span class="nv">$query_string</span><span class="s">)</span> <span class="p">{</span>
+    <span class="c1"># no security problem here, since / is alway passed to upstream</span>
+    <span class="kn">root</span> <span class="n">/home/ubuntu/project/</span><span class="p">;</span>
+    <span class="c1"># serve directly - analogous for static/staticfiles</span>
+    <span class="kn">location</span> <span class="n">/media/</span> <span class="p">{</span>
+        <span class="c1"># if asset versioning is used</span>
+        <span class="kn">if</span> <span class="s">(</span><span class="nv">$query_string</span><span class="s">)</span> <span class="p">{</span>
             <span class="kn">expires</span> <span class="s">max</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="kn">location</span> <span class="n">/admin/media/</span> <span class="p">{</span>
-        <span class="c1"># this changes depending on your python version
-</span>        <span class="kn">root</span> <span class="n">/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib</span><span class="p">;</span>
+        <span class="c1"># this changes depending on your python version</span>
+        <span class="kn">root</span> <span class="n">/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kn">location</span> <span class="n">/static/admin</span> <span class="p">{</span>
         <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span>
@@ -803,11 +803,11 @@ table {
         <span class="kn">alias</span>   <span class="n">/home/ubuntu/project/assets/</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
-    <span class="c1"># This section is to redirect all http traffic to https if desired
-</span>    <span class="c1"># if ($http_x_forwarded_proto != 'https') {
-</span>    <span class="c1">#   rewrite ^ https://$host$request_uri? permanent;
-</span>    <span class="c1"># }
-</span>
+    <span class="c1"># This section is to redirect all http traffic to https if desired</span>
+    <span class="c1"># if ($http_x_forwarded_proto != 'https') {</span>
+    <span class="c1">#   rewrite ^ https://$host$request_uri? permanent;</span>
+    <span class="c1"># }</span>
+
         <span class="kn">client_max_body_size</span> <span class="mi">5M</span><span class="p">;</span>
         <span class="kn">client_body_buffer_size</span> <span class="mi">128k</span><span class="p">;</span>
         <span class="kn">proxy_pass_header</span> <span class="s">Server</span><span class="p">;</span>
@@ -819,8 +819,8 @@ table {
         <span class="kn">proxy_read_timeout</span> <span class="mi">300</span><span class="p">;</span>
         <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8001/</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="c1"># what to serve if upstream is not available or crashes
-</span>    <span class="kn">error_page</span> <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span> <span class="n">/media/50x.html</span><span class="p">;</span></code></pre></figure>
+    <span class="c1"># what to serve if upstream is not available or crashes</span>
+    <span class="kn">error_page</span> <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span> <span class="n">/media/50x.html</span><span class="p">;</span></code></pre></figure>
 
 </li>
 

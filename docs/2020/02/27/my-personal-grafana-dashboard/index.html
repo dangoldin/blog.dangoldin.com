@@ -754,19 +754,19 @@ table {
 <strong>Determine the MySQL schema</strong>. Since I know both the unit I want to analyze (blog post) and the metric I care about the schema practically writes itself. At first I chose date, title, and a few of the fields but tweaked this after the subsequent step.</li>
 </ul>
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">blog_post</span> <span class="p">(</span>
-    <span class="n">ymd</span> <span class="n">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">slug</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">title</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">keywords</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">description</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">tags</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_chars</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_text_words</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_text_description</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_keywords</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_tags</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_images</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
-    <span class="n">num_links</span> <span class="n">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">ymd</span> <span class="nb">date</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">slug</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">keywords</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">description</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">tags</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_chars</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_words</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_text_description</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_keywords</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_tags</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_images</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
+    <span class="n">num_links</span> <span class="nb">int</span> <span class="k">not</span> <span class="k">null</span><span class="p">,</span>
     <span class="k">unique</span> <span class="k">key</span> <span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="n">slug</span><span class="p">)</span>
 <span class="p">);</span></code></pre></figure>
 
@@ -797,8 +797,8 @@ table {
   <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="n">date_format</span><span class="p">(</span><span class="n">ymd</span><span class="p">,</span> <span class="s1">'%Y-%m-01'</span><span class="p">))</span> <span class="k">AS</span> <span class="nv">"time"</span><span class="p">,</span>
   <span class="k">avg</span><span class="p">(</span><span class="n">num_chars</span><span class="p">)</span> <span class="k">as</span> <span class="n">average_monthly_chars</span>
 <span class="k">FROM</span> <span class="n">blog_post</span>
-<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">time</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">time</span></code></pre></figure>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="nb">time</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="nb">time</span></code></pre></figure>
 
 <ul>
   <li>
@@ -812,13 +812,13 @@ table {
 		 <span class="kn">proxy_pass</span> <span class="s">http://localhost:3000/</span><span class="p">;</span>
 	<span class="p">}</span>
 
-    <span class="kn">listen</span> <span class="s">[::]:443</span> <span class="s">ssl</span> <span class="s">ipv6only=on</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span>    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span>    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/xyz.abc/fullchain.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span>    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/xyz.abc/privkey.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span>    <span class="kn">include</span> <span class="n">/etc/letsencrypt/options-ssl-nginx.conf</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span>    <span class="kn">ssl_dhparam</span> <span class="n">/etc/letsencrypt/ssl-dhparams.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot
-</span><span class="p">}</span></code></pre></figure>
+    <span class="kn">listen</span> <span class="s">[::]:443</span> <span class="s">ssl</span> <span class="s">ipv6only=on</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+    <span class="kn">ssl_certificate</span> <span class="n">/etc/letsencrypt/live/xyz.abc/fullchain.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+    <span class="kn">ssl_certificate_key</span> <span class="n">/etc/letsencrypt/live/xyz.abc/privkey.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+    <span class="kn">include</span> <span class="n">/etc/letsencrypt/options-ssl-nginx.conf</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+    <span class="kn">ssl_dhparam</span> <span class="n">/etc/letsencrypt/ssl-dhparams.pem</span><span class="p">;</span> <span class="c1"># managed by Certbot</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>The solution is far from perfect - for example if the instance hosting Grafana goes down I’d have to repeat the bulk of the above steps. At the same time, that’s a risk I’m currently willing to take, especially since the process itself was so quick and I’m manually saving down the JSON behind the dashboard.</p>
 

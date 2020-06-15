@@ -764,28 +764,28 @@ table {
 <span class="n">db_database</span> <span class="o">=</span> <span class="s">''</span>
 
 <span class="k">def</span> <span class="nf">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">):</span>
-    <span class="n">imap</span> <span class="o">=</span> <span class="n">imaplib</span><span class="o">.</span><span class="n">IMAP4_SSL</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_host'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_port'</span><span class="p">])</span>
-    <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_user'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_pass'</span><span class="p">])</span>
-    <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">'Inbox'</span><span class="p">)</span>
-    <span class="n">tmp</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">'ALL'</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">imap</span> <span class="o">=</span> <span class="n">imaplib</span><span class="p">.</span><span class="n">IMAP4_SSL</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_host'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_port'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">creds</span><span class="p">[</span><span class="s">'imap_user'</span><span class="p">],</span> <span class="n">creds</span><span class="p">[</span><span class="s">'imap_pass'</span><span class="p">])</span>
+    <span class="n">imap</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'Inbox'</span><span class="p">)</span>
+    <span class="n">tmp</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">imap</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">'ALL'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">):</span>
-    <span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">.</span><span class="n">connector</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span>
         <span class="n">host</span> <span class="o">=</span> <span class="n">db_host</span><span class="p">,</span>
         <span class="n">user</span> <span class="o">=</span> <span class="n">db_user</span><span class="p">,</span>
         <span class="n">passwd</span> <span class="o">=</span> <span class="n">db_pass</span><span class="p">,</span>
         <span class="n">database</span> <span class="o">=</span> <span class="n">db_database</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">mycursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">mycursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
 
-    <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO email_stats (account_name, num_emails) VALUES (</span><span class="si">%</span><span class="s">s, </span><span class="si">%</span><span class="s">s)"</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO email_stats (account_name, num_emails) VALUES (%s, %s)"</span>
     <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span>
-    <span class="n">mycursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-    <span class="n">mydb</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">mycursor</span><span class="o">.</span><span class="n">rowcount</span><span class="p">,</span> <span class="s">"record inserted."</span><span class="p">)</span>
+    <span class="n">mycursor</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+    <span class="n">mydb</span><span class="p">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mycursor</span><span class="p">.</span><span class="n">rowcount</span><span class="p">,</span> <span class="s">"record inserted."</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">account_name</span><span class="p">,</span> <span class="n">creds</span> <span class="ow">in</span> <span class="n">IMAP_INFO</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">account_name</span><span class="p">,</span> <span class="n">creds</span> <span class="ow">in</span> <span class="n">IMAP_INFO</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">num_emails</span> <span class="o">=</span> <span class="n">get_num_emails</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'Fetched'</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">,</span> <span class="s">'in'</span><span class="p">,</span> <span class="n">account_name</span><span class="p">)</span>
     <span class="n">save_stats</span><span class="p">(</span><span class="n">account_name</span><span class="p">,</span> <span class="n">num_emails</span><span class="p">)</span></code></pre></figure>
