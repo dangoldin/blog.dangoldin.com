@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>AWS 101</title>
+  <meta name="description" content="I wanted to share the agenda of the interactive AWS 101 session I gave earlier this week.">
+  <meta name="keywords" content="aws, amazon web services" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2020/06/19/aws-101/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="AWS 101" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/06/19/aws-101/" />
+  <meta property="og:title"               content="AWS 101" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="I wanted to share the agenda of the interactive AWS 101 session I gave earlier this week." />
+  <meta name="twitter:description"        content="I wanted to share the agenda of the interactive AWS 101 session I gave earlier this week." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2020-06-19T15:39:27-04:00",
-  "dateModified": "2020-06-19T15:39:27-04:00",
-  "description": "Currently the VP of engineering at TripleLift. Before that I started Better 404 and cofounded Makers Alley and Pressi. Before going down the entrepreneurial ...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/06/19/aws-101/",
+  "headline": "AWS 101",
+  "datePublished": "2020-06-19T00:00:00-04:00",
+  "dateModified": "2020-06-19T00:00:00-04:00",
+  "description": "Earlier this week I hosted an “AWS 101” session at work. The goal was to give a small group an interactive introduction to the primary AWS services over 90 m...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,25 +722,109 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">AWS 101</h1>
+      <span class="date">19 June 2020</span>
     </div>
-    <section class="page-content">
-      
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+    <section class="post-content">
+      
+<p>Earlier this week I hosted an “AWS 101” session at work. The goal was to give a small group an interactive introduction to the primary AWS services over 90 minutes. I figure I’d share our agenda and exercises in case they’re helpful to anyone else. We had trouble sticking to the times but the fact that everyone was remote did make it easier to do group-debugging with those stuck sharing their screens.</p>
 
 <ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
+  <li>Introduction to Cloud Computing and AWS
+    <ul>
+      <li>What is Cloud Computing?</li>
+      <li>How is it different/better than running your own data center?</li>
+      <li>Regions and Availability Zones</li>
+    </ul>
+  </li>
+  <li>The AWS Console
+    <ul>
+      <li>Highlight the breadth of services and how to navigate the console</li>
+    </ul>
+  </li>
+  <li>Common AWS Services (Interactive)
+    <ul>
+      <li>EC2: “Launch an instance”
+        <ul>
+          <li>Specific OS, Instance Type, VPC, Security Group, and Storage</li>
+          <li>SSH into the instance and install Apache</li>
+          <li>Go to the Public DNS and you should see the default Apache page</li>
+          <li>Notes: To make this work you need to make sure that you’ve set up the appropriate VPC and Security Group. These should have a Public IP address and have ports 22 (SSH) and 80 (HTTP) open within the Security Group. The point of the apache installation is to show something tangible and not just something visible in the AWS Console.</li>
+        </ul>
+      </li>
+      <li>S3: “Create a bucket and upload a publicly accessible file”
+        <ul>
+          <li>Notes: This took a bit of time to get right since S3 has a variety of ways to make this happen. We took the lazy route and made the bucket policy open and then modified the file publicly available.</li>
+        </ul>
+      </li>
+      <li>RDS: “Launch a MySQL instance”
+        <ul>
+          <li>Specific version, instance class, and storage size</li>
+          <li>Notes: In hindsight I would have skipped this step since the instances took too long to spin up and AWS throttled us in our test account. In addition, there’s nothing tangible after this without users logging in and that would require installing a MySQL client. It would have been better to make this part of a future session and have it be a part of an end-to-end LAMP app.</li>
+        </ul>
+      </li>
+      <li>Route 53: “Create a CNAME record to point to your EC2 instance”
+        <ul>
+          <li>Notes: This was a straightforward one and if someone was able to get the EC2 instance setup in the first step they were able to get a human readable domain name. I wanted to avoid registering another domain to save the $10 and setup subdomain delegation across accounts by pointing to the appropriate nameservers.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
-
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##aws-ref">#aws </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/06/15/software-defined-photography/" title="Software defined photography">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next"> | <a href="/2020/06/19/aws-snowcone-and-my-first-job/" title="AWS Snowcone and my first job">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F06%2F19%2Faws-101%2F&title=AWS+101">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -806,7 +890,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>

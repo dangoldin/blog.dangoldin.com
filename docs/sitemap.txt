@@ -21,6 +21,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2020/06/19/aws-snowcone-and-my-first-job/
+http://dangoldin.com/2020/06/19/aws-101/
 http://dangoldin.com/2020/06/15/software-defined-photography/
 http://dangoldin.com/2020/06/11/dark-mode-is-for-when-you-run-out-of-real-features/
 http://dangoldin.com/2020/06/10/catch-up-with-your-former-coworkers/

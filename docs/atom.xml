@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-06-19T14:48:28-04:00</updated>
+ <updated>2020-06-19T15:39:27-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -25,6 +25,59 @@
 <p>At the time, we would receive these data dumps via magnetic tapes and it was one of my tasks to load this data into a tape reader, run a series of cryptic commands on a central computer, and then start the analyses. We all had the fear of doing something wrong when we were reading the tape which would require someone more experienced to save. I don’t recall how large these files were but given it was 2005 I doubt they were more than a few hundred gigabytes. These days I’d be shocked if it’s not just transferred digitally - and even more likely it’s just processed in the cloud.</p>
 
 <p>It’s quite incredible how far we’ve come. I’m constantly reminded that every generation of software engineer gets further up in abstraction. I never had to deal with interrupts or deal with low level network problems. Yet engineers these days rarely have to deal with physical storage or limited computation resources. We all stand on the shoulders of giants.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>AWS 101</title>
+   <link href="http://dangoldin.com/2020/06/19/aws-101/"/>
+   <updated>2020-06-19T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/06/19/aws-101</id>
+   <content:encoded><![CDATA[
+<p>Earlier this week I hosted an “AWS 101” session at work. The goal was to give a small group an interactive introduction to the primary AWS services over 90 minutes. I figure I’d share our agenda and exercises in case they’re helpful to anyone else. We had trouble sticking to the times but the fact that everyone was remote did make it easier to do group-debugging with those stuck sharing their screens.</p>
+
+<ul>
+  <li>Introduction to Cloud Computing and AWS
+    <ul>
+      <li>What is Cloud Computing?</li>
+      <li>How is it different/better than running your own data center?</li>
+      <li>Regions and Availability Zones</li>
+    </ul>
+  </li>
+  <li>The AWS Console
+    <ul>
+      <li>Highlight the breadth of services and how to navigate the console</li>
+    </ul>
+  </li>
+  <li>Common AWS Services (Interactive)
+    <ul>
+      <li>EC2: “Launch an instance”
+        <ul>
+          <li>Specific OS, Instance Type, VPC, Security Group, and Storage</li>
+          <li>SSH into the instance and install Apache</li>
+          <li>Go to the Public DNS and you should see the default Apache page</li>
+          <li>Notes: To make this work you need to make sure that you’ve set up the appropriate VPC and Security Group. These should have a Public IP address and have ports 22 (SSH) and 80 (HTTP) open within the Security Group. The point of the apache installation is to show something tangible and not just something visible in the AWS Console.</li>
+        </ul>
+      </li>
+      <li>S3: “Create a bucket and upload a publicly accessible file”
+        <ul>
+          <li>Notes: This took a bit of time to get right since S3 has a variety of ways to make this happen. We took the lazy route and made the bucket policy open and then modified the file publicly available.</li>
+        </ul>
+      </li>
+      <li>RDS: “Launch a MySQL instance”
+        <ul>
+          <li>Specific version, instance class, and storage size</li>
+          <li>Notes: In hindsight I would have skipped this step since the instances took too long to spin up and AWS throttled us in our test account. In addition, there’s nothing tangible after this without users logging in and that would require installing a MySQL client. It would have been better to make this part of a future session and have it be a part of an end-to-end LAMP app.</li>
+        </ul>
+      </li>
+      <li>Route 53: “Create a CNAME record to point to your EC2 instance”
+        <ul>
+          <li>Notes: This was a straightforward one and if someone was able to get the EC2 instance setup in the first step they were able to get a human readable domain name. I wanted to avoid registering another domain to save the $10 and setup subdomain delegation across accounts by pointing to the appropriate nameservers.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 ]]></content:encoded>
  </entry>
  
