@@ -23,31 +23,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>AWS Snowcone and my first job</title>
-  <meta name="description" content="My first job required me to load and read data from a magnetic tape drive. AWS Snowcone reminds me of how far we've come.">
-  <meta name="keywords" content="magnetic tape drive, software engineering" />
+  <title>Specify versions in technical blogging</title>
+  <meta name="description" content="When writing about software it's important to include the versions of the software you're working with. That adds longevity to your post and allows people ye...">
+  <meta name="keywords" content="technical writing, open source, software versioning" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/06/19/aws-snowcone-and-my-first-job/">
+  <link rel="canonical" href="http://dangoldin.com/2020/06/28/specify-versions-in-technical-blogging/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="AWS Snowcone and my first job" />
+  <meta name="twitter:title" content="Specify versions in technical blogging" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/06/19/aws-snowcone-and-my-first-job/" />
-  <meta property="og:title"               content="AWS Snowcone and my first job" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/06/28/specify-versions-in-technical-blogging/" />
+  <meta property="og:title"               content="Specify versions in technical blogging" />
 
   
-  <meta property="og:description"         content="My first job required me to load and read data from a magnetic tape drive. AWS Snowcone reminds me of how far we've come." />
-  <meta name="twitter:description"        content="My first job required me to load and read data from a magnetic tape drive. AWS Snowcone reminds me of how far we've come." />
+  <meta property="og:description"         content="When writing about software it's important to include the versions of the software you're working with. That adds longevity to your post and allows people years later to know if the content remains relevant." />
+  <meta name="twitter:description"        content="When writing about software it's important to include the versions of the software you're working with. That adds longevity to your post and allows people years later to know if the content remains relevant." />
   
 
-  
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/ait-tapes.jpg" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/ait-tapes.jpg" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -57,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/06/19/aws-snowcone-and-my-first-job/",
-  "headline": "AWS Snowcone and my first job",
-  "datePublished": "2020-06-19T00:00:00-04:00",
-  "dateModified": "2020-06-19T00:00:00-04:00",
-  "description": "AIT Tapes on Wikipedia",
+  "mainEntityOfPage": "http://dangoldin.com/2020/06/28/specify-versions-in-technical-blogging/",
+  "headline": "Specify versions in technical blogging",
+  "datePublished": "2020-06-28T00:00:00-04:00",
+  "dateModified": "2020-06-28T00:00:00-04:00",
+  "description": "I’ve been getting back into coding by hacking around on some side projects and am definitely rusty. Lately it’s been learning the modern Django stack and dis...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -727,20 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">AWS Snowcone and my first job</h1>
-      <span class="date">19 June 2020</span>
+      <h1 class="post-title">Specify versions in technical blogging</h1>
+      <span class="date">28 June 2020</span>
     </div>
 
     <section class="post-content">
       
-<amp-img src="/assets/static/images/ait-tapes.jpg" alt="AIT tapes" width="640" height="480" layout="responsive"></amp-img>
-<p class="caption"><a href="https://en.wikipedia.org/wiki/Advanced_Intelligent_Tape">AIT Tapes on Wikipedia</a></p>
+<p>I’ve been getting back into coding by hacking around on some side projects and am definitely rusty. Lately it’s been learning the modern Django stack and discovering it’s multiple major versions ahead of the last time I used it. But thanks to the wonders of the modern internet there’s a ton of content online that explains how to do certain tasks. Stack Overflow is one but there are also a ton of individual bloggers and tutorials that make it easier than ever to answer questions.</p>
 
-<p>AWS recently launched <a href="https://aws.amazon.com/snowcone/">Snowcone</a> and it immediately reminded me of my first post-college job. I was a “Business Information Specialist” at ZS Associates, a consulting company with a strong emphasis on leveraging data to support pharmaceutical companies. The industry was setup in such a way that there were these massive vendors that would aggregate pharmaceutical prescription data from pharmacies, trace them to the prescriber (ie doctor), and then sell these back to the pharmaceutical companies. In turn, the pharmaceutical companies would give us this data to run a variety of analyses - ranging from calculating sales rep commissions, to setting their quotas, to identifying off-label prescriptions.</p>
+<p>What’s rare is for these posts to specify the versions of the software they’re describing. If I’m writing a post about a problem I’m running into I’m likely running the latest version of the library and it’s implied that my post is about that. Unfortunately, if someone discovers that post months or years later it may be entirely out of date and the suggestion being limited to the author’s version. My workaround to this has been to either look for any links to actual repository code or to look at the date the article was written in order to determine whether it may still be relevant.</p>
 
-<p>At the time, we would receive these data dumps via magnetic tapes and it was one of my tasks to load this data into a tape reader, run a series of cryptic commands on a central computer, and then start the analyses. We all had the fear of doing something wrong when we were reading the tape which would require someone more experienced to save. I don’t recall how large these files were but given it was 2005 I doubt they were more than a few hundred gigabytes. These days I’d be shocked if it’s not just transferred digitally - and even more likely it’s just processed in the cloud.</p>
-
-<p>It’s quite incredible how far we’ve come. I’m constantly reminded that every generation of software engineer gets further up in abstraction. I never had to deal with interrupts or deal with low level network problems. Yet engineers these days rarely have to deal with physical storage or limited computation resources. We all stand on the shoulders of giants.</p>
+<p>It’s surely a first world problem but especially for technical writing including the version information will be a huge help to the audience. Especially if that information ends up becoming somehow searching or filterable. Imagine if every time you tried searching Google or Stack Overflow for technical help you were able to limit them to the versions you’re using. In many cases it would be too limiting but even knowing the version the author used would be incredibly helpful.</p>
 
     </section>
 
@@ -755,7 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##history-ref">#history </a></li>
+      <li><a href="/tags/##writing-ref">#writing </a></li>
     
   
 
@@ -772,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/06/19/aws-101/" title="AWS 101">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/06/19/aws-snowcone-and-my-first-job/" title="AWS Snowcone and my first job">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/06/28/specify-versions-in-technical-blogging/" title="Specify versions in technical blogging">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -787,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F06%2F19%2Faws-snowcone-and-my-first-job%2F&title=AWS+Snowcone+and+my+first+job">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F06%2F28%2Fspecify-versions-in-technical-blogging%2F&title=Specify+versions+in+technical+blogging">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

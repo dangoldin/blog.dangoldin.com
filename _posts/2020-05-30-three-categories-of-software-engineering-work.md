@@ -5,7 +5,7 @@ description: "One way to think about software engineering work is to group into 
 keywords: "software engineering management"
 image_url:
 category:
-tags: ["#manageent"]
+tags: ["#management"]
 ---
 {% include setup %}
 Managers love frameworks to help think through problems and I'm no different. While trying to think of a way to reason through our engineering work I started grouping it into three major categories:
