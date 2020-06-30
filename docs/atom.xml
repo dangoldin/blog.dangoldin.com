@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-06-30T00:16:52-04:00</updated>
+ <updated>2020-06-30T00:23:14-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -23,15 +23,7 @@
 
 <p>I subscribe to the Unix philosophy of having programs do one thing but do it well. The first program follows this model. Yet it’s less functional than the latter, it has no support for incremental logic and I have to run a separate SQL command to load the CSV file. The second program, on the other hand, handles the entire process end to end.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The “Unix way” would be to split each bit of functionality into individual scripts that can be chained together. The first program can then be executed as “python3 analyze.py ~/blog/_posts out.csv &amp;&amp; execute_sql {query}” and the second as “get_sql_field {get_max_date_query}</td>
-      <td>python3 get_health.py export.xml</td>
-      <td>execute_sql {query}”. Neither of these feel particularly elegant since the commands feel bloated and not very easy to follow. There’s also the mixture of SQL and CSV - how functional is a program that generates SQL but doesn’t actually execute it? Is that really a self contained script?</td>
-    </tr>
-  </tbody>
-</table>
+<p>The “Unix way” would be to split each bit of functionality into individual scripts that can be chained together. The first program can then be executed as “python3 analyze.py ~/blog/_posts out.csv &amp;&amp; execute_sql {query}” and the second as “get_sql_field {get_max_date_query} | python3 get_health.py export.xml | execute_sql {query}”. Neither of these feel particularly elegant since the commands feel bloated and not very easy to follow. There’s also the mixture of SQL and CSV - how functional is a program that generates SQL but doesn’t actually execute it? Is that really a self contained script?</p>
 
 <p>It all goes to show that there are multiple ways of solving problems and there’s rarely a single obvious solution. Solutions are meant to solve problems and every problem is unique. At the moment I’m partial to having a personal library of common SQL that I can tap into - it’s a middle ground between the two approaches and allows me to get some reusability.</p>
 ]]></content:encoded>
