@@ -23,23 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Pages</title>
-  <meta name="description" content="">
-  
+  <title>Optimizing AWS reservations</title>
+  <meta name="description" content="AWS gives a variety of ways to buy reservations and there are massive savings if you can understand your business.">
+  <meta name="keywords" content="aws, compute reservations, engineering cost management" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/pages/">
+  <link rel="canonical" href="http://dangoldin.com/2020/07/08/optimizing-aws-reservations/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Pages" />
+  <meta name="twitter:title" content="Optimizing AWS reservations" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/pages/" />
-  <meta property="og:title"               content="Pages" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/07/08/optimizing-aws-reservations/" />
+  <meta property="og:title"               content="Optimizing AWS reservations" />
 
+  
+  <meta property="og:description"         content="AWS gives a variety of ways to buy reservations and there are massive savings if you can understand your business." />
+  <meta name="twitter:description"        content="AWS gives a variety of ways to buy reservations and there are massive savings if you can understand your business." />
   
 
   
@@ -51,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/pages/",
-  "headline": "Pages",
-  "datePublished": "2020-07-08T23:52:40-04:00",
-  "dateModified": "2020-07-08T23:52:40-04:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/07/08/optimizing-aws-reservations/",
+  "headline": "Optimizing AWS reservations",
+  "datePublished": "2020-07-08T00:00:00-04:00",
+  "dateModified": "2020-07-08T00:00:00-04:00",
+  "description": "The Information has an article making the case that Uber was better off having their own data centers versus relying on the cloud given the impact of COVID b...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,135 +722,78 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Pages</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Optimizing AWS reservations</h1>
+      <span class="date">08 July 2020</span>
     </div>
-    <section class="page-content">
-      
 
+    <section class="post-content">
+      
+<p>The Information has <a href="https://www.theinformation.com/articles/uber-ceo-wants-to-shift-more-engineering-jobs-to-india-sparking-internal-debate">an article</a> making the case that Uber was better off having their own data centers versus relying on the cloud given the impact of COVID but that would depend on their reservation strategy. Sure if they reserved AWS capacity then they would be on the hook. Alternatively, if they had no reservations and were running everything on demand they would have incurred higher previous costs but would immediately be able to shut things down. This got me thinking about the optimal reservation strategy - the reality is that this depends very much on your business and the ability to forecast but this is an interesting exercise in speculation.</p>
 
+<p>The best thing is to use spot instances if you can. They can give you up to a 90% (usually around 75%) discount versus the on demand price. That’s an incredible deal since a 3 year fully upfront reservation will give you a 65% discount. It may not be easy to have your application run off of spot instances but if compute costs are a significant factor then it may be a worthwhile endeavour.</p>
 
+<p>If spot instances are not doable you then get into the complex world of reservations. AWS gives you a few dimensions to play with - reservation duration (1 or 3 years), payment method (no upfront payment, partial upfront payment, or an entirely upfront payment), and the <a href="https://docs.aws.amazon.com/whitepapers/latest/cost-optimization-reservation-models/standard-vs.-convertible-offering-classes.html">convertible vs standard distinction</a>.</p>
 
+<p>Those that can forecast their workload perfectly can choose the optimal reservation for them but for the rest of us it’s not that simple. On one extreme you can go on demand and pay a fairly significant premium (~33% above the standard, 1 year, no upfront option) for the flexibility but that’s a large price to pay.</p>
 
+<p>A worthwhile option is to use the existing marketplace where you buy partially used reservations from other companies and not Amazon. This gives you the ability to buy non-standard durations and craft a strategy that makes sense for your workload. One idea might be to stagger your reservations over the course of a year so you’re reserving a twelfth of your desired capacity every month. That gives you flexibility in your reservations and gives you the option to not renew in increments - a useful ability these days. Of course you then have to manage a much more complicated policy but nothing comes easy.</p>
 
-
-
-<h2>All Pages</h2>
-<ul>
-
-
-
-
-  
-    
-      
-      	
-      	<li><a href="/archive/">Archive</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/atom.xml">Atom Feed</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories/">Categories</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/citibike-station-directions/">Citibike Station Directions</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/lore/">Lore</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/about/">About</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/">Dan Goldin</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li class="active"><a href="/pages/" class="active">Pages</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/sitemap.txt">Sitemap</a></li>
-      	
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags/">Tagged posts</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-
-</ul>
+<p>The summary is that reservations can be made as complex as you want and the more you can forecast and understand your risks the more power you will have in finding an approach that works. AWS gives a variety of levers to play with but you need to know your business to take advantage.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##aws-ref">#aws </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/06/30/overthinking-how-to-load-data-into-mysql/" title="Overthinking how to load data into MySQL">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F07%2F08%2Foptimizing-aws-reservations%2F&title=Optimizing+AWS+reservations">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -913,7 +859,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
