@@ -3,13 +3,31 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-07-08T23:52:40-04:00</updated>
+ <updated>2020-07-11T23:48:26-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Quibi's problem</title>
+   <link href="http://dangoldin.com/2020/07/11/quibis-problem/"/>
+   <updated>2020-07-11T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/07/11/quibis-problem</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/quibi-survey.png" alt="Quibi survey" width="586" height="997" layout="responsive"/>
+
+<p>Everyone loves to bash on Quibi, including me, and yet I feel guilty. We should applaud those who try something new rather than mock it in hindsight. Sure, Quibi raised a ton of money and has an illustrious team but they still deserve respect for attempting to build something from scratch.</p>
+
+<p>Earlier this week I received a Quibi survey and decided to do my part to give them honest feedback. As I was going through the survey that was attempting to understand my usage (or lack of) I developed a personal theory of why it’s failing.</p>
+
+<p>Quibi’s premise was that with the rise of mobile there’s a large number of people that want short, yet high production quality content on the go. That led to them both launching on mobile only and spending a huge amount of their cash on professional content. That intersection is the problem. Rather than increasing their market it limits it. If I want something on my phone I can just open up TikTok or Instagram and get a continual stream of video entertainment that is at a much finer granularity - not Quibi’s 10 minute mark. If, on the other hand, I want something professional I always have Netflix, or Disney+, or HBO, or Hulu, or countless others. Sure those episodes are longer but the reality is that I can stop at any time and just resume from wherever I left off.</p>
+
+<p>The focus on this intersection prevents Quibi from doing either problem well. People are not looking for one product to solve both problems and instead are willing to have a menu of choices for each.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Optimizing AWS reservations</title>
