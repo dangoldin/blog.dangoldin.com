@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/07/27/analyzing-the-aws-ec2-reservation-options/
 http://dangoldin.com/2020/07/24/amusing-russian-translations-in-duolingo/
 http://dangoldin.com/2020/07/11/quibis-problem/
 http://dangoldin.com/2020/07/08/optimizing-aws-reservations/
