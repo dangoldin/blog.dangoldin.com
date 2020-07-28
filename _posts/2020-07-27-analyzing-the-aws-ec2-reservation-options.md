@@ -18,4 +18,4 @@ Another interesting analysis is to compare the cheapest reserved option (1 year 
 
 <amp-img src="{{ IMG_PATH }}aws-ec2-reservation-comparison.png" alt="AWS EC2 Reservation type comparison" width="1189" height="736" layout="responsive"></amp-img>
 
-The code is up on [GitHub]((https://github.com/dangoldin/analyze-ec2instance.info)) with the data available on a [Google spreadsheet](https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0) so if there's anything else that stands out I'd love to know about it.
+The code is up on [GitHub](https://github.com/dangoldin/analyze-ec2instance.info) with the data available on a [Google spreadsheet](https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0) so if there's anything else that stands out I'd love to know about it.

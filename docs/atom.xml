@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-07-27T22:56:52-04:00</updated>
+ <updated>2020-07-28T09:24:22-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -27,7 +27,7 @@
 
 <img src="http://dangoldin.com/assets/static/images/aws-ec2-reservation-comparison.png" alt="AWS EC2 Reservation type comparison" width="1189" height="736" layout="responsive"/>
 
-<p>The code is up on <a href="(https://github.com/dangoldin/analyze-ec2instance.info)">GitHub</a> with the data available on a <a href="https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0">Google spreadsheet</a> so if there’s anything else that stands out I’d love to know about it.</p>
+<p>The code is up on <a href="https://github.com/dangoldin/analyze-ec2instance.info">GitHub</a> with the data available on a <a href="https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0">Google spreadsheet</a> so if there’s anything else that stands out I’d love to know about it.</p>
 ]]></content:encoded>
  </entry>
  
