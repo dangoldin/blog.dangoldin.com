@@ -23,31 +23,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Analyzing the AWS EC2 reservation options</title>
-  <meta name="description" content="AWS offers a variety of reservation options for the EC2 instances and a few things stand out when you compare them.">
-  <meta name="keywords" content="aws, amazon web services, ec2 reservations" />
+  <title>Products change, humans stay the same</title>
+  <meta name="description" content="In the past we had radio show contests that gave us large scale competition. These days we have HQ Trivia. There's an opportunity to take many of these nosta...">
+  <meta name="keywords" content="hq trivia, radio show contests" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/07/27/analyzing-the-aws-ec2-reservation-options/">
+  <link rel="canonical" href="http://dangoldin.com/2020/07/30/products-change-humans-stay-the-same/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Analyzing the AWS EC2 reservation options" />
+  <meta name="twitter:title" content="Products change, humans stay the same" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/07/27/analyzing-the-aws-ec2-reservation-options/" />
-  <meta property="og:title"               content="Analyzing the AWS EC2 reservation options" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/07/30/products-change-humans-stay-the-same/" />
+  <meta property="og:title"               content="Products change, humans stay the same" />
 
   
-  <meta property="og:description"         content="AWS offers a variety of reservation options for the EC2 instances and a few things stand out when you compare them." />
-  <meta name="twitter:description"        content="AWS offers a variety of reservation options for the EC2 instances and a few things stand out when you compare them." />
+  <meta property="og:description"         content="In the past we had radio show contests that gave us large scale competition. These days we have HQ Trivia. There's an opportunity to take many of these nostalgia-drive products and reinvent them for the modern age." />
+  <meta name="twitter:description"        content="In the past we had radio show contests that gave us large scale competition. These days we have HQ Trivia. There's an opportunity to take many of these nostalgia-drive products and reinvent them for the modern age." />
   
 
-  
-  <meta property="og:image"               content="http://dangoldin.com/assets/static/images/aws-ec2-reservation-comparison.png" />
-  <meta name="twitter:image"              content="http://dangoldin.com/assets/static/images/aws-ec2-reservation-comparison.png" />
   
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
@@ -57,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/07/27/analyzing-the-aws-ec2-reservation-options/",
-  "headline": "Analyzing the AWS EC2 reservation options",
-  "datePublished": "2020-07-27T00:00:00-04:00",
-  "dateModified": "2020-07-27T00:00:00-04:00",
-  "description": "While writing the post on AWS reservations I started thinking if there’s any arbitrage opportunity in the reservations. For example - does it make sense to d...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/07/30/products-change-humans-stay-the-same/",
+  "headline": "Products change, humans stay the same",
+  "datePublished": "2020-07-30T00:00:00-04:00",
+  "dateModified": "2020-07-30T00:00:00-04:00",
+  "description": "While on a quick driving errand a few days ago I decided to listen to the radio for the first time in years. I was quickly hit with a bit of nostalgia - the ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -727,23 +724,15 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Analyzing the AWS EC2 reservation options</h1>
-      <span class="date">27 July 2020</span>
+      <h1 class="post-title">Products change, humans stay the same</h1>
+      <span class="date">30 July 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>While writing the post on AWS reservations I started thinking if there’s any arbitrage opportunity in the reservations. For example - does it make sense to do a 1 year or 3 year reservation for some instance types of upgrade an instance class to get a better reservation value?</p>
+<p>While on a quick driving errand a few days ago I decided to listen to the radio for the first time in years. I was quickly hit with a bit of nostalgia - the radio show that was on had one of those “First caller to answer this correctly gets Y” sessions. I’ve heard this thousands of times growing up but this was the first time in a very long time and for whatever reason I immediately thought of both how modern music streaming services no longer have these contests and that a similar need is being met by HQ Trivia.</p>
 
-<p>You can do this manually using ec2instances.info which provides a quick way to look at EC2 pricing info although forces you to pick the type of reservations you’re interested in. To speed things up I just ran the <a href="https://github.com/powdahound/ec2instances.info">ec2instances.info script</a> to scrape the data into a JSON with a <a href="https://github.com/dangoldin/analyze-ec2instance.info">quick script</a> to extract the relevant details into a CSV file. After that, it was as simple as loading into <a href="https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0">Google sheets</a> for some analysis and visualization.</p>
-
-<p>There are a few surprises - the biggest was how much of a variance there is by instance type. The smallest discount comes with the 1 year convertible, no up front payment option and ranges from around 21% for the i3en series but goes up to 49% for the i2 series. I’m sure most of this is a function of the age and demand for the types but it’s worth auditing use cases to see whether you get more bang for the buck on a slightly older instance. The same pattern holds when you look at the 3 year full up front payment options. The i2 series gets you a 75% discount while the discount on the i3en series climbs to 62%.</p>
-
-<p>Another interesting analysis is to compare the cheapest reserved option (1 year convertible, no upfront) with the most expensive (3 year standard, full upfront) to check out the outliers. As expected, they’re strongly correlated but you do so see variance - for example the p2 and p3 series have a similar discount for the 1 year term term but the p2 gets you a 10% larger discount than the p3 for the 3 year term.</p>
-
-<amp-img src="/assets/static/images/aws-ec2-reservation-comparison.png" alt="AWS EC2 Reservation type comparison" width="1189" height="736" layout="responsive"></amp-img>
-
-<p>The code is up on <a href="https://github.com/dangoldin/analyze-ec2instance.info">GitHub</a> with the data available on a <a href="https://docs.google.com/spreadsheets/d/1h5H3vsZluk1_TGGMGrZq-KFiha-Bfhu4OBzyp5QynA8/edit#gid=0">Google spreadsheet</a> so if there’s anything else that stands out I’d love to know about it.</p>
+<p>Human needs and interests don’t change but the medium to deliver those do. We all love friendly competition with the hope of winning. Radio shows met this need at scale years ago and now it’s an app. An approach to product building is to think back to what life was like before the internet and how our needs and interests were met then. And are there modern solutions to those problems? I suspect there are quite a few of these nostalgia-driven products that are ripe for a digital version.</p>
 
     </section>
 
@@ -758,9 +747,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##dataviz-ref">#dataviz </a></li>
-    
-      <li><a href="/tags/##devops-ref">#devops </a></li>
+      <li><a href="/tags/##product-ref">#product </a></li>
     
   
 
@@ -777,11 +764,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/07/24/amusing-russian-translations-in-duolingo/" title="Amusing Russian translations in Duolingo">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/07/27/analyzing-the-aws-ec2-reservation-options/" title="Analyzing the AWS EC2 reservation options">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/07/30/products-change-humans-stay-the-same/" title="Products change, humans stay the same">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -792,7 +779,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F07%2F27%2Fanalyzing-the-aws-ec2-reservation-options%2F&title=Analyzing+the+AWS+EC2+reservation+options">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F07%2F30%2Fproducts-change-humans-stay-the-same%2F&title=Products+change%2C+humans+stay+the+same">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
