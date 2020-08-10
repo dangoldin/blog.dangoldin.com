@@ -21,6 +21,7 @@ http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
 http://dangoldin.com/2020/08/09/tiktok-a-prisoners-dilemma/
+http://dangoldin.com/2020/08/09/three-types-of-advice-from-a-manager/
 http://dangoldin.com/2020/07/30/products-change-humans-stay-the-same/
 http://dangoldin.com/2020/07/27/analyzing-the-aws-ec2-reservation-options/
 http://dangoldin.com/2020/07/24/amusing-russian-translations-in-duolingo/
