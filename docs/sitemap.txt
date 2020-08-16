@@ -2,9 +2,9 @@ http://dangoldin.com/archive/
 http://dangoldin.com/atom.xml
 http://dangoldin.com/categories/
 http://dangoldin.com/citibike-station-directions/
-http://dangoldin.com/lore/
-http://dangoldin.com/about/
 http://dangoldin.com/
+http://dangoldin.com/about/
+http://dangoldin.com/lore/
 http://dangoldin.com/pages/
 http://dangoldin.com/sitemap.txt
 http://dangoldin.com/tags/
@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/08/16/big-money-not-big-data/
 http://dangoldin.com/2020/08/09/tiktok-a-prisoners-dilemma/
 http://dangoldin.com/2020/08/09/three-types-of-advice-from-a-manager/
 http://dangoldin.com/2020/07/30/products-change-humans-stay-the-same/
