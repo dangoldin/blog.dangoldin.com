@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-08-18T23:06:32-04:00</updated>
+ <updated>2020-08-18T23:46:25-04:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Yahoo fantasy football stats: 2020-2021 edition</title>
+   <link href="http://dangoldin.com/2020/08/18/yahoo-fantasy-football-stats-2020-2021-edition/"/>
+   <updated>2020-08-18T00:00:00-04:00</updated>
+   <id>http://dangoldin.com/2020/08/18/yahoo-fantasy-football-stats-2020-2021-edition</id>
+   <content:encoded><![CDATA[
+<p>For the fifth year in a row I’ve updated my script to fetch the projected stats for the upcoming fantasy football season. These days I’m torn on football as a whole - both due to its politics and dangers - and don’t plan on watching too many games. Yet I enjoy the competition with my friends and the rote work of updating my scraping script to work every year.</p>
+
+<p>This time around there haven’t been too many changes: Yahoo changed the order of a few columns and introduced some minor stylistic changes but the code only needed a <a href="https://github.com/dangoldin/yahoo-ffl/commit/764420d899ce26dae773470b9323875d702c9b41">few changes</a> to work - much simpler than last year which required running with an <a href="https://github.com/dangoldin/yahoo-ffl/commit/82f1f14e84663d447cdb9db0b5738de4db64fe8c">adblocking extension to bypass a script blocker</a>.</p>
+
+<p>As usual the <a href="https://github.com/dangoldin/yahoo-ffl">code</a> and <a href="https://github.com/dangoldin/yahoo-ffl/blob/master/stats-2021.csv">data</a> are up on GitHub and pull requests are welcome. Every year I have ambitions to build an ML model to actually automate the draft process and every year I fail. Given everything going on I won’t even try this year - that’s going to be a goal for 2021.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>The sandpaper learning method</title>
