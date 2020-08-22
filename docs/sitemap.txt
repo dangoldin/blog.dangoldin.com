@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/08/21/an-era-of-productivity/
 http://dangoldin.com/2020/08/20/yards-balls-fences-and-software-engineering/
 http://dangoldin.com/2020/08/20/apple-and-mr-burns-indestructible/
 http://dangoldin.com/2020/08/18/yahoo-fantasy-football-stats-2020-2021-edition/
