@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/09/22/cold-turkey-and-fighting-temptations/
 http://dangoldin.com/2020/09/05/get-google-group-membership-using-calendar/
 http://dangoldin.com/2020/09/03/ios-14-and-local-network-access/
 http://dangoldin.com/2020/08/28/working-your-way-up-the-engineering-management-stack/
