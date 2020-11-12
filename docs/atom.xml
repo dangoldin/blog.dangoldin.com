@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-10-27T00:08:41-04:00</updated>
+ <updated>2020-11-11T22:44:23-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Poor Intel</title>
+   <link href="http://dangoldin.com/2020/11/11/poor-intel/"/>
+   <updated>2020-11-11T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/11/11/poor-intel</id>
+   <content:encoded><![CDATA[
+<p>Earlier this week Apple announced the new MacBook Air, featuring the Apple-built M1 chip, and heralding the return to their own chips. I wrote the <a href="/2008/04/25/on-apple-buying-pa-semiconductor/">first post</a> on this blog in 2008 covering Apple acquiring PA Semi and claimed that it made sense to design their own chips for phones but not PCs. Well it’s been 12 years and Apple has figured out how to make incredible chips for their phones so might as well expand to laptops as well.</p>
+
+<p>You have to have some sympathy for Intel and AMD, but especially Intel. They’re being squeezed on the consumer side by the likes of Apple which is delivering substantial performance improvements and on the data center side with the major cloud providers rolling out <a href="https://venturebeat.com/2019/11/28/amazons-cloud-unit-has-designed-a-more-powerful-datacenter-chip/">their own chips</a>.</p>
+
+<p>It used to be the case that chips were a commodity but now there’s value in being vertically integrated. The industry goes in cycles and I would not be surprised if in a decade we’re back to treating chips like a commodity.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Google and the Apple Watch</title>
