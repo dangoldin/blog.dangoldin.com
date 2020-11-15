@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/11/14/medium-is-a-shopping-mall/
 http://dangoldin.com/2020/11/11/poor-intel/
 http://dangoldin.com/2020/10/27/google-and-the-apple-watch/
 http://dangoldin.com/2020/10/21/substack-and-paid-newsletters/
