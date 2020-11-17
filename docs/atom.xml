@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-11-14T23:47:33-05:00</updated>
+ <updated>2020-11-16T23:00:45-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -2390,7 +2390,7 @@ WantedBy=multi-user.target</code></pre></figure>
    <updated>2019-10-03T00:00:00-04:00</updated>
    <id>http://dangoldin.com/2019/10/03/upgrading-pip-packages-within-a-dockerfile</id>
    <content:encoded><![CDATA[
-<p>I have an old project, <a href="makersalley.com">http://makersalley.com</a>, that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I overhauled it to run on a newer version of Django (1.11) and Dockerized the entire setup which required all sorts of changes and library fixes.</p>
+<p>I have an old project, <a href="http://makersalley.com">makersalley.com</a>, that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I overhauled it to run on a newer version of Django (1.11) and Dockerized the entire setup which required all sorts of changes and library fixes.</p>
 
 <p>Last night, I took it one step further by upgrading it to the latest versions of both Python (3.7) and Django (2.2). The most difficult part was figuring out how to upgrade to the latest versions while being tied down to Docker. For example, changing the Python version in the Dockerfile caused many of the packages in requirements.txt to not build but because they were all executed within Docker I had to get the entire requirements.txt fixed before that step would succeed. Similarly, it wasn’t clear which versions of the packages in the requirements.txt depended on one another and upgrading all of them blindly would have been a fool’s errand. It also turned out that one package, MySQL-python, was not available in Python 3+.</p>
 
@@ -2507,7 +2507,7 @@ WantedBy=multi-user.target</code></pre></figure>
    <content:encoded><![CDATA[
 <img src="http://dangoldin.com/assets/static/images/num-level-68-combined.png" alt="Num puzzle unsolved and solved" width="1108" height="985" layout="responsive"/>
 
-<p>I don’t play games on my phone but one game I keep going back to is “<a href="Num">https://apps.apple.com/us/app/num-insanely-hard-math-game/id861791129</a>” - an “insanely hard math game.” The premise is pretty simple - you have a few numbers that you need to combine, using the four basic math operations, so it computes to a specific number.</p>
+<p>I don’t play games on my phone but one game I keep going back to is “<a href="https://apps.apple.com/us/app/num-insanely-hard-math-game/id861791129">Num</a>” - an “insanely hard math game.” The premise is pretty simple - you have a few numbers that you need to combine, using the four basic math operations, so it computes to a specific number.</p>
 
 <p>The levels start off simple but it gets more difficult with a lot of trial and error at the higher levels. They’re no longer simple expressions that can be evaluated fairly linearly but instead are solved by using fairly complex intermediate values.</p>
 

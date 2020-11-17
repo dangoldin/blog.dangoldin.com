@@ -8,7 +8,7 @@ category:
 tags: ["#code", "#devops"]
 ---
 {% include setup %}
-I have an old project, [http://makersalley.com](makersalley.com), that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I overhauled it to run on a newer version of Django (1.11) and Dockerized the entire setup which required all sorts of changes and library fixes.
+I have an old project, [makersalley.com](http://makersalley.com), that used to run on an old version of Python (2.7) and an archaic version of Django (1.4). Earlier this year I overhauled it to run on a newer version of Django (1.11) and Dockerized the entire setup which required all sorts of changes and library fixes.
 
 Last night, I took it one step further by upgrading it to the latest versions of both Python (3.7) and Django (2.2). The most difficult part was figuring out how to upgrade to the latest versions while being tied down to Docker. For example, changing the Python version in the Dockerfile caused many of the packages in requirements.txt to not build but because they were all executed within Docker I had to get the entire requirements.txt fixed before that step would succeed. Similarly, it wasn’t clear which versions of the packages in the requirements.txt depended on one another and upgrading all of them blindly would have been a fool's errand. It also turned out that one package, MySQL-python, was not available in Python 3+.
 

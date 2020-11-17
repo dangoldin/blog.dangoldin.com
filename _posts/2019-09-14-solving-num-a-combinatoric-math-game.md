@@ -11,7 +11,7 @@ tags: ["#code"]
 
 <amp-img src="{{ IMG_PATH }}num-level-68-combined.png" alt="Num puzzle unsolved and solved" width="1108" height="985" layout="responsive"></amp-img>
 
-I don't play games on my phone but one game I keep going back to is "[https://apps.apple.com/us/app/num-insanely-hard-math-game/id861791129](Num)" - an "insanely hard math game." The premise is pretty simple - you have a few numbers that you need to combine, using the four basic math operations, so it computes to a specific number.
+I don't play games on my phone but one game I keep going back to is "[Num](https://apps.apple.com/us/app/num-insanely-hard-math-game/id861791129)" - an "insanely hard math game." The premise is pretty simple - you have a few numbers that you need to combine, using the four basic math operations, so it computes to a specific number.
 
 The levels start off simple but it gets more difficult with a lot of trial and error at the higher levels. They're no longer simple expressions that can be evaluated fairly linearly but instead are solved by using fairly complex intermediate values.
 
