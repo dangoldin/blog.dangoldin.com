@@ -20,7 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
-http://dangoldin.com/2020/11/22/subconciously-searning-to-type-russian/
+http://dangoldin.com/2020/11/22/subconciously-learning-to-type-russian/
 http://dangoldin.com/2020/11/20/cursed-by-gdpr/
 http://dangoldin.com/2020/11/14/medium-is-a-shopping-mall/
 http://dangoldin.com/2020/11/11/poor-intel/
