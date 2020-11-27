@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Bringing a user centric approach to the command line</title>
-  <meta name="description" content="Rather than have a variety of flags at the command line just infer what the user wants to do.">
-  <meta name="keywords" content="command line, scripts, software engineering" />
+  <title>Static code analysis with DeepSource</title>
+  <meta name="description" content="I'm a fan of static code analysis tools and have recently started using DeepSource on my open source repos.">
+  <meta name="keywords" content="deepsource, static code analysis, software engineering" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/11/25/bringing-a-user-centric-approach-to-the-command-line/">
+  <link rel="canonical" href="http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Bringing a user centric approach to the command line" />
+  <meta name="twitter:title" content="Static code analysis with DeepSource" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/11/25/bringing-a-user-centric-approach-to-the-command-line/" />
-  <meta property="og:title"               content="Bringing a user centric approach to the command line" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource/" />
+  <meta property="og:title"               content="Static code analysis with DeepSource" />
 
   
-  <meta property="og:description"         content="Rather than have a variety of flags at the command line just infer what the user wants to do." />
-  <meta name="twitter:description"        content="Rather than have a variety of flags at the command line just infer what the user wants to do." />
+  <meta property="og:description"         content="I'm a fan of static code analysis tools and have recently started using DeepSource on my open source repos." />
+  <meta name="twitter:description"        content="I'm a fan of static code analysis tools and have recently started using DeepSource on my open source repos." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/11/25/bringing-a-user-centric-approach-to-the-command-line/",
-  "headline": "Bringing a user centric approach to the command line",
-  "datePublished": "2020-11-25T00:00:00-05:00",
-  "dateModified": "2020-11-25T00:00:00-05:00",
-  "description": "I have a small script that takes an export of Apple Health data and then dumps it into a MySQL database that I then use to visualize my health metrics over t...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource/",
+  "headline": "Static code analysis with DeepSource",
+  "datePublished": "2020-11-26T00:00:00-05:00",
+  "dateModified": "2020-11-26T00:00:00-05:00",
+  "description": "While listening to the Software Engineering Daily podcast I came across an interview with Jai Pradeesh and Sanket Saurav who are the founders of DeepSource, ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,30 +724,19 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Bringing a user centric approach to the command line</h1>
-      <span class="date">25 November 2020</span>
+      <h1 class="post-title">Static code analysis with DeepSource</h1>
+      <span class="date">26 November 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>I have a <a href="https://github.com/dangoldin/health-stats/blob/master/get_health.py">small script</a> that takes an export of Apple Health data and then dumps it into a MySQL database that I then use to visualize my health metrics over time. My prior workflow was to open the app and then Airdrop the file over to my computer at which point I’d unzip it, copy the relevant file over into the script directory, and simply run the script.</p>
+<p>While listening to the <a href="https://softwareengineeringdaily.com/">Software Engineering Daily</a> podcast I came across an <a href="https://softwareengineeringdaily.com/2020/11/09/deepsource-static-analysis-for-code-reviews-with-jai-pradeesh-and-sanket-saurav/">interview</a> with Jai Pradeesh and Sanket Saurav who are the founders of <a href="https://deepsource.io/">DeepSource</a>, a modern code analysis tool.</p>
 
-<p>Clearly this was not the smoothest experience and I figured it was finally time to deal with it. I’ve seen scripts take a variety of inputs supporting all sorts of formats - for example a “-f” flag for a file or a “-d” for a directory - but I was never a fan of that. I want the script to take whatever is thrown at it and then just infer whatever the user intended. It’s not an approach you’d want in every use case but for a simple script I liked the elegance.</p>
+<p>I’m a sucker for these types of tools and willing to try anything that’s low friction and promises to me more productive so I gave it a shot on two of my open source repos - <a href="https://github.com/dangoldin/health-stats/">health-stats</a> and <a href="https://github.com/dangoldin/blog-analytics/">blog-analytics</a>.</p>
 
-<p>The implementation was simple enough - if it’s a zip file, handle it as a zip file; if it’s a directory, append export.xml and handle that as a file; otherwise assume it’s a standard file. I’m surprised most developers don’t adopt this approach - it’s bringing a more user-centric experience to the command line.</p>
+<p>There have been quite a few of these tools - for example <a href="https://www.sonarqube.org/">SonarQube</a> and <a href="https://aws.amazon.com/codeguru/">Amazon’s CodeGuru</a> - but DeepSource definitely felt more modern. For one, it has a native integration to GitHub and I was able to get it added to the repos and start seeing results without having to write any code. In addition to the standard suggestions and recommendations DeepSource als has the ability to automatically open pull requests to address simple formatting and style issues.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">fn</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.zip'</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'Handling as zip file'</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">zipfile</span><span class="p">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="k">as</span> <span class="n">fz</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">fz</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">'apple_health_export'</span><span class="p">,</span> <span class="s">'export.xml'</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">xmldoc</span> <span class="o">=</span> <span class="n">minidom</span><span class="p">.</span><span class="n">parseString</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">())</span>
-<span class="k">elif</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'Handling as directory'</span><span class="p">)</span>
-    <span class="n">xmldoc</span> <span class="o">=</span> <span class="n">minidom</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s">'export.xml'</span><span class="p">)</span> <span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'Handling as export.xml file'</span><span class="p">)</span>
-    <span class="n">xmldoc</span> <span class="o">=</span> <span class="n">minidom</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span></code></pre></figure>
-
+<p>I’m excited by the innovation in this space. Similar to the way IDEs have gotten smarter and smarter over time with their code completion and suggestions there’s a whole separate set of functionality that can be added through a GitHub integration. GitHub itself has been moving in this direction with <a href="https://github.com/dependabot">Dependabot</a> opening PRs to update libraries and we’ll likely see more and more here as the space evolves.</p>
 
     </section>
 
@@ -762,7 +751,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
@@ -779,11 +768,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/11/22/subconciously-learning-to-type-russian/" title="Subconciously learning to type Russian">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/11/25/bringing-a-user-centric-approach-to-the-command-line/" title="Bringing a user centric approach to the command line">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/11/26/static-code-analysis-with-deepsource/" title="Static code analysis with DeepSource">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -794,7 +783,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F11%2F25%2Fbringing-a-user-centric-approach-to-the-command-line%2F&title=Bringing+a+user+centric+approach+to+the+command+line">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F11%2F26%2Fstatic-code-analysis-with-deepsource%2F&title=Static+code+analysis+with+DeepSource">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>

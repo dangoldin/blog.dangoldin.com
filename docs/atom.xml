@@ -3,13 +3,29 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-11-25T23:26:33-05:00</updated>
+ <updated>2020-11-26T23:21:29-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Static code analysis with DeepSource</title>
+   <link href="http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource/"/>
+   <updated>2020-11-26T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource</id>
+   <content:encoded><![CDATA[
+<p>While listening to the <a href="https://softwareengineeringdaily.com/">Software Engineering Daily</a> podcast I came across an <a href="https://softwareengineeringdaily.com/2020/11/09/deepsource-static-analysis-for-code-reviews-with-jai-pradeesh-and-sanket-saurav/">interview</a> with Jai Pradeesh and Sanket Saurav who are the founders of <a href="https://deepsource.io/">DeepSource</a>, a modern code analysis tool.</p>
+
+<p>I’m a sucker for these types of tools and willing to try anything that’s low friction and promises to me more productive so I gave it a shot on two of my open source repos - <a href="https://github.com/dangoldin/health-stats/">health-stats</a> and <a href="https://github.com/dangoldin/blog-analytics/">blog-analytics</a>.</p>
+
+<p>There have been quite a few of these tools - for example <a href="https://www.sonarqube.org/">SonarQube</a> and <a href="https://aws.amazon.com/codeguru/">Amazon’s CodeGuru</a> - but DeepSource definitely felt more modern. For one, it has a native integration to GitHub and I was able to get it added to the repos and start seeing results without having to write any code. In addition to the standard suggestions and recommendations DeepSource als has the ability to automatically open pull requests to address simple formatting and style issues.</p>
+
+<p>I’m excited by the innovation in this space. Similar to the way IDEs have gotten smarter and smarter over time with their code completion and suggestions there’s a whole separate set of functionality that can be added through a GitHub integration. GitHub itself has been moving in this direction with <a href="https://github.com/dependabot">Dependabot</a> opening PRs to update libraries and we’ll likely see more and more here as the space evolves.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Bringing a user centric approach to the command line</title>
