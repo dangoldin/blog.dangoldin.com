@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/02/degrade-functionality-instead-of-building-cross-region-availablity/
 http://dangoldin.com/2020/11/26/static-code-analysis-with-deepsource/
 http://dangoldin.com/2020/11/25/bringing-a-user-centric-approach-to-the-command-line/
 http://dangoldin.com/2020/11/22/subconciously-learning-to-type-russian/
