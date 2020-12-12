@@ -3,13 +3,42 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-08T23:57:58-05:00</updated>
+ <updated>2020-12-11T23:06:29-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Amazon owns more than $2B worth of IPV4 addresses</title>
+   <link href="http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/"/>
+   <updated>2020-12-11T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses</id>
+   <content:encoded><![CDATA[
+<p>While listening to a <a href="https://softwareengineeringdaily.com/2020/12/02/bgp-with-andree-toonk/">podcast discussing BGP</a> I heard the fact that AWS owns more than $2B worth of IP addresses. I knew AWS was massive but this came as a big shock so I decided to do some digging around. I came across a <a href="https://ipv4marketgroup.com/ipv4-pricing/">site</a> that listed the market prices of IP addresses and the range looks to be anywhere from $20 to $30 per IP depending on the block size. Now it was time to figure out the IP addresses owned by Amazon. I figured this would be difficult but lucky for us AWS actually <a href="https://ip-ranges.amazonaws.com/ip-ranges.json">publishes</a> their entire set of IP addresses as JSON.</p>
+
+<p>The work is simply to download the JSON and then convert the CIDR blocks to the number of IPs and add them all up. As of today, December 11, 2020 AWS self reports owning 109,847,486 IPV4 addresses - at a price of $20 this is almost $2.2B and at $30 it’s almost $3.3B. That’s wild.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">' https://ip-ranges.amazonaws.com/ip-ranges.json'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'All keys'</span><span class="p">,</span> <span class="n">j</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'IPV4 prefixes'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="s">'prefixes'</span><span class="p">]))</span>
+
+<span class="n">ips</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">j</span><span class="p">[</span><span class="s">'prefixes'</span><span class="p">]:</span>
+    <span class="n">cidr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">prefix</span><span class="p">[</span><span class="s">'ip_prefix'</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ips</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">32</span><span class="o">-</span><span class="n">cidr</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'# IPS'</span><span class="p">,</span> <span class="n">ips</span><span class="p">)</span></code></pre></figure>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Pay to enjoy video games</title>
