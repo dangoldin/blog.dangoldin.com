@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Amazon owns more than $2B worth of IPV4 addresses</title>
-  <meta name="description" content="Amazon owns almost 110M IPV4 addresses. At the lower end of the market price this is over $2B.">
-  <meta name="keywords" content="aws, amazon, ipv4, ip addresses" />
+  <title>Evolution of open source licenses</title>
+  <meta name="description" content="To compete against the cloud providers many open source applications are evolving their software licenses.">
+  <meta name="keywords" content="open source software, softare licenses" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/">
+  <link rel="canonical" href="http://dangoldin.com/2020/12/12/evolution-of-open-source-licenses/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Amazon owns more than $2B worth of IPV4 addresses" />
+  <meta name="twitter:title" content="Evolution of open source licenses" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/" />
-  <meta property="og:title"               content="Amazon owns more than $2B worth of IPV4 addresses" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/12/12/evolution-of-open-source-licenses/" />
+  <meta property="og:title"               content="Evolution of open source licenses" />
 
   
-  <meta property="og:description"         content="Amazon owns almost 110M IPV4 addresses. At the lower end of the market price this is over $2B." />
-  <meta name="twitter:description"        content="Amazon owns almost 110M IPV4 addresses. At the lower end of the market price this is over $2B." />
+  <meta property="og:description"         content="To compete against the cloud providers many open source applications are evolving their software licenses." />
+  <meta name="twitter:description"        content="To compete against the cloud providers many open source applications are evolving their software licenses." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/",
-  "headline": "Amazon owns more than $2B worth of IPV4 addresses",
-  "datePublished": "2020-12-11T00:00:00-05:00",
-  "dateModified": "2020-12-11T00:00:00-05:00",
-  "description": "While listening to a podcast discussing BGP I heard the fact that AWS owns more than $2B worth of IP addresses. I knew AWS was massive but this came as a big...",
+  "mainEntityOfPage": "http://dangoldin.com/2020/12/12/evolution-of-open-source-licenses/",
+  "headline": "Evolution of open source licenses",
+  "datePublished": "2020-12-12T00:00:00-05:00",
+  "dateModified": "2020-12-12T00:00:00-05:00",
+  "description": "Open source changed the way we write code. It’s given many of us a starting set of tools that allowed us to quickly put together new products and allowed us ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,32 +724,17 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Amazon owns more than $2B worth of IPV4 addresses</h1>
-      <span class="date">11 December 2020</span>
+      <h1 class="post-title">Evolution of open source licenses</h1>
+      <span class="date">12 December 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>While listening to a <a href="https://softwareengineeringdaily.com/2020/12/02/bgp-with-andree-toonk/">podcast discussing BGP</a> I heard the fact that AWS owns more than $2B worth of IP addresses. I knew AWS was massive but this came as a big shock so I decided to do some digging around. I came across a <a href="https://ipv4marketgroup.com/ipv4-pricing/">site</a> that listed the market prices of IP addresses and the range looks to be anywhere from $20 to $30 per IP depending on the block size. Now it was time to figure out the IP addresses owned by Amazon. I figured this would be difficult but lucky for us AWS actually <a href="https://ip-ranges.amazonaws.com/ip-ranges.json">publishes</a> their entire set of IP addresses as JSON.</p>
+<p>Open source changed the way we write code. It’s given many of us a starting set of tools that allowed us to quickly put together new products and allowed us to specialize. These days open source is as strong as ever but there are a lot of changes happening on the licensing side. Under the older open source licenses, any company could take your code and then launch it as their own service. This wasn’t a problem in the past due to a highly fragmented market and trusting the developer to provide the gold-standard enterprise service but the rise of the cloud providers changed the dynamic. They have the scale to both build the expertise but also to lock-in customers.</p>
 
-<p>The work is simply to download the JSON and then convert the CIDR blocks to the number of IPs and add them all up. As of today, December 11, 2020 AWS self reports owning 109,847,486 IPV4 addresses - at a price of $20 this is almost $2.2B and at $30 it’s almost $3.3B. That’s wild.</p>
+<p>This is not a great solution for those that have put years into open source and want to profit from it. Luckily there are a few approaches to push back against the cloud providers. One is simply to have multiple licenses - an open source one for either internal or community use and a separate paid one for an “enterprise” offering. There are also quite a few licenses, categorized as “copyleft” that propagate their license to any code that’s derived from that work. An even more recent license is the Business Source License (BSL) where the code starts off as being open-source for non-commercial use but then after a set period becomes truly open source.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="k">with</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">' https://ip-ranges.amazonaws.com/ip-ranges.json'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'All keys'</span><span class="p">,</span> <span class="n">j</span><span class="p">.</span><span class="n">keys</span><span class="p">())</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'IPV4 prefixes'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="s">'prefixes'</span><span class="p">]))</span>
-
-<span class="n">ips</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">j</span><span class="p">[</span><span class="s">'prefixes'</span><span class="p">]:</span>
-    <span class="n">cidr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">prefix</span><span class="p">[</span><span class="s">'ip_prefix'</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">ips</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">32</span><span class="o">-</span><span class="n">cidr</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">'# IPS'</span><span class="p">,</span> <span class="n">ips</span><span class="p">)</span></code></pre></figure>
+<p>I’m far from a lawyer and there’s significantly more nuance to the above but there is a trend to allow open source code authors to monetize their work. The problem they’re trying to solve is a real one but it’s difficult to predict what impact it will have on future contributions.</p>
 
     </section>
 
@@ -764,9 +749,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##code-ref">#code </a></li>
-    
-      <li><a href="/tags/##aws-ref">#aws </a></li>
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
@@ -783,11 +766,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/12/08/pay-to-enjoy-video-games/" title="Pay to enjoy video games">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/12/11/amazon-owns-more-than-2b-worth-of-ipv4-addresses/" title="Amazon owns more than $2B worth of IPV4 addresses">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next"> | <a href="/2020/12/12/evolution-of-open-source-licenses/" title="Evolution of open source licenses">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -798,7 +781,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F11%2Famazon-owns-more-than-2b-worth-of-ipv4-addresses%2F&title=Amazon+owns+more+than+%242B+worth+of+IPV4+addresses">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F12%2Fevolution-of-open-source-licenses%2F&title=Evolution+of+open+source+licenses">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
