@@ -23,23 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Categories</title>
-  <meta name="description" content="">
-  
+  <title>Removing duplicate files in S3</title>
+  <meta name="description" content="A series of shell commands to identify potentially duplicate fils on S3.">
+  <meta name="keywords" content="aws, s3, backups" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/categories/">
+  <link rel="canonical" href="http://dangoldin.com/2020/12/18/removing-duplicate-files-in-s3/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Categories" />
+  <meta name="twitter:title" content="Removing duplicate files in S3" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/categories/" />
-  <meta property="og:title"               content="Categories" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/12/18/removing-duplicate-files-in-s3/" />
+  <meta property="og:title"               content="Removing duplicate files in S3" />
 
+  
+  <meta property="og:description"         content="A series of shell commands to identify potentially duplicate fils on S3." />
+  <meta name="twitter:description"        content="A series of shell commands to identify potentially duplicate fils on S3." />
   
 
   
@@ -51,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/categories/",
-  "headline": "Categories",
-  "datePublished": "2020-12-18T23:41:55-05:00",
-  "dateModified": "2020-12-18T23:41:55-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/12/18/removing-duplicate-files-in-s3/",
+  "headline": "Removing duplicate files in S3",
+  "datePublished": "2020-12-18T00:00:00-05:00",
+  "dateModified": "2020-12-18T00:00:00-05:00",
+  "description": "I’m a digital hoarder and whenever I had to switch computers, I was always worried about losing files. These days it’s both lower risk since so much is scatt...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -719,35 +722,93 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">Categories</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Removing duplicate files in S3</h1>
+      <span class="date">18 December 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
+      
+<p>I’m a digital hoarder and whenever I had to switch computers, I was always worried about losing files. These days it’s both lower risk since so much is scattered across the cloud but with the ascent of AWS I’ve resorted to just backing up my computers onto S3.</p>
+
+<p>I simply do a recursive copy of my home folder to S3 and call it a day. One problem this exposes is that there are duplicate files scattered all over the place. For example I’d have something both in my Downloads folder as well as in a Photos and maybe even a Dropbox folder. Or I would just have the same file duplicated in the same directory. At the end of the day it’s not a huge deal but at the same time it feels dirty so I started working on a script to identify these duplicates.</p>
+
+<p>At this point calling it a script is a bit of an overstatement since it’s just a series of shell commands that act as a proof of concept. The end goal is to write a script that will accept a set of destinations to analyze, download the potentially similar files, and give users the interactive ability to choose which of the file(s) to keep.</p>
+
+<p>In any case, one can get pretty far simply using the following shell commands to get the list of files from S3 and then manipulate them to identify the potential duplicates. At that point the filename likely gives aways the obvious duplicates and the rest you can download and compare.</p>
+
+<p>Next step is to roll this into an actual script that can take multiple directories, run through the steps at once, and then add that interactive way to fetch, display, and delete the files.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Dump the filenames, dates, and sizes to a text file.</span>
+~ aws s3 <span class="nb">ls </span>s3://bucket_path/key_path <span class="nt">--profile</span><span class="o">=</span>xyz <span class="nt">--recursive</span> <span class="o">&gt;</span> s3_files.txt
+
+<span class="c"># Sort these so we can then count duplicates</span>
+~ <span class="nb">sort </span>s3_files.txt <span class="nt">-k3</span> <span class="nt">-n</span> | <span class="nb">tr</span> <span class="nt">-s</span> <span class="s1">' '</span> | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f3-10</span> <span class="o">&gt;</span> sorted_s3_files.txt
+
+<span class="c"># Extract all the duplicated files</span>
+<span class="nb">cat </span>sorted_s3_files.txt | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f1</span> | <span class="nb">uniq</span> <span class="nt">-d</span> <span class="o">&gt;</span> sorted_s3_files_potential_dups.txt
+
+<span class="c"># Sort both original and duplicate files as text so we can then use the join command</span>
+<span class="nb">sort </span>sorted_s3_files.txt <span class="o">&gt;</span> sorted_s3_files_str.txt
+<span class="nb">sort </span>sorted_s3_files_potential_dups.txt <span class="o">&gt;</span> sorted_s3_files_potential_dups_str.txt
+
+<span class="c"># Inner join the full set and the duplicates to get the file names of the potential duplicates</span>
+<span class="nb">join </span>sorted_s3_files_potential_dups_str.txt sorted_s3_files_str.txt | <span class="nb">sort</span> <span class="nt">-n</span> <span class="o">&gt;</span> sorted_s3_files_potential_dups_full_info.txt</code></pre></figure>
+
+
+    </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
       
 
 
-
-
-
-
-
-
-<ul class="tag_box inline">
+  <!-- <li>Tagged under:</li> -->
   
-  
-
-
-  
+    
+      <li><a href="/tags/##code-ref">#code </a></li>
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
     
   
 
 
-</ul>
 
+      </ul>
+    </div><br/>
+    
 
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
 
-    </section>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/12/17/what-do-adtech-and-bgp-have-in-common/" title="What do adtech and BGP have in common?">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F18%2Fremoving-duplicate-files-in-s3%2F&title=Removing+duplicate+files+in+S3">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -813,7 +874,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
