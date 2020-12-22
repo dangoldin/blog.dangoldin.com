@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/21/stop-charging-for-support-plans/
 http://dangoldin.com/2020/12/19/blame-the-algorithm/
 http://dangoldin.com/2020/12/18/removing-duplicate-files-in-s3/
 http://dangoldin.com/2020/12/17/what-do-adtech-and-bgp-have-in-common/
