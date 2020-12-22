@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-21T21:14:16-05:00</updated>
+ <updated>2020-12-21T22:38:33-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -32,6 +32,25 @@
 <p>It’s an exaggeration but one can argue that the fact that a product even needs support indicates a deficiency in the product. Treating support as an additional revenue stream may lead to product decisions that would not be made in a world where support was treated as a cost.</p>
 
 <p>As a counterpoint - there really is value in support. They know the systems better than you do. They have access to the engineers and product managers. They have the ability to escalate if there are clear issues. Yet having to pay for it on top of an already large bill just feels wrong.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>2020 Goal review</title>
+   <link href="http://dangoldin.com/2020/12/21/2020-goal-review/"/>
+   <updated>2020-12-21T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/12/21/2020-goal-review</id>
+   <content:encoded><![CDATA[
+<p>At the beginning of the year I gave myself <a href="http://dangoldin.com/2020/01/28/2020-goals/">4 goals for 2020</a> and now that the year is wrapping up it’s time to see how I did: not well. The year was a tough one for most people but all things considered I’m in a privileged position and can’t blame COVID too much. For sure there were periods of ennui but the root was that I just lost interest and motivation in some of these. So how did I do?</p>
+
+<ul>
+  <li><strong>Finish up my Parking Spot Finder project</strong>. I made decent progress at the beginning of the year and got to explore a few computer vision open source projects and compare the cloud services but lost the need to finish this up after I moved to a place with a parking spot. Grade: D</li>
+  <li><strong>Longer, more technical blogging</strong>. The goal here was to get back to deeper writing. I didn’t get as much into technical posts but I did get more management posts done. I wrote 14 coding and 12 management posts in 2020. If I aim for 104 posts over the year that’s exactly 25% which isn’t terrible. Grade: B</li>
+  <li><strong>Quantified self dashboard</strong>. I was able to shortcut this by getting an Apple watch and exporting the health stats. I never got to the point where I automated the export so I still have to do it manually. Grade: B</li>
+  <li><strong>Another coding side project</strong>. I got into the idea of a marketplace for people to submit spreadsheet-completion tasks and got a rough <a href="https://www.gospreadsheets.com/">site up</a> but never followed through on the full implementation. I simply lost interest and got distracted by another idea. Grade: D</li>
+</ul>
+
+<p>Here’s hoping to a better 2021 - and this time I’ll attempt to track progress monthly.</p>
 ]]></content:encoded>
  </entry>
  
