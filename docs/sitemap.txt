@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/24/incident-response/
 http://dangoldin.com/2020/12/23/an-ounce-of-prevention-is-worth-a-pound-of-cure/
 http://dangoldin.com/2020/12/22/browser-zero/
 http://dangoldin.com/2020/12/21/stop-charging-for-support-plans/
