@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/26/tools-of-2020/
 http://dangoldin.com/2020/12/25/my-tesla-stock-trade/
 http://dangoldin.com/2020/12/24/incident-response/
 http://dangoldin.com/2020/12/23/an-ounce-of-prevention-is-worth-a-pound-of-cure/
