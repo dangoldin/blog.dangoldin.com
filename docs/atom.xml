@@ -3,13 +3,27 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-24T23:29:15-05:00</updated>
+ <updated>2020-12-26T00:25:14-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My Tesla stock trade</title>
+   <link href="http://dangoldin.com/2020/12/25/my-tesla-stock-trade/"/>
+   <updated>2020-12-25T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/12/25/my-tesla-stock-trade</id>
+   <content:encoded><![CDATA[
+<img src="http://dangoldin.com/assets/static/images/tesla-stock.png" alt="Tesla stock chart" width="2072" height="966" layout="responsive"/>
+
+<p>The above is Tesla’s stock price since its IPO in 2010. On its first day it closed at $3.84 and was relatively flat until earlier this year at which point it shot up closing at $661.77 on December 24. If you invested $1,000 at the IPO that would be worth over $172,000. I’m one of those unlucky fools that purchased Tesla early - in 2011 - but then sold it in 2015. My $1,148.20 investment resulted in a pre-tax profit of $7,691.26. A nice gain until you consider what could have been.</p>
+
+<p>As much as we think we understand the stock market it’s good to constantly remind ourselves that it’s complicated. Every company is run by people and everything that goes with that. The world is more complex than ever with unforeseen interdependencies. The best we can do is invest in the trends we believe.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Incident response</title>
