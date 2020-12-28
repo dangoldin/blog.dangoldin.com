@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="Brief history of what I've done and what I'm doing. Lots of neat stuff.">
-  <meta name="keywords" content="About" />
+  <title>Increase reliability through loose coupling: An adtech example</title>
+  <meta name="description" content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure.">
+  <meta name="keywords" content="adtech, system reliability, uptime, devops, sre" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/about/">
+  <link rel="canonical" href="http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="About" />
+  <meta name="twitter:title" content="Increase reliability through loose coupling: An adtech example" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/about/" />
-  <meta property="og:title"               content="About" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/" />
+  <meta property="og:title"               content="Increase reliability through loose coupling: An adtech example" />
 
   
-  <meta property="og:description"         content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
-  <meta name="twitter:description"        content="Brief history of what I've done and what I'm doing. Lots of neat stuff." />
+  <meta property="og:description"         content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure." />
+  <meta name="twitter:description"        content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/about/",
-  "headline": "About",
-  "datePublished": "2020-12-28T15:56:08-05:00",
-  "dateModified": "2020-12-28T15:56:08-05:00",
-  "description": "",
+  "mainEntityOfPage": "http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/",
+  "headline": "Increase reliability through loose coupling: An adtech example",
+  "datePublished": "2020-12-28T00:00:00-05:00",
+  "dateModified": "2020-12-28T00:00:00-05:00",
+  "description": "A few weeks ago I evangelized degrading functionality in the case of system outages as an option versus building out full regional resiliency. Someone asked ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -722,25 +722,74 @@ table {
 
 
 <main class="content" role="main">
-  <article class="page">
-    <div class="page-meta">
-      <h1 class="page-title">About</h1>
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">Increase reliability through loose coupling: An adtech example</h1>
+      <span class="date">28 December 2020</span>
     </div>
-    <section class="page-content">
+
+    <section class="post-content">
       
-<p>Currently the VP of engineering at <a href="http://triplelift.com/" target="_blank">TripleLift</a>. Before that I started <a href="http://better404.com">Better 404</a> and cofounded <a href="http://makersalley.com" target="_blank">Makers Alley</a> and <a href="http://getpressi.com" target="_blank">Pressi</a>. Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at <a href="http://www.yodle.com" target="_blank">Yodle</a>; a wall street quant at <a href="http://www.ozcap.com" target="_blank">Och Ziff</a>, and a management consultant at <a href="http://www.zsassociates.com" target="_blank">ZS Associates</a>.</p>
+<p>A few weeks ago I <a href="/2020/12/02/degrade-functionality-instead-of-building-cross-region-availablity/">evangelized degrading functionality</a> in the case of system outages as an option versus building out full regional resiliency. Someone asked me to dig into my example more so I’ll share a bit of how one of our core systems at TripleLift is set up.</p>
 
-<p>Here are some side projects I’ve been hacking on:</p>
+<p>We run an advertising exchange handing tens of billions of ad requests each day. AdTech has a ton of different companies with each doing a bit of everything but a simple way to think of us is an “exchange” that sits in between buyers and sellers of ads and ad space. In this case, a seller would be a publisher, such as the NY Times that has ad opportunities available. The buy side would be a Demand Side Platform (DSP) that has an API integration and submits bids on behalf of advertisers.</p>
 
-<ul>
-    <li><a href="http://yahnr.dangoldin.com" target="_blank">Yet Another Hacker News Reader</a></li>
-    <li><a href="https://github.com/dangoldin/yahoo-ffl" target="_blank">Yahoo Fantasy Football stats scraper</a></li>
-    <li>A bunch more on <a href="https://github.com/dangoldin" target="_blank">Github</a></li>
-</ul>
+<p>One of the challenges in running an exchange is building a global system that can handle tens of billions of auctions per day - with each auction dispatching dozens of requests to the various integrated parties. The way we do this is by keeping our exchange focused on the minimal set of requirements to run an auction - receiving requests from a seller, sending them to buyers, and then filtering and identifying the winning response. That means these applications do not connect to any database that isn’t a blocker to run an auction and instead rely on a separate service that compiles various the business rules, packages them into a protobuf message, and then uploads it to S3. Once the data is uploaded to S3 this service lets the exchanges know that an update is available and it’s up to them to fetch and load them from S3.</p>
 
-<p>I also have a <a href="/assets/static/data/dg_res.pdf">resume</a></p>
+<p>This approach decouples the exchanges serving the outside world from the service putting together the data. If this data service or any of the systems it depends on is down it doesn’t affect our ability to run auctions but it does mean that they may be running on slightly delayed data - for example new publishers launched or changes to business rules - but these would just get picked up during the next update.</p>
+
+<p>In addition to resiliency this approach also leads to simpler code since it puts the responsibility of data fetching to the data service and keeps our exchanges focused on the real time bidding system. Also, the load on the various databases and services is reduced since we do not need every one of our exchanges asking for the same data from the same set of databases. In essence, we can think of the solution here as a form of a cache that’s backed by S3 and updated on a specific schedule by a dedicated application.</p>
 
     </section>
+
+    
+    <div>
+      <ul class="tags">
+        <li>Tagged under:</li>
+      
+      
+
+
+  <!-- <li>Tagged under:</li> -->
+  
+    
+      <li><a href="/tags/##devops-ref">#devops </a></li>
+    
+  
+
+
+
+      </ul>
+    </div><br/>
+    
+
+    <div class="follow-footer">
+      Liked this post? Follow me on Twitter <a href="https://twitter.com/dangoldin">here</a>.
+    </div>
+
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2020/12/27/spacex-starship-vs-saturn-v/" title="SpaceX Starship vs Saturn V">&larr; Prev</a> | </li>
+      
+        <li><a href="/archive/">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+
+    <div class="comments">
+      <amp-iframe
+        height="300"
+        sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        resizable
+        frameborder="0"
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F28%2Fincrease-reliability-through-loose-coupling-an-adtech-example%2F&title=Increase+reliability+through+loose+coupling%3A+An+adtech+example">
+        <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
+      </amp-iframe>
+    </div>
+
   </article>
 </main>
 
@@ -806,7 +855,6 @@ table {
 }
 </script>
 </amp-analytics>
-
 
 
   </body>
