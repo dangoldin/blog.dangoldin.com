@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/29/challenges-in-identifying-a-spawned-os-x-process/
 http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/
 http://dangoldin.com/2020/12/28/blogging-2020-and-beyond/
 http://dangoldin.com/2020/12/27/spacex-starship-vs-saturn-v/

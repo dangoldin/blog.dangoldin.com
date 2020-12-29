@@ -3,13 +3,72 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-28T22:13:32-05:00</updated>
+ <updated>2020-12-29T11:02:35-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
    <email>dangoldin@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Challenges in identifying a spawned OS X process</title>
+   <link href="http://dangoldin.com/2020/12/29/challenges-in-identifying-a-spawned-os-x-process/"/>
+   <updated>2020-12-29T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/12/29/challenges-in-identifying-a-spawned-os-x-process</id>
+   <content:encoded><![CDATA[
+<p>As part of my project to come up with a utility to deduplicate images on S3 I started working on a proof of concept to validate the flow and functionality. I know that the AWS S3 API has everything I need but I wanted to see whether I could use the built in OS tools to handle the image comparison without resorting to a webapp. The steps I had in mind were pretty simple:</p>
+
+<ol>
+  <li>Use the AWS S3 API to fetch a list of all file paths and sizes</li>
+  <li>Identify potential duplicates by looking at matches between extensions and sizes</li>
+  <li>Display the potential duplicates and have the user pick the desired action - keep one, both, or neither.</li>
+</ol>
+
+<p>I know that I could do 1 and 2 easily but I was curious how well I could accomplish 3 which turned out to be surprisingly tricky and even now I’m not too happy with the solution I hacked together.</p>
+
+<p>To start, I just downloaded two images as a starting point and used Python’s subprocess module to open them up in the default application - which on OS X was Preview. That part worked well but what was difficult was automatically closing the Preview application. The reason is that “open” does not actually open the files but instead offloads that to OS X which then opens the Preview application. I had the idea that my script would be the parent process of Preview but there didn’t seem an obvious way to link the two.</p>
+
+<p>After a bit of research my first attempt was to just derive the process ids. The idea here is that I can get a process id for each of the times I call subprocess.Popen and then increment it in order to get the process id for the Preview application. It worked reasonably well but I ran into cases where there were other system processes launching during execution and I didn’t want to make any assumptions - especially if someone has other default applications. This led me to do a fair amount of documentation reading - both of the <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a> module as well as the <a href="https://psutil.readthedocs.io/en/latest/">psutil</a> library - but neither gave me what I needed.</p>
+
+<p>In essence, I needed to identify the processes that were started as a function of my script but wasn’t able to figure this out using the functionality available in the processes themselves. I don’t know if this is due to some security restrictions or solely a problem in OS X but even looking at Activity Monitor it didn’t seem there was any connection between Preview and the Python script.</p>
+
+<p>But looking at Activity Monitor gave me the idea to leverage knowledge of the open files. Since I know the names of the files I can find out which process has them open and then kill that process. This turned out to be exactly what I needed to get the proof of concept working but there are a few gotchas. One is that if the Preview application has already been opened to look at other files do I really want to be killing it? The other is that I don’t control the layout so the images that are automatically opened may be stacked which ruins the experience.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#! /usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">import</span> <span class="nn">psutil</span>
+
+<span class="c1"># Keep existing set so we don't kill application if it's already open
+</span><span class="n">existing_pids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">psutil</span><span class="p">.</span><span class="n">pids</span><span class="p">())</span>
+
+<span class="n">fn1</span> <span class="o">=</span> <span class="s">'UNADJUSTEDNONRAW_mini_742.jpg'</span>
+<span class="n">fn2</span> <span class="o">=</span> <span class="s">'UNADJUSTEDNONRAW_mini_866.jpg'</span>
+
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">'open'</span><span class="p">,</span> <span class="s">'-W'</span><span class="p">,</span> <span class="n">fn1</span><span class="p">])</span>
+<span class="n">viewer2</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">'open'</span><span class="p">,</span> <span class="s">'-W'</span><span class="p">,</span> <span class="n">fn2</span><span class="p">])</span>
+
+<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">pids_to_kill</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="n">fn1</span><span class="p">,</span> <span class="n">fn2</span><span class="p">]:</span>
+    <span class="n">pids</span> <span class="o">=</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">check_output</span><span class="p">([</span><span class="s">'fuser'</span><span class="p">,</span> <span class="s">'--'</span><span class="p">,</span> <span class="n">filename</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">pids</span><span class="p">.</span><span class="n">split</span><span class="p">()):</span>
+        <span class="n">pids_to_kill</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"pids to kill"</span><span class="p">,</span> <span class="n">pids_to_kill</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">pids_to_kill</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing_pids</span><span class="p">:</span>
+        <span class="n">os</span><span class="p">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="n">signal</span><span class="p">.</span><span class="n">SIGUSR1</span><span class="p">)</span></code></pre></figure>
+
+<p>While working on the script gave me a better understanding of the way processes work in OS X and the tools available my desire to avoid a webapp may have been for naught. It’s likely simpler, faster, and a better experience to just build a simple webapp.</p>
+]]></content:encoded>
+ </entry>
  
  <entry>
    <title>Increase reliability through loose coupling: An adtech example</title>
