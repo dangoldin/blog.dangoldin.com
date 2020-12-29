@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-28T15:56:08-05:00</updated>
+ <updated>2020-12-28T22:13:32-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -26,6 +26,22 @@
 <p>This approach decouples the exchanges serving the outside world from the service putting together the data. If this data service or any of the systems it depends on is down it doesn’t affect our ability to run auctions but it does mean that they may be running on slightly delayed data - for example new publishers launched or changes to business rules - but these would just get picked up during the next update.</p>
 
 <p>In addition to resiliency this approach also leads to simpler code since it puts the responsibility of data fetching to the data service and keeps our exchanges focused on the real time bidding system. Also, the load on the various databases and services is reduced since we do not need every one of our exchanges asking for the same data from the same set of databases. In essence, we can think of the solution here as a form of a cache that’s backed by S3 and updated on a specific schedule by a dedicated application.</p>
+]]></content:encoded>
+ </entry>
+ 
+ <entry>
+   <title>Blogging: 2020 and beyond</title>
+   <link href="http://dangoldin.com/2020/12/28/blogging-2020-and-beyond/"/>
+   <updated>2020-12-28T00:00:00-05:00</updated>
+   <id>http://dangoldin.com/2020/12/28/blogging-2020-and-beyond</id>
+   <content:encoded><![CDATA[
+<p>I have a <a href="https://github.com/dangoldin/blog-analytics/">script</a> I use to analyze and visualize my blogging. One script generates a simple CSV file containing a variety of metadata about my blogging that I then feed into a Grafana dashboard to see how I’m doing. Another script does some simple visualizations. In the past years I had an annual tradition of sharing these visualizations and describing each one but I took a look at this year’s and for the most part there’s nothing that interesting.</p>
+
+<p>I started blogging since it helps me improve my writing while clarifying my thinking but these days with my two-a-week commitment I’ve veered away from that purpose and am now beholden to the quantity and not the quality. Even now I sit down to write about a topic I often discover that I wrote about it in the past and don’t have anything new to add.</p>
+
+<p>At the same time, there have been significant changes in publishing since I started writing. Google Reader is dead and RSS seems to be on the way out. Instead we have newsletters for longer form writing and Twitter for the short form and stream of consciousness reactions.</p>
+
+<p>While it’s difficult to break tradition the above are enough to make me switch my blogging approach in 2021 and beyond. Rather than aim for 2 posts a week I’m going to write one long post a month. These posts will require multiple days of writing and research rather than the stream of consciousness style I’ve adopted lately. My hope is that this will improve my longer form writing and thinking while also giving readers unique and thoughtful content.</p>
 ]]></content:encoded>
  </entry>
  

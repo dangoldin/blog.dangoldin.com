@@ -23,26 +23,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Increase reliability through loose coupling: An adtech example</title>
-  <meta name="description" content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure.">
-  <meta name="keywords" content="adtech, system reliability, uptime, devops, sre" />
+  <title>Blogging: 2020 and beyond</title>
+  <meta name="description" content="Rather than aim for 2 posts a week I'm going to aim for 1 deep post a month in 2021.">
+  <meta name="keywords" content="blogging" />
   <meta name="author" content="Dan Goldin">
 
-  <link rel="canonical" href="http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/">
+  <link rel="canonical" href="http://dangoldin.com/2020/12/28/blogging-2020-and-beyond/">
   <link rel="alternate" type="application/rss+xml" title="Dan Goldin" href="http://dangoldin.com/atom.xml">
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@dangoldin" />
-  <meta name="twitter:title" content="Increase reliability through loose coupling: An adtech example" />
+  <meta name="twitter:title" content="Blogging: 2020 and beyond" />
 
   <meta property="og:type"                content="website" />
   <meta property="og:site_name"           content="Dan Goldin" />
-  <meta property="og:url"                 content="http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/" />
-  <meta property="og:title"               content="Increase reliability through loose coupling: An adtech example" />
+  <meta property="og:url"                 content="http://dangoldin.com/2020/12/28/blogging-2020-and-beyond/" />
+  <meta property="og:title"               content="Blogging: 2020 and beyond" />
 
   
-  <meta property="og:description"         content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure." />
-  <meta name="twitter:description"        content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure." />
+  <meta property="og:description"         content="Rather than aim for 2 posts a week I'm going to aim for 1 deep post a month in 2021." />
+  <meta name="twitter:description"        content="Rather than aim for 2 posts a week I'm going to aim for 1 deep post a month in 2021." />
   
 
   
@@ -54,11 +54,11 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "http://dangoldin.com/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/",
-  "headline": "Increase reliability through loose coupling: An adtech example",
+  "mainEntityOfPage": "http://dangoldin.com/2020/12/28/blogging-2020-and-beyond/",
+  "headline": "Blogging: 2020 and beyond",
   "datePublished": "2020-12-28T00:00:00-05:00",
   "dateModified": "2020-12-28T00:00:00-05:00",
-  "description": "A few weeks ago I evangelized degrading functionality in the case of system outages as an option versus building out full regional resiliency. Someone asked ...",
+  "description": "I have a script I use to analyze and visualize my blogging. One script generates a simple CSV file containing a variety of metadata about my blogging that I ...",
   "author": {
     "@type": "Person",
     "name": ""
@@ -724,21 +724,19 @@ table {
 <main class="content" role="main">
   <article class="post">
     <div class="post-meta">
-      <h1 class="post-title">Increase reliability through loose coupling: An adtech example</h1>
+      <h1 class="post-title">Blogging: 2020 and beyond</h1>
       <span class="date">28 December 2020</span>
     </div>
 
     <section class="post-content">
       
-<p>A few weeks ago I <a href="/2020/12/02/degrade-functionality-instead-of-building-cross-region-availablity/">evangelized degrading functionality</a> in the case of system outages as an option versus building out full regional resiliency. Someone asked me to dig into my example more so I’ll share a bit of how one of our core systems at TripleLift is set up.</p>
+<p>I have a <a href="https://github.com/dangoldin/blog-analytics/">script</a> I use to analyze and visualize my blogging. One script generates a simple CSV file containing a variety of metadata about my blogging that I then feed into a Grafana dashboard to see how I’m doing. Another script does some simple visualizations. In the past years I had an annual tradition of sharing these visualizations and describing each one but I took a look at this year’s and for the most part there’s nothing that interesting.</p>
 
-<p>We run an advertising exchange handing tens of billions of ad requests each day. AdTech has a ton of different companies with each doing a bit of everything but a simple way to think of us is an “exchange” that sits in between buyers and sellers of ads and ad space. In this case, a seller would be a publisher, such as the NY Times that has ad opportunities available. The buy side would be a Demand Side Platform (DSP) that has an API integration and submits bids on behalf of advertisers.</p>
+<p>I started blogging since it helps me improve my writing while clarifying my thinking but these days with my two-a-week commitment I’ve veered away from that purpose and am now beholden to the quantity and not the quality. Even now I sit down to write about a topic I often discover that I wrote about it in the past and don’t have anything new to add.</p>
 
-<p>One of the challenges in running an exchange is building a global system that can handle tens of billions of auctions per day - with each auction dispatching dozens of requests to the various integrated parties. The way we do this is by keeping our exchange focused on the minimal set of requirements to run an auction - receiving requests from a seller, sending them to buyers, and then filtering and identifying the winning response. That means these applications do not connect to any database that isn’t a blocker to run an auction and instead rely on a separate service that compiles various the business rules, packages them into a protobuf message, and then uploads it to S3. Once the data is uploaded to S3 this service lets the exchanges know that an update is available and it’s up to them to fetch and load them from S3.</p>
+<p>At the same time, there have been significant changes in publishing since I started writing. Google Reader is dead and RSS seems to be on the way out. Instead we have newsletters for longer form writing and Twitter for the short form and stream of consciousness reactions.</p>
 
-<p>This approach decouples the exchanges serving the outside world from the service putting together the data. If this data service or any of the systems it depends on is down it doesn’t affect our ability to run auctions but it does mean that they may be running on slightly delayed data - for example new publishers launched or changes to business rules - but these would just get picked up during the next update.</p>
-
-<p>In addition to resiliency this approach also leads to simpler code since it puts the responsibility of data fetching to the data service and keeps our exchanges focused on the real time bidding system. Also, the load on the various databases and services is reduced since we do not need every one of our exchanges asking for the same data from the same set of databases. In essence, we can think of the solution here as a form of a cache that’s backed by S3 and updated on a specific schedule by a dedicated application.</p>
+<p>While it’s difficult to break tradition the above are enough to make me switch my blogging approach in 2021 and beyond. Rather than aim for 2 posts a week I’m going to write one long post a month. These posts will require multiple days of writing and research rather than the stream of consciousness style I’ve adopted lately. My hope is that this will improve my longer form writing and thinking while also giving readers unique and thoughtful content.</p>
 
     </section>
 
@@ -753,7 +751,7 @@ table {
   <!-- <li>Tagged under:</li> -->
   
     
-      <li><a href="/tags/##devops-ref">#devops </a></li>
+      <li><a href="/tags/##meta-ref">#meta </a></li>
     
   
 
@@ -770,11 +768,11 @@ table {
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2020/12/28/blogging-2020-and-beyond/" title="Blogging: 2020 and beyond">&larr; Prev</a> | </li>
+        <li class="prev"><a href="/2020/12/27/spacex-starship-vs-saturn-v/" title="SpaceX Starship vs Saturn V">&larr; Prev</a> | </li>
       
         <li><a href="/archive/">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a></li>
+        <li class="next"> | <a href="/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/" title="Increase reliability through loose coupling: An adtech example">Next &rarr;</a></li>
       
       </ul>
     </div>
@@ -785,7 +783,7 @@ table {
         sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         resizable
         frameborder="0"
-        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F28%2Fincrease-reliability-through-loose-coupling-an-adtech-example%2F&title=Increase+reliability+through+loose+coupling%3A+An+adtech+example">
+        src="https://s3.amazonaws.com/dangoldin.com/amp-disqus.html?url=http%3A%2F%2Fdangoldin.com%2F2020%2F12%2F28%2Fblogging-2020-and-beyond%2F&title=Blogging%3A+2020+and+beyond">
         <div overflow tabindex="0" role="button" aria-label="Read more">Read more!</div>
       </amp-iframe>
     </div>
