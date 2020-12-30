@@ -20,6 +20,7 @@ http://dangoldin.com/redirects.json
 http://dangoldin.com/sitemap.xml
 http://dangoldin.com/robots.txt
 
+http://dangoldin.com/2020/12/30/science-vs-policy/
 http://dangoldin.com/2020/12/29/time-to-remove-amp-from-my-blog/
 http://dangoldin.com/2020/12/29/improving-the-accuracy-of-evergreen-content/
 http://dangoldin.com/2020/12/29/challenges-in-identifying-a-spawned-os-x-process/
