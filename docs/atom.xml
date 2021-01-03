@@ -3,7 +3,7 @@
  <title>Dan Goldin</title>
  <link href="http://dangoldin.com/atom.xml" rel="self"/>
  <link href="http://dangoldin.com/"/>
- <updated>2020-12-30T23:34:56-05:00</updated>
+ <updated>2021-01-02T23:22:01-05:00</updated>
  <id>http://dangoldin.com/</id>
  <author>
    <name>Dan Goldin</name>
@@ -18330,13 +18330,13 @@ A couple of months ago I started noticing popups on various ecommerce sites offe
 <ul>
     <li>urls.py
         
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_reply'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_view_conversation'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>
 
     </li>
 </ul>

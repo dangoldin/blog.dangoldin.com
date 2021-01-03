@@ -846,13 +846,13 @@ table {
 <ul>
     <li>urls.py
         
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/reply/(?P&lt;message_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.reply'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_reply'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/view/t/(?P&lt;thread_id&gt;[\d]+)/$'</span><span class="p">,</span> <span class="s">'postman.views.view_conversation'</span><span class="p">,</span>
         <span class="p">{</span><span class="s">'form_class'</span><span class="p">:</span> <span class="n">FullReplyImageForm</span><span class="p">},</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'postman_view_conversation'</span><span class="p">),</span>
-<span class="n">url</span><span class="p">(</span><span class="s">r'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>
+<span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s">'^messages/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'postman.urls'</span><span class="p">)),</span></code></pre></figure>
 
     </li>
 </ul>
@@ -916,7 +916,7 @@ table {
 
 <footer class="site-footer">
   <div class="inner">
-    <section class="copyright">All content copyright <a href="mailto:"></a> &copy; 2020 &bull; All rights reserved.</section>
+    <section class="copyright">All content copyright <a href="mailto:"></a> &copy; 2021 &bull; All rights reserved.</section>
     <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a> and <a href="https://github.com/ageitgey/amplify">Amplify</a>. Theme inspired by <a href="http://sirupsen.com/">Simon Hørup Eskildsen</a>.</section>
   </div>
 </footer>
