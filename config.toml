@@ -17,9 +17,6 @@ hasCJKLanguage = true
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
-googleAnalytics = "UA-36313127-1"
-disqusShortname = "dangoldin-githubblog"
-
 [params]
 pagetitle = "Dan Goldin"
 copyright = "© 2021 Dan Goldin"
@@ -30,6 +27,8 @@ uselatex = true
 highlightjs = true
 highlightjslanguages = ["r"]
 progressively = false
+googleAnalytics = "UA-36313127-1"
+# disqusShortname = "dangoldin-githubblog"
 commentsrepo = "dangoldin/blog.dangoldin.com-comments"
 
 github = "dangoldin"
