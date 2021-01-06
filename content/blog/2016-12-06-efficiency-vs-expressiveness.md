@@ -36,7 +36,7 @@ The ideal code is both efficient and expressive but they’re often at odds with
             if 'BoxUsage' in usage_type:
                 instance_type = usage_type.split(':')[-1]
                 d.instance_type[ d['UsageType'] == usage_type ] = instance_type
-{% endhighlight python %}
+{{< / highlight >}}
 
 As one can see the outer for loop is shared but the inner logic is different. If all I cared about was efficiency I’d be able to combine the two functions but then I’d lose the separation of concerns. I can also rewrite the code to be more functional and have a single method that takes a list of functions to apply as arguments but that would but in this case would look messy. I wish I didn’t have to sacrifice efficiency for expressiveness and would love a language that was smart enough to handle this sort of optimization. The JVM does a series of optimizations as it runs so it may come close but I wonder if there’s any language that can do this optimization at compile time.
 
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     print 'Filter single', timeit.timeit('filter_single_test()', 'from __main__ import filter_single_test', number=NUM_ITERATIONS)
     print 'Filter multiple', timeit.timeit('filter_multiple_test()', 'from __main__ import filter_multiple_test', number=NUM_ITERATIONS)
     print 'Filter lambda single', timeit.timeit('filter_lambda_single_test()', 'from __main__ import filter_lambda_single_test', number=NUM_ITERATIONS)
-{% endhighlight python %}
+{{< / highlight >}}
 
 The benchmarks are below and the results are intuitive. The quickest implementation was the single for loop with the nested if conditions and the slowest was the filter/lambda approach. Surprisingly, the other approaches were similar despite the single naive for loop only iterating over the array once while the list comprehensions iterating over the array twice. If we increase the size of the array we do see a bigger benefit coming from the single pass over the array.
 

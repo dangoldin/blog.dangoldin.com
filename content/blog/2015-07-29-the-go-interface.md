@@ -28,7 +28,7 @@ class Dog implements Animal {
 }
 
 public void aRandomFunction(Animal a) { ..  } // Can take anything that implements Animal
-{% endhighlight java %}
+{{< / highlight >}}
 
 With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.
 
@@ -52,7 +52,7 @@ func (d Dog) speak() string {
 }
 
 func aRandomFunction(a Animal) { .. }
-{% endhighlight go %}
+{{< / highlight >}}
 
 Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.
 

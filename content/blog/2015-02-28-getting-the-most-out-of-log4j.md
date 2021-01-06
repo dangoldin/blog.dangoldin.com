@@ -18,7 +18,7 @@ One was updating my PatternLayout to include the filename and line of each messa
 {{< highlight properties >}}
 log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
 log4j.appender.CONSOLE.layout.ConversionPattern=%d %p (%t) [%c] (%F:%L) - %m%n
-{% endhighlight properties %}
+{{< / highlight >}}
 
 The other was to pick the appropriate log level at the package level. If I’m working on a single package I'll reduce the logging level of other packages to make the relevant messages stand out. This is especially handy when you incorporate eager third party packages that drown out your own messages with their own.
 
@@ -27,6 +27,6 @@ log4j.logger.com.dan.package.one.logging=WARN
 log4j.logger.com.dan.package.one.logging.ClassName=INFO
 log4j.logger.com.dan.package.two=DEBUG
 log4j.logger.com.dan.package.two.working_on=TRACE
-{% endhighlight properties %}
+{{< / highlight >}}
 
 My style of development is to rely on logs more than the debugger so these two have made my life a lot easier. In general. logging is an important tool for all developers and yet few tend to tweak the default settings. By understanding the available configuration options you’re able to tweak them for whichever problem you’re solving. This may not seem like a huge win but when you’re running the same program hundreds of times a day the small efficiencies add up.

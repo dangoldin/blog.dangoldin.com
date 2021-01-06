@@ -62,4 +62,4 @@ print(URLS)
 loop = asyncio.get_event_loop()
 future = asyncio.ensure_future(run(URLS))
 loop.run_until_complete(future)
-{% endhighlight python %}
+{{< / highlight >}}

@@ -24,7 +24,7 @@ location /static/admin {
   autoindex on;
   root   /home/ubuntu/app/venv/lib/python2.7/site-packages/django/contrib/admin/;
 }
-{% endhighlight nginx %}
+{{< / highlight >}}
 
   <p><a href="http://gunicorn.org/" target="_blank">Gunicorn</a> - I have a shell script here that's used to set the various paths and options that configure Gunicorn</p>
 {{< highlight bash >}}
@@ -49,7 +49,7 @@ test -d $LOGDIR || mkdir -p $LOGDIR
 exec /home/ubuntu/app/venv/bin/gunicorn_django -w $NUM_WORKERS \
   --user=$USER --group=$GROUP --log-level=debug \
   --log-file=$LOGFILE -b 0.0.0.0:8000 2>>$LOGFILE
-{% endhighlight bash %}
+{{< / highlight >}}
 
   <p><a href="http://supervisord.org/" target="_blank">Supevisor</a> - Here we just point our configuration file to the shell script for Gunicorn</p>
 {{< highlight ini >}}
@@ -59,7 +59,7 @@ user = ubuntu
 command = /home/ubuntu/myapp/scripts/start.sh
 stdout_logfile = /var/log/gunicorn/myapp-std.log
 stderr_logfile = /var/log/gunicorn/myapp-err.log
-{% endhighlight ini %}
+{{< / highlight >}}
   </li>
 
 <li><a href="http://www.celeryproject.org/" target="_blank">Celery</a> under Supervisor.
@@ -82,7 +82,7 @@ startsecs=10
 
 environment =
   DJANGO_SETTINGS_MODULE=myapp.settings.prod
-{% endhighlight ini %}
+{{< / highlight >}}
 </li>
 
 <li><a href="http://docs.fabfile.org/en/1.8/" target="_blank">Fabric</a>.
@@ -107,6 +107,6 @@ def virtualenv():
 def rebuild_index():
     with virtualenv():
         run("python manage.py rebuild_index")
-{% endhighlight python %}
+{{< / highlight >}}
 </li>
 </ul>

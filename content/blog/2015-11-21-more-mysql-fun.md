@@ -39,6 +39,6 @@ group by id;
 select case when id = 1 then 2 else id end as new_id, sum(id2)
 from dan_test
 group by new_id;
-{% endhighlight sql %}
+{{< / highlight >}}
 
 With the second to last query it’s not obvious which id field the group by is referring to: the original from the table or the derived field? It turns out it’s the original field which can cause problems if you’re unaware of this subtlety. There are a few different ways to deal with this situation, including grouping by the derivation formula, but my favorite is to use a brand new field as in the last example above.

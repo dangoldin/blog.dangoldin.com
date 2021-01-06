@@ -21,7 +21,7 @@ def parse(self, response):
     return [FormRequest.from_response(response,
                 formdata={'login': self.settings['YAHOO_USERNAME'],
                 		  'passwd': self.settings['YAHOO_PASSWORD']},
-                callback=self.after_login)]{% endhighlight python %}
+                callback=self.after_login)]{{< / highlight >}}
 	</li>
 	<li><strong>parse_stats method</strong>: In previous projects, I struggled with separating the crawling from the parsing since the page would have information that would relevant to both - for example I would want to extract information from a page as well as find the next page to scrape. Scrapy offers a nice solution by letting you return different types from the same method. Returing a Request will lead to another page being crawled but one can also returned the scraped structured data via an Item. In the case of the scraper, I return the fantasy football stats on each page via Items but also return a Request when I want to navigate to the next page of stats.
 {{< highlight python >}}
@@ -67,7 +67,7 @@ def parse_stats(self, response):
         if count > self.settings['MAX_STATS_PER_WEEK']:
             yield Request(self.base_url.format(self.settings['YAHOO_LEAGUEID'], current_week + 1), callback=self.parse_stats)
         else:
-            yield Request(next_page_url, callback=self.parse_stats){% endhighlight python %}}
+            yield Request(next_page_url, callback=self.parse_stats){{< / highlight >}}
 	</li>
 	<li><strong>XPath expressions</strong>: In the past, I'd use either BeautifulSoup or PyQuery to traverse the DOM but found XPath expressions to be simpler. There’s less code to write and the expressions are easier to understand and have a higher information density.
 {{< highlight python >}}
@@ -88,7 +88,7 @@ xpath_map = {
     'misc_twopt': 'td[@class="stat"][10]/text()',
     'fumbles': 'td[@class="stat"][11]/text()',
     'points': 'td[contains(@class,"pts")]/text()',
-}{% endhighlight python %}
+}{{< / highlight >}}
 	</li>
 </ul>
 

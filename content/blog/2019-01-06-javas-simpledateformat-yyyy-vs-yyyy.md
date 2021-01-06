@@ -36,7 +36,7 @@ public class Test {
         }
     }
 }
-{% endhighlight java %}
+{{< / highlight >}}
 
 This gives you the following:
 
@@ -44,6 +44,6 @@ This gives you the following:
 For date 2018-12-01 the YYYY year is 2018 while for yyyy it's 2018
 For date 2018-12-31 the YYYY year is 2019 while for yyyy it's 2018
 For date 2019-01-01 the YYYY year is 2019 while for yyyy it's 2019
-{% endhighlight txt %}
+{{< / highlight >}}
 
 The first and last make sense since the two year formats match. The middle one is the odd one out. The date starts as 2018-12-31 but YYYY gives you 2019 while yyyy gives you 2018. In general, you should almost always use yyyy so it’s a good tactic to add some form of linting or checking to make sure your code does not have any date formats referencing YYYY.

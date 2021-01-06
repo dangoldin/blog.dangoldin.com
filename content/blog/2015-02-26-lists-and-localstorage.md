@@ -57,4 +57,4 @@ l = getItems('test_list');
 console.log('List limit works: ' + (l.length === 2));
 console.log('Value 0 matches: ' + (l[0].beer === 'Newcastle'));
 console.log('Value 1 matches: ' + (l[1].size === 2));
-{% endhighlight javascript %}
+{{< / highlight >}}

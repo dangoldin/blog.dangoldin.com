@@ -41,4 +41,4 @@ bottom = location['y'] + size['height'] - scroll
 
 im = im.crop((left, top, right, bottom))
 im.save(filepath.replace('.jpg', '-2.jpg'))
-{% endhighlight python %}
+{{< / highlight >}}

@@ -35,7 +35,8 @@ server {
 
     ssl on;
     ssl_certificate certs/better404.pem;
-    ssl_certificate_key certs/better404.key;{% endhighlight nginx %}</li>
+    ssl_certificate_key certs/better404.key;{{< / highlight >}}
+  </li>
   <li>Allow Nginx to bind to the IP address. One thing that’s not mentioned in the guide and required a bit of digging around is that you need to allow Nginx to bind to the non local IP address - otherwise it can only access the private IP address set by AWS. There’s a <a href="http://stackoverflow.com/a/13141104/1139968" target="_blank">quick guide</a> on how to do this I found on StackOverflow.</li>
 </ul>
 

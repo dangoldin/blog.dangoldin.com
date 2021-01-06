@@ -71,4 +71,4 @@ from elb_logs
 where elbresponsecode >= 500
 group by datetime
 order by datetime;
-{% endhighlight sql %}
+{{< / highlight >}}

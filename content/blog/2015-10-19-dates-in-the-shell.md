@@ -30,6 +30,6 @@ Mon Oct 19 22:35:37 EDT 2015
 2018-10-19T22:39:18
 ➜  ~  date -v+3m +"%Y-%m-%dT%H:%M:%S"
 2016-01-19T22:39:24
-{% endhighlight sh %}
+{{< / highlight >}}
 
 In the past I’d resort to a JavaScript utility or a quick Python script when I needed a simple date calculation but lately I’ve been able to do nearly everything solely by using the built in date utility. It’s still a bit cumbersome for generating date ranges or when requiring complicated logic but for the basic stuff it’s surprisingly powerful and expressive. It’s amazing how full featured the shell is and how often we avoid it and use more fleshed out languages. Instead of trying to find new languages it’s worth taking the time to actually explore and understand the shell - it’s one of the better investments an engineer can make.

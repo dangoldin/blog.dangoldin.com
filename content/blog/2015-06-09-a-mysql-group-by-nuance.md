@@ -17,7 +17,7 @@ FROM table_a a
 LEFT JOIN table_b on a.some_id = b.some_other_id
 LEFT JOIN stats s on a.stat_id = s.id
 GROUP BY user_id;
-{% endhighlight sql %}
+{{< / highlight >}}
 
 The nuance is that we want the GROUP BY to apply to the entire coalesce expression but as it’s written it only applies to the user_id column from table_a. This has potential to give odd results in more complicated queries. The only fact I even discovered it was that it was causing a duplicate key constraint violation in another table. The solution is quite simple but annoying - you have to use the entire coalesce expression within the GROUP BY statement:
 
@@ -27,7 +27,7 @@ FROM table_a a
 LEFT JOIN table_b on a.some_id = b.some_other_id
 LEFT JOIN stats s on a.stat_id = s.id
 GROUP BY coalesce(a.user_id, b.other_user_id);
-{% endhighlight sql %}
+{{< / highlight >}}
 
 The reason this solution is messy is that it’s very easy to update the SELECT but forget to update the GROUP BY. This won’t throw an error and MySQL will execute the query just fine - the results just may be unexpected. What I’ve started doing is renaming the resulting column and using that within the GROUP BY:
 
@@ -37,6 +37,6 @@ FROM table_a a
 LEFT JOIN table_b on a.some_id = b.some_other_id
 LEFT JOIN stats s on a.stat_id = s.id
 GROUP BY final_user_id;
-{% endhighlight sql %}
+{{< / highlight >}}
 
 This makes the query a bit more complicated but it’s being explicit about what we want and avoids hidden errors.
