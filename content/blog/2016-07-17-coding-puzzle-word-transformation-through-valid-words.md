@@ -26,7 +26,7 @@ def load_dictionary(path = '/usr/share/dict/words'):
     for line in f:
       dictionary.add(line.strip().lower())
   return dictionary
-{% endhighlight python %}
+{{< / highlight >}}
 
 While thinking about the adjacent word function I thought back to [Peter Norvig’s spell checker](http://norvig.com/spell-correct.html) and remembered how simple yet powerful it was (if you haven’t seen it yet you should take a look - one of the most elegant code examples I’ve seen). All his code needed was a tiny tweak to filter the list of generated words to those in the dictionary.
 
@@ -35,7 +35,7 @@ def adjacent_words(word, alphabet):
   splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
   replaces = [a + c + b[1:] for a, b in splits for c in alphabet if b]
   return [r for r in replaces if r in dictionary]
-{% endhighlight python %}
+{{< / highlight >}}
 
 Now it was time to do the actual search which took me a bit of time. I knew the theory but it took me a bit of time to translate it into code. And even then I wasn’t happy with how it looked so ended up finding a pretty simple [Python implementation](http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/).
 
@@ -49,7 +49,7 @@ def bfs_paths(source, target, dictionary, alphabet):
         yield path + [n]
       else:
         queue.append((n, path + [n]))
-{% endhighlight python %}
+{{< / highlight >}}
 
 The last part was cleaning up the code and improving its efficiency. The key parts here were using string.lowercase as the universe of letters, replacing a standard list with a collections.dequeue to significantly speed up the “pop” operation, and making the dictionary and alphabet variables locally scoped. As a final test I ran through the dog to cat example and got two additional transformations: dog->cog->cag->cat and dog->cog->cot->cat. The complete code is below but note that I left it open-ended so it will print every path it finds rather than just the shortest one.
 
@@ -92,4 +92,4 @@ if __name__ == '__main__':
 
   for x in bfs_paths('dog', 'cat', dictionary, alphabet):
     print x
-{% endhighlight python %}
+{{< / highlight >}}
