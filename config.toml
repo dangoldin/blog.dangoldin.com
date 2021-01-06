@@ -20,7 +20,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 [params]
 pagetitle = "Dan Goldin"
 copyright = "© 2021 Dan Goldin"
-faviconfile = "image/favicon.png"
+faviconfile = "favicon.png"
 logofile = "image/photo.jpg"
 posts_navigation = true
 uselatex = true
