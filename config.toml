@@ -1,0 +1,59 @@
+baseurl = ""
+publishDir = "public"
+title = "Dan Goldin"
+author = "Dan Goldin"
+canonifyurls = false
+languagecode = "en"
+paginate = 3
+theme = "hugo-nanx2020"
+
+enableEmoji = true
+hasCJKLanguage = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+
+googleAnalytics = "UA-36313127-1"
+disqusShortname = "dangoldin-githubblog"
+
+[params]
+pagetitle = "Dan Goldin"
+copyright = "© 2021 Dan Goldin"
+faviconfile = "image/favicon.png"
+logofile = "image/photo.jpg"
+posts_navigation = true
+uselatex = true
+highlightjs = true
+highlightjslanguages = ["r"]
+progressively = false
+commentsrepo = "dangoldin/blog.dangoldin.com-comments"
+
+github = "dangoldin"
+twitter = "dangoldin"
+linkedin = "dangoldin"
+contact = "dan@dangoldin.com"
+
+[permalinks]
+"blog" = "/:year/:month/:day/:slug/"
+
+[[menu.primary]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.primary]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.primary]]
+identifier = "lore"
+name = "Lore"
+url = "/lore/"
+weight = 3

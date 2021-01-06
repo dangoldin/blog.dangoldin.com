@@ -1,3 +1,0 @@
-{% for js in page.custom_js %}
-  <script type="text/javascript" src="{{ STATIC_PATH }}js/{{ js }}"></script>
-{% endfor %}

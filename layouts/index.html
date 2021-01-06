@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ partial "header" . }}
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-lg-8">
+                <div class="markdown">                    
+                    <div class="mx-0 mx-md-4 posts">
+                        <ul class="list-unstyled">
+                            {{ range ( where site.RegularPages "Section" "blog" ).GroupByDate "2006" "desc"}}
+                                <li class="groupby">{{ .Key }}</li>
+                                {{ range sort .Pages "Date" "desc" }}
+                                    {{ partial "list" . }}
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial "footer" . }}
+{{ end }}
+
