@@ -43,7 +43,7 @@
     {{ end }}
 
     <link rel="shortcut icon"
-        href="{{ if .Site.Params.faviconfile }}{{ .Site.Params.faviconfile | absURL }}{{ else }}/img/favicon.ico{{ end }}">
+        href="{{ if .Site.Params.faviconfile }}/{{ .Site.Params.faviconfile }}{{ else }}/img/favicon.ico{{ end }}">
 
     {{ if .Site.RSSLink }}
     <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
