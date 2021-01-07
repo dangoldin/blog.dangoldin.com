@@ -12,8 +12,6 @@ tags:
 - 'code'
 title: Sierpinski triangle in D3
 ---
-
-
 There's a little known algorithm for constructing a <a href="https://en.wikipedia.org/wiki/Sierpinski_triangle" target="_blank">Sierpinski triangle</a> that is surprisingly easy to implement.
 
 1. Start the three vertices that form a triangle
@@ -26,7 +24,8 @@ I'm trying to get better at D3 and thought it would be a good exercise to code i
 
 <div id="canvas-triangle">
 </div>
-
+<!-- 
+TODO: FIx this
 {% include D3 %}
 
-{% include custom_js %}
+{% include custom_js %} -->
