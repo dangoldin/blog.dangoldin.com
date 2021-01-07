@@ -33,6 +33,7 @@ As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinsk
   </li>
 </ul>
 
+<!-- TODO: Get this working
 <form class="form form-horizontal" id="sierpinski-options-form">
   <div class="control-group">
     <label class="control-label" for="id-sierpinski-sides"># of sides</label>
@@ -57,9 +58,9 @@ As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinsk
 
 <div id="canvas">
 </div>
-<!-- 
-TODO: Get this working
 
 {% include D3 %}
 
-{% include custom_js %} -->
+{% include custom_js %}
+
+-->

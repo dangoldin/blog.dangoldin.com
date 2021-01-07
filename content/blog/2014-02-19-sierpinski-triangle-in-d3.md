@@ -22,10 +22,13 @@ There's a little known algorithm for constructing a <a href="https://en.wikipedi
 
 I'm trying to get better at D3 and thought it would be a good exercise to code it up. The resulting image is below (generated using 10,000 points) and the JavaScript is in the following <a href="{{ STATIC_PATH }}js/d3.sierpinski.js">file</a>. Next up is to write a new script that allows a user to specify the number of vertices and the adjustment factor - the <a href="https://en.wikipedia.org/wiki/Sierpinski_carpet" target="_blank">Sierpinski carpet</a> can be generated with 4 vertices and a distance adjustment factor of a third rather than a half.
 
-<div id="canvas-triangle">
-</div>
 <!-- 
 TODO: FIx this
+
+<div id="canvas-triangle">
+</div>
+
 {% include D3 %}
 
-{% include custom_js %} -->
+{% include custom_js %}
+-->
