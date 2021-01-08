@@ -1,7 +1,5 @@
 ---
 date: "2020-12-30T00:00:00Z"
-aliases:
--  /2020/12/30/science-vs-policy/
 description: There's another case of a government agency not listening to scientists.
   There may be valid reasons but the fact that we even question it is a problem.
 meta_img: null
