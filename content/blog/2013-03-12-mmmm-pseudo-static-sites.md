@@ -7,6 +7,7 @@ tags:
 - 'code'
 - 'aws'
 title: Mmmm... pseudo static sites
+slug: mmmm-pseudo-static-sites
 ---
 
 Reading <a href="http://blog.apps.npr.org/2013/02/14/app-template-redux.html" target="_blank">Katie Zhu’s post</a> on NPR’s news app architecture got me curious about a setup where most of the content is static and can be hosted on S3 and EC2 is primarily used to generate the static content which is then uploaded to S3. The benefits were obvious:

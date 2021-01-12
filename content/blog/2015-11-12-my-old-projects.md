@@ -46,7 +46,7 @@ Writing up my old projects got me browsing through my GitHub account to see what
 
 - [Meeting place finder](https://github.com/dangoldin/meeting-place-finder): A simple script that uses the Google Maps API to come up with an ideal meeting place for a group of people that ensures everyone has the same commute time.
 
-- [Lincoln text analysis](https://github.com/dangoldin/lincoln-text-analysis): An old project that read in the text of Abraham Lincoln's speeches and did a few visualizations of the text. I wrote a blog post about it [here](/2013/02/12/analysis-of-lincolns-words/).
+- [Lincoln text analysis](https://github.com/dangoldin/lincoln-text-analysis): An old project that read in the text of Abraham Lincoln's speeches and did a few visualizations of the text. I wrote a blog post about it [here](/2013/02/12/an-analysis-of-lincolns-words/).
 
 - [Lawdiff](https://github.com/dangoldin/lawdiff): I participated in a journalism meets tech hackathon and this was my team's entry. We looked at proposed state laws and compared them against other states to identify laws that were most likely written by a special interest group. We had a number of false positives but were able to find a bunch of laws that were nearly identical despite being introduced in multiple states.
 
