@@ -5,7 +5,7 @@ meta_img: "image/dropbox-stock-price-history.png"
 keywords: products, features, dropbox, slack, salesforce, google, microsoft
 tags:
   - "product"
-description: "Description for the page."
+description: "Dropbox and Slack are successful companies and yet they're billion dollar features of trillion dollar companies."
 ---
 There's an [old story](https://www.businessinsider.com/drew-houston-dropbox-steve-jobs-2017-6) of Steve Jobs meeting Drew Houston in order to acquire Dropbox but after being refused calling Dropbox a feature. Dropbox kept innovating, building a great product, went public and is currently a $9 billion company. Clearly Dropbox proved Steve Jobs wrong. But did it really? Dropbox recently announced a round of layoffs and their stock has dropped 20% since they went public. Even on a personal note I plan on moving my files from Dropbox to Google Drive.
 
