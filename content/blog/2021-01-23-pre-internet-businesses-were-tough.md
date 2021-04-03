@@ -6,7 +6,7 @@ keywords: "entrepreneurship, startups, business, jazzercise"
 tags:
   - "entrepreneurship"
 ---
-One of my favorite podcasts is NPR's How I Built This that conducts interviews with entrepreneurs across a variety of industries, not just tech. A recent episode was an [interview with Judi Sheppard Misset](https://www.npr.org/2021/01/15/957229311/jazzercise-judi-sheppard-missett), the creator of Jazzercise - a dance fitness class that she launched in 1969. We all realize that there's much less friction to launch a business these days but the interview makes you see how significant the changes have been.
+One of my favorite podcasts is NPR's How I Built This that conducts interviews with entrepreneurs across a variety of industries, not just tech. A recent episode was an [interview with Judi Sheppard Misset](https://www.npr.org/2021/01/15/957229311/jazzercise-judi-sheppard-missett), the creator of [Jazzercise](https://www.jazzercise.com/) - a dance fitness class that she launched in 1969. We all realize that there's much less friction to launch a business these days but the interview makes you see how significant the changes have been.
 
 Pre-internet most people simply did not have any business or legal resources nearby and were flying blind. You relied on your friends, referrals, and experience to deal with problems as they arose. These days YouTube videos get immediately taken down with even a hint of a copyright violation and yet she was able to play songs without anyone in the industry even knowing it was happening.
 
