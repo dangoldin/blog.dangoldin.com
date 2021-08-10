@@ -12,7 +12,7 @@ tags:
 - 'code'
 title: More Sierpinski fun
 ---
-As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinski-triangle-in-d3/">post</a>, I modified my Sierpinski generation <a href="{{ STATIC_PATH }}js/d3.sierpinski.v2.js">code</a> to allow specifying the number of sides and the distance ratio for each iteration of the loop. The Sierpinski triangle can be generated with 3 sides and a distance ratio of 0.5. Increasing the number of sides and decreasing the ratio leads to some interesting patterns - it looks as if for a given N, we get N shapes each consisting of N shapes. I suspect this is a fractal pattern - similar to the triangle - but it's difficult to confirm given a fixed screen resolution. I'd love to know what's going on here and whether there's a relationship between the number of sides and the distance ratio.
+As a follow up to my previous <a href="http://dangoldin.com/2014/02/19/sierpinski-triangle-in-d3/">post</a>, I modified my Sierpinski generation code to allow specifying the number of sides and the distance ratio for each iteration of the loop. The Sierpinski triangle can be generated with 3 sides and a distance ratio of 0.5. Increasing the number of sides and decreasing the ratio leads to some interesting patterns - it looks as if for a given N, we get N shapes each consisting of N shapes. I suspect this is a fractal pattern - similar to the triangle - but it's difficult to confirm given a fixed screen resolution. I'd love to know what's going on here and whether there's a relationship between the number of sides and the distance ratio.
 
 <ul class='thumbnails'>
   <li class="span3">
