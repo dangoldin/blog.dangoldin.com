@@ -1,2 +1,162 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Vertical integration and web development - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2014/04/16/vertical-integration-and-web-development/"><meta property="og:title" content="Vertical integration and web development"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Vertical integration and web development"><meta name=twitter:description content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend."><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2014/04/16/vertical-integration-and-web-development/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Vertical integration and web development</h1><div class="mb-md-4 meta"><span class="date middot" title="Wed Apr 16 2014 00:00:00 UTC">2014-04-16</span>
-<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/code>code</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>Lately, I’ve been thinking about tightly coupled systems and how prevalent JavaScript has become on the web.</p><p>Tightly coupled systems scare me. They will undoubtedly break and bring down big chunks of your infrastructure. The solution is to think about your system in terms of various independent services that are responsible for only doing a few things well that won’t bring down the rest of the system if they fail. This approach makes it easier to maintain your code as it grows and also reduces the risk of massive failure. The challenge is figuring out how to break your project down into these services and being sure to revisit that decision as you grow.</p><p>JavaScript is pervasive in the modern web. I’ve been using Ghostery for the past couple of months and am constantly amazed by how many external JavaScript libraries are loaded on popular sites. It’s not surprising to see dozens of libraries being included and evaluated. They range from advertising, to tracking, to adding functionality, and it’s incredibly rare to see just one.</p><p>On the surface, these two thoughts are different but their intersection is interesting. Similar to the way these sites include additional functionality by loading external scripts, we can compartmentalize various functionality into standalone components and make them available to our applications via simple APIs. In the case of a web app, we’d expose functionality through client side JavaScript libraries that would be coupled with a backend that does the heavy lifting. Rather than slicing horizontally, which is what typical apps do by having a separate UI and a s separate API, we can learn from these external libraries and slice vertically by function.</p><p>We integrate tools such as Google Analytics, Stripe, Disqus and MixPanel into our apps without a second thought and we should strive to write our code the same way. This allows us to choose the right tool for the job. If it’s a simple, low volume API that will be used internally, go ahead and do it quickly in a scripting language such as Python, Ruby, or PHP. If, on the other hand, the service will get a ton of requests, you can implement it in Node. In the extreme case of a site that’s using a ton of content, it may make sense to have the content hosted on S3 and just being retrieved by JavaScript called from the client - then the backend can be solely dedicated to providing the dynamic functionality.</p><p>This is a pretty extreme approach with it’s own set of challenges. It will definitely require more thought up front on how you want your application to work and will require a different approach than we’re used to but I feel this is the right approach if you’re building for scale. Every application should be broken down into components to see which would benefit from different approaches. If it turns out that two components have drastically different requirements, it might make sense to build them as completely standalone services and only communicate amongst each other via APIs.</p><p>This is nothing new, people have been preaching <a href=https://en.wikipedia.org/wiki/Service-oriented_architecture target=_blank>service oriented architectures</a> for decades but I think we’ve forgotten it when thinking in terms of “web.” It feels more intuitive to split services in terms of frontend and backend but the right approach is to think in terms of actual functionality. It may turn out to be that tightly coupling the frontend and the backend is the right decision.</p></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2014/04/13/some-computer-memories/>« Some computer memories</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2014/04/21/bulk-geocoding-tool/>Bulk geocoding tool »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script><script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script></body></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title> Vertical integration and web development - Dan Goldin </title>
+<meta name=HandheldFriendly content="True">
+<meta name=MobileOptimized content="320">
+<meta name=referrer content="no-referrer">
+<meta name=description content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend.">
+<meta property="og:site_name" content="Dan Goldin">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2014/04/16/vertical-integration-and-web-development/">
+<meta property="og:title" content="Vertical integration and web development">
+<meta property="og:image" content="/image/photo.jpg">
+<meta property="og:description" content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend.">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@dangoldin">
+<meta name=twitter:creator content="@dangoldin">
+<meta name=twitter:title content="Vertical integration and web development">
+<meta name=twitter:description content="We tend to split apps into frontend and backend. It may make more sense to think about our apps in terms of functionality which may lead to a tight coupling between the frontend and backend.">
+<meta name=twitter:image content="/image/photo.jpg">
+<link rel=canonical href=/2014/04/16/vertical-integration-and-web-development/>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
+<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.png>
+<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
+</head>
+<body>
+<div class="my-4 my-lg-5 header">
+<div class=container>
+<div class=row>
+<div class="col-auto offset-lg-2 d-none d-lg-block">
+<a href=/>
+<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
+</a>
+</div>
+<div class="col-auto align-self-center mr-auto">
+<a href=/>
+<h1 class=name>Dan Goldin</h1>
+</a>
+<ul class="nav nav-primary">
+<li class=nav-item>
+<a class="nav-link text-home" href=/>
+Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-about" href=/about/>
+About
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-lore" href=/lore/>
+Lore
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=content>
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<h1 class="mx-0 mx-md-4 blog-post-title">Vertical integration and web development</h1>
+<div class="mb-md-4 meta">
+<span class="date middot" title="Wed Apr 16 2014 00:00:00 UTC">
+2014-04-16
+</span>
+<span class="reading-time middot">
+3 min read
+</span>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+<li class="d-inline middot">
+<a href=/tags/code>code</a>
+</li>
+</ul>
+</div>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+</div>
+<div class="markdown blog-post-content">
+<p>Lately, I’ve been thinking about tightly coupled systems and how prevalent JavaScript has become on the web.</p>
+<p>Tightly coupled systems scare me. They will undoubtedly break and bring down big chunks of your infrastructure. The solution is to think about your system in terms of various independent services that are responsible for only doing a few things well that won’t bring down the rest of the system if they fail. This approach makes it easier to maintain your code as it grows and also reduces the risk of massive failure. The challenge is figuring out how to break your project down into these services and being sure to revisit that decision as you grow.</p>
+<p>JavaScript is pervasive in the modern web. I’ve been using Ghostery for the past couple of months and am constantly amazed by how many external JavaScript libraries are loaded on popular sites. It’s not surprising to see dozens of libraries being included and evaluated. They range from advertising, to tracking, to adding functionality, and it’s incredibly rare to see just one.</p>
+<p>On the surface, these two thoughts are different but their intersection is interesting. Similar to the way these sites include additional functionality by loading external scripts, we can compartmentalize various functionality into standalone components and make them available to our applications via simple APIs. In the case of a web app, we’d expose functionality through client side JavaScript libraries that would be coupled with a backend that does the heavy lifting. Rather than slicing horizontally, which is what typical apps do by having a separate UI and a s separate API, we can learn from these external libraries and slice vertically by function.</p>
+<p>We integrate tools such as Google Analytics, Stripe, Disqus and MixPanel into our apps without a second thought and we should strive to write our code the same way. This allows us to choose the right tool for the job. If it’s a simple, low volume API that will be used internally, go ahead and do it quickly in a scripting language such as Python, Ruby, or PHP. If, on the other hand, the service will get a ton of requests, you can implement it in Node. In the extreme case of a site that’s using a ton of content, it may make sense to have the content hosted on S3 and just being retrieved by JavaScript called from the client - then the backend can be solely dedicated to providing the dynamic functionality.</p>
+<p>This is a pretty extreme approach with it’s own set of challenges. It will definitely require more thought up front on how you want your application to work and will require a different approach than we’re used to but I feel this is the right approach if you’re building for scale. Every application should be broken down into components to see which would benefit from different approaches. If it turns out that two components have drastically different requirements, it might make sense to build them as completely standalone services and only communicate amongst each other via APIs.</p>
+<p>This is nothing new, people have been preaching <a href=https://en.wikipedia.org/wiki/Service-oriented_architecture target=_blank>service oriented architectures</a> for decades but I think we’ve forgotten it when thinking in terms of “web.” It feels more intuitive to split services in terms of frontend and backend but the right approach is to think in terms of actual functionality. It may turn out to be that tightly coupling the frontend and the backend is the right decision.</p>
+</div>
+<div class=navigation>
+<div class=row>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-left">
+<a href=/2014/04/13/some-computer-memories/>« Some computer memories</a>
+</div>
+</div>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-right">
+<a href=/2014/04/21/bulk-geocoding-tool/>Bulk geocoding tool »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id=comments>
+<div class="py-3 content">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<div class=comments>
+<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="my-4 footer">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<hr>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-2">
+<div class="mx-0 mx-md-4 site-copyright">
+© 2021 Dan Goldin
+</div>
+</div>
+<div class="col-sm-12 col-lg-6">
+<div class="mx-0 mx-md-4 site-social">
+<ul>
+<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
+<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
+<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
+<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
+<li><a href=/index.xml class=mr-0>RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
+<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
+</body>
+</html>

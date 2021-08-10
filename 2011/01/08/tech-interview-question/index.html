@@ -1,2 +1,175 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Tech interview question - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="I share some more thoughts on conducting tech interviews"><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2011/01/08/tech-interview-question/"><meta property="og:title" content="Tech interview question"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="I share some more thoughts on conducting tech interviews"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Tech interview question"><meta name=twitter:description content="I share some more thoughts on conducting tech interviews"><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2011/01/08/tech-interview-question/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Tech interview question</h1><div class="mb-md-4 meta"><span class="date middot" title="Sat Jan 8 2011 00:00:00 UTC">2011-01-08</span>
-<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/code>code</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>When conducting interviews, I&rsquo;ve developed the following criteria for a good interview problem:</p><ul class=bulleted><li>Avoid brain teasers - they tend to be hit/miss and some people don't really do well under this type of problem</li><li>Challenging - the answer should not be immediately obvious and the should require some creativity</li><li>Rare - similar to above, the problem should not be a common question in order to get</li><li>Flexible - the problem has multiple solutions and can be modified on the fly for different skill levels</li></ul><p>I&rsquo;ve found that the following problem satisfies the criteria and gives a pretty good sense of a developer&rsquo;s skill level.</p><p>The problem starts of as a simple scenario:</p><blockquote>You need to write a program that will accept a list of words. After the words are entered, the user will enter words and your program will need to indicate whether the entered word was in the original list. How would you design this program and what data structures would you use?</blockquote>The typical answer to this question is to either store the initial word list in an array, a tree, or a hash. If it's an array or a tree, we talk about the Big O of the solutions and compare that to just using a hash. At this point you can get a sense of whether the person you're interviewing understands basic data structures and knows the use cases of each one.<p>To dig deeper, I add a twist:</p><blockquote>Now imagine you were transported back in time and it turns out your program uses too much memory and you can't keep track of every word. Do you have any alternative solutions?</blockquote>The creative solutions start appearing here and you can get a pretty good sense of the problem solving skills. For example, a proposed solution at this point is to use word roots or repetitive letter combinations in a tree like structure to reduce the memory usage. We then talk about the algorithm that would need to be written and try to point out possible problems and see how they would be addressed.<p>And a final twist:</p><blockquote>Let's say you still do not have enough memory and but you find out that you don't need to be correct all the time. Can you think of any solutions that can achieve this?</blockquote>At this point, many people will try to come up with a heuristic or machine learning technique to try to identify words that resemble the words previously entered. We can then talk about both how to construct the algorithm as well as talk about the accuracy of the approach. It turns out that for these solutions it's difficult to quantify the trade off between error rate and space requirements.<p><img title="Example of a Bloom filter" src=https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bloom_filter.svg/300px-Bloom_filter.svg.png alt="Example of a Bloom filter" width=300 height=108></p><p>At this point the concept of a Bloom Filter is brought up, either by me or by the person I&rsquo;m talking to. If it&rsquo;s by me I go through the basic concepts (bit array, hash functions, probabilistic data structures) and can get a good sense of whether this is understood or I need to dig deeper. It&rsquo;s great when you can see the moment that someone &ldquo;gets&rdquo; the value of this data structure and knows immediately how to use it. At this point we discuss the trade off between the size of the bit array and the number of hash functions. If there&rsquo;s time, we&rsquo;ll work on deriving the relationship between the two as well as talk about where they can be used in the real world.</p><p>I wish I could remember how I came up with this problem - I think it stemmed from me encountering Bloom Filters for the first time as well as reading a few articles about spell checking and dictionaries.</p></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2010/08/25/google-giving-employees-free-adwords/>« Google Giving Employees Free Adwords?</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2011/12/08/groupon-scheduler/>GroupOn Scheduler »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script><script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script></body></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title> Tech interview question - Dan Goldin </title>
+<meta name=HandheldFriendly content="True">
+<meta name=MobileOptimized content="320">
+<meta name=referrer content="no-referrer">
+<meta name=description content="I share some more thoughts on conducting tech interviews">
+<meta property="og:site_name" content="Dan Goldin">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2011/01/08/tech-interview-question/">
+<meta property="og:title" content="Tech interview question">
+<meta property="og:image" content="/image/photo.jpg">
+<meta property="og:description" content="I share some more thoughts on conducting tech interviews">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@dangoldin">
+<meta name=twitter:creator content="@dangoldin">
+<meta name=twitter:title content="Tech interview question">
+<meta name=twitter:description content="I share some more thoughts on conducting tech interviews">
+<meta name=twitter:image content="/image/photo.jpg">
+<link rel=canonical href=/2011/01/08/tech-interview-question/>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
+<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.png>
+<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
+</head>
+<body>
+<div class="my-4 my-lg-5 header">
+<div class=container>
+<div class=row>
+<div class="col-auto offset-lg-2 d-none d-lg-block">
+<a href=/>
+<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
+</a>
+</div>
+<div class="col-auto align-self-center mr-auto">
+<a href=/>
+<h1 class=name>Dan Goldin</h1>
+</a>
+<ul class="nav nav-primary">
+<li class=nav-item>
+<a class="nav-link text-home" href=/>
+Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-about" href=/about/>
+About
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-lore" href=/lore/>
+Lore
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=content>
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<h1 class="mx-0 mx-md-4 blog-post-title">Tech interview question</h1>
+<div class="mb-md-4 meta">
+<span class="date middot" title="Sat Jan 8 2011 00:00:00 UTC">
+2011-01-08
+</span>
+<span class="reading-time middot">
+3 min read
+</span>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+<li class="d-inline middot">
+<a href=/tags/code>code</a>
+</li>
+</ul>
+</div>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+</div>
+<div class="markdown blog-post-content">
+<p>When conducting interviews, I&rsquo;ve developed the following criteria for a good interview problem:</p>
+<ul class=bulleted>
+<li>Avoid brain teasers - they tend to be hit/miss and some people don't really do well under this type of problem</li>
+<li>Challenging - the answer should not be immediately obvious and the should require some creativity</li>
+<li>Rare - similar to above, the problem should not be a common question in order to get</li>
+<li>Flexible - the problem has multiple solutions and can be modified on the fly for different skill levels</li>
+</ul>
+<p>I&rsquo;ve found that the following problem satisfies the criteria and gives a pretty good sense of a developer&rsquo;s skill level.</p>
+<p>The problem starts of as a simple scenario:</p>
+<blockquote>You need to write a program that will accept a list of words. After the words are entered, the user will enter words and your program will need to indicate whether the entered word was in the original list. How would you design this program and what data structures would you use?</blockquote>
+The typical answer to this question is to either store the initial word list in an array, a tree, or a hash. If it's an array or a tree, we talk about the Big O of the solutions and compare that to just using a hash. At this point you can get a sense of whether the person you're interviewing understands basic data structures and knows the use cases of each one.
+<p>To dig deeper, I add a twist:</p>
+<blockquote>Now imagine you were transported back in time and it turns out your program uses too much memory and you can't keep track of every word. Do you have any alternative solutions?</blockquote>
+The creative solutions start appearing here and you can get a pretty good sense of the problem solving skills. For example, a proposed solution at this point is to use word roots or repetitive letter combinations in a tree like structure to reduce the memory usage. We then talk about the algorithm that would need to be written and try to point out possible problems and see how they would be addressed.
+<p>And a final twist:</p>
+<blockquote>Let's say you still do not have enough memory and but you find out that you don't need to be correct all the time. Can you think of any solutions that can achieve this?</blockquote>
+At this point, many people will try to come up with a heuristic or machine learning technique to try to identify words that resemble the words previously entered. We can then talk about both how to construct the algorithm as well as talk about the accuracy of the approach. It turns out that for these solutions it's difficult to quantify the trade off between error rate and space requirements.
+<p><img title="Example of a Bloom filter" src=https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Bloom_filter.svg/300px-Bloom_filter.svg.png alt="Example of a Bloom filter" width=300 height=108></p>
+<p>At this point the concept of a Bloom Filter is brought up, either by me or by the person I&rsquo;m talking to. If it&rsquo;s by me I go through the basic concepts (bit array, hash functions, probabilistic data structures) and can get a good sense of whether this is understood or I need to dig deeper. It&rsquo;s great when you can see the moment that someone &ldquo;gets&rdquo; the value of this data structure and knows immediately how to use it. At this point we discuss the trade off between the size of the bit array and the number of hash functions. If there&rsquo;s time, we&rsquo;ll work on deriving the relationship between the two as well as talk about where they can be used in the real world.</p>
+<p>I wish I could remember how I came up with this problem - I think it stemmed from me encountering Bloom Filters for the first time as well as reading a few articles about spell checking and dictionaries.</p>
+</div>
+<div class=navigation>
+<div class=row>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-left">
+<a href=/2010/08/25/google-giving-employees-free-adwords/>« Google Giving Employees Free Adwords?</a>
+</div>
+</div>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-right">
+<a href=/2011/12/08/groupon-scheduler/>GroupOn Scheduler »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id=comments>
+<div class="py-3 content">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<div class=comments>
+<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="my-4 footer">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<hr>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-2">
+<div class="mx-0 mx-md-4 site-copyright">
+© 2021 Dan Goldin
+</div>
+</div>
+<div class="col-sm-12 col-lg-6">
+<div class="mx-0 mx-md-4 site-social">
+<ul>
+<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
+<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
+<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
+<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
+<li><a href=/index.xml class=mr-0>RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
+<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
+</body>
+</html>

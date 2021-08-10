@@ -1,2 +1,160 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Increase reliability through loose coupling: An adtech example - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/"><meta property="og:title" content="Increase reliability through loose coupling: An adtech example"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Increase reliability through loose coupling: An adtech example"><meta name=twitter:description content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure."><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Increase reliability through loose coupling: An adtech example</h1><div class="mb-md-4 meta"><span class="date middot" title="Mon Dec 28 2020 00:00:00 UTC">2020-12-28</span>
-<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/devops>devops</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>A few weeks ago I <a href=/2020/12/02/degrade-functionality-instead-of-building-cross-region-availablity/>evangelized degrading functionality</a> in the case of system outages as an option versus building out full regional resiliency. Someone asked me to dig into my example more so I&rsquo;ll share a bit of how one of our core systems at TripleLift is set up.</p><p>We run an advertising exchange handing tens of billions of ad requests each day. AdTech has a ton of different companies with each doing a bit of everything but a simple way to think of us is an &ldquo;exchange&rdquo; that sits in between buyers and sellers of ads and ad space. In this case, a seller would be a publisher, such as the NY Times that has ad opportunities available. The buy side would be a Demand Side Platform (DSP) that has an API integration and submits bids on behalf of advertisers.</p><p>One of the challenges in running an exchange is building a global system that can handle tens of billions of auctions per day - with each auction dispatching dozens of requests to the various integrated parties. The way we do this is by keeping our exchange focused on the minimal set of requirements to run an auction - receiving requests from a seller, sending them to buyers, and then filtering and identifying the winning response. That means these applications do not connect to any database that isn&rsquo;t a blocker to run an auction and instead rely on a separate service that compiles various the business rules, packages them into a protobuf message, and then uploads it to S3. Once the data is uploaded to S3 this service lets the exchanges know that an update is available and it&rsquo;s up to them to fetch and load them from S3.</p><p>This approach decouples the exchanges serving the outside world from the service putting together the data. If this data service or any of the systems it depends on is down it doesn&rsquo;t affect our ability to run auctions but it does mean that they may be running on slightly delayed data - for example new publishers launched or changes to business rules - but these would just get picked up during the next update.</p><p>In addition to resiliency this approach also leads to simpler code since it puts the responsibility of data fetching to the data service and keeps our exchanges focused on the real time bidding system. Also, the load on the various databases and services is reduced since we do not need every one of our exchanges asking for the same data from the same set of databases. In essence, we can think of the solution here as a form of a cache that&rsquo;s backed by S3 and updated on a specific schedule by a dedicated application.</p></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2020/12/27/spacex-starship-vs-saturn-v/>« SpaceX Starship vs Saturn V</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2020/12/28/blogging-2020-and-beyond/>Blogging: 2020 and beyond »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script><script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script></body></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title> Increase reliability through loose coupling: An adtech example - Dan Goldin </title>
+<meta name=HandheldFriendly content="True">
+<meta name=MobileOptimized content="320">
+<meta name=referrer content="no-referrer">
+<meta name=description content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure.">
+<meta property="og:site_name" content="Dan Goldin">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/">
+<meta property="og:title" content="Increase reliability through loose coupling: An adtech example">
+<meta property="og:image" content="/image/photo.jpg">
+<meta property="og:description" content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure.">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@dangoldin">
+<meta name=twitter:creator content="@dangoldin">
+<meta name=twitter:title content="Increase reliability through loose coupling: An adtech example">
+<meta name=twitter:description content="An example of how we've decoupled systems in our real time bidding system to allow for degraded functionality vs systematic failure.">
+<meta name=twitter:image content="/image/photo.jpg">
+<link rel=canonical href=/2020/12/28/increase-reliability-through-loose-coupling-an-adtech-example/>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
+<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.png>
+<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
+</head>
+<body>
+<div class="my-4 my-lg-5 header">
+<div class=container>
+<div class=row>
+<div class="col-auto offset-lg-2 d-none d-lg-block">
+<a href=/>
+<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
+</a>
+</div>
+<div class="col-auto align-self-center mr-auto">
+<a href=/>
+<h1 class=name>Dan Goldin</h1>
+</a>
+<ul class="nav nav-primary">
+<li class=nav-item>
+<a class="nav-link text-home" href=/>
+Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-about" href=/about/>
+About
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-lore" href=/lore/>
+Lore
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=content>
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<h1 class="mx-0 mx-md-4 blog-post-title">Increase reliability through loose coupling: An adtech example</h1>
+<div class="mb-md-4 meta">
+<span class="date middot" title="Mon Dec 28 2020 00:00:00 UTC">
+2020-12-28
+</span>
+<span class="reading-time middot">
+3 min read
+</span>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+<li class="d-inline middot">
+<a href=/tags/devops>devops</a>
+</li>
+</ul>
+</div>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+</div>
+<div class="markdown blog-post-content">
+<p>A few weeks ago I <a href=/2020/12/02/degrade-functionality-instead-of-building-cross-region-availablity/>evangelized degrading functionality</a> in the case of system outages as an option versus building out full regional resiliency. Someone asked me to dig into my example more so I&rsquo;ll share a bit of how one of our core systems at TripleLift is set up.</p>
+<p>We run an advertising exchange handing tens of billions of ad requests each day. AdTech has a ton of different companies with each doing a bit of everything but a simple way to think of us is an &ldquo;exchange&rdquo; that sits in between buyers and sellers of ads and ad space. In this case, a seller would be a publisher, such as the NY Times that has ad opportunities available. The buy side would be a Demand Side Platform (DSP) that has an API integration and submits bids on behalf of advertisers.</p>
+<p>One of the challenges in running an exchange is building a global system that can handle tens of billions of auctions per day - with each auction dispatching dozens of requests to the various integrated parties. The way we do this is by keeping our exchange focused on the minimal set of requirements to run an auction - receiving requests from a seller, sending them to buyers, and then filtering and identifying the winning response. That means these applications do not connect to any database that isn&rsquo;t a blocker to run an auction and instead rely on a separate service that compiles various the business rules, packages them into a protobuf message, and then uploads it to S3. Once the data is uploaded to S3 this service lets the exchanges know that an update is available and it&rsquo;s up to them to fetch and load them from S3.</p>
+<p>This approach decouples the exchanges serving the outside world from the service putting together the data. If this data service or any of the systems it depends on is down it doesn&rsquo;t affect our ability to run auctions but it does mean that they may be running on slightly delayed data - for example new publishers launched or changes to business rules - but these would just get picked up during the next update.</p>
+<p>In addition to resiliency this approach also leads to simpler code since it puts the responsibility of data fetching to the data service and keeps our exchanges focused on the real time bidding system. Also, the load on the various databases and services is reduced since we do not need every one of our exchanges asking for the same data from the same set of databases. In essence, we can think of the solution here as a form of a cache that&rsquo;s backed by S3 and updated on a specific schedule by a dedicated application.</p>
+</div>
+<div class=navigation>
+<div class=row>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-left">
+<a href=/2020/12/27/spacex-starship-vs-saturn-v/>« SpaceX Starship vs Saturn V</a>
+</div>
+</div>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-right">
+<a href=/2020/12/28/blogging-2020-and-beyond/>Blogging: 2020 and beyond »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id=comments>
+<div class="py-3 content">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<div class=comments>
+<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="my-4 footer">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<hr>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-2">
+<div class="mx-0 mx-md-4 site-copyright">
+© 2021 Dan Goldin
+</div>
+</div>
+<div class="col-sm-12 col-lg-6">
+<div class="mx-0 mx-md-4 site-social">
+<ul>
+<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
+<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
+<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
+<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
+<li><a href=/index.xml class=mr-0>RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
+<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
+</body>
+</html>

@@ -1,2 +1,198 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Visualizing your AWS costs - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2016/11/27/visualizing-your-aws-costs/"><meta property="og:title" content="Visualizing your AWS costs"><meta property="og:image" content="//image/by_layer_usage_type_top_heatmap.png"><meta property="og:description" content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Visualizing your AWS costs"><meta name=twitter:description content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations."><meta name=twitter:image content="//image/by_layer_usage_type_top_heatmap.png"><link rel=canonical href=/2016/11/27/visualizing-your-aws-costs/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Visualizing your AWS costs</h1><div class="mb-md-4 meta"><span class="date middot" title="Sun Nov 27 2016 00:00:00 UTC">2016-11-27</span>
-<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/code>code</a></li><li class="d-inline middot"><a href=/tags/dataviz>dataviz</a></li><li class="d-inline middot"><a href=/tags/devops>devops</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>There are a variety of cloud management services that connect to your cloud computing account and analyze your usage in order to offer recommendations that help improve efficiency, security, and reduce your costs. In fact, AWS even provides their own service, <a href=https://aws.amazon.com/premiumsupport/trustedadvisor/>Trusted Advisor</a>, that competes with the external vendors. Unfortunately, these vendors can get expensive quickly. The first useful tier of Trusted Advisor, categorized as Business, has a tiered pricing model based on your existing usage that starts at 10% of your AWS bill and decreases to 3% as you spend past $250k/month. External vendors are cheaper but can still get expensive depending on your bill: <a href=https://www.cloudability.com>Cloudability</a> starts at 1% of your AWS costs which compared to Trusted Advisor is significantly cheaper is still 1% of your AWS bill.</p><p>One option is to sign up for a single month and use that to take the necessary steps to improve your cloud configuration. If your infrastructure is stable month to month this is a simple and cheap way to revamp your setup. But if your infrastructure is constantly evolving you need a way to revisit your environment when necessary.</p><p>I spent some time looking at our AWS infrastructure last week and it turns out AWS provides an option to export a <a href=https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html>detailed billing report</a> to S3 which is what the external vendors use to provide their recommendations. AWS offers a few reporting options but the most detailed one contains every resource and tag and in my case was over a million rows and nearly 500MB. There’s a wealth of information here and I wrote a small script to slice, dice, and visualize the data along a few dimensions to help provide some transparency into what is the biggest cost. The code is extremely simple since it’s just grouping and visualizing the data by different dimensions. The only real enhancement I made was to translate the OpsWorks tags into a layer dimension to make the visualization more useful. The two big things I still need to do are provide recommendations around reserved instance usage and do a better job of grouping the usage types since they’re too specific. As usual the <a href=https://github.com/dangoldin/aws-billing-details-analysis>code is up</a> on GitHub and I’d love to hear any suggestions or feedback. Below are some graphs the script generates but note that I removed the axes labels to avoid revealing our costs and configuration.</p><ul class=thumbnails><li><div class=thumbnail><a href="{{ IMG_PATH }}by_product_name.png"><img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive></a><p><strong>By product name.</strong> A simple summary of cost by AWS product/service.</p></div></li><li><div class=thumbnail><a href="{{ IMG_PATH }}by_usage_type.png"><img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive></a><p><strong>By product name.</strong> This shows every type of usage AWS has in the billing report. To deal with the long tail the script also generates a plot for the top 25 but one thing I need to do is a better job of grouping these - for example data transfer has different values depending on region and type and I want to consolidate them into a one in order to see total costs due to data transfer.</p></div></li><li><div class=thumbnail><a href="{{ IMG_PATH }}by_layer_usage_type_top_heatmap.png"><img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive></a><p><strong>By layer and usage type.</strong> To me this is the most interesting one since it's looking at data for multiple dimensions - in this case layer and usage type. The goal here was to see which application/usage pairs result in the largest costs and allow me to prioritize investigation effort. Once again this will be more useful when I do a better job of grouping the usage types.</p></div></li></ul></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2016/11/19/joy-of-old-code/>« Joy of old code</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2016/11/30/becoming-a-better-developer/>Becoming a better developer »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script><script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script><script src=/js/math-code.js></script><script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title> Visualizing your AWS costs - Dan Goldin </title>
+<meta name=HandheldFriendly content="True">
+<meta name=MobileOptimized content="320">
+<meta name=referrer content="no-referrer">
+<meta name=description content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations.">
+<meta property="og:site_name" content="Dan Goldin">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2016/11/27/visualizing-your-aws-costs/">
+<meta property="og:title" content="Visualizing your AWS costs">
+<meta property="og:image" content="//image/by_layer_usage_type_top_heatmap.png">
+<meta property="og:description" content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations.">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@dangoldin">
+<meta name=twitter:creator content="@dangoldin">
+<meta name=twitter:title content="Visualizing your AWS costs">
+<meta name=twitter:description content="There are a few services and products that analyze your AWS usage in order to provide some recommendations. They are all just going off of the detailed billing report so I wrote a quick script to provide similar visualizations.">
+<meta name=twitter:image content="//image/by_layer_usage_type_top_heatmap.png">
+<link rel=canonical href=/2016/11/27/visualizing-your-aws-costs/>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
+<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.png>
+<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
+</head>
+<body>
+<div class="my-4 my-lg-5 header">
+<div class=container>
+<div class=row>
+<div class="col-auto offset-lg-2 d-none d-lg-block">
+<a href=/>
+<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
+</a>
+</div>
+<div class="col-auto align-self-center mr-auto">
+<a href=/>
+<h1 class=name>Dan Goldin</h1>
+</a>
+<ul class="nav nav-primary">
+<li class=nav-item>
+<a class="nav-link text-home" href=/>
+Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-about" href=/about/>
+About
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-lore" href=/lore/>
+Lore
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=content>
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<h1 class="mx-0 mx-md-4 blog-post-title">Visualizing your AWS costs</h1>
+<div class="mb-md-4 meta">
+<span class="date middot" title="Sun Nov 27 2016 00:00:00 UTC">
+2016-11-27
+</span>
+<span class="reading-time middot">
+3 min read
+</span>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+<li class="d-inline middot">
+<a href=/tags/code>code</a>
+</li>
+<li class="d-inline middot">
+<a href=/tags/dataviz>dataviz</a>
+</li>
+<li class="d-inline middot">
+<a href=/tags/devops>devops</a>
+</li>
+</ul>
+</div>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+</div>
+<div class="markdown blog-post-content">
+<p>There are a variety of cloud management services that connect to your cloud computing account and analyze your usage in order to offer recommendations that help improve efficiency, security, and reduce your costs. In fact, AWS even provides their own service, <a href=https://aws.amazon.com/premiumsupport/trustedadvisor/>Trusted Advisor</a>, that competes with the external vendors. Unfortunately, these vendors can get expensive quickly. The first useful tier of Trusted Advisor, categorized as Business, has a tiered pricing model based on your existing usage that starts at 10% of your AWS bill and decreases to 3% as you spend past $250k/month. External vendors are cheaper but can still get expensive depending on your bill: <a href=https://www.cloudability.com>Cloudability</a> starts at 1% of your AWS costs which compared to Trusted Advisor is significantly cheaper is still 1% of your AWS bill.</p>
+<p>One option is to sign up for a single month and use that to take the necessary steps to improve your cloud configuration. If your infrastructure is stable month to month this is a simple and cheap way to revamp your setup. But if your infrastructure is constantly evolving you need a way to revisit your environment when necessary.</p>
+<p>I spent some time looking at our AWS infrastructure last week and it turns out AWS provides an option to export a <a href=https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html>detailed billing report</a> to S3 which is what the external vendors use to provide their recommendations. AWS offers a few reporting options but the most detailed one contains every resource and tag and in my case was over a million rows and nearly 500MB. There’s a wealth of information here and I wrote a small script to slice, dice, and visualize the data along a few dimensions to help provide some transparency into what is the biggest cost. The code is extremely simple since it’s just grouping and visualizing the data by different dimensions. The only real enhancement I made was to translate the OpsWorks tags into a layer dimension to make the visualization more useful. The two big things I still need to do are provide recommendations around reserved instance usage and do a better job of grouping the usage types since they’re too specific. As usual the <a href=https://github.com/dangoldin/aws-billing-details-analysis>code is up</a> on GitHub and I’d love to hear any suggestions or feedback. Below are some graphs the script generates but note that I removed the axes labels to avoid revealing our costs and configuration.</p>
+<ul class=thumbnails>
+<li>
+<div class=thumbnail>
+<a href="{{ IMG_PATH }}by_product_name.png">
+<img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive>
+</a>
+<p>
+<strong>By product name.</strong> A simple summary of cost by AWS product/service.
+</p>
+</div>
+</li>
+<li>
+<div class=thumbnail>
+<a href="{{ IMG_PATH }}by_usage_type.png">
+<img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive>
+</a>
+<p>
+<strong>By product name.</strong> This shows every type of usage AWS has in the billing report. To deal with the long tail the script also generates a plot for the top 25 but one thing I need to do is a better job of grouping these - for example data transfer has different values depending on region and type and I want to consolidate them into a one in order to see total costs due to data transfer.
+</p>
+</div>
+</li>
+<li>
+<div class=thumbnail>
+<a href="{{ IMG_PATH }}by_layer_usage_type_top_heatmap.png">
+<img src=/image/by_layer_usage_type_top_heatmap.png alt="By layer and usage type heatmap" data-width=928 data-height=566 data-layout=responsive>
+</a>
+<p>
+<strong>By layer and usage type.</strong> To me this is the most interesting one since it's looking at data for multiple dimensions - in this case layer and usage type. The goal here was to see which application/usage pairs result in the largest costs and allow me to prioritize investigation effort. Once again this will be more useful when I do a better job of grouping the usage types.
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div class=navigation>
+<div class=row>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-left">
+<a href=/2016/11/19/joy-of-old-code/>« Joy of old code</a>
+</div>
+</div>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-right">
+<a href=/2016/11/30/becoming-a-better-developer/>Becoming a better developer »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id=comments>
+<div class="py-3 content">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<div class=comments>
+<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="my-4 footer">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<hr>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-2">
+<div class="mx-0 mx-md-4 site-copyright">
+© 2021 Dan Goldin
+</div>
+</div>
+<div class="col-sm-12 col-lg-6">
+<div class="mx-0 mx-md-4 site-social">
+<ul>
+<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
+<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
+<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
+<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
+<li><a href=/index.xml class=mr-0>RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
+<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
+<script src=/js/math-code.js></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

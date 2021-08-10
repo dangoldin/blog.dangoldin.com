@@ -1,5 +1,94 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Java's SimpleDateFormat: YYYY vs yyyy - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/"><meta property="og:title" content="Java's SimpleDateFormat: YYYY vs yyyy"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Java's SimpleDateFormat: YYYY vs yyyy"><meta name=twitter:description content><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Java's SimpleDateFormat: YYYY vs yyyy</h1><div class="mb-md-4 meta"><span class="date middot" title="Sun Jan 6 2019 00:00:00 UTC">2019-01-06</span>
-<span class="reading-time middot">2 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when formatting dates in Java’s SimpleDateFormat class there is a subtle difference between YYYY and yyyy. They both represent a year but yyyy represents the calendar year while YYYY represents the year of the week. That’s a subtle difference that only causes problems around a year change so your code could have been running perfectly fine all year only to cause a problem in the new year.</p><p>An example illustrates this much better than words ever could.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>package</span> com.dangoldin.test<span style=color:#f92672>;</span>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title> Java's SimpleDateFormat: YYYY vs yyyy - Dan Goldin </title>
+<meta name=HandheldFriendly content="True">
+<meta name=MobileOptimized content="320">
+<meta name=referrer content="no-referrer">
+<meta name=description content>
+<meta property="og:site_name" content="Dan Goldin">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/">
+<meta property="og:title" content="Java's SimpleDateFormat: YYYY vs yyyy">
+<meta property="og:image" content="/image/photo.jpg">
+<meta property="og:description" content>
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="@dangoldin">
+<meta name=twitter:creator content="@dangoldin">
+<meta name=twitter:title content="Java's SimpleDateFormat: YYYY vs yyyy">
+<meta name=twitter:description content>
+<meta name=twitter:image content="/image/photo.jpg">
+<link rel=canonical href=/2019/01/06/javas-simpledateformat-yyyy-vs-yyyy/>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
+<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
+<link rel="shortcut icon" href=/favicon.png>
+<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
+</head>
+<body>
+<div class="my-4 my-lg-5 header">
+<div class=container>
+<div class=row>
+<div class="col-auto offset-lg-2 d-none d-lg-block">
+<a href=/>
+<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
+</a>
+</div>
+<div class="col-auto align-self-center mr-auto">
+<a href=/>
+<h1 class=name>Dan Goldin</h1>
+</a>
+<ul class="nav nav-primary">
+<li class=nav-item>
+<a class="nav-link text-home" href=/>
+Home
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-about" href=/about/>
+About
+</a>
+</li>
+<li class=nav-item>
+<a class="nav-link text-lore" href=/lore/>
+Lore
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=content>
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<h1 class="mx-0 mx-md-4 blog-post-title">Java's SimpleDateFormat: YYYY vs yyyy</h1>
+<div class="mb-md-4 meta">
+<span class="date middot" title="Sun Jan 6 2019 00:00:00 UTC">
+2019-01-06
+</span>
+<span class="reading-time middot">
+2 min read
+</span>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+<div class="d-none d-md-inline tags">
+<ul class="list-unstyled d-inline">
+</ul>
+</div>
+</div>
+<div class="markdown blog-post-content">
+<p>This post would have been more appropriate a week ago when 2018 was coming to a close but better late than never. This is a friendly reminder that when formatting dates in Java’s SimpleDateFormat class there is a subtle difference between YYYY and yyyy. They both represent a year but yyyy represents the calendar year while YYYY represents the year of the week. That’s a subtle difference that only causes problems around a year change so your code could have been running perfectly fine all year only to cause a problem in the new year.</p>
+<p>An example illustrates this much better than words ever could.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>package</span> com.dangoldin.test<span style=color:#f92672>;</span>
 
 <span style=color:#f92672>import</span> java.text.SimpleDateFormat<span style=color:#f92672>;</span>
 <span style=color:#f92672>import</span> java.util.Date<span style=color:#f92672>;</span>
@@ -22,6 +111,73 @@
             System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Failed with exception: &#34;</span> <span style=color:#f92672>+</span> e<span style=color:#f92672>);</span>
         <span style=color:#f92672>}</span>
     <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span></code></pre></div><p>This gives you the following:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt>For date 2018-12-01 the YYYY year is 2018 while for yyyy it&#39;s 2018
+<span style=color:#f92672>}</span></code></pre></div>
+<p>This gives you the following:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt>For date 2018-12-01 the YYYY year is 2018 while for yyyy it&#39;s 2018
 For date 2018-12-31 the YYYY year is 2019 while for yyyy it&#39;s 2018
-For date 2019-01-01 the YYYY year is 2019 while for yyyy it&#39;s 2019</code></pre></div><p>The first and last make sense since the two year formats match. The middle one is the odd one out. The date starts as 2018-12-31 but YYYY gives you 2019 while yyyy gives you 2018. In general, you should almost always use yyyy so it’s a good tactic to add some form of linting or checking to make sure your code does not have any date formats referencing YYYY.</p></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2018/12/31/2019-predictions/>« 2019 Predictions</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2019/01/08/githubs-new-plan/>GitHub's new plan »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script><script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script></body></html>
+For date 2019-01-01 the YYYY year is 2019 while for yyyy it&#39;s 2019</code></pre></div>
+<p>The first and last make sense since the two year formats match. The middle one is the odd one out. The date starts as 2018-12-31 but YYYY gives you 2019 while yyyy gives you 2018. In general, you should almost always use yyyy so it’s a good tactic to add some form of linting or checking to make sure your code does not have any date formats referencing YYYY.</p>
+</div>
+<div class=navigation>
+<div class=row>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-left">
+<a href=/2018/12/31/2019-predictions/>« 2019 Predictions</a>
+</div>
+</div>
+<div class="col-12 col-lg-6">
+<div class="mx-0 mx-md-4 mt-4 text-right">
+<a href=/2019/01/08/githubs-new-plan/>GitHub's new plan »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id=comments>
+<div class="py-3 content">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<div class=comments>
+<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="my-4 footer">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-8">
+<hr>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-12 col-lg-2">
+<div class="mx-0 mx-md-4 site-copyright">
+© 2021 Dan Goldin
+</div>
+</div>
+<div class="col-sm-12 col-lg-6">
+<div class="mx-0 mx-md-4 site-social">
+<ul>
+<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
+<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
+<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
+<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
+<li><a href=/index.xml class=mr-0>RSS</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
+<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
+</body>
+</html>
