@@ -89,7 +89,7 @@ Lore
 </div>
 </div>
 <div class="markdown blog-post-content">
-<p><img src=/image/file-size-distribution-shell-script.png alt="File size histogram using the command line" data-width=951 data-height=294 data-layout=responsive></p>
+<img src=/image/file-size-distribution-shell-script.png alt="File size histogram using the command line" data-width=951 data-height=294 data-layout=responsive>
 <p>I&rsquo;m a sucker for a good shell command and recently discovered (via <a href=https://superuser.com/questions/565443/generate-distribution-of-file-sizes-from-the-command-prompt>StackOverflow</a>) the most complex one yet - a one liner to generate a histogram of file sizes within a directory. The sizes are in powers of two but it&rsquo;s a great way to get some simple summary statistics of files inside a directory. I still find awk mystifying to write but nearly every advanced shell command uses awk in some way. Most engineers thee days have a bias for a traditional scripting language but it&rsquo;s still amazing what an awk one-liner can do.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>find . -type f -print0 | xargs -0 ls -l | awk <span style=color:#e6db74>&#39;{ n=int(log($5)/log(2)); if (n&lt;10) { n=10; } size[n]++ } END { for (i in size) printf(&#34;%d %d\n&#34;, 2^i, size[i]) }&#39;</span> | sort -n | awk <span style=color:#e6db74>&#39;function human(x) { x[1]/=1024; if (x[1]&gt;=1024) { x[2]++; human(x) } } { a[1]=$1; a[2]=0; human(a); printf(&#34;%3d%s: %6d\n&#34;, a[1],substr(&#34;kMGTEPYZ&#34;,a[2]+1,1),$2) }&#39;</span></code></pre></div>
 </div>

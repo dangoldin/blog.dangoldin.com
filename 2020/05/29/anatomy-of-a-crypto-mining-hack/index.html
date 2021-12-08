@@ -90,7 +90,7 @@ Lore
 </div>
 <div class="markdown blog-post-content">
 <p>A few months ago I set up a simple ftp server to help a friend. I took a few security shortcuts which came to bite me this week when I received an alert from DigitalOcean that an instance was running hot.</p>
-<p><img src=/image/digitalocean-cpu-alert.png alt="DigitalOcean CPU Alert" data-width=503 data-height=280 data-layout=responsive></p>
+<img src=/image/digitalocean-cpu-alert.png alt="DigitalOcean CPU Alert" data-width=503 data-height=280 data-layout=responsive>
 <p>I dug into it and noticed a series of processes being run by the ftp_user - the most impactful was a command called rsync. I&rsquo;m familiar with rsync which syncs files across devices - and this was nothing like that. At this point I realized that I got hacked and quickly disabled the user and killed all its processes. The CPU usage dropped back to normal and now it was time to dig into the damage.</p>
 <p>Note that I’m far from a security engineer but am reasonably comfortable on the command line. The user was not a sudo account and this was a non critical instance so I wasn&rsquo;t too worried about the impact. In fact, I actually enjoyed the exercise of digging in and trying to see how I was hacked and how the entire script worked.</p>
 <p>The origin of the hack was that I was sloppy when I created the ftp account and gave it both a weak password and didn&rsquo;t disable password-based authentication for SSH. This led to the attacker brute forcing the password and getting access to the ftp_user&rsquo;s home folder on the instance. Once there, the attacker downloaded a bunch of code that both embedded itself in the system and then started running a miner.</p>

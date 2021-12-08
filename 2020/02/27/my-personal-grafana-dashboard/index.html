@@ -92,7 +92,7 @@ Lore
 </div>
 </div>
 <div class="markdown blog-post-content">
-<p><img src=/image/personal-grafana-dashboard-blog-stats.png alt="My personal Grafana dashboard for blog stats" data-width=1913 data-height=978 data-layout=responsive></p>
+<img src=/image/personal-grafana-dashboard-blog-stats.png alt="My personal Grafana dashboard for blog stats" data-width=1913 data-height=978 data-layout=responsive>
 <p>Last year I wrote about the idea of a <a href=/2019/07/10/personal-dashboards/>personal dashboard</a> and earlier this year I described my <a href=/2020/01/28/2020-goals/>2020 goals</a> and how I&rsquo;d go about measuring my progress. The past two days I was able to combine the two concepts and created a simple Grafana dashboard to measure my progress against the blogging goal. As with most tasks, the most difficult part was getting started and the actual exercise took a few hours. While it&rsquo;s still fresh in my mind I want to document the step by step process in order to both provide a perspective into how I work while also giving others a guide to setting up their own.</p>
 <ul>
 <li><strong>Decide on the Grafana backend</strong>. I already committed to Grafana as the visualization layer but needed to decide on the actual statistics backend. This isn&rsquo;t that important of a decision and I can change it any time so I just chose MySQL. I have a personal instance of MySQL floating around (who doesn&rsquo;t?), am not going to be dumping much data into it, and am comfortable writing SQL queries.</li>
