@@ -1,194 +1,37 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title> The Go interface - Dan Goldin </title>
-<meta name=HandheldFriendly content="True">
-<meta name=MobileOptimized content="320">
-<meta name=referrer content="no-referrer">
-<meta name=description content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages.">
-<meta property="og:site_name" content="Dan Goldin">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/2015/07/29/the-go-interface/">
-<meta property="og:title" content="The Go interface">
-<meta property="og:image" content="/image/photo.jpg">
-<meta property="og:description" content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages.">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:site content="@dangoldin">
-<meta name=twitter:creator content="@dangoldin">
-<meta name=twitter:title content="The Go interface">
-<meta name=twitter:description content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages.">
-<meta name=twitter:image content="/image/photo.jpg">
-<link rel=canonical href=/2015/07/29/the-go-interface/>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
-<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
-<link rel="shortcut icon" href=/favicon.png>
-<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
-</head>
-<body>
-<div class="my-4 my-lg-5 header">
-<div class=container>
-<div class=row>
-<div class="col-auto offset-lg-2 d-none d-lg-block">
-<a href=/>
-<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
-</a>
-</div>
-<div class="col-auto align-self-center mr-auto">
-<a href=/>
-<h1 class=name>Dan Goldin</h1>
-</a>
-<ul class="nav nav-primary">
-<li class=nav-item>
-<a class="nav-link text-home" href=/>
-Home
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-about" href=/about/>
-About
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-lore" href=/lore/>
-Lore
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class=content>
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<h1 class="mx-0 mx-md-4 blog-post-title">The Go interface</h1>
-<div class="mb-md-4 meta">
-<span class="date middot" title="Wed Jul 29 2015 00:00:00 UTC">
-2015-07-29
-</span>
-<span class="reading-time middot">
-2 min read
-</span>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-<li class="d-inline middot">
-<a href=/tags/code>code</a>
-</li>
-</ul>
-</div>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-</ul>
-</div>
-</div>
-<div class="markdown blog-post-content">
-<p>I’ve only been playing around with Go for a couple of weeks but one of the language design decisions I’ve really enjoyed is how interfaces are handled. Coming from a traditional object oriented background it’s typical to define an interface that defines a few method signatures and then explicitly implement that interface in a new class. Below’s a trivial example of this approach in Java:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Animal</span> <span style=color:#f92672>{</span>
-  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isFurry</span><span style=color:#f92672>();</span>
-  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>speak</span><span style=color:#f92672>();</span>
-<span style=color:#f92672>}</span>
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Dog</span> <span style=color:#66d9ef>implements</span> Animal <span style=color:#f92672>{</span>
-  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isFurry</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;</span>
-  <span style=color:#f92672>}</span>
-
-  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>speak</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Woof&#34;</span><span style=color:#f92672>;</span>
-  <span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
-
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>aRandomFunction</span><span style=color:#f92672>(</span>Animal a<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> <span style=color:#f92672>..</span>  <span style=color:#f92672>}</span> <span style=color:#75715e>// Can take anything that implements Animal
-</span></code></pre></div>
-<p>With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.</p>
-<p>Go’s approach is different. In go you would define the interface as usual with the expected methods and you would write functions that accept the interface as the argument. But instead of explicitly specifying that a particular object implements an interface you just do it. Then if it turns out you’ve successfully implemented the methods you can use that object wherever the interface is expected. The compiler is still able to point out signature issues since it can tell when you’re trying to use an object with a required method but it’s done in an implicit way. Below’s the equivalent Go code:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Animal</span> <span style=color:#66d9ef>interface</span> {
-  <span style=color:#a6e22e>isFurry</span>() <span style=color:#66d9ef>bool</span>
-  <span style=color:#a6e22e>speak</span> <span style=color:#66d9ef>string</span>
-}
-
-<span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Dog</span> <span style=color:#66d9ef>struct</span> {
-}
-
-<span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>d</span> <span style=color:#a6e22e>Dog</span>) <span style=color:#a6e22e>isFurry</span>() <span style=color:#66d9ef>bool</span> {
-  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
-}
-
-<span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>d</span> <span style=color:#a6e22e>Dog</span>) <span style=color:#a6e22e>speak</span>() <span style=color:#66d9ef>string</span> {
-  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Woof&#34;</span>
-}
-
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>aRandomFunction</span>(<span style=color:#a6e22e>a</span> <span style=color:#a6e22e>Animal</span>) { .. }</code></pre></div>
-<p>Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.</p>
-<p><a href=https://en.wikipedia.org/wiki/Duck_typing>https://en.wikipedia.org/wiki/Duck_typing</a></p>
-</div>
-<div class=navigation>
-<div class=row>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-left">
-<a href=/2015/07/25/use-the-database-luke/>« Use the database Luke</a>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-right">
-<a href=/2015/08/01/its-not-done-until-its-deployed/>It's not done until it's deployed »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id=comments>
-<div class="py-3 content">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<div class=comments>
-<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="my-4 footer">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<hr>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-2">
-<div class="mx-0 mx-md-4 site-copyright">
-© 2021 Dan Goldin
-</div>
-</div>
-<div class="col-sm-12 col-lg-6">
-<div class="mx-0 mx-md-4 site-social">
-<ul>
-<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
-<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
-<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
-<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
-<li><a href=/index.xml class=mr-0>RSS</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>The Go interface - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2015/07/29/the-go-interface/"><meta property="og:title" content="The Go interface"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="The Go interface"><meta name=twitter:description content="Go takes a simple and novel approach to interfaces that's commonly found in dynamic languages."><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2015/07/29/the-go-interface/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-36313127-1")</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">The Go interface</h1><div class="mb-md-4 meta"><span class="date middot" title='Wed Jul 29 2015 00:00:00 UTC'>2015-07-29</span>
+<span class="reading-time middot">2 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/code>code</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>I’ve only been playing around with Go for a couple of weeks but one of the language design decisions I’ve really enjoyed is how interfaces are handled. Coming from a traditional object oriented background it’s typical to define an interface that defines a few method signatures and then explicitly implement that interface in a new class. Below’s a trivial example of this approach in Java:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Animal</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isFurry</span><span style=color:#f92672>();</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>speak</span><span style=color:#f92672>();</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Dog</span> <span style=color:#66d9ef>implements</span> Animal <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isFurry</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>speak</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Woof&#34;</span><span style=color:#f92672>;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>aRandomFunction</span><span style=color:#f92672>(</span>Animal a<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> <span style=color:#f92672>..</span>  <span style=color:#f92672>}</span> <span style=color:#75715e>// Can take anything that implements Animal
+</span></span></span></code></pre></div><p>With this approach a compiler immediately identifies cases where you choose to implement an interface but forget (or mess up) implementing one of the underlying methods.</p><p>Go’s approach is different. In go you would define the interface as usual with the expected methods and you would write functions that accept the interface as the argument. But instead of explicitly specifying that a particular object implements an interface you just do it. Then if it turns out you’ve successfully implemented the methods you can use that object wherever the interface is expected. The compiler is still able to point out signature issues since it can tell when you’re trying to use an object with a required method but it’s done in an implicit way. Below’s the equivalent Go code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Animal</span> <span style=color:#66d9ef>interface</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>isFurry</span>() <span style=color:#66d9ef>bool</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>speak</span> <span style=color:#66d9ef>string</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>Dog</span> <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>d</span> <span style=color:#a6e22e>Dog</span>) <span style=color:#a6e22e>isFurry</span>() <span style=color:#66d9ef>bool</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>d</span> <span style=color:#a6e22e>Dog</span>) <span style=color:#a6e22e>speak</span>() <span style=color:#66d9ef>string</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Woof&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>aRandomFunction</span>(<span style=color:#a6e22e>a</span> <span style=color:#a6e22e>Animal</span>) { .. }</span></span></code></pre></div><p>Dynamic languages frequently use this “duck typing” approach since the variable types may only be discovered during run time so it’s neat seeing it implemented this simply in a static, strongly typed language. The simplicity and novelty of Go’s interfaces make me eager to keep digging and see what else I discover.</p><p><a href=https://en.wikipedia.org/wiki/Duck_typing>https://en.wikipedia.org/wiki/Duck_typing</a></p></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2015/07/25/use-the-database-luke/>« Use the database Luke</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2015/08/01/its-not-done-until-its-deployed/>It's not done until it's deployed »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
-<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
-</body>
-</html>
+<script>window.addEventListener("load",function(){hljs.initHighlighting()},!0)</script></body></html>

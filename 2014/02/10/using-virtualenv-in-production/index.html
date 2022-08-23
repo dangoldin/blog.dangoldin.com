@@ -1,239 +1,65 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title> Using virtualenv in production - Dan Goldin </title>
-<meta name=HandheldFriendly content="True">
-<meta name=MobileOptimized content="320">
-<meta name=referrer content="no-referrer">
-<meta name=description content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric.">
-<meta property="og:site_name" content="Dan Goldin">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/2014/02/10/using-virtualenv-in-production/">
-<meta property="og:title" content="Using virtualenv in production">
-<meta property="og:image" content="/image/photo.jpg">
-<meta property="og:description" content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric.">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:site content="@dangoldin">
-<meta name=twitter:creator content="@dangoldin">
-<meta name=twitter:title content="Using virtualenv in production">
-<meta name=twitter:description content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric.">
-<meta name=twitter:image content="/image/photo.jpg">
-<link rel=canonical href=/2014/02/10/using-virtualenv-in-production/>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
-<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
-<link rel="shortcut icon" href=/favicon.png>
-<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
-</head>
-<body>
-<div class="my-4 my-lg-5 header">
-<div class=container>
-<div class=row>
-<div class="col-auto offset-lg-2 d-none d-lg-block">
-<a href=/>
-<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
-</a>
-</div>
-<div class="col-auto align-self-center mr-auto">
-<a href=/>
-<h1 class=name>Dan Goldin</h1>
-</a>
-<ul class="nav nav-primary">
-<li class=nav-item>
-<a class="nav-link text-home" href=/>
-Home
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-about" href=/about/>
-About
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-lore" href=/lore/>
-Lore
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class=content>
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<h1 class="mx-0 mx-md-4 blog-post-title">Using virtualenv in production</h1>
-<div class="mb-md-4 meta">
-<span class="date middot" title="Mon Feb 10 2014 00:00:00 UTC">
-2014-02-10
-</span>
-<span class="reading-time middot">
-2 min read
-</span>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-<li class="d-inline middot">
-<a href=/tags/python>python</a>
-</li>
-<li class="d-inline middot">
-<a href=/tags/code>code</a>
-</li>
-</ul>
-</div>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-</ul>
-</div>
-</div>
-<div class="markdown blog-post-content">
-<p>One of my favorite things about Python is being able to use <a href=http://www.virtualenv.org/en/latest/index.html target=_blank>virtualenv</a> to create isolated environments. It’s extremely simple to use and allows you to have different versions of Python libraries used by different projects.</p>
-<p>The thing that&rsquo;s tricky is getting virtualenv set up on a production environment under different services since each one requires a slightly different configuration. I’ve gone through my projects and collected the various ways I’ve gotten it running for different services. I’m sure I could have done it differently but the following worked for me and will hopefully come in handy to others. If you have any questions or I&rsquo;m not being clear enough let me know and I&rsquo;ll updat the post with more information.</p>
-<ul>
-<li>Nginx and Gunicorn under Supervisor.
-<p><a href=http://nginx.org/ target=_blank>Nginx</a> - The configuration isn't anything different than normal except that you may need to specify some specific paths that are within your virtualenv</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx>  <span style=color:#66d9ef>Static</span> <span style=color:#e6db74>files</span> <span style=color:#e6db74>needs</span> <span style=color:#e6db74>to</span> <span style=color:#e6db74>point</span> <span style=color:#e6db74>to</span> <span style=color:#e6db74>virtualenv</span> <span style=color:#e6db74>directory</span>
-<span style=color:#e6db74>location</span> <span style=color:#e6db74>/static/admin</span> {
-  <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
-  <span style=color:#f92672>root</span>   <span style=color:#e6db74>/home/ubuntu/app/venv/lib/python2.7/site-packages/django/contrib/admin/</span>;
-}</code></pre></div>
-<p><a href=http://gunicorn.org/ target=_blank>Gunicorn</a> - I have a shell script here that's used to set the various paths and options that configure Gunicorn</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
-</span><span style=color:#75715e></span>set -e
-DJANGODIR<span style=color:#f92672>=</span>/home/ubuntu/app
-DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>app.settings.prod
-
-LOGFILE<span style=color:#f92672>=</span>/var/log/gunicorn/guni-app.log
-LOGDIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>dirname $LOGFILE<span style=color:#66d9ef>)</span>
-NUM_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>
-<span style=color:#75715e># user/group to run as</span>
-USER<span style=color:#f92672>=</span>ubuntu
-GROUP<span style=color:#f92672>=</span>ubuntu
-cd /home/ubuntu/app
-source /home/ubuntu/app/venv/bin/activate
-
-export DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>$DJANGO_SETTINGS_MODULE
-export PYTHONPATH<span style=color:#f92672>=</span>$DJANGODIR:$PYTHONPATH
-
-test -d $LOGDIR <span style=color:#f92672>||</span> mkdir -p $LOGDIR
-exec /home/ubuntu/app/venv/bin/gunicorn_django -w $NUM_WORKERS <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --user<span style=color:#f92672>=</span>$USER --group<span style=color:#f92672>=</span>$GROUP --log-level<span style=color:#f92672>=</span>debug <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --log-file<span style=color:#f92672>=</span>$LOGFILE -b 0.0.0.0:8000 2&gt;&gt;$LOGFILE</code></pre></div>
-<p><a href=http://supervisord.org/ target=_blank>Supevisor</a> - Here we just point our configuration file to the shell script for Gunicorn</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#66d9ef>[program:gunicorn-myapp]</span>
-<span style=color:#a6e22e>directory</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/myapp</span>
-<span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>ubuntu</span>
-<span style=color:#a6e22e>command</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/myapp/scripts/start.sh</span>
-<span style=color:#a6e22e>stdout_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/myapp-std.log</span>
-<span style=color:#a6e22e>stderr_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/myapp-err.log</span></code></pre></div>
-</li>
-<li><a href=http://www.celeryproject.org/ target=_blank>Celery</a> under Supervisor.
-<p>In this case we just configure Supervisor to start virtualenv path for celery. A cool feature is being able to specify the environment variables - in my case to pass in the Django settings module.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#66d9ef>[program:celery]</span>
-<span style=color:#75715e>; Set full path to celery program if using virtualenv</span>
-<span style=color:#a6e22e>command</span><span style=color:#f92672>=</span><span style=color:#e6db74>/home/ubuntu/myapp/venv/bin/celery worker -A myapp --loglevel=INFO</span>
-
-<span style=color:#a6e22e>directory</span><span style=color:#f92672>=</span><span style=color:#e6db74>/home/ubuntu/myapp</span>
-<span style=color:#a6e22e>user</span><span style=color:#f92672>=</span><span style=color:#e6db74>nobody</span>
-<span style=color:#a6e22e>numprocs</span><span style=color:#f92672>=</span><span style=color:#e6db74>1</span>
-<span style=color:#a6e22e>stdout_logfile</span><span style=color:#f92672>=</span><span style=color:#e6db74>/var/log/celery/worker.log</span>
-<span style=color:#a6e22e>stderr_logfile</span><span style=color:#f92672>=</span><span style=color:#e6db74>/var/log/celery/worker.log</span>
-<span style=color:#a6e22e>autostart</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-<span style=color:#a6e22e>autorestart</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
-<span style=color:#a6e22e>startsecs</span><span style=color:#f92672>=</span><span style=color:#e6db74>10</span>
-
-<span style=color:#a6e22e>environment</span> <span style=color:#f92672>=</span><span style=color:#e6db74>
-</span><span style=color:#e6db74>  DJANGO_SETTINGS_MODULE=myapp.settings.prod</span></code></pre></div>
-</li>
-<li><a href=http://docs.fabfile.org/en/1.8/ target=_blank>Fabric</a>.
-<p>The idea here is to make sure all our remote install commands are run after activiating the virtualenv.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> __future__ <span style=color:#f92672>import</span> with_statement
-<span style=color:#f92672>from</span> fabric.api <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
-<span style=color:#f92672>from</span> contextlib <span style=color:#f92672>import</span> contextmanager <span style=color:#66d9ef>as</span> _contextmanager
-
-env<span style=color:#f92672>.</span>activate <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;source /home/ubuntu/myapp/venv/bin/activate&#39;</span>
-env<span style=color:#f92672>.</span>directory <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/home/ubuntu/myapp&#39;</span>
-
-<span style=color:#a6e22e>@_contextmanager</span>
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>virtualenv</span>():
-    <span style=color:#66d9ef>with</span> cd(env<span style=color:#f92672>.</span>directory):
-        <span style=color:#66d9ef>with</span> prefix(env<span style=color:#f92672>.</span>activate):
-            <span style=color:#66d9ef>yield</span>
-
-<span style=color:#a6e22e>@hosts</span>(env<span style=color:#f92672>.</span>roledefs[<span style=color:#e6db74>&#39;db&#39;</span>])
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rebuild_index</span>():
-    <span style=color:#66d9ef>with</span> virtualenv():
-        run(<span style=color:#e6db74>&#34;python manage.py rebuild_index&#34;</span>)</code></pre></div>
-</li>
-</ul>
-</div>
-<div class=navigation>
-<div class=row>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-left">
-<a href=/2014/02/09/travel-more/>« Travel more</a>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-right">
-<a href=/2014/02/13/foursquare-as-a-contact-book/>Foursquare as a contact book »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id=comments>
-<div class="py-3 content">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<div class=comments>
-<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="my-4 footer">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<hr>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-2">
-<div class="mx-0 mx-md-4 site-copyright">
-© 2021 Dan Goldin
-</div>
-</div>
-<div class="col-sm-12 col-lg-6">
-<div class="mx-0 mx-md-4 site-social">
-<ul>
-<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
-<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
-<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
-<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
-<li><a href=/index.xml class=mr-0>RSS</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Using virtualenv in production - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2014/02/10/using-virtualenv-in-production/"><meta property="og:title" content="Using virtualenv in production"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Using virtualenv in production"><meta name=twitter:description content="virtualenv is great but it requires a bit of work to get it running for various services. Below are the ways I've gotten it working with Nginx, Gunicorn, Supervisor, Celery, and Fabric."><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2014/02/10/using-virtualenv-in-production/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-36313127-1")</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Using virtualenv in production</h1><div class="mb-md-4 meta"><span class="date middot" title='Mon Feb 10 2014 00:00:00 UTC'>2014-02-10</span>
+<span class="reading-time middot">2 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/python>python</a></li><li class="d-inline middot"><a href=/tags/code>code</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>One of my favorite things about Python is being able to use <a href=http://www.virtualenv.org/en/latest/index.html target=_blank>virtualenv</a> to create isolated environments. It’s extremely simple to use and allows you to have different versions of Python libraries used by different projects.</p><p>The thing that&rsquo;s tricky is getting virtualenv set up on a production environment under different services since each one requires a slightly different configuration. I’ve gone through my projects and collected the various ways I’ve gotten it running for different services. I’m sure I could have done it differently but the following worked for me and will hopefully come in handy to others. If you have any questions or I&rsquo;m not being clear enough let me know and I&rsquo;ll updat the post with more information.</p><ul><li>Nginx and Gunicorn under Supervisor.<p><a href=http://nginx.org/ target=_blank>Nginx</a> - The configuration isn't anything different than normal except that you may need to specify some specific paths that are within your virtualenv</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx><span style=display:flex><span>  <span style=color:#66d9ef>Static</span> <span style=color:#e6db74>files</span> <span style=color:#e6db74>needs</span> <span style=color:#e6db74>to</span> <span style=color:#e6db74>point</span> <span style=color:#e6db74>to</span> <span style=color:#e6db74>virtualenv</span> <span style=color:#e6db74>directory</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>location</span> <span style=color:#e6db74>/static/admin</span> {
+</span></span><span style=display:flex><span>  <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
+</span></span><span style=display:flex><span>  <span style=color:#f92672>root</span>   <span style=color:#e6db74>/home/ubuntu/app/venv/lib/python2.7/site-packages/django/contrib/admin/</span>;
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p><a href=http://gunicorn.org/ target=_blank>Gunicorn</a> - I have a shell script here that's used to set the various paths and options that configure Gunicorn</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>set -e
+</span></span><span style=display:flex><span>DJANGODIR<span style=color:#f92672>=</span>/home/ubuntu/app
+</span></span><span style=display:flex><span>DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>app.settings.prod
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>LOGFILE<span style=color:#f92672>=</span>/var/log/gunicorn/guni-app.log
+</span></span><span style=display:flex><span>LOGDIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>dirname $LOGFILE<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>NUM_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># user/group to run as</span>
+</span></span><span style=display:flex><span>USER<span style=color:#f92672>=</span>ubuntu
+</span></span><span style=display:flex><span>GROUP<span style=color:#f92672>=</span>ubuntu
+</span></span><span style=display:flex><span>cd /home/ubuntu/app
+</span></span><span style=display:flex><span>source /home/ubuntu/app/venv/bin/activate
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>export DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>$DJANGO_SETTINGS_MODULE
+</span></span><span style=display:flex><span>export PYTHONPATH<span style=color:#f92672>=</span>$DJANGODIR:$PYTHONPATH
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>test -d $LOGDIR <span style=color:#f92672>||</span> mkdir -p $LOGDIR
+</span></span><span style=display:flex><span>exec /home/ubuntu/app/venv/bin/gunicorn_django -w $NUM_WORKERS <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --user<span style=color:#f92672>=</span>$USER --group<span style=color:#f92672>=</span>$GROUP --log-level<span style=color:#f92672>=</span>debug <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --log-file<span style=color:#f92672>=</span>$LOGFILE -b 0.0.0.0:8000 2&gt;&gt;$LOGFILE</span></span></code></pre></div><p><a href=http://supervisord.org/ target=_blank>Supevisor</a> - Here we just point our configuration file to the shell script for Gunicorn</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#66d9ef>[program:gunicorn-myapp]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>directory</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/myapp</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>ubuntu</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>command</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/myapp/scripts/start.sh</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stdout_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/myapp-std.log</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stderr_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/myapp-err.log</span></span></span></code></pre></div></li><li><a href=http://www.celeryproject.org/ target=_blank>Celery</a> under Supervisor.<p>In this case we just configure Supervisor to start virtualenv path for celery. A cool feature is being able to specify the environment variables - in my case to pass in the Django settings module.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#66d9ef>[program:celery]</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>; Set full path to celery program if using virtualenv</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>command</span><span style=color:#f92672>=</span><span style=color:#e6db74>/home/ubuntu/myapp/venv/bin/celery worker -A myapp --loglevel=INFO</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>directory</span><span style=color:#f92672>=</span><span style=color:#e6db74>/home/ubuntu/myapp</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span><span style=color:#f92672>=</span><span style=color:#e6db74>nobody</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>numprocs</span><span style=color:#f92672>=</span><span style=color:#e6db74>1</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stdout_logfile</span><span style=color:#f92672>=</span><span style=color:#e6db74>/var/log/celery/worker.log</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stderr_logfile</span><span style=color:#f92672>=</span><span style=color:#e6db74>/var/log/celery/worker.log</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>autostart</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>autorestart</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>startsecs</span><span style=color:#f92672>=</span><span style=color:#e6db74>10</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>environment</span> <span style=color:#f92672>=</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  DJANGO_SETTINGS_MODULE=myapp.settings.prod</span></span></span></code></pre></div></li><li><a href=http://docs.fabfile.org/en/1.8/ target=_blank>Fabric</a>.<p>The idea here is to make sure all our remote install commands are run after activiating the virtualenv.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> __future__ <span style=color:#f92672>import</span> with_statement
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> fabric.api <span style=color:#f92672>import</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> contextlib <span style=color:#f92672>import</span> contextmanager <span style=color:#66d9ef>as</span> _contextmanager
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>env<span style=color:#f92672>.</span>activate <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;source /home/ubuntu/myapp/venv/bin/activate&#39;</span>
+</span></span><span style=display:flex><span>env<span style=color:#f92672>.</span>directory <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/home/ubuntu/myapp&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@_contextmanager</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>virtualenv</span>():
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> cd(env<span style=color:#f92672>.</span>directory):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>with</span> prefix(env<span style=color:#f92672>.</span>activate):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>yield</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@hosts</span>(env<span style=color:#f92672>.</span>roledefs[<span style=color:#e6db74>&#39;db&#39;</span>])
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rebuild_index</span>():
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> virtualenv():
+</span></span><span style=display:flex><span>        run(<span style=color:#e6db74>&#34;python manage.py rebuild_index&#34;</span>)</span></span></code></pre></div></li></ul></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2014/02/09/travel-more/>« Travel more</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2014/02/13/foursquare-as-a-contact-book/>Foursquare as a contact book »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
-<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
-<script src=/js/math-code.js></script>
-<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
-</html>
+<script>window.addEventListener("load",function(){hljs.initHighlighting()},!0)</script><script src=/js/math-code.js></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>

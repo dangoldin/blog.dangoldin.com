@@ -1,425 +1,183 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title> Visualizing RunKeeper data in R - Dan Goldin </title>
-<meta name=HandheldFriendly content="True">
-<meta name=MobileOptimized content="320">
-<meta name=referrer content="no-referrer">
-<meta name=description content="Some visualizations done using R on top of my RunKeeper data from 2013.">
-<meta property="og:site_name" content="Dan Goldin">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/2014/01/04/visualizing-runkeeper-data-in-r/">
-<meta property="og:title" content="Visualizing RunKeeper data in R">
-<meta property="og:image" content="//image/rk-distance-cumulative.png">
-<meta property="og:description" content="Some visualizations done using R on top of my RunKeeper data from 2013.">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:site content="@dangoldin">
-<meta name=twitter:creator content="@dangoldin">
-<meta name=twitter:title content="Visualizing RunKeeper data in R">
-<meta name=twitter:description content="Some visualizations done using R on top of my RunKeeper data from 2013.">
-<meta name=twitter:image content="//image/rk-distance-cumulative.png">
-<link rel=canonical href=/2014/01/04/visualizing-runkeeper-data-in-r/>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
-<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
-<link rel="shortcut icon" href=/favicon.png>
-<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
-</head>
-<body>
-<div class="my-4 my-lg-5 header">
-<div class=container>
-<div class=row>
-<div class="col-auto offset-lg-2 d-none d-lg-block">
-<a href=/>
-<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
-</a>
-</div>
-<div class="col-auto align-self-center mr-auto">
-<a href=/>
-<h1 class=name>Dan Goldin</h1>
-</a>
-<ul class="nav nav-primary">
-<li class=nav-item>
-<a class="nav-link text-home" href=/>
-Home
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-about" href=/about/>
-About
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-lore" href=/lore/>
-Lore
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class=content>
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<h1 class="mx-0 mx-md-4 blog-post-title">Visualizing RunKeeper data in R</h1>
-<div class="mb-md-4 meta">
-<span class="date middot" title="Sat Jan 4 2014 00:00:00 UTC">
-2014-01-04
-</span>
-<span class="reading-time middot">
-5 min read
-</span>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-<li class="d-inline middot">
-<a href=/tags/dataviz>dataviz</a>
-</li>
-<li class="d-inline middot">
-<a href=/tags/code>code</a>
-</li>
-<li class="d-inline middot">
-<a href=/tags/r>R</a>
-</li>
-</ul>
-</div>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-</ul>
-</div>
-</div>
-<div class="markdown blog-post-content">
-<p>What better way to celebrate running 1000 miles in 2013 than dumping the data into R and generating some visualizations? It’s also a step in my quest to replace Excel with R. I’ve included the code below with some comments as well as added it to <a href=https://github.com/dangoldin/runkeeper-stats target=_blank>my GitHub</a>. If you have any ideas on what else I should do with it definitely let me know and I’ll give it a go.</p>
-<p>PS. It&rsquo;s great when web services allow users to export their data and wish more would start doing the same.</p>
-<ul class=thumbnails>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Cumulative distance. You can see a few flat areas in February and November when I took a break due to some minor injuries.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Distance run by month. Unexpected drop in November due to a break but pretty solid otherwise.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Distance run by week. Not much new information here that's not covered in the monthly graph.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Cumulative time. Very similar shape to that of cumulative distance.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Cumulative time vs distance. Superimpose one on top of the other to compare the shapes. Started off slowly but started getting faster in October.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Speed by run. I got significantly faster in October but slowed down again in December.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Speed by month by distance quantile. The idea here was to look at my improvement in speed but controlling for distance. Echoes the previous chart showing my speed improvement in Oct for the longer distances.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Speed distribution by distance quantile. Another view that looks at the distribution of my speeds for all runs in a given distance quantile. Not much here but I was expecting to see that I'd have a faster pace for shorter runs.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Speed vs Distance scatter plot. Another way to look at the relationship between speed and distance but not many new insights here. Slight correlation between speed and distance. This is pretty much because as I got faster I started doing longer runs. It'll be interesting to see how this changes in 2014.
-</p>
-</div>
-</li>
-<li class=span7>
-<div class=thumbnail>
-<img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive>
-<p>
-Speed vs Distance scatter plot clustered. An attempt at clustering the runs by speed and distance. In this case they were basically clustered by distance since the speed didn't vary significantly.
-</p>
-</div>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=color:#a6e22e>library</span>(ggplot2)
-<span style=color:#a6e22e>library</span>(grid)
-<span style=color:#a6e22e>library</span>(gridExtra)
-<span style=color:#a6e22e>library</span>(reshape)
-<span style=color:#a6e22e>library</span>(scales)
-<span style=color:#a6e22e>library</span>(lattice)
-<span style=color:#a6e22e>library</span>(ggthemes)
-
-data <span style=color:#f92672>=</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;cardioActivities.csv&#34;</span>, check.names<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>)
-
-<span style=color:#a6e22e>summary</span>(data)
-
-data <span style=color:#f92672>&lt;-</span> data<span style=color:#a6e22e>[order</span>(data<span style=color:#f92672>$</span>Date),] <span style=color:#75715e># Sort ascending by date</span>
-data<span style=color:#f92672>$</span>ymd <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(data<span style=color:#f92672>$</span>Date)
-data<span style=color:#f92672>$</span>month <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(<span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>ymd, breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;month&#34;</span>))
-data<span style=color:#f92672>$</span>week <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(<span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>ymd, breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;week&#34;</span>)) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-data<span style=color:#f92672>$</span>distance <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Distance (mi)&#39;</span>
-data<span style=color:#f92672>$</span>distance_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>distance)
-data<span style=color:#f92672>$</span>speed <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Average Speed (mph)&#39;</span>
-data<span style=color:#f92672>$</span>time_hours <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>distance<span style=color:#f92672>/</span>data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Average Speed (mph)&#39;</span>
-data<span style=color:#f92672>$</span>time_hours_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>time_hours)
-data<span style=color:#f92672>$</span>time_mins <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>time_hours <span style=color:#f92672>*</span> <span style=color:#ae81ff>60</span>
-data<span style=color:#f92672>$</span>time_mins_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>time_mins)
-data<span style=color:#f92672>$</span>distance_total_norm <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>distance_total<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(data<span style=color:#f92672>$</span>distance)
-data<span style=color:#f92672>$</span>time_hours_total_norm <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>time_hours_total<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(data<span style=color:#f92672>$</span>time_hours)
-data<span style=color:#f92672>$</span>qs <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>distance, breaks <span style=color:#f92672>=</span> <span style=color:#a6e22e>quantile</span>(data<span style=color:#f92672>$</span>distance), include.lowest<span style=color:#f92672>=</span><span style=color:#66d9ef>TRUE</span>) <span style=color:#75715e># Quantile data by distance run</span>
-
-<span style=color:#75715e># Generate a new data frame by qs and month to make plotting easier</span>
-data.qs_monthly <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>ddply</span>(data, .(qs, month), <span style=color:#a6e22e>function</span>(x) <span style=color:#a6e22e>data.frame</span>(distance<span style=color:#f92672>=</span><span style=color:#a6e22e>sum</span>(x<span style=color:#f92672>$</span>distance), time_mins<span style=color:#f92672>=</span><span style=color:#a6e22e>sum</span>(x<span style=color:#f92672>$</span>time_mins)))
-data.qs_monthly<span style=color:#f92672>$</span>speed <span style=color:#f92672>&lt;-</span> data.qs_monthly<span style=color:#f92672>$</span>distance<span style=color:#f92672>/</span>(data.qs_monthly<span style=color:#f92672>$</span>time_mins<span style=color:#f92672>/</span><span style=color:#ae81ff>60</span>)
-
-<span style=color:#75715e># Summarize the data by qs to make plotting easier</span>
-data.summary <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>ddply</span>(data,<span style=color:#f92672>~</span>qs,summarise,mean_speed<span style=color:#f92672>=</span><span style=color:#a6e22e>mean</span>(speed),sd_speed<span style=color:#f92672>=</span><span style=color:#a6e22e>sd</span>(speed),mean_distance<span style=color:#f92672>=</span><span style=color:#a6e22e>mean</span>(distance),sd_distance<span style=color:#f92672>=</span><span style=color:#a6e22e>sd</span>(distance))
-
-<span style=color:#75715e># Cluster each of the runs by speed and data</span>
-m <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.matrix</span>(<span style=color:#a6e22e>cbind</span>(data<span style=color:#f92672>$</span>speed, data<span style=color:#f92672>$</span>distance),ncol<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
-cl <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>kmeans</span>(m,<span style=color:#ae81ff>3</span>)
-data<span style=color:#f92672>$</span>cluster <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>factor</span>(cl<span style=color:#f92672>$</span>cluster)
-centers <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.data.frame</span>(cl<span style=color:#f92672>$</span>centers)
-
-<span style=color:#75715e># Normalize cumulative distance and time</span>
-data.normalized <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>melt</span>(data, id.vars<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ymd&#34;</span>, measure.vars<span style=color:#f92672>=</span><span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;distance_total_norm&#34;</span>,<span style=color:#e6db74>&#34;time_hours_total_norm&#34;</span>))
-data.normalized<span style=color:#f92672>$</span>variable <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>revalue</span>(data.normalized<span style=color:#f92672>$</span>variable, <span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;distance_total_norm&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Distance&#34;</span>, <span style=color:#e6db74>&#34;time_hours_total_norm&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Time&#34;</span>))
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-vs-distance.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
-<span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>speed, y<span style=color:#f92672>=</span>distance)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_point</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_abline</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed vs Distance&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-vs-distance-clusters.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
-<span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>speed, y<span style=color:#f92672>=</span>distance, color<span style=color:#f92672>=</span>cluster)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_point</span>(legend<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_point</span>(data<span style=color:#f92672>=</span>centers, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>V1,y<span style=color:#f92672>=</span>V2, color<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Center&#39;</span>), size<span style=color:#f92672>=</span><span style=color:#ae81ff>52</span>, alpha<span style=color:#f92672>=</span><span style=color:#ae81ff>.3</span>, legend<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed vs Distance - Clustered&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-month-qs.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data.qs_monthly,
-  <span style=color:#a6e22e>aes</span>(month, speed)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_line</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>facet_grid</span>(qs <span style=color:#f92672>~</span> .) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed by Month&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-month.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data,
-  <span style=color:#a6e22e>aes</span>(month, distance)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum,
-    geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Distance by Month&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-week.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data,
-  <span style=color:#a6e22e>aes</span>(week, distance)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum,
-    geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m-%d&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;4 week&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Week&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Week&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Distance by Week&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-distribution-qs.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data, <span style=color:#a6e22e>aes</span>(speed, fill<span style=color:#f92672>=</span>qs)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_density</span>(alpha <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_vline</span>(<span style=color:#a6e22e>aes</span>(xintercept<span style=color:#f92672>=</span>mean_speed), data<span style=color:#f92672>=</span>data.summary) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>facet_grid</span>(qs <span style=color:#f92672>~</span> .) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Density&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed Distribution by Distance&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-cumulative.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, distance_total)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Cumulative distance&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-daily.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, speed)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed by Run&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-time-cumulative.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
-<span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, time_hours_total)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_x_date</span>(
-    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
-    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Time (hours)&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Cumulative Time&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()
-
-<span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-time-vs-distance-cumulative.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
-<span style=color:#a6e22e>ggplot</span>(data.normalized,
-  <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>ymd, y<span style=color:#f92672>=</span>value, colour <span style=color:#f92672>=</span> variable, group<span style=color:#f92672>=</span>variable)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>geom_line</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>theme</span>(legend.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_blank</span>()) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;YMD&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;&#39;</span>) <span style=color:#f92672>+</span>
-  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Time vs Distance (normalized)&#34;</span>)
-<span style=color:#a6e22e>dev.off</span>()</code></pre></div>
-</div>
-<div class=navigation>
-<div class=row>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-left">
-<a href=/2013/12/30/2013-blog-stats/>« 2013 blog stats</a>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-right">
-<a href=/2014/01/05/surge-pricing-ideas/>Surge pricing ideas »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id=comments>
-<div class="py-3 content">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<div class=comments>
-<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="my-4 footer">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<hr>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-2">
-<div class="mx-0 mx-md-4 site-copyright">
-© 2021 Dan Goldin
-</div>
-</div>
-<div class="col-sm-12 col-lg-6">
-<div class="mx-0 mx-md-4 site-social">
-<ul>
-<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
-<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
-<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
-<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
-<li><a href=/index.xml class=mr-0>RSS</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Visualizing RunKeeper data in R - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="Some visualizations done using R on top of my RunKeeper data from 2013."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2014/01/04/visualizing-runkeeper-data-in-r/"><meta property="og:title" content="Visualizing RunKeeper data in R"><meta property="og:image" content="//image/rk-distance-cumulative.png"><meta property="og:description" content="Some visualizations done using R on top of my RunKeeper data from 2013."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Visualizing RunKeeper data in R"><meta name=twitter:description content="Some visualizations done using R on top of my RunKeeper data from 2013."><meta name=twitter:image content="//image/rk-distance-cumulative.png"><link rel=canonical href=/2014/01/04/visualizing-runkeeper-data-in-r/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-36313127-1")</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Visualizing RunKeeper data in R</h1><div class="mb-md-4 meta"><span class="date middot" title='Sat Jan 4 2014 00:00:00 UTC'>2014-01-04</span>
+<span class="reading-time middot">5 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/dataviz>dataviz</a></li><li class="d-inline middot"><a href=/tags/code>code</a></li><li class="d-inline middot"><a href=/tags/r>R</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>What better way to celebrate running 1000 miles in 2013 than dumping the data into R and generating some visualizations? It’s also a step in my quest to replace Excel with R. I’ve included the code below with some comments as well as added it to <a href=https://github.com/dangoldin/runkeeper-stats target=_blank>my GitHub</a>. If you have any ideas on what else I should do with it definitely let me know and I’ll give it a go.</p><p>PS. It&rsquo;s great when web services allow users to export their data and wish more would start doing the same.</p><ul class=thumbnails><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Cumulative distance. You can see a few flat areas in February and November when I took a break due to some minor injuries.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Distance run by month. Unexpected drop in November due to a break but pretty solid otherwise.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Distance run by week. Not much new information here that's not covered in the monthly graph.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Cumulative time. Very similar shape to that of cumulative distance.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Cumulative time vs distance. Superimpose one on top of the other to compare the shapes. Started off slowly but started getting faster in October.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Speed by run. I got significantly faster in October but slowed down again in December.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Speed by month by distance quantile. The idea here was to look at my improvement in speed but controlling for distance. Echoes the previous chart showing my speed improvement in Oct for the longer distances.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Speed distribution by distance quantile. Another view that looks at the distribution of my speeds for all runs in a given distance quantile. Not much here but I was expecting to see that I'd have a faster pace for shorter runs.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Speed vs Distance scatter plot. Another way to look at the relationship between speed and distance but not many new insights here. Slight correlation between speed and distance. This is pretty much because as I got faster I started doing longer runs. It'll be interesting to see how this changes in 2014.</p></div></li><li class=span7><div class=thumbnail><img src=/image/rk-speed-vs-distance-clusters.png alt="Speed vs Distance clustered" data-width=800 data-height=800 data-layout=responsive><p>Speed vs Distance scatter plot clustered. An attempt at clustering the runs by speed and distance. In this case they were basically clustered by distance since the speed didn't vary significantly.</p></div></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#a6e22e>library</span>(ggplot2)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(grid)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(gridExtra)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(reshape)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(scales)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(lattice)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(ggthemes)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;cardioActivities.csv&#34;</span>, check.names<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>summary</span>(data)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>data <span style=color:#f92672>&lt;-</span> data<span style=color:#a6e22e>[order</span>(data<span style=color:#f92672>$</span>Date),] <span style=color:#75715e># Sort ascending by date</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>ymd <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(data<span style=color:#f92672>$</span>Date)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>month <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(<span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>ymd, breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;month&#34;</span>))
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>week <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.Date</span>(<span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>ymd, breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;week&#34;</span>)) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>distance <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Distance (mi)&#39;</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>distance_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>distance)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>speed <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Average Speed (mph)&#39;</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>time_hours <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>distance<span style=color:#f92672>/</span>data<span style=color:#f92672>$</span><span style=color:#e6db74>&#39;Average Speed (mph)&#39;</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>time_hours_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>time_hours)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>time_mins <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>time_hours <span style=color:#f92672>*</span> <span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>time_mins_total <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cumsum</span>(data<span style=color:#f92672>$</span>time_mins)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>distance_total_norm <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>distance_total<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(data<span style=color:#f92672>$</span>distance)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>time_hours_total_norm <span style=color:#f92672>&lt;-</span> data<span style=color:#f92672>$</span>time_hours_total<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(data<span style=color:#f92672>$</span>time_hours)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>qs <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>cut</span>(data<span style=color:#f92672>$</span>distance, breaks <span style=color:#f92672>=</span> <span style=color:#a6e22e>quantile</span>(data<span style=color:#f92672>$</span>distance), include.lowest<span style=color:#f92672>=</span><span style=color:#66d9ef>TRUE</span>) <span style=color:#75715e># Quantile data by distance run</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate a new data frame by qs and month to make plotting easier</span>
+</span></span><span style=display:flex><span>data.qs_monthly <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>ddply</span>(data, .(qs, month), <span style=color:#a6e22e>function</span>(x) <span style=color:#a6e22e>data.frame</span>(distance<span style=color:#f92672>=</span><span style=color:#a6e22e>sum</span>(x<span style=color:#f92672>$</span>distance), time_mins<span style=color:#f92672>=</span><span style=color:#a6e22e>sum</span>(x<span style=color:#f92672>$</span>time_mins)))
+</span></span><span style=display:flex><span>data.qs_monthly<span style=color:#f92672>$</span>speed <span style=color:#f92672>&lt;-</span> data.qs_monthly<span style=color:#f92672>$</span>distance<span style=color:#f92672>/</span>(data.qs_monthly<span style=color:#f92672>$</span>time_mins<span style=color:#f92672>/</span><span style=color:#ae81ff>60</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Summarize the data by qs to make plotting easier</span>
+</span></span><span style=display:flex><span>data.summary <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>ddply</span>(data,<span style=color:#f92672>~</span>qs,summarise,mean_speed<span style=color:#f92672>=</span><span style=color:#a6e22e>mean</span>(speed),sd_speed<span style=color:#f92672>=</span><span style=color:#a6e22e>sd</span>(speed),mean_distance<span style=color:#f92672>=</span><span style=color:#a6e22e>mean</span>(distance),sd_distance<span style=color:#f92672>=</span><span style=color:#a6e22e>sd</span>(distance))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Cluster each of the runs by speed and data</span>
+</span></span><span style=display:flex><span>m <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.matrix</span>(<span style=color:#a6e22e>cbind</span>(data<span style=color:#f92672>$</span>speed, data<span style=color:#f92672>$</span>distance),ncol<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>cl <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>kmeans</span>(m,<span style=color:#ae81ff>3</span>)
+</span></span><span style=display:flex><span>data<span style=color:#f92672>$</span>cluster <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>factor</span>(cl<span style=color:#f92672>$</span>cluster)
+</span></span><span style=display:flex><span>centers <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.data.frame</span>(cl<span style=color:#f92672>$</span>centers)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Normalize cumulative distance and time</span>
+</span></span><span style=display:flex><span>data.normalized <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>melt</span>(data, id.vars<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ymd&#34;</span>, measure.vars<span style=color:#f92672>=</span><span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;distance_total_norm&#34;</span>,<span style=color:#e6db74>&#34;time_hours_total_norm&#34;</span>))
+</span></span><span style=display:flex><span>data.normalized<span style=color:#f92672>$</span>variable <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>revalue</span>(data.normalized<span style=color:#f92672>$</span>variable, <span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;distance_total_norm&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Distance&#34;</span>, <span style=color:#e6db74>&#34;time_hours_total_norm&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Time&#34;</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-vs-distance.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>speed, y<span style=color:#f92672>=</span>distance)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_point</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_abline</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed vs Distance&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-vs-distance-clusters.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>speed, y<span style=color:#f92672>=</span>distance, color<span style=color:#f92672>=</span>cluster)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_point</span>(legend<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_point</span>(data<span style=color:#f92672>=</span>centers, <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>V1,y<span style=color:#f92672>=</span>V2, color<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Center&#39;</span>), size<span style=color:#f92672>=</span><span style=color:#ae81ff>52</span>, alpha<span style=color:#f92672>=</span><span style=color:#ae81ff>.3</span>, legend<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed vs Distance - Clustered&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-month-qs.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data.qs_monthly,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>aes</span>(month, speed)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_line</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>facet_grid</span>(qs <span style=color:#f92672>~</span> .) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed by Month&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-month.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>aes</span>(month, distance)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum,
+</span></span><span style=display:flex><span>    geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Distance by Month&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-week.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data <span style=color:#f92672>=</span> data,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>aes</span>(week, distance)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum,
+</span></span><span style=display:flex><span>    geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m-%d&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;4 week&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Week&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Week&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Distance by Week&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-distribution-qs.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data, <span style=color:#a6e22e>aes</span>(speed, fill<span style=color:#f92672>=</span>qs)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_density</span>(alpha <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_vline</span>(<span style=color:#a6e22e>aes</span>(xintercept<span style=color:#f92672>=</span>mean_speed), data<span style=color:#f92672>=</span>data.summary) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>facet_grid</span>(qs <span style=color:#f92672>~</span> .) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Density&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed Distribution by Distance&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-distance-cumulative.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, distance_total)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Distance&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Cumulative distance&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-speed-daily.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, speed)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Speed&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Speed by Run&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-time-cumulative.png&#39;</span>,width <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data<span style=color:#f92672>=</span>data, <span style=color:#a6e22e>aes</span>(ymd, time_hours_total)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stat_summary</span>(fun.y <span style=color:#f92672>=</span> sum, geom <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;line&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_x_date</span>(
+</span></span><span style=display:flex><span>    labels <span style=color:#f92672>=</span> <span style=color:#a6e22e>date_format</span>(<span style=color:#e6db74>&#34;%Y-%m&#34;</span>),
+</span></span><span style=display:flex><span>    breaks <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1 month&#34;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;Month&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;Time (hours)&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Cumulative Time&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>png</span>(<span style=color:#e6db74>&#39;rk-time-vs-distance-cumulative.png&#39;</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>800</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ggplot</span>(data.normalized,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>aes</span>(x<span style=color:#f92672>=</span>ymd, y<span style=color:#f92672>=</span>value, colour <span style=color:#f92672>=</span> variable, group<span style=color:#f92672>=</span>variable)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>geom_line</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>scale_color_economist</span>() <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(axis.text.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>element_text</span>(angle <span style=color:#f92672>=</span> <span style=color:#ae81ff>80</span>, hjust <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>), plot.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_text</span>(hjust<span style=color:#f92672>=</span><span style=color:#ae81ff>0.5</span>)) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>theme</span>(legend.title<span style=color:#f92672>=</span><span style=color:#a6e22e>element_blank</span>()) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>xlab</span>(<span style=color:#e6db74>&#39;YMD&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ylab</span>(<span style=color:#e6db74>&#39;&#39;</span>) <span style=color:#f92672>+</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ggtitle</span>(<span style=color:#e6db74>&#34;Time vs Distance (normalized)&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>dev.off</span>()</span></span></code></pre></div></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2013/12/30/2013-blog-stats/>« 2013 blog stats</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2014/01/05/surge-pricing-ideas/>Surge pricing ideas »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
-<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
-<script src=/js/math-code.js></script>
-<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
-</html>
+<script>window.addEventListener("load",function(){hljs.initHighlighting()},!0)</script><script src=/js/math-code.js></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>

@@ -1,304 +1,129 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title> Food identification with Google's Cloud Vision - Dan Goldin </title>
-<meta name=HandheldFriendly content="True">
-<meta name=MobileOptimized content="320">
-<meta name=referrer content="no-referrer">
-<meta name=description content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well.">
-<meta property="og:site_name" content="Dan Goldin">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/2016/08/29/food-identification-with-googles-cloud-vision/">
-<meta property="og:title" content="Food identification with Google's Cloud Vision">
-<meta property="og:image" content="/image/photo.jpg">
-<meta property="og:description" content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well.">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:site content="@dangoldin">
-<meta name=twitter:creator content="@dangoldin">
-<meta name=twitter:title content="Food identification with Google's Cloud Vision">
-<meta name=twitter:description content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well.">
-<meta name=twitter:image content="/image/photo.jpg">
-<link rel=canonical href=/2016/08/29/food-identification-with-googles-cloud-vision/>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
-<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
-<link rel="shortcut icon" href=/favicon.png>
-<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
-</head>
-<body>
-<div class="my-4 my-lg-5 header">
-<div class=container>
-<div class=row>
-<div class="col-auto offset-lg-2 d-none d-lg-block">
-<a href=/>
-<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
-</a>
-</div>
-<div class="col-auto align-self-center mr-auto">
-<a href=/>
-<h1 class=name>Dan Goldin</h1>
-</a>
-<ul class="nav nav-primary">
-<li class=nav-item>
-<a class="nav-link text-home" href=/>
-Home
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-about" href=/about/>
-About
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-lore" href=/lore/>
-Lore
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class=content>
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<h1 class="mx-0 mx-md-4 blog-post-title">Food identification with Google's Cloud Vision</h1>
-<div class="mb-md-4 meta">
-<span class="date middot" title="Mon Aug 29 2016 00:00:00 UTC">
-2016-08-29
-</span>
-<span class="reading-time middot">
-3 min read
-</span>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-<li class="d-inline middot">
-<a href=/tags/code>code</a>
-</li>
-<li class="d-inline middot">
-<a href=/tags/meta>meta</a>
-</li>
-</ul>
-</div>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-</ul>
-</div>
-</div>
-<div class="markdown blog-post-content">
-<p>Something that I haven’t quite figured out is how to avoid wasting food. I like to think I keep good track of everything in my fridge but too often I end up finding something in the corner that spoiled and needs to be thrown out. Earlier today I was talking to someone at the office about this problem and how nice it would be if you could just have something that knows everything that’s in the fridge and can track how long it’s been there and an estimate of how long it will last. I’m sure refrigerators in 10 years will have this built in but I wanted to see what I could cobble together in an evening.</p>
-<p>Luckily for me Google released a Cloud Vision API and I decided to give it a shot. Turns out implementing it was extremely straightforward, despite Google’s poor documentation, with a quick code search on GitHub that led to me <a href=https://github.com/ramhiser/serverless-cloud-vision>https://github.com/ramhiser/serverless-cloud-vision</a>. Unfortunately, the results were not promising. I ran on three images and while the categorization was surprisingly accurate it was too general. I expected to at least accurate identification for the bottles and cans - milk, ketchup, yogurt but the closest it got was food, ice cream, and gelato. Granted, the photos weren’t staged well and it took me about 15 minutes to get it working but I was still disappointed. The Cloud VIsion service doesn’t offer much customization so I’m going to see how much better I can make it by improving the photos. I’ve included the original photos along with the classification results below. As usual my code is up on <a href=https://github.com/dangoldin/fridge-vision>GitHub</a> although it was really just a straight up copy and paste from <a href=https://github.com/ramhiser/serverless-cloud-vision>ramhiser’s code</a> above.</p>
-<ul class=thumbnails>
-<li class=span8>
-<div class=thumbnail>
-<img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.90114909</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02wbm&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;food&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.88251483</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02phwj2&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;display window&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.81870794</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0cxn2&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;ice cream&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.76996088</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0270h&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;dessert&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.75129372</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02fz11&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;gelato&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.69974077</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02rfdq&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;interior design&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.57035172</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02q08p0&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;dish&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54961139</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0191_7&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;retail store&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.53331912</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/031bff&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;window covering&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.51523668</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/01_bhs&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;fast food&#34;</span>
-        }
-      ]</code></pre></div>
-</div>
-</li>
-<li class=span8>
-<div class=thumbnail>
-<img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.87785435</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/07yv9&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;vehicle&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.78110605</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0k5j&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;aircraft&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.77443254</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0cmf2&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;airplane&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.7131173</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02pkr5&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;plumbing fixture&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.71218145</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/015y8h&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;jet aircraft&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.66169083</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/06ht1&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;room&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.5944497</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/01lgkm&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;recreational vehicle&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54411179</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/041x_j&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;public toilet&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.53394085</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/017_cz&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;major appliance&#34;</span>
-        }
-      ]</code></pre></div>
-<pre><code>&lt;/div&gt;
-</code></pre>
-</li>
-<li class=span8>
-<div class=thumbnail>
-<img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>[
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.78413528</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02phwj2&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;display window&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.647836</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02rfdq&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;interior design&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.59498113</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0c_jw&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;furniture&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.57692927</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0191_7&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;retail store&#34;</span>
-        },
-        {
-          <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54954523</span>,
-          <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/08790l&#34;</span>,
-          <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;boutique&#34;</span>
-        }
-      ]</code></pre></div>
-</div>
-</li>
-</ul>
-</div>
-<div class=navigation>
-<div class=row>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-left">
-<a href=/2016/08/28/giving-wallabag-a-shot/>« Giving wallabag a shot</a>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-right">
-<a href=/2016/09/01/violating-the-norms-of-a-social-network/>Violating the norms of a social network »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id=comments>
-<div class="py-3 content">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<div class=comments>
-<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="my-4 footer">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<hr>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-2">
-<div class="mx-0 mx-md-4 site-copyright">
-© 2021 Dan Goldin
-</div>
-</div>
-<div class="col-sm-12 col-lg-6">
-<div class="mx-0 mx-md-4 site-social">
-<ul>
-<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
-<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
-<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
-<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
-<li><a href=/index.xml class=mr-0>RSS</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Food identification with Google's Cloud Vision - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well."><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2016/08/29/food-identification-with-googles-cloud-vision/"><meta property="og:title" content="Food identification with Google's Cloud Vision"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well."><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Food identification with Google's Cloud Vision"><meta name=twitter:description content="I tried using Google's Cloud Vision to identify the food in my fridge. It didn't go very well."><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2016/08/29/food-identification-with-googles-cloud-vision/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-36313127-1")</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Food identification with Google's Cloud Vision</h1><div class="mb-md-4 meta"><span class="date middot" title='Mon Aug 29 2016 00:00:00 UTC'>2016-08-29</span>
+<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/code>code</a></li><li class="d-inline middot"><a href=/tags/meta>meta</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>Something that I haven’t quite figured out is how to avoid wasting food. I like to think I keep good track of everything in my fridge but too often I end up finding something in the corner that spoiled and needs to be thrown out. Earlier today I was talking to someone at the office about this problem and how nice it would be if you could just have something that knows everything that’s in the fridge and can track how long it’s been there and an estimate of how long it will last. I’m sure refrigerators in 10 years will have this built in but I wanted to see what I could cobble together in an evening.</p><p>Luckily for me Google released a Cloud Vision API and I decided to give it a shot. Turns out implementing it was extremely straightforward, despite Google’s poor documentation, with a quick code search on GitHub that led to me <a href=https://github.com/ramhiser/serverless-cloud-vision>https://github.com/ramhiser/serverless-cloud-vision</a>. Unfortunately, the results were not promising. I ran on three images and while the categorization was surprisingly accurate it was too general. I expected to at least accurate identification for the bottles and cans - milk, ketchup, yogurt but the closest it got was food, ice cream, and gelato. Granted, the photos weren’t staged well and it took me about 15 minutes to get it working but I was still disappointed. The Cloud VIsion service doesn’t offer much customization so I’m going to see how much better I can make it by improving the photos. I’ve included the original photos along with the classification results below. As usual my code is up on <a href=https://github.com/dangoldin/fridge-vision>GitHub</a> although it was really just a straight up copy and paste from <a href=https://github.com/ramhiser/serverless-cloud-vision>ramhiser’s code</a> above.</p><ul class=thumbnails><li class=span8><div class=thumbnail><img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.90114909</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02wbm&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;food&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.88251483</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02phwj2&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;display window&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.81870794</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0cxn2&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;ice cream&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.76996088</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0270h&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;dessert&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.75129372</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02fz11&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;gelato&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.69974077</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02rfdq&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;interior design&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.57035172</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02q08p0&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;dish&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54961139</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0191_7&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;retail store&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.53331912</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/031bff&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;window covering&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.51523668</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/01_bhs&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;fast food&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>]</span></span></code></pre></div></div></li><li class=span8><div class=thumbnail><img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.87785435</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/07yv9&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;vehicle&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.78110605</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0k5j&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;aircraft&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.77443254</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0cmf2&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;airplane&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.7131173</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02pkr5&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;plumbing fixture&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.71218145</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/015y8h&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;jet aircraft&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.66169083</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/06ht1&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;room&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.5944497</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/01lgkm&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;recreational vehicle&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54411179</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/041x_j&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;public toilet&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.53394085</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/017_cz&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;major appliance&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>]</span></span></code></pre></div><pre><code>&lt;/div&gt;
+</code></pre></li><li class=span8><div class=thumbnail><img src=/image/fridge-3.jpg alt="Fridge 3" data-width=600 data-height=800 data-layout=responsive><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.78413528</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02phwj2&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;display window&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.647836</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/02rfdq&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;interior design&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.59498113</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0c_jw&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;furniture&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.57692927</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/0191_7&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;retail store&#34;</span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;score&#34;</span>: <span style=color:#ae81ff>0.54954523</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;mid&#34;</span>: <span style=color:#e6db74>&#34;/m/08790l&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;description&#34;</span>: <span style=color:#e6db74>&#34;boutique&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>]</span></span></code></pre></div></div></li></ul></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2016/08/28/giving-wallabag-a-shot/>« Giving wallabag a shot</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2016/09/01/violating-the-norms-of-a-social-network/>Violating the norms of a social network »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
-<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
-</body>
-</html>
+<script>window.addEventListener("load",function(){hljs.initHighlighting()},!0)</script></body></html>

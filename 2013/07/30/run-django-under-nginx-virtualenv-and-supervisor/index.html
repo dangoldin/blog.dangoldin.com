@@ -1,256 +1,80 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title> Run Django under Nginx, Virtualenv and Supervisor - Dan Goldin </title>
-<meta name=HandheldFriendly content="True">
-<meta name=MobileOptimized content="320">
-<meta name=referrer content="no-referrer">
-<meta name=description content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor">
-<meta property="og:site_name" content="Dan Goldin">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:url" content="/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/">
-<meta property="og:title" content="Run Django under Nginx, Virtualenv and Supervisor">
-<meta property="og:image" content="/image/photo.jpg">
-<meta property="og:description" content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:site content="@dangoldin">
-<meta name=twitter:creator content="@dangoldin">
-<meta name=twitter:title content="Run Django under Nginx, Virtualenv and Supervisor">
-<meta name=twitter:description content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor">
-<meta name=twitter:image content="/image/photo.jpg">
-<link rel=canonical href=/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous>
-<link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css>
-<link rel=stylesheet href=/css/custom.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous>
-<link rel="shortcut icon" href=/favicon.png>
-<link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-36313127-1')</script>
-</head>
-<body>
-<div class="my-4 my-lg-5 header">
-<div class=container>
-<div class=row>
-<div class="col-auto offset-lg-2 d-none d-lg-block">
-<a href=/>
-<img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo>
-</a>
-</div>
-<div class="col-auto align-self-center mr-auto">
-<a href=/>
-<h1 class=name>Dan Goldin</h1>
-</a>
-<ul class="nav nav-primary">
-<li class=nav-item>
-<a class="nav-link text-home" href=/>
-Home
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-about" href=/about/>
-About
-</a>
-</li>
-<li class=nav-item>
-<a class="nav-link text-lore" href=/lore/>
-Lore
-</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class=content>
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<h1 class="mx-0 mx-md-4 blog-post-title">Run Django under Nginx, Virtualenv and Supervisor</h1>
-<div class="mb-md-4 meta">
-<span class="date middot" title="Tue Jul 30 2013 00:00:00 UTC">
-2013-07-30
-</span>
-<span class="reading-time middot">
-3 min read
-</span>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-<li class="d-inline middot">
-<a href=/tags/python>python</a>
-</li>
-<li class="d-inline middot">
-<a href=/tags/code>code</a>
-</li>
-</ul>
-</div>
-<div class="d-none d-md-inline tags">
-<ul class="list-unstyled d-inline">
-</ul>
-</div>
-</div>
-<div class="markdown blog-post-content">
-<p>After yet another attempt to deploy a <a href=https://www.djangoproject.com/ target=_blank>Django</a> application I decided to document the steps required to get everything up and running. The tutorials I’ve seen tend to focus on individual pieces rather than on the way all these packages work together which always led to me a lot of dead ends and StackOverflow so this will hopefully address some of those issues.</p>
-<p>In particular, I want to focus on the configuration rather than the installation of the various packages since that’s covered in the package documentation.</p>
-<p>I don&rsquo;t know if this is the best way to deploy Django but it&rsquo;s the approach I&rsquo;ve been able to come up with by stumbling around and getting help from the docs, Google, and StackOverflow. If there are better ways out there please let me know.</p>
-<ul class=bulleted>
-<li>
-<p><strong>Gunicorn</strong>- /home/ubuntu/project/scripts/start.sh</p>
-<p>The nice thing here is that we define the port to serve our application on so we can serve multiple projects on a single server with each one using a different port. Note that the settings approach used here is from <a href=https://github.com/twoscoops/django-twoscoops-project/tree/develop/project_name/project_name/settings target=_blank>Two Scoops of Django</a>.
-</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
-</span><span style=color:#75715e></span>set -e
-DJANGODIR<span style=color:#f92672>=</span>/home/ubuntu/project
-DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>project.settings.prod
-
-LOGFILE<span style=color:#f92672>=</span>/var/log/gunicorn/guni-project.log
-LOGDIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>dirname $LOGFILE<span style=color:#66d9ef>)</span>
-NUM_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>
-<span style=color:#75715e># user/group to run as</span>
-USER<span style=color:#f92672>=</span>ubuntu
-GROUP<span style=color:#f92672>=</span>ubuntu
-cd /home/ubuntu/project
-source /home/ubuntu/project/venv/bin/activate
-
-export DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>$DJANGO_SETTINGS_MODULE
-export PYTHONPATH<span style=color:#f92672>=</span>$DJANGODIR:$PYTHONPATH
-
-test -d $LOGDIR <span style=color:#f92672>||</span> mkdir -p $LOGDIR
-exec /home/ubuntu/project/venv/bin/gunicorn_django -w $NUM_WORKERS <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --user<span style=color:#f92672>=</span>$USER --group<span style=color:#f92672>=</span>$GROUP --log-level<span style=color:#f92672>=</span>debug <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --log-file<span style=color:#f92672>=</span>$LOGFILE -b 0.0.0.0:8001 2&gt;&gt;$LOGFILE</code></pre></div>
-</li>
-<li>
-<p><strong>Nginx</strong> - /etc/nginx/sites-enabled/project</p>
-<p>The key parts here are that we're redirecting all www.project.com requests to project.com, serving the static files using Nginx rather than rely on Gunicorn, and passing other requests to the Gunicorn server running on the port defined in the Gunicorn start script above.
-</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx><span style=color:#66d9ef>server</span> {
-    <span style=color:#75715e># Redirect all www.project.com requests to project.com
-</span><span style=color:#75715e></span>    <span style=color:#f92672>listen</span> <span style=color:#ae81ff>80</span>;
-    <span style=color:#f92672>server_name</span> <span style=color:#e6db74>www.project.com</span>;
-    <span style=color:#f92672>return</span> <span style=color:#ae81ff>301</span> <span style=color:#e6db74>http://project.com</span>$request_uri;
-}
-
-<span style=color:#66d9ef>server</span> {
-    <span style=color:#f92672>listen</span>   <span style=color:#ae81ff>80</span>;
-    <span style=color:#f92672>server_name</span> <span style=color:#e6db74>project.com</span>;
-    <span style=color:#75715e># no security problem here, since / is alway passed to upstream
-</span><span style=color:#75715e></span>    <span style=color:#f92672>root</span> <span style=color:#e6db74>/home/ubuntu/project/</span>;
-    <span style=color:#75715e># serve directly - analogous for static/staticfiles
-</span><span style=color:#75715e></span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/media/</span> {
-        <span style=color:#75715e># if asset versioning is used
-</span><span style=color:#75715e></span>        <span style=color:#f92672>if</span> <span style=color:#e6db74>(</span>$query_string<span style=color:#e6db74>)</span> {
-            <span style=color:#f92672>expires</span> <span style=color:#e6db74>max</span>;
-        }
-    }
-    <span style=color:#f92672>location</span> <span style=color:#e6db74>/admin/media/</span> {
-        <span style=color:#75715e># this changes depending on your python version
-</span><span style=color:#75715e></span>        <span style=color:#f92672>root</span> <span style=color:#e6db74>/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib</span>;
-    }
-    <span style=color:#f92672>location</span> <span style=color:#e6db74>/static/admin</span> {
-        <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
-        <span style=color:#f92672>root</span>   <span style=color:#e6db74>/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib/admin/</span>;
-    }
-    <span style=color:#f92672>location</span> <span style=color:#e6db74>/static/</span> {
-        <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
-        <span style=color:#f92672>alias</span>   <span style=color:#e6db74>/home/ubuntu/project/assets/</span>;
-    }
-    <span style=color:#f92672>location</span> <span style=color:#e6db74>/</span> {
-    <span style=color:#75715e># This section is to redirect all http traffic to https if desired
-</span><span style=color:#75715e></span>    <span style=color:#75715e># if ($http_x_forwarded_proto != &#39;https&#39;) {
-</span><span style=color:#75715e></span>    <span style=color:#75715e>#   rewrite ^ https://$host$request_uri? permanent;
-</span><span style=color:#75715e></span>    <span style=color:#75715e># }
-</span><span style=color:#75715e></span>
-        <span style=color:#f92672>client_max_body_size</span> <span style=color:#e6db74>5M</span>;
-        <span style=color:#f92672>client_body_buffer_size</span> <span style=color:#ae81ff>128k</span>;
-        <span style=color:#f92672>proxy_pass_header</span> <span style=color:#e6db74>Server</span>;
-        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>Host</span> $http_host;
-        <span style=color:#f92672>proxy_redirect</span> <span style=color:#66d9ef>off</span>;
-        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>X-Real-IP</span> $remote_addr;
-        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>X-Scheme</span> $scheme;
-        <span style=color:#f92672>proxy_connect_timeout</span> <span style=color:#ae81ff>300</span>;
-        <span style=color:#f92672>proxy_read_timeout</span> <span style=color:#ae81ff>300</span>;
-        <span style=color:#f92672>proxy_pass</span> <span style=color:#e6db74>http://127.0.0.1:8001/</span>;
-    }
-    <span style=color:#75715e># what to serve if upstream is not available or crashes
-</span><span style=color:#75715e></span>    <span style=color:#f92672>error_page</span> <span style=color:#ae81ff>500</span> <span style=color:#ae81ff>502</span> <span style=color:#ae81ff>503</span> <span style=color:#ae81ff>504</span> <span style=color:#e6db74>/media/50x.html</span>;</code></pre></div>
-</li>
-<li>
-<p><strong>Supervisord</strong> - /etc/supervisord/gunicorn-project.conf</p>
-<p>Here we just specify the location of the Gunicorn start script so Supervisor can manage it.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=color:#66d9ef>[program:gunicorn-project]</span>
-<span style=color:#a6e22e>directory</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/project</span>
-<span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>ubuntu</span>
-<span style=color:#a6e22e>command</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/project/scripts/start.sh</span>
-<span style=color:#a6e22e>stdout_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/project-std.log</span>
-<span style=color:#a6e22e>stderr_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/project-err.log</span></code></pre></div>
-</li>
-</ul>
-</div>
-<div class=navigation>
-<div class=row>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-left">
-<a href=/2013/07/27/the-power-inbox/>« The power inbox</a>
-</div>
-</div>
-<div class="col-12 col-lg-6">
-<div class="mx-0 mx-md-4 mt-4 text-right">
-<a href=/2013/08/02/a-brief-history-of-manufacturing/>A brief history of manufacturing »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id=comments>
-<div class="py-3 content">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<div class=comments>
-<script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="my-4 footer">
-<div class=container>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-8">
-<hr>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-sm-12 col-lg-2">
-<div class="mx-0 mx-md-4 site-copyright">
-© 2021 Dan Goldin
-</div>
-</div>
-<div class="col-sm-12 col-lg-6">
-<div class="mx-0 mx-md-4 site-social">
-<ul>
-<li><a href=mailto:dan@dangoldin.com>Contact</a></li>
-<li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li>
-<li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li>
-<li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li>
-<li><a href=/index.xml class=mr-0>RSS</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Run Django under Nginx, Virtualenv and Supervisor - Dan Goldin</title><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=referrer content="no-referrer"><meta name=description content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor"><meta property="og:site_name" content="Dan Goldin"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/"><meta property="og:title" content="Run Django under Nginx, Virtualenv and Supervisor"><meta property="og:image" content="/image/photo.jpg"><meta property="og:description" content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@dangoldin"><meta name=twitter:creator content="@dangoldin"><meta name=twitter:title content="Run Django under Nginx, Virtualenv and Supervisor"><meta name=twitter:description content="Most guides on deploying Django only cover the individual packages. I wanted to share the way I deploy Django using Nginx, Virtualenv, and Supervisor"><meta name=twitter:image content="/image/photo.jpg"><link rel=canonical href=/2013/07/30/run-django-under-nginx-virtualenv-and-supervisor/><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin=anonymous><link rel=stylesheet href=https://nanx-assets.netlify.app/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin=anonymous><link rel="shortcut icon" href=/favicon.png><link href=/index.xml rel=alternate type=application/rss+xml title="Dan Goldin"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-36313127-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-36313127-1")</script></head><body><div class="my-4 my-lg-5 header"><div class=container><div class=row><div class="col-auto offset-lg-2 d-none d-lg-block"><a href=/><img class="ml-lg-4 logo img-fluid d-block rounded-circle" src=/image/photo.jpg alt=logo></a></div><div class="col-auto align-self-center mr-auto"><a href=/><h1 class=name>Dan Goldin</h1></a><ul class="nav nav-primary"><li class=nav-item><a class="nav-link text-home" href=/>Home</a></li><li class=nav-item><a class="nav-link text-about" href=/about/>About</a></li><li class=nav-item><a class="nav-link text-lore" href=/lore/>Lore</a></li></ul></div></div></div></div><div class=content><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><h1 class="mx-0 mx-md-4 blog-post-title">Run Django under Nginx, Virtualenv and Supervisor</h1><div class="mb-md-4 meta"><span class="date middot" title='Tue Jul 30 2013 00:00:00 UTC'>2013-07-30</span>
+<span class="reading-time middot">3 min read</span><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"><li class="d-inline middot"><a href=/tags/python>python</a></li><li class="d-inline middot"><a href=/tags/code>code</a></li></ul></div><div class="d-none d-md-inline tags"><ul class="list-unstyled d-inline"></ul></div></div><div class="markdown blog-post-content"><p>After yet another attempt to deploy a <a href=https://www.djangoproject.com/ target=_blank>Django</a> application I decided to document the steps required to get everything up and running. The tutorials I’ve seen tend to focus on individual pieces rather than on the way all these packages work together which always led to me a lot of dead ends and StackOverflow so this will hopefully address some of those issues.</p><p>In particular, I want to focus on the configuration rather than the installation of the various packages since that’s covered in the package documentation.</p><p>I don&rsquo;t know if this is the best way to deploy Django but it&rsquo;s the approach I&rsquo;ve been able to come up with by stumbling around and getting help from the docs, Google, and StackOverflow. If there are better ways out there please let me know.</p><ul class=bulleted><li><p><strong>Gunicorn</strong>- /home/ubuntu/project/scripts/start.sh</p><p>The nice thing here is that we define the port to serve our application on so we can serve multiple projects on a single server with each one using a different port. Note that the settings approach used here is from <a href=https://github.com/twoscoops/django-twoscoops-project/tree/develop/project_name/project_name/settings target=_blank>Two Scoops of Django</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>set -e
+</span></span><span style=display:flex><span>DJANGODIR<span style=color:#f92672>=</span>/home/ubuntu/project
+</span></span><span style=display:flex><span>DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>project.settings.prod
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>LOGFILE<span style=color:#f92672>=</span>/var/log/gunicorn/guni-project.log
+</span></span><span style=display:flex><span>LOGDIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>dirname $LOGFILE<span style=color:#66d9ef>)</span>
+</span></span><span style=display:flex><span>NUM_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># user/group to run as</span>
+</span></span><span style=display:flex><span>USER<span style=color:#f92672>=</span>ubuntu
+</span></span><span style=display:flex><span>GROUP<span style=color:#f92672>=</span>ubuntu
+</span></span><span style=display:flex><span>cd /home/ubuntu/project
+</span></span><span style=display:flex><span>source /home/ubuntu/project/venv/bin/activate
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>export DJANGO_SETTINGS_MODULE<span style=color:#f92672>=</span>$DJANGO_SETTINGS_MODULE
+</span></span><span style=display:flex><span>export PYTHONPATH<span style=color:#f92672>=</span>$DJANGODIR:$PYTHONPATH
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>test -d $LOGDIR <span style=color:#f92672>||</span> mkdir -p $LOGDIR
+</span></span><span style=display:flex><span>exec /home/ubuntu/project/venv/bin/gunicorn_django -w $NUM_WORKERS <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --user<span style=color:#f92672>=</span>$USER --group<span style=color:#f92672>=</span>$GROUP --log-level<span style=color:#f92672>=</span>debug <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --log-file<span style=color:#f92672>=</span>$LOGFILE -b 0.0.0.0:8001 2&gt;&gt;$LOGFILE</span></span></code></pre></div></li><li><p><strong>Nginx</strong> - /etc/nginx/sites-enabled/project</p><p>The key parts here are that we're redirecting all www.project.com requests to project.com, serving the static files using Nginx rather than rely on Gunicorn, and passing other requests to the Gunicorn server running on the port defined in the Gunicorn start script above.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx><span style=display:flex><span><span style=color:#66d9ef>server</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Redirect all www.project.com requests to project.com
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#f92672>listen</span> <span style=color:#ae81ff>80</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>server_name</span> <span style=color:#e6db74>www.project.com</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>return</span> <span style=color:#ae81ff>301</span> <span style=color:#e6db74>http://project.com</span>$request_uri;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>server</span> {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>listen</span>   <span style=color:#ae81ff>80</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>server_name</span> <span style=color:#e6db74>project.com</span>;
+</span></span><span style=display:flex><span>    <span style=color:#75715e># no security problem here, since / is alway passed to upstream
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#f92672>root</span> <span style=color:#e6db74>/home/ubuntu/project/</span>;
+</span></span><span style=display:flex><span>    <span style=color:#75715e># serve directly - analogous for static/staticfiles
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/media/</span> {
+</span></span><span style=display:flex><span>        <span style=color:#75715e># if asset versioning is used
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#f92672>if</span> <span style=color:#e6db74>(</span>$query_string<span style=color:#e6db74>)</span> {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>expires</span> <span style=color:#e6db74>max</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/admin/media/</span> {
+</span></span><span style=display:flex><span>        <span style=color:#75715e># this changes depending on your python version
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#f92672>root</span> <span style=color:#e6db74>/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/static/admin</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>root</span>   <span style=color:#e6db74>/home/ubuntu/project/venv/lib/python2.7/site-packages/django/contrib/admin/</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/static/</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>autoindex</span> <span style=color:#66d9ef>on</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>alias</span>   <span style=color:#e6db74>/home/ubuntu/project/assets/</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e># This section is to redirect all http traffic to https if desired
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e># if ($http_x_forwarded_proto != &#39;https&#39;) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>#   rewrite ^ https://$host$request_uri? permanent;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e># }
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>client_max_body_size</span> <span style=color:#e6db74>5M</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>client_body_buffer_size</span> <span style=color:#ae81ff>128k</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_pass_header</span> <span style=color:#e6db74>Server</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>Host</span> $http_host;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_redirect</span> <span style=color:#66d9ef>off</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>X-Real-IP</span> $remote_addr;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_set_header</span> <span style=color:#e6db74>X-Scheme</span> $scheme;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_connect_timeout</span> <span style=color:#ae81ff>300</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_read_timeout</span> <span style=color:#ae81ff>300</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>proxy_pass</span> <span style=color:#e6db74>http://127.0.0.1:8001/</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e># what to serve if upstream is not available or crashes
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#f92672>error_page</span> <span style=color:#ae81ff>500</span> <span style=color:#ae81ff>502</span> <span style=color:#ae81ff>503</span> <span style=color:#ae81ff>504</span> <span style=color:#e6db74>/media/50x.html</span>;</span></span></code></pre></div></li><li><p><strong>Supervisord</strong> - /etc/supervisord/gunicorn-project.conf</p><p>Here we just specify the location of the Gunicorn start script so Supervisor can manage it.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#66d9ef>[program:gunicorn-project]</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>directory</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/project</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>ubuntu</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>command</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/home/ubuntu/project/scripts/start.sh</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stdout_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/project-std.log</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>stderr_logfile</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/var/log/gunicorn/project-err.log</span></span></span></code></pre></div></li></ul></div><div class=navigation><div class=row><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-left"><a href=/2013/07/27/the-power-inbox/>« The power inbox</a></div></div><div class="col-12 col-lg-6"><div class="mx-0 mx-md-4 mt-4 text-right"><a href=/2013/08/02/a-brief-history-of-manufacturing/>A brief history of manufacturing »</a></div></div></div></div></div></div></div></div><section id=comments><div class="py-3 content"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><div class=comments><script src=https://utteranc.es/client.js repo=dangoldin/blog.dangoldin.com-comments issue-term=pathname label=comment theme=github-light crossorigin=anonymous async></script></div></div></div></div></div></section><div class="my-4 footer"><div class=container><div class="row justify-content-center"><div class="col-sm-12 col-lg-8"><hr></div></div><div class="row justify-content-center"><div class="col-sm-12 col-lg-2"><div class="mx-0 mx-md-4 site-copyright">© 2021 Dan Goldin</div></div><div class="col-sm-12 col-lg-6"><div class="mx-0 mx-md-4 site-social"><ul><li><a href=mailto:dan@dangoldin.com>Contact</a></li><li><a href=https://github.com/dangoldin target=_blank>GitHub</a></li><li><a href=https://twitter.com/dangoldin target=_blank>Twitter</a></li><li><a href=https://www.linkedin.com/in/dangoldin target=_blank>LinkedIn</a></li><li><a href=/index.xml class=mr-0>RSS</a></li></ul></div></div></div></div></div><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js defer></script>
-<script>window.addEventListener('load',function(){hljs.initHighlighting()},!0)</script>
-<script src=/js/math-code.js></script>
-<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
-</html>
+<script>window.addEventListener("load",function(){hljs.initHighlighting()},!0)</script><script src=/js/math-code.js></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
