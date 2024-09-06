@@ -4,7 +4,8 @@ title = "Dan Goldin"
 author = "Dan Goldin"
 canonifyurls = false
 languagecode = "en"
-paginate = 3
+# paginate = 3
+pagination.pagerSize = 3
 theme = "hugo-nanx2020"
 
 enableEmoji = true
@@ -19,7 +20,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
 
 [params]
 pagetitle = "Dan Goldin"
-copyright = "© 2021 Dan Goldin"
+copyright = "© 2024 Dan Goldin"
 faviconfile = "favicon.png"
 logofile = "image/photo.jpg"
 posts_navigation = true

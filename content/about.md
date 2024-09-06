@@ -3,7 +3,10 @@ title: "About"
 menu: "main"
 description: "My thoughts and musings. Trying to write about tech, startups and the entrepreneurial journey."
 ---
-Currently lead the engineering team at [TripleLift](https://triplelift.com/). Before that I cofounded [Makers Alley](http://makersalley.com/) and [Glossi](https://pando.com/2012/07/17/glossis-social-megafeed-takes-on-rebelmousevizify/). Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at Yodle; a wall street quant at Och Ziff, and a management consultant at ZS Associates.
+
+I'm currently the founder of [Twing Data](https://www.twingdata.com/) and [FastPenTests](https://www.fastpentests.com/). Twing Data helps companies get the most out of their data warehouse by analyzing every query that runs. FastPenTests offers a 24 hour penetration testing service for websites and APIs in 24 hours.
+
+Prior to this I led the engineering team at [TripleLift](https://triplelift.com/) that was acquired by Vista Equity Partners for $1.4B in 2021. Before that I cofounded [Makers Alley](http://makersalley.com/) and [Glossi](https://pando.com/2012/07/17/glossis-social-megafeed-takes-on-rebelmousevizify/). Before going down the entrepreneurial path I did a stint as a quantitative engineer and product manager at Yodle; a wall street quant at Och Ziff, and a management consultant at ZS Associates.
 
 A few of the projects I've hacked on:
 
